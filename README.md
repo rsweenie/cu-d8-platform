@@ -54,6 +54,8 @@ BLT requires a local environment that implements a LAMP stack. While out of the 
 
 * Create a `composer.required.json` in the blt directory and paste in the following:
 
+* ***Alternatively you can paste directly in terminal on MacOS: ```$> pbpaste >> blt/composer.required.json```***
+
 ```json
 {
   "repositories": {
@@ -123,6 +125,7 @@ BLT requires a local environment that implements a LAMP stack. While out of the 
 ```
 
 * Create a `composer.suggested.json` in the blt directory and paste in the following:
+* ***Alternatively paste directly in terminal on MacOS: ```$> pbpaste >> blt/composer.suggested.json```***
 
 ```json
 {
