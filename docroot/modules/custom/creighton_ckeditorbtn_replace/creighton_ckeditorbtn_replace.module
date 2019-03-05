@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Contains creighton_ckeditorbtn_replace.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function creighton_ckeditorbtn_replace_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the creighton_ckeditorbtn_replace module.
+    case 'help.page.creighton_ckeditorbtn_replace':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Change image on ckeditor toolbar') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function creighton_ckeditorbtn_replace_theme() {
+  return [
+    'creighton_ckeditorbtn_replace' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function creighton_ckeditorbtn_replace_element_info_alter(&$info) {
+  if(isset($info['toolbar'])) {
+    $info['toolbar']['#attached']['library'][] = 'creighton_ckeditorbtn_replace/change';
+  }
+}
