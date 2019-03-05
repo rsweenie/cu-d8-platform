@@ -43,7 +43,7 @@ This project is based on BLT, an open-source project template and tool that enab
 ## Get Code
 
 ```shell
-project_root$ git clone git@github.com:cu-webteam/d8-platform.git
+~$ git clone git@github.com:cu-webteam/d8-platform.git <project_root>
 ```
 
 ## Local Environment Setup
@@ -205,14 +205,14 @@ vagrant@local:/var/www/creighton$ blt setup
 * Access the site and do necessary work at local.creighton.com by running
 
 ```shell
-project_root$ drush uli
+vagrant@local:/var/www/creighton$ drush uli
 ```
 
 BLT 9 and Drush 9 require all blt and drush commands to be executed inside of the VM. Because of this requirement, the VM must have SSH access to Acquia.
 
 ```shell
-prject_root$ cd ~/.ssh
-~$ ssh-keygen -b 4096
+vagrant@local:/var/www/creighton$ cd ~/.ssh
+vagrant@local:/var/www/creighton$ ssh-keygen -b 4096
 ```
 
 * The public key needs to be added to your Acquia Cloud account. More detail can be found about that [here](https://docs.acquia.com/acquia-cloud/ssh/generate).
@@ -224,7 +224,7 @@ prject_root$ cd ~/.ssh
 Additional [BLT documentation](http://blt.readthedocs.io) may be useful. You may also access a list of BLT commands by running
 
 ```shell
-~$ blt
+project_url$ vendor/bin/blt
 ```
 
 Note the following properties of this project:
