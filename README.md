@@ -43,7 +43,7 @@ This project is based on BLT, an open-source project template and tool that enab
 ## Get Code
 
 ```shell
-~ git clone git@github.com:cu-webteam/d8-platform.git
+project_root$ git clone git@github.com:cu-webteam/d8-platform.git
 ```
 
 ## Local Environment Setup
@@ -54,7 +54,11 @@ BLT requires a local environment that implements a LAMP stack. While out of the 
 
 * Create a `composer.required.json` in the blt directory and paste in the following:
 
-* ***Alternatively you can paste directly in terminal on MacOS: ```$> pbpaste >> blt/composer.required.json```***
+* ***Alternatively you can paste the JSON below directly in terminal on MacOS:***
+
+```shell
+project_root$ pbpaste >> blt/composer.required.json
+```
 
 ```json
 {
@@ -125,7 +129,11 @@ BLT requires a local environment that implements a LAMP stack. While out of the 
 ```
 
 * Create a `composer.suggested.json` in the blt directory and paste in the following:
-* ***Alternatively paste directly in terminal on MacOS: ```$> pbpaste >> blt/composer.suggested.json```***
+* ***Alternatively you can paste the JSON below directly in terminal on MacOS:***
+
+```shell
+project_root$ pbpaste >> blt/composer.suggested.json
+```
 
 ```json
 {
@@ -159,7 +167,7 @@ BLT requires a local environment that implements a LAMP stack. While out of the 
 * Install Composer Dependencies (warning: this can take some time based on internet speeds)
 
 ```shell
-~ composer install
+project_root$ composer install
 ```
 
 ## Virtual Machine
@@ -169,10 +177,14 @@ BLT requires a local environment that implements a LAMP stack. While out of the 
 
 * Create a file in the blt directory named `local.blt.yml`
 
+```shell
+project_root$ touch blt/local.blt.yml
+```
+
 * Build the vm using BLT
 
 ```shell
-~ blt vm
+project_root$ vendor/bin/blt vm
 ```
 
   a) Drupal VM is not currently installed. Install it now? (y/n) `y`
@@ -184,8 +196,8 @@ BLT requires a local environment that implements a LAMP stack. While out of the 
   d) creighton: Pruning invalid NFS exports. Administrator privileges will be required...
 
 ```shell
-~ vagrant ssh
-~ blt setup
+project_root$ vagrant ssh
+vagrant@local:/var/www/creighton$ blt setup
 ```
 
   a) You are about to DROP all tables in your 'drupal' database. Do you want to continue? (yes/no) [yes]: `yes`
@@ -193,14 +205,14 @@ BLT requires a local environment that implements a LAMP stack. While out of the 
 * Access the site and do necessary work at local.creighton.com by running
 
 ```shell
-~ drush uli
+project_root$ drush uli
 ```
 
 BLT 9 and Drush 9 require all blt and drush commands to be executed inside of the VM. Because of this requirement, the VM must have SSH access to Acquia.
 
 ```shell
-~ cd ~/.ssh
-~ ssh-keygen -b 4096
+prject_root$ cd ~/.ssh
+~$ ssh-keygen -b 4096
 ```
 
 * The public key needs to be added to your Acquia Cloud account. More detail can be found about that [here](https://docs.acquia.com/acquia-cloud/ssh/generate).
@@ -212,7 +224,7 @@ BLT 9 and Drush 9 require all blt and drush commands to be executed inside of th
 Additional [BLT documentation](http://blt.readthedocs.io) may be useful. You may also access a list of BLT commands by running
 
 ```shell
-~ blt
+~$ blt
 ```
 
 Note the following properties of this project:
