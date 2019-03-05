@@ -15,7 +15,7 @@ footer {
 	}
 
 	.transaction_menu_wrapper {
-		text-align: right;
+		text-align: center;
 
 		@include respond-to(null , mobile-max) {
 			background-color: $blue;
@@ -24,9 +24,7 @@ footer {
 			text-align: left;
 			padding-left: 10px;
 		}
-		@include respond-to( tablet-min, lg-tablet-max){
-			text-align: center;
-		}	
+			
 	}
 
 	.footer_wrapper {
