@@ -5,11 +5,12 @@ categories: [Content]
 ---
 
 {% include home.html %}
-# Front Page Classic: How-To
+# How-To create the front page with classic layout
 
  Version: 1.0
  Created: 08/30/2018
- Last Updated: 11/28/2018
+ Updated: 11/28/2018
+ Last Updated: 3/5/2019 klm
  Intended Audience: UCOM
 
 ## Summary
