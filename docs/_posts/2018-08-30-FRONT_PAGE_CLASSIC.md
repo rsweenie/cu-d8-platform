@@ -21,14 +21,7 @@ The front page classic layout handles the styling without specific content types
 
 1. Login
 
-2. Create content > content > slideshow
-
-    * Create a slideshow from slides
-
-    * Caption for each slide must be formatted the following way:
-        * H2 - white text on top
-        * H1 - yellow big text
-
+2. Create content page. 
 
 3. For featured content items: create content > content > featured content group
 
