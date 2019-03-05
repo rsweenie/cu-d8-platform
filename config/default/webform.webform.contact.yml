@@ -209,6 +209,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       exclude_empty_checkbox: false
+      theme_name: ''
   email_notification:
     id: email
     label: 'Email notification'
@@ -242,3 +243,4 @@ handlers:
       sender_mail: ''
       sender_name: ''
       theme_name: ''
+      exclude_empty_checkbox: false

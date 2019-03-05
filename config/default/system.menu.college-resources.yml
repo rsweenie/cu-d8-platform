@@ -5,6 +5,6 @@ dependencies: {  }
 _core:
   default_config_hash: Y0nXpzijuSaEsQWOyo-Lb-racX69GO_8-32mX9N3gzY
 id: college-resources
-label: 'Resources'
+label: Resources
 description: 'for Current Students, Faculty and Staff'
 locked: false
