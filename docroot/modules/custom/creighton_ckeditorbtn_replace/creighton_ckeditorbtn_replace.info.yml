@@ -1,0 +1,10 @@
+name: 'Creighton CKEDITORbtn Replace'
+type: module
+description: 'Module to replace individual CKEDITOR icons images with custom icons.'
+core: 8.x
+package: 'Creighton'
+dependencies:
+  - lightning_media
+  - drupal:ckeditor
+  - drupal:toolbar
+  - admin_toolbar
