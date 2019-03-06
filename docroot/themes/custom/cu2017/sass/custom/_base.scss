@@ -85,6 +85,8 @@ html {
 		margin-bottom: 20px;
 	}
 	.default-layout > .layout-content > [role="main"] > .main.container > .row > * > .headline		{
-		padding-left:0px;
+		@media all and (min-width: 992px){
+			padding-left:0px;
+		}
 	}
 }

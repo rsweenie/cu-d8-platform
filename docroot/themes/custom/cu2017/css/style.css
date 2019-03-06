@@ -9681,9 +9681,11 @@ html .related_links_wrapper,
 html .promo_box_wrapper {
   margin-bottom: 20px;
 }
-/* line 87, ../sass/custom/_base.scss */
-html .default-layout > .layout-content > [role="main"] > .main.container > .row > * > .headline {
-  padding-left: 0px;
+@media all and (min-width: 992px) {
+  /* line 87, ../sass/custom/_base.scss */
+  html .default-layout > .layout-content > [role="main"] > .main.container > .row > * > .headline {
+    padding-left: 0px;
+  }
 }
 
 /* line 8, ../sass/custom/_breadcrumbs.scss */
