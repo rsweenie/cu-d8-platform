@@ -1,13 +1,13 @@
 ---
 layout: default
-title:  "Changing Logo"
+title:  "Changing Site Logo"
 categories: [Content] 
 ---
 {% include home.html %}
-# Changing Heaeder and Footer Logo
+# Changing Header and Footer Logo in a site
 * Version: 1.0
 * Created: 01/28/2019 KLM
-* Last Updated: 01/28/2019
+* Last Updated: 03/08/2019 klm
 * Intended Audience: UCOM
 
 ## Summary
@@ -22,17 +22,25 @@ The site logo within the Header and Footer often is Creighton University, howeve
 ## Procedure
 
 1. Login to sub domain
-2. navigate at the top to Appearance > Settings
-3. Click 2017 tab
-4. scroll to the bottom to Override Global Settings area
-5. Click Logo Image
-6. upload logo image
-7. save configruation
-8. scroll down and empty out path to custom icon field, leave blank
-9. save configuration
-10. appearance > settings > global settings sub tab (default) go to logo image section
-11. choose file in upload logo image area
-12. save configuration
-13. check results
+2. navigate at the top to content > Media tab
+3. Click add Media button
+4. click Image Link
+5. Browse and upload the logo (Beth has specific sized logos that you'll need)
+6. Add Alt text
+7. Add Name of image
+8. Click Save
 
+9. Under the Content > Files tab
+10. Click on the image file link that you just uploaded
+11. It will display the file in the current window
+12. Copy the file path in the address bar (sites/g/files/indaly926/files/CU_Logo_AZ.png)
+13. Click the back button in your browser to return to the back end
+
+14. Under Appearance > Settings
+15. Click cu2017 link along the horizontal nav
+16. Scroll down to the bottom and click Logo image
+17. Paste the path from above into the Path to Custom Logo field
+18. Click Save configuration
+19. Check box the box to " Use the favicon supplied by the theme"
+20. save configuration
 
