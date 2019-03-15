@@ -32,6 +32,7 @@ function cu2017_preprocess_page(&$variables) {
   for ($i = 0; $i < $count; $i++) {
     if ($tree[$tree_keys[$i]]->inActiveTrail) {
       $variables['inMainNav'] = 1;
+      break;
     }
   }
 }
