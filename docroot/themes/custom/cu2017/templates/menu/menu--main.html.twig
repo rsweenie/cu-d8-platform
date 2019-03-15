@@ -42,12 +42,11 @@
 			{% elseif level == 3 %}	
 				{% set child_classes = 'great_grandchild_class' %}
 			{% endif %}
-			{% if (item.in_active_trail and level == 0) or (level > 0) %}
-			<li{{ item.attributes.addClass(child_classes) }}>
-				<a href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a>
-			</li>
+			{% if (item.in_active_trail or level > 0) %}
+				<li{{ item.attributes.addClass(child_classes) }}>
+					<a href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a>
+				</li>
 				{% if item.below and item.in_active_trail %}
-					
 					{% set nextLevel = level + 1 %}
 					{{ _self.menu_links(item.below, attributes, nextLevel) }}
 				{% endif %}
