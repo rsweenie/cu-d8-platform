@@ -18,7 +18,7 @@
  */
 
 /**
- * Determine if current page is in main menu and pass inMainNav variable to be used 
+ * Determine if current page is in main menu and pass inMainNav variable to be used
  * in page.html.twig in order to appropriately hide or display the left nav menu.
  */
 function cu2017_preprocess_page(&$variables) {

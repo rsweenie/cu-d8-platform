@@ -1,0 +1,39 @@
+<?php
+
+/**
+* Implements hook_schema().
+*
+* Defines the database tables used by cu_breadcrumbs module.
+*
+* @see hook_schema()
+*
+* @ingroup cu_breadcrumbs
+*/
+function cu_breadcrumbs_schema() {
+  $schema['cu_breadcrumbs'] = [
+    'description' => 'Stores values related to customer breadcrums module.',
+    'fields' => [
+      'n_uuid' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => "Node UUID",
+      ],
+      'apply' => [
+        'type' => 'int',
+        'size'=> 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Add cu_breadcrumbs to content_type?',
+      ],
+    ],
+    'primary key' => ['n_uuid'],
+    'indexes' => [],
+  ];
+
+  return $schema;
+}
+
+function cu_breadcrumbs_uninstall() {
+  drupal_uninstall_schema('cu_breadcrumbs');
+}

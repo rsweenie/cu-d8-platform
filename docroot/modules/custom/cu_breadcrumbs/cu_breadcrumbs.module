@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * @file
+ * Contains cu_breadcrumbs.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cu_breadcrumbs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cu_breadcrumbs module.
+    case 'help.page.cu_breadcrumbs':
+      return '<h3>' . t('About') . '</h3>
+      <p>' . t('Facilitates the application of Home (www.creighton.edu) and custom breadcrumbs to content types.') . '</p>
+      <br><h3>' . t('Use') . '</h3>
+      <p>' . t('During content type creation, selecting "Apply custom breadcrumb" will apply custom breadcrumbs to all content of that type.') 
+      . '</p>
+      <p>' . t('To add more links to the breadcrumb, navigate to Structure->Menus add a menu titled "Breadcrumbs Menu".') 
+      . '</p>
+      <p>' . t('Any links added to this will be appended to the default home breadcrumb in the order specified in the menu.') 
+      . '</p>';
+      
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_node_type_add_form_alter().
+ */
+function cu_breadcrumbs_form_node_type_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  add_cu_breadcrumb_chkbox($form, $form_state);
+}
+
+/**
+ * Implements hook_form_node_type_edit_form_alter().
+ */
+function cu_breadcrumbs_form_node_type_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  add_cu_breadcrumb_chkbox($form, $form_state);
+}
+  
+/**
+ * Implements hook_form_node_type_edit_form_submit().
+ */
+function cu_breadcrumbs_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $node_type = $form_state->getFormObject()->getEntity();
+  $node_type->set('cu_breadcrumbs_apply',$form_state->getValue('cu_breadcrumbs_apply'));
+  $database = \Drupal::database();
+  //load up the fields array and add it or update existing record
+  $query = $database->upsert('cu_breadcrumbs')
+  //node uuid is table pk
+    ->fields(['n_uuid'=>$node_type->get('uuid'),
+              'apply'=>$node_type->cu_breadcrumbs_apply]);
+  //upsert needs to know the pk for the table you are updating            
+  $query->key('n_uuid');
+  $query->execute();
+}
+
+/**
+ * Add the new checkbox to the form.
+ */
+function add_cu_breadcrumb_chkbox(&$form, \Drupal\Core\Form\FormStateInterface $form_state){
+  $node_type = $form_state->getFormObject()->getEntity();
+  $database = \Drupal::database();
+  //get the apply value stored in the cu_breadcrumbs table
+  $query = $database->select('cu_breadcrumbs', 'cb')
+  //using the node types uuid
+    ->condition('cb.n_uuid',$node_type->get('uuid'), '=')
+    ->fields('cb', ['apply']);
+  //fetch the record
+  $record = $query->execute()->fetch();
+  //a lot of the time there may not be a value
+  $applies_value = !empty($record)?$record->apply:0;
+  // Add a checkbox to content type form
+  $form['cu_breadcrumbs_apply'] = array(
+    '#type' => 'checkbox',
+    '#title' => t("Apply custom breadcrumb"),
+    '#default_value'=>$applies_value,
+  );
+  $form['#submit'][] = 'cu_breadcrumbs_form_submit';
+  $form['actions']['submit']['#submit'][] = 'cu_breadcrumbs_form_submit';
+}
