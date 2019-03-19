@@ -86,7 +86,6 @@ abstract class Model {
 
   //"save"(upsert) the model
   public function save(){
-    var_dump($this->fillable);
     $query = $this->getConnection()->upsert(Self::getTable())
     //save fillable properties
       ->fields($this->fillable);
@@ -96,13 +95,14 @@ abstract class Model {
   }
 
   //get record from table fill and return model
-  public function getById($uuid){
+  static function getByUuid($uuid){
+    $self = new static;
     //get from table
-    $query = $this->getConnection()->select(Self::getTable(), 't')
+    $query = $self->getConnection()->select(Self::getTable(), 't')
     //using id
       ->condition('t.'.Self::getPrimaryKey(),$uuid, '=')
-      ->fields('t', array_keys($this->fillable));
+      ->fields('t', array_keys($self->fillable));
     //fetch the record, there should only be one
-    return $this->fill((array) $query->execute()->fetch());
+    return $self->fill((array) $query->execute()->fetch());
   }
 }

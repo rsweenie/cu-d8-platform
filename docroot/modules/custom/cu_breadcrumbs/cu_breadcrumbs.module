@@ -47,10 +47,14 @@ function cu_breadcrumbs_form_node_type_edit_form_alter(&$form, \Drupal\Core\Form
  * Implements hook_form_node_type_edit_form_submit().
  */
 function cu_breadcrumbs_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  //create an array of attributes to fill the cubreadcrumbmodel
   $attributes = ['uuid'=>$form_state->getFormObject()->getEntity()->get('uuid')
                   ,'apply'=>$form_state->getValue('cu_breadcrumbs_apply')];
+  //instanciate a new cubreadcrumbmodel
   $cu_breadcrumb = new CUBreadcrumbModel();
+  //fill it up
   $cu_breadcrumb->fill($attributes);
+  //save it to the db
   $cu_breadcrumb->save();
 }
 
@@ -62,21 +66,10 @@ function add_cu_breadcrumb_chkbox(&$form, \Drupal\Core\Form\FormStateInterface $
   $form['cu_breadcrumbs_apply'] = array(
     '#type' => 'checkbox',
     '#title' => t("Apply custom breadcrumb"),
-    '#default_value'=>get_cu_breadcrumbs_apply($form_state->getFormObject()
-                                                          ->getEntity()
-                                                          ->get('uuid')),
+    //get the cubreadcrumbmodel by uuid, return the apply property value.
+    '#default_value'=>CUBreadcrumbModel::getByUuid($form_state->getFormObject()->getEntity()->get('uuid'))->get('apply'),
   );
   //add cu breadcrumbs to form submit
   $form['#submit'][] = 'cu_breadcrumbs_form_submit';
   $form['actions']['submit']['#submit'][] = 'cu_breadcrumbs_form_submit';
-}
-
-/**
- * get apply boolean from db using node_type uuid
- */
-function get_cu_breadcrumbs_apply($id){
-  $cu_breadcrumb = new CUBreadcrumbModel();
-  $cu_breadcrumb->getById($id);
-  //a lot of the time there may not be a value
-  return $cu_breadcrumb->get('apply');
 }

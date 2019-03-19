@@ -29,12 +29,8 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     }
     // If there's a node, do the code.
     if (!empty($node)) {
-      //make get by id a static call returning the model.
-      $cu_breadcrumb = new CUBreadcrumbModel();
-      //get that breadcrumb model
-      $cu_breadcrumb->getById($node->type->entity->get('uuid'));
       //return the apply value(1 or 0, true or false)
-      return $cu_breadcrumb->get('apply');
+      return CUBreadcrumbModel::getByUuid($node->type->entity->get('uuid'))->get('apply');
     }
   }
 
