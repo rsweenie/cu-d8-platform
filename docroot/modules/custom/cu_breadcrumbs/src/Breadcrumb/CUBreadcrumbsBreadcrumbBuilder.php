@@ -10,6 +10,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
 use Drupal\Component\Utility\UrlHelper;
+use Drupal\cu_breadcrumbs\Breadcrumb\CUBreadcrumbModel;
 
 /**
  * Creates breadcrumbs for content pages and news/spotlight content types.
@@ -28,21 +29,12 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     }
     // If there's a node, do the code.
     if (!empty($node)) {
-      $node_type = $node->type->entity;
-      /**
-         * look and see if content type (node_type) has breadcrumbs applied
-         */
-        $database = \Drupal::database();
-        //query the cu_breadcrumbs table
-        $query = $database->select('cu_breadcrumbs', 'cb')
-        //using the node_type uuid
-          ->condition('cb.n_uuid',$node_type->get('uuid'), '=')
-        //return apply
-          ->fields('cb', ['apply']);
-
-        $record = $query->execute()->fetch();
-        //if not empty return value (1 or 0) true of false
-      return !empty($record)?$record->apply:0;
+      //make get by id a static call returning the model.
+      $cu_breadcrumb = new CUBreadcrumbModel();
+      //get that breadcrumb model
+      $cu_breadcrumb->getById($node->type->entity->get('uuid'));
+      //return the apply value(1 or 0, true or false)
+      return $cu_breadcrumb->get('apply');
     }
   }
 
