@@ -8,6 +8,7 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\cu_breadcrumbs\Breadcrumb\CUBreadcrumbModel;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_help().
@@ -31,7 +32,7 @@ function cu_breadcrumbs_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_form_node_type_add_form_alter().
  */
-function cu_breadcrumbs_form_node_type_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+function cu_breadcrumbs_form_node_type_add_form_alter(&$form, FormStateInterface $form_state) {
   add_cu_breadcrumb_chkbox($form, $form_state);
 }
 
@@ -39,14 +40,14 @@ function cu_breadcrumbs_form_node_type_add_form_alter(&$form, \Drupal\Core\Form\
  * Implements hook_form_node_type_edit_form_alter().
  * does essentially the same thing as the add hook
  */
-function cu_breadcrumbs_form_node_type_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+function cu_breadcrumbs_form_node_type_edit_form_alter(&$form, FormStateInterface $form_state) {
   add_cu_breadcrumb_chkbox($form, $form_state);
 }
   
 /**
  * Implements hook_form_node_type_edit_form_submit().
  */
-function cu_breadcrumbs_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+function cu_breadcrumbs_form_submit(&$form, FormStateInterface $form_state) {
   //create an array of attributes to fill the cubreadcrumbmodel
   $attributes = ['uuid'=>$form_state->getFormObject()->getEntity()->get('uuid')
                   ,'apply'=>$form_state->getValue('cu_breadcrumbs_apply')];
@@ -61,7 +62,7 @@ function cu_breadcrumbs_form_submit(&$form, \Drupal\Core\Form\FormStateInterface
 /**
  * Add the new checkbox to the form.
  */
-function add_cu_breadcrumb_chkbox(&$form, \Drupal\Core\Form\FormStateInterface $form_state){
+function add_cu_breadcrumb_chkbox(&$form, FormStateInterface $form_state){
   // Add a checkbox to content type form w/default_value set to db value
   $form['cu_breadcrumbs_apply'] = array(
     '#type' => 'checkbox',
