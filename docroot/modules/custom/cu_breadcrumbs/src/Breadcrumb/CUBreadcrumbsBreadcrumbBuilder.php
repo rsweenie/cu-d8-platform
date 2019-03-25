@@ -2,7 +2,7 @@
 
 namespace Drupal\cu_breadcrumbs\Breadcrumb;
 
-use Drupal\node\NodeInterface;
+
 use Drupal\node\Entity\Node;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
@@ -21,17 +21,14 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    * Checks content type of current node to determine if it gets a breadcrumb.
    */
   public function applies(RouteMatchInterface $attributes) {
-
-    $node = $attributes->getParameter('node');
-    // Get node object, node revisions are not the same as nodes and are not passed as objects.
-    if (gettype($node) === 'string') {
-      $node = Node::load($attributes->getParameter('node'));
-    }
+    //sometimes param node is actually the nid (usually just revisions)
+    $node = $this->getNodeObject($attributes->getParameter('node'));
     // If there's a node, do the code.
     if (!empty($node)) {
       //return the apply value(1 or 0, true or false)
-      return CUBreadcrumbModel::getByUuid($node->type->entity->get('uuid'))->get('apply');
+      return CUBreadcrumbModel::where([['uuid','=',$node->type->entity->get('uuid')],])[0]->apply;
     }
+
   }
 
   /**
@@ -45,56 +42,74 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
     // Get and loop through breadcrumbs menu.
     $menu_name = 'breadcrumbs-menu';
-    $menu_tree = \Drupal::menuTree();
-    $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
-    $tree = $menu_tree->load($menu_name, $parameters);
-    if (count($tree) > 0) {
-      $manipulators = [
-          // Only show links that are accessible for the current user.
-          ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-          // Use the default sorting of menu links.
-          ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-      ];
-      $tree = $menu_tree->transform($tree, $manipulators);
-      $menu_tmp = $menu_tree->build($tree);
+    
+    if ($menu_tmp = $this->createMenu($menu_name)) {
       if ($menu_tmp['#items']) {
         foreach ($menu_tmp['#items'] as $item) {
-          $item_url = $item['url']->toString();
-          if (UrlHelper::isExternal($item_url)) {
-            $breadcrumb->addLink(Link::fromTextAndUrl($item['title'], $item['url']));
-          }
-          else {
-            if ($item['url']->getRouteName() == 'front') {
-              $breadcrumb->addLink(Link::fromTextAndUrl($item['title'], $item['url']->getRouteName()));
-            }
-            else {
-              $breadcrumb->addLink(Link::fromTextAndUrl($item['title'], $item['url']->getInternalPath()));
-            }
-          }
+          //add breadcrumbs-menu link to breadcrumb
+          $breadcrumb->addLink(Link::fromTextAndUrl($item['title'], $this->getUrlLink($item['url'])));
         }
       }
     }
-    // Create breadcrumbs from current node and parents in main nav menu.
-    $node = \Drupal::routeMatch()->getParameter('node');
-
-    if ($node instanceof NodeInterface) {
-      $nid = $node->id();
-    }
+    
+    // Create breadcrumbs from current node and parents in main nav menu
+    // and append to breadcrumb.
+    $node = $this->getNodeObject($route_match->getParameter('node'));
     $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-    $links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $nid]);
+    $links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->id]);
     if ($link = reset($links)) {
       if ($link->getParent()) {
-        $parents = array_reverse($menu_link_manager->getParentIds($link->getParent()));
-        foreach ($parents as $parent) {
+        foreach (array_reverse($menu_link_manager->getParentIds($link->getParent())) as $parent) {
           $parent = $menu_link_manager->createInstance($parent);
-          $parent_title = $parent->getTitle();
-          $parent_url = $parent->getUrlObject();
-          $breadcrumb->addLink(Link::fromTextAndUrl($parent_title, $parent_url));
+          $breadcrumb->addLink(Link::fromTextAndUrl($parent->getTitle(), $parent->getUrlObject()));
         }
       }
     }
     return $breadcrumb;
-    // }.
   }
 
+  //return a menu or false
+  private function createMenu(String $menu_name){
+    $menu_tree = \Drupal::menuTree();
+    $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+    
+    //if tree is not empty, create the menu
+    if($tree = $menu_tree->load($menu_name, $parameters)){
+      $manipulators = [ // Only show links that are accessible for the current user.
+        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+        // Use the default sorting of menu links.
+        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+      ];
+
+      $tree = $menu_tree->transform($tree, $manipulators);
+      return $menu_tree->build($tree);
+    }
+    //return false if tree is empty
+    return false;
+  }
+
+  // decide how to generate the url, return url
+  private function getUrlLink(Url $url){
+    //external return url
+    if (UrlHelper::isExternal($url->toString())) {
+      return $url;
+    }
+    //if front return route name
+    if ($item['url']->getRouteName() == 'front') {
+      return $url->getRouteName();
+    }
+    //else return internal path
+    return $url->getInternalPath();
+  }
+
+  //returns a node object
+  private function getNodeObject($obj){
+    // Get node object, node revisions are not the same as nodes and are not passed as objects.
+    // the above error was causing the original build function to display a warning message.
+    if (gettype($obj) === 'string') {
+      //if node is a string then its the nid not the actual node.
+      return Node::load($obj);
+    }
+    return $obj;
+  }
 }

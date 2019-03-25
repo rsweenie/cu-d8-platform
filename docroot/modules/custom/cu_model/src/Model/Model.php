@@ -3,6 +3,7 @@ namespace Drupal\cu_model\Model;
 /**
  * Model class
  * abstract data model for easy OOP database interactions
+ * needs some more abstraction on the
  * Max McCoy 3.19.19
  */
 abstract class Model {
@@ -17,6 +18,9 @@ abstract class Model {
   //fillable attributes
   public $fillable = [];
 
+  //table alias
+  const TABLE_ALIAS = 't';
+
   //you can send a connection if you want
   public function __construct($connection = null)
   {
@@ -29,7 +33,7 @@ abstract class Model {
 
   //set one attribute in fillable array
   public function setAttribute($key, $value){
-    $this->fillable[$key] = $value;
+    $this->fillable[$key] = $this->{$key} = $value;
   }
 
   //fill fillable array
@@ -94,15 +98,22 @@ abstract class Model {
     $query->execute();
   }
 
-  //get record from table fill and return model
-  static function getByUuid($uuid){
+  //returns an array of model
+  //where([field_name, operator, value])
+  //example where('uuid','=','1234567890abcdefghi')
+  static function where(array $conditions){
     $self = new static;
     //get from table
-    $query = $self->getConnection()->select(Self::getTable(), 't')
-    //using id
-      ->condition('t.'.Self::getPrimaryKey(),$uuid, '=')
-      ->fields('t', array_keys($self->fillable));
+    $query = $self->getConnection()->select(Self::getTable(), Self::TABLE_ALIAS);
+    //add conditions from $conditions array
+    foreach($conditions as $condition)
+      $query ->condition(Self::TABLE_ALIAS .'.' . $condition[0],$condition[2], $condition[1]);
+    //return all the fields
+    $query->fields(Self::TABLE_ALIAS, array_keys($self->fillable));
     //fetch the record, there should only be one
-    return $self->fill((array) $query->execute()->fetch());
+    $results = [];
+    foreach($query->execute()->fetchAll() as $result)
+      array_push($results,$self->fill((array)$result));
+    return $results;
   }
 }
