@@ -34,14 +34,15 @@
 {% macro menu_links(items, attributes, level) %}
 	{% import _self as menus %}
 	{% if items %}
-			{% for item in items %}
-				{% if level == 1 %}
-					{% set child_classes = 'child_class' %} 
-				{% elseif level == 2 %}	
-					{% set child_classes = 'grandchild_class' %} 
-				{% elseif level == 3 %}	
-					{% set child_classes = 'great_grandchild_class' %}
-				{% endif %}
+		{% for item in items %} {# TODO: refactor to change classes programmatically by level, e.g. child_level . $level #}
+			{% if level == 1 %}
+				{% set child_classes = 'child_class' %} 
+			{% elseif level == 2 %}	
+				{% set child_classes = 'grandchild_class' %} 
+			{% elseif level == 3 %}	
+				{% set child_classes = 'great_grandchild_class' %}
+			{% endif %}
+			{% if (item.in_active_trail or level > 0) %}
 				<li{{ item.attributes.addClass(child_classes) }}>
 					<a href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a>
 				</li>
@@ -49,7 +50,8 @@
 					{% set nextLevel = level + 1 %}
 					{{ _self.menu_links(item.below, attributes, nextLevel) }}
 				{% endif %}
-			{% endfor %}
+			{% endif %}
+		{% endfor %}
 	{% endif %}
 {% endmacro %}
 
