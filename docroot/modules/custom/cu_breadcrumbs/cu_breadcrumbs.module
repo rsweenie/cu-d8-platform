@@ -68,7 +68,7 @@ function add_cu_breadcrumb_chkbox(&$form, FormStateInterface $form_state){
     '#type' => 'checkbox',
     '#title' => t("Apply custom breadcrumb"),
     //get the cubreadcrumbmodel by uuid, return the apply property value.
-    '#default_value'=>CUBreadcrumbModel::where([['uuid','=',$form_state->getFormObject()->getEntity()->get('uuid')],])[0]->apply,
+    '#default_value'=>CUBreadcrumbModel::where([['uuid','=',$form_state->getFormObject()->getEntity()->get('uuid')],])[0]->get('apply'),
   );
   //add cu breadcrumbs to form submit
   $form['#submit'][] = 'cu_breadcrumbs_form_submit';

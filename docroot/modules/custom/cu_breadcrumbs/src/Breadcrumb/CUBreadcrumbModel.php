@@ -14,7 +14,7 @@ class CUBreadcrumbModel extends Model{
   //database schema
   protected $schema = ['cu_breadcrumbs'=>
     [
-      'description' => 'Stores values related to customer breadcrums module.',
+      'description' => 'Stores values related to customer breadcrumbs module.',
       'fields' => [
         'uuid' => [
           'type' => 'varchar',

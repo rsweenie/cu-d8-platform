@@ -100,7 +100,7 @@ abstract class Model {
 
   //returns an array of model
   //where([field_name, operator, value])
-  //example where('uuid','=','1234567890abcdefghi')
+  //example where([['uuid','=','1234567890abcdefghi'],['anotherfield','>','another value']...])
   static function where(array $conditions){
     $self = new static;
     //get from table
@@ -110,10 +110,14 @@ abstract class Model {
       $query ->condition(Self::TABLE_ALIAS .'.' . $condition[0],$condition[2], $condition[1]);
     //return all the fields
     $query->fields(Self::TABLE_ALIAS, array_keys($self->fillable));
-    //fetch the record, there should only be one
-    $results = [];
+    //fetch the records and put them in an array
+    $model_array = [];
     foreach($query->execute()->fetchAll() as $result)
-      array_push($results,$self->fill((array)$result));
-    return $results;
+      array_push($model_array,$self->fill((array)$result));
+    //if no results return base state of the model
+    if(empty($model_array))
+      array_push($model_array,$self);
+
+    return $model_array;
   }
 }

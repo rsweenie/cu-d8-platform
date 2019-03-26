@@ -26,7 +26,7 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     // If there's a node, do the code.
     if (!empty($node)) {
       //return the apply value(1 or 0, true or false)
-      return CUBreadcrumbModel::where([['uuid','=',$node->type->entity->get('uuid')],])[0]->apply;
+      return CUBreadcrumbModel::where([['uuid','=',$node->type->entity->get('uuid')],])[0]->get('apply');
     }
 
   }
@@ -47,7 +47,7 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
       if ($menu_tmp['#items']) {
         foreach ($menu_tmp['#items'] as $item) {
           //add breadcrumbs-menu link to breadcrumb
-          $breadcrumb->addLink(Link::fromTextAndUrl($item['title'], $this->getUrlLink($item['url'])));
+          $breadcrumb->addLink(Link::fromTextAndUrl($item['title'], $item['url']));
         }
       }
     }
@@ -76,30 +76,16 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     //if tree is not empty, create the menu
     if($tree = $menu_tree->load($menu_name, $parameters)){
       $manipulators = [ // Only show links that are accessible for the current user.
-        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-        // Use the default sorting of menu links.
-        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-      ];
+                        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+                        // Use the default sorting of menu links.
+                        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+                      ];
 
       $tree = $menu_tree->transform($tree, $manipulators);
       return $menu_tree->build($tree);
     }
     //return false if tree is empty
     return false;
-  }
-
-  // decide how to generate the url, return url
-  private function getUrlLink(Url $url){
-    //external return url
-    if (UrlHelper::isExternal($url->toString())) {
-      return $url;
-    }
-    //if front return route name
-    if ($item['url']->getRouteName() == 'front') {
-      return $url->getRouteName();
-    }
-    //else return internal path
-    return $url->getInternalPath();
   }
 
   //returns a node object
