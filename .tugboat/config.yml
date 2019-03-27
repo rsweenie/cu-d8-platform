@@ -23,10 +23,10 @@ services:
 
         # Install prerequisite packages
         - apt-get update
-        - apt-get install -y mysql-client
+        - apt-get install -y mysql-client libbz2-dev
 
-        # Install opcache and mod-rewrite.
-        - docker-php-ext-install opcache
+        # Install PHP exts and mod-rewrite.
+        - docker-php-ext-install bz2 date dom filter gd hash json mcrypt opcache pcre pdo session simplexml spl tokenizer xml
         - a2enmod headers rewrite
 
         # Install drush-launcher
