@@ -57,7 +57,7 @@ services:
         - composer install --no-ansi
 
         # Have BLT setup the DB and such.
-        - yes | ${TUGBOAT_ROOT}/vendor/bin/blt setup
+        #- yes | ${TUGBOAT_ROOT}/vendor/bin/blt setup
 
         # Copy the files directory from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
@@ -94,13 +94,13 @@ services:
     image: tugboatqa/mysql:5
 
     # A set of commands to run while building this service
-    #commands:
+    commands:
 
       # Commands that import files, databases,  or other assets. When an
       # existing preview is refreshed, the build workflow starts here,
       # skipping the init step, because the results of that step will
       # already be present.
-      #update:
+      update:
 
         # Copy a database dump from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
@@ -108,3 +108,6 @@ services:
         #- scp user@example.com:database.sql.gz /tmp/database.sql.gz
         #- zcat /tmp/database.sql.gz | mysql tugboat
         #- rm /tmp/database.sql.gz
+
+        # Install the initial DB backup as a base.
+        - zcat "${TUGBOAT_ROOT}/.tugboat/initial-db.sql.gz" | mysql tugboat
