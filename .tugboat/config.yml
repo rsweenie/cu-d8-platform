@@ -24,9 +24,12 @@ services:
         # Install prerequisite packages
         - apt-get update
         - apt-get install -y mysql-client libbz2-dev
+        #- yes | pecl install mcrypt-1.0.2
 
         # Install PHP exts and mod-rewrite.
-        - docker-php-ext-install bz2 date dom filter gd hash json mcrypt opcache pcre pdo session simplexml spl tokenizer xml
+        #- docker-php-ext-install bz2 dom filter gd hash json opcache pdo pdo_mysql session simplexml sodium spl tokenizer xml
+        - docker-php-ext-install bz2 gd opcache pdo_mysql
+
         - a2enmod headers rewrite
 
         # Install drush-launcher
