@@ -56,6 +56,9 @@ services:
         # Install/update packages managed by composer, including drush
         - composer install --no-ansi
 
+        # Have BLT setup the DB and such.
+        - yes | ${TUGBOAT_ROOT}/vendor/bin/blt setup
+
         # Copy the files directory from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use rsync over SSH.
