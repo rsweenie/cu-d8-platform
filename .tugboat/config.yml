@@ -93,6 +93,9 @@ services:
     # Use the latest available 5.x version of MySQL
     image: tugboatqa/mysql:5
 
+    # We need access to the git repository to install the intial DB image.
+    checkout: true
+
     # A set of commands to run while building this service
     commands:
 
