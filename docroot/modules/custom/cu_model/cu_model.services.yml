@@ -1,6 +1,0 @@
-# model.services.yml
-services:
- cu_model.model:
-   class: Drupal\cu_model\Model\Model
-   tags:
-    - { name: cu_model, priority: 100 }

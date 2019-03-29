@@ -7,8 +7,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\cu_breadcrumbs\Breadcrumb\CUBreadcrumbModel;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\NodeType;
 
 /**
  * Implements hook_help().
@@ -48,15 +48,15 @@ function cu_breadcrumbs_form_node_type_edit_form_alter(&$form, FormStateInterfac
  * Implements hook_form_node_type_edit_form_submit().
  */
 function cu_breadcrumbs_form_submit(&$form, FormStateInterface $form_state) {
-  //create an array of attributes to fill the cubreadcrumbmodel
+  //create an array of attributes(this is a leftover from the model implementation)
   $attributes = ['uuid'=>$form_state->getFormObject()->getEntity()->get('uuid')
                   ,'apply'=>$form_state->getValue('cu_breadcrumbs_apply')];
-  //instanciate a new cubreadcrumbmodel
-  $cu_breadcrumb = new CUBreadcrumbModel();
-  //fill it up
-  $cu_breadcrumb->fill($attributes);
-  //save it to the db
-  $cu_breadcrumb->save();
+  //get the breadcrumbs editable configs
+  $config = \Drupal::service('config.factory')->getEditable('cu_breadcrumb.config');
+  //set values
+  $config->set($attributes['uuid'],['uuid'=>$attributes['uuid'],'apply'=>$attributes['apply']]);
+  //save them
+  $config->save();
 }
 
 /**
@@ -67,8 +67,11 @@ function add_cu_breadcrumb_chkbox(&$form, FormStateInterface $form_state){
   $form['cu_breadcrumbs_apply'] = array(
     '#type' => 'checkbox',
     '#title' => t("Apply custom breadcrumb"),
-    //get the cubreadcrumbmodel by uuid, return the apply property value.
-    '#default_value'=>CUBreadcrumbModel::where([['uuid','=',$form_state->getFormObject()->getEntity()->get('uuid')],])[0]->get('apply'),
+    //get breadcrumb config apply by content type uuid
+    '#default_value'=> \Drupal::config('cu_breadcrumb.config')
+                                ->get($form_state->getFormObject()
+                                                  ->getEntity()
+                                                  ->get('uuid'))['apply'],
   );
   //add cu breadcrumbs to form submit
   $form['#submit'][] = 'cu_breadcrumbs_form_submit';

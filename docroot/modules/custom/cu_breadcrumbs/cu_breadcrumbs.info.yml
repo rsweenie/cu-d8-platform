@@ -3,7 +3,3 @@ type: module
 description: Creates breadcrumbs with WWW as Home
 package: Creighton
 core: 8.x
-# adding dependencies forces them to be installed with the
-# current mudle if not already enabled.
-dependencies:
-  - cu_model

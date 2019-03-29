@@ -10,7 +10,6 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
 use Drupal\Component\Utility\UrlHelper;
-use Drupal\cu_breadcrumbs\Breadcrumb\CUBreadcrumbModel;
 
 /**
  * Creates breadcrumbs for content pages and news/spotlight content types.
@@ -26,7 +25,8 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     // If there's a node, do the code.
     if (!empty($node)) {
       //return the apply value(1 or 0, true or false)
-      return CUBreadcrumbModel::where([['uuid','=',$node->type->entity->get('uuid')],])[0]->get('apply');
+      return \Drupal::config('cu_breadcrumb.config')
+                      ->get($node->type->entity->get('uuid'))['apply'];
     }
 
   }
