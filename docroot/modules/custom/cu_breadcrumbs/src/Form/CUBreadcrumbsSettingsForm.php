@@ -39,7 +39,7 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
       '#title' => t('Enable/Disable CU Breadcrumbs'),
     ];
 
-    //build the form inputs
+    //build the form inputs for all content types
     foreach (NodeType::loadMultiple() as $machine_name => $content_type) {
       // Add a checkbox to content type form w/default_value set to db value
       $form[$this->getFormId()][$machine_name] = [
@@ -57,15 +57,34 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
    * 
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-            //get the breadcrumbs editable configs
-      $config = $this->configFactory->getEditable(static::SETTINGS);
-      foreach (NodeType::loadMultiple() as $machine_name => $content_type){
-        $returned_value = $form_state->getValue($machine_name);
-        $config->set($machine_name,['uuid'=>$content_type->get('uuid'),'apply'=>$returned_value]);
-      }
-      //save them
-      $config->save();
+    //get the breadcrumbs editable configs
+    $config = $this->configFactory->getEditable(static::SETTINGS);
 
+    //iterate over machine names
+    foreach ($this->getFormChanged($form,$form_state) as $machine_name){
+      //set new value in config obj
+      $config->set($machine_name,['uuid'=>NodeType::load($machine_name)->get('uuid'),'apply'=>$form_state->getValue($machine_name)]);
+    }
+    //save them
+    $config->save();
     parent::submitForm($form, $form_state);
   }
+
+  /**
+   * return machine names who's attrs changed
+   * used to stop unnecessary db calls for settings that didn't change
+   */
+  private function getFormChanged(array &$form, FormStateInterface $form_state){
+    $changed = [];
+    foreach($form[$this->getFormId()] as $machine_name => $attributes){
+      //is a checkbox
+      if(isset($attributes['#type']) && $attributes['#type'] === 'checkbox'){
+        //check if changed
+        if($attributes['#default_value'] !== $form_state->getValue($machine_name))
+          array_push($changed,$machine_name);
+      }
+    }
+    return $changed;
+  }
+
 }
