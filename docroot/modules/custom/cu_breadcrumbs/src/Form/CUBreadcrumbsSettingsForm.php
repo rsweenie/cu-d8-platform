@@ -61,7 +61,7 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
     $config = $this->configFactory->getEditable(static::SETTINGS);
 
     //iterate over machine names
-    foreach ($this->getFormChanged($form,$form_state) as $machine_name){
+    foreach ($this->getCheckboxChanged($form,$form_state) as $machine_name){
       //set new value in config obj
       $config->set($machine_name,['uuid'=>NodeType::load($machine_name)->get('uuid'),'apply'=>$form_state->getValue($machine_name)]);
     }
@@ -71,10 +71,10 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
   }
 
   /**
-   * return machine names who's attrs changed
+   * return machine names who's checkbox changed
    * used to stop unnecessary db calls for settings that didn't change
    */
-  private function getFormChanged(array &$form, FormStateInterface $form_state){
+  private function getCheckboxChanged(array &$form, FormStateInterface $form_state){
     $changed = [];
     foreach($form[$this->getFormId()] as $machine_name => $attributes){
       //is a checkbox
