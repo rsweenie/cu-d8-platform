@@ -9,12 +9,12 @@ use Drupal\node\Entity\NodeType;
   $defaulted_types = ['content_page'
                       ,'news_spotlight'
                       ,'profile'];
-  $config = \Drupal::config('cu_breadcrumb.config');
+  $config = \Drupal::config('cu_breadcrumbs.settings');
 
   foreach (NodeType::loadMultiple() as $machine_name => $content_type) {
     if(in_array($content_type->get('type'),$defaulted_types))
       if(is_null($config->get($content_type->get('uuid'))['apply']))
-        \Drupal::service('config.factory')->getEditable('cu_breadcrumb.config')
+        \Drupal::service('config.factory')->getEditable('cu_breadcrumbs.settings')
                   ->set($content_type->get('uuid'),['uuid'=>$content_type->get('uuid'),'apply'=>1])
                   ->save();
   }

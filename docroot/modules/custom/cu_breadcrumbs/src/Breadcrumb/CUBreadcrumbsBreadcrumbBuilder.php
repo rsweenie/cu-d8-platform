@@ -25,7 +25,7 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     // If there's a node, do the code.
     if (!empty($node)) {
       //return the apply value(1 or 0, true or false)
-      return \Drupal::config('cu_breadcrumb.config')
+      return \Drupal::config('cu_breadcrumbs.settings')
                       ->get($node->type->entity->get('uuid'))['apply'];
     }
 

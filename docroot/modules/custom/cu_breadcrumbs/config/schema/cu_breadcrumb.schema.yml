@@ -1,4 +1,4 @@
-cu_breadcrumb:
+cu_breadcrumbs:
   type: config_entity
   label: 'cu breadcrumbs config'
   mapping:
