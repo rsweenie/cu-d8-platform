@@ -44,9 +44,9 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
       // Add a checkbox to content type form w/default_value set to db value
       $form[$this->getFormId()][$machine_name] = [
         '#type' => 'checkbox',
-        '#title' => t($machine_name),
+        '#title' => t($content_type->get('name')),
         //get breadcrumb config apply by content type uuid
-        '#default_value'=> $config->get($content_type->get('uuid'))['apply'],
+        '#default_value'=> $config->get($machine_name)['apply'],
       ];
     }
     return parent::buildForm($form, $form_state);
@@ -61,7 +61,7 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
       $config = $this->configFactory->getEditable(static::SETTINGS);
       foreach (NodeType::loadMultiple() as $machine_name => $content_type){
         $returned_value = $form_state->getValue($machine_name);
-        $config->set($content_type->get('uuid'),['uuid'=>$content_type->get('uuid'),'apply'=>$returned_value]);
+        $config->set($machine_name,['uuid'=>$content_type->get('uuid'),'apply'=>$returned_value]);
       }
       //save them
       $config->save();
