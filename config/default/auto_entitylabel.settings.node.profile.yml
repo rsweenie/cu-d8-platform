@@ -1,5 +1,5 @@
 status: '1'
-pattern: 'PR-[node:field_profile_name]'
+pattern: '[node:field_profile_name]'
 php: 0
 escape: 0
 dependencies:

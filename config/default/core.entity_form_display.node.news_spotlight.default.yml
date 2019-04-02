@@ -204,7 +204,7 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: 'NE- for News / SP- for Spotlight'
+      placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
