@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Contains cu_breadcrumbs.module.
+ * Max McCoy 3.18.2019
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_help().
+ */
+function cu_breadcrumbs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cu_breadcrumbs module.
+    case 'help.page.cu_breadcrumbs':
+      return '<h3>' . t('About') . '</h3>
+      <p>' . t('Facilitates the application of Home (www.creighton.edu) and custom breadcrumbs to content types.') . '</p>
+      <br><h3>' . t('Use') . '</h3>
+      <p>' . t('During content type creation/edit, selecting "Apply custom breadcrumb" will apply custom breadcrumbs to all content of that type.') 
+      . '</p>
+      <p>' . t('To add more links to the breadcrumb, navigate to Structure->Menus add a menu titled "Breadcrumbs Menu".') 
+      . '</p>
+      <p>' . t('Any links added to this will be appended to the default home breadcrumb in the order specified in the menu.') 
+      . '</p>';
+  }
+}

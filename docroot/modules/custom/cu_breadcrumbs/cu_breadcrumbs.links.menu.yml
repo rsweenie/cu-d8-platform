@@ -1,0 +1,6 @@
+cu_breadcrumbs.settings: 
+  title: 'CU Breadcrumbs'  
+  route_name: 'cu_breadcrumbs.settings'
+  description: 'Enable/Disable CU Breadcrumbs'  
+  parent: system.admin_config_system
+  weight: 99

@@ -94,9 +94,7 @@ filters:
     provider: responsive_table_filter
     status: false
     weight: -37
-    settings:
-      wrapper_element: figure
-      wrapper_classes: responsive-figure-table
+    settings: {  }
   filter_responsive_tables_filter:
     id: filter_responsive_tables_filter
     provider: responsive_tables_filter
