@@ -2,12 +2,13 @@ jQuery(document).ready(function() {
     // mega menu
     jQuery('#mega_menu_toggle').on('click', function(){
       // added megaToggle variable - Abe
-        var megaToggle = jQuery('#mega_menu_toggle')[0];
-        var megaMenu = jQuery('#mega_menu')[0];
-        var headerNav = jQuery('#header_nav')[0];
+        var megaToggle = jQuery('#mega_menu_toggle')[0],
+        megaMenu = jQuery('#mega_menu')[0],
+        headerNav = jQuery('#header_nav')[0],
+        mobileTabletSize = 768,
       // added timeout variable so the resize function wouldn't fire constantly - Abe
-        var timeOut = null;
-        if (megaMenu.style.display == 'none' || megaMenu.style.display == '') {
+        timeOut = null;
+        if (megaMenu.style.display === 'none' || megaMenu.style.display === '') {
           megaMenu.style.display = 'block';
           (headerNav, megaToggle).classList.add('open');
         }
@@ -20,7 +21,7 @@ jQuery(document).ready(function() {
           clearTimeout(timeOut);
           // set resize functionality to fire every 100 milliseconds - Abe
            timeOut = setTimeout(function() {
-             if (jQuery(window).width() >= 768) {
+             if (jQuery(window).width() > mobileTabletSize) {
                megaMenu.style.display = 'none';
                (headerNav, megaToggle).classList.remove('open');
             }
