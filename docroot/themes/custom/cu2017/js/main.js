@@ -16,7 +16,7 @@ jQuery(document).ready(function() {
           megaMenu.style.display = 'none';
           (headerNav, megaToggle).classList.remove('open');
         }
-        // if width of window >= 768, remove menu open class, close menu button - Abe
+        // if width of window > mobileTabletSize, remove menu open class, close menu button - Abe
         jQuery(window).on('resize', function () {
           clearTimeout(timeOut);
           // set resize functionality to fire every 100 milliseconds - Abe
