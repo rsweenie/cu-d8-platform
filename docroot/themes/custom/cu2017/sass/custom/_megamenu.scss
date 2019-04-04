@@ -168,7 +168,7 @@
 	}
 
 	.two_menu_columns {
-		display: flex;
+		display: none;
 		flex-flow: column wrap;
 		justify-content: space-evenly;
 		margin: auto;
@@ -303,6 +303,9 @@
 				}
 			}
 		}
+		@media all and (max-width: 768px) {
+			display:none;
+		}
 	}
 
 	.mega_menu_bottom_wrapper {
@@ -311,6 +314,7 @@
 		max-width: $maxContentWidth;
 		padding-top: 20px;
 		width: 100%;
+		display: none;
 
 		.mega_menu_bottom_wrapper_label {
 			float: left;
@@ -334,7 +338,7 @@
 				display: inline-flex;
 				flex-flow: row wrap;
 				justify-content: space-around;
-				
+
 				max-width: 1300px;
 				padding: 15px;
 				width: 100%;

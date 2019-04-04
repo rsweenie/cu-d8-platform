@@ -1,25 +1,34 @@
 jQuery(document).ready(function() {
     // mega menu
     jQuery('#mega_menu_toggle').on('click', function(){
+      // added megaToggle variable - Abe
+        var megaToggle = jQuery('#mega_menu_toggle')[0];
         var megaMenu = jQuery('#mega_menu')[0];
         var headerNav = jQuery('#header_nav')[0];
         if (megaMenu.style.display == 'none' || megaMenu.style.display == '') {
-            megaMenu.style.display = 'block';
-            headerNav.classList.add('open');
-            this.classList.add('open');
-        } else {
-            megaMenu.style.display = 'none';
-            this.classList.remove('open');
-            headerNav.classList.remove('open');
+          megaMenu.style.display = 'block';
+          (headerNav, megaToggle).classList.add('open');
         }
-    });
-    
+        else {
+          megaMenu.style.display = 'none';
+          (headerNav, megaToggle).classList.remove('open');
+        }
+
+        // if width of window >= 768, remove menu open class, close menu button - Abe
+        jQuery(window).on('resize', function () {
+         if (jQuery(window).width() > 768) {
+           megaMenu.style.display = 'none';
+           (headerNav, megaToggle).classList.remove('open');
+        }
+      });
+  });
+
     // find the size of the header logo and assign classes accordingly
     var logo = jQuery('.cu2017_logo');
     if (logo.width() > 200) {
         logo.addClass('schools_and_colleges_logo');
     }
-    // updates header opacity if there is a header background image or front page slider 
+    // updates header opacity if there is a header background image or front page slider
     // if header image is present, change header opacity to 85% and insert the header image before layout-content
     if (jQuery('#block-headerbackgroundimage')[0] && jQuery(window).width() >= 1251) {
         jQuery('header').addClass('header_opacity');
@@ -28,10 +37,10 @@ jQuery(document).ready(function() {
     if(jQuery(window).width() >= 1251 && jQuery('.main_front')[0]) {
         jQuery('header').addClass('header_opacity');
     }
-    
+
     // collapse schools and colleges and information for menus at <769px
     if (jQuery(window).width() < 769) {
-        // collapse 9 schools and colleges menu and information for menu onload 
+        // collapse 9 schools and colleges menu and information for menu onload
         jQuery('.two_col_menu').addClass('hidden');
         // toggle hidden class to show and hide menus onclick
         jQuery('#schools_and_colleges_menu').on("click", function() {
@@ -61,7 +70,7 @@ jQuery(document).ready(function() {
             }
        });
     }
-    // updates font size if the width of the email address in the contact box 
+    // updates font size if the width of the email address in the contact box
     // exceeds contact box width
     // TODO: modify to loop through multiple email addresses
     // and also to handle multiple contact boxes?
