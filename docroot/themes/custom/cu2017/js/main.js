@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
         var megaToggle = jQuery('#mega_menu_toggle')[0];
         var megaMenu = jQuery('#mega_menu')[0];
         var headerNav = jQuery('#header_nav')[0];
-      // added timeout variable so the resize function wouldn't fire constantly
+      // added timeout variable so the resize function wouldn't fire constantly - Abe
         var timeOut = null;
         if (megaMenu.style.display == 'none' || megaMenu.style.display == '') {
           megaMenu.style.display = 'block';
@@ -18,11 +18,11 @@ jQuery(document).ready(function() {
         // if width of window >= 768, remove menu open class, close menu button - Abe
         jQuery(window).on('resize', function () {
           clearTimeout(timeOut);
+          // set resize functionality to fire every 100 milliseconds - Abe
            timeOut = setTimeout(function() {
              if (jQuery(window).width() >= 768) {
                megaMenu.style.display = 'none';
                (headerNav, megaToggle).classList.remove('open');
-                console.log('test');
             }
           }, 100)
       });
