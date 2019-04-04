@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
         // if width of window > mobileTabletSize, remove menu open class, close menu button - Abe
         jQuery(window).on('resize', function () {
           clearTimeout(timeOut);
-          // set resize functionality to fire every 100 milliseconds - Abe
+          // set resize functionality to fire after 100 milliseconds - Abe
            timeOut = setTimeout(function() {
              if (jQuery(window).width() > mobileTabletSize) {
                megaMenu.style.display = 'none';
