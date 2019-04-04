@@ -147,6 +147,7 @@ header {
 			letter-spacing: 1px;
 			padding: 7px 10px 6px 34px;
 			text-decoration: none;
+			/*hide menu toggle - Abe*/
 			display: none;
 
 			&.open {
@@ -154,6 +155,7 @@ header {
 			}
 
 			@media all and (max-width: 768px) {
+			/*display menu toggle when in mobile view - Abe*/
 				display: block;
 			}
 		}
