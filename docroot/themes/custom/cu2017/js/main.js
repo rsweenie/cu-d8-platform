@@ -1,12 +1,13 @@
 jQuery(document).ready(function() {
+    // added timeout variable so the resize function wouldn't fire constantly - Abe
+    var timeOut = null;
     // mega menu
     jQuery('#mega_menu_toggle').on('click', function(){
       // added megaToggle variable - Abe
         var megaToggle = jQuery('#mega_menu_toggle')[0],
         megaMenu = jQuery('#mega_menu')[0],
-        headerNav = jQuery('#header_nav')[0],
-        mobileTabletSize = 768,
-      // added timeout variable so the resize function wouldn't fire constantly - Abe
+        headerNav = jQuery('#header_nav')[0];
+
         timeOut = null;
         if (megaMenu.style.display === 'none' || megaMenu.style.display === '') {
           megaMenu.style.display = 'block';
@@ -17,6 +18,15 @@ jQuery(document).ready(function() {
           (headerNav, megaToggle).classList.remove('open');
         }
         // if width of window > mobileTabletSize, remove menu open class, close menu button - Abe
+  });
+
+//https://meganm.creighton.acsitefactory.com
+  if(window.location.href.indexOf("local.creighton.com") > -1) {
+    var megaToggle = jQuery('#mega_menu_toggle')[0],
+    megaMenu = jQuery('#mega_menu')[0],
+    headerNav = jQuery('#header_nav')[0],
+    mobileTabletSize = 768;
+        console.log("the local was here");
         jQuery(window).on('resize', function () {
           clearTimeout(timeOut);
           // set resize functionality to fire after 100 milliseconds - Abe
@@ -27,7 +37,7 @@ jQuery(document).ready(function() {
             }
           }, 100)
       });
-  });
+     }
 
     // find the size of the header logo and assign classes accordingly
     var logo = jQuery('.cu2017_logo');
