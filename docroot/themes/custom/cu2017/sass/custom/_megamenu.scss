@@ -168,8 +168,7 @@
 	}
 
 	.two_menu_columns {
-		/*hide majority of mega menu links - Abe*/
-		display: none;
+		display: flex;
 		flex-flow: column wrap;
 		justify-content: space-evenly;
 		margin: auto;
@@ -312,8 +311,6 @@
 		max-width: $maxContentWidth;
 		padding-top: 20px;
 		width: 100%;
-		/*hide bottom links - Abe*/
-		display: none;
 
 		.mega_menu_bottom_wrapper_label {
 			float: left;

@@ -124,6 +124,7 @@ header {
 	.header_top_section_menu_wrapper {
 		order: 3;
 		z-index: 7;
+		/*display:none; */
 
 		@include respond-to(null , tablet-max) {
 			align-self: flex-end;
@@ -147,16 +148,9 @@ header {
 			letter-spacing: 1px;
 			padding: 7px 10px 6px 34px;
 			text-decoration: none;
-			/*hide menu toggle - Abe*/
-			display: none;
 
 			&.open {
 				background: $mediumBlue url(../images/megamenu-icons/menu-hamburger-x.png) no-repeat 8px 50%;
-			}
-
-			@media all and (max-width: 768px) {
-			/*display menu toggle when in mobile view - Abe*/
-				display: block;
 			}
 		}
 	}

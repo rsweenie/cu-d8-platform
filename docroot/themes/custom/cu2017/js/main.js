@@ -1,15 +1,20 @@
 jQuery(document).ready(function() {
+
   // added function to clean up Mega Menu functionality -Abe
   function megaMenuLoader() {
     var timeOut = null,
+      // added megaToggle variable - Abe
       megaToggle = jQuery('#mega_menu_toggle')[0],
       megaMenu = jQuery('#mega_menu')[0],
       headerNav = jQuery('#header_nav')[0],
       mobileTabletSize = 768;
+      // mega menu
 
-    // mega menu
+// .header_top_section_menu : display none in desktop, display block in mobile, header.scss
+// .mega_menu_bottom_wrapper : display none
+// .two_menu_columns : display none
+
     jQuery('#mega_menu_toggle').on('click', function() {
-      // added megaToggle variable - Abe
       if (megaMenu.style.display === 'none' || megaMenu.style.display === '') {
         megaMenu.style.display = 'block';
         (headerNav, megaToggle).classList.add('open');
@@ -18,9 +23,10 @@ jQuery(document).ready(function() {
         (headerNav, megaToggle).classList.remove('open');
       }
     });
-
-    //https://meganm.creighton.acsitefactory.com
-    if (window.location.href.indexOf("local.creighton.com") > -1) {
+    //meganm.creighton.acsitefactory.com or local.creighton.com
+    if ((window.location.href.indexOf('local.creighton.com2') > -1) || (window.location.href.indexOf('meganm.creighton.acsitefactory.com') > -1)) {
+      console.log('The website is here');
+      jQuery('header .header_top_section_menu_wrapper, .two_menu_columns, .mega_menu_bottom_wrapper').addClass('hidden-menu');
       jQuery(window).on('resize', function() {
         clearTimeout(timeOut);
         // set resize functionality to fire after 100 milliseconds - Abe
@@ -33,10 +39,11 @@ jQuery(document).ready(function() {
         }, 100)
       });
     }
+    else {
+        jQuery('header .header_top_section_menu_wrapper').css('display', 'block');
+        jQuery('header .header_top_section_menu_wrapper, .two_menu_columns, .mega_menu_bottom_wrapper').removeClass('hidden-menu');
+    }
   }
-
-
-
 
   // find the size of the header logo and assign classes accordingly
   var logo = jQuery('.cu2017_logo');
