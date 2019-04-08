@@ -58,6 +58,9 @@ html {
 		line-height: 1.25em;
 		padding-bottom: 0.8em;
 	}
+	.large-horiz-image {
+		margin-bottom: 2em;
+	}
 	// TODO: remove as much of the custom breakbpoints as possible
 	.center_column {
 		@media all and (min-width: 992px) {
@@ -75,7 +78,7 @@ html {
 		}
 	}
 
-	.featured_links_wrapper,{
+	.featured_links_wrapper {
 		margin-bottom: 16px;
 	}
 	.copy_box_wrapper,
