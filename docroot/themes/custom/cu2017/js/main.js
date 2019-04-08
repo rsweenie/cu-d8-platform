@@ -25,8 +25,9 @@ jQuery(document).ready(function() {
     });
     //meganm.creighton.acsitefactory.com or local.creighton.com
     if ((window.location.href.indexOf('local.creighton.com') > -1) || (window.location.href.indexOf('meganm.creighton.acsitefactory.com') > -1)) {
-      console.log('The website is here');
-      jQuery('header .header_top_section_menu, .header_top_section_mega_menu').addClass('hidden-menu');
+      jQuery('header .header_top_section_menu, header .header_top_section_mega_menu').addClass('hidden-menu');
+      //jQuery('header .header_top_section_menu, header .header_top_section_mega_menu .two_menu_columns').addClass('hidden-menu');
+      //jQuery('header .header_top_section_menu').css('display','block');
       jQuery(window).on('resize', function() {
         clearTimeout(timeOut);
         // set resize functionality to fire after 100 milliseconds - Abe
@@ -40,8 +41,10 @@ jQuery(document).ready(function() {
       });
     }
     else {
-    //    jQuery('header .header_top_section_menu_wrapper').css('display', 'block');
-        jQuery('header .header_top_section_menu, .header_top_section_mega_menu').removeClass('hidden-menu');
+    //  jQuery('header .header_top_section_mega_menu .two_menu_columns').removeClass('hidden-menu');
+      //  jQuery('header .header_top_section_menu_wrapper').css('display', 'block');
+        jQuery('header .header_top_section_menu, header .header_top_section_mega_menu').removeClass('hidden-menu');
+        jQuery('header .header_top_section_menu').css('display', 'block');
     }
   }
 
