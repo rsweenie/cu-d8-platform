@@ -24,7 +24,7 @@ jQuery(document).ready(function() {
       }
     });
     //meganm.creighton.acsitefactory.com or local.creighton.com
-    if ((window.location.href.indexOf('local.creighton.co2') > -1) || (window.location.href.indexOf('meganm.creighton.acsitefactory.com') > -1)) {
+    if ((window.location.href.indexOf('local.creighton.com') > -1) || (window.location.href.indexOf('meganm.creighton.acsitefactory.com') > -1)) {
       console.log('The website is here');
       jQuery('header .header_top_section_menu, .header_top_section_mega_menu').addClass('hidden-menu');
       jQuery(window).on('resize', function() {
