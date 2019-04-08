@@ -124,13 +124,14 @@ header {
 	.header_top_section_menu_wrapper {
 		order: 3;
 		z-index: 7;
+		/*display:none; */
 
 		@include respond-to(null , tablet-max) {
 			align-self: flex-end;
 			position: relative;
 			top: 65px;
 		}
-	
+
 		@media all and (max-width: 319px) {
 			align-self: flex-end;
 			position: relative;
@@ -291,7 +292,7 @@ ul#megamenu_icon_menu{
 	margin: 0 4px;
 	order: 3;
 	padding-left: 4px;
-	
+
 	@include respond-to(null , tablet-max) {
 		order: 1;
 	}
@@ -301,7 +302,7 @@ ul#megamenu_icon_menu{
 	.menu--transaction-menu{
 		@include respond-to(null , mobile-max){
 			display: flex;
-		
+
 			li:not(:last-child){
 				border-right:4px solid white;
 			}
