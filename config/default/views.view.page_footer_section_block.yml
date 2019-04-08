@@ -147,7 +147,20 @@ display:
       title: 'Footer Section of Site'
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<section id=\"block-footercontactblock\" class=\"contextual-region block block-cu-footer-contact block-footercontactblock clearfix\" data-block-plugin-id=\"footercontactblock\">\r\n  \r\n    <div data-contextual-id=\"block:block=footercontactblock:langcode=en\" data-contextual-token=\"eAuhTwiEJ6U6H_59bNxvdNs1nVUpUbQK6yis1WFTdNc\" class=\"contextual\" role=\"form\"><button class=\"trigger focusable visually-hidden\" type=\"button\" aria-pressed=\"false\">Open  configuration options</button><ul class=\"contextual-links links\" hidden=\"\"><li class=\"block-configure\"><a href=\"/admin/structure/block/manage/footercontactblock?destination=/node/221\">Configure block</a></li></ul></div>\r\n\r\n      <p>2500 California Plaza | Omaha, NE 68178</p><p>402.280.2700 | <a href=\"https://www.creighton.edu\">creighton.edu</a> | <a href=\"https://www.creighton.edu/ask\">Ask a Question</a></p><h5>© 2018 Creighton University</h5>\r\n  </section>"
+            format: full_html
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }

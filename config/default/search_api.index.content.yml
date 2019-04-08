@@ -38,7 +38,6 @@ field_settings:
         anonymous: anonymous
       view_mode:
         'entity:node':
-          basic_content_type: default
           content_page: default
           copy_box: default
           documentation: default
