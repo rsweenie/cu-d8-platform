@@ -1,0 +1,33 @@
+uuid: c607d4c5-11f0-40af-bf02-40b41062a072
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - private_content
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  private_content:
+    private: 1
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Basic content type'
+type: basic_content_type
+description: 'Non specific content type with Site Section taxonomy.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

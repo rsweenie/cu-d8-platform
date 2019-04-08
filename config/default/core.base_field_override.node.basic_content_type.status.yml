@@ -1,0 +1,22 @@
+uuid: f565f24b-a70f-45f7-997c-2939f97403c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.basic_content_type
+id: node.basic_content_type.status
+field_name: status
+entity_type: node
+bundle: basic_content_type
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
