@@ -6,7 +6,7 @@ global-styling:
       /libraries/slick-carousel/slick/slick.css: {}
       /libraries/slick-carousel/slick/slick-theme.css: {}
       css/style.css: {}
-      
+
 
 bootstrap-scripts:
   js:
@@ -25,11 +25,12 @@ bootstrap-scripts:
     /libraries/slick-carousel/slick/slick.min.js: {}
 
 custom-javascript:
-  js: 
+  js:
     js/main.js: {}
     js/tabbedaccordion.js: {}
     js/handlebars.js: {}
     js/typeahead.bundle.js: {}
     js/typeahead.fb.js: {}
+    js/hide-menu.js: {}
   dependencies:
     - core/jquery

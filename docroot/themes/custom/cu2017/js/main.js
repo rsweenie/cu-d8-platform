@@ -1,19 +1,10 @@
 jQuery(document).ready(function() {
-
   // added function to clean up Mega Menu functionality -Abe
-  function megaMenuLoader() {
-    var timeOut = null,
-      // added megaToggle variable - Abe
-      megaToggle = jQuery('#mega_menu_toggle')[0],
+  function menuLoader() {
+    var megaToggle = jQuery('#mega_menu_toggle')[0],
       megaMenu = jQuery('#mega_menu')[0],
-      headerNav = jQuery('#header_nav')[0],
-      mobileTabletSize = 768;
+      headerNav = jQuery('#header_nav')[0];
       // mega menu
-
-// .header_top_section_menu : display none in desktop, display block in mobile, header.scss
-// .mega_menu_bottom_wrapper : display none
-// .two_menu_columns : display none
-
     jQuery('#mega_menu_toggle').on('click', function() {
       if (megaMenu.style.display === 'none' || megaMenu.style.display === '') {
         megaMenu.style.display = 'block';
@@ -23,29 +14,6 @@ jQuery(document).ready(function() {
         (headerNav, megaToggle).classList.remove('open');
       }
     });
-    //meganm.creighton.acsitefactory.com or local.creighton.com
-    if ((window.location.href.indexOf('local.creighton.com') > -1) || (window.location.href.indexOf('meganm.creighton.acsitefactory.com') > -1)) {
-      jQuery('header .header_top_section_menu, header .header_top_section_mega_menu').addClass('hidden-menu');
-      //jQuery('header .header_top_section_menu, header .header_top_section_mega_menu .two_menu_columns').addClass('hidden-menu');
-      //jQuery('header .header_top_section_menu').css('display','block');
-      jQuery(window).on('resize', function() {
-        clearTimeout(timeOut);
-        // set resize functionality to fire after 100 milliseconds - Abe
-        timeOut = setTimeout(function() {
-          // if width of window > mobileTabletSize, remove menu open class, close menu button - Abe
-          if (jQuery(window).width() > mobileTabletSize) {
-            megaMenu.style.display = 'none';
-            (headerNav, megaToggle).classList.remove('open');
-          }
-        }, 100)
-      });
-    }
-    else {
-    //  jQuery('header .header_top_section_mega_menu .two_menu_columns').removeClass('hidden-menu');
-      //  jQuery('header .header_top_section_menu_wrapper').css('display', 'block');
-        jQuery('header .header_top_section_menu, header .header_top_section_mega_menu').removeClass('hidden-menu');
-        jQuery('header .header_top_section_menu').css('display', 'block');
-    }
   }
 
   // find the size of the header logo and assign classes accordingly
@@ -128,5 +96,5 @@ jQuery(document).ready(function() {
   newWindow('ul.header_nav li a');
   newWindow('ul#schools_and_colleges_menu_body  li a');
   newWindow('ul#information_for_menu_body li a');
-  megaMenuLoader();
+  menuLoader();
 });
