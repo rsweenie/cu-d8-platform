@@ -1,9 +1,0 @@
-uuid: 66dfec9b-aee6-474c-9685-5cccf36edb73
-langcode: en
-status: true
-dependencies: {  }
-name: 'Site Section'
-vid: site_section_vocabulary
-description: 'Driver for views that will contain site sections such as footer.'
-hierarchy: 0
-weight: 0

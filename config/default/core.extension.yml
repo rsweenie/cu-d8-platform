@@ -1,7 +1,5 @@
 module:
-  acsf: 0
   acsf_duplication: 0
-  acsf_sso: 0
   acsf_theme: 0
   acsf_variables: 0
   address: 0
@@ -36,6 +34,7 @@ module:
   ctools_block: 0
   cu_breadcrumbs: 0
   cu_footer_badge: 0
+  cu_footer_contact: 0
   datetime: 0
   dblog: 0
   diff: 0

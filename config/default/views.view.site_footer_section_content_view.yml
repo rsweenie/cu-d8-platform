@@ -1,17 +1,16 @@
-uuid: 3490dcc7-8f2d-4a64-9248-73af0625b318
+uuid: 01ceb289-1aff-4496-8056-1ddfc7d866cc
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.site_section_vocabulary
+    - taxonomy.vocabulary.site_footer_section_vocabulary
   module:
     - taxonomy
-    - text
     - user
-id: page_footer_section_block
-label: 'Footer Section of Site'
+id: site_footer_section_content_view
+label: 'Site Footer Section Content'
 module: views
-description: 'Per site create this address to put in footer section'
+description: 'Vocabulary content fields intended to appear in the footer'
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid
@@ -58,57 +57,43 @@ display:
       row:
         type: fields
       fields:
-        description__value:
-          id: description__value
+        name:
+          id: name
           table: taxonomy_term_field_data
-          field: description__value
+          field: name
+          entity_type: taxonomy_term
+          entity_field: name
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          type: string
+          settings:
+            link_to_entity: true
+          plugin_id: term_name
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
           exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
           element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
-          empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
-          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -119,9 +104,7 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: taxonomy_term
-          entity_field: description
-          plugin_id: field
+          convert_spaces: false
       filters:
         status:
           value: '1'
@@ -139,12 +122,12 @@ display:
           table: taxonomy_term_field_data
           field: vid
           value:
-            site_section_vocabulary: site_section_vocabulary
+            site_footer_section_vocabulary: site_footer_section_vocabulary
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
       sorts: {  }
-      title: 'Footer Section of Site'
+      title: 'Site Footer Section Content'
       header: {  }
       footer: {  }
       empty:
@@ -171,14 +154,14 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags: {  }
-  page_footer_block:
+  block_site_footer_section:
     display_plugin: block
-    id: page_footer_block
-    display_title: page_footer_section_block
+    id: block_site_footer_section
+    display_title: 'Site Footer Section Content'
     position: 1
     display_options:
       display_extenders: {  }
-      display_description: ''
+      display_description: 'Content that appears in the footer of each site.'
     cache_metadata:
       max-age: -1
       contexts:
