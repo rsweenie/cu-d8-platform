@@ -5,8 +5,10 @@ ignored_config_entities:
   6: samlauth.authentication
   8: block.block.socialmedialinks
   10: webform.webform.contact
-  12: cu2017.settings
+  12: block.block.sitebranding
   14: block.block.sitename
-  16: block.block.profile
+  16: cu2017.settings
+  18: views.view.cu_news
+  20: views.view.profile
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
