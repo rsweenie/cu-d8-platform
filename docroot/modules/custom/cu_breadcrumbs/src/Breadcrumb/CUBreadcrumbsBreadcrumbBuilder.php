@@ -15,7 +15,10 @@ use Drupal\Component\Utility\UrlHelper;
  * Creates breadcrumbs for content pages and news/spotlight content types.
  */
 class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
-
+  /** @var string Config settings */
+  const SETTINGS = 'cu_breadcrumbs.settings';
+  /** @var string Menu Name */
+  const MENU_NAME = 'breadcrumbs-menu';
   /**
    * Checks content type of current node to determine if it gets a breadcrumb.
    */
@@ -25,7 +28,7 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     // If there's a node, do the code.
     if (!empty($node)) {
       //return the apply value(1 or 0, true or false)
-      return \Drupal::config('cu_breadcrumbs.settings')
+      return \Drupal::config(static::SETTINGS)
                       ->get($node->type->entity->get('type'))['apply'];
     }
 
@@ -35,15 +38,10 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    * Builds the breadcrumb.
    */
   public function build(RouteMatchInterface $route_match) {
+    // new breadcrumb
     $breadcrumb = new Breadcrumb();
-    // Create first breadcrumb to www.creighton.edu.
-    $url = Url::fromUri('https://www.creighton.edu');
-    $breadcrumb->addLink(Link::fromTextAndUrl('Home', $url));
-
     // Get and loop through breadcrumbs menu.
-    $menu_name = 'breadcrumbs-menu';
-    
-    if ($menu_tmp = $this->createMenu($menu_name)) {
+    if ($menu_tmp = $this->createMenu()) {
       if ($menu_tmp['#items']) {
         foreach ($menu_tmp['#items'] as $item) {
           //add breadcrumbs-menu link to breadcrumb
@@ -69,7 +67,8 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
   }
 
   //return a menu or false
-  private function createMenu(String $menu_name){
+  private function createMenu(){
+    $menu_name = static::MENU_NAME;
     $menu_tree = \Drupal::menuTree();
     $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
     
