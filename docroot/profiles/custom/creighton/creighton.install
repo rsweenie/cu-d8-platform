@@ -29,7 +29,6 @@ function creighton_install() {
   \Drupal::service('module_installer')->install([
     'block_content',
     'cu_footer_badge',
-    'cu_footer_contact'
   ]);
 
   // Set the path to the logo, favicon and README file based on install
