@@ -1,0 +1,21 @@
+uuid: 50f9b193-1271-4af4-b5bb-5004222f521d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_site_section_content
+    - taxonomy.vocabulary.site_footer_section_vocabulary
+  module:
+    - text
+id: taxonomy_term.site_footer_section_vocabulary.field_site_section_content
+field_name: field_site_section_content
+entity_type: taxonomy_term
+bundle: site_footer_section_vocabulary
+label: 'Site Section Content'
+description: 'Additional content can be entered to display in the appropriate site section. Ex. Content entered here will appear in the footer section of the site.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
