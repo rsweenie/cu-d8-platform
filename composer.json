@@ -97,10 +97,7 @@
         "onelogin/php-saml": "dev-remove_mcrypt as 2.11.0"
     },
     "require-dev": {
-        "drupal/devel": "^1.2",
-        "drupal/devel_generate": "^1.2",
-        "drupal/kint": "^1.2",
-        "drupal/webform_devel": "^5.0@RC",
+        "drupal/devel": "^2.0",
         "geerlingguy/drupal-vm": "^4.8"
     },
     "config": {
