@@ -38,7 +38,7 @@ function creighton_ckeditorbtn_replace_theme() {
  * Implements hook_element_info_alter().
  */
 function creighton_ckeditorbtn_replace_element_info_alter(&$info) {
-  if(isset($info['toolbar'])) {
+  if (isset($info['toolbar'])) {
     $info['toolbar']['#attached']['library'][] = 'creighton_ckeditorbtn_replace/change';
   }
 }

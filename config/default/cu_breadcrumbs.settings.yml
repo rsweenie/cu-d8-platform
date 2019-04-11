@@ -1,0 +1,8 @@
+content_page:
+  apply: 1
+news_spotlight:
+  apply: 1
+profile:
+  apply: 1
+_core:
+  default_config_hash: jjuTG0BglbMm-IfQWdkdqJQubVJWg3Pbnb7kB1_aV7A

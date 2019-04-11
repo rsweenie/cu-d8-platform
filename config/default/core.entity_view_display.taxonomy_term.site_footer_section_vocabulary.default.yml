@@ -1,0 +1,29 @@
+uuid: ff5ec3f0-5d62-41d5-8bed-231d2cc64f47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.site_footer_section_vocabulary.field_site_section_content
+    - taxonomy.vocabulary.site_footer_section_vocabulary
+  module:
+    - text
+id: taxonomy_term.site_footer_section_vocabulary.default
+targetEntityType: taxonomy_term
+bundle: site_footer_section_vocabulary
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_site_section_content:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }
