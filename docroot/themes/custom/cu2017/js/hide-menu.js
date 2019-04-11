@@ -22,8 +22,8 @@
         }, 100);
       });
     } else {
-      ($headerMenu).removeClass('hidden-menu').css('display', 'block');
-      ($megaMenu).removeClass('hidden-menu');
+      $headerMenu.removeClass('hidden-menu').css('display', 'block');
+      $megaMenu.removeClass('hidden-menu');
     }
   });
 })(jQuery);
