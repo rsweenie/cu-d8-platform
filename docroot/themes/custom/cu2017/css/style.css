@@ -9591,6 +9591,11 @@ p:last-child,
 }
 
 /* line 72, ../sass/_overrides.scss */
+.hidden-menu {
+  display: none;
+}
+
+/* line 76, ../sass/_overrides.scss */
 header .header_top_section_menu,
 header .header_top_section_menu.hidden-menu,
 header .header_top_section_mega_menu.hidden-menu .two_menu_columns,
@@ -9600,7 +9605,7 @@ header .header_top_section_mega_menu.hidden-menu .mega_menu_bottom_wrapper {
 }
 
 @media all and (max-width: 768px) {
-  /* line 80, ../sass/_overrides.scss */
+  /* line 84, ../sass/_overrides.scss */
   header .header_top_section_menu.hidden-menu {
     display: block;
   }
