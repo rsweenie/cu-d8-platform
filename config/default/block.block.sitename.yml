@@ -1,0 +1,23 @@
+uuid: fcf3fa79-6706-4ddc-8ddf-796766b13da0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cu2017
+id: sitename
+theme: cu2017
+region: sitename
+weight: -10
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site Name'
+  provider: system
+  label_display: '0'
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }
