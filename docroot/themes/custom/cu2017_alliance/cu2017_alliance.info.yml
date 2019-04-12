@@ -29,6 +29,3 @@ regions:
 libraries:
   - 'cu2017_alliance/custom-javascript'
   - 'cu2017_alliance/global-styling'
-
-
-

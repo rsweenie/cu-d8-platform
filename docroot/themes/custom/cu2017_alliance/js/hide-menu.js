@@ -6,7 +6,7 @@
       $headerNav = $('#header_nav'),
       $headerMenu = $('header .header_top_section_menu'),
       mobileTabletSize = 768;
-   
+
       $headerMenu.addClass('hidden-menu');
       $megaMenu.addClass('hidden-menu');
       $(window).on('resize', function() {
@@ -20,6 +20,6 @@
           }
         }, 100);
       });
-    
+
   });
 })(jQuery);

@@ -1,17 +1,17 @@
 .hidden-menu {
-    display: none;
-  }
-  
-  header .header_top_section_menu,
-  header .header_top_section_menu.hidden-menu,
-  header .header_top_section_mega_menu.hidden-menu .two_menu_columns,
-  header .header_top_section_mega_menu.hidden-menu .menu_icons,
-  header .header_top_section_mega_menu.hidden-menu .mega_menu_bottom_wrapper{
-    display: none;
-  }
-  
+  display: none;
+}
+
+header .header_top_section_menu,
+header .header_top_section_menu.hidden-menu,
+header .header_top_section_mega_menu.hidden-menu .two_menu_columns,
+header .header_top_section_mega_menu.hidden-menu .menu_icons,
+header .header_top_section_mega_menu.hidden-menu .mega_menu_bottom_wrapper {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
   header .header_top_section_menu.hidden-menu {
-    @media all and (max-width: 768px) {
-      display:block;
-    }
+    display: block;
   }
+}
