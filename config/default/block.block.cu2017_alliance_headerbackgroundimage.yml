@@ -1,0 +1,31 @@
+uuid: d4e2b450-9410-4fff-a100-1152208fdd1d
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools_block
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: '-MQmSeI4xBDx3Lipxd4BkxJgN-BEeHpPDQmqbTFwOVE'
+id: cu2017_alliance_headerbackgroundimage
+theme: cu2017_alliance
+region: header_background_image
+weight: 0
+provider: null
+plugin: 'entity_field:node:field_header_background_image'
+settings:
+  id: 'entity_field:node:field_header_background_image'
+  label: 'Header Background Image'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_entity_view
+    settings:
+      view_mode: header_background_image
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }

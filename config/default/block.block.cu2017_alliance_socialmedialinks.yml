@@ -1,15 +1,15 @@
-uuid: 250cc349-335b-42ee-a0a0-0cfd5d7e9e9d
+uuid: e44757e1-9e2a-45e2-889f-6374557770ee
 langcode: en
 status: true
 dependencies:
   module:
     - social_media_links
   theme:
-    - cu2017
-id: socialmedialinks
-theme: cu2017
+    - cu2017_alliance
+id: cu2017_alliance_socialmedialinks
+theme: cu2017_alliance
 region: footer
-weight: 0
+weight: -10
 provider: null
 plugin: social_media_links_block
 settings:

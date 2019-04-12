@@ -1,0 +1,22 @@
+uuid: 4f526707-5d46-4cf9-bbd2-5be3fe49356e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: CCIpy-4T7S_2Lionve-TiFU2LmQ_cdV6YmnL4bCIt4I
+id: cu2017_alliance_local_tasks
+theme: cu2017_alliance
+region: content
+weight: -9
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,13 +1,13 @@
-uuid: 52bf31d9-aee3-4ff7-8235-55ff653dc343
+uuid: 8c171188-7b2c-4bd5-ac72-479993776206
 langcode: en
 status: true
 dependencies:
   module:
     - ctools_block
   theme:
-    - cu2017
-id: largehorizimage
-theme: cu2017
+    - cu2017_alliance
+id: cu2017_alliance_largehorizimage
+theme: cu2017_alliance
 region: large_horiz_image
 weight: 0
 provider: null

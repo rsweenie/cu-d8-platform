@@ -1,13 +1,13 @@
-uuid: fcf3fa79-6706-4ddc-8ddf-796766b13da0
+uuid: cd4fb384-6dea-4760-be60-626b10ca07bb
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
   theme:
-    - cu2017
-id: sitename
-theme: cu2017
+    - cu2017_alliance
+id: cu2017_alliance_sitename
+theme: cu2017_alliance
 region: sitename
 weight: -10
 provider: null
