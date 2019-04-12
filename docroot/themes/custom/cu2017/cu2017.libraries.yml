@@ -31,6 +31,5 @@ custom-javascript:
     js/handlebars.js: {}
     js/typeahead.bundle.js: {}
     js/typeahead.fb.js: {}
-    js/hide-menu.js: {}
   dependencies:
     - core/jquery
