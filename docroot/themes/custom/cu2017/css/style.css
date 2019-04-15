@@ -9578,16 +9578,26 @@ p:last-child,
   overflow: hidden;
 }
 
-/* line 62, ../sass/_overrides.scss */
+/* line 61, ../sass/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #777777;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 67, ../sass/_overrides.scss */
+/* line 66, ../sass/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
+}
+
+/* line 71, ../sass/_overrides.scss */
+.profile-feed-wrapper .profile_link span.invisible {
+  position: absolute;
+}
+
+/* line 75, ../sass/_overrides.scss */
+.profile-feed-wrapper .profile_office_location {
+  padding-bottom: 10px;
 }
 
 /* line 3, ../sass/custom/_base.scss */

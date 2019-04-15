@@ -58,7 +58,6 @@ p:last-child,
   }
 }
 
-
 .help-block, .control-group .help-inline {
   color: $gray-light;
   font-size: 12px;
@@ -69,4 +68,10 @@ p:last-child,
   }
 }
 
+.profile-feed-wrapper .profile_link span.invisible {
+    position: absolute;
+}
 
+.profile-feed-wrapper .profile_office_location {
+    padding-bottom: 10px;
+}
