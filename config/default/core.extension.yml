@@ -75,6 +75,8 @@ module:
   imagemagick: 0
   inline_entity_form: 0
   jsonapi: 0
+  jsonapi_defaults: 0
+  jsonapi_extras: 0
   layout_discovery: 0
   libraries: 0
   lightning_api: 0

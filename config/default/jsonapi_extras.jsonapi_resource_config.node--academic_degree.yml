@@ -1,0 +1,255 @@
+uuid: 7252ba42-518a-4279-bf96-30016036f96c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.academic_degree
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - academic_program
+      - academic_unit
+      - academic_interests
+      - image.image
+      - related_academic_programs
+id: node--academic_degree
+disabled: false
+path: academic_degree
+resourceType: academic_degree
+resourceFields:
+  nid:
+    disabled: true
+    fieldName: nid
+    publicName: nid
+    enhancer:
+      id: ''
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  vid:
+    disabled: true
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: true
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  revision_timestamp:
+    disabled: true
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+  revision_uid:
+    disabled: true
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: true
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    disabled: true
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  title:
+    disabled: true
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+  uid:
+    disabled: true
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  created:
+    disabled: true
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  changed:
+    disabled: true
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  promote:
+    disabled: true
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+  sticky:
+    disabled: true
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  moderation_state:
+    disabled: true
+    fieldName: moderation_state
+    publicName: moderation_state
+    enhancer:
+      id: ''
+  scheduled_transition_date:
+    disabled: true
+    fieldName: scheduled_transition_date
+    publicName: scheduled_transition_date
+    enhancer:
+      id: ''
+  scheduled_transition_state:
+    disabled: true
+    fieldName: scheduled_transition_state
+    publicName: scheduled_transition_state
+    enhancer:
+      id: ''
+  metatag:
+    disabled: true
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  metatag_normalized:
+    fieldName: metatag_normalized
+    publicName: metatag
+    enhancer:
+      id: ''
+    disabled: false
+  path:
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+    disabled: false
+  private:
+    disabled: true
+    fieldName: private
+    publicName: private
+    enhancer:
+      id: ''
+  publish_on:
+    disabled: true
+    fieldName: publish_on
+    publicName: publish_on
+    enhancer:
+      id: ''
+  unpublish_on:
+    disabled: true
+    fieldName: unpublish_on
+    publicName: unpublish_on
+    enhancer:
+      id: ''
+  menu_link:
+    disabled: true
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+  body:
+    fieldName: body
+    publicName: description
+    enhancer:
+      id: ''
+    disabled: false
+  field_aca_program:
+    fieldName: field_aca_program
+    publicName: academic_program
+    enhancer:
+      id: ''
+    disabled: false
+  field_aca_unit:
+    fieldName: field_aca_unit
+    publicName: academic_unit
+    enhancer:
+      id: ''
+    disabled: false
+  field_degree_aca_interests:
+    fieldName: field_degree_aca_interests
+    publicName: academic_interests
+    enhancer:
+      id: ''
+    disabled: false
+  field_degree_availability:
+    fieldName: field_degree_availability
+    publicName: availability
+    enhancer:
+      id: ''
+    disabled: false
+  field_degree_image:
+    fieldName: field_degree_image
+    publicName: image
+    enhancer:
+      id: ''
+    disabled: false
+  field_degree_other_programs:
+    fieldName: field_degree_other_programs
+    publicName: other_academic_programs
+    enhancer:
+      id: ''
+    disabled: false
+  field_degree_related_programs:
+    fieldName: field_degree_related_programs
+    publicName: related_academic_programs
+    enhancer:
+      id: ''
+    disabled: false
+  field_disp_title:
+    fieldName: field_disp_title
+    publicName: title
+    enhancer:
+      id: ''
+    disabled: false
+  field_disp_title_short:
+    fieldName: field_disp_title_short
+    publicName: title_short
+    enhancer:
+      id: ''
+    disabled: false
+  field_meta_tags:
+    disabled: true
+    fieldName: field_meta_tags
+    publicName: field_meta_tags
+    enhancer:
+      id: ''

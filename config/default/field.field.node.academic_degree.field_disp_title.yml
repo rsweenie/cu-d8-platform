@@ -1,0 +1,19 @@
+uuid: ed9626fb-8499-4904-8599-6c650dfe1c84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_disp_title
+    - node.type.academic_degree
+id: node.academic_degree.field_disp_title
+field_name: field_disp_title
+entity_type: node
+bundle: academic_degree
+label: 'Display title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

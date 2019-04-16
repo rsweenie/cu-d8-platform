@@ -1,0 +1,23 @@
+uuid: 4d69aca0-9513-4a69-8d88-53ad33dfe61d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - link
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_degree_other_programs
+field_name: field_degree_other_programs
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

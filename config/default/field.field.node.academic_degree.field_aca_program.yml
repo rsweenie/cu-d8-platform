@@ -1,0 +1,28 @@
+uuid: 68783ebb-b186-4bae-976b-58e8345877f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aca_program
+    - node.type.academic_degree
+    - node.type.academic_program
+id: node.academic_degree.field_aca_program
+field_name: field_aca_program
+entity_type: node
+bundle: academic_degree
+label: 'Academic program'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      academic_program: academic_program
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

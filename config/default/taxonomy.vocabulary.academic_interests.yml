@@ -1,0 +1,9 @@
+uuid: 5e1d77be-3aa1-401f-921b-994fc3263661
+langcode: en
+status: true
+dependencies: {  }
+name: 'Academic Interests'
+vid: academic_interests
+description: ''
+hierarchy: 0
+weight: 0

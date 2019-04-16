@@ -1,0 +1,29 @@
+uuid: b4f75981-22e4-4fdb-8b42-ab382b714ecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aca_unit
+    - node.type.academic_degree
+    - node.type.academic_unit
+id: node.academic_degree.field_aca_unit
+field_name: field_aca_unit
+entity_type: node
+bundle: academic_degree
+label: 'Academic unit'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      academic_unit: academic_unit
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

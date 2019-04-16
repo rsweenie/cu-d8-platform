@@ -1,0 +1,45 @@
+uuid: ea1d7125-9726-4151-b276-aa901226ffa7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.academic_program.field_disp_title
+    - field.field.node.academic_program.field_meta_tags
+    - node.type.academic_program
+  module:
+    - metatag
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.academic_program.default
+targetEntityType: node
+bundle: academic_program
+mode: default
+content:
+  field_disp_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_meta_tags:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  private: true

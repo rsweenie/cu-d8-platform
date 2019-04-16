@@ -1,0 +1,29 @@
+uuid: fd250f06-8700-467a-b9c3-332df6ff739b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_related_programs
+    - node.type.academic_degree
+    - node.type.academic_program
+id: node.academic_degree.field_degree_related_programs
+field_name: field_degree_related_programs
+entity_type: node
+bundle: academic_degree
+label: 'Related programs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      academic_program: academic_program
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: aeedf69d-7473-4d44-a941-6a902260d531
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.academic_degree
+id: node.academic_degree.promote
+field_name: promote
+entity_type: node
+bundle: academic_degree
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

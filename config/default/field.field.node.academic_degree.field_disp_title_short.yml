@@ -1,0 +1,19 @@
+uuid: 8cb01d37-a7fd-4dac-99c6-7653870a7ad7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_disp_title_short
+    - node.type.academic_degree
+id: node.academic_degree.field_disp_title_short
+field_name: field_disp_title_short
+entity_type: node
+bundle: academic_degree
+label: 'Display title (short)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

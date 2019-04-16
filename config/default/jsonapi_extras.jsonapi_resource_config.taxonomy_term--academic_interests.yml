@@ -1,0 +1,95 @@
+uuid: bc9e1acf-bd77-40f1-8d24-0bab29b2798a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.academic_interests
+id: taxonomy_term--academic_interests
+disabled: false
+path: academic_interests
+resourceType: academic_interests
+resourceFields:
+  tid:
+    disabled: true
+    fieldName: tid
+    publicName: tid
+    enhancer:
+      id: ''
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  vid:
+    disabled: true
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+  status:
+    disabled: true
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  name:
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+    disabled: false
+  description:
+    fieldName: description
+    publicName: description
+    enhancer:
+      id: ''
+    disabled: false
+  weight:
+    disabled: true
+    fieldName: weight
+    publicName: weight
+    enhancer:
+      id: ''
+  parent:
+    disabled: true
+    fieldName: parent
+    publicName: parent
+    enhancer:
+      id: ''
+  changed:
+    disabled: true
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  metatag:
+    disabled: true
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  metatag_normalized:
+    fieldName: metatag_normalized
+    publicName: metatag
+    enhancer:
+      id: ''
+    disabled: false
+  path:
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+    disabled: false

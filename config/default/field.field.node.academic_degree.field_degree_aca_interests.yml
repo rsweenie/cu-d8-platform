@@ -1,0 +1,29 @@
+uuid: 3db70ca5-622c-43dc-baeb-5eec371781d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_aca_interests
+    - node.type.academic_degree
+    - taxonomy.vocabulary.academic_interests
+id: node.academic_degree.field_degree_aca_interests
+field_name: field_degree_aca_interests
+entity_type: node
+bundle: academic_degree
+label: 'Academic interests'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      academic_interests: academic_interests
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

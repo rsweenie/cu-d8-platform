@@ -1,0 +1,48 @@
+uuid: d850a905-3693-4601-8425-152b9b4cfeb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.academic_degree.body
+    - field.field.node.academic_degree.field_aca_program
+    - field.field.node.academic_degree.field_disp_title
+    - field.field.node.academic_degree.field_disp_title_short
+    - field.field.node.academic_degree.field_meta_tags
+    - node.type.academic_degree
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.academic_degree.teaser
+targetEntityType: node
+bundle: academic_degree
+mode: teaser
+content:
+  field_disp_title:
+    type: string
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_disp_title_short:
+    type: string
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_aca_program: true
+  field_meta_tags: true
+  links: true
+  private: true

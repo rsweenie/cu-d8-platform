@@ -1,0 +1,22 @@
+uuid: d9e1fc51-37d3-41b8-83fb-7633e451b8e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.academic_degree
+  module:
+    - text
+id: node.academic_degree.body
+field_name: body
+entity_type: node
+bundle: academic_degree
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

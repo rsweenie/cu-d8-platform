@@ -1,0 +1,35 @@
+uuid: 0dbe93f6-ff46-4a33-9ae8-0d7085d6ae48
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.academic_unit.field_disp_title
+    - field.field.node.academic_unit.field_meta_tags
+    - node.type.academic_unit
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.academic_unit.teaser
+targetEntityType: node
+bundle: academic_unit
+mode: teaser
+content:
+  field_disp_title:
+    type: string
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_meta_tags: true
+  links: true
+  private: true

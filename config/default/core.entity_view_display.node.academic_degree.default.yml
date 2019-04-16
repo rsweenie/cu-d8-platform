@@ -1,0 +1,132 @@
+uuid: 2bfccec5-c123-4055-97ee-44b0de523553
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.academic_degree.body
+    - field.field.node.academic_degree.field_aca_program
+    - field.field.node.academic_degree.field_aca_unit
+    - field.field.node.academic_degree.field_degree_aca_interests
+    - field.field.node.academic_degree.field_degree_availability
+    - field.field.node.academic_degree.field_degree_image
+    - field.field.node.academic_degree.field_degree_other_programs
+    - field.field.node.academic_degree.field_degree_related_programs
+    - field.field.node.academic_degree.field_disp_title
+    - field.field.node.academic_degree.field_disp_title_short
+    - field.field.node.academic_degree.field_meta_tags
+    - node.type.academic_degree
+  module:
+    - link
+    - metatag
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.academic_degree.default
+targetEntityType: node
+bundle: academic_degree
+mode: default
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_aca_program:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_aca_unit:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_degree_aca_interests:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_degree_availability:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_degree_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_degree_other_programs:
+    weight: 8
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_degree_related_programs:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_disp_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_disp_title_short:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_meta_tags:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  private: true

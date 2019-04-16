@@ -1,0 +1,18 @@
+uuid: 43111068-d8ef-496d-87dc-549e39c9d39e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.academic_program
+id: node.academic_program.title
+field_name: title
+entity_type: node
+bundle: academic_program
+label: 'Administrative title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

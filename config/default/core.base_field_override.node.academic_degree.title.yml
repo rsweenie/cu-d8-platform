@@ -1,0 +1,18 @@
+uuid: 8530ac0b-0ad1-442c-8ebf-5ec299c8f478
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.academic_degree
+id: node.academic_degree.title
+field_name: title
+entity_type: node
+bundle: academic_degree
+label: 'Administrative title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

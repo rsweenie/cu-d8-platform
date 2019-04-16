@@ -1,0 +1,21 @@
+uuid: c2c7a137-ec49-47da-8702-f8a95da41b56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_availability
+    - node.type.academic_degree
+  module:
+    - options
+id: node.academic_degree.field_degree_availability
+field_name: field_degree_availability
+entity_type: node
+bundle: academic_degree
+label: Availability
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: 92ddf563-71c1-455a-884d-416fda6d836f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.academic_degree
+  module:
+    - metatag
+id: node.academic_degree.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: academic_degree
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

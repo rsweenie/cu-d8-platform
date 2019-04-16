@@ -1,0 +1,19 @@
+uuid: f5bdca38-c05d-485d-afee-a3a19a44d659
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_disp_title
+    - node.type.academic_unit
+id: node.academic_unit.field_disp_title
+field_name: field_disp_title
+entity_type: node
+bundle: academic_unit
+label: 'Display title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

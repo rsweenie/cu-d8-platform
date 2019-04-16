@@ -1,0 +1,21 @@
+uuid: b7068fba-139d-4d8a-b7ed-ab56a7c7f425
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.academic_program
+  module:
+    - metatag
+id: node.academic_program.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: academic_program
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

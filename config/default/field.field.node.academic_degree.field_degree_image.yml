@@ -1,0 +1,28 @@
+uuid: 35069286-669f-40a2-8bcb-9bb0825b96e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_image
+    - media.type.image
+    - node.type.academic_degree
+id: node.academic_degree.field_degree_image
+field_name: field_degree_image
+entity_type: node
+bundle: academic_degree
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
