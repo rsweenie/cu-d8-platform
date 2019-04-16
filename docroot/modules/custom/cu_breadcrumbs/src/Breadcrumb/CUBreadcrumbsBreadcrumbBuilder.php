@@ -54,7 +54,7 @@ class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     // and append to breadcrumb.
     $node = $this->getNodeObject($route_match->getParameter('node'));
     $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-    $links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->id]);
+    $links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->nid->value]);
     if ($link = reset($links)) {
       if ($link->getParent()) {
         foreach (array_reverse($menu_link_manager->getParentIds($link->getParent())) as $parent) {
