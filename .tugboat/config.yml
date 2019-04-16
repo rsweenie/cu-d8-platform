@@ -84,6 +84,7 @@ services:
       # from the base preview.
       build:
         - composer install --no-ansi
+        - mkdir -p "${DOCROOT}/sites/default/files"
         - drush -r "${DOCROOT}" cache-rebuild
         - drush -r "${DOCROOT}" updb -y
 
