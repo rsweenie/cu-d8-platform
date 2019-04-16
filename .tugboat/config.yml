@@ -83,6 +83,7 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        - composer install --no-ansi
         - drush -r "${DOCROOT}" cache-rebuild
         - drush -r "${DOCROOT}" updb -y
 
