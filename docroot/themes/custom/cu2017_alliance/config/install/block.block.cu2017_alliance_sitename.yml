@@ -1,25 +1,23 @@
-uuid: 05afbd50-668a-4b84-afb7-5533b6fa2e2d
+uuid: cd4fb384-6dea-4760-be60-626b10ca07bb
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
   theme:
     - cu2017_alliance
-_core:
-  default_config_hash: T_nvuNp-v92b-OYhIo4y4szuko85sJe-mgAADADJDZA
-id: cu2017_alliance_sitebranding
+id: cu2017_alliance_sitename
 theme: cu2017_alliance
-region: footer
-weight: -11
+region: sitename
+weight: -10
 provider: null
 plugin: system_branding_block
 settings:
   id: system_branding_block
-  label: 'Site branding'
+  label: 'Site Name'
   provider: system
   label_display: '0'
-  use_site_logo: true
-  use_site_name: false
+  use_site_logo: false
+  use_site_name: true
   use_site_slogan: false
 visibility: {  }

@@ -8,7 +8,7 @@ dependencies:
   theme:
     - cu2017_alliance
 _core:
-  default_config_hash: gt4rC0IvuiUVVN1WE8k41Ys3Z1tUnSoJNKId0dsl0xA
+  default_config_hash: Ifug_a7aP4eMTePmZ7m7z0t9irdGhtXrNY7xvzF70ZI
 id: cu2017_alliance_slide
 theme: cu2017_alliance
 region: navigation

@@ -6,6 +6,8 @@ dependencies:
     - ctools_block
   theme:
     - cu2017_alliance
+_core:
+  default_config_hash: rON-MO-evx3Q3ug9pwigK_Tj2RxfWpjAYkwUQAbGqHI
 id: cu2017_alliance_largehorizimage
 theme: cu2017_alliance
 region: large_horiz_image

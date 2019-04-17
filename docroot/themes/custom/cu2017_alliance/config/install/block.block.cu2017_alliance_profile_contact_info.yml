@@ -10,7 +10,7 @@ dependencies:
   theme:
     - cu2017_alliance
 _core:
-  default_config_hash: lzqqFucTNDV9XVMDY2C9N3Z3T6GJob2g-oHIy5GNZQY
+  default_config_hash: XIThus9EJ_ebeudvMLjctQRTIqKsbHgirR7NPYcpWEE
 id: cu2017_alliance_profile_contact_info
 theme: cu2017_alliance
 region: sidebar_second

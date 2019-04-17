@@ -8,7 +8,7 @@ dependencies:
   theme:
     - cu2017_alliance
 _core:
-  default_config_hash: FOVmJ1HjNDlLo2RiA8b3FFBV2gAURh8rWHushGr4d5o
+  default_config_hash: jugVEblX9os43CkvpWfEGeqmdkd7cNnEFqenIOxgfDs
 id: cu2017_alliance_sidebaritems_profile
 theme: cu2017_alliance
 region: sidebar_second

@@ -6,8 +6,6 @@ dependencies:
     - cu_footer_badge
   theme:
     - cu2017_alliance
-_core:
-  default_config_hash: eWKxTlDQ8U3wpqqA04_vkf-jbGCVJk2taHpw2ll6pW4
 id: cu2017_alliance_footerbadgeblock
 theme: cu2017_alliance
 region: footer

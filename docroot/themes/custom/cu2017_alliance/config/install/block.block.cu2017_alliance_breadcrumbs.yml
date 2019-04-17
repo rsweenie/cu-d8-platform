@@ -7,7 +7,7 @@ dependencies:
   theme:
     - cu2017_alliance
 _core:
-  default_config_hash: n7zAKFFLaH1srpMUok1Uch7g-z3byKJj0vGyaUYJYiY
+  default_config_hash: bTX-Qs6x1tjMMjsjAEkYO1KZC0P_cMAy3KN7qKPJiJA
 id: cu2017_alliance_breadcrumbs
 theme: cu2017_alliance
 region: breadcrumbs

@@ -5,7 +5,7 @@ dependencies:
   theme:
     - cu2017_alliance
 _core:
-  default_config_hash: _DgMiu9XFgPTQMJgiHgDhCHPjesQMeUx08ZwQcuArzI
+  default_config_hash: CCIpy-4T7S_2Lionve-TiFU2LmQ_cdV6YmnL4bCIt4I
 id: cu2017_alliance_local_tasks
 theme: cu2017_alliance
 region: content
