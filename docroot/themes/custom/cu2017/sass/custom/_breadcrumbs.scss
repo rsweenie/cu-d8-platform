@@ -7,9 +7,9 @@
 .breadcrumb_region {
 	.breadcrumb {
 		background-color: $white;
-		white-space: nowrap;
 
 		li {
+			white-space: nowrap;
 			a {
 				@include breadcrumb;
 
