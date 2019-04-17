@@ -11324,59 +11324,59 @@ ul#megamenu_icon_menu {
   margin-bottom: 5px;
   width: 100%;
 }
-/* line 64, ../sass/custom/_profile.scss */
+/* line 63, ../sass/custom/_profile.scss */
 .profile-feed-wrapper div:nth-last-child(2) {
   padding-bottom: 20px;
 }
-/* line 69, ../sass/custom/_profile.scss */
+/* line 68, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_name h4 {
   color: #0054A6;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.1em;
 }
-/* line 77, ../sass/custom/_profile.scss */
+/* line 76, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_position {
   color: #000;
   font-size: 13px;
   line-height: 1.4em;
 }
-/* line 83, ../sass/custom/_profile.scss */
+/* line 82, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_specialties {
   color: #000;
   font-size: 11px;
   line-height: 1.2em;
 }
-/* line 90, ../sass/custom/_profile.scss */
+/* line 89, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_email a {
   color: #019CDB;
   font-size: 13px;
   line-height: 1.4em;
   text-decoration: underline;
 }
-/* line 96, ../sass/custom/_profile.scss */
+/* line 95, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_email a:hover {
   color: #002E6D;
 }
-/* line 102, ../sass/custom/_profile.scss */
+/* line 101, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_phone {
   color: #000;
   font-size: 13px;
   line-height: 1.2em;
 }
-/* line 108, ../sass/custom/_profile.scss */
+/* line 107, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_office_location {
   color: #000;
   font-size: 13px;
   line-height: 1.2em;
 }
-/* line 114, ../sass/custom/_profile.scss */
+/* line 113, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link {
   bottom: 5px;
   position: absolute;
   margin-bottom: 10px;
 }
-/* line 119, ../sass/custom/_profile.scss */
+/* line 118, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link a {
   color: #73B865;
   display: block;
@@ -11408,12 +11408,12 @@ ul#megamenu_icon_menu {
   margin-left: 10px;
   vertical-align: middle;
 }
-/* line 127, ../sass/custom/_profile.scss */
+/* line 126, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link span.invisible {
   position: absolute;
 }
 
-/* line 135, ../sass/custom/_profile.scss */
+/* line 134, ../sass/custom/_profile.scss */
 .block-views-blockprofile-contact-info .copy_box_wrapper .contact_us {
   margin: 0;
 }
