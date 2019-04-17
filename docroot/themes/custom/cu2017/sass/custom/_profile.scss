@@ -60,6 +60,10 @@
 		width: 100%;
 	}
 
+	div:nth-last-child(2) {
+		padding-bottom: 20px;
+	}
+
 	.profile_name {
 		h4 {
 			color: $mediumBlue;
@@ -109,12 +113,18 @@
 	.profile_link {
 		bottom: 5px;
 		position: absolute;
+		margin-bottom: 10px;
 
 		a {
 			@include green-arrow-link(false);
 			display: flex;
 			flex-direction: row-reverse;
 			list-style-type: none;
+			padding-right:30px;
+		}
+
+		span.invisible {
+		 position: absolute;
 		}
 	}
 }

@@ -9578,14 +9578,14 @@ p:last-child,
   overflow: hidden;
 }
 
-/* line 62, ../sass/_overrides.scss */
+/* line 61, ../sass/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #777777;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 67, ../sass/_overrides.scss */
+/* line 66, ../sass/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
 }
@@ -11325,54 +11325,59 @@ ul#megamenu_icon_menu {
   margin-bottom: 5px;
   width: 100%;
 }
-/* line 64, ../sass/custom/_profile.scss */
+/* line 63, ../sass/custom/_profile.scss */
+.profile-feed-wrapper div:nth-last-child(2) {
+  padding-bottom: 20px;
+}
+/* line 68, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_name h4 {
   color: #0054A6;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.1em;
 }
-/* line 72, ../sass/custom/_profile.scss */
+/* line 76, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_position {
   color: #000;
   font-size: 13px;
   line-height: 1.4em;
 }
-/* line 78, ../sass/custom/_profile.scss */
+/* line 82, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_specialties {
   color: #000;
   font-size: 11px;
   line-height: 1.2em;
 }
-/* line 85, ../sass/custom/_profile.scss */
+/* line 89, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_email a {
   color: #019CDB;
   font-size: 13px;
   line-height: 1.4em;
   text-decoration: underline;
 }
-/* line 91, ../sass/custom/_profile.scss */
+/* line 95, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_email a:hover {
   color: #002E6D;
 }
-/* line 97, ../sass/custom/_profile.scss */
+/* line 101, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_phone {
   color: #000;
   font-size: 13px;
   line-height: 1.2em;
 }
-/* line 103, ../sass/custom/_profile.scss */
+/* line 107, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_office_location {
   color: #000;
   font-size: 13px;
   line-height: 1.2em;
 }
-/* line 109, ../sass/custom/_profile.scss */
+/* line 113, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link {
   bottom: 5px;
   position: absolute;
+  margin-bottom: 10px;
 }
-/* line 113, ../sass/custom/_profile.scss */
+/* line 118, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link a {
   color: #73B865;
   display: block;
@@ -11383,6 +11388,7 @@ ul#megamenu_icon_menu {
   display: flex;
   flex-direction: row-reverse;
   list-style-type: none;
+  padding-right: 30px;
 }
 /* line 17, ../sass/custom/_utility.scss */
 .profile-feed-wrapper .profile_link a::before {
@@ -11403,8 +11409,12 @@ ul#megamenu_icon_menu {
   margin-left: 10px;
   vertical-align: middle;
 }
+/* line 126, ../sass/custom/_profile.scss */
+.profile-feed-wrapper .profile_link span.invisible {
+  position: absolute;
+}
 
-/* line 124, ../sass/custom/_profile.scss */
+/* line 134, ../sass/custom/_profile.scss */
 .block-views-blockprofile-contact-info .copy_box_wrapper .contact_us {
   margin: 0;
 }
