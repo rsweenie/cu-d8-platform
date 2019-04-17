@@ -1,13 +1,13 @@
-uuid: be3daa89-c00e-4fb6-bf3f-3dbde4c26a10
+uuid: 05afbd50-668a-4b84-afb7-5533b6fa2e2d
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - cu2017
-id: sitebranding
-theme: cu2017
+    - cu2017_alliance
+id: cu2017_alliance_sitebranding
+theme: cu2017_alliance
 region: footer
 weight: -11
 provider: null

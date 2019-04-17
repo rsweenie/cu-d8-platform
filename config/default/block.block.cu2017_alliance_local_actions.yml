@@ -1,0 +1,20 @@
+uuid: 15972204-8a4c-4449-9e12-3e95ad165748
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: 4BxFtaxDotN4Rpp-FjRBEFoPMExV8N-yGUvpZ5ZKIjE
+id: cu2017_alliance_local_actions
+theme: cu2017_alliance
+region: header
+weight: 20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

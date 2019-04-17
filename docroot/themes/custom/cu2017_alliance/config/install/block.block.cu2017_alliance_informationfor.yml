@@ -1,0 +1,27 @@
+uuid: 7655e870-b9e1-412a-b9f1-b6828a674c62
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.information-for
+  module:
+    - menu_block
+  theme:
+    - cu2017_alliance
+id: cu2017_alliance_informationfor
+theme: cu2017_alliance
+region: navigation_collapsible
+weight: 0
+provider: null
+plugin: 'menu_block:information-for'
+settings:
+  id: 'menu_block:information-for'
+  label: 'Information for'
+  provider: menu_block
+  label_display: visible
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'information-for:'
+  suggestion: information_for
+visibility: {  }

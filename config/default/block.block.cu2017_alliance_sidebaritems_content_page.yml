@@ -1,0 +1,41 @@
+uuid: 5153fa65-26e3-4499-bda5-e314dd2ee455
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - ctools_block
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: WdWW9xIDTgKvKO0o89SJejQ7W2ku8wdYkoj7MIwV96U
+id: cu2017_alliance_sidebaritems_content_page
+theme: cu2017_alliance
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'entity_field:node:field_content_page_sidebar_items'
+settings:
+  id: 'entity_field:node:field_content_page_sidebar_items'
+  label: 'Sidebar Items Content Page'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      content_page: content_page
+      news_spotlight: news_spotlight
+      profile: profile
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

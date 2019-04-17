@@ -1,0 +1,36 @@
+uuid: 114ae332-7330-4e42-b08f-a23183093082
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.profile
+  module:
+    - node
+    - views
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: lzqqFucTNDV9XVMDY2C9N3Z3T6GJob2g-oHIy5GNZQY
+id: cu2017_alliance_profile_contact_info
+theme: cu2017_alliance
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:profile-contact_info'
+settings:
+  id: 'views_block:profile-contact_info'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping:
+    nid: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      profile: profile
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

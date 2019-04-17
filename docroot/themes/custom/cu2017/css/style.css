@@ -9695,29 +9695,30 @@ html .promo_box_wrapper {
 /* line 8, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb {
   background-color: #FFF;
+  white-space: nowrap;
 }
-/* line 12, ../sass/custom/_breadcrumbs.scss */
+/* line 13, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li a {
   color: rgba(0, 46, 109, 0.7);
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 12px;
 }
-/* line 15, ../sass/custom/_breadcrumbs.scss */
+/* line 16, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li a:hover {
   text-decoration: underline;
 }
-/* line 20, ../sass/custom/_breadcrumbs.scss */
+/* line 21, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li::before {
   color: rgba(0, 46, 109, 0.7);
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 12px;
   content: '>';
 }
-/* line 26, ../sass/custom/_breadcrumbs.scss */
+/* line 27, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li:first-child::before {
   content: '';
 }
-/* line 32, ../sass/custom/_breadcrumbs.scss */
+/* line 33, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb .active {
   color: rgba(0, 46, 109, 0.7);
   font-family: "Open Sans", Arial, sans-serif;

@@ -1,0 +1,22 @@
+uuid: fa03be57-bfec-4064-b839-83dc37a20678
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: 0trM1yXNDM2LUbbIQQOlqOTm2mWjrFY8hR9wYHygAd8
+id: cu2017_alliance_help
+theme: cu2017_alliance
+region: content
+weight: -10
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,15 +1,17 @@
-uuid: be3daa89-c00e-4fb6-bf3f-3dbde4c26a10
+uuid: 7c355b97-bc8c-47c8-be29-f6f2cffadd5e
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - cu2017
-id: sitebranding
-theme: cu2017
-region: footer
-weight: -11
+    - cu2017_alliance
+_core:
+  default_config_hash: zU8UqOxrMw2UiegdfZ0UKJ6pHRVIds6IsfsFywjLqMU
+id: cu2017_alliance_branding
+theme: cu2017_alliance
+region: header
+weight: -110
 provider: null
 plugin: system_branding_block
 settings:

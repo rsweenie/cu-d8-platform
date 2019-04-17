@@ -1,0 +1,26 @@
+uuid: 7c76f9ac-71e5-48b3-b6ad-af12612998f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.site_footer_section_content_view
+  module:
+    - views
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: P_WQyqRPLptj9VFb1qEPnEkTKicGryDK_T8EdIrnXDI
+id: cu2017_alliance_views_block__site_footer_section_content
+theme: cu2017_alliance
+region: footer
+weight: 0
+provider: null
+plugin: 'views_block:site_footer_section_content_view-block_site_footer_section'
+settings:
+  id: 'views_block:site_footer_section_content_view-block_site_footer_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }
