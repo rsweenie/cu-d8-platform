@@ -24,13 +24,13 @@
 <div class="news_text">
     <div class="news_headline">
             <div class="links_wrapper">
-                <a href="{{ href|render }}" target="{{ target }}"><h2>{{ fields.field_content_page_headline.content }}</h2> </a> 
+                <a href="{{ href|render }}" target={{ target }}><h2>{{ fields.field_content_page_headline.content }}</h2> </a> 
             </div>
     </div>
    
     <p class="date">{{ fields.created.content }}</p>
     <div class="summary">{{ fields.body.content }}</div>
     <div class="learn_more_link">
-        <a href="{{ href }}" target="{{ target }}">Learn More </a><span class="hidden">: {{ fields.field_content_page_headline.content }}</span> 
+        <a href="{{ href|render }}" target={{ target }}>Learn More </a><span class="hidden">: {{ fields.field_content_page_headline.content }}</span> 
     </div>
 </div>
