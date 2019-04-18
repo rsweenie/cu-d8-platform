@@ -15,12 +15,15 @@ use Drupal\Core\Block\BlockBase;
  */
 class FooterBadgeBlock extends BlockBase {
 
+  const ALT_TEXT = "Best Colleges by US News and World Report Regional Universities Midwest 2018";
+
   /**
    * {@inheritdoc}
    */
   public function build() {
+    
     return [
-      '#markup' => $this->t('<img src="/modules/custom/cu_footer_badge/images/badge.png" />'),
+      '#markup' => '<img src="/modules/custom/cu_footer_badge/images/badge.png" alt="' . $this->t(self::ALT_TEXT) . '" />',
     ];
   }
 
