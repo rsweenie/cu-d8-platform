@@ -1,0 +1,22 @@
+uuid: d52c9481-f3dc-4e30-925b-cbe5df7a5330
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: n7zAKFFLaH1srpMUok1Uch7g-z3byKJj0vGyaUYJYiY
+id: cu2017_alliance_breadcrumbs
+theme: cu2017_alliance
+region: breadcrumbs
+weight: -9
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

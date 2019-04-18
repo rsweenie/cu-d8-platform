@@ -1,0 +1,29 @@
+uuid: 3cf667ee-084c-4f22-9364-f314c924e977
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: m10mmgR1N5bvYHFWC9IiTZXSojvs4CbShPWre2j3ysw
+id: cu2017_alliance_mainnavigation
+theme: cu2017_alliance
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'main:'
+  suggestion: main
+visibility: {  }

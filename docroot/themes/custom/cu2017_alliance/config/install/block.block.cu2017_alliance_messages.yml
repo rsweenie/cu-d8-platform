@@ -1,0 +1,22 @@
+uuid: bbdc60d7-446e-4362-8162-20b5e5f7dd78
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: gaGhscE7DicPpFWFrTbfcLxEmqwv7UVNsaUAzlorNsM
+id: cu2017_alliance_messages
+theme: cu2017_alliance
+region: content
+weight: -11
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

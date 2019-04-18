@@ -3,7 +3,7 @@ type: theme
 base theme: cu2017
 
 name: 'cu2017 Alliance'
-description: 'Uses the Creighton Theme for the purposes of similarity, but with a difference.'
+description: 'Uses the Creighton Theme for the purposes of similarity, but with JS/CSS to hide the Mega Menu'
 package: 'Creighton'
 
 regions:

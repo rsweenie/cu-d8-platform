@@ -1,11 +1,11 @@
 uuid: 3dd7e097-ff57-4532-8e55-6507066a6fcb
-name: 'Creighton University'
+name: Demo
 mail: webteam@creighton.edu
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/406
+  front: /node/221
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
