@@ -1,5 +1,5 @@
-status: '2'
-pattern: '[node:field_disp_title]'
+status: '1'
+pattern: '[node:field_degree_aca_program:entity:field_disp_title] : [node:field_disp_title]'
 php: 0
 escape: 0
 dependencies:

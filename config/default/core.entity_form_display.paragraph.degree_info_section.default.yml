@@ -1,0 +1,34 @@
+uuid: e51f1479-75d0-4d59-ad61-38b7a1faa4c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.degree_info_section.field_degree_info_section_body
+    - field.field.paragraph.degree_info_section.field_degree_info_section_title
+    - paragraphs.paragraphs_type.degree_info_section
+  module:
+    - text
+id: paragraph.degree_info_section.default
+targetEntityType: paragraph
+bundle: degree_info_section
+mode: default
+content:
+  field_degree_info_section_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_degree_info_section_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

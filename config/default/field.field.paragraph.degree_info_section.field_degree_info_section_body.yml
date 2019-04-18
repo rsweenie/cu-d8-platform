@@ -1,0 +1,21 @@
+uuid: 55ced488-9a9d-40dc-adf8-95c8099a9dd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_degree_info_section_body
+    - paragraphs.paragraphs_type.degree_info_section
+  module:
+    - text
+id: paragraph.degree_info_section.field_degree_info_section_body
+field_name: field_degree_info_section_body
+entity_type: paragraph
+bundle: degree_info_section
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

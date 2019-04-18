@@ -1,0 +1,34 @@
+uuid: 438c6e1c-765f-4158-b050-63ffe9216600
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_sec_content
+    - node.type.academic_degree
+    - node.type.featured_links
+    - node.type.promo_box
+    - node.type.quote_box
+    - node.type.related_links
+id: node.academic_degree.field_degree_sec_content
+field_name: field_degree_sec_content
+entity_type: node
+bundle: academic_degree
+label: 'Secondary content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      featured_links: featured_links
+      promo_box: promo_box
+      quote_box: quote_box
+      related_links: related_links
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: promo_box
+field_type: entity_reference

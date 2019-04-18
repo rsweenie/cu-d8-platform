@@ -1,16 +1,16 @@
-uuid: 68783ebb-b186-4bae-976b-58e8345877f6
+uuid: c5458855-cc66-4bdd-8d65-21a491364427
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_aca_program
+    - field.storage.node.field_degree_aca_unit
     - node.type.academic_degree
-    - node.type.academic_program
-id: node.academic_degree.field_aca_program
-field_name: field_aca_program
+    - node.type.academic_unit
+id: node.academic_degree.field_degree_aca_unit
+field_name: field_degree_aca_unit
 entity_type: node
 bundle: academic_degree
-label: 'Academic program'
+label: 'Academic unit'
 description: ''
 required: true
 translatable: false
@@ -20,9 +20,10 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      academic_program: academic_program
+      academic_unit: academic_unit
     sort:
-      field: _none
+      field: field_disp_title
+      direction: ASC
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

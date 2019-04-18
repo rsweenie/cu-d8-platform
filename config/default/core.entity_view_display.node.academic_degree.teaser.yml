@@ -5,7 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.academic_degree.body
-    - field.field.node.academic_degree.field_aca_program
+    - field.field.node.academic_degree.field_degree_aca_interests
+    - field.field.node.academic_degree.field_degree_aca_program
+    - field.field.node.academic_degree.field_degree_aca_unit
+    - field.field.node.academic_degree.field_degree_availability
+    - field.field.node.academic_degree.field_degree_image
+    - field.field.node.academic_degree.field_degree_other_programs
+    - field.field.node.academic_degree.field_degree_related_programs
     - field.field.node.academic_degree.field_disp_title
     - field.field.node.academic_degree.field_disp_title_short
     - field.field.node.academic_degree.field_meta_tags
@@ -42,7 +48,13 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
-  field_aca_program: true
+  field_degree_aca_interests: true
+  field_degree_aca_program: true
+  field_degree_aca_unit: true
+  field_degree_availability: true
+  field_degree_image: true
+  field_degree_other_programs: true
+  field_degree_related_programs: true
   field_meta_tags: true
   links: true
   private: true

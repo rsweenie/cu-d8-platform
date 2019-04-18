@@ -1,22 +1,24 @@
-uuid: 7f0040f2-0333-4d16-a5f4-0b531afd4d70
+uuid: 4be80030-291a-4d74-a1b7-871c6569baaa
 langcode: en
 status: true
 dependencies:
   module:
+    - entity_reference_revisions
     - field_permissions
     - node
+    - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_aca_program
-field_name: field_aca_program
+id: node.field_degree_info
+field_name: field_degree_info
 entity_type: node
-type: entity_reference
+type: entity_reference_revisions
 settings:
-  target_type: node
-module: core
+  target_type: paragraph
+module: entity_reference_revisions
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

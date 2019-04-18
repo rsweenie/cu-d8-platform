@@ -1,0 +1,9 @@
+uuid: 2b7dafa0-8115-4931-b833-a5ebda7d904e
+langcode: en
+status: true
+dependencies: {  }
+id: degree_info_section
+label: 'Degree Info Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

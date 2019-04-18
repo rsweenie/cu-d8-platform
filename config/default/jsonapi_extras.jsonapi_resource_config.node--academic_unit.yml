@@ -16,11 +16,11 @@ resourceFields:
     enhancer:
       id: ''
   uuid:
+    disabled: true
     fieldName: uuid
     publicName: uuid
     enhancer:
       id: ''
-    disabled: false
   vid:
     disabled: true
     fieldName: vid
@@ -148,11 +148,11 @@ resourceFields:
       id: ''
     disabled: false
   path:
+    disabled: true
     fieldName: path
     publicName: path
     enhancer:
       id: ''
-    disabled: false
   private:
     disabled: true
     fieldName: private

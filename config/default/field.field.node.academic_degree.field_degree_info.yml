@@ -1,0 +1,40 @@
+uuid: c45c32dd-a084-484b-a060-73738e0d7358
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_info
+    - node.type.academic_degree
+    - paragraphs.paragraphs_type.degree_info_section
+  module:
+    - entity_reference_revisions
+id: node.academic_degree.field_degree_info
+field_name: field_degree_info
+entity_type: node
+bundle: academic_degree
+label: Info
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      degree_info_section: degree_info_section
+    target_bundles_drag_drop:
+      accordion:
+        weight: 5
+        enabled: false
+      degree_info_section:
+        enabled: true
+        weight: 6
+      featured_content_item:
+        weight: 7
+        enabled: false
+      ief_link:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

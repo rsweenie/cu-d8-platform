@@ -1,26 +1,19 @@
-uuid: 7252ba42-518a-4279-bf96-30016036f96c
+uuid: a2f187f6-79af-4354-a815-7ac0d3240762
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.academic_degree
+    - node.type.quote_box
   module:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
     default_include:
-      - academic_program
-      - academic_unit
-      - academic_interests
-      - image.image
-      - info
-      - accordion
-      - related_academic_programs
-      - secondary_content
-id: node--academic_degree
+      - link
+id: node--quote_box
 disabled: false
-path: academic_degree
-resourceType: academic_degree
+path: secondary_content/quote_box
+resourceType: quote_box
 resourceFields:
   nid:
     disabled: true
@@ -155,17 +148,17 @@ resourceFields:
     enhancer:
       id: ''
   metatag_normalized:
+    disabled: true
     fieldName: metatag_normalized
-    publicName: metatag
+    publicName: metatag_normalized
     enhancer:
       id: ''
-    disabled: false
   path:
+    disabled: true
     fieldName: path
     publicName: path
     enhancer:
       id: ''
-    disabled: false
   private:
     disabled: true
     fieldName: private
@@ -190,87 +183,39 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  body:
-    fieldName: body
-    publicName: description
+  field_name_person:
+    fieldName: field_name_person
+    publicName: name_person
     enhancer:
       id: ''
     disabled: false
-  field_degree_aca_interests:
-    fieldName: field_degree_aca_interests
-    publicName: academic_interests
+  field_quote_box_affiliation:
+    fieldName: field_quote_box_affiliation
+    publicName: affiliation
     enhancer:
       id: ''
     disabled: false
-  field_degree_aca_program:
-    fieldName: field_degree_aca_program
-    publicName: academic_program
+  field_quote_box_photo:
+    fieldName: field_quote_box_photo
+    publicName: photo
     enhancer:
       id: ''
     disabled: false
-  field_degree_aca_unit:
-    fieldName: field_degree_aca_unit
-    publicName: academic_unit
+  field_quote_box_quote_text:
+    fieldName: field_quote_box_quote_text
+    publicName: quote_text
     enhancer:
       id: ''
     disabled: false
-  field_degree_accordion:
-    fieldName: field_degree_accordion
-    publicName: accordion
+  field_quote_box_quotes:
+    fieldName: field_quote_box_quotes
+    publicName: quotes
     enhancer:
       id: ''
     disabled: false
-  field_degree_availability:
-    fieldName: field_degree_availability
-    publicName: availability
+  field_quote_link:
+    fieldName: field_quote_link
+    publicName: link
     enhancer:
       id: ''
     disabled: false
-  field_degree_image:
-    fieldName: field_degree_image
-    publicName: image
-    enhancer:
-      id: ''
-    disabled: false
-  field_degree_info:
-    fieldName: field_degree_info
-    publicName: info
-    enhancer:
-      id: ''
-    disabled: false
-  field_degree_other_programs:
-    fieldName: field_degree_other_programs
-    publicName: other_academic_programs
-    enhancer:
-      id: ''
-    disabled: false
-  field_degree_related_programs:
-    fieldName: field_degree_related_programs
-    publicName: related_academic_programs
-    enhancer:
-      id: ''
-    disabled: false
-  field_degree_sec_content:
-    fieldName: field_degree_sec_content
-    publicName: secondary_content
-    enhancer:
-      id: ''
-    disabled: false
-  field_disp_title:
-    fieldName: field_disp_title
-    publicName: title
-    enhancer:
-      id: ''
-    disabled: false
-  field_disp_title_short:
-    fieldName: field_disp_title_short
-    publicName: title_short
-    enhancer:
-      id: ''
-    disabled: false
-  field_meta_tags:
-    disabled: true
-    fieldName: field_meta_tags
-    publicName: field_meta_tags
-    enhancer:
-      id: ''
