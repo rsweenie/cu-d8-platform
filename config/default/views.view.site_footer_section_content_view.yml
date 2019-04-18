@@ -53,7 +53,7 @@ display:
         type: some
         options:
           items_per_page: 1
-          offset: 0
+          offset: 1
       style:
         type: default
       row:
@@ -157,7 +157,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<section id=\"block-footercontactblock\" class=\"contextual-region block block-cu-footer-contact block-footercontactblock clearfix\" data-block-plugin-id=\"footercontactblock\">\r\n  \r\n    <div data-contextual-id=\"block:block=footercontactblock:langcode=en\" data-contextual-token=\"eAuhTwiEJ6U6H_59bNxvdNs1nVUpUbQK6yis1WFTdNc\" class=\"contextual\" role=\"form\"><button class=\"trigger focusable visually-hidden\" type=\"button\" aria-pressed=\"false\">Open  configuration options</button><ul class=\"contextual-links links\" hidden=\"\"><li class=\"block-configure\"><a href=\"/admin/structure/block/manage/footercontactblock?destination=/node/221\">Configure block</a></li></ul></div>\r\n\r\n      <p>2500 California Plaza | Omaha, NE 68178</p><p>402.280.2700 | <a href=\"https://www.creighton.edu\">creighton.edu</a> | <a href=\"https://www.creighton.edu/ask\">Ask a Question</a></p><h5>© 2018 Creighton University</h5>\r\n  </section>"
+            value: '<img src="/themes/custom/cu2017/images/badges/best-colleges-us-news-regional-universities.png" alt="Best Colleges by US News and World Report Regional Universities Midwest 2018" />'
             format: full_html
           plugin_id: text
       relationships: {  }
@@ -171,14 +171,55 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_site_section_content'
-  block_site_footer_section:
+  block_site_footer_badges:
     display_plugin: block
-    id: block_site_footer_section
-    display_title: 'Site Footer Section Content'
+    id: block_site_footer_badges
+    display_title: 'Site Footer Badge Part'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: 'Badge(s) that appears in the footer of each site.'
+      title: 'Site Footer Section Badge Content'
+      defaults:
+        title: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_site_section_content'
+  block_site_footer_section_contact:
+    display_plugin: block
+    id: block_site_footer_section_contact
+    display_title: 'Site Footer Section Contact'
     position: 1
     display_options:
       display_extenders: {  }
       display_description: 'Content that appears in the footer of each site.'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<section id=\"block-footercontactblock\" class=\"contextual-region block block-cu-footer-contact block-footercontactblock clearfix\" data-block-plugin-id=\"footercontactblock\">\r\n  \r\n    <div data-contextual-id=\"block:block=footercontactblock:langcode=en\" data-contextual-token=\"eAuhTwiEJ6U6H_59bNxvdNs1nVUpUbQK6yis1WFTdNc\" class=\"contextual\" role=\"form\"><button class=\"trigger focusable visually-hidden\" type=\"button\" aria-pressed=\"false\">Open  configuration options</button><ul class=\"contextual-links links\" hidden=\"\"><li class=\"block-configure\"><a href=\"/admin/structure/block/manage/footercontactblock?destination=/node/221\">Configure block</a></li></ul></div>\r\n\r\n      <p>2500 California Plaza | Omaha, NE 68178</p><p>402.280.2700 | <a href=\"https://www.creighton.edu\">creighton.edu</a> | <a href=\"https://www.creighton.edu/ask\">Ask a Question</a></p><h5>© 2018 Creighton University</h5>\r\n  </section>\r\n"
+            format: full_html
+          plugin_id: text
+      defaults:
+        empty: false
+        pager: false
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
