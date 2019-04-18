@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.profile.field_profile_link
     - field.field.node.profile.field_profile_name
     - field.field.node.profile.field_profile_office_location
+    - field.field.node.profile.field_profile_p_link
     - field.field.node.profile.field_profile_phone
     - field.field.node.profile.field_profile_position
     - field.field.node.profile.field_profile_specialties
@@ -23,6 +24,7 @@ dependencies:
     - entity_browser_entity_form
     - inline_entity_form
     - name
+    - paragraphs
     - path
     - private_content
     - scheduler
@@ -103,6 +105,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_profile_p_link:
+    type: entity_reference_paragraphs
+    weight: 32
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_profile_phone:
     weight: 2

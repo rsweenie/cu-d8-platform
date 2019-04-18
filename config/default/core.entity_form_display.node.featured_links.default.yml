@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.featured_links.field_featured_link
     - field.field.node.featured_links.field_featured_link_button_color
+    - field.field.node.featured_links.field_featured_p_link
     - node.type.featured_links
   module:
     - content_moderation
     - entity_browser_entity_form
     - inline_entity_form
+    - paragraphs
     - private_content
     - scheduler
 _core:
@@ -42,6 +44,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_featured_p_link:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   moderation_state:
     type: moderation_state_default

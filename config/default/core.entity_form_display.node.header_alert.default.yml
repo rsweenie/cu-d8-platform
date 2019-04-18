@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.header_alert.field_emergency_headline
     - field.field.node.header_alert.field_header_alert_activate
     - field.field.node.header_alert.field_header_alert_markup
+    - field.field.node.header_alert.field_header_alert_p_link
     - field.field.node.header_alert.field_header_alertemergency_type
     - node.type.header_alert
   module:
     - content_moderation
     - entity_browser_entity_form
     - inline_entity_form
+    - paragraphs
     - path
     - private_content
     - scheduler
@@ -66,6 +68,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea_with_summary
+    region: content
+  field_header_alert_p_link:
+    type: entity_reference_paragraphs
+    weight: 128
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_header_alertemergency_type:
     weight: 123

@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.slide.field_slide_caption
     - field.field.node.slide.field_slide_image
     - field.field.node.slide.field_slide_link
+    - field.field.node.slide.field_slide_p_link
     - node.type.slide
   module:
     - entity_browser
     - entity_browser_entity_form
     - field_group
     - inline_entity_form
+    - paragraphs
     - private_content
     - scheduler
     - text
@@ -76,6 +78,18 @@ content:
       entity_browser_entity_form:
         entity_browser_id: _none
     type: inline_entity_form_complex
+    region: content
+  field_slide_p_link:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   private:
     weight: 2

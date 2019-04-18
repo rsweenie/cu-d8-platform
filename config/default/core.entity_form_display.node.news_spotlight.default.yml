@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news_spotlight.field_display_publish_on_date
     - field.field.node.news_spotlight.field_display_type
     - field.field.node.news_spotlight.field_new
+    - field.field.node.news_spotlight.field_news_spotlight_p_link
     - field.field.node.news_spotlight.field_tabbed_accordion
     - node.type.news_spotlight
   module:
@@ -20,6 +21,7 @@ dependencies:
     - entity_browser_entity_form
     - field_group
     - inline_entity_form
+    - paragraphs
     - path
     - private_content
     - scheduler
@@ -143,6 +145,18 @@ content:
       entity_browser_entity_form:
         entity_browser_id: creighton_link_bros
     type: inline_entity_form_complex
+    region: content
+  field_news_spotlight_p_link:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_tabbed_accordion:
     weight: 4

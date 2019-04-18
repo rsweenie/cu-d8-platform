@@ -11,9 +11,11 @@ dependencies:
     - field.field.node.news_spotlight.field_display_publish_on_date
     - field.field.node.news_spotlight.field_display_type
     - field.field.node.news_spotlight.field_new
+    - field.field.node.news_spotlight.field_news_spotlight_p_link
     - field.field.node.news_spotlight.field_tabbed_accordion
     - node.type.news_spotlight
   module:
+    - entity_reference_revisions
     - panelizer
     - text
     - user
@@ -152,6 +154,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_news_spotlight_p_link:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_tabbed_accordion:
     type: entity_reference_label

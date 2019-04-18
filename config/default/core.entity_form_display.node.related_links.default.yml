@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.related_links.field_related_link
+    - field.field.node.related_links.field_related_p_link
     - node.type.related_links
   module:
     - entity_browser_entity_form
     - inline_entity_form
+    - paragraphs
     - private_content
     - scheduler
 _core:
@@ -34,6 +36,18 @@ content:
       entity_browser_entity_form:
         entity_browser_id: _none
     type: inline_entity_form_complex
+    region: content
+  field_related_p_link:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   private:
     weight: 2
