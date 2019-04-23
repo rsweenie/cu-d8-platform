@@ -19,7 +19,7 @@
 {% endif %}
 
 <div class="news_image">
-    <a href="{{ href }}" target={{ target }}>
+    <a href="{{ href|render }}" target={{ target }}>
     {{fields.field_content_page_image.content}}
     </a>
 </div>
