@@ -62,10 +62,11 @@ services:
         # Copy the files directory from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use rsync over SSH.
+        - mkdir -p "${DOCROOT}/sites/default/files"
         #- rsync -av --delete user@example.com:/path/to/files/ "${DOCROOT}/sites/default/files/"
-        #- chgrp -R www-data "${DOCROOT}/sites/default/files"
-        #- find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
-        #- find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
+        - chgrp -R www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
 
         # Alternatively, another common practice is to use the
         # stage_file_proxy Drupal module. This module lets Drupal serve
@@ -84,6 +85,10 @@ services:
       # from the base preview.
       build:
         - composer install --no-ansi
+        - mkdir -p "${DOCROOT}/sites/default/files"
+        - chgrp -R www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
         - drush -r "${DOCROOT}" cache-rebuild
         - drush -r "${DOCROOT}" updb -y
 
