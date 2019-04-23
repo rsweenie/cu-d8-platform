@@ -1,15 +1,11 @@
 <?php
-namespace Drupal\cu_data_tranform\Form;
+namespace Drupal\cu_data_transform\Form;
 
-use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Form\FormInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\cu_data_transform\Transformation\CUDataTransformation;
 
-/**
- * Configure example settings for this site.
- */
-class CUDataTransformForm extends ConfigFormBase {
-  //move to controller
-  CONST TRANSFORM_TYPES = ['Paragraph Links'];
+class CUDataTransformForm implements FormInterface {
 
   /** 
    * {@inheritdoc}
@@ -27,14 +23,23 @@ class CUDataTransformForm extends ConfigFormBase {
       '#type' => 'item',
       '#title' => t('Run Data Transformations'),
     ];
-    foreach(Self::TRANSFORM_TYPES as $transform_type){
+    foreach(CUDataTransformation::TRANSFORM_TYPES as $transform_machine_name => $transform_type){
       // Add a buttons
-      $form[$this->getFormId()][$machine_name] = [
-        '#type' => 'button',
-        '#title' => t('Run '.$transform_type),
+      $form[$this->getFormId()][$transform_machine_name] = [
+        '#type' => 'submit',
+        '#name' => $transform_machine_name,
+        '#value' => t('Run '.$transform_type['title']),
       ];
     }
-    return parent::buildForm($form, $form_state);
+    return $form;
+  }
+
+    /** 
+   * {@inheritdoc}
+   * 
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) { 
+    return true;
   }
 
   /** 
@@ -42,8 +47,6 @@ class CUDataTransformForm extends ConfigFormBase {
    * 
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
-    parent::submitForm($form, $form_state);
+    CUDataTransformation::{$form_state->getTriggeringElement()['#name']}();
   }
-
 }
