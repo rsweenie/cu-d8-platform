@@ -1,0 +1,29 @@
+uuid: 653175fa-d6b9-4b94-9e49-cd786d3488ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_aca_offerings
+    - node.type.academic_degree
+    - taxonomy.vocabulary.academic_program_offerings
+id: node.academic_degree.field_degree_aca_offerings
+field_name: field_degree_aca_offerings
+entity_type: node
+bundle: academic_degree
+label: 'Academic program offerings'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      academic_program_offerings: academic_program_offerings
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

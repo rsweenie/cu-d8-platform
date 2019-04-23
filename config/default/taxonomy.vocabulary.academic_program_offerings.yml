@@ -1,0 +1,9 @@
+uuid: 393315e2-e2b4-4f95-9b58-942710a54639
+langcode: en
+status: true
+dependencies: {  }
+name: 'Academic Program Offerings'
+vid: academic_program_offerings
+description: ''
+hierarchy: 0
+weight: 0
