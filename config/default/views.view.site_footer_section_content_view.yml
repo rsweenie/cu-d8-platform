@@ -146,20 +146,7 @@ display:
       title: 'Site Footer Section Content'
       header: {  }
       footer: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: '<img src="/themes/custom/cu2017/images/badges/best-colleges-us-news-regional-universities.png" alt="Best Colleges by US News and World Report Regional Universities Midwest 2018" />'
-            format: full_html
-          plugin_id: text
+      empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }

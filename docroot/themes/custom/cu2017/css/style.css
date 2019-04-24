@@ -11195,29 +11195,31 @@ ul#megamenu_icon_menu {
   display: none;
 }
 
-/* line 43, ../sass/custom/_featuredlinks.scss */
+/* line 48, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper ul {
   list-style-type: none;
   margin-bottom: 0;
   padding-left: 0;
 }
-/* line 49, ../sass/custom/_featuredlinks.scss */
+/* line 54, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .field--item {
   margin-bottom: 20px;
 }
-/* line 52, ../sass/custom/_featuredlinks.scss */
+/* line 57, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .field--item:last-child {
   margin-bottom: 0px;
 }
-/* line 58, ../sass/custom/_featuredlinks.scss */
+/* line 63, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_blue li {
   background-image: url(../images/png/white-arrow.png);
   background-position: 95%;
   background-repeat: no-repeat;
   padding: 8px 80px 8px 10px;
+  padding: 15px 60px 15px 15px;
+  line-height: 1.12;
   background-color: #0054A6;
 }
-/* line 62, ../sass/custom/_featuredlinks.scss */
+/* line 68, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_blue li:hover {
   -webkit-transition-property: background-color;
   transition-property: background-color;
@@ -11225,7 +11227,7 @@ ul#megamenu_icon_menu {
   transition-duration: 0.2s;
   background-color: #002E6D;
 }
-/* line 68, ../sass/custom/_featuredlinks.scss */
+/* line 74, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_blue a {
   color: #FFF;
   font-family: "Open Sans Condensed", sans-serif;
@@ -11233,16 +11235,16 @@ ul#megamenu_icon_menu {
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 15, ../sass/custom/_featuredlinks.scss */
+/* line 20, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_blue a:hover {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 22, ../sass/custom/_featuredlinks.scss */
+/* line 27, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_blue a:link, .featured_links_wrapper .featured_links_blue a:visited, .featured_links_wrapper .featured_links_blue a:hover, .featured_links_wrapper .featured_links_blue a:focus, .featured_links_wrapper .featured_links_blue a:active {
   text-decoration: none;
 }
-/* line 75, ../sass/custom/_featuredlinks.scss */
+/* line 81, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange a {
   color: #FFF;
   font-family: "Open Sans Condensed", sans-serif;
@@ -11250,16 +11252,16 @@ ul#megamenu_icon_menu {
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 15, ../sass/custom/_featuredlinks.scss */
+/* line 20, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange a:hover {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 22, ../sass/custom/_featuredlinks.scss */
+/* line 27, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange a:link, .featured_links_wrapper .featured_links_orange a:visited, .featured_links_wrapper .featured_links_orange a:hover, .featured_links_wrapper .featured_links_orange a:focus, .featured_links_wrapper .featured_links_orange a:active {
   text-decoration: none;
 }
-/* line 79, ../sass/custom/_featuredlinks.scss */
+/* line 85, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange a:hover {
   -webkit-transition-property: color;
   transition-property: color;
@@ -11267,15 +11269,17 @@ ul#megamenu_icon_menu {
   transition-duration: 0.2s;
   color: #002E6D;
 }
-/* line 84, ../sass/custom/_featuredlinks.scss */
+/* line 90, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange li {
   background-image: url(../images/png/white-arrow.png);
   background-position: 95%;
   background-repeat: no-repeat;
   padding: 8px 80px 8px 10px;
+  padding: 15px 60px 15px 15px;
+  line-height: 1.12;
   background-color: #FFA300;
 }
-/* line 88, ../sass/custom/_featuredlinks.scss */
+/* line 95, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange li:hover {
   background-image: url(../images/png/dkblue-arrow.png);
 }

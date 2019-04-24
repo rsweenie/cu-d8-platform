@@ -5,6 +5,11 @@
 	padding: 8px 80px 8px 10px;
 }
 
+@mixin featured-link {
+	padding: 15px 60px 15px 15px;
+	line-height: 1.12;
+}
+
 @mixin link {
 	color: $white;
 	font-family: $condensedFont;
@@ -57,6 +62,7 @@
 	.featured_links_blue {
 		li {
 			@include button;
+			@include featured-link;
 			background-color: $mediumBlue;
 
 			&:hover {
@@ -83,6 +89,7 @@
 
 		li {
 			@include button;
+			@include featured-link;
 			background-color: $orange;
 
 			&:hover {
