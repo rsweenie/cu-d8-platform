@@ -114,18 +114,16 @@ class CUDataTransformation {
           $log .= '<br>No Links to convert.<br>';
         }
       }
-
-      /** delete the original link content
-       * this is done after the conversion to paragraphs is complete
-       * because some link are referenced by multiple nodes and deleting them
-       * during the process would result in null references for subsequent links
-      */
-      foreach($link_nodes as $link_node)
-        $link_node->delete();
-
       //add some new breaks
       $log .= '<br><br>';
     }
+
+    /** 
+     * delete the original link content
+    */
+    foreach($link_nodes as $link_node)
+      $link_node->delete();
+
     $log .= '<br>Links Converted: '.count($link_nodes).'<br><br>';;
     //actually log the log
     \Drupal::logger('paragraph_link_transformation')->info($log);
