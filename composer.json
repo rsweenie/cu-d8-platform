@@ -28,6 +28,7 @@
         "drupal/content_browser": "^1.0@alpha",
         "drupal/context": "^4.0@beta",
         "drupal/core": "^8.5",
+        "drupal/decoupled_router": "^1.7",
         "drupal/disable_messages": "^1.1",
         "drupal/easy_install": "^10.1",
         "drupal/editor_advanced_link": "^1.4",
