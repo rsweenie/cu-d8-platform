@@ -120,7 +120,7 @@ content:
     region: content
   field_content_page_image:
     type: entity_reference_entity_view
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       view_mode: news_spotlight_image
@@ -128,7 +128,7 @@ content:
     third_party_settings: {  }
     region: content
   field_display_publish_on_date:
-    weight: 4
+    weight: 5
     label: hidden
     settings:
       format: default
@@ -138,7 +138,7 @@ content:
     type: boolean
     region: content
   field_display_type:
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       format: default
@@ -157,8 +157,8 @@ content:
     region: content
   field_news_spotlight_p_link:
     type: entity_reference_revisions_entity_view
-    weight: 6
-    label: hidden
+    weight: 2
+    label: above
     settings:
       view_mode: default
       link: ''
@@ -166,7 +166,7 @@ content:
     region: content
   field_tabbed_accordion:
     type: entity_reference_label
-    weight: 3
+    weight: 4
     region: content
     label: hidden
     settings:
