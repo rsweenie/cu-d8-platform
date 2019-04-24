@@ -23,12 +23,14 @@ class CUDataTransformForm implements FormInterface {
       '#type' => 'item',
       '#title' => t('Run Data Transformations'),
     ];
-    foreach(CUDataTransformation::TRANSFORM_TYPES as $transform_machine_name => $transform_type){
+    foreach(CUDataTransformation::getTransformations() as $transform_machine_name){
+      //word on a button
+      $button_value = str_replace('_',' ',$transform_machine_name);
       // Add a buttons
       $form[$this->getFormId()][$transform_machine_name] = [
         '#type' => 'submit',
         '#name' => $transform_machine_name,
-        '#value' => t('Run '.$transform_type['title']),
+        '#value' => t('Run '.$button_value),
       ];
     }
     return $form;
@@ -39,7 +41,7 @@ class CUDataTransformForm implements FormInterface {
    * 
    */
   public function validateForm(array &$form, FormStateInterface $form_state) { 
-    return true;
+    return in_array($form_state->getTriggeringElement()['#name'],CUDataTransformation::getTransformations());
   }
 
   /** 

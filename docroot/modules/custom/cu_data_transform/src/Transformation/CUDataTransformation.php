@@ -4,10 +4,18 @@ namespace Drupal\cu_data_transform\Transformation;
 use Drupal\field\Entity\FieldStorageConfig;
 
 class CUDataTransformation {
-    //available transfermations
-    CONST TRANSFORM_TYPES = ['paragraph_links'=>['title'=>'Paragraph Links']];
+  //methods/functions must follow the <transform_type>_transformation
+  CONST METHOD_FILTER = '_transformation';
 
-  static function paragraph_links(){
+  //transformation filter callback
+  static function isTransformation($string){
+    return strpos($string, Self::METHOD_FILTER)!==false;
+  }
+  //returns transformation methods
+  static function getTransformations(){
+    return array_filter(get_class_methods(new static),__CLASS__ .'::isTransformation'); 
+  }
+  static function paragraph_links_transformation(){
     //content types to convert links from
     //each contains the old and new field names
     $content_types = [
@@ -66,6 +74,7 @@ class CUDataTransformation {
           $paragraph_array = [];
           //for each link in the entity
           foreach($entity->{$field_names['old']} as $link){
+            //load the link node
             $link_node = \Drupal\node\Entity\Node::load($link->target_id);
             //check that the link is not null
             if(!empty($link_node)){
@@ -90,6 +99,7 @@ class CUDataTransformation {
               $log.='<br>Original Link nid: '.$link_node->nid->value;
               $log.=' Paragraph Link id: '. $paragraph->id();
               $log.=' Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
+              //in an array for later deletion
               array_push($link_nodes,$link_node);
             }else{
               //just in case there's a link ref and somehow the link doesn;t exist
@@ -112,10 +122,13 @@ class CUDataTransformation {
       */
       foreach($link_nodes as $link_node)
         $link_node->delete();
+
       //add some new breaks
       $log .= '<br><br>';
     }
+    $log .= '<br>Links Converted: '.count($link_nodes).'<br><br>';;
     //actually log the log
     \Drupal::logger('paragraph_link_transformation')->info($log);
+    return true;
   }
 }
