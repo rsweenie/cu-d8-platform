@@ -1,5 +1,3 @@
-{# mmc 4.15.19 #}
-
 {# link text #}
 {# {{ _context.row._relationship_entities['field_news_spotlight_p_link'].field_link_text.value }}  #}
 
@@ -18,21 +16,16 @@
     {% set href = file_url(_context.row._relationship_entities['field_news_spotlight_p_link'].field_file_link.entity.field_document.entity.uri.value) %}
 {% endif %}
 
-<div class="news_image">
-    <a href="{{ href|render }}" target={{ target }}>
-    {{fields.field_content_page_image.content}}
-    </a>
+<div class="sptlt-image-wrapper">
+  <a href="{{ href|render }}" target={{ target }}>{{ fields.field_content_page_image.content }}</a>
 </div>
-<div class="news_text">
-    <div class="news_headline">
-            <div class="links_wrapper">
-                <a href="{{ href|render }}" target={{ target }}><h2>{{ fields.field_content_page_headline.content }}</h2> </a> 
-            </div>
+<div class="sptlt-text-wrapper">
+    <div class="sptlt-title">
+        {{ fields.field_content_page_headline.content }}
     </div>
-   
-    <p class="date">{{ fields.created.content }}</p>
-    <div class="summary">{{ fields.body.content }}</div>
-    <div class="learn_more_link">
-        <a href="{{ href|render }}" target={{ target }}>Learn More </a><span class="hidden">: {{ fields.field_content_page_headline.content }}</span> 
-    </div>
+  <div class="sptlt-body">{{ fields.body.content|nl2br }}</div>
+  <div class="sptlt-link">
+    <a href="{{ href|render }}" target={{ target }}>Learn More</a>
+    <span class="invisible"> about {{ title }}</span>
+  </div>
 </div>

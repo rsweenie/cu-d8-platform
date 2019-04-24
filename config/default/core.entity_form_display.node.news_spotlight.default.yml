@@ -33,6 +33,7 @@ third_party_settings:
         - field_display_publish_on_date
         - field_content_page_image
         - field_new
+        - field_news_spotlight_p_link
       parent_name: ''
       weight: 7
       format_type: details
@@ -148,7 +149,7 @@ content:
     region: content
   field_news_spotlight_p_link:
     type: entity_reference_paragraphs
-    weight: 26
+    weight: 13
     settings:
       title: Paragraph
       title_plural: Paragraphs
