@@ -9,14 +9,6 @@ class CUDataTransformation {
   //methods/functions must follow the <transform_type>_transformation
   CONST METHOD_FILTER = '_transformation';
 
-  //transformation filter callback
-  static private function isTransformation($string){
-    return strpos($string, Self::METHOD_FILTER)!==false;
-  }
-  //returns transformation methods
-  static function getTransformations(){
-    return array_filter(get_class_methods(new static),__CLASS__ .'::isTransformation'); 
-  }
   static function paragraph_links_transformation(){
     //content types to convert links from
     //each contains the old and new field names
@@ -77,35 +69,40 @@ class CUDataTransformation {
           foreach($entity->{$field_names['old']} as $link){
             //load the link node
             $link_node = Node::load($link->target_id);
-            //check that the link uri is not null
-            if(!empty($link_node->field_links_link->uri)){
-              //internal links maybe be linkceptioned, so we need to find the base link
-              $link_node = Self::getBaseLinkNode($link_node);
-              //array union, create ief_link fields for paragraph.
-              $field_array = ['type' => 'ief_link']
-              + (isset($link_node->field_links_link)?['field_internal_or_external_link' => $link_node->field_links_link]:[])
-              + (isset($link_node->field_links_link)?['field_link_text' => $link_node->field_links_link_text]:[])
-              + (isset($link_node->field_links_link)?['field_open_in_new_window' => $link_node->field_links_open_in_new_window]:[])
-              + (isset($link_node->field_links_link)?['field_file_link' => $link_node->field_links_file_link_upload]:[]);
-              //use field array to create the paragraph
-              $paragraph = Paragraph::create($field_array);
-              //save the paragraph
-              $paragraph->save();
-              //add the paragraph info needed to reference the content type to the paragraph
-              //for each link
-              array_push($paragraph_array ,
-                [
-                  'target_id' => $paragraph->id(),
-                  'target_revision_id' => $paragraph->getRevisionId(),
-                ]);
-              //log all the other things!
-              $log.='<br>Original Link nid: '.$link_node->nid->value;
-              $log.=' Paragraph Link id: '. $paragraph->id();
-              $log.=' Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
-              $cnt++;
+            //link node is not null
+            if(!is_null($link_node)){
+              //check if link_node has content
+              if(Self::hasContent($link_node)){
+                //internal links maybe be linkceptioned, so we need to find the base link
+                $link_node = Self::getBaseLinkNode($link_node);
+                //array union, create ief_link fields for paragraph.
+                $field_array = ['type' => 'ief_link']
+                + (isset($link_node->field_links_link)?['field_internal_or_external_link' => $link_node->field_links_link]:[])
+                + (isset($link_node->field_links_link)?['field_link_text' => $link_node->field_links_link_text]:[])
+                + (isset($link_node->field_links_link)?['field_open_in_new_window' => $link_node->field_links_open_in_new_window]:[])
+                + (isset($link_node->field_links_link)?['field_file_link' => $link_node->field_links_file_link_upload]:[]);
+                //use field array to create the paragraph
+                $paragraph = Paragraph::create($field_array);
+                //save the paragraph
+                $paragraph->save();
+                //add the paragraph info needed to reference the content type to the paragraph
+                //for each link
+                array_push($paragraph_array ,
+                  [
+                    'target_id' => $paragraph->id(),
+                    'target_revision_id' => $paragraph->getRevisionId(),
+                  ]);
+                //log all the other things!
+                $log.='<br>Original Link nid: '.$link_node->nid->value;
+                $log.=' Paragraph Link id: '. $paragraph->id();
+                $log.=' Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
+                $cnt++;
+              }else{
+                //just in case there's a link ref and somehow the link doesn;t exist
+                $log .= '<br>Link does not Exist.<br>';
+              }
             }else{
-              //just in case there's a link ref and somehow the link doesn;t exist
-              $log .= '<br>Link does not Exist.<br>';
+              $log .= '<br>No Links to convert.<br>';
             }
           }
           //add the paragraph to the entity and save
@@ -131,6 +128,14 @@ class CUDataTransformation {
     \Drupal::logger('paragraph_link_transformation')->info($log);
     return true;
   }
+  //check if there is any content
+  static private function hasContent(Node $link_node){
+    return (!empty($link_node->field_links_link->uri)
+            ||!empty($link_node->field_links_link_text->value)
+            ||!empty($link_node->field_links_open_in_new_window->value)
+            ||!empty($link_node->field_links_file_link_upload->value));
+  }
+
   //return the base link for a links content type
   static private function getBaseLinkNode(Node $link_node){
     $url = Url::fromUri($link_node->field_links_link->uri);
@@ -143,5 +148,15 @@ class CUDataTransformation {
     }
     //return base link
     return $link_node;
+  }
+
+  //transformation filter callback
+  static private function isTransformation($string){
+    return strpos($string, Self::METHOD_FILTER)!==false;
+  }
+
+  //returns transformation methods
+  static function getTransformations(){
+    return array_filter(get_class_methods(new static),__CLASS__ .'::isTransformation'); 
   }
 }
