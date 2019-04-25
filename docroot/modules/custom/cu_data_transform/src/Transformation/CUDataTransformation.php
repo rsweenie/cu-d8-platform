@@ -126,7 +126,7 @@ class CUDataTransformation {
     $log .= '<br>Links Converted: '.$cnt.'<br><br>';;
     //actually log the log
     \Drupal::logger('paragraph_link_transformation')->info($log);
-    return true;
+    return $cnt.' Links Transformed';
   }
   //check if there is any content
   static private function hasContent(Node $link_node){

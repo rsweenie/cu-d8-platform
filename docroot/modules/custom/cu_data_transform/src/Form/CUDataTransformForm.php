@@ -50,6 +50,6 @@ class CUDataTransformForm implements FormInterface {
    * 
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    CUDataTransformation::{$form_state->getTriggeringElement()['#name']}();
+    drupal_set_message(t(CUDataTransformation::{$form_state->getTriggeringElement()['#name']}()));
   }
 }
