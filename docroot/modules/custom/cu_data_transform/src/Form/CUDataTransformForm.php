@@ -24,7 +24,8 @@ class CUDataTransformForm implements FormInterface {
       '#title' => t('Run Data Transformations'),
     ];
     foreach(CUDataTransformation::getTransformations() as $transform_machine_name){
-      //word on a button
+      //check boxes would be better here
+      //words on a button
       $button_value = str_replace('_',' ',$transform_machine_name);
       // Add a buttons
       $form[$this->getFormId()][$transform_machine_name] = [

@@ -12,5 +12,5 @@ use Drupal\cu_data_transform\Transformation\CUDataTransformation;
  * Implements hook_install().
  */
 function cu_data_transform_install() {
-  CUDataTransformation::paragraph_links_transformation();
+  //CUDataTransformation::paragraph_links_transformation();
 }

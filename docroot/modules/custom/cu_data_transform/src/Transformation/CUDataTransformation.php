@@ -2,13 +2,15 @@
 namespace Drupal\cu_data_transform\Transformation;
 
 use Drupal\field\Entity\FieldStorageConfig;
-
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\core\Url;
 class CUDataTransformation {
   //methods/functions must follow the <transform_type>_transformation
   CONST METHOD_FILTER = '_transformation';
 
   //transformation filter callback
-  static function isTransformation($string){
+  static private function isTransformation($string){
     return strpos($string, Self::METHOD_FILTER)!==false;
   }
   //returns transformation methods
@@ -54,30 +56,31 @@ class CUDataTransformation {
     ];
 
     $log = '';
-    $link_nodes = [];
+    $cnt = 0;
     //iterate over content types
     foreach($content_types as $type => $field_names){
       //get all the node ids for this content type
       $nids = \Drupal::entityQuery('node')->condition('type',$type)->execute();
       //load all of those nodes
-      $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+      $nodes =  Node::loadMultiple($nids);
       //log the content type we are converting
       $log .= '<strong>Type: '.$type.'</strong>';
       //iterate over each of these nodes
       foreach($nodes as $entity ){
         //log all the things
         $log .= '<br><strong>Node: '.$entity->nid->value.' title: '.$entity->title->value.'</strong>';
-        $log .= '<br><a href="'.$entity->url().'/edit" target="_blank">Node Link</a>';
+        $log .= '<br>'.$entity->toLink()->toString();
         //if the field name exists for this entity
         if(count($entity->{$field_names['old']})>0){
-          //paragraph array used to create a new paragraph 
           $paragraph_array = [];
           //for each link in the entity
           foreach($entity->{$field_names['old']} as $link){
             //load the link node
-            $link_node = \Drupal\node\Entity\Node::load($link->target_id);
-            //check that the link is not null
-            if(!empty($link_node)){
+            $link_node = Node::load($link->target_id);
+            //check that the link uri is not null
+            if(!empty($link_node->field_links_link->uri)){
+              //internal links maybe be linkceptioned, so we need to find the base link
+              $link_node = Self::getBaseLinkNode($link_node);
               //array union, create ief_link fields for paragraph.
               $field_array = ['type' => 'ief_link']
               + (isset($link_node->field_links_link)?['field_internal_or_external_link' => $link_node->field_links_link]:[])
@@ -85,7 +88,7 @@ class CUDataTransformation {
               + (isset($link_node->field_links_link)?['field_open_in_new_window' => $link_node->field_links_open_in_new_window]:[])
               + (isset($link_node->field_links_link)?['field_file_link' => $link_node->field_links_file_link_upload]:[]);
               //use field array to create the paragraph
-              $paragraph = \Drupal\paragraphs\Entity\Paragraph::create($field_array);
+              $paragraph = Paragraph::create($field_array);
               //save the paragraph
               $paragraph->save();
               //add the paragraph info needed to reference the content type to the paragraph
@@ -99,13 +102,13 @@ class CUDataTransformation {
               $log.='<br>Original Link nid: '.$link_node->nid->value;
               $log.=' Paragraph Link id: '. $paragraph->id();
               $log.=' Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
-              //in an array for later deletion
-              array_push($link_nodes,$link_node);
+              $cnt++;
             }else{
               //just in case there's a link ref and somehow the link doesn;t exist
               $log .= '<br>Link does not Exist.<br>';
             }
           }
+          //add the paragraph to the entity and save
           if(!empty($paragraph_array))
             $entity->{$field_names['new']} = $paragraph_array;
           $entity->save();
@@ -117,16 +120,28 @@ class CUDataTransformation {
       //add some new breaks
       $log .= '<br><br>';
     }
+    //purge all links from db
+    $links = \Drupal::entityQuery('node')
+        ->condition('type', 'links')
+        ->execute();
+    entity_delete_multiple('node', $links);
 
-    /** 
-     * delete the original link content
-    */
-    foreach($link_nodes as $link_node)
-      $link_node->delete();
-
-    $log .= '<br>Links Converted: '.count($link_nodes).'<br><br>';;
+    $log .= '<br>Links Converted: '.$cnt.'<br><br>';;
     //actually log the log
     \Drupal::logger('paragraph_link_transformation')->info($log);
     return true;
+  }
+  //return the base link for a links content type
+  static private function getBaseLinkNode(Node $link_node){
+    $url = Url::fromUri($link_node->field_links_link->uri);
+    //if external, it is the base link
+    if(!$url->isExternal()){
+      $new_link = Node::load($url->getRouteParameters()['node']);
+      //if the new_link isn't of type links, then link_node is base link
+      if($new_link->getType() == 'links')
+        $link_node = Self::getBaseLinkNode($new_link);
+    }
+    //return base link
+    return $link_node;
   }
 }
