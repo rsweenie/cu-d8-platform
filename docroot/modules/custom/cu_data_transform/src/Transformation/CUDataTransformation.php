@@ -111,12 +111,18 @@ class CUDataTransformation {
                 $link_node = Node::load($link->target_id);
                 //link node is not null
                 if(!is_null($link_node)){
+                  //internal links maybe be linkceptioned, so we need to find the base link
+                  $base_link_node = Self::getBaseLinkNode($link_node);
+                  //logging
+                  $log.='<br>Original Link nid: '.$link_node->nid->value;
+                  if($link_node->nid->value != $base_link_node->nid->value)
+                    $log.='<br>base Link nid: '.$base_link_node->nid->value;
+
                   //check if link_node has content
                   if(Self::hasContent($link_node)){
-                    //internal links maybe be linkceptioned, so we need to find the base link
-                    $base_link_node = Self::getBaseLinkNode($link_node);
                     //array union, create ief_link fields for paragraph.
                     $field_array = ['type' => 'ief_link']
+
                     //base link node for the uri, original link node for other field values
                     + (isset($base_link_node->field_links_link)?['field_internal_or_external_link' => $base_link_node->field_links_link]:[])
                     + (isset($link_node->field_links_link)?['field_link_text' => $link_node->field_links_link_text]:[])
@@ -134,13 +140,12 @@ class CUDataTransformation {
                         'target_revision_id' => $paragraph->getRevisionId(),
                       ]);
                     //log all the other things!
-                    $log.='<br>Original Link nid: '.$link_node->nid->value;
-                    $log.=' Paragraph Link id: '. $paragraph->id();
-                    $log.=' Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
+                    $log.='<br>Paragraph Link id: '. $paragraph->id();
+                    $log.='<br>Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
                     $cnt++;
                   }else{
                     //just in case there's a link ref and somehow the link doesn;t exist
-                    $log .= '<br>Link does not Exist.<br>';
+                    $log .= '<br>Link has no content.<br>';
                   }
                 }else{
                   $log .= '<br>No Links to convert.<br>';
@@ -160,11 +165,8 @@ class CUDataTransformation {
         $log .= '<br><br>';
       }
     // purge all links from db
-    $links = \Drupal::entityQuery('node')
-        ->condition('type', 'links')
-        ->execute();
-    entity_delete_multiple('node', $links);
-    $log .= '<br>Links Converted: '.$cnt.'<br><br>';;
+    //Self::purgeLinks();
+    $log .= '<br>Links Converted: '.$cnt.'<br><br>';
     //actually log the log
     \Drupal::logger('paragraph_link_transformation')->info($log);
     return $cnt.' Links Transformed';
@@ -179,6 +181,7 @@ class CUDataTransformation {
 
   //return the base link for a links content type
   static private function getBaseLinkNode(Node $link_node){
+    //no uri, base link node
     if(!empty($link_node->field_links_link->uri)){
       $url = Url::fromUri($link_node->field_links_link->uri);
       //if external, it is the base link
@@ -191,6 +194,14 @@ class CUDataTransformation {
     }
     //return base link
     return $link_node;
+  }
+
+  //purge links
+  static private function purgeLinks(){
+    $links = \Drupal::entityQuery('node')
+        ->condition('type', 'links')
+        ->execute();
+    entity_delete_multiple('node', $links);
   }
 
   //transformation filter callback
