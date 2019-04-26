@@ -162,7 +162,7 @@ class CUDataTransformation {
               $entity->save();
             }else{
               //just in case there are no links to convert
-              $log .= '<br>No Links to convert.<br>';
+              $log .= '<br>No Links to transform.<br>';
             }
           }
         }
@@ -171,7 +171,7 @@ class CUDataTransformation {
       }
     // purge all links from db
     Self::purgeLinks();
-    $log .= '<br>Links Converted: '.$c_cnt.'<br>';
+    $log .= '<br>Links Transformed: '.$c_cnt.'<br>';
     $log .= '<br>Links Without Content: '.$nc_cnt.'<br>';
     $log .= '<br>Null Links: '.$nl_cnt.'<br>';
     //actually log the log
