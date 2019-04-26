@@ -76,32 +76,23 @@ html {
 
 	// TODO: remove as much of the custom breakbpoints as possible
 	.center_column {
-	/*	padding-left: 15px;
+		padding-left: 15px;
 		padding-right: 15px;
 		@media all and (min-width: 992px) {
 			padding-left: 0;
 		  padding-right: 0;
-		}*/
+		}
 		// TODO Fix the center column for md-col-12 (not centered without left padding)
 		@include respond-to(null , mobile-max) {
 			margin-bottom: 20px;
 		}
 	}
 
-
 	.flex-layout {
-		.center_column {
-			padding-left: 15px;
-			padding-right: 15px;
-			@media all and (min-width: 992px) {
-				padding-left: 0;
-				padding-right: 0;
-			}
-			.responsive_flex > div{
+			.responsive_flex > div, .top_section{
 				padding-left: 0;
 			}
-	}
-}
+		}
 
 	.right_sidebar {
 		@media all and (min-width: 992px) {
