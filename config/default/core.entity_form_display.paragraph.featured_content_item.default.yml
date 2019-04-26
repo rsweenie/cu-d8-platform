@@ -13,7 +13,6 @@ dependencies:
     - paragraphs.paragraphs_type.featured_content_item
   module:
     - entity_browser
-    - inline_entity_form
     - paragraphs
     - text
 id: paragraph.featured_content_item.default
@@ -22,7 +21,7 @@ bundle: featured_content_item
 mode: default
 content:
   field_body:
-    weight: 101
+    weight: 0
     settings:
       rows: 9
       summary_rows: 3
@@ -32,7 +31,7 @@ content:
     region: content
   field_fc_p_link:
     type: entity_reference_paragraphs
-    weight: 107
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -44,7 +43,7 @@ content:
     region: content
   field_fc_supporting_p_links:
     type: entity_reference_paragraphs
-    weight: 108
+    weight: 3
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -56,7 +55,7 @@ content:
     region: content
   field_featured_content_image:
     type: entity_browser_entity_reference
-    weight: 104
+    weight: 1
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -66,34 +65,9 @@ content:
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
+      field_widget_replace: false
     region: content
     third_party_settings: {  }
-  field_link:
-    weight: 105
-    settings:
-      match_operator: CONTAINS
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: false
-    third_party_settings: {  }
-    type: inline_entity_form_complex
-    region: content
-  field_supporting_links:
-    weight: 106
-    settings:
-      match_operator: CONTAINS
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: false
-    third_party_settings: {  }
-    type: inline_entity_form_complex
-    region: content
   moderation_state:
     type: moderation_state_default
     weight: 100
@@ -108,5 +82,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_link: true
+  field_supporting_links: true
   status: true
   uid: true

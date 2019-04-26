@@ -9,8 +9,6 @@ dependencies:
     - node.type.featured_links
   module:
     - content_moderation
-    - entity_browser_entity_form
-    - inline_entity_form
     - paragraphs
     - private_content
     - scheduler
@@ -21,33 +19,15 @@ targetEntityType: node
 bundle: featured_links
 mode: default
 content:
-  field_featured_link:
-    weight: 1
-    settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Link
-      label_plural: Links
-      allow_new: true
-      match_operator: CONTAINS
-      collapsible: false
-      collapsed: false
-      allow_existing: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: creighton_link_bros
-    type: inline_entity_form_complex
-    region: content
   field_featured_link_button_color:
-    weight: 4
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_featured_p_link:
     type: entity_reference_paragraphs
-    weight: 26
+    weight: 7
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -59,19 +39,19 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 8
+    weight: 6
     settings: {  }
     region: content
     third_party_settings: {  }
   private:
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
     type: private
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -91,17 +71,18 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 5
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
+  field_featured_link: true
   path: true
   promote: true
   status: true

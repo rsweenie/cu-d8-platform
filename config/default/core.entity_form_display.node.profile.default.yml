@@ -38,7 +38,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 9
     settings:
       rows: 9
       summary_rows: 3
@@ -47,12 +47,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_profile_email:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -61,7 +61,7 @@ content:
     region: content
   field_profile_image:
     type: entity_browser_entity_reference
-    weight: 7
+    weight: 8
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -74,24 +74,6 @@ content:
       field_widget_replace: false
     region: content
     third_party_settings: {  }
-  field_profile_link:
-    weight: 31
-    settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Link
-      label_plural: Links
-      allow_new: true
-      match_operator: CONTAINS
-      collapsible: false
-      collapsed: false
-      allow_existing: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: creighton_link_bros
-    type: inline_entity_form_complex
-    region: content
   field_profile_name:
     weight: 0
     settings: {  }
@@ -99,7 +81,7 @@ content:
     type: name_default
     region: content
   field_profile_office_location:
-    weight: 3
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -108,7 +90,7 @@ content:
     region: content
   field_profile_p_link:
     type: entity_reference_paragraphs
-    weight: 32
+    weight: 22
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -119,7 +101,7 @@ content:
     third_party_settings: {  }
     region: content
   field_profile_phone:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -127,7 +109,7 @@ content:
     type: string_textfield
     region: content
   field_profile_position:
-    weight: 4
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -135,7 +117,7 @@ content:
     type: string_textfield
     region: content
   field_profile_specialties:
-    weight: 5
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -144,13 +126,13 @@ content:
     type: entity_reference_autocomplete_tags
     region: content
   field_profile_type:
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_sidebar_items:
-    weight: 10
+    weight: 11
     settings:
       form_mode: default
       override_labels: true
@@ -168,14 +150,14 @@ content:
     type: inline_entity_form_complex
     region: content
   field_sort_order:
-    weight: 9
+    weight: 10
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_tabbed_accordion:
-    weight: 26
+    weight: 19
     settings:
       form_mode: default
       override_labels: true
@@ -208,12 +190,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 15
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -232,7 +214,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 12
+    weight: 13
     region: content
     settings:
       size: 60
@@ -240,7 +222,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60
@@ -249,7 +231,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -259,5 +241,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_profile_link: true
   moderation_state: true
   sticky: true
