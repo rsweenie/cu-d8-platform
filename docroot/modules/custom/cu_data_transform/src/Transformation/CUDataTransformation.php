@@ -165,7 +165,7 @@ class CUDataTransformation {
         $log .= '<br><br>';
       }
     // purge all links from db
-    //Self::purgeLinks();
+    Self::purgeLinks();
     $log .= '<br>Links Converted: '.$cnt.'<br><br>';
     //actually log the log
     \Drupal::logger('paragraph_link_transformation')->info($log);
