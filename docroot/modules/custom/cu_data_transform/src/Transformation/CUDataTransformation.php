@@ -78,7 +78,9 @@ class CUDataTransformation {
     ];
 
     $log = '';
-    $cnt = 0;
+    $c_cnt = 0;
+    $nc_cnt = 0;
+    $nl_cnt = 0;
     //iterate over entity types
     foreach($content as $entity_key => $entity_type)
       foreach($entity_type as $type => $fields){
@@ -142,13 +144,16 @@ class CUDataTransformation {
                     //log all the other things!
                     $log.='<br>Paragraph Link id: '. $paragraph->id();
                     $log.='<br>Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
-                    $cnt++;
+                    $c_cnt++;
                   }else{
-                    //just in case there's a link ref and somehow the link doesn;t exist
+                    //just in case there's a link ref with no content(uri,text,file...)
                     $log .= '<br>Link has no content.<br>';
+                    //$log .= $base_link_node->toLink()->toString().'<br>';
+                    $nc_cnt++;
                   }
                 }else{
-                  $log .= '<br>No Links to convert.<br>';
+                  $log .= '<br>Link does not exist.<br>';
+                  $nl_cnt++;
                 }
               }
               //add the paragraph to the entity and save
@@ -166,10 +171,12 @@ class CUDataTransformation {
       }
     // purge all links from db
     Self::purgeLinks();
-    $log .= '<br>Links Converted: '.$cnt.'<br><br>';
+    $log .= '<br>Links Converted: '.$c_cnt.'<br>';
+    $log .= '<br>Links Without Content: '.$nc_cnt.'<br>';
+    $log .= '<br>Null Links: '.$nl_cnt.'<br>';
     //actually log the log
     \Drupal::logger('paragraph_link_transformation')->info($log);
-    return $cnt.' Links Transformed';
+    return $c_cnt.' Links Transformed';
   }
   //check if there is any content
   static private function hasContent(Node $link_node){
