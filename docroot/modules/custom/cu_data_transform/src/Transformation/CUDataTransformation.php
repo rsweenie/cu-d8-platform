@@ -114,10 +114,11 @@ class CUDataTransformation {
                   //check if link_node has content
                   if(Self::hasContent($link_node)){
                     //internal links maybe be linkceptioned, so we need to find the base link
-                    $link_node = Self::getBaseLinkNode($link_node);
+                    $base_link_node = Self::getBaseLinkNode($link_node);
                     //array union, create ief_link fields for paragraph.
                     $field_array = ['type' => 'ief_link']
-                    + (isset($link_node->field_links_link)?['field_internal_or_external_link' => $link_node->field_links_link]:[])
+                    //base link node for the uri, original link node for other field values
+                    + (isset($base_link_node->field_links_link)?['field_internal_or_external_link' => $base_link_node->field_links_link]:[])
                     + (isset($link_node->field_links_link)?['field_link_text' => $link_node->field_links_link_text]:[])
                     + (isset($link_node->field_links_link)?['field_open_in_new_window' => $link_node->field_links_open_in_new_window]:[])
                     + (isset($link_node->field_links_link)?['field_file_link' => $link_node->field_links_file_link_upload]:[]);
@@ -158,7 +159,7 @@ class CUDataTransformation {
         //add some new breaks
         $log .= '<br><br>';
       }
-    //purge all links from db
+    // purge all links from db
     $links = \Drupal::entityQuery('node')
         ->condition('type', 'links')
         ->execute();
