@@ -192,7 +192,7 @@ class CUDataTransformation {
     if(!empty($link_node->field_links_link->uri)){
       $url = Url::fromUri($link_node->field_links_link->uri);
       //if external, it is the base link
-      if(!$url->isExternal()){
+      if(!$url->isExternal()&&$url->isRouted()){
         $new_link = Node::load($url->getRouteParameters()['node']);
         //if the new_link isn't of type links, then link_node is base link
         if($new_link->getType() == 'links')
