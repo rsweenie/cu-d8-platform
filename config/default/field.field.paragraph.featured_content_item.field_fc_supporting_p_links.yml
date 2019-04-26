@@ -1,15 +1,15 @@
-uuid: 278b2cfd-31f6-4b56-857b-4a608b6f91b2
+uuid: af61e15c-a7d4-4698-8ed9-505e45fe1fcf
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_fc_p_supporting_links
+    - field.storage.paragraph.field_fc_supporting_p_links
     - paragraphs.paragraphs_type.featured_content_item
     - paragraphs.paragraphs_type.ief_link
   module:
     - entity_reference_revisions
-id: paragraph.featured_content_item.field_fc_p_supporting_links
-field_name: field_fc_p_supporting_links
+id: paragraph.featured_content_item.field_fc_supporting_p_links
+field_name: field_fc_supporting_p_links
 entity_type: paragraph
 bundle: featured_content_item
 label: 'Featured Content Supporting Links'

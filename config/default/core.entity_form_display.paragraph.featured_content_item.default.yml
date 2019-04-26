@@ -6,7 +6,7 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.paragraph.featured_content_item.field_body
     - field.field.paragraph.featured_content_item.field_fc_p_link
-    - field.field.paragraph.featured_content_item.field_fc_p_supporting_links
+    - field.field.paragraph.featured_content_item.field_fc_supporting_p_links
     - field.field.paragraph.featured_content_item.field_featured_content_image
     - field.field.paragraph.featured_content_item.field_link
     - field.field.paragraph.featured_content_item.field_supporting_links
@@ -42,7 +42,7 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  field_fc_p_supporting_links:
+  field_fc_supporting_p_links:
     type: entity_reference_paragraphs
     weight: 108
     settings:

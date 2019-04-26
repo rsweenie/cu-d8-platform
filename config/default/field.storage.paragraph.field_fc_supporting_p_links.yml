@@ -1,4 +1,4 @@
-uuid: 0a8f16c3-e152-4b70-b1a8-9ade4c07bcf4
+uuid: fb17857a-da70-4ea4-a57e-b8aa04103984
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_fc_p_supporting_links
-field_name: field_fc_p_supporting_links
+id: paragraph.field_fc_supporting_p_links
+field_name: field_fc_supporting_p_links
 entity_type: paragraph
 type: entity_reference_revisions
 settings:

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.featured_content_item.field_body
     - field.field.paragraph.featured_content_item.field_fc_p_link
-    - field.field.paragraph.featured_content_item.field_fc_p_supporting_links
+    - field.field.paragraph.featured_content_item.field_fc_supporting_p_links
     - field.field.paragraph.featured_content_item.field_featured_content_image
     - field.field.paragraph.featured_content_item.field_link
     - field.field.paragraph.featured_content_item.field_supporting_links
@@ -30,13 +30,13 @@ content:
   field_fc_p_link:
     type: entity_reference_revisions_entity_view
     weight: 4
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
-  field_fc_p_supporting_links:
+  field_fc_supporting_p_links:
     type: entity_reference_revisions_entity_view
     weight: 5
     label: above
