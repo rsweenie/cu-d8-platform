@@ -9675,8 +9675,8 @@ html .large-horiz-image {
 }
 /* line 80, ../sass/custom/_base.scss */
 html .center_column {
-  padding-left: 15px;
-  padding-right: 15px;
+  /*padding-left: 15px;
+  padding-right: 15px;*/
 }
 @media all and (min-width: 992px) {
   /* line 80, ../sass/custom/_base.scss */
