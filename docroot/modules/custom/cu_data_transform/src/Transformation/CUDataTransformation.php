@@ -12,117 +12,157 @@ class CUDataTransformation {
   static function paragraph_links_transformation(){
     //content types to convert links from
     //each contains the old and new field names
-    $content_types = [
-      'related_links' => [
-        'old' =>'field_related_link',
-        'new' =>'field_related_p_link'
+    $content = [
+        'Node'=>[
+        'related_links' => [
+          [
+            'old' =>'field_related_link',
+            'new' =>'field_related_p_link'
+          ]
+        ],
+        'featured_links'=> [
+          [
+            'old' =>'field_featured_link',
+            'new' =>'field_featured_p_link'
+          ]
+        ],
+        'header_alert'=> [
+          [
+            'old' =>'field_alert_link',
+            'new' =>'field_header_alert_p_link'
+          ]
+        ],
+        'news_spotlight'=> [
+          [
+            'old' =>'field_new',
+            'new' =>'field_news_spotlight_p_link'
+          ]
+        ],
+        'profile'=> [
+            [
+            'old' =>'field_profile_link',
+            'new' =>'field_profile_p_link'
+          ]
+        ],
+        'promo_box'=> [
+          [
+            'old' =>'field_promo_link',
+            'new' =>'field_promo_p_link'
+          ]
+        ],
+        'quote_box'=> [
+          [
+            'old' =>'field_quote_link',
+            'new' =>'field_quote_p_link'
+          ]
+        ],
+        'slide'=> [
+            [
+            'old' =>'field_slide_link',
+            'new' =>'field_slide_p_link'
+          ]
+        ],
       ],
-      'featured_links'=> [
-        'old' =>'field_featured_link',
-        'new' =>'field_featured_p_link'
-      ],
-      'header_alert'=> [
-        'old' =>'field_alert_link',
-        'new' =>'field_header_alert_p_link'
-      ],
-      'news_spotlight'=> [
-        'old' =>'field_new',
-        'new' =>'field_news_spotlight_p_link'
-      ],
-      'profile'=> [
-        'old' =>'field_profile_link',
-        'new' =>'field_profile_p_link'
-      ],
-      'promo_box'=> [
-        'old' =>'field_promo_link',
-        'new' =>'field_promo_p_link'
-      ],
-      'quote_box'=> [
-        'old' =>'field_quote_link',
-        'new' =>'field_quote_p_link'
-      ],
-      'slide'=> [
-        'old' =>'field_slide_link',
-        'new' =>'field_slide_p_link'
-      ],
+      'Paragraph'=>[
+        'featured_content_item'=>[
+          [
+            'old' =>'field_link',
+            'new' =>'field_fc_p_link'
+          ],
+          [
+            'old' =>'field_supporting_links',
+            'new' =>'field_fc_supporting_p_links'
+          ],
+        ]
+      ]
     ];
 
     $log = '';
     $cnt = 0;
     //iterate over content types
-    foreach($content_types as $type => $field_names){
-      //get all the node ids for this content type
-      $nids = \Drupal::entityQuery('node')->condition('type',$type)->execute();
-      //load all of those nodes
-      $nodes =  Node::loadMultiple($nids);
-      //log the content type we are converting
-      $log .= '<strong>Type: '.$type.'</strong>';
-      //iterate over each of these nodes
-      foreach($nodes as $entity ){
-        //log all the things
-        $log .= '<br><strong>Node: '.$entity->nid->value.' title: '.$entity->title->value.'</strong>';
-        $log .= '<br>'.$entity->toLink()->toString();
-        //if the field name exists for this entity
-        if(count($entity->{$field_names['old']})>0){
-          $paragraph_array = [];
-          //for each link in the entity
-          foreach($entity->{$field_names['old']} as $link){
-            //load the link node
-            $link_node = Node::load($link->target_id);
-            //link node is not null
-            if(!is_null($link_node)){
-              //check if link_node has content
-              if(Self::hasContent($link_node)){
-                //internal links maybe be linkceptioned, so we need to find the base link
-                $link_node = Self::getBaseLinkNode($link_node);
-                //array union, create ief_link fields for paragraph.
-                $field_array = ['type' => 'ief_link']
-                + (isset($link_node->field_links_link)?['field_internal_or_external_link' => $link_node->field_links_link]:[])
-                + (isset($link_node->field_links_link)?['field_link_text' => $link_node->field_links_link_text]:[])
-                + (isset($link_node->field_links_link)?['field_open_in_new_window' => $link_node->field_links_open_in_new_window]:[])
-                + (isset($link_node->field_links_link)?['field_file_link' => $link_node->field_links_file_link_upload]:[]);
-                //use field array to create the paragraph
-                $paragraph = Paragraph::create($field_array);
-                //save the paragraph
-                $paragraph->save();
-                //add the paragraph info needed to reference the content type to the paragraph
-                //for each link
-                array_push($paragraph_array ,
-                  [
-                    'target_id' => $paragraph->id(),
-                    'target_revision_id' => $paragraph->getRevisionId(),
-                  ]);
-                //log all the other things!
-                $log.='<br>Original Link nid: '.$link_node->nid->value;
-                $log.=' Paragraph Link id: '. $paragraph->id();
-                $log.=' Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
-                $cnt++;
-              }else{
-                //just in case there's a link ref and somehow the link doesn;t exist
-                $log .= '<br>Link does not Exist.<br>';
+    foreach($content as $entity_key => $entity_type)
+      foreach($entity_type as $type => $fields){
+        //get all the node ids for this content type
+        $nids = \Drupal::entityQuery(lcfirst($entity_key))->condition('type',$type)->execute();
+        //load all of those nodes
+        if($entity_key == 'Node')
+          $nodes = Node::loadMultiple($nids);
+        else //or paragraphs
+          $nodes = Paragraph::loadMultiple($nids);
+        //log the content type we are converting
+        $log .= '<strong>Type: '.$type.'</strong>';
+        //iterate over each of these nodes
+        foreach($nodes as $entity ){
+          //log all the things
+          $log .= '<br><strong>Entity: '.$entity->Id();
+          //paragraphs dont have these properties
+          if($entity_key == 'Node'){
+            $log .= ' title: '.(!empty($entity->title->value)?$entity->title->value:'');
+            $log .= '<br>'.$entity->toLink()->toString();
+          }
+          $log .=' </strong>';
+          foreach($fields as $field){
+            //if the field name exists for this entity
+            if(count($entity->{$field['old']})>0){
+              $paragraph_array = [];
+              //for each link in the entity
+              foreach($entity->{$field['old']} as $link){
+                //load the link node
+                $link_node = Node::load($link->target_id);
+                //link node is not null
+                if(!is_null($link_node)){
+                  //check if link_node has content
+                  if(Self::hasContent($link_node)){
+                    //internal links maybe be linkceptioned, so we need to find the base link
+                    $link_node = Self::getBaseLinkNode($link_node);
+                    //array union, create ief_link fields for paragraph.
+                    $field_array = ['type' => 'ief_link']
+                    + (isset($link_node->field_links_link)?['field_internal_or_external_link' => $link_node->field_links_link]:[])
+                    + (isset($link_node->field_links_link)?['field_link_text' => $link_node->field_links_link_text]:[])
+                    + (isset($link_node->field_links_link)?['field_open_in_new_window' => $link_node->field_links_open_in_new_window]:[])
+                    + (isset($link_node->field_links_link)?['field_file_link' => $link_node->field_links_file_link_upload]:[]);
+                    //use field array to create the paragraph
+                    $paragraph = Paragraph::create($field_array);
+                    //save the paragraph
+                    $paragraph->save();
+                    //add the paragraph info needed to reference the content type to the paragraph
+                    //for each link
+                    array_push($paragraph_array ,
+                      [
+                        'target_id' => $paragraph->id(),
+                        'target_revision_id' => $paragraph->getRevisionId(),
+                      ]);
+                    //log all the other things!
+                    $log.='<br>Original Link nid: '.$link_node->nid->value;
+                    $log.=' Paragraph Link id: '. $paragraph->id();
+                    $log.=' Paragraph Link Revision id: '.$paragraph->getRevisionId().'<br>';
+                    $cnt++;
+                  }else{
+                    //just in case there's a link ref and somehow the link doesn;t exist
+                    $log .= '<br>Link does not Exist.<br>';
+                  }
+                }else{
+                  $log .= '<br>No Links to convert.<br>';
+                }
               }
+              //add the paragraph to the entity and save
+              if(!empty($paragraph_array))
+                $entity->{$field['new']} = $paragraph_array;
+              $entity->save();
             }else{
+              //just in case there are no links to convert
               $log .= '<br>No Links to convert.<br>';
             }
           }
-          //add the paragraph to the entity and save
-          if(!empty($paragraph_array))
-            $entity->{$field_names['new']} = $paragraph_array;
-          $entity->save();
-        }else{
-          //just in case there are no links to convert
-          $log .= '<br>No Links to convert.<br>';
         }
+        //add some new breaks
+        $log .= '<br><br>';
       }
-      //add some new breaks
-      $log .= '<br><br>';
-    }
     //purge all links from db
     $links = \Drupal::entityQuery('node')
         ->condition('type', 'links')
         ->execute();
     entity_delete_multiple('node', $links);
-
     $log .= '<br>Links Converted: '.$cnt.'<br><br>';;
     //actually log the log
     \Drupal::logger('paragraph_link_transformation')->info($log);
@@ -138,13 +178,15 @@ class CUDataTransformation {
 
   //return the base link for a links content type
   static private function getBaseLinkNode(Node $link_node){
-    $url = Url::fromUri($link_node->field_links_link->uri);
-    //if external, it is the base link
-    if(!$url->isExternal()){
-      $new_link = Node::load($url->getRouteParameters()['node']);
-      //if the new_link isn't of type links, then link_node is base link
-      if($new_link->getType() == 'links')
-        $link_node = Self::getBaseLinkNode($new_link);
+    if(!empty($link_node->field_links_link->uri)){
+      $url = Url::fromUri($link_node->field_links_link->uri);
+      //if external, it is the base link
+      if(!$url->isExternal()){
+        $new_link = Node::load($url->getRouteParameters()['node']);
+        //if the new_link isn't of type links, then link_node is base link
+        if($new_link->getType() == 'links')
+          $link_node = Self::getBaseLinkNode($new_link);
+      }
     }
     //return base link
     return $link_node;
@@ -159,4 +201,6 @@ class CUDataTransformation {
   static function getTransformations(){
     return array_filter(get_class_methods(new static),__CLASS__ .'::isTransformation'); 
   }
+
+
 }
