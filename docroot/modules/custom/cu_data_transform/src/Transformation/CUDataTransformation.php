@@ -79,7 +79,7 @@ class CUDataTransformation {
 
     $log = '';
     $cnt = 0;
-    //iterate over content types
+    //iterate over entity types
     foreach($content as $entity_key => $entity_type)
       foreach($entity_type as $type => $fields){
         //get all the node ids for this content type
