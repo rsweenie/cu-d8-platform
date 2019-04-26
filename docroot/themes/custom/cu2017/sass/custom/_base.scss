@@ -10,7 +10,7 @@ html {
 		p {
 			margin: 0 0 1.5em;
 			word-wrap: break-word;
-			
+
 		}
 		a {
 			color: $blue;
@@ -21,7 +21,7 @@ html {
 				text-decoration: underline;
 			}
 		}
-		
+
 		h2 {
 			color: $darkBlue;
 			font-family: $condensedFont;
@@ -40,7 +40,7 @@ html {
 	.main {
 		padding: 0;
 		width: 100%;
-	
+
 		@media (min-width: 65.6875em) {
 			max-width: $maxContentWidth;
 		}
@@ -62,7 +62,10 @@ html {
 			padding: 0;
 		}
 	}
-		
+	.flex-layout .top_section {
+    padding-left: 0;
+	}
+
 	.large-horiz-image {
 		margin-bottom: 2em;
 		padding: 0 15px;
@@ -71,13 +74,16 @@ html {
 			padding: 0;
 		}
 	}
-	
-	
+
+
 	// TODO: remove as much of the custom breakbpoints as possible
 	.center_column {
+		padding-left: 15px;
+		padding-right: 15px;
 		@media all and (min-width: 992px) {
 			padding-left: 0;
-		} 
+		  padding-right: 0;
+		}
 		// TODO Fix the center column for md-col-12 (not centered without left padding)
 		@include respond-to(null , mobile-max) {
 			margin-bottom: 20px;
