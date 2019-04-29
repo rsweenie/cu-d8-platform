@@ -1,0 +1,16 @@
+<?php
+use Drupal\cu_data_transform\Transformation\CUDataTransformation;
+
+/**
+ * @file
+ * Contains cu_data_transfer.install
+ * Max McCoy 4.22.2019
+ */
+
+
+/**
+ * Implements hook_install().
+ */
+function cu_data_transform_install() {
+  //CUDataTransformation::paragraph_links_transformation();
+}

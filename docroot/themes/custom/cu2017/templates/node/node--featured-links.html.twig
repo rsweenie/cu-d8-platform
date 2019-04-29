@@ -4,6 +4,7 @@
  * Featured Links template.
  */
 #}
+
 <div{{ attributes.addClass('clearfix', 'featured_links_wrapper') }}>
     {{ title_suffix.contextual_links }}
 
@@ -17,6 +18,7 @@
     {% endif %}
 
     <ul{{ featured_links_attributes.addClass(classes) }}>
-        {{ content.field_featured_link }}
+        {{ content.field_featured_p_link }}
     </ul>
+
 </div>

@@ -5,11 +5,11 @@ dependencies:
   config:
     - field.field.node.promo_box.field_promo_box_promo_text
     - field.field.node.promo_box.field_promo_link
+    - field.field.node.promo_box.field_promo_p_link
     - node.type.promo_box
   module:
     - content_moderation
-    - entity_browser_entity_form
-    - inline_entity_form
+    - paragraphs
     - private_content
     - scheduler
 _core:
@@ -35,39 +35,33 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_promo_link:
-    weight: 2
+  field_promo_p_link:
+    type: entity_reference_paragraphs
+    weight: 7
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Link
-      label_plural: Links
-      allow_new: true
-      match_operator: CONTAINS
-      collapsible: false
-      collapsed: false
-      allow_existing: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: _none
-    type: inline_entity_form_complex
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 8
+    weight: 6
     settings: {  }
     region: content
     third_party_settings: {  }
   private:
-    weight: 3
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
     type: private
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -87,17 +81,18 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 5
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
+  field_promo_link: true
   path: true
   promote: true
   status: true

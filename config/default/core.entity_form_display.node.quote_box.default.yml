@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.quote_box.field_quote_box_quote_text
     - field.field.node.quote_box.field_quote_box_quotes
     - field.field.node.quote_box.field_quote_link
+    - field.field.node.quote_box.field_quote_p_link
     - node.type.quote_box
   module:
     - content_moderation
@@ -17,6 +18,7 @@ dependencies:
     - entity_browser_entity_form
     - inline_entity_form
     - name
+    - paragraphs
     - private_content
     - scheduler
 _core:
@@ -86,6 +88,18 @@ content:
       entity_browser_entity_form:
         entity_browser_id: browse_content
     type: inline_entity_form_complex
+    region: content
+  field_quote_p_link:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   moderation_state:
     type: moderation_state_default
