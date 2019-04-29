@@ -87,10 +87,7 @@ class CUDataTransformation {
         //get all the node ids for this content type
         $nids = \Drupal::entityQuery(lcfirst($entity_key))->condition('type',$type)->execute();
         //load all of those nodes
-        if($entity_key == 'Node')
-          $nodes = Node::loadMultiple($nids);
-        else //or paragraphs
-          $nodes = Paragraph::loadMultiple($nids);
+        $nodes = ($entity_key == 'Node')?Node::loadMultiple($nids):Paragraph::loadMultiple($nids);
         //log the content type we are converting
         $log .= '<strong>Type: '.$type.'</strong>';
         //iterate over each of these nodes

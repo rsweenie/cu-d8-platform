@@ -1137,7 +1137,7 @@ display:
       defaults:
         fields: true
         title: false
-      title: ''
+      title: 'Creighton News'
     cache_metadata:
       max-age: -1
       contexts:
