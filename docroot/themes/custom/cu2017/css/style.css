@@ -9658,40 +9658,50 @@ html .headline {
     padding: 0;
   }
 }
-/* line 66, ../sass/custom/_base.scss */
+/* line 67, ../sass/custom/_base.scss */
 html .large-horiz-image {
   margin-bottom: 2em;
   padding: 0 15px;
 }
 @media all and (min-width: 992px) {
-  /* line 66, ../sass/custom/_base.scss */
+  /* line 67, ../sass/custom/_base.scss */
   html .large-horiz-image {
     padding: 0;
   }
 }
+/* line 78, ../sass/custom/_base.scss */
+html .center_column {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 @media all and (min-width: 992px) {
-  /* line 77, ../sass/custom/_base.scss */
+  /* line 78, ../sass/custom/_base.scss */
   html .center_column {
     padding-left: 0;
+    padding-right: 0;
   }
 }
 @media all and (max-width: 480px) {
-  /* line 77, ../sass/custom/_base.scss */
+  /* line 78, ../sass/custom/_base.scss */
   html .center_column {
     margin-bottom: 20px;
   }
 }
+/* line 92, ../sass/custom/_base.scss */
+html .flex-layout .responsive_flex > div, html .flex-layout .top_section {
+  padding-left: 0;
+}
 @media all and (min-width: 992px) {
-  /* line 87, ../sass/custom/_base.scss */
+  /* line 97, ../sass/custom/_base.scss */
   html .right_sidebar {
     padding-right: 0;
   }
 }
-/* line 93, ../sass/custom/_base.scss */
+/* line 103, ../sass/custom/_base.scss */
 html .featured_links_wrapper {
   margin-bottom: 16px;
 }
-/* line 96, ../sass/custom/_base.scss */
+/* line 106, ../sass/custom/_base.scss */
 html .copy_box_wrapper,
 html .quote_box_wrapper,
 html .related_links_wrapper,
@@ -9699,7 +9709,7 @@ html .promo_box_wrapper {
   margin-bottom: 20px;
 }
 @media all and (min-width: 992px) {
-  /* line 102, ../sass/custom/_base.scss */
+  /* line 112, ../sass/custom/_base.scss */
   html .default-layout > .layout-content > [role="main"] > .main.container > .row > * > .headline {
     padding-left: 0px;
   }
@@ -11327,7 +11337,7 @@ ul#megamenu_icon_menu {
   flex: 0 1 auto;
   flex-direction: column;
   float: left;
-  margin: 5px 5px 1.5em;
+  margin: 5px 10px 1.5em 0;
   padding: 10px;
   padding-bottom: 34px;
   position: relative;
