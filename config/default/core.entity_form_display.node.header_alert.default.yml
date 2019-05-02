@@ -7,12 +7,13 @@ dependencies:
     - field.field.node.header_alert.field_emergency_headline
     - field.field.node.header_alert.field_header_alert_activate
     - field.field.node.header_alert.field_header_alert_markup
+    - field.field.node.header_alert.field_header_alert_p_link
     - field.field.node.header_alert.field_header_alertemergency_type
     - node.type.header_alert
   module:
     - content_moderation
     - entity_browser_entity_form
-    - inline_entity_form
+    - paragraphs
     - path
     - private_content
     - scheduler
@@ -26,26 +27,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_alert_link:
-    weight: 127
-    settings:
-      form_mode: default
-      override_labels: true
-      label_singular: 'Alert Link'
-      label_plural: 'Alert Links'
-      collapsible: false
-      collapsed: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: creighton_link_bros
-    type: inline_entity_form_simple
-    region: content
   field_emergency_headline:
-    weight: 124
+    weight: 15
     settings:
       size: 60
       placeholder: ''
@@ -53,13 +40,13 @@ content:
     type: string_textfield
     region: content
   field_header_alert_activate:
-    weight: 122
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_header_alert_markup:
-    weight: 125
+    weight: 16
     settings:
       rows: 9
       summary_rows: 3
@@ -67,21 +54,33 @@ content:
     third_party_settings: {  }
     type: text_textarea_with_summary
     region: content
+  field_header_alert_p_link:
+    type: entity_reference_paragraphs
+    weight: 17
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_header_alertemergency_type:
-    weight: 123
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 11
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -95,12 +94,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 4
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -111,7 +110,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -119,19 +118,19 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -139,7 +138,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
@@ -150,13 +149,14 @@ content:
         entity_browser_id: creighton_link_bros
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_alert_link: true

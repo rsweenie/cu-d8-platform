@@ -1,0 +1,37 @@
+uuid: 970ace5e-a3ff-41f7-b093-3553458ea830
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_p_link
+    - node.type.profile
+    - paragraphs.paragraphs_type.ief_link
+  module:
+    - entity_reference_revisions
+id: node.profile.field_profile_p_link
+field_name: field_profile_p_link
+entity_type: node
+bundle: profile
+label: 'Profile Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ief_link: ief_link
+    target_bundles_drag_drop:
+      accordion:
+        weight: 4
+        enabled: false
+      featured_content_item:
+        weight: 5
+        enabled: false
+      ief_link:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

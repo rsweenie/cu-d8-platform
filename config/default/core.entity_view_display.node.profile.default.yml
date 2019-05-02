@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.profile.field_profile_link
     - field.field.node.profile.field_profile_name
     - field.field.node.profile.field_profile_office_location
+    - field.field.node.profile.field_profile_p_link
     - field.field.node.profile.field_profile_phone
     - field.field.node.profile.field_profile_position
     - field.field.node.profile.field_profile_specialties
@@ -19,6 +20,7 @@ dependencies:
     - image.style.rectangle_vertical_small_175x200_
     - node.type.profile
   module:
+    - entity_reference_revisions
     - media
     - name
     - panelizer
@@ -92,6 +94,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_profile_p_link:
+    type: entity_reference_revisions_entity_view
+    weight: 13
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_profile_phone:
     weight: 5
