@@ -113,7 +113,7 @@
             "version": "1.0.0",
             "type": "drupal-module",
             "source": {
-                "url": "https://git.drupal.org/sandbox/blixxxa/2916732.git",
+                "url": "https://git.drupalcode.org/sandbox/blixxxa-2916732.git",
                 "type": "git",
                 "reference": "remotes/origin/8.x-1.x"
             }
