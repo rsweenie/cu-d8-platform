@@ -12,7 +12,7 @@ header {
 	}
 
 	.header_bg_wrapper {
-		background-color: $headerBackground;
+		background-color: $headerBackgroundTransparent;
 		width: 100%;
 		z-index: 6;
 		@include respond-to(null , tablet-max){

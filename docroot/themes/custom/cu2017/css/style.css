@@ -10186,7 +10186,7 @@ header {
 }
 /* line 14, ../sass/custom/_header.scss */
 header .header_bg_wrapper {
-  background-color: #0054a6;
+  background-color: rgba(0, 84, 166, 0.8);
   width: 100%;
   z-index: 6;
 }
