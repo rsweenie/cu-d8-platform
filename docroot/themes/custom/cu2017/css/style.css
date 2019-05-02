@@ -11450,7 +11450,7 @@ ul#megamenu_icon_menu {
 }
 
 /* line 11, ../sass/custom/_mainnav.scss */
-nav#block-mainnavigation {
+nav#block-mainnavigation, nav#block-cu2017-alliance-mainnavigation {
   margin-top: 22px;
 }
 
