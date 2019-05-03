@@ -124,11 +124,16 @@
 				background-image: url(../images/png/white-arrow.png);
 				background-position: 100%;
 				background-repeat: no-repeat;
+				margin-top: 2rem;
 				padding: 0px 20px 0px 0px;
 				font-size:1.6em;
 				@include respond-to(null , tablet-max ){
 					font-size: 18px;
 				}
+				@include respond-to(null, mobile-max) {
+					margin-top: 0;
+				}
+
 			}
 			p {
 				font-weight: $regular;
