@@ -12045,6 +12045,7 @@ li.active.last_active.great_grandchild_class a:before {
   background-image: url(../images/png/white-arrow.png);
   background-position: 100%;
   background-repeat: no-repeat;
+  margin-top: 2rem;
   padding: 0px 20px 0px 0px;
   font-size: 1.6em;
 }
@@ -12054,17 +12055,23 @@ li.active.last_active.great_grandchild_class a:before {
     font-size: 18px;
   }
 }
-/* line 133, ../sass/custom/_slideshow.scss */
+@media all and (max-width: 480px) {
+  /* line 123, ../sass/custom/_slideshow.scss */
+  #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text a {
+    margin-top: 0;
+  }
+}
+/* line 138, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text p {
   font-weight: 400;
 }
-/* line 138, ../sass/custom/_slideshow.scss */
+/* line 143, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slick__arrow {
   display: flex;
   justify-content: flex-end;
   top: 90%;
 }
-/* line 142, ../sass/custom/_slideshow.scss */
+/* line 147, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slick__arrow .slick-arrow {
   position: static;
   margin-right: 20px;
