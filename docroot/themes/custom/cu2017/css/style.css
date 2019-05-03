@@ -9595,15 +9595,30 @@ nav[role=navigation] {
   padding-left: 8px;
 }
 
-/* line 75, ../sass/_overrides.scss */
-.breadcrumb_region .breadcrumb {
+/*.breadcrumb_region .breadcrumb {
   padding-top: 20px;
   padding-left: 15px;
   margin-bottom: 0;
-  padding-bottom: 15px;
+  padding-bottom:15px;
+}*/
+/* line 82, ../sass/_overrides.scss */
+.main_front.layout-content {
+  margin-top: 38px;
 }
 
-/* line 83, ../sass/_overrides.scss */
+/* line 86, ../sass/_overrides.scss */
+.row.site_name + .main_front.layout-content {
+  margin-top: 0px;
+}
+
+/*.main_front.admin.layout-content {
+  margin-top:-6px;
+}
+
+.row.site_name + .main_front.admin.layout-content {
+    margin-top: -44px;
+}*/
+/* line 99, ../sass/_overrides.scss */
 main h1.headline {
   margin-top: -2px;
 }
@@ -9736,34 +9751,36 @@ html .promo_box_wrapper {
 
 /* line 8, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb {
+  padding: 20px 15px 15px;
+  margin-bottom: 0;
   background-color: #FFF;
 }
-/* line 11, ../sass/custom/_breadcrumbs.scss */
+/* line 13, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li {
   white-space: nowrap;
 }
-/* line 13, ../sass/custom/_breadcrumbs.scss */
+/* line 15, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li a {
   color: rgba(0, 46, 109, 0.7);
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 12px;
 }
-/* line 16, ../sass/custom/_breadcrumbs.scss */
+/* line 18, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li a:hover {
   text-decoration: underline;
 }
-/* line 21, ../sass/custom/_breadcrumbs.scss */
+/* line 23, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li::before {
   color: rgba(0, 46, 109, 0.7);
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 12px;
   content: '>';
 }
-/* line 27, ../sass/custom/_breadcrumbs.scss */
+/* line 29, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb li:first-child::before {
   content: '';
 }
-/* line 33, ../sass/custom/_breadcrumbs.scss */
+/* line 35, ../sass/custom/_breadcrumbs.scss */
 .breadcrumb_region .breadcrumb .active {
   color: rgba(0, 46, 109, 0.7);
   font-family: "Open Sans", Arial, sans-serif;
