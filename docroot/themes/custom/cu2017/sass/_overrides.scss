@@ -67,3 +67,19 @@ p:last-child,
     margin-top: 0;
   }
 }
+
+nav[role=navigation]{
+  padding-left: 8px;
+}
+
+.breadcrumb_region .breadcrumb {
+  padding-top: 20px;
+  padding-left: 15px;
+  margin-bottom: 0;
+  padding-bottom:15px;
+}
+
+
+main h1.headline {
+    margin-top: -2px;
+}
