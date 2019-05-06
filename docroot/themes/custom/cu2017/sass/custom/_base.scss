@@ -116,4 +116,19 @@ html {
 			padding-left:0px;
 		}
 	}
+	.main_front.layout-content {
+	    margin-top: 38px;
+	}
+
+	.row.site_name + .main_front.layout-content{
+	    margin-top: 0px;
+	}
+//TODO Remove hardcoded functionality that bumps up front page hero mage for admins/editors
+	.main_front.admin.layout-content {
+	  margin-top:-6px;
+	}
+
+	.row.site_name + .main_front.admin.layout-content {
+	    margin-top: -44px;
+	}
 }
