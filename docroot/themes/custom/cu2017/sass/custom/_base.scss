@@ -57,6 +57,8 @@ html {
 		font-size: 2.25em;
 		line-height: 1.25em;
 		padding: 0 15px 0.8em 15px;
+		margin-top: -2px;
+
 
 		@media all and (min-width: 992px) {
 			padding: 0;
@@ -113,5 +115,20 @@ html {
 		@media all and (min-width: 992px){
 			padding-left:0px;
 		}
+	}
+	.main_front.layout-content {
+	    margin-top: 38px;
+	}
+
+	.row.site_name + .main_front.layout-content{
+	    margin-top: 0px;
+	}
+//TODO Remove hardcoded functionality that bumps up front page hero mage for admins/editors
+	.main_front.admin.layout-content {
+	  margin-top:-6px;
+	}
+
+	.row.site_name + .main_front.admin.layout-content {
+	    margin-top: -44px;
 	}
 }

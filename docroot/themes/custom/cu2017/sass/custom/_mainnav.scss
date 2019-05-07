@@ -1,19 +1,15 @@
 @mixin active-link {
 	font-weight: $bold;
-	
-} 
+
+}
 @mixin hover-link {
 	background: $lightGray;
 	text-decoration: none;
 	width:100%;
 }
 
-nav#block-mainnavigation {
-    margin-top: 22px;
-}
-
-li.active.last_active.child_class, 
-li.active.last_active.grandchild_class, 
+li.active.last_active.child_class,
+li.active.last_active.grandchild_class,
 li.active.last_active.great_grandchild_class{
 	a:before{
 		content: "•";
@@ -23,16 +19,21 @@ li.active.last_active.great_grandchild_class{
 		margin-left: -10px;
 		}
 }
+
+nav[role=navigation]{
+  padding-left: 8px;
+}
+
 .main_nav {
 	padding-left: 0;
-	.last_active {	
+	.last_active {
 		a {
 		@include active-link;
 		}
-	
+
 	}
 	.child_class, .grandchild_class, .great_grandchild_class {
-			border-left:2px solid #019cdb;		
+			border-left:2px solid #019cdb;
 			margin-left:10px;
 			padding-left: 10px;
 	}
@@ -48,12 +49,12 @@ li.active.last_active.great_grandchild_class{
 		list-style-image: none;
 		list-style-type: none;
 		margin-left: 0;
-		
+
 		a {
 			font-family: $baseFont;
 			font-size: $baseFontSize;
-			color: $darkBlue; 
-			line-height: $h3LargerFontSize; 
+			color: $darkBlue;
+			line-height: $h3LargerFontSize;
 			margin-left: 0;
 			padding: 0 0 0 10px;
 			text-decoration: none;
