@@ -14,3 +14,7 @@ use Drupal\cu_data_transform\Transformation\CUDataTransformation;
 function cu_data_transform_install() {
   //CUDataTransformation::paragraph_links_transformation();
 }
+
+function cu_data_transform_update_8101(){
+  return t(CUDataTransformation::paragraph_links_transformation());
+}
