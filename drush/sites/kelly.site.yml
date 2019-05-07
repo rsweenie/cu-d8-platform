@@ -1,0 +1,24 @@
+01dev:
+  root: /var/www/html/creighton.01dev/docroot
+  uri: kelly.dev-creighton.acsitefactory.com
+  host: staging-1749.enterprise-g1.hosting.acquia.com
+  options: {  }
+  paths: { dump-dir: /mnt/tmp }
+  user: creighton.01dev
+  ssh: { options: '-p 22' }
+01test:
+  root: /var/www/html/creighton.01test/docroot
+  uri: kelly.test-creighton.acsitefactory.com
+  host: staging-1749.enterprise-g1.hosting.acquia.com
+  options: {  }
+  paths: { dump-dir: /mnt/tmp }
+  user: creighton.01test
+  ssh: { options: '-p 22' }
+01live:
+  root: /var/www/html/creighton.01live/docroot
+  uri: kelly.creighton.acsitefactory.com
+  host: web-1747.enterprise-g1.hosting.acquia.com
+  options: {  }
+  paths: { dump-dir: /mnt/tmp }
+  user: creighton.01live
+  ssh: { options: '-p 22' }
