@@ -60,8 +60,12 @@
 		width: 100%;
 	}
 
-	div:nth-last-child(2) {
+	.profile_office_location {
 		padding-bottom: 20px;
+	}
+
+	.paragraph--type--ief-link {
+		margin-bottom: 0;
 	}
 
 	.profile_name {
