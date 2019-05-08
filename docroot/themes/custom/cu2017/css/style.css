@@ -11466,8 +11466,13 @@ ul#megamenu_icon_menu {
 .profile-feed-wrapper .profile_link span.invisible {
   position: absolute;
 }
+/* line 134, ../sass/custom/_profile.scss */
+.profile-feed-wrapper .profile_link .paragraph {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
-/* line 138, ../sass/custom/_profile.scss */
+/* line 143, ../sass/custom/_profile.scss */
 .block-views-blockprofile-contact-info .copy_box_wrapper .contact_us {
   margin: 0;
 }

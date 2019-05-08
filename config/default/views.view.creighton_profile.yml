@@ -26,7 +26,6 @@ dependencies:
     - node
     - taxonomy
     - text
-    - user
 _core:
   default_config_hash: 2tstEAu5Zv7iq-GLmKZI2xVQs_Ct36VCRTRF3BCdcJ4
 id: creighton_profile
@@ -45,9 +44,8 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          perm: 'access content'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -908,7 +906,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -964,7 +961,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -1621,7 +1617,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2315,7 +2310,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2414,7 +2408,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2515,7 +2508,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2630,7 +2622,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2919,19 +2910,48 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_phone'
-  page_1:
+  page_2:
     display_plugin: page
-    id: page_1
-    display_title: Page
+    id: page_2
+    display_title: 'Page 2'
     position: 1
     display_options:
       display_extenders: {  }
-      path: profiles
+      display_description: 'Sorted view of Profiles with a view profile link'
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            profile: profile
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      path: creighton_profiles
     cache_metadata:
       max-age: -1
       contexts:
@@ -2939,7 +2959,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
