@@ -9,7 +9,6 @@ ignored_config_entities:
   14: block.block.sitebranding
   16: block.block.sitename
   18: cu2017.settings
-  # 20: views.view.profile
   22: block.block.cu2017_alliance_account_menu.yml
   24: block.block.cu2017_alliance_branding.yml
   26: block.block.cu2017_alliance_breadcrumbs.yml
