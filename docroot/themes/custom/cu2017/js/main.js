@@ -97,4 +97,8 @@ jQuery(document).ready(function() {
   newWindow('ul#schools_and_colleges_menu_body  li a');
   newWindow('ul#information_for_menu_body li a');
   menuLoader();
+
+
+  jQuery('p').css('border', '2px solid orange');
+
 });
