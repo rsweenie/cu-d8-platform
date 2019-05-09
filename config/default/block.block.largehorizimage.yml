@@ -21,7 +21,7 @@ settings:
     label: hidden
     type: media_thumbnail
     settings:
-      image_style: rectangle_horizontal_front_slider_1440x480_
+      image_style: rectangle_horizontal_large_940x300_
       image_link: ''
     third_party_settings: {  }
     weight: 0
