@@ -68,6 +68,7 @@ function cu2017_preprocess_menu__main(&$variables) {
  */
 function _cu2017_preprocess_menu(&$menu) {
   foreach ($menu as &$item) {
+
     if ($item['in_active_trail']) {
       $item['attributes']->addClass('active');
       $internalPath = $item['url']->getInternalPath();
@@ -79,6 +80,16 @@ function _cu2017_preprocess_menu(&$menu) {
         _cu2017_preprocess_menu($item['below']);
       }
     }
+
+    // Manually unset all nested menu items for "News". We don't want them showing
+    // in menus, but we still want them in the menu structure for breadcrumbs
+    // and stuff. This is almost certainly not the right way to do this.
+    // BUG: If a user were to add a 2nd menu item labelled 'news' to the main
+    // menu, it's children would also be hidden.
+    if (strtolower($item['title']) == 'news') {
+      $item['below'] = array();
+    }
   }
+
   return $menu;
 }
