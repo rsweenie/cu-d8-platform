@@ -11375,58 +11375,62 @@ ul#megamenu_icon_menu {
   width: 100%;
 }
 /* line 63, ../sass/custom/_profile.scss */
-.profile-feed-wrapper div:nth-last-child(2) {
+.profile-feed-wrapper .profile_office_location {
   padding-bottom: 20px;
 }
-/* line 68, ../sass/custom/_profile.scss */
+/* line 67, ../sass/custom/_profile.scss */
+.profile-feed-wrapper .paragraph--type--ief-link {
+  margin-bottom: 0;
+}
+/* line 72, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_name h4 {
   color: #0054A6;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.1em;
 }
-/* line 76, ../sass/custom/_profile.scss */
+/* line 80, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_position {
   color: #000;
   font-size: 13px;
   line-height: 1.4em;
 }
-/* line 82, ../sass/custom/_profile.scss */
+/* line 86, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_specialties {
   color: #000;
   font-size: 11px;
   line-height: 1.2em;
 }
-/* line 89, ../sass/custom/_profile.scss */
+/* line 93, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_email a {
   color: #019CDB;
   font-size: 13px;
   line-height: 1.4em;
   text-decoration: underline;
 }
-/* line 95, ../sass/custom/_profile.scss */
+/* line 99, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_email a:hover {
   color: #002E6D;
 }
-/* line 101, ../sass/custom/_profile.scss */
+/* line 105, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_phone {
   color: #000;
   font-size: 13px;
   line-height: 1.2em;
 }
-/* line 107, ../sass/custom/_profile.scss */
+/* line 111, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_office_location {
   color: #000;
   font-size: 13px;
   line-height: 1.2em;
 }
-/* line 113, ../sass/custom/_profile.scss */
+/* line 117, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link {
   bottom: 5px;
   position: absolute;
   margin-bottom: 10px;
 }
-/* line 118, ../sass/custom/_profile.scss */
+/* line 122, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link a {
   color: #73B865;
   display: block;
@@ -11458,12 +11462,17 @@ ul#megamenu_icon_menu {
   margin-left: 10px;
   vertical-align: middle;
 }
-/* line 126, ../sass/custom/_profile.scss */
+/* line 130, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link span.invisible {
   position: absolute;
 }
-
 /* line 134, ../sass/custom/_profile.scss */
+.profile-feed-wrapper .profile_link .paragraph {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 143, ../sass/custom/_profile.scss */
 .block-views-blockprofile-contact-info .copy_box_wrapper .contact_us {
   margin: 0;
 }
