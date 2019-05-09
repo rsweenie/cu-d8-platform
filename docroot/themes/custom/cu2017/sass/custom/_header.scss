@@ -129,13 +129,17 @@ header {
 		@include respond-to(null , tablet-max) {
 			align-self: flex-end;
 			position: relative;
-			top: 65px;
+			top: 35px;
+		}
+
+		@media all and (max-width: 480px) {
+			top: 40px;
 		}
 
 		@media all and (max-width: 319px) {
 			align-self: flex-end;
 			position: relative;
-			top: 50px;
+			/*top: 50px;*/
 		}
 
 		.header_top_section_menu {
