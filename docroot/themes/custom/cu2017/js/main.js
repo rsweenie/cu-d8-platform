@@ -98,7 +98,13 @@ jQuery(document).ready(function() {
   newWindow('ul#information_for_menu_body li a');
   menuLoader();
 
+  // for long emails
+  jQuery(".right_sidebar .field--name-body p a").wrap("<div class='fitty'></div>");
 
-  jQuery('p').css('border', '2px solid orange');
-
+  // Let people use fitty without updating this file
+  fitty(".fitty", {
+    minSize: 8,
+    maxSize: 17,
+    multiLine: true
+  });
 });
