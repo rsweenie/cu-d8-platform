@@ -124,7 +124,6 @@ header {
 	.header_top_section_menu_wrapper {
 		order: 3;
 		z-index: 7;
-		/*display:none; */
 
 		@include respond-to(null , tablet-max) {
 			align-self: flex-end;
@@ -296,19 +295,27 @@ ul#megamenu_icon_menu{
 	@include respond-to(null , tablet-max) {
 		order: 1;
 	}
+
 	@media all and (max-width: 320px) {
 		height: 70px;
 	}
-	.menu--transaction-menu{
-		@include respond-to(null , mobile-max){
-			/*display: flex;*/
 
-			/*li:not(:last-child){
-				border-right:4px solid white;
-			}*/
-			@media all and (max-width: 320px) {
-				li{
-						font-size: 12px;
+	.menu--transaction-menu{
+
+		@media all and (max-width: 375px) {
+			li{
+				margin-left: 0;
+			}
+			li::after{
+				right: -8px;
+			}
+		}
+
+		@media all and (max-width: 340px) {
+			li{
+				font-size: 18px;
+				a {
+					font-size: 12px;
 				}
 			}
 		}
