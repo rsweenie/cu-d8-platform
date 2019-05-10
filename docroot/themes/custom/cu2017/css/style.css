@@ -10568,7 +10568,7 @@ ul#megamenu_icon_menu {
 }
 @media all and (max-width: 480px) and (max-width: 320px) {
   /* line 310, ../sass/custom/_header.scss */
-  .transaction_menu_wrapper .menu--transaction-menu li, .transaction_menu_wrapper .menu--transaction-menu li a {
+  .transaction_menu_wrapper .menu--transaction-menu li {
     font-size: 12px;
   }
 }
