@@ -10560,14 +10560,20 @@ ul#megamenu_icon_menu {
 @media all and (max-width: 480px) {
   /* line 302, ../sass/custom/_header.scss */
   .transaction_menu_wrapper .menu--transaction-menu {
-    display: flex;
-  }
-  /* line 306, ../sass/custom/_header.scss */
-  .transaction_menu_wrapper .menu--transaction-menu li:not(:last-child) {
-    border-right: 4px solid white;
+    /*display: flex;*/
+    /*li:not(:last-child){
+    	border-right:4px solid white;
+    }*/
   }
 }
-/* line 311, ../sass/custom/_header.scss */
+@media all and (max-width: 480px) and (max-width: 320px) {
+  /* line 310, ../sass/custom/_header.scss */
+  .transaction_menu_wrapper .menu--transaction-menu li, .transaction_menu_wrapper .menu--transaction-menu li a {
+    font-size: 12px;
+  }
+}
+
+/* line 316, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li {
   background: #019CDB;
   display: inline-block;
@@ -10577,28 +10583,28 @@ ul#megamenu_icon_menu {
   margin-left: -5px;
   opacity: 1;
 }
-/* line 320, ../sass/custom/_header.scss */
+/* line 325, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li:hover {
   background: #019CDB;
 }
-/* line 324, ../sass/custom/_header.scss */
+/* line 329, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li::after {
   color: #FFF;
   content: '|';
   position: absolute;
   right: -4px;
 }
-/* line 332, ../sass/custom/_header.scss */
+/* line 337, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li:last-child::after {
   content: '';
 }
 @media all and (max-width: 480px) {
-  /* line 311, ../sass/custom/_header.scss */
+  /* line 316, ../sass/custom/_header.scss */
   .transaction_menu_wrapper li {
     flex-grow: 1;
   }
 }
-/* line 340, ../sass/custom/_header.scss */
+/* line 345, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li a {
   -webkit-transition-property: color;
   transition-property: color;
@@ -10613,20 +10619,20 @@ ul#megamenu_icon_menu {
   text-transform: uppercase;
 }
 @media all and (max-width: 768px) {
-  /* line 340, ../sass/custom/_header.scss */
+  /* line 345, ../sass/custom/_header.scss */
   .transaction_menu_wrapper li a {
     font-size: 18px;
     padding: 6px 15px 2px;
   }
 }
 @media all and (max-width: 375px) {
-  /* line 340, ../sass/custom/_header.scss */
+  /* line 345, ../sass/custom/_header.scss */
   .transaction_menu_wrapper li a {
     font-size: 18px;
     padding: 6px 10px 2px;
   }
 }
-/* line 360, ../sass/custom/_header.scss */
+/* line 365, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li a:hover {
   background: #019CDB;
   color: #002E6D;

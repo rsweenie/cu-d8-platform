@@ -301,10 +301,15 @@ ul#megamenu_icon_menu{
 	}
 	.menu--transaction-menu{
 		@include respond-to(null , mobile-max){
-			display: flex;
+			/*display: flex;*/
 
-			li:not(:last-child){
+			/*li:not(:last-child){
 				border-right:4px solid white;
+			}*/
+			@media all and (max-width: 320px) {
+				li, li a{
+						font-size: 12px;
+				}
 			}
 		}
 	}
