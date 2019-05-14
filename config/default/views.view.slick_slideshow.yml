@@ -525,19 +525,7 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-      sorts:
-        field_slide_target_id:
-          id: field_slide_target_id
-          table: node__field_slide
-          field: field_slide_target_id
-          relationship: reverse__node__field_slide
-          group_type: group
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: standard
+      sorts: {  }
       title: 'Slick Slideshow'
       header: {  }
       footer: {  }
