@@ -9590,11 +9590,9 @@ p:last-child,
   margin-top: 0;
 }
 
-/* line 70, ../sass/_overrides.scss */
-main .main.container h2:first-child {
+/*main .main.container h2:first-child {
   margin-top: -6px;
-}
-
+}*/
 /* line 3, ../sass/custom/_base.scss */
 html body {
   color: #555;
@@ -9666,7 +9664,7 @@ html .headline {
 }
 /* line 69, ../sass/custom/_base.scss */
 html .large-horiz-image {
-  margin-bottom: 2em;
+  /*margin-bottom: 2em;*/
   padding: 0 15px;
 }
 @media all and (min-width: 992px) {
@@ -9703,11 +9701,12 @@ html .flex-layout .responsive_flex > div, html .flex-layout .top_section {
     padding-right: 0;
   }
 }
-/* line 105, ../sass/custom/_base.scss */
+/* line 106, ../sass/custom/_base.scss */
 html .featured_links_wrapper {
   margin-bottom: 16px;
+  margin-top: 20px;
 }
-/* line 108, ../sass/custom/_base.scss */
+/* line 111, ../sass/custom/_base.scss */
 html .copy_box_wrapper,
 html .quote_box_wrapper,
 html .related_links_wrapper,
@@ -9715,24 +9714,24 @@ html .promo_box_wrapper {
   margin-bottom: 20px;
 }
 @media all and (min-width: 992px) {
-  /* line 114, ../sass/custom/_base.scss */
+  /* line 117, ../sass/custom/_base.scss */
   html .default-layout > .layout-content > [role="main"] > .main.container > .row > * > .headline {
     padding-left: 0px;
   }
 }
-/* line 119, ../sass/custom/_base.scss */
+/* line 122, ../sass/custom/_base.scss */
 html .main_front.layout-content {
   margin-top: 38px;
 }
-/* line 123, ../sass/custom/_base.scss */
+/* line 126, ../sass/custom/_base.scss */
 html .row.site_name + .main_front.layout-content {
   margin-top: 0px;
 }
-/* line 127, ../sass/custom/_base.scss */
+/* line 130, ../sass/custom/_base.scss */
 html .main_front.admin.layout-content {
   margin-top: -6px;
 }
-/* line 131, ../sass/custom/_base.scss */
+/* line 134, ../sass/custom/_base.scss */
 html .row.site_name + .main_front.admin.layout-content {
   margin-top: -44px;
 }
