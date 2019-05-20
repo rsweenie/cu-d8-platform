@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains cu_entity_embed.
+ * 
+ * This is a utility module to change the Media browser button as well 
+ * as other functions to override behaviors that are undesirable in the CKEditor
+ * media embed feature.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cu_entity_embed_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cu_entity_embed module.
+    case 'help.page.cu_entity_embed':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Change image on ckeditor toolbar, and fix some rendering issues.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cu_entity_embed_theme() {
+  return [
+    'cu_entity_embed' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function cu_entity_embed_element_info_alter(&$info) {
+  if (isset($info['toolbar'])) {
+    $info['toolbar']['#attached']['library'][] = 'cu_entity_embed/change';
+  }
+}

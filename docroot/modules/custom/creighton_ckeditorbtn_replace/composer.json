@@ -1,14 +1,14 @@
 {
-  "name": "drupal/creighton_ckeditorbtn_replace",
+  "name": "drupal/cu_entity_embed",
   "type": "drupal-module",
-  "description": "creighton js practice module",
+  "description": "Creightons Utilities to customize the functionality of the CKEditor",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/creighton_ckeditorbtn_replace",
+  "homepage": "https://www.drupal.org/project/cu_entity_embed",
   "minimum-stability": "dev",
   "support": {
-    "issues": "https://www.drupal.org/project/issues/creighton_ckeditorbtn_replace",
-    "source": "http://cgit.drupalcode.org/creighton_ckeditorbtn_replace"
+    "issues": "https://www.drupal.org/project/issues/cu_entity_embed",
+    "source": "http://cgit.drupalcode.org/cu_entity_embed"
   },
   "require": { }
 }
