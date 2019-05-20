@@ -37,12 +37,26 @@ html {
 
 		}
 	}
+
+	.default-layout main .main {
+		article {
+			margin-top: 10px;
+		}
+		.right_sidebar {
+			padding-top: 10px;
+			}
+	}
 	.main {
 		padding: 0;
 		width: 100%;
 
 		@media (min-width: 65.6875em) {
 			max-width: $maxContentWidth;
+		}
+		article {
+			h2:first-of-type, h3:first-of-type {
+				margin-top: 0;
+			}
 		}
 	}
 	.main_page_title {
@@ -67,7 +81,7 @@ html {
 
 
 	.large-horiz-image {
-		/*margin-bottom: 2em;*/
+		margin-bottom: 2em;
 		padding: 0 15px;
 
 		@media all and (min-width: 992px) {
@@ -99,15 +113,16 @@ html {
 	.right_sidebar {
 		@media all and (min-width: 992px) {
 			padding-right: 0;
-
+			/*padding-top:20px;*/
+		}
+		h3:first-of-type {
+			margin-top:0;
 		}
 	}
 
 	.featured_links_wrapper {
 		margin-bottom: 16px;
-		margin-top: 20px;
 	}
-
 	.copy_box_wrapper,
 	.quote_box_wrapper,
 	.related_links_wrapper,
