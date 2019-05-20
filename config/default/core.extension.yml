@@ -33,6 +33,7 @@ module:
   ctools_block: 0
   cu_breadcrumbs: 0
   cu_data_transform: 0
+  cu_entity_embed: 0
   datetime: 0
   dblog: 0
   diff: 0
