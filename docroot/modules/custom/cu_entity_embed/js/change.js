@@ -26,6 +26,7 @@
     },
     attach: function (context, settings) {
       this.initChangeButtonImages();
+      $('select.filter-list.editor', context).change(this.initChangeButtonImages.bind(this));
     },
     changeContentCkeditorIcon: function (o) {
       var button = $(o.ckeditor_editor_mode_btn), 
