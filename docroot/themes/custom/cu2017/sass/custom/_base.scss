@@ -38,8 +38,9 @@ html {
 		}
 	}
 
-	.default-layout main .main {
-		article {
+	/*.default-layout main .main {*/
+	main .main {
+		article.node {
 			margin-top: 10px;
 		}
 		.right_sidebar {
@@ -53,7 +54,7 @@ html {
 		@media (min-width: 65.6875em) {
 			max-width: $maxContentWidth;
 		}
-		article {
+		article.node {
 			h2:first-of-type, h3:first-of-type {
 				margin-top: 0;
 			}
@@ -79,16 +80,14 @@ html {
 		}
 	}
 
-
 	.large-horiz-image {
-		margin-bottom: 2em;
+		margin-bottom: 1.5em;
 		padding: 0 15px;
 
 		@media all and (min-width: 992px) {
 			padding: 0;
 		}
 	}
-
 
 	// TODO: remove as much of the custom breakbpoints as possible
 	.center_column {
