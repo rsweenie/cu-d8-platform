@@ -1,0 +1,4 @@
+block.settings.cu_blocks_filtered_profiles:
+  type: mapping
+  label: cu_blocks_filtered_profiles
+  mapping: {  }

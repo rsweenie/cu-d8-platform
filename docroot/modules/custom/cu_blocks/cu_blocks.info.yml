@@ -1,0 +1,7 @@
+name: 'CU Blocks'
+type: module
+description: 'Provides a variety of customized CU blocks'
+package: Creighton
+core: 8.x
+dependencies:
+  - views
