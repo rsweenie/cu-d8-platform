@@ -11095,7 +11095,7 @@ ul#megamenu_icon_menu {
 
 /* line 1, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper {
-  padding: 5px 0;
+  padding: 0;
 }
 /* line 4, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper li {
@@ -11389,7 +11389,7 @@ ul#megamenu_icon_menu {
   flex: 0 1 auto;
   flex-direction: column;
   float: left;
-  margin: 0 10px 1.5em 0;
+  margin: 3px 10px 1.5em 0;
   padding: 10px;
   padding-bottom: 34px;
   position: relative;
