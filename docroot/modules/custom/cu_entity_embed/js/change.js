@@ -12,7 +12,7 @@
   Drupal.behaviors.ckeditorButtonChange = {
     ckeditor_buttons: {
       media_browser: {
-        image_url: '/modules/custom/creighton_ckeditorbtn_replace/images/media_browser.gif',
+        image_url: '/modules/custom/cu_entity_embed/images/media_browser.gif',
         style: 'background-position:0 0px;background-size:16px;',
         ckeditor_editor_mode_btn: 'span.cke_button_icon.cke_button__media_browser_icon',
         ckeditor_config_mode_btn: 'li[data-drupal-ckeditor-button-name="media_browser"]',
