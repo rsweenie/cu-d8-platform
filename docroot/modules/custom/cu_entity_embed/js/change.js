@@ -18,7 +18,7 @@
         ckeditor_config_mode_btn: 'li[data-drupal-ckeditor-button-name="media_browser"]',
       },
       // another_button: {
-      //   image_url: '/modules/custom/creighton_ckeditorbtn_replace/images/gray.gif',
+      //   image_url: '/modules/custom/cu_entity_embed/images/gray.gif',
       //   style: 'background-position:0 0px;background-size:16px;',
       //   ckeditor_editor_mode_btn: 'span.cke_button_icon.cke_button__table_icon',
       //   ckeditor_config_mode_btn: 'span.cke_button_icon.cke_button__table_icon',
