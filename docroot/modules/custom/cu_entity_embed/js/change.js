@@ -26,6 +26,9 @@
     },
     attach: function (context, settings) {
       this.initChangeButtonImages();
+      
+      // This will listen for change on the CKEditor's edit mode dropdown since it currently somehow 
+      // changes the button back to default image.
       $('select.filter-list.editor', context).change(this.initChangeButtonImages.bind(this));
     },
     changeContentCkeditorIcon: function (o) {
