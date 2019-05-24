@@ -11,10 +11,8 @@ use Drupal\Core\Session\AccountInterface;
  *
  * @Block(
  *   id = "cu_blocks_filtered_profiles",
- *   admin_label = @Translation("CU Filtered Profiles"),
- *   category = @Translation("TODO: replace this with a value"),
- *   context = "TODO: replace this with a value",
- *   context_definitions = "TODO: replace this with a value",
+ *   admin_label = @Translation("Filtered Profiles"),
+ *   category = @Translation("CU Blocks"),
  * )
  */
 class FilteredProfiles extends BlockBase {
