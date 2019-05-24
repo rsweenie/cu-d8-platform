@@ -97,12 +97,14 @@
         "onelogin/php-saml": "dev-remove_mcrypt as 2.11.0"
     },
     "require-dev": {
+        "acquia/drupal-spec-tool": "^2.0",
         "drupal/coffee": "^1.0@beta",
         "drupal/devel": "^1.2",
         "drupal/devel_generate": "^1.2",
         "drupal/kint": "^1.2",
         "drupal/webform_devel": "^5.0@RC",
-        "geerlingguy/drupal-vm": "^4.8"
+        "geerlingguy/drupal-vm": "^4.8",
+        "nickwilde1990/drupal-spec-tool-commands": "^1.0@RC"
     },
     "config": {
         "sort-packages": true
@@ -176,6 +178,11 @@
             "merge-scripts": true,
             "replace": false,
             "ignore-duplicates": true
+        },
+        "drupal-spec-tool": {
+            "credentials-path": "tests/drupal-spec-tool",
+            "spreadsheet": "1mvGWB_uYm9zFbD7yFdT2zun1YS31IZJEOVyJrSXsQV8"
         }
+ 
     }
 }
