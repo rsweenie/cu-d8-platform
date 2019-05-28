@@ -31,6 +31,7 @@ dependencies:
     - 'taxonomy_term:profile_specialties:790d0f0c-12a5-4a3b-9c8c-cf559c25c385'
     - 'taxonomy_term:profile_specialties:94e55efd-4ad5-4b9b-9e44-afa3db5b5d75'
     - 'taxonomy_term:profile_specialties:98bbb9b5-2f01-40f8-89fb-234bfc78b7a9'
+    - 'taxonomy_term:profile_specialties:9a2bbba0-39da-4a5b-bb8e-03f153b3fddb'
     - 'taxonomy_term:profile_specialties:b4c32576-8af8-4505-91d3-e83986c154e3'
     - 'taxonomy_term:profile_specialties:c7586af6-1dde-4d38-ad3e-80d7dec6adcf'
     - 'taxonomy_term:profile_specialties:c971e120-b382-4a04-a06b-a3a31db32e13'
@@ -17116,6 +17117,121 @@ display:
           operator: or
           value:
             396: 396
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: profile_specialties
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_profile_email'
+        - 'config:field.storage.node.field_profile_image'
+        - 'config:field.storage.node.field_profile_link'
+        - 'config:field.storage.node.field_profile_name'
+        - 'config:field.storage.node.field_profile_office_location'
+        - 'config:field.storage.node.field_profile_p_link'
+        - 'config:field.storage.node.field_profile_phone'
+        - 'config:field.storage.node.field_profile_position'
+        - 'config:field.storage.node.field_profile_specialties'
+  block_43:
+    display_plugin: block
+    id: block_43
+    display_title: 'Alpha (link) Alliance Staff'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: 'Alphabetized view of Profiles with a view profile link'
+      sorts:
+        field_profile_name_family:
+          id: field_profile_name_family
+          table: node__field_profile_name
+          field: field_profile_name_family
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+      defaults:
+        sorts: false
+        filters: false
+        filter_groups: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            profile: profile
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+        field_profile_specialties_target_id:
+          id: field_profile_specialties_target_id
+          table: node__field_profile_specialties
+          field: field_profile_specialties_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            401: 401
           group: 1
           exposed: false
           expose:
