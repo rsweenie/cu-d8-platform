@@ -9590,6 +9590,9 @@ p:last-child,
   margin-top: 0;
 }
 
+/*main .main.container h2:first-child {
+  margin-top: -6px;
+}*/
 /* line 3, ../sass/custom/_base.scss */
 html body {
   color: #555;
@@ -9627,82 +9630,98 @@ html body h3 {
   font-weight: 700;
   font-family: "Open Sans", Arial, sans-serif;
 }
-/* line 40, ../sass/custom/_base.scss */
+/* line 42, ../sass/custom/_base.scss */
+html main .main article.node {
+  margin-top: 10px;
+}
+/* line 45, ../sass/custom/_base.scss */
+html main .main .right_sidebar {
+  padding-top: 10px;
+}
+/* line 49, ../sass/custom/_base.scss */
 html .main {
   padding: 0;
   width: 100%;
 }
 @media (min-width: 65.6875em) {
-  /* line 40, ../sass/custom/_base.scss */
+  /* line 49, ../sass/custom/_base.scss */
   html .main {
     max-width: 1300px;
   }
 }
-/* line 48, ../sass/custom/_base.scss */
+/* line 57, ../sass/custom/_base.scss */
+html .main article.node h2:first-of-type, html .main article.node h3:first-of-type {
+  margin-top: 0;
+}
+/* line 62, ../sass/custom/_base.scss */
 html .main_page_title {
   color: #002E6D;
   font-family: "Open Sans Condensed", sans-serif;
   margin-bottom: 5%;
 }
-/* line 54, ../sass/custom/_base.scss */
+/* line 68, ../sass/custom/_base.scss */
 html .headline {
   color: #002E6D;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 2.25em;
   line-height: 1.25em;
-  padding: 0 15px 0.8em 15px;
+  padding: 0;
   margin-top: -2px;
 }
-@media all and (min-width: 992px) {
-  /* line 54, ../sass/custom/_base.scss */
+@media all and (max-width: 991px) {
+  /* line 68, ../sass/custom/_base.scss */
   html .headline {
-    padding: 0;
+    padding: 0 15px .1em 15px;
   }
 }
-/* line 69, ../sass/custom/_base.scss */
+/* line 81, ../sass/custom/_base.scss */
 html .large-horiz-image {
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   padding: 0 15px;
 }
 @media all and (min-width: 992px) {
-  /* line 69, ../sass/custom/_base.scss */
+  /* line 81, ../sass/custom/_base.scss */
   html .large-horiz-image {
     padding: 0;
   }
 }
-/* line 80, ../sass/custom/_base.scss */
+/* line 91, ../sass/custom/_base.scss */
 html .center_column {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media all and (min-width: 992px) {
-  /* line 80, ../sass/custom/_base.scss */
+  /* line 91, ../sass/custom/_base.scss */
   html .center_column {
     padding-left: 0;
     padding-right: 0;
   }
 }
 @media all and (max-width: 480px) {
-  /* line 80, ../sass/custom/_base.scss */
+  /* line 91, ../sass/custom/_base.scss */
   html .center_column {
     margin-bottom: 20px;
   }
 }
-/* line 94, ../sass/custom/_base.scss */
+/* line 105, ../sass/custom/_base.scss */
 html .flex-layout .responsive_flex > div, html .flex-layout .top_section {
   padding-left: 0;
 }
 @media all and (min-width: 992px) {
-  /* line 99, ../sass/custom/_base.scss */
+  /* line 110, ../sass/custom/_base.scss */
   html .right_sidebar {
     padding-right: 0;
   }
 }
-/* line 105, ../sass/custom/_base.scss */
+/* line 114, ../sass/custom/_base.scss */
+html .right_sidebar h3:first-of-type {
+  margin-top: 0;
+}
+/* line 119, ../sass/custom/_base.scss */
 html .featured_links_wrapper {
   margin-bottom: 16px;
 }
-/* line 108, ../sass/custom/_base.scss */
+/* line 122, ../sass/custom/_base.scss */
 html .copy_box_wrapper,
 html .quote_box_wrapper,
 html .related_links_wrapper,
@@ -9710,24 +9729,24 @@ html .promo_box_wrapper {
   margin-bottom: 20px;
 }
 @media all and (min-width: 992px) {
-  /* line 114, ../sass/custom/_base.scss */
+  /* line 128, ../sass/custom/_base.scss */
   html .default-layout > .layout-content > [role="main"] > .main.container > .row > * > .headline {
     padding-left: 0px;
   }
 }
-/* line 119, ../sass/custom/_base.scss */
+/* line 133, ../sass/custom/_base.scss */
 html .main_front.layout-content {
   margin-top: 38px;
 }
-/* line 123, ../sass/custom/_base.scss */
+/* line 137, ../sass/custom/_base.scss */
 html .row.site_name + .main_front.layout-content {
   margin-top: 0px;
 }
-/* line 127, ../sass/custom/_base.scss */
+/* line 141, ../sass/custom/_base.scss */
 html .main_front.admin.layout-content {
   margin-top: -6px;
 }
-/* line 131, ../sass/custom/_base.scss */
+/* line 145, ../sass/custom/_base.scss */
 html .row.site_name + .main_front.admin.layout-content {
   margin-top: -44px;
 }
@@ -11071,7 +11090,7 @@ ul#megamenu_icon_menu {
 
 /* line 1, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper {
-  padding: 5px 0;
+  padding: 0;
 }
 /* line 4, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper li {
@@ -11365,7 +11384,7 @@ ul#megamenu_icon_menu {
   flex: 0 1 auto;
   flex-direction: column;
   float: left;
-  margin: 5px 10px 1.5em 0;
+  margin: 0 10px 1.5em 0;
   padding: 10px;
   padding-bottom: 34px;
   position: relative;
