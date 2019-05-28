@@ -153,7 +153,6 @@ view_mode_selector: 0.0.0
 cu_layouts: 0.0.0
 seckit: 1.0.0-alpha2
 menu_breadcrumb: 0.0.0
-cu_footer_badge: 1.0.0
 acsf_duplication: 2.48.0
 acsf_variables: 2.48.0
 acsf_theme: 2.48.0
@@ -167,6 +166,6 @@ ckeditor_markdown: 0.0.0
 openapi_ui: 1.0.0-rc1
 openapi_ui_redoc: 1.0.0-rc2
 openapi_ui_swagger: 1.0.0-rc2
-creighton_ckeditorbtn_replace: 0.0.0
 cu_data_transform: 0.0.0
 file_replace: 1.1.0
+cu_entity_embed: 0.0.0
