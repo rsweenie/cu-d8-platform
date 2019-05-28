@@ -104,6 +104,7 @@
         "drupal/kint": "^1.2",
         "drupal/webform_devel": "^5.0@RC",
         "geerlingguy/drupal-vm": "^4.8",
+        "guzzlehttp/guzzle": "^6.3",
         "nickwilde1990/drupal-spec-tool-commands": "^1.0@RC"
     },
     "config": {

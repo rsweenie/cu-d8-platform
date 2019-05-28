@@ -3,6 +3,12 @@ default:
     default:
       paths:
         - %paths.base%/features
+        - Acquia\DrupalSpecTool\Context\AccessControlContext
+        - Acquia\DrupalSpecTool\Context\ContentModelContext
+        - Acquia\DrupalSpecTool\Context\MediaContext
+        - Acquia\DrupalSpecTool\Context\MenuContext
+        - Acquia\DrupalSpecTool\Context\ViewsContext
+        - Acquia\DrupalSpecTool\Context\WorkflowContext
   extensions:
     Behat\MinkExtension:
       default_session: goutte
