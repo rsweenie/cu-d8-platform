@@ -251,6 +251,7 @@ hidden:
   field_content_taxonomy: true
   field_display: true
   field_display_publish_on_date: true
+  field_large_horiz_image: true
   field_links_for_news: true
   field_meta_tags: true
   field_new: true

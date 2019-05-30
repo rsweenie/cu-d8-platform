@@ -46,6 +46,6 @@ disable-targets:
     security: { check: { updates: true } }
     phpcs: { sniff: { all: true, files: true } }
     twig: { lint: { all: true } }
-    behat: { run: true }
+    behat: { run: false }
 cloud:
   appId: d3916423-34ff-4339-bd62-a31472924fde

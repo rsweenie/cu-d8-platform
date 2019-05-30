@@ -28,13 +28,13 @@ module:
   context: 0
   context_ui: 0
   contextual: 0
-  creighton_ckeditorbtn_replace: 0
   crop: 0
   csv_serialization: 0
   ctools: 0
   ctools_block: 0
   cu_breadcrumbs: 0
   cu_data_transform: 0
+  cu_entity_embed: 0
   datetime: 0
   dblog: 0
   diff: 0
