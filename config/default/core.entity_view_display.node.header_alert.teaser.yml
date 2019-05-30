@@ -39,5 +39,6 @@ hidden:
   field_emergency_headline: true
   field_header_alert_activate: true
   field_header_alert_markup: true
+  field_header_alert_p_link: true
   field_header_alertemergency_type: true
   scheduled_publication: true

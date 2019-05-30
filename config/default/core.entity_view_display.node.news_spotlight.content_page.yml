@@ -143,6 +143,7 @@ hidden:
   field_content_page_sidebar_items: true
   field_content_taxo: true
   field_display_type: true
+  field_news_spotlight_p_link: true
   field_tabbed_accordion: true
   links: true
   scheduled_publication: true
