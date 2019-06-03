@@ -12,13 +12,13 @@
   Drupal.behaviors.ckeditorButtonChange = {
     ckeditor_buttons: {
       media_browser: {
-        image_url: '/modules/custom/creighton_ckeditorbtn_replace/images/media_browser.gif',
+        image_url: '/modules/custom/cu_entity_embed/images/media_browser.gif',
         style: 'background-position:0 0px;background-size:16px;',
         ckeditor_editor_mode_btn: 'span.cke_button_icon.cke_button__media_browser_icon',
         ckeditor_config_mode_btn: 'li[data-drupal-ckeditor-button-name="media_browser"]',
       },
       // another_button: {
-      //   image_url: '/modules/custom/creighton_ckeditorbtn_replace/images/gray.gif',
+      //   image_url: '/modules/custom/cu_entity_embed/images/gray.gif',
       //   style: 'background-position:0 0px;background-size:16px;',
       //   ckeditor_editor_mode_btn: 'span.cke_button_icon.cke_button__table_icon',
       //   ckeditor_config_mode_btn: 'span.cke_button_icon.cke_button__table_icon',
@@ -26,6 +26,10 @@
     },
     attach: function (context, settings) {
       this.initChangeButtonImages();
+      
+      // This will listen for change on the CKEditor's edit mode dropdown since it currently somehow 
+      // changes the button back to default image.
+      $('select.filter-list.editor', context).change(this.initChangeButtonImages.bind(this));
     },
     changeContentCkeditorIcon: function (o) {
       var button = $(o.ckeditor_editor_mode_btn), 
