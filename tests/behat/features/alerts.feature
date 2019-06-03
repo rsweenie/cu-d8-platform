@@ -21,6 +21,11 @@ Feature: Alerts
     #Then I wait for AJAX to finish
     #Then I click "Filter"
     #And I take a screenshot
+    Given I am an anonymous user
+    And I am on "/"
+    Then I should see "Red Alert copy"
+    #Then I take a screenshot
+
 
   @api @javascript
   Scenario: Orange (Weather) Alert
@@ -33,6 +38,9 @@ Feature: Alerts
     Then I fill in "field_emergency_headline[0][value]" with "Headline for Orange (Weather) alert"
     Then I put "Orange (Weather) Alert copy" into CKEditor
     Then I press "edit-submit"
+    Given I am an anonymous user
+    And I am on "/"
+    Then I should see "Orange (Weather) Alert copy"
 
   @api @javascript
   Scenario: Orange (Non-Weather) Alert
@@ -43,6 +51,9 @@ Feature: Alerts
     Then I select "Active" from "field_header_alert_activate"
     Then I select "other" from "field_header_alertemergency_type"
     Then I fill in "field_emergency_headline[0][value]" with "Headline for Orange (Non-Weather) alert"
-    Then I put "Orange (Weather) Alert copy" into CKEditor
+    Then I put "Orange (Non-Weather) Alert copy" into CKEditor
     Then I press "edit-submit"
-    And I take a screenshot
+    Given I am an anonymous user
+    And I am on "/"
+    Then I should see "Orange (Non-Weather) Alert copy"
+    #And I take a screenshot
