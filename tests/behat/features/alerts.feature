@@ -72,6 +72,8 @@ Feature: Alerts
     Then I click "edit-form"
     And I select "No Alert" from "field_header_alert_activate"
     And I press "edit-submit"
+    #Anonymous user
+    Given I am an anonymous user
     And I am on "/"
     Then I should not see "Red Alert"
 
@@ -90,6 +92,8 @@ Feature: Alerts
     Then I click "edit-form"
     And I select "No Alert" from "field_header_alert_activate"
     And I press "edit-submit"
+    #Anonymous user
+    Given I am an anonymous user
     And I am on "/"
     Then I should not see "WEATHER RELATED ALERT"
   
@@ -108,6 +112,8 @@ Feature: Alerts
     Then I click "edit-form"
     And I select "No Alert" from "field_header_alert_activate"
     And I press "edit-submit"
+    #Anonymous user
+    Given I am an anonymous user
     And I am on "/"
     Then I should not see "CAMPUS ALERT"
 
