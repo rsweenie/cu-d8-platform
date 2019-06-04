@@ -4,7 +4,7 @@ Feature: Alerts
   As an Admin
   I should be able to enable, disable, add and edit the Red, Orange and Orange (non-weather) alerts
   As a reader
-  I should see the Red, Orange and Orange (non-weather) alerts on all pages when enabled. 
+  I should see the Red, Orange and Orange (non-weather) alerts on pages when enabled. 
 
   @api @javascript
   Scenario: Adding Red Alert
