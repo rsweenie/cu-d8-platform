@@ -2,7 +2,7 @@
 Feature: Alerts
   In order to verify that the header alerts are functioning
   As an Admin
-  I should be able to enable, disable, and add the Red, Orange and Orange (non-weather) alerts
+  I should be able to enable, disable and add the Red, Orange and Orange (non-weather) alerts
   As a reader
   I should see the Red, Orange and Orange (non-weather) alerts on pages when enabled. 
 
