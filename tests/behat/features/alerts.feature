@@ -31,6 +31,19 @@ Feature: Alerts
     Given I am an anonymous user
     And I am on "/"
     Then I should see "Red Alert copy 2"
+    #Deleting Content
+    Given I am logged in as a user with the "administrator" role
+    And I am on "/admin/content"
+    And I select "header_alert" from "edit-type"
+    And I press "Filter"
+    And I click "Testing Red Header Alert"
+    And I click "edit-form"
+    And I click "edit-delete"
+    And I press "edit-submit"
+    Then I take a screenshot
+    And I am on "/"
+    #Then I take a screenshot
+
 
   @api @javascript
   Scenario: Adding Orange (Weather) Alert
@@ -83,6 +96,4 @@ Feature: Alerts
     Given I am an anonymous user
     And I am on "/"
     Then I should see "Orange (Non-Weather) Alert copy 2"
-    Then I take a screenshot
-
 
