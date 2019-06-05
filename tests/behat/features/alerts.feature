@@ -18,10 +18,19 @@ Feature: Alerts
     And I put "Red Alert copy" into CKEditor
     And I press "edit-submit"
     Then I should see "Red Alert copy"
+    #Editing Content
+    Given I am on "/admin/content"
+    And I select "header_alert" from "edit-type"
+    And I press "Filter"
+    And I click "Testing Red Header Alert"
+    And I click "edit-form"
+    And I put "Red Alert copy 2" into CKEditor
+    And I press "edit-submit"
+    Then I should see "Red Alert copy 2"
     #Anonymous user
     Given I am an anonymous user
     And I am on "/"
-    Then I should see "Red Alert copy"
+    Then I should see "Red Alert copy 2"
 
   @api @javascript
   Scenario: Adding Orange (Weather) Alert
@@ -35,10 +44,19 @@ Feature: Alerts
     And I put "Orange (Weather) Alert copy" into CKEditor
     And I press "edit-submit"
     Then I should see "Orange (Weather) Alert copy"
+    #Editing Content
+    Given I am on "/admin/content"
+    And I select "header_alert" from "edit-type"
+    And I press "Filter"
+    And I click "Testing Orange (Weather) Header Alert"
+    And I click "edit-form"
+    And I put "Orange (Weather) Alert copy 2" into CKEditor
+    And I press "edit-submit"
+    Then I should see "Orange (Weather) Alert copy 2"
     #Anonymous user
     Given I am an anonymous user
     And I am on "/"
-    Then I should see "Orange (Weather) Alert copy"
+    Then I should see "Orange (Weather) Alert copy 2"
 
   @api @javascript
   Scenario: Adding Orange (Non-Weather) Alert
@@ -52,11 +70,19 @@ Feature: Alerts
     Then I put "Orange (Non-Weather) Alert copy" into CKEditor
     Then I press "edit-submit"
     Then I should see "Orange (Non-Weather) Alert copy"
+    #Editing Content
+    Given I am on "/admin/content"
+    And I select "header_alert" from "edit-type"
+    And I press "Filter"
+    And I click "Testing Orange (Non-Weather) Header Alert"
+    And I click "edit-form"
+    And I put "Orange (Non-Weather) Alert copy 2" into CKEditor
+    And I press "edit-submit"
+    Then I should see "Orange (Non-Weather) Alert copy 2"
     #Anonymous user
     Given I am an anonymous user
     And I am on "/"
-    Then I should see "Orange (Non-Weather) Alert copy"
-
-
+    Then I should see "Orange (Non-Weather) Alert copy 2"
+    Then I take a screenshot
 
 
