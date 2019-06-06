@@ -9,6 +9,7 @@ module:
   auto_entitylabel: 0
   blazy: 0
   block: 0
+  block_aria_landmark_roles: 0
   block_content: 0
   breakpoint: 0
   captcha: 0
