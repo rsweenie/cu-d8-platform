@@ -80,7 +80,6 @@ Feature: Alerts
     And I click "edit-delete"
     And I press "edit-submit"
     And I am on "/"
-    #Then I take a screenshot
 
   @api @javascript
   Scenario: Adding Orange (Non-Weather) Alert
