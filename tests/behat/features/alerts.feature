@@ -7,7 +7,8 @@ Feature: Alerts
   I should see the Red, Orange and Orange (non-weather) alerts on pages when enabled. 
 
   @api @javascript
-  Scenario: Adding Red Alert
+  Scenario: Red Alert
+    #Adding Alert
     Given I am logged in as a user with the "administrator" role
     And I am on "/node/add"
     And I click "Header Alert"
@@ -18,7 +19,7 @@ Feature: Alerts
     And I put "Red Alert copy" into CKEditor
     And I press "edit-submit"
     Then I should see "Red Alert copy"
-    #Editing Content
+    #Editing Alert
     Given I am on "/admin/content"
     And I select "header_alert" from "edit-type"
     And I press "Filter"
@@ -31,7 +32,7 @@ Feature: Alerts
     Given I am an anonymous user
     And I am on "/"
     Then I should see "Red Alert copy 2"
-    #Deleting Content
+    #Deleting Alert
     Given I am logged in as a user with the "administrator" role
     And I am on "/admin/content"
     And I select "header_alert" from "edit-type"
@@ -40,13 +41,12 @@ Feature: Alerts
     And I click "edit-form"
     And I click "edit-delete"
     And I press "edit-submit"
-    Then I take a screenshot
     And I am on "/"
-    #Then I take a screenshot
-
+    Then I should not see "Headline for red alert"
 
   @api @javascript
-  Scenario: Adding Orange (Weather) Alert
+  Scenario: Orange (Weather) Alert
+    #Adding Alert
     Given I am logged in as a user with the "administrator" role
     And I am on "/node/add"
     And I click "Header Alert"
@@ -57,7 +57,7 @@ Feature: Alerts
     And I put "Orange (Weather) Alert copy" into CKEditor
     And I press "edit-submit"
     Then I should see "Orange (Weather) Alert copy"
-    #Editing Content
+    #Editing Alert
     Given I am on "/admin/content"
     And I select "header_alert" from "edit-type"
     And I press "Filter"
@@ -70,7 +70,7 @@ Feature: Alerts
     Given I am an anonymous user
     And I am on "/"
     Then I should see "Orange (Weather) Alert copy 2"
-    #Deleting Content
+    #Deleting Alert
     Given I am logged in as a user with the "administrator" role
     And I am on "/admin/content"
     And I select "header_alert" from "edit-type"
@@ -80,9 +80,11 @@ Feature: Alerts
     And I click "edit-delete"
     And I press "edit-submit"
     And I am on "/"
+    Then I should not see "Headline for Orange (Weather) alert"
 
   @api @javascript
-  Scenario: Adding Orange (Non-Weather) Alert
+  Scenario: Orange (Non-Weather) Alert
+    #Adding Alert
     Given I am logged in as a user with the "administrator" role
     And I am on "/node/add"
     And I click "Header Alert"
@@ -93,7 +95,7 @@ Feature: Alerts
     Then I put "Orange (Non-Weather) Alert copy" into CKEditor
     Then I press "edit-submit"
     Then I should see "Orange (Non-Weather) Alert copy"
-    #Editing Content
+    #Editing Alert
     Given I am on "/admin/content"
     And I select "header_alert" from "edit-type"
     And I press "Filter"
@@ -106,7 +108,7 @@ Feature: Alerts
     Given I am an anonymous user
     And I am on "/"
     Then I should see "Orange (Non-Weather) Alert copy 2"
-    #Deleting Content
+    #Deleting Alert
     Given I am logged in as a user with the "administrator" role
     And I am on "/admin/content"
     And I select "header_alert" from "edit-type"
@@ -116,4 +118,5 @@ Feature: Alerts
     And I click "edit-delete"
     And I press "edit-submit"
     And I am on "/"
+    Then I should not see "Headline for Orange (Non-Weather) alert"
 
