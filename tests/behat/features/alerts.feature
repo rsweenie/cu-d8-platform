@@ -70,6 +70,17 @@ Feature: Alerts
     Given I am an anonymous user
     And I am on "/"
     Then I should see "Orange (Weather) Alert copy 2"
+    #Deleting Content
+    Given I am logged in as a user with the "administrator" role
+    And I am on "/admin/content"
+    And I select "header_alert" from "edit-type"
+    And I press "Filter"
+    And I click "Testing Orange (Weather) Header Alert"
+    And I click "edit-form"
+    And I click "edit-delete"
+    And I press "edit-submit"
+    And I am on "/"
+    #Then I take a screenshot
 
   @api @javascript
   Scenario: Adding Orange (Non-Weather) Alert
@@ -96,4 +107,14 @@ Feature: Alerts
     Given I am an anonymous user
     And I am on "/"
     Then I should see "Orange (Non-Weather) Alert copy 2"
+    #Deleting Content
+    Given I am logged in as a user with the "administrator" role
+    And I am on "/admin/content"
+    And I select "header_alert" from "edit-type"
+    And I press "Filter"
+    And I click "Testing Orange (Non-Weather) Header Alert"
+    And I click "edit-form"
+    And I click "edit-delete"
+    And I press "edit-submit"
+    And I am on "/"
 
