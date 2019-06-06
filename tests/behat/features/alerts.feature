@@ -32,11 +32,18 @@ Feature: Alerts
     Given I am an anonymous user
     And I am on "/"
     Then I should see "Red Alert copy 2"
-    #Deleting Alert
+    #Disabling Alert
     Given I am logged in as a user with the "administrator" role
-    And I am on "/admin/content"
-    And I select "header_alert" from "edit-type"
-    And I press "Filter"
+    Given I am on "/admin/content?title=&type=header_alert&status=All&langcode=All"
+    And I click "Testing Red Header Alert"
+    And I click "edit-form"
+    And I select "No Alert" from "field_header_alert_activate"
+    And I press "edit-submit"
+    And I am on "/"
+    Then I should not see "Headline for red alert"
+    Then I take a screenshot
+    #Deleting Alert
+    Given I am on "/admin/content?title=&type=header_alert&status=All&langcode=All"
     And I click "Testing Red Header Alert"
     And I click "edit-form"
     And I click "edit-delete"
