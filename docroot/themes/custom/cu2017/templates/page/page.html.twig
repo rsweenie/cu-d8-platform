@@ -46,7 +46,8 @@
 * @ingroup themeable
 */
 #}
-{################## add appropriate classes to main div ##################}
+
+{#  add appropriate classes to main div #}
 {% set layout_attributes = create_attribute() %}
 {% set layout_classes = [] %}
 {% set layout_classes = layout_classes|merge(['layout-container']) %}
@@ -82,7 +83,6 @@
             </div>
         {% endblock %}
     {% endif %}
-
     {% block main_front %}
         <div{{ attributes.addClass('layout-content')}}>
     {% endblock %}
@@ -96,7 +96,7 @@
                         {{ page.breadcrumbs }}
                     </div>
                 </div>
-                <div class="row"> 
+                <div class="row">
                  {# if it is a spotlight, wrap a div around it #}
                  {# for the sake of CSS, to hide the headline #}
                  {% if (node.type.entity.id == "news_spotlight")  %}
@@ -109,9 +109,11 @@
                             {{ page.sidebar_first }}
                         </div>
                         <div class="col-md-9">
-                            <h1 class="headline">
-                                {{ node.field_content_page_headline.value }}
-                            </h1>
+                            {%  if (node.field_content_page_headline.value) %}
+                                <h1 class="headline">
+                                    {{ node.field_content_page_headline.value }}
+                                </h1>
+                            {% endif %}
                             {{ page.large_horiz_image }}
                             <div class="col-md-8 center_column">
                                 {{ page.content }}
@@ -125,20 +127,22 @@
                             {{ page.sidebar_first }}
                         </div>
                         <div class="col-md-9">
-                            <h1 class="headline">
-                                {{ node.field_content_page_headline.value }}
-                            </h1>
-                            {{ page.large_horiz_image }}
+                            {%  if (node.field_content_page_headline.value) %}
+                                <h1 class="headline">
+                                    {{ node.field_content_page_headline.value }}
+                                </h1>
+                            {% endif %}                            {{ page.large_horiz_image }}
                             <div class="center_column">
                                 {{ page.content }}
                             </div>
                         </div>
                     {% elseif not inMainNav == 1 and page.sidebar_second %}
                         <div class="col-md-12">
-                            <h1 class="headline">
-                                {{ node.field_content_page_headline.value }}
-                            </h1>
-                            {{ page.large_horiz_image }}
+                            {%  if (node.field_content_page_headline.value) %}
+                                <h1 class="headline">
+                                    {{ node.field_content_page_headline.value }}
+                                </h1>
+                            {% endif %}                            {{ page.large_horiz_image }}
                             <div class="col-md-9 center_column">
                                 {{ page.content }}
                             </div>
