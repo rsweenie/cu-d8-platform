@@ -11,7 +11,7 @@ dependencies:
     - cu2017_alliance
 third_party_settings:
   block_aria_landmark_roles:
-    role: banner
+    role: ''
     label: 'Alert - Dangerous'
 _core:
   default_config_hash: '-3-29cG8DukjsNtXwcmDEMIW6ooV1f5O7mpDqy8e_z0'

@@ -11,7 +11,7 @@ dependencies:
     - cu2017_alliance
 third_party_settings:
   block_aria_landmark_roles:
-    role: banner
+    role: ''
     label: 'Alert - Weather Related'
 _core:
   default_config_hash: vUM0jHR-1tCZbx-ftTn_ASJJ1Fli4mMjJn9y94Rzt9w
