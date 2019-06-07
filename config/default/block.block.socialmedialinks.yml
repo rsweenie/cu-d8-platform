@@ -3,14 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
-    - block_aria_landmark_roles
     - social_media_links
   theme:
     - cu2017
-third_party_settings:
-  block_aria_landmark_roles:
-    role: navigation
-    label: 'Social Media Links'
 id: socialmedialinks
 theme: cu2017
 region: footer
