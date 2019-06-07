@@ -10874,7 +10874,7 @@ ul#megamenu_icon_menu {
 }
 /* line 52, ../sass/custom/_quotebox.scss */
 .quote_box_wrapper .quote_box_affiliation {
-  color: #B3B4B3;
+  color: #5D6468;
   display: block;
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 13px;
@@ -12480,7 +12480,7 @@ table .tbody .tr .td.fullcell.program-name,
 .table .tbody .tr td.fullcell.program-name,
 .table .tbody .tr .td.fullcell.program-name {
   background: transparent;
-  color: #B3B4B3;
+  color: #5D6468;
 }
 
 @media all and (max-width: 640px) {
@@ -13226,7 +13226,7 @@ article figcaption {
 }
 /* line 24, ../sass/custom/_news.scss */
 .view-cu-news .views-row p.date {
-  color: #B3B4B3;
+  color: #5D6468;
   font-size: 13px;
 }
 @media all and (max-width: 480px) {
@@ -13312,7 +13312,7 @@ article figcaption {
 
 /* line 79, ../sass/custom/_news.scss */
 article.news .news_date {
-  color: #B3B4B3;
+  color: #5D6468;
   margin-bottom: 30px;
 }
 
