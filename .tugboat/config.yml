@@ -92,6 +92,7 @@ services:
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
         - drush -r "${DOCROOT}" cache-rebuild
         - drush -r "${DOCROOT}" updb -y
+        #- drush -r "${DOCROOT}" cim -y
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
@@ -120,4 +121,5 @@ services:
         #- rm /tmp/database.sql.gz
 
         # Install the initial DB backup as a base.
-        - zcat "${TUGBOAT_ROOT}/.tugboat/initial-db.sql.gz" | mysql tugboat
+        #- zcat "${TUGBOAT_ROOT}/.tugboat/db/base.sql.gz" | mysql tugboat
+        - ${TUGBOAT_ROOT}/.tugboat/init-db.sh
