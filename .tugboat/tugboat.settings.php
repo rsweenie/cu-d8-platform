@@ -47,3 +47,19 @@ $settings['file_public_path'] = 'sites/default/files';
  * about global configuration override.
  */
 $config['system.file']['path']['temporary'] = '/tmp';
+
+// Settings based on preview base branch.
+if (getenv('TUGBOAT_GITHUB_BASE') == 'r2i/master-integration') {
+
+}
+elseif (getenv('TUGBOAT_GITHUB_BASE') == 'r2i/grad-site') {
+  
+}
+
+// Settings based on current branch.
+if (getenv('TUGBOAT_GITHUB_HEAD') == 'r2i/grad-site') {
+
+}
+elseif (getenv('TUGBOAT_GITHUB_HEAD') == 'r2i/grad-site-dev') {
+
+}
