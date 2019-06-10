@@ -1,0 +1,5 @@
+name: "CU 2019 Grad Site"
+type: theme
+description: "Creighton's Graduate site theme."
+core: 8.x
+base theme: stable
