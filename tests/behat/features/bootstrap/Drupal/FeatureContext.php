@@ -13,6 +13,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   //requested page not found
   const RPNF = "The requested page could not be found";
   private $output = '';
+  private $screenshotCount = 0;
   /**
    * Every scenario gets its own context instance.
    *
@@ -21,6 +22,41 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    */
   public function __construct() {
 
+  }
+  /**
+   * returns the page height
+   */
+  private function getPageHeight(){
+    return (int) $this->getSession()->getDriver()->evaluateScript(
+      "function(){ var body = document.body,
+        html = document.documentElement;
+    
+        return Math.max( body.scrollHeight, body.offsetHeight, 
+                           html.clientHeight, html.scrollHeight, html.offsetHeight ); }()"
+  );
+  }
+
+  /**
+   * @Given /^I set browser window size to "([^"]*)" x "([^"]*)"$/
+   * set height to full to match page height
+   */
+  public function iSetBrowserWindowSizeToX($width, $height) {
+    //set to page height if height is null
+    if($height = "full")
+      $height = $this->getPageHeight();
+    $this->getSession()->resizeWindow((int)$width, (int)$height, 'current');
+  }
+
+  /**
+   * @Then /^I take a screenshot with size "([^"]*)" x "([^"]*)"$/
+   */
+  public function iTakeAScreenshotWithSizeX($width, $height)
+  {
+    $this->iSetBrowserWindowSizeToX($width, $height);
+    $filename = sprintf('%s_%d.png', $this->getMinkParameter('browser_name'), ++$this->screenshotCount);
+    //save screenshot to reports dir
+    $filepath = \Drupal::root() . '/../reports';
+    parent::saveScreenshot($filename, $filepath);
   }
 
   /**
