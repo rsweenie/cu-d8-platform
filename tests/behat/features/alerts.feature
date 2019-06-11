@@ -10,6 +10,7 @@ Feature: Alerts
   Scenario: Red Alert
     #Adding Alert
     Given I am logged in as a user with the "administrator" role
+    And I set browser window size to "1920" x "1080"
     And I am on "/node/add"
     And I click "Header Alert"
     And I fill in "title[0][value]" with "Testing Red Header Alert"
@@ -28,6 +29,15 @@ Feature: Alerts
     And I put "Red Alert copy 2" into CKEditor
     And I press "edit-submit"
     Then I should see "Red Alert copy 2"
+    #Revision
+    And I click "edit-form"
+    And I check the box "edit-revision"
+    And I put "revision number 1" into CKEditor
+    And I press "edit-submit"
+    Then I click "Revisions"
+    Then I click "Revert"
+    Then I press "Revert"
+    Then I should see "has been reverted to the revision from"
     #Anonymous user
     Given I am an anonymous user
     And I am on "/"
@@ -41,7 +51,6 @@ Feature: Alerts
     And I press "edit-submit"
     And I am on "/"
     Then I should not see "Headline for red alert"
-    Then I take a screenshot
     #Deleting Alert
     Given I am on "/admin/content?title=&type=header_alert&status=All&langcode=All"
     And I click "Testing Red Header Alert"
@@ -126,4 +135,3 @@ Feature: Alerts
     And I press "edit-submit"
     And I am on "/"
     Then I should not see "Headline for Orange (Non-Weather) alert"
-
