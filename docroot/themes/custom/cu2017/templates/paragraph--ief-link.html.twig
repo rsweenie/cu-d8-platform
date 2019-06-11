@@ -38,38 +38,37 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    'links_wrapper'
-  ]
-  
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'links_wrapper'
+] %}
 {% set linkPresent = 0 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
     {% endblock %}
-       {{ title_suffix.contextual_links }}    
-       {# if new window is checked, set the target #}
-    {% if content.field_open_in_new_window.0['#markup'] != "Off" %}  
-        {% set target = '_blank' %}           
+    {{ title_suffix.contextual_links }}
+    {# if new window is checked, set the target #}
+    {% if content.field_open_in_new_window.0['#markup'] != "Off" %}
+      {% set target = 'target="_blank"' %}
     {% endif %}
     {# if there's a file, use that link #}
     {% if content.field_file_link.0 %}
-        {% set linkPresent = 1 %}
-        {# this is how you reference files(specifically document files) in paragraphs mmc 4.3.19 #}
-        {% set href = file_url(paragraph.field_file_link.entity.field_document.entity.uri.value)  %}
-    {% elseif content.field_internal_or_external_link.0   %}
-        {% set linkPresent = 1 %}
-        {% set href = content.field_internal_or_external_link.0['#url'] %}
+      {% set linkPresent = 1 %}
+      {# this is how you reference files(specifically document files) in paragraphs mmc 4.3.19 #}
+      {% set href = file_url(paragraph.field_file_link.entity.field_document.entity.uri.value) %}
+    {% elseif content.field_internal_or_external_link.0 %}
+      {% set linkPresent = 1 %}
+      {% set href = content.field_internal_or_external_link.0['#url'] %}
     {% endif %}
     {# build the <a> itself #}
     {% if linkPresent == 1 %}
-      <a href="{{ href }}" target="{{ target }}"><li>{{ content.field_link_text }}</li></a> 
+      <a href="{{ href }}" {{ target }}>
+        <li>{{ content.field_link_text }}</li>
+      </a>
     {% else %}
       <li>{{ content.field_link_text }}</li>
     {% endif %}
