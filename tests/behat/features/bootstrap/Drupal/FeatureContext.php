@@ -38,6 +38,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
 
   /**
    * @Given /^I set browser window size to "([^"]*)" x "([^"]*)"$/
+   * set height to full to match page height
    */
   public function iSetBrowserWindowSizeToX($width, $height) {
     //set to page height if height is null
@@ -169,11 +170,5 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
         $this->output
       );
     }
-  }
-/**
-   * @Given /^I set browser window size to "([^"]*)" x "([^"]*)"$/
-   */
-  public function iSetBrowserWindowSizeToX($width, $height) {
-    $this->getSession()->resizeWindow((int)$width, (int)$height, 'current');
   }
 }
