@@ -87,6 +87,7 @@ Feature: News and Spotlight
 
     # more news spotlight fields
     And I fill in "field_content_taxo[target_id]" with "news"
+    And I check the box "field_display_publish_on_date[value]"
     Then I switch to the "entity_browser_iframe_media_browser" frame
     And I check the box "entity_browser_select[media:1576]"
     And I press "Place"
@@ -95,7 +96,7 @@ Feature: News and Spotlight
     # save and verify
     Then I press "Save"
     And the response status code should be 200
-    And I take a screenshot with size "680" x "full"
+    # And I take a screenshot with size "680" x "full"
     Then I should see "News/Spotlight title has been updated."
 
     # verify accordian
@@ -115,7 +116,6 @@ Feature: News and Spotlight
     And I should see "Quote text area"
     And I should see "Mr. Quote Box given Quote Box mid Quote Box fam Jr., Mother of Dragons"
     And I should see "Affiliation"
-    And I take a screenshot with size "680" x "full"
     # verify related links
     And I should see "Related Link text"
 
@@ -140,7 +140,6 @@ Feature: News and Spotlight
     And the response status code should be 200
     Then I should see "News/Spotlight title has been updated."
     And I should see "<verify_text>"
-    And I take a screenshot with size "680" x "full"
 
   Examples:
     |frame_id|type|grouping|name|search|nid|verify_text|
