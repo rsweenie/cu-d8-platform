@@ -41,12 +41,13 @@ Feature: News and Spotlight
     And I press "Add new Sidebar Item"
     Then I wait for AJAX to finish
     And I fill in "field_content_page_sidebar_items[1][title][0][value]" with "Featured Links title"
+    And I select "Orange" from "field_content_page_sidebar_items[1][field_featured_link_button_color]"
     And I fill in "field_content_page_sidebar_items[1][field_featured_p_link][0][subform][field_link_text][0][value]" with "Featured Links text"
     And I fill in "field_content_page_sidebar_items[1][field_featured_p_link][0][subform][field_internal_or_external_link][0][uri]" with "/Featured-Links-link"
     And I press "Create Sidebar Item"
     Then I wait for AJAX to finish
 
-    # new feature links sidebar items
+    # new promo box sidebar items
     Then I select "Promo Box" from "field_content_page_sidebar_items[actions][bundle]"
     And I press "Add new Sidebar Item"
     Then I wait for AJAX to finish
@@ -57,7 +58,7 @@ Feature: News and Spotlight
     And I press "Create Sidebar Item"
     Then I wait for AJAX to finish
 
-    # new feature links sidebar items
+    # new quote box sidebar items
     Then I select "Quote Box" from "field_content_page_sidebar_items[actions][bundle]"
     And I press "Add new Sidebar Item"
     Then I wait for AJAX to finish
