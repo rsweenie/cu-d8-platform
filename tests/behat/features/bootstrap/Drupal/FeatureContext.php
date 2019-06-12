@@ -23,6 +23,21 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   public function __construct() {
 
   }
+
+  /**
+   * Sets screen height
+   */
+  public function setScreenHeight($height){
+      $this->getSession()->resizeWindow((int) $this->getCurrentScreenWidth(), (int) $height, 'current');
+  }
+
+  /**
+   * Sets screen width
+   */
+  public function setScreenWidth($width){
+      $this->getSession()->resizeWindow((int) $width, (int) $this->getCurrentScreenHeight(), 'current');
+  }
+
   /**
    * returns the page height
    */
@@ -33,7 +48,38 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     
         return Math.max( body.scrollHeight, body.offsetHeight, 
                            html.clientHeight, html.scrollHeight, html.offsetHeight ); }()"
-  );
+    );
+  }
+
+  /**
+   * returns the page width
+   */
+  private function getPageWidth(){
+    return (int) $this->getSession()->getDriver()->evaluateScript(
+      "function(){ var body = document.body,
+        html = document.documentElement;
+    
+        return Math.max( body.scrollWidth, body.offsetWidth, 
+                           html.clientWidth, html.scrollWidth, html.offsetWidth ); }()"
+    );
+  }
+
+  /**
+     * Gets current screen height
+     */
+    private function getCurrentScreenHeight(){
+      return (int) $this->getSession()->getDriver()->evaluateScript(
+          "function(){ return screen.height; }()"
+      );
+  }    
+
+  /**
+   * Gets current screen width
+   */
+  private function getCurrentScreenWidth(){
+      return (int) $this->getSession()->getDriver()->evaluateScript(
+          "function(){ return screen.width; }()"
+      );
   }
 
   /**
