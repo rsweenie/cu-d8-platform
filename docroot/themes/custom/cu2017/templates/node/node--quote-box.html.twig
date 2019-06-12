@@ -5,47 +5,52 @@
  */
 #}
 <div{{ attributes.addClass('clearfix', 'quote_box_wrapper') }}>
-    {{ title_suffix.contextual_links }}
+  {{ title_suffix.contextual_links }}
 
-    {% set quote_box_attributes = create_attribute() %}
-    {% set classes = [] %}
+  {% set quote_box_attributes = create_attribute() %}
+  {% set classes = [] %}
 
-    {% if content.field_quote_box_quotes[0]|render|lower|trim == "quotes" %}
-        {% set classes = classes|merge(['quote_box_with_quotes']) %}
-    {% else %}
-        {% set classes = classes|merge(['quote_box_no_quotes']) %}
+  {% if content.field_quote_box_quotes[0]|render|lower|trim == "quotes" %}
+    {% set classes = classes|merge(['quote_box_with_quotes']) %}
+  {% else %}
+    {% set classes = classes|merge(['quote_box_no_quotes']) %}
+  {% endif %}
+
+  {% if not content.field_quote_box_photo.0 %}
+    {% set classes = classes|merge(['quote_border']) %}
+  {% endif %}
+  {# this doesn't exist, what are you doing here? #}
+  {% if content.field_quote_box_links.0|render %}
+    {% set classes = classes|merge(['quote_button_margin']) %}
+  {% endif %}
+
+  <div{{ quote_box_attributes.addClass(classes) }}>
+    <div class="quote_box_photo">{{ content.field_quote_box_photo }}</div>
+    <div class="quote_box_quote_text">{{ content.field_quote_box_quote_text }}</div>
+    <br>
+    <div class="quote_box_name_person">{{ content.field_name_person }}</div>
+    <div class="quote_box_affiliation">{{ content.field_quote_box_affiliation }}</div>
+    {# int/ext link #}
+    {% if node.field_quote_p_link.entity.field_internal_or_external_link.0 %}
+      <div class="quote_box_btn">
+        <a href='{{ node.field_quote_p_link.entity.field_internal_or_external_link.0.url|render }}'
+           target={{ node.field_quote_p_link.entity.field_open_in_new_window.value ?'_blank':'' }}>
+          {% if node.field_quote_p_link.entity.field_link_text.0.value is not empty %}
+            <ul>
+              <li>{{ node.field_quote_p_link.entity.field_link_text.0.value }}</li>
+            </ul>
+          {% else %}
+            <ul>
+              <li>{{ node.field_quote_p_link.entity.field_internal_or_external_link.0.url|render|replace({'http://':''}) }}</li>
+            </ul>
+          {% endif %}
+        </a>
+      </div>
     {% endif %}
-
-    {% if not content.field_quote_box_photo.0 %}
-        {% set classes = classes|merge(['quote_border']) %}
-    {% endif %}
-    {# this doesn't exist, what are you doing here? #}
-    {% if content.field_quote_box_links.0|render %}
-        {% set classes = classes|merge(['quote_button_margin']) %}
-    {% endif %}
-
-    <div{{ quote_box_attributes.addClass(classes) }}>
-        <div class="quote_box_photo">{{ content.field_quote_box_photo }}</div>
-        <div class="quote_box_quote_text">{{ content.field_quote_box_quote_text }}</div>
-        <br>
-        <div class="quote_box_name_person">{{ content.field_name_person }}</div>
-        <div class="quote_box_affiliation">{{ content.field_quote_box_affiliation }}</div>
-        {# int/ext link #}
-        {% if node.field_quote_p_link.entity.field_internal_or_external_link.0 %}
-            <div class="quote_box_btn">
-            <a href='{{ node.field_quote_p_link.entity.field_internal_or_external_link.0.url|render }}' target={{ node.field_quote_p_link.entity.field_open_in_new_window.value ?'_blank':'' }}>
-            {% if node.field_quote_p_link.entity.field_link_text.0.value is not empty %}
-                <li>{{ node.field_quote_p_link.entity.field_link_text.0.value }}</li>
-            {% else %}
-                <li>{{ node.field_quote_p_link.entity.field_internal_or_external_link.0.url|render|replace({'http://':''}) }}</li>
-            {% endif %}
-            </a>
-            </div>
-        {% endif %}
-        {# other paragraph link fields
-            node.field_quote_p_link.entity.field_open_in_new_window.value 
-            node.field_quote_p_link.entity.field_link_text.0.value
-            file_url(node.field_quote_p_link.entity.field_file_link.entity.field_document.entity.uri.value)
-        #}
-    </div>
+    {# other paragraph link fields
+        node.field_quote_p_link.entity.field_open_in_new_window.value
+        node.field_quote_p_link.entity.field_link_text.0.value
+        file_url(node.field_quote_p_link.entity.field_file_link.entity.field_document.entity.uri.value)
+    #}
+  </div>
 </div>

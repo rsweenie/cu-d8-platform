@@ -67,10 +67,14 @@
     {# build the <a> itself #}
     {% if linkPresent == 1 %}
       <a href="{{ href }}" {{ target }}>
-        <li>{{ content.field_link_text }}</li>
+        <ul>
+          <li>{{ content.field_link_text }}</li>
+        </ul>
       </a>
     {% else %}
-      <li>{{ content.field_link_text }}</li>
+      <ul>
+        <li>{{ content.field_link_text }}</li>
+      </ul>
     {% endif %}
   </div>
 {% endblock paragraph %}
