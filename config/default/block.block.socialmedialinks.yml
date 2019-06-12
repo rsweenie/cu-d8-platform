@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_aria_landmark_roles
     - social_media_links
   theme:
     - cu2017
+third_party_settings:
+  block_aria_landmark_roles:
+    role: complementary
+    label: 'Creighton Social Links'
 id: socialmedialinks
 theme: cu2017
 region: footer
@@ -18,86 +23,86 @@ settings:
   provider: social_media_links
   label_display: '0'
   platforms:
+    linkedin:
+      value: company/cu-azhealthedalliance/
+      description: 'Follow Creighton on LinkedIn'
+      weight: '-30'
+    facebook:
+      value: cuazhealthedalliance/
+      description: 'Follow Creighton on Facebook'
+      weight: '-29'
     rss:
       value: ''
       description: ''
-      weight: '-10'
+      weight: '-28'
     email:
       value: ''
       description: ''
-      weight: '-9'
+      weight: '-27'
     youtube_channel:
       value: ''
       description: ''
-      weight: '-8'
+      weight: '-26'
     instagram:
       value: ''
       description: ''
-      weight: '-7'
+      weight: '-25'
     vimeo:
       value: ''
       description: ''
-      weight: '-6'
+      weight: '-24'
     github:
       value: ''
       description: ''
-      weight: '-5'
+      weight: '-23'
     bitbucket:
       value: ''
       description: ''
-      weight: '-4'
+      weight: '-22'
     drupal:
       value: ''
       description: ''
-      weight: '-3'
+      weight: '-21'
     tumblr:
       value: ''
       description: ''
-      weight: '-2'
+      weight: '-20'
     contact:
       value: ''
       description: ''
-      weight: '-1'
+      weight: '-19'
     behance:
       value: ''
       description: ''
-      weight: '0'
+      weight: '-18'
     flickr:
       value: ''
       description: ''
-      weight: '1'
-    linkedin:
-      value: company/cu-azhealthedalliance/
-      description: ''
-      weight: '2'
+      weight: '-17'
     twitter:
       value: ''
       description: ''
-      weight: '3'
+      weight: '-16'
     youtube:
       value: ''
       description: ''
-      weight: '4'
+      weight: '-15'
     pinterest:
       value: ''
       description: ''
-      weight: '5'
+      weight: '-14'
     vkontakte:
       value: ''
       description: ''
-      weight: '6'
-    facebook:
-      value: cuazhealthedalliance/
-      description: ''
-      weight: '7'
+      weight: '-13'
     googleplus:
       value: ''
       description: ''
-      weight: '8'
+      weight: '-12'
     slideshare:
       value: ''
       description: ''
-      weight: '9'
+      weight: '-11'
   appearance:
     orientation: h
     show_name: 0
