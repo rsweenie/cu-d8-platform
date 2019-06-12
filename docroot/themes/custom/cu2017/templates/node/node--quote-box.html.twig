@@ -36,13 +36,9 @@
         <a href='{{ node.field_quote_p_link.entity.field_internal_or_external_link.0.url|render }}'
            target={{ node.field_quote_p_link.entity.field_open_in_new_window.value ?'_blank':'' }}>
           {% if node.field_quote_p_link.entity.field_link_text.0.value is not empty %}
-            <ul>
-              <li>{{ node.field_quote_p_link.entity.field_link_text.0.value }}</li>
-            </ul>
+            <li>{{ node.field_quote_p_link.entity.field_link_text.0.value }}</li>
           {% else %}
-            <ul>
-              <li>{{ node.field_quote_p_link.entity.field_internal_or_external_link.0.url|render|replace({'http://':''}) }}</li>
-            </ul>
+            <li>{{ node.field_quote_p_link.entity.field_internal_or_external_link.0.url|render|replace({'http://':''}) }}</li>
           {% endif %}
         </a>
       </div>
