@@ -14704,3 +14704,7 @@ div.header_top_section_wrapper_inner button {
   top: 0;
   right: 0;
 }
+
+header .header_top_section_search_wrapper .cu-query {
+  background-image: none;
+}
