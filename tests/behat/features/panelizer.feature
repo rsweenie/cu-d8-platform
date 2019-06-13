@@ -38,7 +38,6 @@ Feature: Panelizer IPE
     Then I open the "Edit" tab
     And I place the "views_block:profile-block_33" block from the "Lists (Views)" category
     And I place the "entity_field:node:body" block from the "Content" category
-    # And I take a screenshot with size "680" x "full"
     And I move block "Slick Slideshow" to region "left"
     
     # verify
@@ -51,7 +50,6 @@ Feature: Panelizer IPE
     #save
     Then I save the layout
     And I wait for AJAX to finish
-    # And I take a screenshot with size "680" x "full"
 
     #verify
     Then I should not see "REGION: TOP"
