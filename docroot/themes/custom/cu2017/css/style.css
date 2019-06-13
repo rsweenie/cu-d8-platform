@@ -14689,3 +14689,22 @@ article.news .news_date {
 .row {
   margin: 0;
 }
+
+/* needs refactor to sass */
+div.header_top_section_search_wrapper {
+  position: relative;
+}
+
+div.header_top_section_wrapper_inner button {
+  background: transparent url(../images/search.svg) no-repeat center;
+  height: 35px;
+  width: 35px;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+header .header_top_section_search_wrapper .cu-query {
+  background-image: none;
+}
