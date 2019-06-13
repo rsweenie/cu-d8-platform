@@ -40,18 +40,19 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    * @Given /^I set browser window size to "([^"]*)" x "([^"]*)"$/
    * set height to full to match page height
    */
-  public function iSetBrowserWindowSizeToX($width, $height) {
-    //set to page height if height is null
-    if($height = "full")
-      $height = $this->getPageHeight();
+  public function iSetBrowserWindowSizeToX($width, $height) {  
     $this->getSession()->resizeWindow((int)$width, (int)$height, 'current');
   }
 
-  /**
+/**
    * @Then /^I take a screenshot with size "([^"]*)" x "([^"]*)"$/
    */
   public function iTakeAScreenshotWithSizeX($width, $height)
   {
+    //set to page height if height is null
+    if($height == "full"){
+      $height = $this->getPageHeight();
+    }
     $this->iSetBrowserWindowSizeToX($width, $height);
     $filename = sprintf('%s_%d.png', $this->getMinkParameter('browser_name'), ++$this->screenshotCount);
     //save screenshot to reports dir
