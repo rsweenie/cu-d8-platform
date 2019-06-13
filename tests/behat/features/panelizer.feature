@@ -29,11 +29,9 @@ Feature: Panelizer IPE
     And I press "Add Item"
     Then I wait for AJAX to finish
     And I switch to the window
-
-
     # save
     Then I press "Save"
-
+    And I wait for AJAX to finish
   @api @javascript
   Scenario: Changing ipe layout
     And I change the layout to "flexbox_three_section" from the "Creighton Layouts" category
