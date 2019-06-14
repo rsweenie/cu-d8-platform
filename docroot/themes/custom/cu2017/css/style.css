@@ -14705,6 +14705,10 @@ div.header_top_section_wrapper_inner button {
   right: 0;
 }
 
+div.header_top_section_wrapper_inner button:hover {
+  background: url(../images/giphy-downsized.gif) no-repeat -19px -112px;
+}
+
 header .header_top_section_search_wrapper .cu-query {
   background-image: none;
 }
