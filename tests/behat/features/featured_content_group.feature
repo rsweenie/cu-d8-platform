@@ -21,26 +21,18 @@ Feature: Featured Content Group
     And I fill in "featured_content[0][subform][field_fc_supporting_p_links][0][subform][field_internal_or_external_link][0][uri]" with "FL - FP News (51)"
     And I check "featured_content[0][subform][field_fc_supporting_p_links][0][subform][field_open_in_new_window][value]"
     And I press "featured_content_featured_content_item_add_more"
-    #Then I take a screenshot
-    #Then I wait for "3" seconds
     Then I wait for AJAX to finish
     # having issues with loading content
-    Then I wait "3" seconds 
+    And I wait "3" seconds
+    And I press Save
+    Then I take a screenshot with size "1920" x "full"
+    # Loading new Feature Content Item, if this is present, then everything is the same
+    Then I should see a ".ajax-new-content" element
+    
+
+
+    #Then I take a screenshot
+    #Then I wait for "3" seconds
+
     #Then I switch to the frame number "2"
     #And I check the box "entity_browser_select[media:1571]"
-    And I take a screenshot with size "1920" x "full"
-
-   
-   
-
-
-
-
-    #And I press "edit-submit"
-    #Then I should see "Red Alert copy"
-    #Anonymous user
-    #Given I am an anonymous user
-    #And I am on "/"
-    #Then I should see "Red Alert copy"
-
-    #And I attach the file "/tests/behat/media/test_profile.jpg" to "edit-input-file"
