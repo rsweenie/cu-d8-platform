@@ -24,15 +24,15 @@ Feature: Featured Content Group
     Then I wait for AJAX to finish
     # having issues with loading content
     And I wait "3" seconds
-    And I press Save
-    Then I take a screenshot with size "1920" x "full"
     # Loading new Feature Content Item, if this is present, then everything is the same
     Then I should see a ".ajax-new-content" element
-    
+    And I press "Save"
+    Then I should see "Text for node link"
+    And I click on the ".nav-tabs li:nth-child(2) a" link
+    And I click on the "#edit-delete" link
+    Then I should not see "Text for node link"
+    And I click on the "#edit-submit" link
+    Then I take a screenshot with size "1920" x "full"
+  
 
-
-    #Then I take a screenshot
-    #Then I wait for "3" seconds
-
-    #Then I switch to the frame number "2"
-    #And I check the box "entity_browser_select[media:1571]"
+    #And I am on "/admin/content?title=&type=featured_content_group&status=All&langcode=All"

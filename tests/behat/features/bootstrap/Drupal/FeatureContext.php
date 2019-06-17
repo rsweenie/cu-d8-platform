@@ -94,6 +94,19 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     return $instance;
   }
 
+    /**
+   * @Then /^(?:|I )click (?:|on )(?:|the )"([^"]*)"(?:|.*)$/
+   */
+    public function iClickOn($arg1)
+    {
+        $findName = $this->getSession()->getPage()->find("css", $arg1);
+        if (!$findName) {
+            throw new Exception($arg1 . " could not be found");
+        } else {
+            $findName->click();
+        }
+    }
+
   /**
    * @Then I leave the frame
    * @Then I switch to the window
