@@ -10,6 +10,7 @@ Feature: Featured Content Group
   Scenario: Adding Featured Content Group
     Given I am logged in as a user with the "administrator" role
     And I am on "/node/add/featured_content_group"
+    #FIlling in various information for a Featured Content Group Item
     And I fill in "title[0][value]" with "Testing Featured Content Group"
     And I put "Featured Content Group copy" into CKEditor
     Then I switch to the "entity_browser_iframe_media_browser" frame 
@@ -28,11 +29,13 @@ Feature: Featured Content Group
     Then I should see a ".ajax-new-content" element
     And I press "Save"
     Then I should see "Text for node link"
+    #Editing Featured Content Griup
     And I click on the ".nav-tabs li:nth-child(2) a" link
     And I click on the "#edit-delete" link
-    Then I should not see "Text for node link"
-    And I click on the "#edit-submit" link
     Then I take a screenshot with size "1920" x "full"
+    And I click on the "#edit-submit" link
+    Then I should not see "Text for node link"
+
   
 
     #And I am on "/admin/content?title=&type=featured_content_group&status=All&langcode=All"
