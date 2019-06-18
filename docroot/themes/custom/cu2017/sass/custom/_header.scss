@@ -16,7 +16,7 @@ header {
 		width: 100%;
 		z-index: 6;
 		@include respond-to(null , tablet-max){
-			margin-top: 40px;
+			margin-top: 0;
 		}
 	}
 
@@ -128,7 +128,7 @@ header {
 		@include respond-to(null , tablet-max) {
 			align-self: flex-end;
 			position: relative;
-			top: 65px;
+			top: 35px;
 		}
 
 		@media all and (max-width: 319px) {

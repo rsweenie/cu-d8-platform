@@ -10,13 +10,13 @@
 	z-index: 1000;
 
 	@include respond-to(null , mobile-max)  {
-		top: $headerInnerMobileHeight + $headerTopBarHeight;
+		top: $headerInnerMobileHeight;
 	}
 	@include respond-to(tablet-min , tablet-max)  {
-		top: $headerInnerMobileHeight + $headerTopBarHeight;
+		top: $headerInnerMobileHeight;
 	}
 	@include respond-to(lg-tablet-min , lg-tablet-max) {
-		top: $headerInnerLgTabletHeight + $headerTopBarHeight;
+		top: $headerInnerLgTabletHeight;
 	}
 	@include respond-to(desktop-min , null) {
 		top: $headerDesktopHeight;
