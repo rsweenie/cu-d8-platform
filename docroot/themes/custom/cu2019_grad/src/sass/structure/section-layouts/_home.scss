@@ -1,0 +1,343 @@
+/*  --------------------------------------------------------------------------  *\
+
+    SECTION LAYOUTS > HOME
+
+\*  --------------------------------------------------------------------------  */
+@media #{$mediaToggleHeader} {
+    &[class*="hp-sec-"] {
+        padding: #{$gutter}rem 0;
+    }
+    
+    &.hp-sec-1 {
+        margin-top: #{$gutter * -3}rem;
+    }
+    
+    &.hp-sec-3.off-tl {
+        z-index: 100;
+        padding-top: 0;
+        margin-top: #{$gutter * -3}rem;
+    }
+    
+    &.hp-sec-2.off-bc {
+        z-index: 90;
+        padding-top: 0;
+        margin-top: #{$gutter * -3}rem;
+    }
+}
+@media #{$mediaFullHeader} {
+    &[class*="hp-sec-"] {
+        > div {
+            @include position(relative, 0);
+
+            > div, > article, > figure {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &.hp-sec-1, &.hp-sec-2, &.hp-sec-3 {
+        > div {
+            @include flex(center, center, center, row nowrap);
+
+            > .card, > .fact {
+                @include flexItem(0, 0, auto);
+                margin: 0 #{$gutter}rem;
+            }
+
+            > div.card {
+                width: 50%;
+            }
+
+            > article.card {
+                width: 33.333%;
+            }
+        }
+
+        &.justified {
+
+            > div {
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &.hp-sec-2 {
+
+        > div {
+
+            > :nth-child(3) {
+                @include position(absolute, 100, null, null, null);
+                margin: 0;
+            }
+        }
+
+        &[class*="off-"] {
+            z-index: 150;
+        }
+
+        &.off-tl {
+            > div {
+                align-items: flex-end;
+
+                > :nth-child(3) {
+                    left: #{$gutter}rem;
+                    top: 0;
+                    @include transform(translate(0, -50%));
+                }
+            }
+        }
+
+        &.off-tc {
+            > div {
+                align-items: flex-end;
+
+                > :nth-child(3) {
+                    left: 50%;
+                    top: 0;
+                    @include transform(translate(-50%, -50%));
+                }
+            }
+        }
+
+        &.off-tr {
+            > div {
+                align-items: flex-end;
+
+                > :nth-child(3) {
+                    right: #{$gutter}rem;
+                    top: 0;
+                    @include transform(translate(0, -50%));
+                }
+            }
+        }
+
+        &.off-bl {
+            > div {
+                align-items: flex-start;
+
+                > :nth-child(3) {
+                    left: 0;
+                    top: 100%;
+                    @include transform(translate(0, -50%));
+                }
+            }
+        }
+
+        &.off-bc {
+            > div {
+                align-items: flex-start;
+
+                > :nth-child(3) {
+                    left: 50%;
+                    top: 100%;
+                    @include transform(translate(-50%, -50%));
+                }
+            }
+        }
+
+        &.off-br {
+            > div {
+                align-items: flex-start;
+
+                > :nth-child(3) {
+                    right: 0;
+                    top: 100%;
+                    @include transform(translate(0, -50%));
+                }
+            }
+        }
+
+        &.flipped {
+
+            > div {
+
+                > :nth-child(1) {
+                    order: 1;            
+                }
+
+                > :nth-child(2) {
+                    order: 0;
+                }
+            }
+        }
+    }
+
+    &.hp-sec-3 {
+
+        > div {
+            @include flex(center, center, center, row nowrap);
+
+            > :nth-child(1) {
+                @include position(absolute, 0, null, null);
+            }
+
+            figure {
+                max-width: 27.5rem;
+            }
+        }
+
+    }
+
+    &.hp-sec-1, &.hp-sec-3 {
+
+        > div {
+
+            > :nth-child(1) {
+                @include position(absolute, 0, null, null);
+                margin: 0;
+                z-index: 200;
+            }
+        }
+
+        &.off-tl {
+            > div {
+                align-items: flex-end;
+
+                > :nth-child(1) {
+                    left: #{$gutter}rem;
+                    top: 0;
+                    @include transform(translate(0, -100%));
+                }
+
+                > :nth-child(2) {
+                    top: #{$gutter * 2}rem;
+                }
+            }
+        }
+
+        &.off-tc {
+            > div {
+                align-items: flex-end;
+
+                > :nth-child(1) {
+                    left: 50%;
+                    top: 0;
+                    @include transform(translate(-50%, -100%));
+                }
+            }
+        }
+
+        &.off-tr {
+            > div {
+                align-items: flex-end;
+
+                > :nth-child(1) {
+                    right: #{$gutter}rem;
+                    top: 0;
+                    @include transform(translate(0, -100%));
+                }
+
+                > :nth-child(3) {
+                    top: #{$gutter * 2}rem;
+                }
+            }
+        }
+
+        &.off-bl {
+            > div {
+                align-items: flex-start;
+
+                > :nth-child(1) {
+                    left: #{$gutter}rem;
+                    top: 100%;
+                    @include transform(translate(0, -50%));
+                }
+            }
+        }
+
+        &.off-bc {
+            > div {
+                align-items: flex-start;
+
+                > :nth-child(1) {
+                    left: 50%;
+                    top: 100%;
+                    @include transform(translate(-50%, -50%));
+                }
+            }
+        }
+
+        &.off-br {
+            > div {
+                align-items: flex-start;
+
+                > :nth-child(1) {
+                    right: #{$gutter}rem;
+                    top: 100%;
+                    @include transform(translate(0, -50%));
+                }
+            }
+        }
+
+        &.flipped {
+
+            > div {
+
+                > :nth-child(2) {
+                    order: 1;            
+                }
+
+                > :nth-child(3) {
+                    order: 0;
+                }
+            }
+
+            &.off-tl {
+                > div {
+                    > :nth-child(2) {
+                        top: 0;
+                    }
+
+                    > :nth-child(3) {
+                        top: #{$gutter * 2}rem;
+                    }
+                }
+            }
+
+            &.off-tr {
+                > div {
+                    > :nth-child(2) {
+                        top: #{$gutter * 2}rem;
+                    }
+
+                    > :nth-child(3) {
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.hp-sec-1 {
+        padding: 0;
+
+        &.off-tl {
+            > div {
+                align-items: flex-end;
+
+                > :nth-child(1) {
+                    @include transform(translate(0, -50%));
+                }
+            }
+        }
+
+        &.off-tc {
+            > div {
+                align-items: flex-end;
+
+                > :nth-child(1) {
+                    @include transform(translate(-50%, -50%));
+                }
+            }
+        }
+
+        &.off-tr {
+            > div {
+
+                > :nth-child(1) {
+                    @include transform(translate(0, -50%));
+                }
+            }
+        }
+    }
+}

@@ -3,3 +3,6 @@ type: theme
 description: "Creighton's Graduate site theme."
 core: 8.x
 base theme: stable
+regions:
+  header: 'Header'
+  dump: 'Everything else'

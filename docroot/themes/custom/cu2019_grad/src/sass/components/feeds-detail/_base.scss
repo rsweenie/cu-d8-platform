@@ -1,0 +1,29 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FEEDS AND DETAIL COMPONENTS
+
+    Each interactive component should have it's own file, along with the base file
+    for each interactive component, we should have alteration files for each version.
+
+\*  --------------------------------------------------------------------------  */
+// FULL FEED LISTS
+@import 'feeds/_basic';
+@import 'feeds/_profile';
+@import 'feeds/_tile';
+// LATEST FEED
+@import '_latest';
+// FEATURED FEED
+@import 'featured/_carousel';
+@import 'featured/_related';
+@import 'featured/_faculty';
+//@import 'featured/_flex';
+//@import 'featured/_grid';
+//@import 'featured/_grid-offset';
+//@import 'featured/_item';
+// FEED FACETS AND ARCHIVES
+//@import '_filters-archive';
+@import 'archives/_dropdown-bar';
+// FEATURED ITEM
+// DETAIL
+//@import '_detail';
+

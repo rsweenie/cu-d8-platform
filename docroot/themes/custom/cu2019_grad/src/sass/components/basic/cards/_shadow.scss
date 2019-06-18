@@ -1,0 +1,3 @@
+&.shadow {
+    @include boxShadow(0 0 1.5rem rgba($black, 0.15));
+}

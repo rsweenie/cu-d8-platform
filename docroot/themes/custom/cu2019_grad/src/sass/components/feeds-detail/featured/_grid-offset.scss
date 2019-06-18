@@ -1,0 +1,52 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FEED - FEATURED - OFFSET
+
+\*  --------------------------------------------------------------------------  */
+.f-feat-offset {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        
+    @media #{$mediaMd} {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: ". article1" "article3 article1" "article3 article2" "article4 article2" "article4 .";
+        grid-auto-flow: row;
+        grid-column-gap: #{$gutter}rem;
+        grid-row-gap: #{$gutter}rem;
+        justify-items: stretch;
+        align-items: stretch;
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        width: 75%;
+        margin: 0 auto;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        > article {
+
+            &:nth-child(1) {
+                grid-area: article1;
+            }
+
+            &:nth-child(2) {
+                grid-area: article2;
+            }
+
+            &:nth-child(3) {
+                grid-area: article3;
+            }
+
+            &:nth-child(4) {
+                grid-area: article4;
+            }
+        }
+    }
+}

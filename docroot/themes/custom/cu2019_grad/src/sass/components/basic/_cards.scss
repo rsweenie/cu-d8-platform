@@ -1,0 +1,63 @@
+/*  --------------------------------------------------------------------------  *\
+
+    CARDS
+
+    These elements are used to display content, most likely in a sidebar, column 
+    in the body of the page, or as a slide in a carousel.
+
+    They can include images, icons, buttons, and text.
+
+\*  --------------------------------------------------------------------------  */
+.card {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    
+    > div {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        padding: #{$gutter}rem;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    
+        @media #{$mediaMd} {
+            padding: #{$gutter * 2}rem;
+        }
+    }
+    
+    
+    /*---------------------*\
+      IMPORT STYLES FOR CARD LAYOUT OPTIONS
+    
+      Comment out any alterations that will not be used on your site.
+      This will reduce the file size by removing unused definitions.
+    \*---------------------*/
+    @import 'cards/_img-above';
+    @import 'cards/_img-behind';
+    @import 'cards/_img-side';
+    @import 'cards/_img-overlap';
+    /*---------------------*\
+      IMPORT STYLES FOR CARD ICON OPTIONS
+    
+      Comment out any alterations that will not be used on your site.
+      This will reduce the file size by removing unused definitions.
+    \*---------------------*/
+    @import 'cards/_icon-top';
+    @import 'cards/_icon-left';
+    /*---------------------*\
+      IMPORT STYLES FOR CARD CONTENT STYLING
+    
+      Comment out any alterations that will not be used on your site.
+      This will reduce the file size by removing unused definitions.
+    \*---------------------*/
+    @import 'cards/_copy';
+    @import 'cards/_article';
+    @import 'cards/_shadow';
+    @import 'cards/_profile';
+    @import 'cards/_story';
+}
