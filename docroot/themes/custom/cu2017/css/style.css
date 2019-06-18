@@ -10212,7 +10212,7 @@ header .header_bg_wrapper {
 @media all and (max-width: 768px) {
   /* line 14, ../sass/custom/_header.scss */
   header .header_bg_wrapper {
-    margin-top: 0;
+    margin-top: 40px;
   }
 }
 @media all and (min-width: 769px) {
@@ -10353,7 +10353,7 @@ header .header_top_section_menu_wrapper {
   header .header_top_section_menu_wrapper {
     align-self: flex-end;
     position: relative;
-    top: 35px;
+    top: 65px;
   }
 }
 @media all and (max-width: 319px) {
@@ -12730,19 +12730,19 @@ article figcaption {
 @media all and (max-width: 480px) {
   /* line 1, ../sass/custom/_megamenu.scss */
   .header_top_section_mega_menu {
-    top: 130px;
+    top: 165px;
   }
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
   /* line 1, ../sass/custom/_megamenu.scss */
   .header_top_section_mega_menu {
-    top: 130px;
+    top: 165px;
   }
 }
 @media all and (min-width: 769px) and (max-width: 1050px) {
   /* line 1, ../sass/custom/_megamenu.scss */
   .header_top_section_mega_menu {
-    top: 125px;
+    top: 160px;
   }
 }
 @media all and (min-width: 1051px) {
