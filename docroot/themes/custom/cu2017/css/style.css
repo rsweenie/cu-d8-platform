@@ -11359,7 +11359,7 @@ ul#megamenu_icon_menu {
 .profile_wrapper .field--name-field-profile-name {
   color: #002E6D;
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: 2em;
+  font-size: .9em;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -14688,27 +14688,4 @@ article.news .news_date {
 /* line 11, ../sass/custom/_bootstrapoverride.scss */
 .row {
   margin: 0;
-}
-
-/* needs refactor to sass */
-div.header_top_section_search_wrapper {
-  position: relative;
-}
-
-div.header_top_section_wrapper_inner button {
-  background: transparent url(../images/search.svg) no-repeat center;
-  height: 35px;
-  width: 35px;
-  border: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-div.header_top_section_wrapper_inner button:hover {
-  background: url(../images/giphy-downsized.gif) no-repeat -19px -112px;
-}
-
-header .header_top_section_search_wrapper .cu-query {
-  background-image: none;
 }
