@@ -23,6 +23,21 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   public function __construct() {
 
   }
+
+  /**
+   * Sets screen height
+   */
+  public function setScreenHeight($height){
+      $this->getSession()->resizeWindow((int) $this->getCurrentScreenWidth(), (int) $height, 'current');
+  }
+
+  /**
+   * Sets screen width
+   */
+  public function setScreenWidth($width){
+      $this->getSession()->resizeWindow((int) $width, (int) $this->getCurrentScreenHeight(), 'current');
+  }
+
   /**
    * returns the page height
    */
@@ -33,14 +48,45 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     
         return Math.max( body.scrollHeight, body.offsetHeight, 
                            html.clientHeight, html.scrollHeight, html.offsetHeight ); }()"
-  );
+    );
+  }
+
+  /**
+   * returns the page width
+   */
+  private function getPageWidth(){
+    return (int) $this->getSession()->getDriver()->evaluateScript(
+      "function(){ var body = document.body,
+        html = document.documentElement;
+    
+        return Math.max( body.scrollWidth, body.offsetWidth, 
+                           html.clientWidth, html.scrollWidth, html.offsetWidth ); }()"
+    );
+  }
+
+  /**
+     * Gets current screen height
+     */
+    private function getCurrentScreenHeight(){
+      return (int) $this->getSession()->getDriver()->evaluateScript(
+          "function(){ return screen.height; }()"
+      );
+  }    
+
+  /**
+   * Gets current screen width
+   */
+  private function getCurrentScreenWidth(){
+      return (int) $this->getSession()->getDriver()->evaluateScript(
+          "function(){ return screen.width; }()"
+      );
   }
 
   /**
    * @Given /^I set browser window size to "([^"]*)" x "([^"]*)"$/
    * set height to full to match page height
    */
-  public function iSetBrowserWindowSizeToX($width, $height) {  
+  public function iSetBrowserWindowSizeToX($width, $height) {
     $this->getSession()->resizeWindow((int)$width, (int)$height, 'current');
   }
 
@@ -49,7 +95,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    */
   public function iTakeAScreenshotWithSizeX($width, $height)
   {
-    //set to page height if height is null
+    //set to page height if height is full
     if($height == "full"){
       $height = $this->getPageHeight();
     }
@@ -184,5 +230,24 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
         $this->output
       );
     }
+  }
+
+  /**
+   * @Then I move block :label to region :region
+   */
+  public function iMoveBlockToRegion($label, $region)
+  {
+    //get the block
+    $block = $this->getSession()->getPage()->find("named",["content","Block: ".$label])->getParent();
+    //get the move select
+    $select = $block->find("named",["option","Move"])->getParent();
+    //click it to expose the options
+    $select->click();
+    //select the region you want to move the block to
+    $select->find("named",["option",$region])->click();
+    //verify movement
+    $region_element = $this->getSession()->getPage()->find("named",["content","Region: ".$region])->getParent();
+    if(empty($region_element->find("named",["content","Block: ".$label])))
+      throw new \Exception("Block Move Failed");
   }
 }
