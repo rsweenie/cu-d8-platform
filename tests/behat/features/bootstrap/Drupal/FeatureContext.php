@@ -90,7 +90,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     $this->getSession()->resizeWindow((int)$width, (int)$height, 'current');
   }
 
-  /**
+/**
    * @Then /^I take a screenshot with size "([^"]*)" x "([^"]*)"$/
    */
   public function iTakeAScreenshotWithSizeX($width, $height)
@@ -138,6 +138,19 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       throw new \Exception(sprintf('The editor "%s" was not found on the page %s', $instanceId, $this->getSession()->getCurrentUrl()));
     }
     return $instance;
+  }
+
+    /**
+   * @Then /^(?:|I )visit (?:|the )"([^"]*)"(?:|.*)$/
+   */
+  public function iVisitTheLink($arg1)
+  {
+      $findName = $this->getSession()->getPage()->find("css", $arg1);
+      if (!$findName) {
+          throw new Exception($arg1 . " could not be found");
+      } else {
+          $findName->click();
+      }
   }
 
   /**
