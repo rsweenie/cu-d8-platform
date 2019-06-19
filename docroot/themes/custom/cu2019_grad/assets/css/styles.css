@@ -843,7 +843,7 @@ nav a {
     FIXED HEADER
     \* -------------------------- */
   position: fixed;
-  z-index: 1000;
+  z-index: 500;
   left: 0;
   top: 0;
   width: 100%;
@@ -990,7 +990,7 @@ nav a {
   }
 }
 
-.main-header {
+.main-header > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -1006,7 +1006,7 @@ nav a {
 }
 
 @media screen and (min-width: 992px) {
-  .main-header {
+  .main-header > div {
     position: relative;
     z-index: 0;
     padding: 3.6rem 2.5rem 0;
@@ -1014,29 +1014,29 @@ nav a {
 }
 
 @media screen and (min-width: 992px) {
-  .main-header {
+  .main-header > div {
     width: 95%;
   }
 }
 
 @media screen and (min-width: 1210px) {
-  .main-header {
+  .main-header > div {
     width: 90%;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  .main-header {
+  .main-header > div {
     width: 85%;
   }
 }
 
-.main-header .utility-bar {
+.main-header > div .utility-bar {
   width: 100%;
 }
 
 @media screen and (min-width: 992px) {
-  .main-header .utility-bar {
+  .main-header > div .utility-bar {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1053,7 +1053,7 @@ nav a {
     padding: 0.5rem 2.5rem;
     background: #1b1b1b;
   }
-  .main-header .utility-bar:before {
+  .main-header > div .utility-bar:before {
     position: absolute;
     z-index: -1;
     left: 50%;
@@ -1560,15 +1560,15 @@ Delete everything below including comment
     other places as well and style it differently
 
 \*  --------------------------------------------------------------------------  */
-body > footer {
+.main-footer {
   padding: 4rem 0;
   background: #212322;
   font-size: .8em;
   color: #fff;
   /* -------------------------- *\
-    
+
     FOOTER LAYOUT OPTIONS
-    
+
     \* -------------------------- */
   /* ------------------- *\
     Super Footer
@@ -1577,13 +1577,13 @@ body > footer {
     }// COMMENT THIS OUT FOR PRODUCTION USE
     \* ------------------- */
   /* -------------------------- *\
-    
+
     LOGO OPTIONS
-    
+
     We want to use SVG for our logos when available.
-    
+
     Choose which option below is the most relevant to your site.
-    
+
     \* -------------------------- */
   /* ------------------ *\
     SVG Logo
@@ -1600,9 +1600,9 @@ body > footer {
     @import 'footer/logo/_img-w-tagline';
     \* ------------------ */
   /* -------------------------- *\
-    
+
     FOOTER ELEMENTS
-    
+
     \* -------------------------- */
   /* ------------------ *\
     Links
@@ -1621,7 +1621,7 @@ body > footer {
     
 \* -------------------------- */
   /* ------------------ *\
-    Social Navigation 
+    Social Navigation
     \* ------------------ */
   /* -------------------------- *\
     
@@ -1629,7 +1629,7 @@ body > footer {
 
 \* -------------------------- */
   /* ------------------ *\
-    Social Navigation 
+    Social Navigation
     \* ------------------ */
   /* -------------------------- *\
     
@@ -1638,7 +1638,7 @@ body > footer {
 \* -------------------------- */
 }
 
-body > footer > div {
+.main-footer > div {
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 2.5rem;
@@ -1647,51 +1647,51 @@ body > footer > div {
 }
 
 @media screen and (min-width: 992px) {
-  body > footer > div {
+  .main-footer > div {
     width: 95%;
   }
 }
 
 @media screen and (min-width: 1210px) {
-  body > footer > div {
+  .main-footer > div {
     width: 90%;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  body > footer > div {
+  .main-footer > div {
     width: 85%;
   }
 }
 
-body > footer a {
+.main-footer a {
   color: #fff;
 }
 
-body > footer a:hover, body > footer a:focus {
+.main-footer a:hover, .main-footer a:focus {
   color: #cccccc;
   text-decoration: underline;
 }
 
-body > footer p.copyright {
+.main-footer p.copyright {
   margin: 2.5rem 0;
 }
 
-body > footer .social {
+.main-footer .social {
   margin: 2rem 0 0;
   padding: 2rem 0 0;
   border-top: 0.1rem solid #e1e1e1;
 }
 
 @media screen and (min-width: 992px) {
-  body > footer .social {
+  .main-footer .social {
     margin: 0;
     padding: 0;
     border-top: none;
   }
 }
 
-body > footer .social ul {
+.main-footer .social ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -1703,11 +1703,11 @@ body > footer .social ul {
   font-size: 1.5em;
 }
 
-body > footer .social li + li {
+.main-footer .social li + li {
   margin: 0 0 0 2rem;
 }
 
-body > footer nav.sitemap ul {
+.main-footer nav.sitemap ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -1718,7 +1718,7 @@ body > footer nav.sitemap ul {
   flex-flow: row wrap;
 }
 
-body > footer nav.sitemap li {
+.main-footer nav.sitemap li {
   -webkit-box-flex: 0 1 auto;
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
@@ -1729,16 +1729,16 @@ body > footer nav.sitemap li {
   text-align: left;
 }
 
-body > footer nav.sitemap li:nth-child(n + 3) {
+.main-footer nav.sitemap li:nth-child(n + 3) {
   margin-top: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
-  body > footer nav.sitemap li {
+  .main-footer nav.sitemap li {
     width: auto;
     text-align: center;
   }
-  body > footer nav.sitemap li:nth-child(n + 3) {
+  .main-footer nav.sitemap li:nth-child(n + 3) {
     margin-top: 0;
   }
 }
@@ -11228,4 +11228,24 @@ form.search .search button {
   form.search .form-btns, form.search .toggle {
     display: none;
   }
+}
+
+#toolbar-administration ~ .dialog-off-canvas-main-canvas {
+  padding: 8.2rem 0 0;
+}
+
+@media screen and (min-width: 992px) {
+  #toolbar-administration ~ .dialog-off-canvas-main-canvas {
+    padding: 11.4rem 0 0;
+  }
+}
+
+@media screen and (min-width: 1210px) {
+  #toolbar-administration ~ .dialog-off-canvas-main-canvas {
+    padding: 13.4rem 0 0;
+  }
+}
+
+#toolbar-administration ~ .dialog-off-canvas-main-canvas .main-header {
+  top: 78px;
 }

@@ -55,7 +55,6 @@
     </div>
     {{ page.search }}
   </header>
-  {{ page.dump }}
 
   {{ page.breadcrumb }}
 
@@ -65,26 +64,21 @@
 
   <main role="main">
     <a id="content" tabindex="-1"></a>{# link is in html.html.twig #}
-
     {{ page.content }}
-
-    {# % if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %
-    #}
-
   </main>
 
-  <footer role="contentinfo">
-    {{ page.footer }}
+  {{ page.dump }}
+
+  <footer class="main-footer" role="contentinfo">
+    <div>
+      <div class="row">
+      <div class="col-md-6">
+      {{ page.footer_top }}
+      </div>
+      <div class="col-md-6">
+      {{ page.footer_bottom }}
+      </div>
+    </div>
   </footer>
 
 {#</div> /.layout-container #}

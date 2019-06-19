@@ -18,7 +18,7 @@
 }
 
 
-& {
+> div {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     @include flex(space-between, center, center);
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)

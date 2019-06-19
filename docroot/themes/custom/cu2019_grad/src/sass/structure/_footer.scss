@@ -7,7 +7,7 @@
 
 \*  --------------------------------------------------------------------------  */
 //main > .footer-cl, // COMMENT OUT FOR PRODUCTION, USED FOR CL SITE ONLY
-body > footer {
+.main-footer {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     padding: #{$gutter * 1.6}rem 0;
@@ -19,8 +19,8 @@ body > footer {
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     // Use gutters to set up definitions of padding and margins
-    // This helps create consistent spacing 
-    
+    // This helps create consistent spacing
+
     > div {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -32,11 +32,11 @@ body > footer {
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         text-align: center;
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         // ADJUST THE WIDTH FOR $siteWList IN EACH MEDIA QUERY USING $siteWQueryList
         @each $q in $siteWQueryList {
             $i: index($siteWQueryList, $q);
-                
+
             @if $i == 1 {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -58,11 +58,11 @@ body > footer {
             }
         }
     }
-    
+
     /* -------------------------- *\
-    
+
     FOOTER LAYOUT OPTIONS
-    
+
     \* -------------------------- */
     /* ------------------- *\
     Super Footer
@@ -70,39 +70,39 @@ body > footer {
         @import 'footer/layouts/super';
     }// COMMENT THIS OUT FOR PRODUCTION USE
     \* ------------------- */
-    
+
     /* -------------------------- *\
-    
+
     LOGO OPTIONS
-    
+
     We want to use SVG for our logos when available.
-    
+
     Choose which option below is the most relevant to your site.
-    
+
     \* -------------------------- */
     /* ------------------ *\
     SVG Logo
     @import 'footer/logo/_svg';
     @import 'footer/logo/_svg-w-tagline';
     \* ------------------ */
-    
+
     /* ------------------ *\
     Text Logo
     @import 'footer/logo/_text';
     \* ------------------ */
-    
+
     /* ------------------ *\
     IMG Logo
     @import 'footer/logo/_img';
     @import 'footer/logo/_img-w-tagline';
     \* ------------------ */
-    
+
     /* -------------------------- *\
-    
+
     FOOTER ELEMENTS
-    
+
     \* -------------------------- */
-    
+
     /* ------------------ *\
     Links
     \* ------------------ */
@@ -112,11 +112,11 @@ body > footer {
     \* ------------------ */
     @import 'footer/elements/_copyright';
     /* ------------------ *\
-    Social Navigation 
+    Social Navigation
     \* ------------------ */
     @import 'footer/elements/_social';
     /* ------------------ *\
-    Social Navigation 
+    Social Navigation
     \* ------------------ */
     @import 'footer/elements/_sitemap';
 }

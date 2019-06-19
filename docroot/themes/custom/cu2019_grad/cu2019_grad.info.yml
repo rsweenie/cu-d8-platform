@@ -8,4 +8,6 @@ libraries:
 regions:
   header: 'Header'
   primary_menu: 'Primary Menu'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'
   dump: 'Everything else'
