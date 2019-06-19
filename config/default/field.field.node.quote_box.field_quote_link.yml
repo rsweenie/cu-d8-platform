@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_quote_link
-    - node.type.links
     - node.type.quote_box
 id: node.quote_box.field_quote_link
 field_name: field_quote_link
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      links: links
+    target_bundles: {  }
     sort:
       field: _none
     auto_create: false
