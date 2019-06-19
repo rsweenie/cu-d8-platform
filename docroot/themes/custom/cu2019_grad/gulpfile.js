@@ -77,14 +77,14 @@ gulp.task('sass', function () {
   .pipe(sass({
       outputStyle: 'expanded'
     }))
-  .on("error", notify.onError(function (error) {
-        return error.message;
-  }))
-  .pipe(cmq({
-    beautify: true
-  }))
-  .pipe(config.production ? please(pleeeaseProd) : please(pleeeaseDev))
-  .pipe(config.production ? gutil.noop() : sourcemaps.write())
+  // .on("error", notify.onError(function (error) {
+  //       return error.message;
+  // }))
+  // .pipe(cmq({
+  //   beautify: true
+  // }))
+  // .pipe(config.production ? please(pleeeaseProd) : please(pleeeaseDev))
+  // .pipe(config.production ? gutil.noop() : sourcemaps.write())
   .pipe(gulp.dest(css_output))
 });
 

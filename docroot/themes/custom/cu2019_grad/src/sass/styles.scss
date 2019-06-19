@@ -1,5 +1,3 @@
----
----
 /*  --------------------------------------------------------------------------  *\
 
     TABLE OF CONTENTS
@@ -17,7 +15,7 @@
 // Start with the grid so that we establish that first
 @import 'structure/_grid';
 // COPY
-// Since all other components will make changes to these, 
+// Since all other components will make changes to these,
 // loading our base copy styling next makes the most sense
 @import 'components/copy/_base';
 // RESET THE NAVIGATION STYLING

@@ -44,27 +44,18 @@
 #}
 {# <div class="layout-container"> #}
 
-  <header role="banner" class="header-cl mn-w-un mn-w-dd un st">
+  <header role="banner" class="main-header header-cl mn-w-un mn-w-dd un st">
     <div>
       <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="logo">
+        home
         {# % include '@cu2019_grad/components/logo.html.twig' % #}
       </a>
       {{ page.header }}
-
-      <input type="checkbox" id="{{ headerID }}ToggleNav" />
-      <label class="toggle" for="{{ headerID }}ToggleNav">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="sr-only">Menu</span>
-      </label>
-      <nav>
-        {{ page.primary_menu }}
-        {{ page.secondary_menu }}
-      </nav>
+      {{ page.primary_menu }}
     </div>
     {{ page.search }}
   </header>
+  {{ page.dump }}
 
   {{ page.breadcrumb }}
 

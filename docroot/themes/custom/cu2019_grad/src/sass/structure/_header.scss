@@ -7,7 +7,7 @@
 
 \*  --------------------------------------------------------------------------  */
 //.header-cl, // COMMENT OUT FOR PRODUCTION, USED FOR CL SITE ONLY
-body > header {
+.main-header {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     // MOVE THE ENDING COMMENT TAG BELOW THE HEADER OPTION YOU WANT TO USE
     /* -------------------------- *\
@@ -32,11 +32,11 @@ body > header {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     /* -------------------------- *\
-    
+
     HEADER LAYOUT OPTIONS
-    
+
     \* -------------------------- */
     /* ------------------ *\
     Toggle Only
@@ -47,7 +47,7 @@ body > header {
     /* ------------------ *\
     Main Nav Only
     &.mn-only { // COMMENT THIS OUT FOR PRODUCTION USE
-        @import 'header/layouts/_main-nav';        
+        @import 'header/layouts/_main-nav';
     } // COMMENT THIS OUT FOR PRODUCTION USE
     \* ------------------ */
     /* ------------------ *\
@@ -62,37 +62,37 @@ body > header {
     } // COMMENT THIS OUT FOR PRODUCTION USE
     \* ------------------ */
     @import 'header/layouts/_main-nav-w-utility-bar';
-    
+
     /* -------------------------- *\
-    
+
     LOGO OPTIONS
-    
+
     We want to use SVG for our logos when available.
-    
+
     Choose which option below is the most relevant to your site.
-    
+
     \* -------------------------- */
     /* ------------------ *\
     SVG Logo
     @import 'header/logo/_svg';
     @import 'header/logo/_svg-w-tagline';
     \* ------------------ */
-    
+
     /* ------------------ *\
     Text Logo
     @import 'header/logo/_text';
     \* ------------------ */
-    
+
     /* ------------------ *\
     IMG Logo
     @import 'header/logo/_img-w-tagline';
     \* ------------------ */
     @import 'header/logo/_img';
-    
+
     /* -------------------------- *\
-    
+
     NAVIGATIONS OPTIONS
-    
+
     \* -------------------------- */
     /* ------------------ *\
     Main Nav - Toggle Only
@@ -124,12 +124,12 @@ body > header {
     } // COMMENT THIS OUT FOR PRODUCTION USE
     \* ------------------ */
     @import 'header/navs/_utility-nav';
-    
-    
+
+
     /* -------------------------- *\
-    
+
     SEARCH OPTIONS
-    
+
     \* -------------------------- */
     /* ------------------ *\
     Search Inline
@@ -151,7 +151,7 @@ body > header {
 
 COMPONENT LIBRARY MODIFICATIONS
 Delete everything below including comment
-    
+
 \* -------------------------- */
 //.header-cl {
 //    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
@@ -173,7 +173,7 @@ Delete everything below including comment
 //    Main Nav Only
 //    \* ------------------ */
 //    &.mn-only {
-//        z-index: 490;     
+//        z-index: 490;
 //    }
 //    /* ------------------ *\
 //    Main Nav w/ Utility Nav
@@ -186,5 +186,5 @@ Delete everything below including comment
 //    \* ------------------ */
 //    &.mn-w-ub {
 //        z-index: 470;
-//    }    
+//    }
 //}
