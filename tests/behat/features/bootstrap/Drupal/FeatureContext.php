@@ -113,7 +113,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     $script = <<<JS
 function(){{$js}}()
 JS;
-    echo $this->getSession()->evaluateScript(
+    $this->getSession()->evaluateScript(
       $script
     );
   }
@@ -164,6 +164,19 @@ JS;
           throw new Exception($arg1 . " could not be found");
       } else {
           $findName->click();
+      }
+  }
+
+  /**
+   * @Then I fill in class :css with :value
+   */
+  public function iFillInClassWith($css,$value)
+  {
+      $findName = $this->getSession()->getPage()->find("css", $css);
+      if (!$findName) {
+          throw new Exception($css . " could not be found");
+      } else {
+          $findName->setValue($value);
       }
   }
 
