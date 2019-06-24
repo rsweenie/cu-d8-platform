@@ -1,0 +1,38 @@
+uuid: 5a937511-aa70-4de2-859c-4adff2ebfcf5
+langcode: und
+status: true
+dependencies:
+  config:
+    - views.view.creighton_content_browser
+  enforced:
+    module:
+      - content_browser
+  module:
+    - views
+_core:
+  default_config_hash: 0XU1NHOBiy7-zBVkSUbKAxyF1B7te6VICFg0xaovIuk
+name: creighton_slideshow
+label: 'Creighton Slideshow Slides'
+display: iframe
+display_configuration:
+  width: 100%
+  height: '650'
+  link_text: 'Select content'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration:
+  view: creighton_content_browser
+  view_display: default
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  57387ece-c090-4d22-9c00-eaaad74d642b:
+    settings:
+      view: creighton_content_browser
+      view_display: entity_browser_2
+      submit_text: null
+      auto_select: null
+    uuid: ''
+    weight: 0
+    label: Items
+    id: view

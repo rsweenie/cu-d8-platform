@@ -1,0 +1,78 @@
+uuid: 6347df98-cc83-4968-8f47-e4da8451cd5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.links.field_links_file_link_upload
+    - field.field.node.links.field_links_link
+    - field.field.node.links.field_links_link_text
+    - field.field.node.links.field_links_open_in_new_window
+    - node.type.links
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - link
+id: node.links.default
+targetEntityType: node
+bundle: links
+mode: default
+content:
+  field_links_file_link_upload:
+    type: inline_entity_form_complex
+    weight: 4
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: File
+      label_plural: Files
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    region: content
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: document_browser
+  field_links_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_links_link_text:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_links_open_in_new_window:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  private: true
+  promote: true
+  publish_on: true
+  scheduled_publication: true
+  status: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

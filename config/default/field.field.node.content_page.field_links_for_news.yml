@@ -1,0 +1,21 @@
+uuid: 18f922a9-343f-4bdc-bab1-4f832d56d7fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links_for_news
+    - node.type.content_page
+id: node.content_page.field_links_for_news
+field_name: field_links_for_news
+entity_type: node
+bundle: content_page
+label: 'Links for News'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings: {  }
+field_type: entity_reference

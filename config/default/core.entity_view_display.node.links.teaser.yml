@@ -1,0 +1,39 @@
+uuid: 2ce2f09a-052d-4745-bc49-af000002ec6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.links.field_links_file_link_upload
+    - field.field.node.links.field_links_link
+    - field.field.node.links.field_links_link_text
+    - field.field.node.links.field_links_open_in_new_window
+    - node.type.links
+  module:
+    - user
+id: node.links.teaser
+targetEntityType: node
+bundle: links
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+hidden:
+  field_links_file_link_upload: true
+  field_links_link: true
+  field_links_link_text: true
+  field_links_open_in_new_window: true
+  scheduled_publication: true

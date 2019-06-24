@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.quote_box.field_quote_box_photo
     - field.field.node.quote_box.field_quote_box_quote_text
     - field.field.node.quote_box.field_quote_box_quotes
+    - field.field.node.quote_box.field_quote_link
     - field.field.node.quote_box.field_quote_p_link
     - node.type.quote_box
   module:
@@ -75,6 +76,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_quote_link:
+    weight: 6
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_quote_p_link:
     type: entity_reference_revisions_entity_view

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_supporting_links
+    - node.type.links
     - paragraphs.paragraphs_type.featured_content_item
 id: paragraph.featured_content_item.field_supporting_links
 field_name: field_supporting_links
@@ -18,7 +19,8 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      links: links
     sort:
       field: _none
     auto_create: false

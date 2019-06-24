@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.promo_box.field_promo_box_promo_text
+    - field.field.node.promo_box.field_promo_link
     - field.field.node.promo_box.field_promo_p_link
     - node.type.promo_box
   module:
@@ -91,6 +92,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_promo_link: true
   path: true
   promote: true
   status: true
