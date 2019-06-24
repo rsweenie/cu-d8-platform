@@ -10,7 +10,24 @@ Feature: Content Page
     And I visit the edit form
 
   @api @javascript
+  Scenario: Un/publish
+    And I press "Scheduling options"
+    Then I fill in "edit-publish-on-0-value-date" with "2019-11-23"
+    And I fill in "edit-publish-on-0-value-time" with "20:22:45"
+    Then I fill in "edit-unpublish-on-0-value-date" with "2019-11-23"
+    And I fill in "edit-unpublish-on-0-value-time" with "20:23:45"
+    # save the content
+    And I press "Save"
+    #verify
+    Then I go to "/admin/content/scheduled"
+    Then I should see "title"
+    And I should see "Content Page"
+    And I should see "Sat, 11/23/2019 - 20:22"
+    And I should see "Sat, 11/23/2019 - 20:23"
+
+  @api @javascript
   Scenario: create/edit content page
+    And I wait for AJAX to finish
     # hax happen here wysiwyg embed image/video/text
     And I select "Raw HTML" from "body[0][format]"
     And I fill in "body[0][value]" with "<a href='http://www.creighton.edu' target='_blank'>http://www.creighton.edu</a>Here's some text using the rich text editor <drupal-entity alt='Karole Davis' data-embed-button='media_browser' data-entity-embed-display='media_image' data-entity-embed-display-settings='{&quot;image_style&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;link_url&quot;:&quot;&quot;}' data-entity-type='media' data-entity-uuid='81f57d5f-e518-407c-95a5-64ee6bd2c6b9' title='Karole Davis'></drupal-entity><drupal-entity data-align='center' data-embed-button='media_browser' data-entity-embed-display='view_mode:media.embedded' data-entity-embed-display-settings='{&quot;link_url&quot;:&quot;&quot;}' data-entity-type='media' data-entity-uuid='188e59f2-fb84-4499-aa05-18d00799b815'></drupal-entity>"

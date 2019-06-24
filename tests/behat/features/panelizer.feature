@@ -1,8 +1,8 @@
-@news_spotlight
+@Panels
 Feature: Panelizer IPE
-  In order to verify that the News and Spotlight are functioning
+  In order to verify that the Panels are functioning
   As an administrator
-  I should be able to create, edit, edit others, revert and delete content
+  I should be able to create, edit, and move blocks
 
   Background: edit content page with ipe
     Given I am logged in as a user with the "administrator" role
