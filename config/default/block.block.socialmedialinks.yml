@@ -78,7 +78,11 @@ settings:
     flickr:
       value: ''
       description: ''
-      weight: '-17'
+      weight: '1'
+    linkedin:
+      value: company/cu-azhealthedalliance/
+      description: ''
+      weight: '2'
     twitter:
       value: ''
       description: ''
@@ -94,7 +98,11 @@ settings:
     vkontakte:
       value: ''
       description: ''
-      weight: '-13'
+      weight: '6'
+    facebook:
+      value: cuazhealthedalliance/
+      description: ''
+      weight: '7'
     googleplus:
       value: ''
       description: ''

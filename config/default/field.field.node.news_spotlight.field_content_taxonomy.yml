@@ -1,0 +1,29 @@
+uuid: 6f4205fb-2790-4a13-9068-1258673b525a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_taxonomy
+    - node.type.news_spotlight
+    - taxonomy.vocabulary.content_taxonomy
+id: node.news_spotlight.field_content_taxonomy
+field_name: field_content_taxonomy
+entity_type: node
+bundle: news_spotlight
+label: 'Content Taxonomy'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      content_taxonomy: content_taxonomy
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

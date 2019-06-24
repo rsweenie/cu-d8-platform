@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.content_browser
     - field.field.node.promo_box.field_promo_box_promo_text
-    - field.field.node.promo_box.field_promo_link
+    - field.field.node.promo_box.field_promo_p_link
     - node.type.promo_box
   module:
     - panelizer
@@ -42,7 +42,6 @@ content:
     third_party_settings: {  }
     type: boolean
 hidden:
-  field_promo_link: true
   field_promo_p_link: true
   links: true
   scheduled_publication: true
