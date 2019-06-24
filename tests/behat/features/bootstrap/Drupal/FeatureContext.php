@@ -111,9 +111,9 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    */
   public function iExecuteJS($js){
     $script = <<<JS
-function(){return {$js};}()
+function(){{$js}}()
 JS;
-    $this->getSession()->getDriver()->evaluateScript(
+    $this->getSession()->evaluateScript(
       $script
     );
   }

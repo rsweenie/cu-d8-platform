@@ -17,15 +17,14 @@ Feature: Content Page
     # And I select "Rich Text" from "body[0][format]"
     # And I press "Continue"
     # And I wait for AJAX to finish
-    And I execute JS "1 != 0";
-    And I execute JS "jQuery('#cke_377').click()";
+    And I execute JS "jQuery('#cke_32').click();";
     And I wait "3" seconds
-    And I wait for AJAX to finish
     And I take a screenshot with size "680" x "full"
     And I fill in "attributes[href]" with "http://www.maxtimothy.com"
     And I take a screenshot with size "680" x "full"
-    #save
-    And I press "Save"
+    # save this is actually a button click
+    And I visit the ".editor-linkit-dialog .js-form-submit" link
     And I wait for AJAX to finish
     
+    And I press "Save"
     And I take a screenshot with size "680" x "full"
