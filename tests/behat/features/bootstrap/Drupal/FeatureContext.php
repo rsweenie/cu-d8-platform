@@ -107,13 +107,13 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     parent::saveScreenshot($filename, $filepath);
   }
   /**
-   * @Given I execute JS :js;
+   * @Given I execute JS :js
    */
   public function iExecuteJS($js){
     $script = <<<JS
 function(){{$js}}()
 JS;
-    $this->getSession()->evaluateScript(
+    echo $this->getSession()->evaluateScript(
       $script
     );
   }
