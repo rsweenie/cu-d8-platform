@@ -1,0 +1,28 @@
+uuid: ca114d19-73ef-42b1-b541-6a061157d11f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_updated_by
+    - node.type.documentation
+id: node.documentation.field_last_updated_by
+field_name: field_last_updated_by
+entity_type: node
+bundle: documentation
+label: 'Last Updated By'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,35 @@
+uuid: b69516cb-32f3-4292-881d-551f810c5563
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.creighton_content_browser
+  module:
+    - views
+_core:
+  default_config_hash: AKdT3068SWskeNTPupXmbI-PbLg8Uzks2_q-b50TyyM
+name: sidebar_items
+label: 'Sidebar Items'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration:
+  view: creighton_content_browser
+  view_display: entity_browser
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  6568c79a-c69c-402b-b2e8-90ed23386925:
+    settings:
+      view: creighton_content_browser
+      view_display: entity_browser
+      submit_text: 'Add sidebar items '
+      auto_select: false
+    uuid: ''
+    weight: 1
+    label: 'Sidebar Items'
+    id: view

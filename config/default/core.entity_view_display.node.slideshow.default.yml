@@ -1,0 +1,36 @@
+uuid: 4092b4d6-4e14-4ddd-a3c8-d159e45ebf7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.slideshow.field_slide
+    - node.type.slideshow
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: _JKdYth3T05gkwBhugppNyu_FRw_6TD2om1e6szbwok
+id: node.slideshow.default
+targetEntityType: node
+bundle: slideshow
+mode: default
+content:
+  field_slide:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  links: true
+  private: true
+  scheduled_publication: true

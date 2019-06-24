@@ -1,0 +1,28 @@
+uuid: 0dab002a-7c0e-4084-b13e-90de25f7de84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_new
+    - node.type.content_page
+    - node.type.links
+id: node.content_page.field_new
+field_name: field_new
+entity_type: node
+bundle: content_page
+label: 'News Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      links: links
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

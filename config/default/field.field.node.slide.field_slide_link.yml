@@ -4,13 +4,14 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_slide_link
+    - node.type.links
     - node.type.slide
 id: node.slide.field_slide_link
 field_name: field_slide_link
 entity_type: node
 bundle: slide
 label: 'Slide link'
-description: "ADMIN NOTE: We want to get rid of this field, but doing so breaks the site for some reason. \r\n\r\nThis field is not used and should be deleted."
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -19,7 +20,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      slide: slide
+      links: links
     sort:
       field: _none
     auto_create: false

@@ -6,12 +6,18 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.node.content_page.body
     - field.field.node.content_page.field_content_page_headline
+    - field.field.node.content_page.field_content_page_image
+    - field.field.node.content_page.field_content_page_news_link
     - field.field.node.content_page.field_content_page_sidebar_items
+    - field.field.node.content_page.field_content_taxo
     - field.field.node.content_page.field_content_taxonomy
+    - field.field.node.content_page.field_display
     - field.field.node.content_page.field_display_publish_on_date
     - field.field.node.content_page.field_header_background_image
     - field.field.node.content_page.field_large_horiz_image
+    - field.field.node.content_page.field_links_for_news
     - field.field.node.content_page.field_meta_tags
+    - field.field.node.content_page.field_new
     - field.field.node.content_page.field_slide
     - field.field.node.content_page.field_tabbed_accordion
     - field.field.node.content_page.panelizer
@@ -220,8 +226,13 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_content_page_image: true
+  field_content_page_news_link: true
+  field_content_taxo: true
+  field_display: true
   field_display_publish_on_date: true
   field_links_for_news: true
+  field_new: true
   panelizer: true
   promote: true
   scheduled_publication: true
