@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.content_browser
-    - field.field.node.related_links.field_related_link
+    - field.field.node.related_links.field_related_p_link
     - node.type.related_links
   module:
     - user
@@ -31,6 +31,5 @@ content:
     third_party_settings: {  }
     type: boolean
 hidden:
-  field_related_link: true
   field_related_p_link: true
   scheduled_publication: true
