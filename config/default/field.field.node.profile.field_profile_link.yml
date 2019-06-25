@@ -1,0 +1,28 @@
+uuid: 2fe95d06-9980-40ec-8e82-7ea18a069613
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_link
+    - node.type.links
+    - node.type.profile
+id: node.profile.field_profile_link
+field_name: field_profile_link
+entity_type: node
+bundle: profile
+label: 'Profile Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      links: links
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

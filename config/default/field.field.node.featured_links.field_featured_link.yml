@@ -1,0 +1,28 @@
+uuid: eb5bf9f9-daa3-4b57-9a9d-1524bb67ab84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_link
+    - node.type.featured_links
+    - node.type.links
+id: node.featured_links.field_featured_link
+field_name: field_featured_link
+entity_type: node
+bundle: featured_links
+label: 'Featured Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      links: links
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

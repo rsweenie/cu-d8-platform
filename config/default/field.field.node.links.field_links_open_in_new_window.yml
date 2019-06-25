@@ -1,0 +1,23 @@
+uuid: b47feb54-7194-4653-a3be-5c07d74b8993
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links_open_in_new_window
+    - node.type.links
+id: node.links.field_links_open_in_new_window
+field_name: field_links_open_in_new_window
+entity_type: node
+bundle: links
+label: 'Open in New Window'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Open in a new window'
+  off_label: 'Off'
+field_type: boolean

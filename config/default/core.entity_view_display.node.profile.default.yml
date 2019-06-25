@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.profile.body
     - field.field.node.profile.field_profile_email
     - field.field.node.profile.field_profile_image
+    - field.field.node.profile.field_profile_link
     - field.field.node.profile.field_profile_name
     - field.field.node.profile.field_profile_office_location
     - field.field.node.profile.field_profile_p_link
@@ -60,6 +61,15 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: media_thumbnail
+    region: content
+  field_profile_link:
+    weight: 12
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_profile_name:
     weight: 0

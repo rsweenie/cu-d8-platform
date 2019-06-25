@@ -2,11 +2,11 @@ uuid: 7a98be94-6c7c-4990-a5dc-3541ab0739ce
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
-    - search_api
   config:
     - search_api.server.database
+  module:
+    - search_api
+    - node
 _core:
   default_config_hash: qEX0c8Yf878jYMC-3TrFlGSSNQeGbl3u0Hs6GJfxA38
 id: content
@@ -44,6 +44,7 @@ field_settings:
           featured_content: default
           featured_links: default
           header_alert: default
+          links: default
           news_spotlight: default
           profile: default
           promo_box: default
@@ -59,9 +60,6 @@ field_settings:
     type: boolean
     indexed_locked: true
     type_locked: true
-    dependencies:
-      module:
-        - node
   uid:
     label: null
     datasource_id: 'entity:node'
@@ -69,9 +67,6 @@ field_settings:
     type: integer
     indexed_locked: true
     type_locked: true
-    dependencies:
-      module:
-        - node
 datasource_settings:
   'entity:node':
     bundles:

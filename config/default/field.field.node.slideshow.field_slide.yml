@@ -1,0 +1,30 @@
+uuid: 65507dd6-454f-4508-be19-429398a2a5a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slide
+    - node.type.slide
+    - node.type.slideshow
+_core:
+  default_config_hash: 6R0gcaz9GmTH5EfXmfNke5udZBWjD8p5eU9mwsN3Fhg
+id: node.slideshow.field_slide
+field_name: field_slide
+entity_type: node
+bundle: slideshow
+label: Slide
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      slide: slide
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

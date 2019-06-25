@@ -1,0 +1,19 @@
+uuid: 946f0e27-1ee8-4fe5-8105-bce77d155d89
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: B6LwCXdUSBBlYJQD8Srae_s00ciat0dcOIohm5qT5Bo
+name: Slideshow
+type: slideshow
+description: 'Slideshow works in combination with the slide content type.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

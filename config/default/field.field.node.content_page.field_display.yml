@@ -1,0 +1,23 @@
+uuid: d8644c0f-b09d-400c-9f04-6e0a057a0314
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display
+    - node.type.content_page
+  module:
+    - options
+_core:
+  default_config_hash: odZrSnY1sxU-p3wqSZhAVVIgOWDTyX35o4iTU_lBYzg
+id: node.content_page.field_display
+field_name: field_display
+entity_type: node
+bundle: content_page
+label: 'Display Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,99 @@
+uuid: fbf29950-af3a-4cf3-8a36-e42ea9403c59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.slideshow.field_slide
+    - node.type.slideshow
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - path
+    - scheduler
+_core:
+  default_config_hash: 1fKnf8XCRCwPSHsRB9rAPjo5EZttdG0SAmGpYkwDTjo
+id: node.slideshow.default
+targetEntityType: node
+bundle: slideshow
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_slide:
+    weight: 3
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Slide
+      label_plural: Slide
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: creighton_slideshow
+    type: inline_entity_form_complex
+    region: content
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  private:
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  moderation_state: true
+  promote: true
+  scheduled_publication: true
+  sticky: true
