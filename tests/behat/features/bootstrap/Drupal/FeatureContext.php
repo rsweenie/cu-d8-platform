@@ -14,6 +14,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   const RPNF = "The requested page could not be found";
   private $output = '';
   private $screenshotCount = 0;
+  private $document = 'document';
   /**
    * Every scenario gets its own context instance.
    *
@@ -105,6 +106,17 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     $filepath = \Drupal::root() . '/../reports';
     parent::saveScreenshot($filename, $filepath);
   }
+  /**
+   * @Given I execute JS :js
+   */
+  public function iExecuteJS($js){
+    $script = <<<JS
+function(){{$js}}()
+JS;
+    $this->getSession()->evaluateScript(
+      $script
+    );
+  }
 
   /**
    * @When I fill in the wysiwyg :locator with :text
@@ -140,6 +152,8 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     return $instance;
   }
 
+
+
     /**
    * @Then /^(?:|I )visit (?:|the )"([^"]*)"(?:|.*)$/
    */
@@ -150,6 +164,19 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
           throw new Exception($arg1 . " could not be found");
       } else {
           $findName->click();
+      }
+  }
+
+  /**
+   * @Then I fill in class :css with :value
+   */
+  public function iFillInClassWith($css,$value)
+  {
+      $findName = $this->getSession()->getPage()->find("css", $css);
+      if (!$findName) {
+          throw new Exception($css . " could not be found");
+      } else {
+          $findName->setValue($value);
       }
   }
 
