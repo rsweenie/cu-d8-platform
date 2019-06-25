@@ -237,6 +237,7 @@ content:
 hidden:
   field_content_page_headline: true
   field_content_page_image: true
+  field_content_taxonomy: true
   field_display_publish_on_date: true
   field_display_type: true
   field_news_spotlight_p_link: true
