@@ -8,10 +8,9 @@ dependencies:
     - field.field.node.news_spotlight.field_content_page_headline
     - field.field.node.news_spotlight.field_content_page_image
     - field.field.node.news_spotlight.field_content_page_sidebar_items
-    - field.field.node.news_spotlight.field_content_taxo
     - field.field.node.news_spotlight.field_display_publish_on_date
     - field.field.node.news_spotlight.field_display_type
-    - field.field.node.news_spotlight.field_new
+    - field.field.node.news_spotlight.field_news_spotlight_p_link
     - field.field.node.news_spotlight.field_tabbed_accordion
     - node.type.news_spotlight
   module:
@@ -119,14 +118,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-    region: content
-  field_new:
-    weight: 9
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
   private:
     weight: 1

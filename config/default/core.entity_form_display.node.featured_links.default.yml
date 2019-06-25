@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.featured_links.field_featured_link
     - field.field.node.featured_links.field_featured_link_button_color
     - field.field.node.featured_links.field_featured_p_link
     - node.type.featured_links
@@ -82,7 +81,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_featured_link: true
   path: true
   promote: true
   status: true
