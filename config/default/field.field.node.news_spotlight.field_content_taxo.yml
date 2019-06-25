@@ -1,0 +1,31 @@
+uuid: 1dbe0593-35bc-4da8-9a4c-d0a374d9cd36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_taxo
+    - node.type.news_spotlight
+    - taxonomy.vocabulary.content_taxonomy
+_core:
+  default_config_hash: d5K30kRCsGq8ziUVzZsYwj6SL228GPLwGkGGEBPgyrs
+id: node.news_spotlight.field_content_taxo
+field_name: field_content_taxo
+entity_type: node
+bundle: news_spotlight
+label: 'Content Taxonomy'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      content_taxonomy: content_taxonomy
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

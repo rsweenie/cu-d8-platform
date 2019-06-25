@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.related_links.field_related_link
     - field.field.node.related_links.field_related_p_link
     - node.type.related_links
   module:
@@ -22,6 +23,15 @@ targetEntityType: node
 bundle: related_links
 mode: default
 content:
+  field_related_link:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   field_related_p_link:
     type: entity_reference_revisions_entity_view
     weight: 2

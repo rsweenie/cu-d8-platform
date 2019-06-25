@@ -1,0 +1,28 @@
+uuid: 18170d99-6aa7-4731-9d24-807e900a1ada
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links_file_link_upload
+    - media.type.document
+    - node.type.links
+id: node.links.field_links_file_link_upload
+field_name: field_links_file_link_upload
+entity_type: node
+bundle: links
+label: 'File Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

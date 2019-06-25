@@ -1,0 +1,32 @@
+uuid: 6329460a-b225-4475-9380-0c19d2554561
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - private_content
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  private_content:
+    private: 1
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: Links
+type: links
+description: 'Links is a content type for creating links used by other content types whenever a link is needed.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

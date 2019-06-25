@@ -80,7 +80,7 @@ settings:
       description: ''
       weight: '1'
     linkedin:
-      value: company/cu-azhealthedalliance/
+      value: ''
       description: ''
       weight: '2'
     twitter:
@@ -100,7 +100,7 @@ settings:
       description: ''
       weight: '6'
     facebook:
-      value: cuazhealthedalliance/
+      value: creightonuniversity/
       description: ''
       weight: '7'
     googleplus:
@@ -115,7 +115,7 @@ settings:
     orientation: h
     show_name: 0
   link_attributes:
-    target: _blank
+    target: '<none>'
     rel: '<none>'
   iconset:
     style: 'fontawesome:2x'
