@@ -90,7 +90,7 @@ Feature: News and Spotlight
     And I fill in "field_content_taxo[target_id]" with "news"
     And I check the box "field_display_publish_on_date[value]"
     Then I switch to the "entity_browser_iframe_media_browser" frame
-    And I check the box "entity_browser_select[media:1576]"
+    And I check the box "entity_browser_select[media:1836]"
     And I press "Place"
     And I switch to the window
 
