@@ -14,7 +14,7 @@ Feature: Featured Content Group
     And I fill in "title[0][value]" with "Testing Featured Content Group"
     And I put "Featured Content Group copy" into CKEditor
     And I switch to the "entity_browser_iframe_media_browser" frame 
-    And I check the box "entity_browser_select[media:1576]"
+    And I check the box "entity_browser_select[media:1836]"
     And I switch to the window
     And I fill in "featured_content[0][subform][field_fc_p_link][0][subform][field_link_text][0][value]" with "Text for node link"
     And I fill in "featured_content[0][subform][field_fc_p_link][0][subform][field_internal_or_external_link][0][uri]" with "News (796)"
