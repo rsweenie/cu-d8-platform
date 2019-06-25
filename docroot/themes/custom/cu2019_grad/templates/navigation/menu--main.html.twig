@@ -40,9 +40,16 @@
               ]
             %}
             <li>
-              {{ link(item.title, item.url) }}
+              {{ link(item.title ~ " " ~ menu_level, item.url) }}
               {% if item.below %}
+                {% if menu_level == 0 %}
+                <div>
+                {% endif %}
                 {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                {% if menu_level == 0 %}
+                <p>Lorem Ipsum</p>
+                </div>
+                {% endif %}
               {% endif %}
             </li>
           {% endfor %}

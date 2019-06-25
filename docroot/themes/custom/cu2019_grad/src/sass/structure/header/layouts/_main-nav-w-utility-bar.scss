@@ -15,6 +15,44 @@
     @media #{$mediaFullHeader} {
         padding: 0;
     }
+
+    .utility-bar {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //width: 100%;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        @media #{$mediaFullHeader} {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            //@include flex(flex-end, center, center, row nowrap);
+            //@include position(absolute, 0, (left, top), (50%, 0), translate(-50%, 0));
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            //padding: #{$gutter * .2}rem #{$gutter}rem;
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            //background: $primary;
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+            &:before {
+                // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // @include position(absolute, -1, (left, top), (50%, 0), translate(-50%, 0));
+                // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // width: 100vw;
+                // height: 100%;
+                // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // background: $primary;
+                // border-bottom: 1px solid $accent-2;
+                // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                // content: "";
+            }
+        }
+    }
 }
 
 
@@ -32,7 +70,7 @@
 
     @media #{$mediaFullHeader} {
         @include position(relative, 0);
-        padding: 3.6rem #{$gutter}rem 0;
+        padding: #{$gutter}rem 3.6rem;
     }
 
     // ADJUST THE WIDTH FOR $siteWList IN EACH MEDIA QUERY USING $siteWQueryList
@@ -56,44 +94,6 @@
                 // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            }
-        }
-    }
-
-    .utility-bar {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        width: 100%;
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-        @media #{$mediaFullHeader} {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            @include flex(flex-end, center, center, row nowrap);
-            @include position(absolute, 0, (left, top), (50%, 0), translate(-50%, 0));
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            padding: #{$gutter * .2}rem #{$gutter}rem;
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            background: $primary;
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-            &:before {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                @include position(absolute, -1, (left, top), (50%, 0), translate(-50%, 0));
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                width: 100vw;
-                height: 100%;
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                background: $primary;
-                border-bottom: 1px solid $accent-2;
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                content: "";
             }
         }
     }
