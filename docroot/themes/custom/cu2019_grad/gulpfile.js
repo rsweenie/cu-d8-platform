@@ -102,7 +102,28 @@ var autoprefixerOptions = {
 };
 
 var pxtoremOptions = {
-  propList: ['font', 'font-size', 'line-height', 'padding', 'width', 'height', 'border', 'border-radius'],
+  propList: [
+    'font',
+    'font-size',
+    'line-height',
+    'padding',
+    'padding-top',
+    'padding-left',
+    'padding-right',
+    'padding-bottom',
+    'width',
+    'height',
+    'border',
+    'border-radius',
+    'border-top-left-radius',
+    'border-top-right-radius',
+    'border-bottom-left-radius',
+    'border-bottom-right-radius',
+    'top',
+    'left',
+    'bottom',
+    'right'
+  ],
   rootValue: 10
 };
 

@@ -297,7 +297,6 @@ textarea {
 \*  --------------------------------------------------------------------------  */
 
 body {
-  padding: 8.2rem 0 0;
   color: #002E6D;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
@@ -712,7 +711,6 @@ nav a {
     \* -------------------------- */
   padding: 2rem 0;
   background: #fff;
-  border-bottom: 1px solid #8AC8FF;
   /* -------------------------- *\
 
     HEADER LAYOUT OPTIONS
@@ -906,7 +904,7 @@ nav a {
 }
 
 .main-header nav.mega {
-  display: none;
+  background: #fff;
 }
 
 .main-header input[type="checkbox"] {
@@ -976,8 +974,8 @@ nav a {
   padding: 0;
   border: 0.1rem solid #5D6468;
   background: #5D6468;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
   font-size: 1em;
   text-align: center;
 }
@@ -1003,8 +1001,8 @@ nav a {
   height: 3.8rem;
   padding: 0 0.7rem 0 2.5rem;
   border: 0.1rem solid #5D6468;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
   color: #0054A6;
   font-size: 1.8rem;
 }
@@ -1027,6 +1025,24 @@ Delete everything below including comment
 
 \* -------------------------- */
 
+.dialog-off-canvas-main-canvas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.dialog-off-canvas-main-canvas > main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     THE SITES FOOTER
@@ -1037,10 +1053,11 @@ Delete everything below including comment
 \*  --------------------------------------------------------------------------  */
 
 .main-footer {
-  padding: 4rem 0;
-  background: #212322;
-  font-size: .8em;
-  color: #fff;
+  padding: 11rem 0;
+  background: #0054A6;
+  border-bottom: 75px solid #00478d;
+  font-size: 1.5rem;
+  color: #8AC8FF;
   /* -------------------------- *\
 
     FOOTER LAYOUT OPTIONS
@@ -1084,7 +1101,7 @@ Delete everything below including comment
     Links
     \* ------------------ */
   /* -------------------------- *\
-    
+
     Links
 
 \* -------------------------- */
@@ -1100,7 +1117,7 @@ Delete everything below including comment
     Social Navigation
     \* ------------------ */
   /* -------------------------- *\
-    
+
     SOCIAL ICONS
 
 \* -------------------------- */
@@ -1108,7 +1125,7 @@ Delete everything below including comment
     Social Navigation
     \* ------------------ */
   /* -------------------------- *\
-    
+
     SITEMAP
 
 \* -------------------------- */
@@ -1118,17 +1135,16 @@ Delete everything below including comment
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 2.5rem;
-  text-align: center;
   width: 100%;
 }
 
 .main-footer a {
   color: #fff;
+  text-decoration: none;
 }
 
 .main-footer a:hover,
 .main-footer a:focus {
-  color: #FFCC4F;
   text-decoration: underline;
 }
 
@@ -1146,9 +1162,9 @@ Delete everything below including comment
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1165,13 +1181,21 @@ Delete everything below including comment
   margin: 0 0 0 2rem;
 }
 
-.main-footer nav.sitemap ul {
+.main-footer .social a {
+  color: #8AC8FF;
+}
+
+.main-footer .social a:hover {
+  color: #fff;
+}
+
+.main-footer nav.menu--footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1181,21 +1205,21 @@ Delete everything below including comment
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  font-size: 1.7rem;
 }
 
-.main-footer nav.sitemap li {
+.main-footer nav.menu--footer li {
   -webkit-box-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
-  width: calc(50% - 3rem);
   margin: 0 1.5rem;
   text-align: left;
 }
 
-.main-footer nav.sitemap li:nth-child(n + 3) {
+.main-footer nav.menu--footer li:nth-child(n + 3) {
   margin-top: 1.5rem;
 }
 
@@ -9083,7 +9107,7 @@ form.search .search button {
 }
 
 #toolbar-administration ~ .dialog-off-canvas-main-canvas .main-header {
-  top: 78px;
+  top: 7.8rem;
 }
 
 @media screen and (min-width: 576px) {
@@ -9284,12 +9308,12 @@ form.search .search button {
     font-size: 1.375em;
   }
 
-  .main-footer nav.sitemap li {
+  .main-footer nav.menu--footer li {
     width: auto;
     text-align: center;
   }
 
-  .main-footer nav.sitemap li:nth-child(n + 3) {
+  .main-footer nav.menu--footer li:nth-child(n + 3) {
     margin-top: 0;
   }
 
@@ -10308,10 +10332,6 @@ form.search .search button {
     width: 100%;
   }
 
-  body {
-    padding: 11.4rem 0 0;
-  }
-
   hr {
     margin: 5rem auto;
   }
@@ -10380,12 +10400,12 @@ form.search .search button {
   }
 
   .main-header nav.mega {
-    font-size: 1.2rem;
+    font-size: 1.9rem;
     width: 100%;
     position: absolute;
     z-index: 1;
     left: 0;
-    top: 10px;
+    top: 13.1rem;
   }
 
   .main-header nav.mega > ul {
@@ -10442,8 +10462,7 @@ form.search .search button {
   }
 
   .main-header nav.mega > ul > li > a {
-    margin: 2rem 0;
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 1.2rem;
   }
 
   .main-header nav.mega > ul > li:nth-child(-n + 4) > a {
@@ -10453,17 +10472,16 @@ form.search .search button {
   }
 
   .main-header nav.mega > ul > li:nth-child(-n + 4) li a {
-    padding: 1rem 1rem;
     color: #6CACE4;
   }
 
   .main-header nav.mega > ul > li:nth-child(n + 5) {
-    margin: 0 0 0 1rem;
+    font-size: 1.7rem;
+    text-transform: uppercase;
   }
 
   .main-header nav.mega > ul > li:nth-child(n + 5) a {
-    padding: 1rem;
-    background: #8AC8FF;
+    padding: 1.6rem 1.4rem;
   }
 
   .main-header nav.mega > ul ul {
@@ -10569,6 +10587,32 @@ form.search .search button {
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
+  }
+
+  .main-header nav.mega:before {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 100vw;
+    height: 100%;
+    background: #F0F5FA;
+    content: "";
+  }
+
+  .main-header nav.mega:after {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    bottom: -0.5rem;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 100vw;
+    height: 0.5rem;
+    background: rgba(33, 35, 34, 0.1);
+    content: "";
   }
 
   .main-header nav.util {
@@ -11356,10 +11400,6 @@ form.search .search button {
 }
 
 @media screen and (min-width: 1210px) {
-  body {
-    padding: 13.4rem 0 0;
-  }
-
   .main-header > div {
     width: 90%;
   }
@@ -11368,18 +11408,36 @@ form.search .search button {
     width: 26.5rem;
   }
 
-  .main-header nav.mega > ul > li > a {
-    margin: 3rem 0;
-    padding: 1rem;
-  }
-
-  .main-header nav.mega > ul > li:nth-child(n + 5) {
-    margin: 0 0 0 2rem;
-  }
-
   .main-header nav.mega > ul > li:nth-child(n + 5) a {
-    padding: 1rem 2rem;
-    background: #8AC8FF;
+    position: relative;
+    color: #fff;
+    background: #0054A6;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+  }
+
+  .main-header nav.mega > ul > li:nth-child(n + 5) a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #6CACE4;
+  }
+
+  .main-header nav.mega > ul > li:nth-child(n + 5) a:after {
+    width: 0.1rem;
+    height: calc(100% - 1.6rem);
+    position: absolute;
+    right: 0;
+    top: 0.8rem;
+    content: "";
+    background: #fff;
+  }
+
+  .main-header nav.mega > ul > li:last-child a:after {
+    display: none;
+  }
+
+  .dialog-off-canvas-main-canvas > main {
+    padding-top: 19.4rem;
   }
 
   .main-footer > div {
@@ -11437,19 +11495,6 @@ form.search .search button {
     width: 85%;
   }
 
-  .main-header nav.mega > ul > li > a {
-    padding: 1rem 2rem;
-  }
-
-  .main-header nav.mega > ul > li:nth-child(n + 5) {
-    margin: 0 0 0 2rem;
-  }
-
-  .main-header nav.mega > ul > li:nth-child(n + 5) a {
-    padding: 1rem 2rem;
-    background: #8AC8FF;
-  }
-
   .main-footer > div {
     width: 85%;
   }
@@ -11500,13 +11545,11 @@ form.search .search button {
   .main-header nav.mega > ul > li:nth-last-child(n + 3) {
     display: none;
     border-top: none;
-    padding: 1rem;
   }
 
   .main-header nav.mega > ul > li:nth-last-child(n + 3) a {
     background: #FFCC4F;
     text-align: center;
-    padding: 1rem;
   }
 
   .main-header nav.mega > ul div {

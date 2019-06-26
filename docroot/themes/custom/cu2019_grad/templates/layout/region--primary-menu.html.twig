@@ -19,7 +19,7 @@
   ]
 %}
 {% if content %}
-  {# <div{{ attributes.addClass(classes) }}> #}
+  <div{{ attributes.addClass(classes) }}>
     <input type="checkbox" id="{{ headerID }}ToggleNav" />
     <label class="toggle" for="{{ headerID }}ToggleNav">
         <span class="bar"></span>
@@ -28,5 +28,5 @@
         <span class="sr-only">Menu</span>
     </label>
     {{ content }}
-  {# </div> #}
+  </div>
 {% endif %}

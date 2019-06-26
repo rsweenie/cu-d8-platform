@@ -46,10 +46,6 @@
 
   <header role="banner" class="main-header header-cl mn-w-un mn-w-dd un st">
     <div>
-      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="logo">
-        home
-        {# % include '@cu2019_grad/components/logo.html.twig' % #}
-      </a>
       {{ page.header }}
       {{ page.primary_menu }}
     </div>
@@ -72,12 +68,21 @@
   <footer class="main-footer" role="contentinfo">
     <div>
       <div class="row">
-      <div class="col-md-6">
-      {{ page.footer_top }}
-      </div>
-      <div class="col-md-6">
-      {{ page.footer_bottom }}
-      </div>
+        <div class="col-md-6 col-lg-8">
+        {{ page.footer_top }}
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <nav class="social">
+              <ul>
+                  <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                  <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fab fa-google-plus"></span></a></li>
+                  <li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+                  <li><a href="#"><span class="fab fa-pinterest"></span></a></li>
+              </ul>
+          </nav>
+        {{ page.footer_bottom }}
+        </div>
     </div>
   </footer>
 

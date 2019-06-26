@@ -10,12 +10,13 @@
 .main-footer {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: #{$gutter * 1.6}rem 0;
+    padding: 110px 0;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    background: $black;
+    background: $secondary;
+    border-bottom: 75px solid darken($secondary,5);
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    font-size: .8em;
-    color: $white;
+    font-size: 15px;
+    color: $accent-2;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     // Use gutters to set up definitions of padding and margins
@@ -30,7 +31,7 @@
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        text-align: center;
+
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
         // ADJUST THE WIDTH FOR $siteWList IN EACH MEDIA QUERY USING $siteWQueryList

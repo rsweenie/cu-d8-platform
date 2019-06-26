@@ -67,7 +67,7 @@
 }
 // NAV
 nav.mega {
-  display: none;
+    background: $white;
     @media #{$mediaToggleHeader} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         @include position(absolute, 1, (left, top), (100%, 100%));
@@ -97,12 +97,12 @@ nav.mega {
                 &:nth-last-child(n + 3) {
                     display: none;
                     border-top: none;
-                    padding: #{$gutter * .4}rem;
+                    //padding: #{$gutter * .4}rem;
 
                     a {
                         background: $accent-3;
                         text-align: center;
-                        padding: #{$gutter * .4}rem;
+                        //padding: #{$gutter * .4}rem;
                     }
                 }
             }
@@ -275,9 +275,9 @@ nav.mega {
     }
 
     @media #{$mediaFullHeader} {
-        font-size: 1.2rem;
+        font-size: 19px;
         width: 100%;
-        @include position(absolute, 1, (left, top), (0, 10px));
+        @include position(absolute, 1, (left, top), (0, 131px));
 
         > ul {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
@@ -324,8 +324,8 @@ nav.mega {
                 position: static;
 
                 > a {
-                    margin: #{$gutter * .8rem} 0;
-                    padding: #{$gutter * .4}rem #{$gutter * .2rem};
+                    //margin: #{$gutter * .8rem} 0;
+                    padding: 15px 12px;
                 }
 
                 &:nth-child(-n + 4) {
@@ -346,18 +346,20 @@ nav.mega {
 
                     li {
                         a {
-                            padding: #{$gutter * .4}rem #{$gutter * .4rem};
+                            //padding: #{$gutter * .4}rem #{$gutter * .4rem};
                             color: $tertiary;
                         }
                     }
                 }
 
                 &:nth-child(n + 5) {
-                    margin: 0 0 0 #{$gutter * .4}rem;
+                    font-size: 17px;
+
+                    text-transform: uppercase;
 
                     a {
-                        padding: #{$gutter * .4}rem;
-                        background: $accent-2;
+                        padding: 16px 14px;
+                        //padding: #{$gutter * .4}rem;
                     }
                 }
             }
@@ -551,6 +553,30 @@ nav.mega {
                 }
             }
         }
+
+        &:before {
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          top: 0;
+          transform: translate(-50%, 0);
+          width: 100vw;
+          height: 100%;
+          background: $accent-1;
+          content: "";
+        }
+
+        &:after {
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          bottom: -5px;
+          transform: translate(-50%, 0);
+          width: 100vw;
+          height: 5px;
+          background: rgba($black,.1);
+          content: "";
+        }
     }
 
     @media #{$mediaXl} {
@@ -559,17 +585,42 @@ nav.mega {
             > li {
 
                 > a {
-                    margin: #{$gutter * 1.2}rem 0;
-                    padding: #{$gutter * .4}rem;
+                    //margin: #{$gutter * 1.2}rem 0;
+                    //padding: #{$gutter * .4}rem;
                 }
 
                 &:nth-child(n + 5) {
-                    margin: 0 0 0 #{$gutter * .8}rem;
-
                     a {
-                        padding: #{$gutter * .4rem} #{$gutter * .8rem};
-                        background: $accent-2;
+                        //padding: #{$gutter * .4rem} #{$gutter * .8rem};
+                        position: relative;
+                        color: $white;
+                        background: $secondary;
+                        transition: all .25s;
+
+                        &:hover {
+                          text-decoration: none;
+                          color: $white;
+                          background: $tertiary;
+                        }
+
+                        &:after {
+                          width: 1px;
+                          height: calc(100% - 16px);
+                          position: absolute;
+                          right: 0;
+                          top: 8px;
+                          content: "";
+                          background: $white;
+                        }
                     }
+                }
+
+                &:last-child {
+                  a {
+                    &:after {
+                      display: none;
+                    }
+                  }
                 }
             }
         }
@@ -581,15 +632,13 @@ nav.mega {
             > li {
 
                 > a {
-                    padding: #{$gutter * .4}rem #{$gutter * .8rem};
+                    //padding: #{$gutter * .4}rem #{$gutter * .8rem};
                 }
 
                 &:nth-child(n + 5) {
-                    margin: 0 0 0 #{$gutter * .8}rem;
 
                     a {
-                        padding: #{$gutter * .4rem} #{$gutter * .8rem};
-                        background: $accent-2;
+
                     }
                 }
             }

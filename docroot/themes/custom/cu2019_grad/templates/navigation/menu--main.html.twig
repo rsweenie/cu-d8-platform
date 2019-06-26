@@ -40,7 +40,7 @@
               ]
             %}
             <li>
-              {{ link(item.title ~ " " ~ menu_level, item.url) }}
+              {{ link(item.title, item.url) }}
               {% if item.below %}
                 {% if menu_level == 0 %}
                 <div>
