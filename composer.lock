@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb8d7d740c720d997dedab863210c6fc",
+    "content-hash": "61f7bcfbec7c46b5df73a244bcc29ed4",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -5020,6 +5020,7 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
                     "2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
                     "2885441 - EntityReferenceAutocompleteWidget should define its size setting as an integer": "https://www.drupal.org/files/issues/2885441-2.patch",
                     "2815221 - Add quickedit to the latest-revision route": "https://www.drupal.org/files/issues/2018-09-24/2815221-109.patch",
@@ -9500,6 +9501,7 @@
                     }
                 },
                 "patches_applied": {
+                    "bootstrap Warning: array_search() expects parameter": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch",
                     "2878684 - Use String.match to correlate regions when switching Layouts in Panels IPE": "https://www.drupal.org/files/issues/panels-ipe-2878684-3.patch",
                     "2825034 - Form error messages do not appear in IPE": "https://www.drupal.org/files/issues/panels-ipe-propogate-errors-2825034-5.patch"
                 }
