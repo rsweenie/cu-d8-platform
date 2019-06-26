@@ -44,7 +44,6 @@
         "drupal/field_validation": "^1.0@alpha",
         "drupal/file_replace": "^1.1",
         "drupal/focal_point": "^1.0@beta",
-        "drupal/google_analytics": "^2.4",
         "drupal/google_tag": "^1.1",
         "drupal/honeypot": "^1.27",
         "drupal/image_enhanced": "^1.0",
