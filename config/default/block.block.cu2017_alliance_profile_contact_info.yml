@@ -5,10 +5,15 @@ dependencies:
   config:
     - views.view.profile
   module:
+    - block_aria_landmark_roles
     - node
     - views
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: contentinfo
+    label: 'Contact Info'
 _core:
   default_config_hash: lzqqFucTNDV9XVMDY2C9N3Z3T6GJob2g-oHIy5GNZQY
 id: cu2017_alliance_profile_contact_info

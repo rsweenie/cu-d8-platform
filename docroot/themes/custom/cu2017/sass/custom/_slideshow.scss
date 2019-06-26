@@ -42,10 +42,9 @@
 	}
 	.slick-slider.slick-list {
         overflow: visible;
-	}
+	}	  
 	.slick-prev,
-		.slick-prev:hover,
-		.slick-prev:focus {
+		.slick-prev:hover{
 			background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
 			outline: none;
 			right: 90px;
@@ -56,8 +55,7 @@
 			}
 		}
 		.slick-next,
-		.slick-next:hover,
-		.slick-next:focus {
+		.slick-next:hover{
 			background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
 			background-position: -46px 0;
 			outline: none;
@@ -71,6 +69,13 @@
 	.slick-arrow::before, .slick-arrow::after {
 		content: unset;
 	}
+
+	.slick-arrow:focus {
+		outline-color: rgb(59, 153, 252);   
+		outline-width: 5px;
+		outline-style: auto;
+	  }
+	  
 	.slide__caption {
 		margin-top: -80px;
 		padding: 10px 45px;

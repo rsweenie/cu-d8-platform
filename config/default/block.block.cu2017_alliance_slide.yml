@@ -3,10 +3,15 @@ langcode: en
 status: false
 dependencies:
   module:
+    - block_aria_landmark_roles
     - ctools_block
     - system
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: Slide
 _core:
   default_config_hash: gt4rC0IvuiUVVN1WE8k41Ys3Z1tUnSoJNKId0dsl0xA
 id: cu2017_alliance_slide

@@ -4,19 +4,19 @@
  * Links content type template.
  */
 #}
-
 <div{{ attributes.addClass('clearfix', 'links_wrapper') }}>
-    {{ title_suffix.contextual_links }}    
-    {% if content.field_links_open_in_new_window.0|render != "Off" %}  
-        {% set target = '_blank' %}           
-    {% endif %}
+  {{ title_suffix.contextual_links }}
+  {% if content.field_links_open_in_new_window.0|render != "Off" %}
+    {% set target = '_blank' %}
+  {% endif %}
 
-    {% if content.field_links_file_link_upload.0 %}
-        {% set href = file_url(content.field_links_file_link_upload|field_target_entity.field_document.entity.uri.value) %}
-    {% else %}
-        {% set href = content.field_links_link.0['#url'] %}
-    {% endif %}
+  {% if content.field_links_file_link_upload.0 %}
+    {% set href = file_url(content.field_links_file_link_upload|field_target_entity.field_document.entity.uri.value) %}
+  {% else %}
+    {% set href = content.field_links_link.0['#url'] %}
+  {% endif %}
 
-    <a href="{{ href }}" target="{{ target }}"><li>{{ content.field_links_link_text.0 }}</li></a>  
-
+  <a href="{{ href }}" target="{{ target }}">
+    <li>{{ content.field_links_link_text.0 }}</li>
+  </a>
 </div>
