@@ -5,9 +5,14 @@ dependencies:
   config:
     - system.menu.account
   module:
+    - block_aria_landmark_roles
     - system
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'User account menu'
 _core:
   default_config_hash: PHB-tX0JS-e28IC6EFrvidLdNV-phwaqhRoQPP3tcS4
 id: cu2017_alliance_account_menu
