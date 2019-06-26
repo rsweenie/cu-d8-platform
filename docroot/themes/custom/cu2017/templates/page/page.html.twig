@@ -46,138 +46,142 @@
 * @ingroup themeable
 */
 #}
-{################## add appropriate classes to main div ##################}
+
+{#  add appropriate classes to main div #}
 {% set layout_attributes = create_attribute() %}
 {% set layout_classes = [] %}
 {% set layout_classes = layout_classes|merge(['layout-container']) %}
 
 {% if (node.panelizer.value) %}
-    {% set layout_classes = layout_classes|merge(['flex-layout']) %}
+  {% set layout_classes = layout_classes|merge(['flex-layout']) %}
 {% else %}
-    {% set layout_classes = layout_classes|merge(['default-layout']) %}
+  {% set layout_classes = layout_classes|merge(['default-layout']) %}
 {% endif %}
 
 <div{{ layout_attributes.addClass(layout_classes) }}>
-    {% if logged_in %}
-        {% set toolbar_attribute = create_attribute() %}
-        {% set admin = 'admin' %}
-    {% endif %}
-        <div id="alerts">
-            {{ page.header_alert }}
-        </div>
-    <header{{ toolbar_attribute.addClass(admin).setAttribute('role', 'banner') }}>
-     
-        {% block header %}
-            {{ page.header_html }}
-            {{ page.navigation }}
-            {{ page.navigation_collapsible }}
-            {{ page.header }}
-            {{ page.header_background_image }}
-        {% endblock %}
-    </header>
-    {% if page.sitename %}
-        {% block sitename %}
-            <div class="row site_name">
-                {{ page.sitename }}
-            </div>
-        {% endblock %}
-    {% endif %}
+  {% if logged_in %}
+    {% set toolbar_attribute = create_attribute() %}
+    {% set admin = 'admin' %}
+  {% endif %}
+  <div id="alerts">
+    {{ page.header_alert }}
+  </div>
+  <header{{ toolbar_attribute.addClass(admin).setAttribute('role', 'banner') }}>
 
-    {% block main_front %}
-        <div{{ attributes.addClass('layout-content')}}>
+    {% block header %}
+      {{ page.header_html }}
+      {{ page.navigation }}
+      {{ page.navigation_collapsible }}
+      {{ page.header }}
+      {{ page.header_background_image }}
+    {% endblock %}
+  </header>
+  {% if page.sitename %}
+    {% block sitename %}
+      <div class="row site_name">
+        {{ page.sitename }}
+      </div>
+    {% endblock %}
+  {% endif %}
+  {% block main_front %}
+  <div{{ attributes.addClass('layout-content') }}>
     {% endblock %}
     {% block content %}
-        <main role="main">
-            {{ page.hero_slideshow }}
-            <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-            <div class="main container">
-                <div class="row breadcrumb_region">
-                    <div class="col-md-12">
-                        {{ page.breadcrumbs }}
-                    </div>
-                </div>
-                <div class="row"> 
-                 {# if it is a spotlight, wrap a div around it #}
-                 {# for the sake of CSS, to hide the headline #}
-                 {% if (node.type.entity.id == "news_spotlight")  %}
-                     {% if node.field_display_type.value == "0" %}
-                        <div class="display_type_spotlight">
-                    {% endif %}
-                 {% endif %}
-                    {% if inMainNav == 1 and page.sidebar_second %}
-                        <div class="col-md-3">
-                            {{ page.sidebar_first }}
-                        </div>
-                        <div class="col-md-9">
-                            <h1 class="headline">
-                                {{ node.field_content_page_headline.value }}
-                            </h1>
-                            {{ page.large_horiz_image }}
-                            <div class="col-md-8 center_column">
-                                {{ page.content }}
-                            </div>
-                            <div class="col-md-4 right_sidebar">
-                                {{ page.sidebar_second }}
-                            </div>
-                        </div>
-                    {% elseif inMainNav == 1 and not page.sidebar_second %}
-                        <div class="col-md-3">
-                            {{ page.sidebar_first }}
-                        </div>
-                        <div class="col-md-9">
-                            <h1 class="headline">
-                                {{ node.field_content_page_headline.value }}
-                            </h1>
-                            {{ page.large_horiz_image }}
-                            <div class="center_column">
-                                {{ page.content }}
-                            </div>
-                        </div>
-                    {% elseif not inMainNav == 1 and page.sidebar_second %}
-                        <div class="col-md-12">
-                            <h1 class="headline">
-                                {{ node.field_content_page_headline.value }}
-                            </h1>
-                            {{ page.large_horiz_image }}
-                            <div class="col-md-9 center_column">
-                                {{ page.content }}
-                            </div>
-                            <div class="col-md-3 right_sidebar">
-                                {{ page.sidebar_second }}
-                            </div>
-                        </div>
-                    {% else %}
-                        <div class="col-md-12">
-                            <h1 class="headline">
-                                {{ node.field_content_page_headline.value }}
-                            </h1>
-                            {{ page.large_horiz_image }}
-                            <div class="center_column">
-                                {{ page.content }}
-                            </div>
-                        </div>
-                    {% endif %}
-                 {# if it is a spotlight, wrap a div around it #}
-                 {# for the sake of CSS, to hide the headline #}
-                 {% if (node.type.entity.id == "news_spotlight")  %}
-                     {% if node.field_display_type.value == "0" %}
-                        </div> <!-- END of class="display_type_spotlight" -->
-                    {% endif %}
-                 {% endif %}
-                </div>
+      <main role="main">
+        {{ page.hero_slideshow }}
+        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+        <div class="main container">
+          <div class="row breadcrumb_region">
+            <div class="col-md-12">
+              {{ page.breadcrumbs }}
             </div>
-        </main>
+          </div>
+          <div class="row">
+            {# if it is a spotlight, wrap a div around it #}
+            {# for the sake of CSS, to hide the headline #}
+            {% if (node.type.entity.id == "news_spotlight") %}
+            {% if node.field_display_type.value == "0" %}
+            <div class="display_type_spotlight">
+              {% endif %}
+              {% endif %}
+              {% if inMainNav == 1 and page.sidebar_second %}
+                <div class="col-md-3">
+                  {{ page.sidebar_first }}
+                </div>
+                <div class="col-md-9">
+                  {% if (node.field_content_page_headline.value|trim) %}
+                    <h1 class="headline">
+                      {{ node.field_content_page_headline.value }}
+                    </h1>
+                  {% endif %}
+                  {{ page.large_horiz_image }}
+                  <div class="col-md-8 center_column">
+                    {{ page.content }}
+                  </div>
+                  <div class="col-md-4 right_sidebar">
+                    {{ page.sidebar_second }}
+                  </div>
+                </div>
+              {% elseif inMainNav == 1 and not page.sidebar_second %}
+                <div class="col-md-3">
+                  {{ page.sidebar_first }}
+                </div>
+                <div class="col-md-9">
+                  {% if (node.field_content_page_headline.value|trim) %}
+                    <h1 class="headline">
+                      {{ node.field_content_page_headline.value }}
+                    </h1>
+                  {% endif %}                            {{ page.large_horiz_image }}
+                  <div class="center_column">
+                    {{ page.content }}
+                  </div>
+                </div>
+              {% elseif not inMainNav == 1 and page.sidebar_second %}
+                <div class="col-md-12">
+                  {% if (node.field_content_page_headline.value|trim) %}
+                    <h1 class="headline">
+                      {{ node.field_content_page_headline.value }}
+                    </h1>
+                  {% endif %}                            {{ page.large_horiz_image }}
+                  <div class="col-md-9 center_column">
+                    {{ page.content }}
+                  </div>
+                  <div class="col-md-3 right_sidebar">
+                    {{ page.sidebar_second }}
+                  </div>
+                </div>
+              {% else %}
+                <div class="col-md-12">
+                  <h1 class="headline">
+                    {{ node.field_content_page_headline.value }}
+                  </h1>
+                  {{ page.large_horiz_image }}
+                  <div class="center_column">
+                    {{ page.content }}
+                  </div>
+                </div>
+              {% endif %}
+              {# if it is a spotlight, wrap a div around it #}
+              {# for the sake of CSS, to hide the headline #}
+              {% if (node.type.entity.id == "news_spotlight") %}
+              {% if node.field_display_type.value == "0" %}
+            </div> <!-- END of class="display_type_spotlight" -->
+            {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </main>
 
     {% endblock %}
 
-    </div>
+  </div>
 
-    <footer role="contentinfo">
-        {% block footer %}
-            <div class="transaction_menu_wrapper">
-                {{ drupal_menu('transaction-menu') }}
-            </div>
-            {{ page.footer }}
-        {% endblock %}
-    </footer>
+  <footer role="contentinfo">
+    {% block footer %}
+      <div class="transaction_menu_wrapper">
+        {{ drupal_menu('transaction-menu') }}
+      </div>
+      {{ page.footer }}
+    {% endblock %}
+  </footer>
 </div>

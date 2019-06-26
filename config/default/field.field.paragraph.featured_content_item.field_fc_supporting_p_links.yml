@@ -1,0 +1,37 @@
+uuid: af61e15c-a7d4-4698-8ed9-505e45fe1fcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fc_supporting_p_links
+    - paragraphs.paragraphs_type.featured_content_item
+    - paragraphs.paragraphs_type.ief_link
+  module:
+    - entity_reference_revisions
+id: paragraph.featured_content_item.field_fc_supporting_p_links
+field_name: field_fc_supporting_p_links
+entity_type: paragraph
+bundle: featured_content_item
+label: 'Featured Content Supporting Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ief_link: ief_link
+    target_bundles_drag_drop:
+      accordion:
+        weight: 4
+        enabled: false
+      featured_content_item:
+        weight: 5
+        enabled: false
+      ief_link:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

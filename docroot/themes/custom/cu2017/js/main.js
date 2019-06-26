@@ -97,4 +97,14 @@ jQuery(document).ready(function() {
   newWindow('ul#schools_and_colleges_menu_body  li a');
   newWindow('ul#information_for_menu_body li a');
   menuLoader();
+
+  // for long emails
+  jQuery(".right_sidebar .field--name-body p a").wrap("<div class='fitty'></div>");
+
+  // Let people use fitty without updating this file
+  fitty(".fitty", {
+    minSize: 8,
+    maxSize: 17,
+    multiLine: true
+  });
 });

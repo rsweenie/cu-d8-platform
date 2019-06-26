@@ -40,10 +40,12 @@ ol, ul {
 }
 
 // Paragraphs.
-p:last-child,
-.form-group:last-child,
-.panel:last-child {
-  margin-bottom: 0;
+@include respond-to(desktop-min, null) {
+  p:last-child,
+  .form-group:last-child,
+  .panel:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Help region.
@@ -67,3 +69,6 @@ p:last-child,
     margin-top: 0;
   }
 }
+/*main .main.container h2:first-child {
+  margin-top: -6px;
+}*/

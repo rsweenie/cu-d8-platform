@@ -9,59 +9,23 @@ dependencies:
     - field.storage.node.field_profile_link
     - field.storage.node.field_profile_name
     - field.storage.node.field_profile_office_location
+    - field.storage.node.field_profile_p_link
     - field.storage.node.field_profile_phone
     - field.storage.node.field_profile_position
     - field.storage.node.field_profile_specialties
     - image.style.rectangle_vertical_small_175x200_
     - node.type.profile
-    - taxonomy.vocabulary.profile_specialties
     - taxonomy.vocabulary.profile_type
   content:
     - 'taxonomy_term:content_taxonomy:9c3b8597-84e0-4564-8d2c-963cea75f20c'
-    - 'taxonomy_term:profile_specialties:13db5489-d1e4-4fed-a034-f9a1a9b6fbf7'
-    - 'taxonomy_term:profile_specialties:25a8a55e-45f0-4f6f-8717-a57da0997961'
-    - 'taxonomy_term:profile_specialties:2763d55c-9303-4cf0-beb4-b17f3c35f2be'
-    - 'taxonomy_term:profile_specialties:457ab801-bb90-4902-b33e-f4431e354e66'
-    - 'taxonomy_term:profile_specialties:4b083020-7d87-441f-a312-de5feb7f5cd2'
-    - 'taxonomy_term:profile_specialties:55381f0e-6ccd-4cb2-aff8-4531f9678121'
-    - 'taxonomy_term:profile_specialties:6a255802-249e-40d0-9608-64d9adb4d32c'
-    - 'taxonomy_term:profile_specialties:6c6549ad-8d2d-44bf-83ef-ba550407ea30'
-    - 'taxonomy_term:profile_specialties:6fd99eff-8ce4-4fe4-aeb6-46050b1dbc1a'
-    - 'taxonomy_term:profile_specialties:790d0f0c-12a5-4a3b-9c8c-cf559c25c385'
-    - 'taxonomy_term:profile_specialties:98bbb9b5-2f01-40f8-89fb-234bfc78b7a9'
-    - 'taxonomy_term:profile_specialties:b4c32576-8af8-4505-91d3-e83986c154e3'
-    - 'taxonomy_term:profile_specialties:c7586af6-1dde-4d38-ad3e-80d7dec6adcf'
-    - 'taxonomy_term:profile_specialties:c971e120-b382-4a04-a06b-a3a31db32e13'
-    - 'taxonomy_term:profile_specialties:dbeb8fba-fef9-4a78-8a34-95341a3c3cb3'
-    - 'taxonomy_term:profile_specialties:e53b23cf-ef5e-4c7c-a998-cbcb036ba7c8'
-    - 'taxonomy_term:profile_specialties:ea28a375-9066-4aaf-9ec8-90f999a86d66'
-    - 'taxonomy_term:profile_specialties:eda11f5e-ee21-4286-8537-05527da2f50b'
-    - 'taxonomy_term:profile_specialties:eeb98faa-7909-4c67-9e65-dd2d3b12fb97'
-    - 'taxonomy_term:profile_specialties:f29ea722-7147-4e35-8318-cd886714880b'
-    - 'taxonomy_term:profile_type:0425e627-923c-4cd2-9575-134a74bdca65'
-    - 'taxonomy_term:profile_type:13879858-0d12-42cf-b2f7-a5f62c3f6f33'
-    - 'taxonomy_term:profile_type:18cf72bd-f9d9-4654-a5e0-1d9d18d91233'
-    - 'taxonomy_term:profile_type:2246ff9e-814d-4aa4-b1a5-44e478b4cce7'
-    - 'taxonomy_term:profile_type:45c1a0b7-26e9-40ca-a49b-1fd534e46ae3'
-    - 'taxonomy_term:profile_type:46535a99-2ec1-4abf-bbc1-5c7d5b91db43'
-    - 'taxonomy_term:profile_type:59436c9e-83a2-46d6-a56b-27e864c34705'
-    - 'taxonomy_term:profile_type:6b36de74-4ea9-45b0-a91f-a50569c28420'
-    - 'taxonomy_term:profile_type:73e09691-b271-420c-9e21-df96adf9b29e'
-    - 'taxonomy_term:profile_type:7cf86964-bfba-4d3b-9ed3-384131feb53f'
-    - 'taxonomy_term:profile_type:7dc426a6-d0d9-4fa7-a710-8cab8ad94287'
     - 'taxonomy_term:profile_type:8e5f9793-a6e9-4cd3-9086-35c38fcaa0a3'
-    - 'taxonomy_term:profile_type:a0a54fe5-d5f0-4eec-8350-8f1805fc6493'
-    - 'taxonomy_term:profile_type:ac88203e-5209-4721-a98f-cacf00e77f3a'
-    - 'taxonomy_term:profile_type:af120249-1539-4cdc-ab03-3c15bcdc5228'
-    - 'taxonomy_term:profile_type:c89b6541-5d44-4743-b652-3a862029f2d2'
-    - 'taxonomy_term:profile_type:d34607a4-7040-4be3-929a-dbc83fd619c9'
   module:
+    - entity_reference_revisions
     - media
     - name
     - node
     - taxonomy
     - text
-    - user
 _core:
   default_config_hash: 2tstEAu5Zv7iq-GLmKZI2xVQs_Ct36VCRTRF3BCdcJ4
 id: creighton_profile
@@ -80,9 +44,8 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          perm: 'access content'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -766,6 +729,69 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_profile_p_link:
+          id: field_profile_p_link
+          table: node__field_profile_p_link
+          field: field_profile_p_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
+          settings:
+            view_mode: default
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -777,7 +803,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"profile_image\">{{ field_profile_image }}</div>\n<div class=\"profile_name\"><h4>{{ field_profile_name }}</h4></div>\n<div class=\"profile_position\">{{ field_profile_position }} </div>\n<div class=\"profile_specialties\">{{ field_profile_specialties }}</div>\n<div class=\"profile_email\">{{ field_profile_email }}</div>\n<div class=\"profile_phone\">{{ field_profile_phone }}</div>\n<div class=\"profile_office_location\">{{ field_profile_office_location }}</div>\n{% if field_profile_link %}\n<div class=\"profile_link\">{{ field_profile_link }}<span class=\"invisible\"> of {{ field_profile_name }}</span></div>\n{% else %}\n<div class=\"profile_link\">{{ view_node }}<span class=\"invisible\"> of {{ field_profile_name }}</span></div>\n{% endif %}\n\n"
+            text: "<div class=\"profile_image\">{{ field_profile_image }}</div>\r\n<div class=\"profile_name\"><h4>{{ field_profile_name }}</h4></div>\r\n<div class=\"profile_position\">{{ field_profile_position }} </div>\r\n<div class=\"profile_specialties\">{{ field_profile_specialties }}</div>\r\n<div class=\"profile_email\">{{ field_profile_email }}</div>\r\n<div class=\"profile_phone\">{{ field_profile_phone }}</div>\r\n<div class=\"profile_office_location\">{{ field_profile_office_location }}</div>\r\n{% if field_profile_p_link %}\r\n<div class=\"profile_link\">{{ field_profile_p_link }}<span class=\"invisible\"> of {{ field_profile_name }}</span></div>\r\n{% else %}\r\n<div class=\"profile_link\">{{ view_node }}<span class=\"invisible\"> of {{ field_profile_name }}</span></div>\r\n{% endif %}\r\n\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -880,7 +906,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -888,6 +913,7 @@ display:
         - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
+        - 'config:field.storage.node.field_profile_p_link'
         - 'config:field.storage.node.field_profile_phone'
         - 'config:field.storage.node.field_profile_position'
         - 'config:field.storage.node.field_profile_specialties'
@@ -935,7 +961,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -943,6 +968,7 @@ display:
         - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
+        - 'config:field.storage.node.field_profile_p_link'
         - 'config:field.storage.node.field_profile_phone'
         - 'config:field.storage.node.field_profile_position'
         - 'config:field.storage.node.field_profile_specialties'
@@ -1591,7 +1617,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2285,7 +2310,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2384,7 +2408,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2392,6 +2415,7 @@ display:
         - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
+        - 'config:field.storage.node.field_profile_p_link'
         - 'config:field.storage.node.field_profile_phone'
         - 'config:field.storage.node.field_profile_position'
         - 'config:field.storage.node.field_profile_specialties'
@@ -2484,7 +2508,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2492,6 +2515,7 @@ display:
         - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
+        - 'config:field.storage.node.field_profile_p_link'
         - 'config:field.storage.node.field_profile_phone'
         - 'config:field.storage.node.field_profile_position'
         - 'config:field.storage.node.field_profile_specialties'
@@ -2598,7 +2622,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2606,6 +2629,7 @@ display:
         - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
+        - 'config:field.storage.node.field_profile_p_link'
         - 'config:field.storage.node.field_profile_phone'
         - 'config:field.storage.node.field_profile_position'
         - 'config:field.storage.node.field_profile_specialties'
@@ -2886,19 +2910,48 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_phone'
-  page_1:
+  page_2:
     display_plugin: page
-    id: page_1
-    display_title: Page
+    id: page_2
+    display_title: 'Page 2'
     position: 1
     display_options:
       display_extenders: {  }
-      path: profile
+      display_description: 'Sorted view of Profiles with a view profile link'
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            profile: profile
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      path: creighton_profiles
     cache_metadata:
       max-age: -1
       contexts:
@@ -2906,7 +2959,6 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
@@ -2914,6 +2966,7 @@ display:
         - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
+        - 'config:field.storage.node.field_profile_p_link'
         - 'config:field.storage.node.field_profile_phone'
         - 'config:field.storage.node.field_profile_position'
         - 'config:field.storage.node.field_profile_specialties'

@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news_spotlight.field_display_publish_on_date
     - field.field.node.news_spotlight.field_display_type
     - field.field.node.news_spotlight.field_new
+    - field.field.node.news_spotlight.field_news_spotlight_p_link
     - field.field.node.news_spotlight.field_tabbed_accordion
     - node.type.news_spotlight
   module:
@@ -20,6 +21,7 @@ dependencies:
     - entity_browser_entity_form
     - field_group
     - inline_entity_form
+    - paragraphs
     - path
     - private_content
     - scheduler
@@ -30,7 +32,7 @@ third_party_settings:
       children:
         - field_display_publish_on_date
         - field_content_page_image
-        - field_new
+        - field_news_spotlight_p_link
       parent_name: ''
       weight: 7
       format_type: details
@@ -126,23 +128,17 @@ content:
     third_party_settings: {  }
     type: options_buttons
     region: content
-  field_new:
-    weight: 12
+  field_news_spotlight_p_link:
+    type: entity_reference_paragraphs
+    weight: 13
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Link
-      label_plural: Links
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: creighton_link_bros
-    type: inline_entity_form_complex
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_tabbed_accordion:
     weight: 4
@@ -227,6 +223,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_new: true
   promote: true
   scheduled_publication: true
   sticky: true

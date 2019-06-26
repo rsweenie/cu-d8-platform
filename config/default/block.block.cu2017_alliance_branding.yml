@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_aria_landmark_roles
     - system
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: complementary
+    label: 'Creighton Alliance Branding'
 _core:
   default_config_hash: CQEZAnfct58oBGAp5stC0a7UJJJ_N4AtqFc6dsC6UoM
 id: cu2017_alliance_branding

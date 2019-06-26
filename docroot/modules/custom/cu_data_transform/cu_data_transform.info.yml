@@ -1,0 +1,5 @@
+name: 'CU Data Transform'
+type: module
+description: Used for data transformations
+package: Creighton
+core: 8.x

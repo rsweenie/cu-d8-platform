@@ -10,7 +10,7 @@ html {
 		p {
 			margin: 0 0 1.5em;
 			word-wrap: break-word;
-			
+
 		}
 		a {
 			color: $blue;
@@ -21,7 +21,7 @@ html {
 				text-decoration: underline;
 			}
 		}
-		
+
 		h2 {
 			color: $darkBlue;
 			font-family: $condensedFont;
@@ -37,12 +37,26 @@ html {
 
 		}
 	}
+
+	main .main {
+		article.node {
+			margin-top: 10px;
+		}
+		.right_sidebar {
+			padding-top: 10px;
+			}
+	}
 	.main {
 		padding: 0;
 		width: 100%;
-	
+
 		@media (min-width: 65.6875em) {
 			max-width: $maxContentWidth;
+		}
+		article.node {
+			h2:first-of-type, h3:first-of-type {
+				margin-top: 0;
+			}
 		}
 	}
 	.main_page_title {
@@ -56,37 +70,49 @@ html {
 		font-family: $condensedFont;
 		font-size: 2.25em;
 		line-height: 1.25em;
-		padding: 0 15px 0.8em 15px;
+		padding: 0;
+		margin-top: -2px;
 
-		@media all and (min-width: 992px) {
-			padding: 0;
+		@media all and (max-width: 991px) {
+			padding: 0 15px .1em 15px;
 		}
 	}
-		
+
 	.large-horiz-image {
-		margin-bottom: 2em;
+		margin-bottom: 1.5em;
 		padding: 0 15px;
 
 		@media all and (min-width: 992px) {
 			padding: 0;
 		}
 	}
-	
-	
+
 	// TODO: remove as much of the custom breakbpoints as possible
 	.center_column {
+		padding-left: 15px;
+		padding-right: 15px;
 		@media all and (min-width: 992px) {
 			padding-left: 0;
-		} 
+		  padding-right: 0;
+		}
 		// TODO Fix the center column for md-col-12 (not centered without left padding)
 		@include respond-to(null , mobile-max) {
 			margin-bottom: 20px;
 		}
 	}
 
+	.flex-layout {
+			.responsive_flex > div, .top_section{
+				padding-left: 0;
+			}
+		}
+
 	.right_sidebar {
 		@media all and (min-width: 992px) {
 			padding-right: 0;
+		}
+		h3:first-of-type {
+			margin-top:0;
 		}
 	}
 
@@ -103,5 +129,20 @@ html {
 		@media all and (min-width: 992px){
 			padding-left:0px;
 		}
+	}
+	.main_front.layout-content {
+	    margin-top: 38px;
+	}
+
+	.row.site_name + .main_front.layout-content{
+	    margin-top: 0px;
+	}
+//TODO Remove hardcoded functionality that bumps up front page hero mage for admins/editors
+	.main_front.admin.layout-content {
+	  margin-top:-6px;
+	}
+
+	.row.site_name + .main_front.admin.layout-content {
+	    margin-top: -44px;
 	}
 }
