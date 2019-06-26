@@ -15,50 +15,64 @@ form.search {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITIONS AND ANIMATIONS)
-    
+
     @media #{$mediaFullHeader} {
         padding: 0;
         border-top: none;
         border-bottom: .1rem solid $white;
     }
-    
+
     [class*="btn-"] {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION)
         // BOX SIZING (DISPLAY, MARGIN, PADDING, WIDTH, HEIGHT)
         margin: 0;
-        padding: #{$gutter * .6}rem #{$gutter * .6}rem;
+        width: 38px;
+        height: 38px;
+        padding: 0;
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        border: none;
+        border: 1px solid $gray1;
+        background: $gray1;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         font-size: 1em;
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        text-align: center;
         // OTHER (TRANSITIONS AND ANIMATIONS)
-        
+
         @media #{$mediaFullHeader} {
-            padding: #{$gutter * .2}rem #{$gutter * .6}rem;
+            padding: 0;
         }
     }
-    
+
     .form-el {
         @include flexItem(1, 1, auto);
         padding: 0;
         margin: 0;
         width: 100%;
     }
-    
+
     .form-btn {
         padding: 0;
     }
-    
+
     input:not([type="checkbox"]):not([type="radio"]) {
-        padding: #{$gutter * .6}rem;
-        background: $primary;
-        border: none;
+        width: 155px;
+        height: 38px; 
+        padding: 0 7px 0 25px;
+        //background: $primary;
+        border: 1px solid $gray1;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
         color: $secondary;
-        font-size: 1em;
-        
+        font-size: 18px;
+
         @media #{$mediaFullHeader} {
-            padding: #{$gutter * .2}rem;
+            //padding: 7px 25px;
         }
+    }
+
+    label {
+      @include srOnly;
     }
 }

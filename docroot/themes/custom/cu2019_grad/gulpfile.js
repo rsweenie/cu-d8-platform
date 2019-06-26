@@ -102,7 +102,7 @@ var autoprefixerOptions = {
 };
 
 var pxtoremOptions = {
-  propList: ['font', 'font-size', 'line-height', 'padding', 'width', 'height', 'border'],
+  propList: ['font', 'font-size', 'line-height', 'padding', 'width', 'height', 'border', 'border-radius'],
   rootValue: 10
 };
 

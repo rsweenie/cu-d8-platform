@@ -6,7 +6,7 @@
 & {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: 1.5rem 0;
+    //padding: 1.5rem 0;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
@@ -70,7 +70,7 @@
 
     @media #{$mediaFullHeader} {
         @include position(relative, 0);
-        padding: #{$gutter}rem 3.6rem;
+        padding: 0 3.6rem;
     }
 
     // ADJUST THE WIDTH FOR $siteWList IN EACH MEDIA QUERY USING $siteWQueryList
