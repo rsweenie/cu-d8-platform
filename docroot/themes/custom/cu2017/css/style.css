@@ -8788,811 +8788,6 @@ button.close {
     display: none !important;
   }
 }
-/**
- * Alert styling.
- */
-/* line 4, ../sass/component/_alert.scss */
-.alert-sm {
-  padding: 5px 10px;
-}
-
-/* line 9, ../sass/component/_alert.scss */
-.alert a {
-  font-weight: bold;
-}
-
-/* line 13, ../sass/component/_alert.scss */
-.alert-success a, .alert-success a:hover, .alert-success a:focus {
-  color: #2b542c;
-}
-
-/* line 18, ../sass/component/_alert.scss */
-.alert-info a, .alert-info a:hover, .alert-info a:focus {
-  color: #245269;
-}
-
-/* line 23, ../sass/component/_alert.scss */
-.alert-warning a, .alert-warning a:hover, .alert-warning a:focus {
-  color: #66512c;
-}
-
-/* line 28, ../sass/component/_alert.scss */
-.alert-danger a, .alert-danger a:hover, .alert-danger a:focus {
-  color: #843534;
-}
-
-/**
- * AJAX (throbber) styling.
- */
-@keyframes glyphicon-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
-/* line 10, ../sass/component/_ajax.scss */
-.glyphicon-spin {
-  display: inline-block;
-  animation: glyphicon-spin 1s infinite linear;
-}
-
-/* line 14, ../sass/component/_ajax.scss */
-a .glyphicon-spin {
-  display: inline-block;
-  text-decoration: none;
-}
-
-/* line 20, ../sass/component/_ajax.scss */
-html.js .btn .ajax-throbber {
-  margin-left: .5em;
-  margin-right: -.25em;
-}
-/* line 26, ../sass/component/_ajax.scss */
-html.js .form-item .input-group-addon .glyphicon {
-  color: #777777;
-  opacity: .5;
-  transition: 150ms color, 150ms opacity;
-}
-/* line 30, ../sass/component/_ajax.scss */
-html.js .form-item .input-group-addon .glyphicon.glyphicon-spin {
-  color: #337ab7;
-  opacity: 1;
-}
-/* line 35, ../sass/component/_ajax.scss */
-html.js .form-item .input-group-addon .input-group-addon {
-  background-color: white;
-}
-/* line 41, ../sass/component/_ajax.scss */
-html.js .ajax-new-content:empty {
-  display: none !important;
-}
-
-/**
- * $file
- * Visual styles for fields.
- */
-/* line 6, ../sass/component/_field.scss */
-.field--label {
-  font-weight: bold;
-}
-
-/* line 9, ../sass/component/_field.scss */
-.field--label-inline .field--label,
-.field--label-inline .field--items {
-  float: left;
-  /*LTR*/
-}
-
-/* line 13, ../sass/component/_field.scss */
-.field--label-inline .field--label,
-.field--label-inline > .field--item,
-.field--label-inline .field--items {
-  padding-right: 0.5em;
-}
-
-/* line 18, ../sass/component/_field.scss */
-[dir="rtl"] .field--label-inline .field--label,
-[dir="rtl"] .field--label-inline .field--items {
-  padding-left: 0.5em;
-  padding-right: 0;
-}
-
-/* line 23, ../sass/component/_field.scss */
-.field--label-inline .field--label::after {
-  content: ':';
-}
-
-/**
- * File (and Image Widget) styles.
- */
-/* line 4, ../sass/component/_file.scss */
-.file {
-  display: table;
-  font-size: 75%;
-  font-weight: 700;
-  margin: 5px 0;
-  width: 100%;
-}
-/* line 10, ../sass/component/_file.scss */
-.file > span {
-  background: #fff;
-  color: #337ab7;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-}
-/* line 15, ../sass/component/_file.scss */
-.file > span:first-child {
-  border-left: 1px solid #ccc;
-}
-/* line 18, ../sass/component/_file.scss */
-.file > span:last-child {
-  border-right: 1px solid #ccc;
-}
-/* line 22, ../sass/component/_file.scss */
-.file > .tabledrag-changed {
-  background: #fcf8e3;
-  border-radius: 0;
-  color: #8a6d3b;
-  display: table-cell;
-  padding: 0 1em;
-  top: 0;
-  vertical-align: middle;
-  border-left: 1px solid inherit;
-}
-/* line 23, ../sass/component/_file.scss */
-.file > .tabledrag-changed, .file > .tabledrag-changed:last-child {
-  border: 1px solid #f7e1b5;
-}
-
-/* line 36, ../sass/component/_file.scss */
-.file-icon {
-  display: table-cell;
-  font-size: 150%;
-  padding: .25em .5em;
-  text-align: center;
-  vertical-align: middle;
-}
-
-/* line 43, ../sass/component/_file.scss */
-.file-link {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-}
-/* line 47, ../sass/component/_file.scss */
-.file-link a, .file-link a:hover, .file-link a:focus, .file-link a:active {
-  color: inherit;
-}
-
-/* line 51, ../sass/component/_file.scss */
-.file-size {
-  display: table-cell;
-  padding: 0 1em;
-  text-align: right;
-  white-space: pre;
-  vertical-align: middle;
-}
-
-/* line 59, ../sass/component/_file.scss */
-.image-widget.row {
-  overflow: hidden;
-}
-
-/**
- * Filter styles.
- */
-/* line 6, ../sass/component/_filter.scss */
-.filter-wrapper {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-top: 0;
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  margin-bottom: 0;
-  padding: 10px;
-  height: 51px;
-}
-
-/* line 17, ../sass/component/_filter.scss */
-.filter-help {
-  float: right;
-  line-height: 1;
-  margin: .5em 0 0;
-}
-
-/* line 24, ../sass/component/_filter.scss */
-.nav.nav-tabs.filter-formats {
-  margin-bottom: 15px;
-}
-
-/**
- * Form styles.
- */
-/* line 9, ../sass/component/_form.scss */
-table .checkbox.form-no-label, table .radio.form-no-label {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-/* line 18, ../sass/component/_form.scss */
-.select-wrapper {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-}
-/* line 22, ../sass/component/_form.scss */
-.form-inline .select-wrapper {
-  width: auto;
-}
-/* line 25, ../sass/component/_form.scss */
-.input-group .select-wrapper {
-  display: table-cell;
-}
-/* line 28, ../sass/component/_form.scss */
-.input-group .select-wrapper:first-child .form-control:first-child {
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-/* line 31, ../sass/component/_form.scss */
-.input-group .select-wrapper:last-child .form-control:first-child {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-}
-/* line 35, ../sass/component/_form.scss */
-.select-wrapper select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  line-height: 1;
-  padding-right: 2em;
-}
-/* line 41, ../sass/component/_form.scss */
-.select-wrapper select::-ms-expand {
-  opacity: 0;
-}
-/* line 45, ../sass/component/_form.scss */
-.select-wrapper:after {
-  color: #337ab7;
-  content: '▼';
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  margin-top: -.5em;
-  padding-right: .5em;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  z-index: 10;
-}
-/* line 60, ../sass/component/_form.scss */
-.has-glyphicons .select-wrapper:after {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: '\e114';
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-}
-/* line 67, ../sass/component/_form.scss */
-.has-error .select-wrapper:after {
-  color: #a94442;
-}
-/* line 70, ../sass/component/_form.scss */
-.has-success .select-wrapper:after {
-  color: #3c763d;
-}
-/* line 73, ../sass/component/_form.scss */
-.has-warning .select-wrapper:after {
-  color: #8a6d3b;
-}
-
-/* line 82, ../sass/component/_form.scss */
-.form-required:after {
-  background-image: url(../images/required.svg);
-  background-size: 10px 7px;
-  content: "";
-  display: inline-block;
-  line-height: 1;
-  height: 7px;
-  width: 10px;
-}
-
-/* line 94, ../sass/component/_form.scss */
-.form-actions .btn, .form-actions .btn-group {
-  margin-right: 10px;
-}
-/* line 98, ../sass/component/_form.scss */
-.form-actions .btn-group .btn {
-  margin-right: 0;
-}
-
-/**
- * Icon styles.
- */
-/* line 5, ../sass/component/_icon.scss */
-a.icon-before .glyphicon {
-  margin-right: .25em;
-}
-/* line 8, ../sass/component/_icon.scss */
-a.icon-after .glyphicon {
-  margin-left: .25em;
-}
-
-/* line 14, ../sass/component/_icon.scss */
-.btn.icon-before .glyphicon {
-  margin-left: -.25em;
-  margin-right: .25em;
-}
-/* line 18, ../sass/component/_icon.scss */
-.btn.icon-after .glyphicon {
-  margin-left: .25em;
-  margin-right: -.25em;
-}
-
-/**
- * Navbar styling.
- */
-/* line 10, ../sass/component/_navbar.scss */
-body {
-  position: relative;
-}
-/* line 15, ../sass/component/_navbar.scss */
-body.navbar-is-static-top {
-  margin-top: 0;
-}
-/* line 18, ../sass/component/_navbar.scss */
-body.navbar-is-fixed-top {
-  margin-top: 65px;
-}
-/* line 21, ../sass/component/_navbar.scss */
-body.navbar-is-fixed-bottom {
-  padding-bottom: 65px;
-}
-@media screen and (min-width: 768px) {
-  /* line 10, ../sass/component/_navbar.scss */
-  body {
-    margin-top: 15px;
-  }
-}
-@media screen and (max-width: 767px) {
-  /* line 32, ../sass/component/_navbar.scss */
-  body.toolbar-vertical.navbar-is-fixed-top .toolbar-bar, body.toolbar-vertical.navbar-is-fixed-bottom .toolbar-bar {
-    position: fixed;
-  }
-  /* line 35, ../sass/component/_navbar.scss */
-  body.toolbar-vertical.navbar-is-fixed-top header, body.toolbar-vertical.navbar-is-fixed-bottom header {
-    z-index: 500;
-  }
-  /* line 41, ../sass/component/_navbar.scss */
-  body.toolbar-vertical.navbar-is-fixed-top header {
-    top: 39px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  /* line 47, ../sass/component/_navbar.scss */
-  .navbar.container {
-    max-width: 720px;
-  }
-}
-@media screen and (min-width: 992px) {
-  /* line 47, ../sass/component/_navbar.scss */
-  .navbar.container {
-    max-width: 940px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 47, ../sass/component/_navbar.scss */
-  .navbar.container {
-    max-width: 1140px;
-  }
-}
-
-/* line 60, ../sass/component/_navbar.scss */
-.navbar .logo {
-  margin-right: -15px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media screen and (min-width: 768px) {
-  /* line 60, ../sass/component/_navbar.scss */
-  .navbar .logo {
-    margin-right: 0;
-    padding-left: 0;
-  }
-}
-
-/**
- * Node styling.
- */
-/* line 5, ../sass/component/_node.scss */
-.node-preview-container {
-  margin-top: -15px;
-}
-
-/* line 9, ../sass/component/_node.scss */
-.node-preview-form-select {
-  padding: 15px;
-}
-
-/**
- * Panel styling.
- */
-/* line 4, ../sass/component/_panel.scss */
-.panel-title {
-  display: block;
-  margin: -10px -15px;
-  padding: 10px 15px;
-}
-/* line 8, ../sass/component/_panel.scss */
-.panel-title, .panel-title:hover, .panel-title:focus, .panel-title:hover:focus {
-  color: inherit;
-}
-/* line 11, ../sass/component/_panel.scss */
-.panel-title:focus, .panel-title:hover {
-  text-decoration: none;
-}
-
-/**
- * Progress bar styles.
- */
-/* line 4, ../sass/component/_progress-bar.scss */
-.progress-wrapper {
-  margin-bottom: 15px;
-}
-/* line 7, ../sass/component/_progress-bar.scss */
-.progress-wrapper:last-child .progress {
-  margin-bottom: 5px;
-}
-/* line 11, ../sass/component/_progress-bar.scss */
-.progress-wrapper .message {
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-/* line 16, ../sass/component/_progress-bar.scss */
-.progress-wrapper .percentage,
-.progress-wrapper .progress-label {
-  font-size: 12px;
-}
-/* line 21, ../sass/component/_progress-bar.scss */
-.progress-wrapper .progress-bar {
-  min-width: 2em;
-}
-
-/**
- * Table drag styles.
- */
-/* line 4, ../sass/component/_table-drag.scss */
-.tabledrag-toggle-weight {
-  float: right;
-  margin: 1px 2px 1px 10px;
-}
-
-/* line 8, ../sass/component/_table-drag.scss */
-.tabledrag-changed-warning {
-  margin: 0;
-  overflow: hidden;
-}
-
-/* line 12, ../sass/component/_table-drag.scss */
-.tabledrag-handle {
-  color: #777777;
-  cursor: move;
-  float: left;
-  font-size: 125%;
-  line-height: 1;
-  margin: -10px 0 0 -10px;
-  padding: 10px;
-}
-/* line 20, ../sass/component/_table-drag.scss */
-.tabledrag-handle:hover, .tabledrag-handle:focus {
-  color: #337ab7;
-}
-
-/* line 24, ../sass/component/_table-drag.scss */
-.indentation {
-  float: left;
-  /* LTR */
-  height: 1.7em;
-  margin: -0.4em 0.2em -0.4em -0.4em;
-  /* LTR */
-  padding: 0.42em 0 0.42em 0.6em;
-  /* LTR */
-  width: 20px;
-}
-/* line 30, ../sass/component/_table-drag.scss */
-[dir="rtl"] .indentation {
-  float: right;
-  margin: -0.4em -0.4em -0.4em 0.2em;
-  padding: 0.42em 0.6em 0.42em 0;
-}
-
-/**
- * Tabs and local action styles.
- */
-/* line 4, ../sass/component/_tabs.scss */
-.local-actions {
-  margin: 10px 0 10px -5px;
-}
-
-/* line 7, ../sass/component/_tabs.scss */
-.tabs--secondary {
-  margin: 10px 0 5px;
-}
-
-/**
- * Missing Bootstrap 2 tab styling.
- * $see http://stackoverflow.com/questions/18432577/stacked-tabs-in-bootstrap-3
- * $see http://bootply.com/74926
- */
-/* line 16, ../sass/component/_tabs.scss */
-.tabbable {
-  margin-bottom: 20px;
-}
-
-/* line 20, ../sass/component/_tabs.scss */
-.tabs-below > .nav-tabs, .tabs-left > .nav-tabs, .tabs-right > .nav-tabs {
-  border-bottom: 0;
-}
-/* line 22, ../sass/component/_tabs.scss */
-.tabs-below > .nav-tabs .summary, .tabs-left > .nav-tabs .summary, .tabs-right > .nav-tabs .summary {
-  color: #777777;
-  font-size: 12px;
-}
-
-/* line 28, ../sass/component/_tabs.scss */
-.tab-pane > .panel-heading {
-  display: none;
-}
-
-/* line 31, ../sass/component/_tabs.scss */
-.tab-content > .active {
-  display: block;
-}
-
-/* line 37, ../sass/component/_tabs.scss */
-.tabs-below > .nav-tabs {
-  border-top: 1px solid #ddd;
-}
-/* line 39, ../sass/component/_tabs.scss */
-.tabs-below > .nav-tabs > li {
-  margin-top: -1px;
-  margin-bottom: 0;
-}
-/* line 42, ../sass/component/_tabs.scss */
-.tabs-below > .nav-tabs > li > a {
-  border-radius: 0 0 4px 4px;
-}
-/* line 44, ../sass/component/_tabs.scss */
-.tabs-below > .nav-tabs > li > a:hover, .tabs-below > .nav-tabs > li > a:focus {
-  border-top-color: #ddd;
-  border-bottom-color: transparent;
-}
-/* line 52, ../sass/component/_tabs.scss */
-.tabs-below > .nav-tabs > .active > a,
-.tabs-below > .nav-tabs > .active > a:hover,
-.tabs-below > .nav-tabs > .active > a:focus {
-  border-color: transparent #ddd #ddd #ddd;
-}
-
-/* line 64, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs,
-.tabs-right > .nav-tabs {
-  padding-bottom: 20px;
-  width: 220px;
-}
-/* line 67, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs > li,
-.tabs-right > .nav-tabs > li {
-  float: none;
-}
-/* line 69, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs > li:focus,
-.tabs-right > .nav-tabs > li:focus {
-  outline: 0;
-}
-/* line 72, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs > li > a,
-.tabs-right > .nav-tabs > li > a {
-  margin-right: 0;
-  margin-bottom: 3px;
-}
-/* line 75, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs > li > a:focus,
-.tabs-right > .nav-tabs > li > a:focus {
-  outline: 0;
-}
-/* line 81, ../sass/component/_tabs.scss */
-.tabs-left > .tab-content,
-.tabs-right > .tab-content {
-  border-radius: 0 4px 4px 4px;
-  border: 1px solid #ddd;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  padding: 10px 15px;
-}
-
-/* line 92, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs {
-  float: left;
-  margin-right: -1px;
-}
-/* line 95, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs > li > a {
-  border-radius: 4px 0 0 4px;
-}
-/* line 97, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
-  border-color: #eeeeee #ddd #eeeeee #eeeeee;
-}
-/* line 102, ../sass/component/_tabs.scss */
-.tabs-left > .nav-tabs > .active > a,
-.tabs-left > .nav-tabs > .active > a:hover,
-.tabs-left > .nav-tabs > .active > a:focus {
-  border-color: #ddd transparent #ddd #ddd;
-  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
-}
-
-/* line 113, ../sass/component/_tabs.scss */
-.tabs-right > .nav-tabs {
-  float: right;
-  margin-left: -1px;
-}
-/* line 116, ../sass/component/_tabs.scss */
-.tabs-right > .nav-tabs > li > a {
-  border-radius: 0 4px 4px 0;
-}
-/* line 118, ../sass/component/_tabs.scss */
-.tabs-right > .nav-tabs > li > a:hover, .tabs-right > .nav-tabs > li > a:focus {
-  border-color: #eeeeee #eeeeee #eeeeee #ddd;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-}
-/* line 124, ../sass/component/_tabs.scss */
-.tabs-right > .nav-tabs > .active > a,
-.tabs-right > .nav-tabs > .active > a:hover,
-.tabs-right > .nav-tabs > .active > a:focus {
-  border-color: #ddd #ddd #ddd transparent;
-}
-
-/**
- * Toolbar module styling.
- */
-/* line 10, ../sass/component/_toolbar.scss */
-body.toolbar-fixed .toolbar-oriented .toolbar-bar {
-  z-index: 1031;
-}
-/* line 14, ../sass/component/_toolbar.scss */
-body.toolbar-fixed .navbar-fixed-top {
-  top: 39px;
-}
-/* line 19, ../sass/component/_toolbar.scss */
-body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
-  top: 79px;
-}
-/* line 26, ../sass/component/_toolbar.scss */
-body.toolbar-fixed.toolbar-vertical.toolbar-tray-open .navbar-fixed-top {
-  left: 240px;
-}
-/* line 30, ../sass/component/_toolbar.scss */
-body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
-  margin-left: 240px;
-}
-/* line 33, ../sass/component/_toolbar.scss */
-body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tray {
-  padding-bottom: 40px;
-}
-/* line 35, ../sass/component/_toolbar.scss */
-body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tray, body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tray > .toolbar-lining:before {
-  width: 240px;
-}
-
-/**
- * jQuery UI autocomplete widget style overrides.
- *
- * $todo Remove once jQuery UI is no longer used?
- */
-/* line 8, ../sass/jquery-ui/_autocomplete.scss */
-.ui-autocomplete {
-  background: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  color: inherit;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  list-style: none;
-  min-width: 160px;
-  padding: 5px 0;
-  text-align: left;
-  z-index: 1000;
-}
-/* line 24, ../sass/jquery-ui/_autocomplete.scss */
-.ui-autocomplete .ui-menu-item {
-  border: 0;
-  border-radius: 0;
-  clear: both;
-  color: #333333;
-  cursor: pointer;
-  display: block;
-  font-weight: normal;
-  line-height: 1.42857;
-  margin: 0;
-  outline: 0;
-  padding: 3px 20px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-/* line 39, ../sass/jquery-ui/_autocomplete.scss */
-.ui-autocomplete .ui-menu-item.ui-state-hover {
-  background: #f5f5f5;
-  color: #262626;
-}
-/* line 44, ../sass/jquery-ui/_autocomplete.scss */
-.ui-autocomplete .ui-menu-item.ui-state-active, .ui-autocomplete .ui-menu-item.ui-state-focus {
-  background: #337ab7;
-  color: #fff;
-}
-
-/* line 21, ../sass/_overrides.scss */
-ol, ul {
-  padding-left: 1.5em;
-}
-/* line 23, ../sass/_overrides.scss */
-.popover ol:last-child, .popover ul:last-child {
-  margin-bottom: 0;
-}
-
-/* line 29, ../sass/_overrides.scss */
-.page-header {
-  margin-top: 200;
-  color: purple;
-}
-
-/* line 35, ../sass/_overrides.scss */
-.footer {
-  margin-top: 45px;
-  padding-top: 35px;
-  padding-bottom: 36px;
-  border-top: 1px solid #E5E5E5;
-}
-
-/* line 43, ../sass/_overrides.scss */
-p:last-child,
-.form-group:last-child,
-.panel:last-child {
-  margin-bottom: 0;
-}
-
-/* line 51, ../sass/_overrides.scss */
-.region-help > .glyphicon {
-  font-size: 18px;
-  float: left;
-  margin: -0.05em 0.5em 0 0;
-}
-/* line 56, ../sass/_overrides.scss */
-.region-help .block {
-  overflow: hidden;
-}
-
-/* line 61, ../sass/_overrides.scss */
-.help-block, .control-group .help-inline {
-  color: #777777;
-  font-size: 12px;
-  margin: 5px 0 10px;
-  padding: 0;
-}
-/* line 66, ../sass/_overrides.scss */
-.help-block:first-child, .control-group .help-inline:first-child {
-  margin-top: 0;
-}
-
-/*main .main.container h2:first-child {
-  margin-top: -6px;
-}*/
 /* line 3, ../sass/custom/_base.scss */
 html body {
   color: #555;
@@ -14687,3 +13882,810 @@ article.news .news_date {
 .row {
   margin: 0;
 }
+
+/**
+ * Alert styling.
+ */
+/* line 4, ../sass/component/_alert.scss */
+.alert-sm {
+  padding: 5px 10px;
+}
+
+/* line 9, ../sass/component/_alert.scss */
+.alert a {
+  font-weight: bold;
+}
+
+/* line 13, ../sass/component/_alert.scss */
+.alert-success a, .alert-success a:hover, .alert-success a:focus {
+  color: #2b542c;
+}
+
+/* line 18, ../sass/component/_alert.scss */
+.alert-info a, .alert-info a:hover, .alert-info a:focus {
+  color: #245269;
+}
+
+/* line 23, ../sass/component/_alert.scss */
+.alert-warning a, .alert-warning a:hover, .alert-warning a:focus {
+  color: #66512c;
+}
+
+/* line 28, ../sass/component/_alert.scss */
+.alert-danger a, .alert-danger a:hover, .alert-danger a:focus {
+  color: #843534;
+}
+
+/**
+ * AJAX (throbber) styling.
+ */
+@keyframes glyphicon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/* line 10, ../sass/component/_ajax.scss */
+.glyphicon-spin {
+  display: inline-block;
+  animation: glyphicon-spin 1s infinite linear;
+}
+
+/* line 14, ../sass/component/_ajax.scss */
+a .glyphicon-spin {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* line 20, ../sass/component/_ajax.scss */
+html.js .btn .ajax-throbber {
+  margin-left: .5em;
+  margin-right: -.25em;
+}
+/* line 26, ../sass/component/_ajax.scss */
+html.js .form-item .input-group-addon .glyphicon {
+  color: #777777;
+  opacity: .5;
+  transition: 150ms color, 150ms opacity;
+}
+/* line 30, ../sass/component/_ajax.scss */
+html.js .form-item .input-group-addon .glyphicon.glyphicon-spin {
+  color: #337ab7;
+  opacity: 1;
+}
+/* line 35, ../sass/component/_ajax.scss */
+html.js .form-item .input-group-addon .input-group-addon {
+  background-color: white;
+}
+/* line 41, ../sass/component/_ajax.scss */
+html.js .ajax-new-content:empty {
+  display: none !important;
+}
+
+/**
+ * $file
+ * Visual styles for fields.
+ */
+/* line 6, ../sass/component/_field.scss */
+.field--label {
+  font-weight: bold;
+}
+
+/* line 9, ../sass/component/_field.scss */
+.field--label-inline .field--label,
+.field--label-inline .field--items {
+  float: left;
+  /*LTR*/
+}
+
+/* line 13, ../sass/component/_field.scss */
+.field--label-inline .field--label,
+.field--label-inline > .field--item,
+.field--label-inline .field--items {
+  padding-right: 0.5em;
+}
+
+/* line 18, ../sass/component/_field.scss */
+[dir="rtl"] .field--label-inline .field--label,
+[dir="rtl"] .field--label-inline .field--items {
+  padding-left: 0.5em;
+  padding-right: 0;
+}
+
+/* line 23, ../sass/component/_field.scss */
+.field--label-inline .field--label::after {
+  content: ':';
+}
+
+/**
+ * File (and Image Widget) styles.
+ */
+/* line 4, ../sass/component/_file.scss */
+.file {
+  display: table;
+  font-size: 75%;
+  font-weight: 700;
+  margin: 5px 0;
+  width: 100%;
+}
+/* line 10, ../sass/component/_file.scss */
+.file > span {
+  background: #fff;
+  color: #337ab7;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+/* line 15, ../sass/component/_file.scss */
+.file > span:first-child {
+  border-left: 1px solid #ccc;
+}
+/* line 18, ../sass/component/_file.scss */
+.file > span:last-child {
+  border-right: 1px solid #ccc;
+}
+/* line 22, ../sass/component/_file.scss */
+.file > .tabledrag-changed {
+  background: #fcf8e3;
+  border-radius: 0;
+  color: #8a6d3b;
+  display: table-cell;
+  padding: 0 1em;
+  top: 0;
+  vertical-align: middle;
+  border-left: 1px solid inherit;
+}
+/* line 23, ../sass/component/_file.scss */
+.file > .tabledrag-changed, .file > .tabledrag-changed:last-child {
+  border: 1px solid #f7e1b5;
+}
+
+/* line 36, ../sass/component/_file.scss */
+.file-icon {
+  display: table-cell;
+  font-size: 150%;
+  padding: .25em .5em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 43, ../sass/component/_file.scss */
+.file-link {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+/* line 47, ../sass/component/_file.scss */
+.file-link a, .file-link a:hover, .file-link a:focus, .file-link a:active {
+  color: inherit;
+}
+
+/* line 51, ../sass/component/_file.scss */
+.file-size {
+  display: table-cell;
+  padding: 0 1em;
+  text-align: right;
+  white-space: pre;
+  vertical-align: middle;
+}
+
+/* line 59, ../sass/component/_file.scss */
+.image-widget.row {
+  overflow: hidden;
+}
+
+/**
+ * Filter styles.
+ */
+/* line 6, ../sass/component/_filter.scss */
+.filter-wrapper {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0;
+  padding: 10px;
+  height: 51px;
+}
+
+/* line 17, ../sass/component/_filter.scss */
+.filter-help {
+  float: right;
+  line-height: 1;
+  margin: .5em 0 0;
+}
+
+/* line 24, ../sass/component/_filter.scss */
+.nav.nav-tabs.filter-formats {
+  margin-bottom: 15px;
+}
+
+/**
+ * Form styles.
+ */
+/* line 9, ../sass/component/_form.scss */
+table .checkbox.form-no-label, table .radio.form-no-label {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* line 18, ../sass/component/_form.scss */
+.select-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+/* line 22, ../sass/component/_form.scss */
+.form-inline .select-wrapper {
+  width: auto;
+}
+/* line 25, ../sass/component/_form.scss */
+.input-group .select-wrapper {
+  display: table-cell;
+}
+/* line 28, ../sass/component/_form.scss */
+.input-group .select-wrapper:first-child .form-control:first-child {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+/* line 31, ../sass/component/_form.scss */
+.input-group .select-wrapper:last-child .form-control:first-child {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* line 35, ../sass/component/_form.scss */
+.select-wrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 1;
+  padding-right: 2em;
+}
+/* line 41, ../sass/component/_form.scss */
+.select-wrapper select::-ms-expand {
+  opacity: 0;
+}
+/* line 45, ../sass/component/_form.scss */
+.select-wrapper:after {
+  color: #337ab7;
+  content: '▼';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: -.5em;
+  padding-right: .5em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 10;
+}
+/* line 60, ../sass/component/_form.scss */
+.has-glyphicons .select-wrapper:after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '\e114';
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+}
+/* line 67, ../sass/component/_form.scss */
+.has-error .select-wrapper:after {
+  color: #a94442;
+}
+/* line 70, ../sass/component/_form.scss */
+.has-success .select-wrapper:after {
+  color: #3c763d;
+}
+/* line 73, ../sass/component/_form.scss */
+.has-warning .select-wrapper:after {
+  color: #8a6d3b;
+}
+
+/* line 82, ../sass/component/_form.scss */
+.form-required:after {
+  background-image: url(../images/required.svg);
+  background-size: 10px 7px;
+  content: "";
+  display: inline-block;
+  line-height: 1;
+  height: 7px;
+  width: 10px;
+}
+
+/* line 94, ../sass/component/_form.scss */
+.form-actions .btn, .form-actions .btn-group {
+  margin-right: 10px;
+}
+/* line 98, ../sass/component/_form.scss */
+.form-actions .btn-group .btn {
+  margin-right: 0;
+}
+
+/**
+ * Icon styles.
+ */
+/* line 5, ../sass/component/_icon.scss */
+a.icon-before .glyphicon {
+  margin-right: .25em;
+}
+/* line 8, ../sass/component/_icon.scss */
+a.icon-after .glyphicon {
+  margin-left: .25em;
+}
+
+/* line 14, ../sass/component/_icon.scss */
+.btn.icon-before .glyphicon {
+  margin-left: -.25em;
+  margin-right: .25em;
+}
+/* line 18, ../sass/component/_icon.scss */
+.btn.icon-after .glyphicon {
+  margin-left: .25em;
+  margin-right: -.25em;
+}
+
+/**
+ * Navbar styling.
+ */
+/* line 10, ../sass/component/_navbar.scss */
+body {
+  position: relative;
+}
+/* line 15, ../sass/component/_navbar.scss */
+body.navbar-is-static-top {
+  margin-top: 0;
+}
+/* line 18, ../sass/component/_navbar.scss */
+body.navbar-is-fixed-top {
+  margin-top: 65px;
+}
+/* line 21, ../sass/component/_navbar.scss */
+body.navbar-is-fixed-bottom {
+  padding-bottom: 65px;
+}
+@media screen and (min-width: 768px) {
+  /* line 10, ../sass/component/_navbar.scss */
+  body {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 32, ../sass/component/_navbar.scss */
+  body.toolbar-vertical.navbar-is-fixed-top .toolbar-bar, body.toolbar-vertical.navbar-is-fixed-bottom .toolbar-bar {
+    position: fixed;
+  }
+  /* line 35, ../sass/component/_navbar.scss */
+  body.toolbar-vertical.navbar-is-fixed-top header, body.toolbar-vertical.navbar-is-fixed-bottom header {
+    z-index: 500;
+  }
+  /* line 41, ../sass/component/_navbar.scss */
+  body.toolbar-vertical.navbar-is-fixed-top header {
+    top: 39px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* line 47, ../sass/component/_navbar.scss */
+  .navbar.container {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 47, ../sass/component/_navbar.scss */
+  .navbar.container {
+    max-width: 940px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 47, ../sass/component/_navbar.scss */
+  .navbar.container {
+    max-width: 1140px;
+  }
+}
+
+/* line 60, ../sass/component/_navbar.scss */
+.navbar .logo {
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media screen and (min-width: 768px) {
+  /* line 60, ../sass/component/_navbar.scss */
+  .navbar .logo {
+    margin-right: 0;
+    padding-left: 0;
+  }
+}
+
+/**
+ * Node styling.
+ */
+/* line 5, ../sass/component/_node.scss */
+.node-preview-container {
+  margin-top: -15px;
+}
+
+/* line 9, ../sass/component/_node.scss */
+.node-preview-form-select {
+  padding: 15px;
+}
+
+/**
+ * Panel styling.
+ */
+/* line 4, ../sass/component/_panel.scss */
+.panel-title {
+  display: block;
+  margin: -10px -15px;
+  padding: 10px 15px;
+}
+/* line 8, ../sass/component/_panel.scss */
+.panel-title, .panel-title:hover, .panel-title:focus, .panel-title:hover:focus {
+  color: inherit;
+}
+/* line 11, ../sass/component/_panel.scss */
+.panel-title:focus, .panel-title:hover {
+  text-decoration: none;
+}
+
+/**
+ * Progress bar styles.
+ */
+/* line 4, ../sass/component/_progress-bar.scss */
+.progress-wrapper {
+  margin-bottom: 15px;
+}
+/* line 7, ../sass/component/_progress-bar.scss */
+.progress-wrapper:last-child .progress {
+  margin-bottom: 5px;
+}
+/* line 11, ../sass/component/_progress-bar.scss */
+.progress-wrapper .message {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+/* line 16, ../sass/component/_progress-bar.scss */
+.progress-wrapper .percentage,
+.progress-wrapper .progress-label {
+  font-size: 12px;
+}
+/* line 21, ../sass/component/_progress-bar.scss */
+.progress-wrapper .progress-bar {
+  min-width: 2em;
+}
+
+/**
+ * Table drag styles.
+ */
+/* line 4, ../sass/component/_table-drag.scss */
+.tabledrag-toggle-weight {
+  float: right;
+  margin: 1px 2px 1px 10px;
+}
+
+/* line 8, ../sass/component/_table-drag.scss */
+.tabledrag-changed-warning {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* line 12, ../sass/component/_table-drag.scss */
+.tabledrag-handle {
+  color: #777777;
+  cursor: move;
+  float: left;
+  font-size: 125%;
+  line-height: 1;
+  margin: -10px 0 0 -10px;
+  padding: 10px;
+}
+/* line 20, ../sass/component/_table-drag.scss */
+.tabledrag-handle:hover, .tabledrag-handle:focus {
+  color: #337ab7;
+}
+
+/* line 24, ../sass/component/_table-drag.scss */
+.indentation {
+  float: left;
+  /* LTR */
+  height: 1.7em;
+  margin: -0.4em 0.2em -0.4em -0.4em;
+  /* LTR */
+  padding: 0.42em 0 0.42em 0.6em;
+  /* LTR */
+  width: 20px;
+}
+/* line 30, ../sass/component/_table-drag.scss */
+[dir="rtl"] .indentation {
+  float: right;
+  margin: -0.4em -0.4em -0.4em 0.2em;
+  padding: 0.42em 0.6em 0.42em 0;
+}
+
+/**
+ * Tabs and local action styles.
+ */
+/* line 4, ../sass/component/_tabs.scss */
+.local-actions {
+  margin: 10px 0 10px -5px;
+}
+
+/* line 7, ../sass/component/_tabs.scss */
+.tabs--secondary {
+  margin: 10px 0 5px;
+}
+
+/**
+ * Missing Bootstrap 2 tab styling.
+ * $see http://stackoverflow.com/questions/18432577/stacked-tabs-in-bootstrap-3
+ * $see http://bootply.com/74926
+ */
+/* line 16, ../sass/component/_tabs.scss */
+.tabbable {
+  margin-bottom: 20px;
+}
+
+/* line 20, ../sass/component/_tabs.scss */
+.tabs-below > .nav-tabs, .tabs-left > .nav-tabs, .tabs-right > .nav-tabs {
+  border-bottom: 0;
+}
+/* line 22, ../sass/component/_tabs.scss */
+.tabs-below > .nav-tabs .summary, .tabs-left > .nav-tabs .summary, .tabs-right > .nav-tabs .summary {
+  color: #777777;
+  font-size: 12px;
+}
+
+/* line 28, ../sass/component/_tabs.scss */
+.tab-pane > .panel-heading {
+  display: none;
+}
+
+/* line 31, ../sass/component/_tabs.scss */
+.tab-content > .active {
+  display: block;
+}
+
+/* line 37, ../sass/component/_tabs.scss */
+.tabs-below > .nav-tabs {
+  border-top: 1px solid #ddd;
+}
+/* line 39, ../sass/component/_tabs.scss */
+.tabs-below > .nav-tabs > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+/* line 42, ../sass/component/_tabs.scss */
+.tabs-below > .nav-tabs > li > a {
+  border-radius: 0 0 4px 4px;
+}
+/* line 44, ../sass/component/_tabs.scss */
+.tabs-below > .nav-tabs > li > a:hover, .tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #ddd;
+  border-bottom-color: transparent;
+}
+/* line 52, ../sass/component/_tabs.scss */
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+  border-color: transparent #ddd #ddd #ddd;
+}
+
+/* line 64, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs,
+.tabs-right > .nav-tabs {
+  padding-bottom: 20px;
+  width: 220px;
+}
+/* line 67, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+/* line 69, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs > li:focus,
+.tabs-right > .nav-tabs > li:focus {
+  outline: 0;
+}
+/* line 72, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+/* line 75, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs > li > a:focus,
+.tabs-right > .nav-tabs > li > a:focus {
+  outline: 0;
+}
+/* line 81, ../sass/component/_tabs.scss */
+.tabs-left > .tab-content,
+.tabs-right > .tab-content {
+  border-radius: 0 4px 4px 4px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding: 10px 15px;
+}
+
+/* line 92, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: -1px;
+}
+/* line 95, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs > li > a {
+  border-radius: 4px 0 0 4px;
+}
+/* line 97, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #ddd #eeeeee #eeeeee;
+}
+/* line 102, ../sass/component/_tabs.scss */
+.tabs-left > .nav-tabs > .active > a,
+.tabs-left > .nav-tabs > .active > a:hover,
+.tabs-left > .nav-tabs > .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* line 113, ../sass/component/_tabs.scss */
+.tabs-right > .nav-tabs {
+  float: right;
+  margin-left: -1px;
+}
+/* line 116, ../sass/component/_tabs.scss */
+.tabs-right > .nav-tabs > li > a {
+  border-radius: 0 4px 4px 0;
+}
+/* line 118, ../sass/component/_tabs.scss */
+.tabs-right > .nav-tabs > li > a:hover, .tabs-right > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #eeeeee #eeeeee #ddd;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+/* line 124, ../sass/component/_tabs.scss */
+.tabs-right > .nav-tabs > .active > a,
+.tabs-right > .nav-tabs > .active > a:hover,
+.tabs-right > .nav-tabs > .active > a:focus {
+  border-color: #ddd #ddd #ddd transparent;
+}
+
+/**
+ * Toolbar module styling.
+ */
+/* line 10, ../sass/component/_toolbar.scss */
+body.toolbar-fixed .toolbar-oriented .toolbar-bar {
+  z-index: 1031;
+}
+/* line 14, ../sass/component/_toolbar.scss */
+body.toolbar-fixed .navbar-fixed-top {
+  top: 39px;
+}
+/* line 19, ../sass/component/_toolbar.scss */
+body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
+  top: 79px;
+}
+/* line 26, ../sass/component/_toolbar.scss */
+body.toolbar-fixed.toolbar-vertical.toolbar-tray-open .navbar-fixed-top {
+  left: 240px;
+}
+/* line 30, ../sass/component/_toolbar.scss */
+body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
+  margin-left: 240px;
+}
+/* line 33, ../sass/component/_toolbar.scss */
+body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tray {
+  padding-bottom: 40px;
+}
+/* line 35, ../sass/component/_toolbar.scss */
+body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tray, body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tray > .toolbar-lining:before {
+  width: 240px;
+}
+
+/**
+ * jQuery UI autocomplete widget style overrides.
+ *
+ * $todo Remove once jQuery UI is no longer used?
+ */
+/* line 8, ../sass/jquery-ui/_autocomplete.scss */
+.ui-autocomplete {
+  background: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  color: inherit;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  list-style: none;
+  min-width: 160px;
+  padding: 5px 0;
+  text-align: left;
+  z-index: 1000;
+}
+/* line 24, ../sass/jquery-ui/_autocomplete.scss */
+.ui-autocomplete .ui-menu-item {
+  border: 0;
+  border-radius: 0;
+  clear: both;
+  color: #333333;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  line-height: 1.42857;
+  margin: 0;
+  outline: 0;
+  padding: 3px 20px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+/* line 39, ../sass/jquery-ui/_autocomplete.scss */
+.ui-autocomplete .ui-menu-item.ui-state-hover {
+  background: #f5f5f5;
+  color: #262626;
+}
+/* line 44, ../sass/jquery-ui/_autocomplete.scss */
+.ui-autocomplete .ui-menu-item.ui-state-active, .ui-autocomplete .ui-menu-item.ui-state-focus {
+  background: #337ab7;
+  color: #fff;
+}
+
+/* line 21, ../sass/_overrides.scss */
+ol, ul {
+  padding-left: 1.5em;
+}
+/* line 23, ../sass/_overrides.scss */
+.popover ol:last-child, .popover ul:last-child {
+  margin-bottom: 0;
+}
+
+/* line 29, ../sass/_overrides.scss */
+.page-header {
+  margin-top: 200;
+  color: purple;
+}
+
+/* line 35, ../sass/_overrides.scss */
+.footer {
+  margin-top: 45px;
+  padding-top: 35px;
+  padding-bottom: 36px;
+  border-top: 1px solid #E5E5E5;
+}
+
+@media all and (min-width: 1051px) {
+  /* line 44, ../sass/_overrides.scss */
+  p:last-child,
+  .form-group:last-child,
+  .panel:last-child {
+    margin-bottom: 0;
+  }
+}
+/* line 53, ../sass/_overrides.scss */
+.region-help > .glyphicon {
+  font-size: 18px;
+  float: left;
+  margin: -0.05em 0.5em 0 0;
+}
+/* line 58, ../sass/_overrides.scss */
+.region-help .block {
+  overflow: hidden;
+}
+
+/* line 63, ../sass/_overrides.scss */
+.help-block, .control-group .help-inline {
+  color: #777777;
+  font-size: 12px;
+  margin: 5px 0 10px;
+  padding: 0;
+}
+/* line 68, ../sass/_overrides.scss */
+.help-block:first-child, .control-group .help-inline:first-child {
+  margin-top: 0;
+}
+
+/*main .main.container h2:first-child {
+  margin-top: -6px;
+}*/
