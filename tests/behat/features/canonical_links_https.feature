@@ -7,4 +7,4 @@ Feature: Canonical Links Https
    Scenario: check canonical links are https
    Given I am an anonymous user
    And I am on "/"
-   Then I the canonical link should be https
+   Then the canonical link should be https

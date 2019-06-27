@@ -279,9 +279,9 @@ JS;
   }
 
   /**
-   * @Then I the canonical link should be https
+   * @Then the canonical link should be https
    */
-  public function iTheCanonicalLinkShouldBeHttps()
+  public function theCanonicalLinkShouldBeHttps()
   {
     //return all link elements with rel attribute 'canonical' and href attributes which contain https://
     $link = $this->getSession()->getPage()->findAll('xpath','//link[@rel = "canonical" and contains(@href,"https://")]');
