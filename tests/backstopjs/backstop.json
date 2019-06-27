@@ -201,7 +201,7 @@
       "delay": 0,
       "hideSelectors": [],
       "removeSelectors": [],
-      "hoverSelector": ".accordion_title:first-of-type",
+      "hoverSelector": ".tabbed_accordion_wrapper .accordion .accordion_title",
       "clickSelector": "",
       "postInteractionWait": 0,
       "selectors": [],
