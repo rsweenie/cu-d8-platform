@@ -64,6 +64,20 @@
 
 @import url("https://use.typekit.net/ntf3lqp.css");
 
+@font-face {
+  font-family: "Conduit";
+  src: url("../fonts/Conduit-Regular/Conduit-Regular.woff2") format("woff2"), url("../fonts/Conduit-Regular/Conduit-Regular.woff") format("woff"), url("../fonts/Conduit-Regular/Conduit-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Conduit";
+  src: url("../fonts/Conduit-Bold/Conduit-Bold.woff2") format("woff2"), url("../fonts/Conduit-Bold/Conduit-Bold.woff") format("woff"), url("../fonts/Conduit-Bold/Conduit-Bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: bold;
+}
+
 /*---===<<< UNIVERSAL RESETS >>>===---*/
 
 * {
@@ -397,7 +411,7 @@ h5,
 h6 {
   margin: 0 0 .75em;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Conduit";
 }
 
 h1,
@@ -929,6 +943,7 @@ nav a {
 
 .main-header nav.mega {
   background: #fff;
+  font-family: "Conduit";
 }
 
 .main-header input[type="checkbox"] {
@@ -958,6 +973,7 @@ nav a {
 }
 
 .main-header nav.util {
+  font-family: "Conduit";
   padding: 1.6rem 0;
 }
 
@@ -1029,6 +1045,7 @@ nav a {
   border-bottom-left-radius: 0.4rem;
   color: #0054A6;
   font-size: 1.8rem;
+  font-family: "Conduit";
 }
 
 .main-header form.search label {
@@ -10486,7 +10503,7 @@ form.search .search button {
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    font-weight: bold;
+    font-weight: normal;
     /*-----------------------*\
             The &:first-child is only necessary when used with a utility navigation
             &:first-child {
@@ -10524,7 +10541,7 @@ form.search .search button {
   }
 
   .main-header nav.mega > ul > li > a {
-    padding: 1.5rem 1.2rem;
+    padding: 1.7rem 1.2rem 1.3rem;
   }
 
   .main-header nav.mega > ul > li:nth-child(-n + 4) > a {
@@ -10539,11 +10556,13 @@ form.search .search button {
 
   .main-header nav.mega > ul > li:nth-child(n + 5) {
     font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
   }
 
   .main-header nav.mega > ul > li:nth-child(n + 5) a {
-    padding: 1.6rem 1.4rem;
+    padding: 1.8rem 1.4rem 1.4rem;
   }
 
   .main-header nav.mega > ul ul {
