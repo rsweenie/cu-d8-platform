@@ -768,7 +768,7 @@ nav a {
     \* ------------------ */
   /*  --------------------------------------------------------------------------  *\
 
-    IMAGE LOGO ONLY
+    SVG LOGO ONLY
 
 \*  --------------------------------------------------------------------------  */
   /* -------------------------- *\
@@ -858,9 +858,33 @@ nav a {
   width: 100%;
 }
 
-.main-header .logo img {
-  width: 19rem;
+.main-header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  color: #0054A6;
+}
+
+.main-header .logo:hover {
+  color: #6CACE4;
+}
+
+.main-header .logo svg {
+  width: 34.7rem;
   height: auto;
+  fill: currentColor;
 }
 
 .main-header .logo:hover,
@@ -9342,6 +9366,10 @@ form.search .search button {
     font-size: 1.375em;
   }
 
+  .main-header .logo svg {
+    width: 34.7rem;
+  }
+
   .main-footer nav.menu--footer li {
     width: auto;
     text-align: center;
@@ -11438,8 +11466,8 @@ form.search .search button {
     width: 90%;
   }
 
-  .main-header .logo img {
-    width: 26.5rem;
+  .main-header .logo svg {
+    width: 34.7rem;
   }
 
   .main-header nav.mega > ul > li:nth-child(n + 5) a {
