@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_aria_landmark_roles
     - ctools_block
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: 'Large Image'
 _core:
   default_config_hash: rON-MO-evx3Q3ug9pwigK_Tj2RxfWpjAYkwUQAbGqHI
 id: cu2017_alliance_largehorizimage
