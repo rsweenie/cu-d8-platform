@@ -5,9 +5,14 @@ dependencies:
   config:
     - system.menu.information-for
   module:
+    - block_aria_landmark_roles
     - menu_block
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'More Information'
 _core:
   default_config_hash: ypv21wPfYFLZ77zKPWAORfxDW2W_pwUOoJMZolY_mT8
 id: cu2017_alliance_informationfor

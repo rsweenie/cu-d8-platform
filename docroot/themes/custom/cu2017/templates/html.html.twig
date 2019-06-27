@@ -25,31 +25,31 @@
  * @ingroup themeable
  */
 #}
-
-
 <!DOCTYPE html>
 <html{{ html_attributes }}>
-    <head>
-        <head-placeholder token="{{ placeholder_token }}">
-        <title>{{ head_title|safe_join(' | ') }}</title>
-        <css-placeholder token="{{ placeholder_token }}">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,400i,500,600,700" rel="stylesheet">    
-        <js-placeholder token="{{ placeholder_token }}">
+<head>
+  <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,400i,500,600,700"
+        rel="stylesheet">
+      <js-placeholder token="{{ placeholder_token }}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    {% if is_front %}
-        {% set classes = ['front'] %}
-    {% else %}
-        {% set classes = ['default'] %}
-    {% endif %}
-    {% set attributes = attributes.addClass(classes) %}
-    <body{{ attributes }}>
-        {# Keyboard navigation/accessibility link to main content section in page.html.twig. #} 
-        <a href="#main-content" class="visually-hidden focusable">{{ 'Skip to main content'|t }}</a>
-        {{ page_top }}
-        {{ page }}
-        {{ page_bottom }}
-        <js-bottom-placeholder token="{{ placeholder_token }}">
-    </body>
+        </head>
+        {% if is_front %}
+          {% set classes = ['front'] %}
+        {% else %}
+          {% set classes = ['default'] %}
+        {% endif %}
+        {% set attributes = attributes.addClass(classes) %}
+  <body{{ attributes }}>
+    {# Keyboard navigation/accessibility link to main content section in page.html.twig. #}
+    <a href="#main-content" class="visually-hidden focusable" role="navigation"
+       aria-label="{{ 'Skip to main content'|t }}">{{ 'Skip to main content'|t }}</a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
 </html>

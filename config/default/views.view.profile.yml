@@ -478,14 +478,14 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: false
+            make_link: true
             path: ''
             absolute: false
             external: false
             replace_spaces: false
             path_case: none
             trim_whitespace: false
-            alt: ''
+            alt: 'View the profile of {{ field_profile_name }}'
             rel: ''
             link_class: ''
             prefix: ''
@@ -781,7 +781,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"profile_image\">{{ field_profile_image }}</div>\r\n<div class=\"profile_name\"><h4>{{ field_profile_name }}</h4></div>\r\n<div class=\"profile_position\">{{ field_profile_position }} </div>\r\n<div class=\"profile_specialties\">{{ field_profile_specialties }}</div>\r\n<div class=\"profile_email\">{{ field_profile_email }}</div>\r\n<div class=\"profile_phone\">{{ field_profile_phone }}</div>\r\n<div class=\"profile_office_location\">{{ field_profile_office_location }}</div>\r\n{% if field_profile_p_link %}\r\n<div class=\"profile_link\">{{ field_profile_p_link }}<span class=\"invisible\"> of {{ field_profile_name }}</span></div>\r\n{% else %}\r\n<div class=\"profile_link\">{{ view_node }}<span class=\"invisible\"> of {{ field_profile_name }}</span></div>\r\n{% endif %}\r\n\r\n"
+            text: "<div class=\"profile_image\">{{ field_profile_image }}</div>\r\n<div class=\"profile_name\"><h4>{{ field_profile_name }}</h4></div>\r\n<div class=\"profile_position\">{{ field_profile_position }} </div>\r\n<div class=\"profile_specialties\">{{ field_profile_specialties }}</div>\r\n<div class=\"profile_email\">{{ field_profile_email }}</div>\r\n<div class=\"profile_phone\">{{ field_profile_phone }}</div>\r\n<div class=\"profile_office_location\">{{ field_profile_office_location }}</div>\r\n{% if field_profile_p_link %}\r\n<div class=\"profile_link\">{{ field_profile_p_link }}</div>\r\n{% else %}\r\n<div class=\"profile_link\">{{ view_node }}</div>\r\n{% endif %}\r\n\r\n"
             make_link: false
             path: ''
             absolute: false
