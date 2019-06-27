@@ -67,6 +67,7 @@
 }
 // NAV
 nav.mega {
+    background: $white;
     @media #{$mediaToggleHeader} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         @include position(absolute, 1, (left, top), (100%, 100%));
@@ -91,21 +92,21 @@ nav.mega {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
+
             > li {
-                &:nth-child(n + 5) {
+                &:nth-last-child(n + 3) {
                     display: none;
                     border-top: none;
-                    padding: #{$gutter * .4}rem;
+                    //padding: #{$gutter * .4}rem;
 
                     a {
                         background: $accent-3;
                         text-align: center;
-                        padding: #{$gutter * .4}rem;
+                        //padding: #{$gutter * .4}rem;
                     }
                 }
             }
-            
+
             div {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 @include position(absolute, 100, (left, top), (100%, 0));
@@ -117,12 +118,12 @@ nav.mega {
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
                 @include transition(transform .25s);
-                
+
                 > ul {
                     background: $accent-1;
                     height: 100%;
                     overflow: auto;
-                
+
                     > li {
                         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -144,7 +145,7 @@ nav.mega {
                 }
             }
         }
-        
+
         p {
             display: none;
         }
@@ -178,7 +179,7 @@ nav.mega {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
+
             @include hover {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -189,7 +190,7 @@ nav.mega {
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
             }
         }
-        
+
         label {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             display: block;
@@ -200,7 +201,7 @@ nav.mega {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
+
             .fa-chevron-right {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 @include position(absolute, 100, (left, top), (calc(100% - #{$gutter}rem), 50%), translate(-100%, -50%));
@@ -211,7 +212,7 @@ nav.mega {
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
             }
         }
-            
+
         .toggle-text {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             display: none;
@@ -221,7 +222,7 @@ nav.mega {
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
-        
+
         a:not(:only-child) {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             display: none;
@@ -231,7 +232,7 @@ nav.mega {
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
-        
+
         input[type="checkbox"] {
             &:focus {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
@@ -251,7 +252,7 @@ nav.mega {
                     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
                 }
             }
-    
+
             &:checked {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -272,10 +273,12 @@ nav.mega {
             }
         }
     }
-    
+
     @media #{$mediaFullHeader} {
-        font-size: 1.2rem;
-        
+        font-size: 19px;
+        width: 100%;
+        @include position(absolute, 1, (left, top), (0, 131px));
+
         > ul {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             @include flex(flex-end, center, center);
@@ -285,11 +288,11 @@ nav.mega {
             font-weight: bold;
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
+
             /*-----------------------*\
             The &:first-child is only necessary when used with a utility navigation
             &:first-child {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)                
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 @include transform(translate(0, (#{$gutter * .8}rem)));
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
                 // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
@@ -298,7 +301,7 @@ nav.mega {
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
             }
             \*-----------------------*/
-            
+
             div {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 display: none;
@@ -316,71 +319,73 @@ nav.mega {
                 text-align: left;
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
             }
-            
+
             > li {
                 position: static;
-                
+
                 > a {
-                    margin: #{$gutter * .8rem} 0;
-                    padding: #{$gutter * .4}rem #{$gutter * .2rem};
+                    //margin: #{$gutter * .8rem} 0;
+                    padding: 15px 12px;
                 }
-                
+
                 &:nth-child(-n + 4) {
                     > a {
                         @include position(relative, 0);
                         color: $tertiary;
-                        
+
                         &:before {
-                            @include position(absolute, 0, (left, top), (50%, 100%), translate(-50%, (#{$gutter * .6}rem)));
-                            height: 0;
-                            width: 0;
-                            border-left: 15px solid transparent;
-                            border-right: 15px solid transparent;
-                            border-bottom: 15px solid transparent;
-                            content: "";
+                            // @include position(absolute, 0, (left, top), (50%, 100%), translate(-50%, (#{$gutter * .6}rem)));
+                            // height: 0;
+                            // width: 0;
+                            // border-left: 15px solid transparent;
+                            // border-right: 15px solid transparent;
+                            // border-bottom: 15px solid transparent;
+                            // content: "";
                         }
                     }
-                    
+
                     li {
                         a {
-                            padding: #{$gutter * .4}rem #{$gutter * .4rem};
+                            //padding: #{$gutter * .4}rem #{$gutter * .4rem};
                             color: $tertiary;
                         }
                     }
                 }
-                
+
                 &:nth-child(n + 5) {
-                    margin: 0 0 0 #{$gutter * .4}rem;
-                    
+                    font-size: 17px;
+
+                    text-transform: uppercase;
+
                     a {
-                        padding: #{$gutter * .4}rem;
-                        background: $accent-2;
+                        padding: 16px 14px;
+                        //padding: #{$gutter * .4}rem;
                     }
                 }
             }
-            
+
             ul {
                 @include multicolumn(2, #{$gutter * 2}rem);
                 width: calc(66.667% - #{$gutter}rem);
                 padding: 0 #{$gutter}rem 0 0;
                 border-right: .1rem solid $tertiary;
-                
+
                 li {
                     display: inline-block;
                     width: 100%;
-                    
+
                     &:nth-child(-n + 2) {
                         display: none;
                     }
                 }
             }
-        
+
             p {
                 width: calc(33.333% - #{$gutter}rem);
                 color: $tertiary;
                 font-size: 2em;
             }
-        
+
             label {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 display: none;
@@ -406,7 +411,7 @@ nav.mega {
                 // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                
+
                 &:focus {
                     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -414,7 +419,7 @@ nav.mega {
                     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                    
+
                     + label {
                         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                         display: block;
@@ -425,7 +430,7 @@ nav.mega {
                         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
                     }
                 }
-                
+
                 &:checked {
                     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -433,7 +438,7 @@ nav.mega {
                     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                    
+
                     + label {
                         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                         display: none;
@@ -443,7 +448,7 @@ nav.mega {
                         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
                     }
-                    
+
                     ~ div, ~ ul {
                         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                         display: block;
@@ -465,7 +470,7 @@ nav.mega {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
+
             @include hover {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -485,7 +490,7 @@ nav.mega {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
+
             + li {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -494,7 +499,7 @@ nav.mega {
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
             }
-            
+
             li {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -503,7 +508,7 @@ nav.mega {
                 // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                
+
                 + li {
                     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -514,7 +519,7 @@ nav.mega {
                     white-space: nowrap;
                     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
                 }
-                
+
                 a {
                     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -524,7 +529,7 @@ nav.mega {
                     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
                 }
             }
-            
+
             &:hover { // This is on purpose, because focus is given with the toggle of the checkbox
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -532,11 +537,11 @@ nav.mega {
                 // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                
+
                 > a:before {
-                    border-bottom-color: $accent-1 !important;
+                    // border-bottom-color: $accent-1 !important;
                 }
-                
+
                 div {
                     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                     @include flex(space-between, stretch, stretch, row nowrap);
@@ -548,25 +553,74 @@ nav.mega {
                 }
             }
         }
+
+        &:before {
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          top: 0;
+          transform: translate(-50%, 0);
+          width: 100vw;
+          height: 100%;
+          background: $accent-1;
+          content: "";
+        }
+
+        &:after {
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          bottom: -5px;
+          transform: translate(-50%, 0);
+          width: 100vw;
+          height: 5px;
+          background: rgba($black,.1);
+          content: "";
+        }
     }
 
     @media #{$mediaXl} {
         > ul {
-            
+
             > li {
-                
+
                 > a {
-                    margin: #{$gutter * 1.2}rem 0;
-                    padding: #{$gutter * .4}rem;
+                    //margin: #{$gutter * 1.2}rem 0;
+                    //padding: #{$gutter * .4}rem;
                 }
-                
+
                 &:nth-child(n + 5) {
-                    margin: 0 0 0 #{$gutter * .8}rem;
-                    
                     a {
-                        padding: #{$gutter * .4rem} #{$gutter * .8rem};
-                        background: $accent-2;
+                        //padding: #{$gutter * .4rem} #{$gutter * .8rem};
+                        position: relative;
+                        color: $white;
+                        background: $secondary;
+                        transition: all .25s;
+
+                        &:hover {
+                          text-decoration: none;
+                          color: $white;
+                          background: $tertiary;
+                        }
+
+                        &:after {
+                          width: 1px;
+                          height: calc(100% - 16px);
+                          position: absolute;
+                          right: 0;
+                          top: 8px;
+                          content: "";
+                          background: $white;
+                        }
                     }
+                }
+
+                &:last-child {
+                  a {
+                    &:after {
+                      display: none;
+                    }
+                  }
                 }
             }
         }
@@ -574,19 +628,17 @@ nav.mega {
 
     @media #{$mediaXxl} {
         > ul {
-            
+
             > li {
-                
+
                 > a {
-                    padding: #{$gutter * .4}rem #{$gutter * .8rem};
+                    //padding: #{$gutter * .4}rem #{$gutter * .8rem};
                 }
-                
+
                 &:nth-child(n + 5) {
-                    margin: 0 0 0 #{$gutter * .8}rem;
-                    
+
                     a {
-                        padding: #{$gutter * .4rem} #{$gutter * .8rem};
-                        background: $accent-2;
+
                     }
                 }
             }
@@ -602,7 +654,7 @@ input[type="checkbox"] {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     &:checked {
         // LABEL
         + .toggle {
@@ -621,7 +673,7 @@ input[type="checkbox"] {
                 // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                
+
                 &:nth-child(1) {
                     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                     @include transform(scale(0));
@@ -653,7 +705,7 @@ input[type="checkbox"] {
                 }
             }
         }
-        
+
         @media #{$mediaToggleHeader} {
             ~ nav {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)

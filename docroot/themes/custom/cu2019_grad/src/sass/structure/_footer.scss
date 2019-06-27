@@ -9,20 +9,59 @@
 //main > .footer-cl, // COMMENT OUT FOR PRODUCTION, USED FOR CL SITE ONLY
 .main-footer {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    position: relative;
+
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: #{$gutter * 1.6}rem 0;
+    padding: 108px 0 135px;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    background: $black;
+    background: $secondary;
+    //border-bottom: 75px solid darken($secondary,5);
+    overflow: hidden;
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    font-size: .8em;
-    color: $white;
+    font-size: 15px;
+    line-height: (24 / 15) * 1em;
+    color: $accent-2;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     // Use gutters to set up definitions of padding and margins
     // This helps create consistent spacing
 
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+
+      width: 100%;
+      height: 75px;
+
+      content: "";
+      background: darken($secondary,5);
+    }
+
+    &:before {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 750px;
+      height: 1160px;
+      z-index: 1;
+
+      content: "";
+      background: $tertiary;
+      transform: translate(29%, 39%) rotate(45deg);
+      opacity: .49;
+      mix-blend-mode: multiply;
+    }
+
     > div {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        position: relative;
+        z-index: 2;
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         max-width: $siteWMx;
         margin: 0 auto;
@@ -30,7 +69,7 @@
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        text-align: center;
+
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
         // ADJUST THE WIDTH FOR $siteWList IN EACH MEDIA QUERY USING $siteWQueryList

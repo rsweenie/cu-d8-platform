@@ -19,7 +19,10 @@
     "gulp-watch": "^4.2.4",
     "run-sequence": "^2.2.1",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-pxtorem": "^3.0.0"
   },
   "scripts": {
     "start": "gulp FED",

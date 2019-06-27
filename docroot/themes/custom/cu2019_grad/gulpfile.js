@@ -16,6 +16,10 @@ var gulp = require('gulp'),
     iconfont = require('gulp-iconfont'),
     iconfontCss = require('gulp-iconfont-css');
 
+    autoprefixer = require('gulp-autoprefixer'),
+    gcmq = require('gulp-group-css-media-queries'),
+    pxtorem = require('gulp-pxtorem');
+
 var config = {
   production: !!gutil.env.production
 };
@@ -70,22 +74,69 @@ pleeeaseProd = {
   "next": false
 };
 
-gulp.task('sass', function () {
-  gulp.src(sass_build+'/**/*.scss')
-  .pipe(plumber(plumberOptions))
-  .pipe(config.production ? gutil.noop() : sourcemaps.init())
-  .pipe(sass({
-      outputStyle: 'expanded'
-    }))
-  // .on("error", notify.onError(function (error) {
-  //       return error.message;
-  // }))
-  // .pipe(cmq({
-  //   beautify: true
-  // }))
-  // .pipe(config.production ? please(pleeeaseProd) : please(pleeeaseDev))
-  // .pipe(config.production ? gutil.noop() : sourcemaps.write())
-  .pipe(gulp.dest(css_output))
+// gulp.task('sass', function () {
+//   gulp.src(sass_build+'/**/*.scss')
+//   .pipe(plumber(plumberOptions))
+//   .pipe(config.production ? gutil.noop() : sourcemaps.init())
+//   .pipe(sass({
+//       outputStyle: 'expanded'
+//     }))
+//   // .on("error", notify.onError(function (error) {
+//   //       return error.message;
+//   // }))
+//   // .pipe(cmq({
+//   //   beautify: true
+//   // }))
+//   // .pipe(config.production ? please(pleeeaseProd) : please(pleeeaseDev))
+//   // .pipe(config.production ? gutil.noop() : sourcemaps.write())
+//   .pipe(gulp.dest(css_output))
+// });
+// TEMP SASS
+var sassOptions = {
+  errLogToConsole: true,
+  outputStyle: 'expanded'
+};
+
+var autoprefixerOptions = {
+  browsers: ['last 2 versions']
+};
+
+var pxtoremOptions = {
+  propList: [
+    'font',
+    'font-size',
+    'line-height',
+    'padding',
+    'padding-top',
+    'padding-left',
+    'padding-right',
+    'padding-bottom',
+    'width',
+    'height',
+    'border',
+    'border-radius',
+    'border-top-left-radius',
+    'border-top-right-radius',
+    'border-bottom-left-radius',
+    'border-bottom-right-radius',
+    'top',
+    'left',
+    'bottom',
+    'right'
+  ],
+  rootValue: 10
+};
+
+gulp.task('sass', function(){
+  return gulp
+    .src(sass_build+'/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(gcmq())
+    //.pipe(sourcemaps.write())
+    .pipe(autoprefixer(autoprefixerOptions))
+    .pipe(pxtorem(pxtoremOptions))
+    .pipe(gulp.dest(css_output))
 });
 
 

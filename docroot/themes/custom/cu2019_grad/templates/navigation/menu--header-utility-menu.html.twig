@@ -42,17 +42,24 @@
             <li>
               {{ link(item.title, item.url) }}
               {% if item.below %}
-                {% if menu_level == 0 %}
-                <div>
-                {% endif %}
                 {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-                {% if menu_level == 0 %}
-                <p>Lorem Ipsum</p>
-                </div>
-                {% endif %}
               {% endif %}
             </li>
           {% endfor %}
+          <li>
+            <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8" class="search">
+              <div class="form-el">
+                <label for="edit-keywords">Keywords</label>
+                <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text" placeholder="Search">
+              </div>
+              <div class="form-btn">
+                <button data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="btn-secondary js-form-submit form-submit">
+                  <span class="fas fa-search"></span>
+                  <span class="sr-only">Search</span>
+                </button>
+              </div>
+            </form>
+          </li>
       </ul>
       {% endif %}
 {% endmacro %}
