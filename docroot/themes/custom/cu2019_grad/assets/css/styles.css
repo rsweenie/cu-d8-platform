@@ -1016,8 +1016,14 @@ nav a {
   background: #5D6468;
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
+  border-left: 0;
   font-size: 1em;
   text-align: center;
+}
+
+.main-header form.search [class*="btn-"]:hover {
+  background: #8AC8FF;
+  color: #fff;
 }
 
 .main-header form.search .form-el {
@@ -1040,9 +1046,11 @@ nav a {
   width: 15.5rem;
   height: 3.8rem;
   padding: 0 0.7rem 0 2.5rem;
+  background: #F5F5F5;
   border: 0.1rem solid #5D6468;
   border-top-left-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
+  border-right: 0;
   color: #0054A6;
   font-size: 1.8rem;
   font-family: "Conduit";
