@@ -1,218 +1,218 @@
 footer {
-	background-color: $mediumBlue;
-	color: $white;
-	display: block;
-	height: 280px;
-	margin-top: 20px;
-	position: relative;
-	width: 100%;
+  background-color: $mediumBlue;
+  color: $white;
+  display: block;
+  height: 280px;
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
 
-	@include respond-to(null , mobile-max) {
-		height: 100%;
-	}
-	@include respond-to(tablet-min , tablet-max) {
-		height: 480px;
-	}
+  @include respond-to(null, mobile-max) {
+    height: 100%;
+  }
+  @include respond-to(tablet-min, tablet-max) {
+    height: 480px;
+  }
 
-	.transaction_menu_wrapper {
-		text-align: center;
+  .transaction_menu_wrapper {
+    text-align: center;
 
-		@include respond-to(null , mobile-max) {
-			background-color: $blue;
-			margin: 0;
-			font-size: 16px;
-			text-align: left;
-			padding-left: 10px;
-			height: auto;
-		}
-			
-	}
+    @include respond-to(null, mobile-max) {
+      background-color: $blue;
+      margin: 0;
+      font-size: 16px;
+      text-align: left;
+      padding-left: 10px;
+      height: auto;
+    }
 
-	.footer_wrapper {
-		display: flex;
-		flex-flow: column wrap;
-		height: 245px;
-		justify-content: flex-start;
-		margin: auto;
-		max-width: $maxContentWidth;
-		padding: 20px;
-		font-size: 14px;
+  }
 
-		@include respond-to(null , mobile-max) {
-			flex-flow: column nowrap;
-			height: 100%;
-			padding: 20px;
-		}
-		@include respond-to(tablet-min , tablet-max) {
-			height: 450px;
-			padding: 20px 50px;
-		}
-		@include respond-to(lg-tablet-min , lg-tablet-max) {
-			padding: 20px 50px;
-		}
+  .footer_wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    height: 245px;
+    justify-content: flex-start;
+    margin: auto;
+    max-width: $maxContentWidth;
+    padding: 20px;
+    font-size: 14px;
 
-		.footer_logo_wrapper {
-			align-self: flex-start;
-			flex-basis: 25%;
-			height: 60px;
-			margin-bottom: 20px;
-			order: 1;
-			width: 40%;
+    @include respond-to(null, mobile-max) {
+      flex-flow: column nowrap;
+      height: 100%;
+      padding: 20px;
+    }
+    @include respond-to(tablet-min, tablet-max) {
+      height: 450px;
+      padding: 20px 50px;
+    }
+    @include respond-to(lg-tablet-min, lg-tablet-max) {
+      padding: 20px 50px;
+    }
 
-			@include respond-to(null , mobile-max) {
-				flex-basis: 100%;
-				width: 100%;
+    .footer_logo_wrapper {
+      align-self: flex-start;
+      flex-basis: 25%;
+      height: 60px;
+      margin-bottom: 20px;
+      order: 1;
+      width: 40%;
 
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				flex-basis: 15%;
-				width: 60%;
-			}
+      @include respond-to(null, mobile-max) {
+        flex-basis: 100%;
+        width: 100%;
 
-			img {
-				max-height: 60px;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        flex-basis: 15%;
+        width: 60%;
+      }
 
-				@include respond-to(lg-tablet-min , null) {
-					height: 60px;
-				}
-			}
-		}
+      img {
+        max-height: 60px;
 
-		.footer_social_wrapper {
-			align-self: flex-start;
-			flex-basis: 25%;
-			order: 3;
-			padding: 8px 0;
-			width: 35%;
+        @include respond-to(lg-tablet-min, null) {
+          height: 60px;
+        }
+      }
+    }
 
-			@include respond-to(null , mobile-max) {
-				flex-basis: 100%;
-				width: 100%;
-				margin-top: 30px;
-				margin-bottom:-10px;
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				flex-basis: 15%;
-				order: 4;
-			}
+    .footer_social_wrapper {
+      align-self: flex-start;
+      flex-basis: 25%;
+      order: 3;
+      padding: 8px 0;
+      width: 35%;
 
-			ul {
-				white-space: nowrap;
+      @include respond-to(null, mobile-max) {
+        flex-basis: 100%;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: -10px;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        flex-basis: 15%;
+        order: 4;
+      }
 
-				li {
-					background-color: $white;
-					height: 40px;
-					margin: 0px 2px;
-					padding-top: 7px;
-					width: 40px;
-				}
+      ul {
+        white-space: nowrap;
 
-				li:hover {
-					background-color: $yellow;
-				}
+        li {
+          background-color: $white;
+          height: 40px;
+          margin: 0px 2px;
+          padding-top: 7px;
+          width: 40px;
+        }
 
-				a {
-					color: $mediumBlue;
-				}
-			}
-		}
+        li:hover {
+          background-color: $yellow;
+        }
 
-		.footer_menu_wrapper {
-			align-self: flex-start;
-			flex-basis: 50%;
-			order: 4;
-			padding-top: 8px;
-			width: 35%;
+        a {
+          color: $mediumBlue;
+        }
+      }
+    }
 
-			ul {
-				list-style-type: none;
-				margin:0px;
-				padding: 0px;
-				// margin top aligns baseline with the address block
-				margin-top: 4px;
-			}
+    .footer_menu_wrapper {
+      align-self: flex-start;
+      flex-basis: 50%;
+      order: 4;
+      padding-top: 8px;
+      width: 35%;
 
-			@include respond-to(null , mobile-max) {
-				flex-basis: 100%;
-				width: 100%;
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				order: 5;
-			}
+      ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        // margin top aligns baseline with the address block
+        margin-top: 4px;
+      }
 
-			a {
-				color: $white;
-				padding: 2px 0px;
-				text-decoration: none;
-				line-height:1.75em;
-				font-weight: $semiBold;
-				
-				&:hover {
-					background-color: $mediumBlue;
-					color: $white;
-					text-decoration: underline;
-				}
-			}
-		}
+      @include respond-to(null, mobile-max) {
+        flex-basis: 100%;
+        width: 100%;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        order: 5;
+      }
 
-		.footer_badge_wrapper {
-			align-self: flex-end;
-			order: 5;
+      a {
+        color: $white;
+        padding: 2px 0px;
+        text-decoration: none;
+        line-height: 1.75em;
+        font-weight: $semiBold;
 
-			@include respond-to(null , mobile-max) {
-				align-self: flex-start;
-				flex-basis: 100%;
-				margin-left: -25px;
-				width: 100%;
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				align-self: flex-start;
-				flex-basis: 35%;
-				margin-left: -25px;
-				order: 3;
-			}
+        &:hover {
+          background-color: $mediumBlue;
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+    }
 
-			img {
-				float: right;
-				max-width: 175px;
+    .footer_badge_wrapper {
+      align-self: flex-end;
+      order: 5;
 
-				@include respond-to(null , mobile-max) {
-					float: none;
-				}
-			}
-		}
+      @include respond-to(null, mobile-max) {
+        align-self: flex-start;
+        flex-basis: 100%;
+        margin-left: -25px;
+        width: 100%;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        align-self: flex-start;
+        flex-basis: 35%;
+        margin-left: -25px;
+        order: 3;
+      }
 
-		.footer_contact_wrapper {
-			align-self: flex-start;
-			flex-basis: 50%;
-			order: 2;
-			width: 40%;
+      img {
+        float: right;
+        max-width: 175px;
 
-			@include respond-to(null , mobile-max) {
-				flex-basis: 100%;
-				width: 100%;
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				flex-basis: 25%;
-				width: 60%;
-			}
+        @include respond-to(null, mobile-max) {
+          float: none;
+        }
+      }
+    }
 
-			p {
-				margin: 0 0 5px;
+    .footer_contact_wrapper {
+      align-self: flex-start;
+      flex-basis: 50%;
+      order: 2;
+      width: 40%;
 
-				a {	
-					text-decoration: none;
-					font-weight: $semiBold;
-					color: $white;
-					white-space: nowrap;
-				
-				&:hover {
-					background-color: $mediumBlue;
-					color: $white;
-					text-decoration: underline;
-				}
-				}
-			}
-		}
-	}
+      @include respond-to(null, mobile-max) {
+        flex-basis: 100%;
+        width: 100%;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        flex-basis: 25%;
+        width: 60%;
+      }
+
+      p {
+        margin: 0 0 5px;
+
+        a {
+          text-decoration: none;
+          font-weight: $semiBold;
+          color: $white;
+          white-space: nowrap;
+
+          &:hover {
+            background-color: $mediumBlue;
+            color: $white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }
