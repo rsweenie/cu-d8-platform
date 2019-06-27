@@ -1,6 +1,5 @@
 footer {
   background-color: $mediumBlue;
-  color: $white;
   display: block;
   height: 280px;
   margin-top: 20px;
@@ -183,6 +182,7 @@ footer {
     }
 
     .footer_contact_wrapper {
+      color: $white;
       align-self: flex-start;
       flex-basis: 50%;
       order: 2;
@@ -212,6 +212,20 @@ footer {
             text-decoration: underline;
           }
         }
+      }
+    }
+
+    .footer_gtranslate_wrapper {
+      align-self: flex-start;
+      flex-basis: 15%;
+      order: 6;
+      width: 165px;
+
+      @include respond-to(null, mobile-max) {
+        flex-basis: 100%;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        flex-basis: 60%;
       }
     }
   }

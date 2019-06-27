@@ -1,0 +1,31 @@
+uuid: 4a765bd7-1bef-4532-8538-d3168c080985
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_aria_landmark_roles
+    - gtranslate
+    - system
+  theme:
+    - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: 'Translate this page'
+id: gtranslate
+theme: cu2017_alliance
+region: footer
+weight: -11
+provider: null
+plugin: gtranslate_block
+settings:
+  id: gtranslate_block
+  label: GTranslate
+  provider: gtranslate
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '*'
+    negate: false
+    context_mapping: {  }
