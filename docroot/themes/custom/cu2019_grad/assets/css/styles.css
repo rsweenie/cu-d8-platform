@@ -1053,10 +1053,12 @@ Delete everything below including comment
 \*  --------------------------------------------------------------------------  */
 
 .main-footer {
-  padding: 11rem 0;
+  position: relative;
+  padding: 10.8rem 0 13.5rem;
   background: #0054A6;
-  border-bottom: 75px solid #00478d;
+  overflow: hidden;
   font-size: 1.5rem;
+  line-height: 1.6em;
   color: #8AC8FF;
   /* -------------------------- *\
 
@@ -1131,7 +1133,39 @@ Delete everything below including comment
 \* -------------------------- */
 }
 
+.main-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.main-footer:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 7.5rem;
+  content: "";
+  background: #00478d;
+}
+
+.main-footer:before {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 75rem;
+  height: 116rem;
+  z-index: 1;
+  content: "";
+  background: #6CACE4;
+  -webkit-transform: translate(29%, 39%) rotate(45deg);
+          transform: translate(29%, 39%) rotate(45deg);
+  opacity: .49;
+  mix-blend-mode: multiply;
+}
+
 .main-footer > div {
+  position: relative;
+  z-index: 2;
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 2.5rem;
