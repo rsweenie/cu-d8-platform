@@ -62,7 +62,7 @@
 
 /*--- FONT SIZE ---*/
 
-/*---===<<< GOOGLE FONT IMPORT >>>===---*/
+@import url("https://use.typekit.net/ntf3lqp.css");
 
 /*---===<<< UNIVERSAL RESETS >>>===---*/
 
@@ -114,7 +114,7 @@ button {
   background: none;
   border: none;
   font-size: 1em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: proxima-nova, sans-serif;
   cursor: pointer;
 }
 
@@ -298,7 +298,7 @@ textarea {
 
 body {
   color: #002E6D;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -1462,7 +1462,7 @@ section[class*="sbg-"]:after {
   border: 0.2rem solid #002E6D;
   background: #F0F5FA;
   color: #002E6D;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 1.6rem;
   line-height: 1.25;
   text-decoration: none;
@@ -8685,7 +8685,7 @@ form select {
   padding: 1rem;
   width: 100%;
   border: 0.2rem solid #FFCC4F;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 1.6rem;
   line-height: 1.25;
 }
