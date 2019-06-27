@@ -3,10 +3,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_aria_landmark_roles
     - ctools
     - ctools_block
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'Sidebar Items'
 _core:
   default_config_hash: WdWW9xIDTgKvKO0o89SJejQ7W2ku8wdYkoj7MIwV96U
 id: cu2017_alliance_sidebaritems_content_page

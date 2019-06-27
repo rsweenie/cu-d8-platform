@@ -277,4 +277,19 @@ JS;
     if(empty($region_element->find("named",["content","Block: ".$label])))
       throw new \Exception("Block Move Failed");
   }
+
+  /**
+   * @Then the canonical link should be https
+   */
+  public function theCanonicalLinkShouldBeHttps()
+  {
+    //return all link elements with rel attribute 'canonical' and href attributes which contain https://
+    $link = $this->getSession()->getPage()->findAll('xpath','//link[@rel = "canonical" and contains(@href,"https://")]');
+    //if there are none fail, there should be 1
+    if(empty($link))
+      throw new \Exception(
+        'Canonical Link is not https'
+      );
+  }
+
 }

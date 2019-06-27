@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_aria_landmark_roles
     - system
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: 'Site branding'
 _core:
   default_config_hash: T_nvuNp-v92b-OYhIo4y4szuko85sJe-mgAADADJDZA
 id: cu2017_alliance_sitebranding

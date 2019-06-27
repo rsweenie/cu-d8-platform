@@ -11,6 +11,7 @@ module:
   auto_entitylabel: 0
   blazy: 0
   block: 0
+  block_aria_landmark_roles: 0
   block_content: 0
   breakpoint: 0
   captcha: 0
@@ -67,7 +68,6 @@ module:
   file_replace: 0
   filter: 0
   focal_point: 0
-  google_analytics: 0
   google_tag: 0
   help: 0
   history: 0
