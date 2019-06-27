@@ -33,7 +33,7 @@ nav[role=navigation]{
 
 	}
 	.child_class, .grandchild_class, .great_grandchild_class {
-			border-left:2px solid #019cdb;
+			border-left:2px solid $blue;
 			margin-left:10px;
 			padding-left: 10px;
 	}
