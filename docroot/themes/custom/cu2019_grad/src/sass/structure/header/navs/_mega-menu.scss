@@ -68,6 +68,7 @@
 // NAV
 nav.mega {
     background: $white;
+    font-family: $headingFF;
     @media #{$mediaToggleHeader} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         @include position(absolute, 1, (left, top), (100%, 100%));
@@ -225,7 +226,7 @@ nav.mega {
 
         a:not(:only-child) {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            display: none;
+            //display: none;
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
@@ -285,7 +286,7 @@ nav.mega {
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            font-weight: bold;
+            font-weight: normal;
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
@@ -325,7 +326,7 @@ nav.mega {
 
                 > a {
                     //margin: #{$gutter * .8rem} 0;
-                    padding: 15px 12px;
+                    padding: 17px 12px 13px;
                 }
 
                 &:nth-child(-n + 4) {
@@ -346,19 +347,26 @@ nav.mega {
 
                     li {
                         a {
-                            //padding: #{$gutter * .4}rem #{$gutter * .4rem};
-                            color: $tertiary;
+                          color: $gray2;
+                          text-decoration: none;
+
+                          &:hover {
+                            text-decoration: underline;
+                            color: #019cdb;
+                          }
                         }
                     }
                 }
 
                 &:nth-child(n + 5) {
                     font-size: 17px;
+                    font-weight: bold;
+                    letter-spacing: (50 / 1000) * 1em;
 
                     text-transform: uppercase;
 
                     a {
-                        padding: 16px 14px;
+                        padding: 18px 14px 14px;
                         //padding: #{$gutter * .4}rem;
                     }
                 }
@@ -369,10 +377,12 @@ nav.mega {
                 width: calc(66.667% - #{$gutter}rem);
                 padding: 0 #{$gutter}rem 0 0;
                 border-right: .1rem solid $tertiary;
+                font-family: $copyFF;
 
                 li {
                     display: inline-block;
                     width: 100%;
+                    font-size: 17px;
 
                     &:nth-child(-n + 2) {
                         display: none;
