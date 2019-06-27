@@ -226,7 +226,7 @@ nav.mega {
 
         a:not(:only-child) {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            display: none;
+            //display: none;
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
@@ -347,8 +347,13 @@ nav.mega {
 
                     li {
                         a {
-                            //padding: #{$gutter * .4}rem #{$gutter * .4rem};
-                            color: $tertiary;
+                          color: $gray2;
+                          text-decoration: none;
+
+                          &:hover {
+                            text-decoration: underline;
+                            color: #019cdb;
+                          }
                         }
                     }
                 }
@@ -372,10 +377,12 @@ nav.mega {
                 width: calc(66.667% - #{$gutter}rem);
                 padding: 0 #{$gutter}rem 0 0;
                 border-right: .1rem solid $tertiary;
+                font-family: $copyFF;
 
                 li {
                     display: inline-block;
                     width: 100%;
+                    font-size: 17px;
 
                     &:nth-child(-n + 2) {
                         display: none;

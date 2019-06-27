@@ -10559,7 +10559,13 @@ form.search .search button {
   }
 
   .main-header nav.mega > ul > li:nth-child(-n + 4) li a {
-    color: #6CACE4;
+    color: #555555;
+    text-decoration: none;
+  }
+
+  .main-header nav.mega > ul > li:nth-child(-n + 4) li a:hover {
+    text-decoration: underline;
+    color: #019cdb;
   }
 
   .main-header nav.mega > ul > li:nth-child(n + 5) {
@@ -10589,11 +10595,13 @@ form.search .search button {
     width: calc(66.667% - 2.5rem);
     padding: 0 2.5rem 0 0;
     border-right: 0.1rem solid #6CACE4;
+    font-family: proxima-nova, sans-serif;
   }
 
   .main-header nav.mega > ul ul li {
     display: inline-block;
     width: 100%;
+    font-size: 1.7rem;
   }
 
   .main-header nav.mega > ul ul li:nth-child(-n + 2) {
@@ -11709,10 +11717,6 @@ form.search .search button {
   }
 
   .main-header nav.mega .toggle-text {
-    display: none;
-  }
-
-  .main-header nav.mega a:not(:only-child) {
     display: none;
   }
 
