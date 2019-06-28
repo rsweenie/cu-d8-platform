@@ -18,7 +18,7 @@
 
     GLOBAL MIXINS
 
-    These are a common set of mixins that are commonly 
+    These are a common set of mixins that are commonly
 
 \*  --------------------------------------------------------------------------  */
 
@@ -9365,10 +9365,6 @@ form.search .search button {
     -ms-column-gap: 2.5rem;
     -moz-column-gap: 2.5rem;
          column-gap: 2.5rem;
-    -webkit-column-rule: 0.2rem solid #8AC8FF;
-    -ms-column-rule: 0.2rem solid #8AC8FF;
-    -moz-column-rule: 0.2rem solid #8AC8FF;
-         column-rule: 0.2rem solid #8AC8FF;
   }
 
   h1,
@@ -10526,7 +10522,7 @@ form.search .search button {
             \*-----------------------*/
   }
 
-  .main-header nav.mega > ul div {
+  .main-header nav.mega > ul li > div {
     display: none;
     position: absolute;
     z-index: 100;
@@ -10534,10 +10530,9 @@ form.search .search button {
     top: 100%;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
-    padding: 2.5rem;
     min-width: 15rem;
     width: 100%;
-    background: #F0F5FA;
+    background: #fff;
     -webkit-box-shadow: 0 1.5rem 1.5rem 0 rgba(33, 35, 34, 0.225);
             box-shadow: 0 1.5rem 1.5rem 0 rgba(33, 35, 34, 0.225);
     font-weight: normal;
@@ -10580,21 +10575,19 @@ form.search .search button {
   }
 
   .main-header nav.mega > ul ul {
-    -webkit-column-count: 2;
-    -ms-column-count: 2;
-    -moz-column-count: 2;
-         column-count: 2;
+    -webkit-column-count: 3;
+    -ms-column-count: 3;
+    -moz-column-count: 3;
+         column-count: 3;
     -webkit-column-gap: 5rem;
     -ms-column-gap: 5rem;
     -moz-column-gap: 5rem;
          column-gap: 5rem;
-    -webkit-column-rule: 0.2rem solid #8AC8FF;
-    -ms-column-rule: 0.2rem solid #8AC8FF;
-    -moz-column-rule: 0.2rem solid #8AC8FF;
-         column-rule: 0.2rem solid #8AC8FF;
-    width: calc(66.667% - 2.5rem);
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     padding: 0 2.5rem 0 0;
-    border-right: 0.1rem solid #6CACE4;
     font-family: proxima-nova, sans-serif;
   }
 
@@ -10608,10 +10601,29 @@ form.search .search button {
     display: none;
   }
 
-  .main-header nav.mega > ul p {
-    width: calc(33.333% - 2.5rem);
-    color: #6CACE4;
+  .main-header nav.mega > ul div > div {
+    width: 36%;
+    color: #555555;
+    background: #F0F5FA;
     font-size: 2em;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    font-size: 2.1rem;
+    line-height: 1.4em;
+    font-style: italic;
+  }
+
+  .main-header nav.mega > ul div > div + ul {
+    -webkit-column-count: 2;
+    -ms-column-count: 2;
+    -moz-column-count: 2;
+         column-count: 2;
+    -webkit-column-gap: 5rem;
+    -ms-column-gap: 5rem;
+    -moz-column-gap: 5rem;
+         column-gap: 5rem;
+    width: 64%;
   }
 
   .main-header nav.mega > ul label {
@@ -10668,7 +10680,7 @@ form.search .search button {
     white-space: nowrap;
   }
 
-  .main-header nav.mega li:hover div {
+  .main-header nav.mega li:hover > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
