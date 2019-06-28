@@ -30,6 +30,10 @@
   {% import _self as menus %}
       {% if items %}
         <ul>
+          {% if menu_level > 0 %}
+          <li>Back</li>
+          <li></li>
+          {% endif %}
           {% for item in items %}
             {%
               set classes = [
@@ -39,19 +43,17 @@
                 item.in_active_trail ? 'menu-item--active-trail',
               ]
             %}
-            {% if menu_level > 0 %}
-            <li>Back</li>
-            <li></li>
-            {% endif %}
             <li>
               {{ link(item.title, item.url) }}
               {% if item.below %}
                 {% if menu_level == 0 %}
                 <div>
-                {% endif %}
-                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-                {% if menu_level == 0 %}
-                <p>Lorem Ipsum</p>
+                  <div>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                  {% endif %}
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                  {% if menu_level == 0 %}
                 </div>
                 {% endif %}
               {% endif %}

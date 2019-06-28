@@ -2,7 +2,7 @@
 
     GLOBAL MIXINS
 
-    These are a common set of mixins that are commonly 
+    These are a common set of mixins that are commonly
 
 \*  --------------------------------------------------------------------------  */
 /*---=== SR ONLY ===---*/
@@ -238,9 +238,9 @@
     -webkit-column-gap: $g;
         -ms-column-gap: $g;
             column-gap: $g;
-    -webkit-column-rule: $r;
-        -ms-column-rule: $r;
-            column-rule: $r;
+    // -webkit-column-rule: $r;
+    //     -ms-column-rule: $r;
+    //         column-rule: $r;
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
@@ -297,12 +297,12 @@
     @each $mediaQuery in $mGCMediaList {
         $i: index($mGCMediaList, $mediaQuery);
         $query: nth($mGCMediaQueryList, $i);
-        
+
         @if ($i == 1) {
             $sizeSlug: to-lower-case($mediaQuery);
             @include setColWidths(#{$sizeSlug});
         } @else {
-            
+
             @media #{$query} {
                 $sizeSlug: to-lower-case($mediaQuery);
                 @include setColWidths(#{$sizeSlug});

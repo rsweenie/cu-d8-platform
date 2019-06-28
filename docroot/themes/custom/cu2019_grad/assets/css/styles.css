@@ -18,7 +18,7 @@
 
     GLOBAL MIXINS
 
-    These are a common set of mixins that are commonly 
+    These are a common set of mixins that are commonly
 
 \*  --------------------------------------------------------------------------  */
 
@@ -1103,7 +1103,7 @@ Delete everything below including comment
 
 .main-footer {
   position: relative;
-  padding: 10.8rem 0 13.5rem;
+  padding: 4rem 0 0;
   background: #0054A6;
   overflow: hidden;
   font-size: 1.5rem;
@@ -1186,17 +1186,6 @@ Delete everything below including comment
   margin-bottom: 0;
 }
 
-.main-footer:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: 7.5rem;
-  content: "";
-  background: #00478d;
-}
-
 .main-footer:before {
   position: absolute;
   bottom: 0;
@@ -1206,14 +1195,17 @@ Delete everything below including comment
   z-index: 1;
   content: "";
   background: #6CACE4;
-  -webkit-transform: translate(29%, 39%) rotate(45deg);
-          transform: translate(29%, 39%) rotate(45deg);
+  -webkit-transform: translate(85%, 39%) rotate(45deg);
+          transform: translate(85%, 39%) rotate(45deg);
   opacity: .49;
   mix-blend-mode: multiply;
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
 }
 
 .main-footer > div {
-  position: relative;
   z-index: 2;
   max-width: 1350px;
   margin: 0 auto;
@@ -1236,9 +1228,7 @@ Delete everything below including comment
 }
 
 .main-footer .social {
-  margin: 2rem 0 0;
-  padding: 2rem 0 0;
-  border-top: 0.1rem solid #8AC8FF;
+  padding-bottom: 4rem;
 }
 
 .main-footer .social ul {
@@ -1273,37 +1263,15 @@ Delete everything below including comment
 }
 
 .main-footer nav.menu--footer ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 .main-footer nav.menu--footer li {
-  -webkit-box-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
-  margin: 0 1.5rem;
   text-align: left;
 }
 
-.main-footer nav.menu--footer li:nth-child(n + 3) {
-  margin-top: 1.5rem;
+.main-footer nav.menu--footer li + li {
+  margin-top: 14px;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -9242,6 +9210,25 @@ form.search .search button {
     width: 100%;
   }
 
+  .main-footer {
+    padding: 10.8rem 0 13.5rem;
+  }
+
+  .main-footer:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 7.5rem;
+    content: "";
+    background: #00478d;
+  }
+
+  .main-footer > div {
+    position: relative;
+  }
+
   .tooltip {
     width: 30vw;
   }
@@ -9365,10 +9352,6 @@ form.search .search button {
     -ms-column-gap: 2.5rem;
     -moz-column-gap: 2.5rem;
          column-gap: 2.5rem;
-    -webkit-column-rule: 0.2rem solid #8AC8FF;
-    -ms-column-rule: 0.2rem solid #8AC8FF;
-    -moz-column-rule: 0.2rem solid #8AC8FF;
-         column-rule: 0.2rem solid #8AC8FF;
   }
 
   h1,
@@ -9395,9 +9378,48 @@ form.search .search button {
     width: 34.7rem;
   }
 
+  .main-footer:before {
+    -webkit-transform: translate(29%, 39%) rotate(45deg);
+            transform: translate(29%, 39%) rotate(45deg);
+  }
+
+  .main-footer .social {
+    padding: 0.7rem 0 2.5rem;
+  }
+
+  .main-footer nav.menu--footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    font-size: 1.7rem;
+  }
+
   .main-footer nav.menu--footer li {
+    -webkit-box-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
     width: auto;
+    margin: 0 1.5rem;
     text-align: center;
+  }
+
+  .main-footer nav.menu--footer li + li {
+    margin-top: 0;
   }
 
   .main-footer nav.menu--footer li:nth-child(n + 3) {
@@ -10526,7 +10548,7 @@ form.search .search button {
             \*-----------------------*/
   }
 
-  .main-header nav.mega > ul div {
+  .main-header nav.mega > ul li > div {
     display: none;
     position: absolute;
     z-index: 100;
@@ -10534,10 +10556,9 @@ form.search .search button {
     top: 100%;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
-    padding: 2.5rem;
     min-width: 15rem;
     width: 100%;
-    background: #F0F5FA;
+    background: #fff;
     -webkit-box-shadow: 0 1.5rem 1.5rem 0 rgba(33, 35, 34, 0.225);
             box-shadow: 0 1.5rem 1.5rem 0 rgba(33, 35, 34, 0.225);
     font-weight: normal;
@@ -10580,21 +10601,19 @@ form.search .search button {
   }
 
   .main-header nav.mega > ul ul {
-    -webkit-column-count: 2;
-    -ms-column-count: 2;
-    -moz-column-count: 2;
-         column-count: 2;
+    -webkit-column-count: 3;
+    -ms-column-count: 3;
+    -moz-column-count: 3;
+         column-count: 3;
     -webkit-column-gap: 5rem;
     -ms-column-gap: 5rem;
     -moz-column-gap: 5rem;
          column-gap: 5rem;
-    -webkit-column-rule: 0.2rem solid #8AC8FF;
-    -ms-column-rule: 0.2rem solid #8AC8FF;
-    -moz-column-rule: 0.2rem solid #8AC8FF;
-         column-rule: 0.2rem solid #8AC8FF;
-    width: calc(66.667% - 2.5rem);
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     padding: 0 2.5rem 0 0;
-    border-right: 0.1rem solid #6CACE4;
     font-family: proxima-nova, sans-serif;
   }
 
@@ -10608,10 +10627,29 @@ form.search .search button {
     display: none;
   }
 
-  .main-header nav.mega > ul p {
-    width: calc(33.333% - 2.5rem);
-    color: #6CACE4;
+  .main-header nav.mega > ul div > div {
+    width: 36%;
+    color: #555555;
+    background: #F0F5FA;
     font-size: 2em;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    font-size: 2.1rem;
+    line-height: 1.4em;
+    font-style: italic;
+  }
+
+  .main-header nav.mega > ul div > div + ul {
+    -webkit-column-count: 2;
+    -ms-column-count: 2;
+    -moz-column-count: 2;
+         column-count: 2;
+    -webkit-column-gap: 5rem;
+    -ms-column-gap: 5rem;
+    -moz-column-gap: 5rem;
+         column-gap: 5rem;
+    width: 64%;
   }
 
   .main-header nav.mega > ul label {
@@ -10668,7 +10706,7 @@ form.search .search button {
     white-space: nowrap;
   }
 
-  .main-header nav.mega li:hover div {
+  .main-header nav.mega li:hover > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10760,12 +10798,6 @@ form.search .search button {
 
   .main-footer > div {
     width: 95%;
-  }
-
-  .main-footer .social {
-    margin: 0;
-    padding: 0;
-    border-top: none;
   }
 
   section {
@@ -11946,6 +11978,23 @@ form.search .search button {
 }
 
 @media screen and (max-width: 575.9px) {
+  .main-footer .row > div:first-child {
+    padding-bottom: 2.8rem;
+    position: relative;
+    z-index: 3;
+  }
+
+  .main-footer .row > div:last-child {
+    background: #00478d;
+    padding-top: 3.7rem;
+    padding-bottom: 2.8rem;
+  }
+
+  .main-footer .row > div:last-child > * {
+    position: relative;
+    z-index: 3;
+  }
+
   nav.cp li > a {
     display: -webkit-box;
     display: -ms-flexbox;
