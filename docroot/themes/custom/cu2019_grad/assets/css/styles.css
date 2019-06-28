@@ -1227,6 +1227,10 @@ Delete everything below including comment
   margin: 2.5rem 0;
 }
 
+.main-footer .social {
+  padding-bottom: 4rem;
+}
+
 .main-footer .social ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9380,7 +9384,7 @@ form.search .search button {
   }
 
   .main-footer .social {
-    padding-top: 0.7rem;
+    padding: 0.7rem 0 2.5rem;
   }
 
   .main-footer nav.menu--footer ul {
