@@ -78,6 +78,25 @@
       "requireSameDimensions": true
     },
     {
+      "label": "alliance accordion hover",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://local.creighton.com/about/creighton-university-arizona-health-education-alliance",
+      "referenceUrl": "http://alliance.creighton.acsitefactory.com/about/creighton-university-arizona-health-education-alliance",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": ".tabbed_accordion_wrapper .accordion .accordion_title",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.04,
+      "requireSameDimensions": true
+    },
+    {
       "label": "local alliance profile landing page",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "http://local.creighton.com/profile",
