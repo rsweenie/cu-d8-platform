@@ -12,7 +12,7 @@
     position: relative;
 
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: 108px 0 135px;
+    padding: 40px 0 0;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     background: $secondary;
     //border-bottom: 75px solid darken($secondary,5);
@@ -30,19 +30,6 @@
       margin-bottom: 0;
     }
 
-    &:after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 0;
-
-      width: 100%;
-      height: 75px;
-
-      content: "";
-      background: darken($secondary,5);
-    }
-
     &:before {
       position: absolute;
       bottom: 0;
@@ -53,14 +40,74 @@
 
       content: "";
       background: $tertiary;
-      transform: translate(29%, 39%) rotate(45deg);
+      transform: translate(85%, 39%) rotate(45deg);
       opacity: .49;
       mix-blend-mode: multiply;
+      transition: transform .25s;
+
+      @media #{$mediaMd} {
+          transform: translate(29%, 39%) rotate(45deg);
+      }
+    }
+
+    @media #{$mediaXs} {
+      .row {
+        > div {
+          &:first-child {
+            padding-bottom: 28px;
+            position: relative;
+            z-index: 3;
+          }
+          &:last-child {
+            background: darken($secondary,5);
+            padding-top: 37px;
+            padding-bottom: 28px;
+            // position: relative;
+            //
+            // &:after {
+            //   width: 100vh;
+            //   height: 100%;
+            //
+            //   position: absolute;
+            //   bottom: 0;
+            //   left: 0;
+            //   z-index: 0;
+            //
+            //   content: "";
+            // }
+            //
+            > * {
+              position: relative;
+              z-index: 3;
+            }
+          }
+        }
+      }
+    }
+
+    @media #{$mediaSm} {
+      padding: 108px 0 135px;
+
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+
+        width: 100%;
+        height: 75px;
+
+        content: "";
+        background: darken($secondary,5);
+      }
     }
 
     > div {
+
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        position: relative;
+        @media #{$mediaSm} {
+          position: relative;
+        }
         z-index: 2;
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         max-width: $siteWMx;

@@ -13,8 +13,12 @@ nav.menu--footer {
 
     ul {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @include flex(flex-start, center, center, row wrap);
-        font-size: 17px;
+
+        font-size: 16px;
+        @media #{$mediaMd} {
+          @include flex(flex-start, center, center, row wrap);
+          font-size: 17px;
+        }
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
@@ -24,23 +28,30 @@ nav.menu--footer {
 
     li {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @include flexItem(0, 1, auto);
+
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         //width: calc(50% - #{$gutter * 1.2}rem);
-        margin: 0 #{$gutter * .6}rem;
+
         text-align: left;
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
-        &:nth-child(n + 3) {
-            margin-top: #{$gutter * .6}rem;
+        + li {
+          margin-top: 14px;
         }
 
+
         @media #{$mediaMd} {
+            @include flexItem(0, 1, auto);
             width: auto;
+            margin: 0 #{$gutter * .6}rem;
             text-align: center;
+
+            + li {
+              margin-top: 0;
+            }
 
             &:nth-child(n + 3) {
                 margin-top: 0;

@@ -1103,7 +1103,7 @@ Delete everything below including comment
 
 .main-footer {
   position: relative;
-  padding: 10.8rem 0 13.5rem;
+  padding: 4rem 0 0;
   background: #0054A6;
   overflow: hidden;
   font-size: 1.5rem;
@@ -1186,17 +1186,6 @@ Delete everything below including comment
   margin-bottom: 0;
 }
 
-.main-footer:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: 7.5rem;
-  content: "";
-  background: #00478d;
-}
-
 .main-footer:before {
   position: absolute;
   bottom: 0;
@@ -1206,14 +1195,17 @@ Delete everything below including comment
   z-index: 1;
   content: "";
   background: #6CACE4;
-  -webkit-transform: translate(29%, 39%) rotate(45deg);
-          transform: translate(29%, 39%) rotate(45deg);
+  -webkit-transform: translate(85%, 39%) rotate(45deg);
+          transform: translate(85%, 39%) rotate(45deg);
   opacity: .49;
   mix-blend-mode: multiply;
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
 }
 
 .main-footer > div {
-  position: relative;
   z-index: 2;
   max-width: 1350px;
   margin: 0 auto;
@@ -1233,12 +1225,6 @@ Delete everything below including comment
 
 .main-footer p.copyright {
   margin: 2.5rem 0;
-}
-
-.main-footer .social {
-  margin: 2rem 0 0;
-  padding: 2rem 0 0;
-  border-top: 0.1rem solid #8AC8FF;
 }
 
 .main-footer .social ul {
@@ -1273,37 +1259,15 @@ Delete everything below including comment
 }
 
 .main-footer nav.menu--footer ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 .main-footer nav.menu--footer li {
-  -webkit-box-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
-  margin: 0 1.5rem;
   text-align: left;
 }
 
-.main-footer nav.menu--footer li:nth-child(n + 3) {
-  margin-top: 1.5rem;
+.main-footer nav.menu--footer li + li {
+  margin-top: 14px;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -9242,6 +9206,25 @@ form.search .search button {
     width: 100%;
   }
 
+  .main-footer {
+    padding: 10.8rem 0 13.5rem;
+  }
+
+  .main-footer:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 7.5rem;
+    content: "";
+    background: #00478d;
+  }
+
+  .main-footer > div {
+    position: relative;
+  }
+
   .tooltip {
     width: 30vw;
   }
@@ -9391,9 +9374,48 @@ form.search .search button {
     width: 34.7rem;
   }
 
+  .main-footer:before {
+    -webkit-transform: translate(29%, 39%) rotate(45deg);
+            transform: translate(29%, 39%) rotate(45deg);
+  }
+
+  .main-footer .social {
+    padding-top: 0.7rem;
+  }
+
+  .main-footer nav.menu--footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    font-size: 1.7rem;
+  }
+
   .main-footer nav.menu--footer li {
+    -webkit-box-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
     width: auto;
+    margin: 0 1.5rem;
     text-align: center;
+  }
+
+  .main-footer nav.menu--footer li + li {
+    margin-top: 0;
   }
 
   .main-footer nav.menu--footer li:nth-child(n + 3) {
@@ -10774,12 +10796,6 @@ form.search .search button {
     width: 95%;
   }
 
-  .main-footer .social {
-    margin: 0;
-    padding: 0;
-    border-top: none;
-  }
-
   section {
     padding: 5rem 0;
   }
@@ -11958,6 +11974,23 @@ form.search .search button {
 }
 
 @media screen and (max-width: 575.9px) {
+  .main-footer .row > div:first-child {
+    padding-bottom: 2.8rem;
+    position: relative;
+    z-index: 3;
+  }
+
+  .main-footer .row > div:last-child {
+    background: #00478d;
+    padding-top: 3.7rem;
+    padding-bottom: 2.8rem;
+  }
+
+  .main-footer .row > div:last-child > * {
+    position: relative;
+    z-index: 3;
+  }
+
   nav.cp li > a {
     display: -webkit-box;
     display: -ms-flexbox;
