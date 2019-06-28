@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_slide_link
+    - node.type.content_page
     - node.type.slide
 id: node.slide.field_slide_link
 field_name: field_slide_link
@@ -19,7 +20,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      slide: slide
+      content_page: content_page
     sort:
       field: _none
     auto_create: false
