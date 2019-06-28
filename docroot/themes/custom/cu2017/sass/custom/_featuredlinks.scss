@@ -1,5 +1,5 @@
-@mixin button {
-	background-image: url(../images/png/white-arrow.png);
+@mixin button($backgroundImg) {
+	background-image: url($backgroundImg);
 	background-position: 95%;
 	background-repeat: no-repeat;
 	padding: 8px 80px 8px 10px;
@@ -10,8 +10,8 @@
 	line-height: 1.12;
 }
 
-@mixin link {
-	color: $white;
+@mixin link($color) {
+	color: $color;
 	font-family: $condensedFont;
 	font-size: 24px;
 	font-weight: $bold;
@@ -61,7 +61,7 @@
 
 	.featured_links_blue {
 		li {
-			@include button;
+			@include button("../images/png/white-arrow.png");
 			@include featured-link;
 			background-color: $mediumBlue;
 
@@ -72,14 +72,14 @@
 		}
 
 		a {
-			@include link;
+			@include link($white);
 			@include text-decoration;
 		}
 	}
 
 	.featured_links_orange {
 		a {
-			@include link;
+			@include link($darkBlue);
 			@include text-decoration;
 
 			&:hover {
@@ -88,12 +88,13 @@
 		}
 
 		li {
-			@include button;
+			@include button("../images/png/dkblue-arrow.png");
 			@include featured-link;
-			background-color: $orange;
+			background-color: $yellow;
 
 			&:hover {
 				background-image: url(../images/png/dkblue-arrow.png);
+				background-color: $lightYellow;
 			}
 		}
 	}

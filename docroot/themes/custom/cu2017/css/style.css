@@ -8803,7 +8803,7 @@ html body p {
 }
 /* line 15, ../sass/custom/_base.scss */
 html body a {
-  color: #019CDB;
+  color: #017CAD;
   text-decoration: underline;
 }
 /* line 19, ../sass/custom/_base.scss */
@@ -9007,7 +9007,7 @@ html .row.site_name + .main_front.admin.layout-content {
 }
 /* line 22, ../sass/custom/_copybox.scss */
 .copy_box_wrapper .callout_green {
-  color: #73B865;
+  color: #4C8C40;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 2.1875em;
   line-height: 1.2;
@@ -9027,11 +9027,11 @@ html .row.site_name + .main_front.admin.layout-content {
 }
 /* line 40, ../sass/custom/_copybox.scss */
 .copy_box_wrapper .callout_green p a {
-  color: #73B865;
+  color: #4C8C40;
 }
 /* line 46, ../sass/custom/_copybox.scss */
 .copy_box_wrapper .upcoming_events {
-  color: #019CDB;
+  color: #017CAD;
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 1.8em;
   font-weight: normal;
@@ -9099,7 +9099,7 @@ html .row.site_name + .main_front.admin.layout-content {
 
 /* line 1, ../sass/custom/_promobox.scss */
 .promo_box_wrapper {
-  background-color: #019CDB;
+  background-color: #017CAD;
   display: block;
   padding: 0.875em;
   padding-bottom: 1.5em;
@@ -9169,7 +9169,7 @@ footer .transaction_menu_wrapper {
 @media all and (max-width: 480px) {
   /* line 17, ../sass/custom/_footer.scss */
   footer .transaction_menu_wrapper {
-    background-color: #019CDB;
+    background-color: #017CAD;
     margin: 0;
     font-size: 16px;
     text-align: left;
@@ -9482,7 +9482,7 @@ header .header_top_section {
 @media all and (max-width: 480px) {
   /* line 57, ../sass/custom/_header.scss */
   header .header_top_section {
-    background-color: #019CDB;
+    background-color: #017CAD;
   }
 }
 @media all and (min-width: 1051px) {
@@ -9715,7 +9715,7 @@ header .header_nav li a {
 }
 /* line 252, ../sass/custom/_header.scss */
 header .header_nav li a:hover, header .header_nav li a:focus, header .header_nav li a.active {
-  border-bottom: 5px solid #019CDB;
+  border-bottom: 5px solid #017CAD;
 }
 /* line 262, ../sass/custom/_header.scss */
 header .mega_menu_internal_main_nav .header_nav_section {
@@ -9749,7 +9749,7 @@ header .mega_menu_internal_main_nav .header_nav_section li a:hover {
 }
 /* line 285, ../sass/custom/_header.scss */
 header .mega_menu_internal_main_nav .header_nav_section li a.active {
-  border-bottom: 5px solid #019CDB;
+  border-bottom: 5px solid #017CAD;
 }
 
 /* line 294, ../sass/custom/_header.scss */
@@ -9803,7 +9803,7 @@ ul#megamenu_icon_menu {
 }
 /* line 335, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li {
-  background: #019CDB;
+  background: #017CAD;
   display: inline-block;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 22px;
@@ -9813,7 +9813,7 @@ ul#megamenu_icon_menu {
 }
 /* line 344, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li:hover {
-  background: #019CDB;
+  background: #017CAD;
 }
 /* line 348, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li::after {
@@ -9862,7 +9862,7 @@ ul#megamenu_icon_menu {
 }
 /* line 384, ../sass/custom/_header.scss */
 .transaction_menu_wrapper li a:hover {
-  background: #019CDB;
+  background: #017CAD;
   color: #002E6D;
   text-decoration: none;
 }
@@ -10057,7 +10057,7 @@ ul#megamenu_icon_menu {
 }
 /* line 30, ../sass/custom/_quotebox.scss */
 .quote_box_wrapper .quote_border {
-  border-top: 1px solid #73B865;
+  border-top: 1px solid #4C8C40;
 }
 /* line 34, ../sass/custom/_quotebox.scss */
 .quote_box_wrapper .quote_box_name_person {
@@ -10098,7 +10098,7 @@ ul#megamenu_icon_menu {
 }
 /* line 69, ../sass/custom/_quotebox.scss */
 .quote_box_wrapper .quote_box_btn a {
-  color: #73B865;
+  color: #4C8C40;
   display: block;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 17px;
@@ -10146,14 +10146,14 @@ ul#megamenu_icon_menu {
 .quote_box_wrapper .quote_box_with_quotes .quote_box_quote_text .field--name-field-quote-box-quote-text::before {
   content: open-quote;
   left: -12px;
-  color: #019CDB;
+  color: #017CAD;
   font-size: 1.75em;
   position: absolute;
 }
 /* line 96, ../sass/custom/_quotebox.scss */
 .quote_box_wrapper .quote_box_with_quotes .quote_box_quote_text .field--name-field-quote-box-quote-text::after {
   content: close-quote;
-  color: #019CDB;
+  color: #017CAD;
   font-size: 1.75em;
   position: absolute;
 }
@@ -10175,7 +10175,7 @@ ul#megamenu_icon_menu {
 }
 /* line 7, ../sass/custom/_relatedlinks.scss */
 .related_links_wrapper ul a li {
-  color: #019CDB;
+  color: #017CAD;
   font-family: "Open Sans", Arial, sans-serif;
   line-height: 25px;
   text-decoration: underline;
@@ -10226,7 +10226,7 @@ ul#megamenu_icon_menu {
 }
 /* line 28, ../sass/custom/_event.scss */
 .eventbox_wrapper .eventbox .left_col .eventbox_calendar {
-  border: 2px solid #019CDB;
+  border: 2px solid #017CAD;
   font-family: "Open Sans Condensed", sans-serif;
   height: initial;
   text-align: center;
@@ -10234,7 +10234,7 @@ ul#megamenu_icon_menu {
 }
 /* line 35, ../sass/custom/_event.scss */
 .eventbox_wrapper .eventbox .left_col .eventbox_calendar .eventbox_calendar_month {
-  background: #019CDB;
+  background: #017CAD;
   color: #FFF;
   font-size: 24px;
   line-height: 26px;
@@ -10249,7 +10249,7 @@ ul#megamenu_icon_menu {
 }
 /* line 51, ../sass/custom/_event.scss */
 .eventbox_wrapper .eventbox .left_col .eventbox_link_action {
-  background-color: #73B865;
+  background-color: #4C8C40;
   background-image: url(../images/png/white-arrow.png);
   background-position: 90%;
   background-repeat: no-repeat;
@@ -10290,7 +10290,7 @@ ul#megamenu_icon_menu {
 }
 /* line 96, ../sass/custom/_event.scss */
 .eventbox_wrapper .eventbox .right_col .eventbox_description .eventbox_moreinfo_link a {
-  color: #019CDB;
+  color: #017CAD;
   text-decoration: underline;
 }
 
@@ -10346,38 +10346,43 @@ ul#megamenu_icon_menu {
 }
 /* line 40, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .accordion .accordion_title:hover {
-  background: #FFA300;
+  background: #FFCC4F;
+  color: #002E6D;
 }
-/* line 44, ../sass/custom/_accordion.scss */
+/* line 43, ../sass/custom/_accordion.scss */
+.tabbed_accordion_wrapper .accordion .accordion_title:hover::after {
+  background-image: url(../images/png/dkblue-arrow.png);
+}
+/* line 48, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .accordion .accordion_title.active {
   background: #FFA300;
 }
-/* line 47, ../sass/custom/_accordion.scss */
+/* line 51, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .accordion .accordion_title.active::after {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 53, ../sass/custom/_accordion.scss */
+/* line 57, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .accordion .accordion_body {
   display: none;
   padding: .8em 0.625em;
 }
-/* line 57, ../sass/custom/_accordion.scss */
+/* line 61, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .accordion .accordion_body li {
   list-style-type: disc;
 }
-/* line 61, ../sass/custom/_accordion.scss */
+/* line 65, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .accordion .accordion_body p {
   margin: 0 0 1em;
 }
-/* line 64, ../sass/custom/_accordion.scss */
+/* line 68, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .accordion .accordion_body p img {
   float: left;
   margin: 0 1em 0 0;
 }
-/* line 73, ../sass/custom/_accordion.scss */
+/* line 77, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .accordion_title {
   -webkit-transition-property: background;
   transition-property: background;
@@ -10395,65 +10400,65 @@ ul#megamenu_icon_menu {
   font-weight: 700;
   position: relative;
 }
-/* line 85, ../sass/custom/_accordion.scss */
-.tabbed_accordion_wrapper .tabbed_accordion .accordion_title:hover {
-  background: #019CDB;
-}
 /* line 89, ../sass/custom/_accordion.scss */
+.tabbed_accordion_wrapper .tabbed_accordion .accordion_title:hover {
+  background: #017CAD;
+}
+/* line 93, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .accordion_title.active {
   background: #EFEFEF;
   color: #002E6D;
 }
-/* line 93, ../sass/custom/_accordion.scss */
+/* line 97, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .accordion_title.active:hover {
   background: #EFEFEF;
 }
-/* line 99, ../sass/custom/_accordion.scss */
+/* line 103, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .accordion_body {
   background-color: #EFEFEF;
   display: block;
   padding: 30px;
 }
-/* line 104, ../sass/custom/_accordion.scss */
+/* line 108, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .accordion_body li {
   list-style-type: disc;
 }
-/* line 110, ../sass/custom/_accordion.scss */
+/* line 114, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .side_tab_wrapper {
   width: 100%;
 }
-/* line 113, ../sass/custom/_accordion.scss */
+/* line 117, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .side_tab_wrapper .no_padding {
   padding: 0;
 }
-/* line 117, ../sass/custom/_accordion.scss */
+/* line 121, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .side_tab_wrapper .accordion_title {
   border-bottom: 1px solid #FFF;
   padding: 6px;
 }
-/* line 123, ../sass/custom/_accordion.scss */
+/* line 127, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .top_tab_wrapper {
   width: 100%;
 }
-/* line 126, ../sass/custom/_accordion.scss */
+/* line 130, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .top_tab_wrapper .title_row {
   margin: 0;
 }
-/* line 130, ../sass/custom/_accordion.scss */
+/* line 134, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .top_tab_wrapper .body_row {
   margin-left: -5px;
   margin-top: -10px;
 }
-/* line 135, ../sass/custom/_accordion.scss */
+/* line 139, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .top_tab_wrapper .accordion_title {
   margin-right: 2px;
   padding: 9px 6px;
 }
-/* line 139, ../sass/custom/_accordion.scss */
+/* line 143, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .tabbed_accordion .top_tab_wrapper .accordion_title:last-of-type {
   margin-right: 0;
 }
-/* line 145, ../sass/custom/_accordion.scss */
+/* line 149, ../sass/custom/_accordion.scss */
 .tabbed_accordion_wrapper .field--name-field-accordion-display-type {
   display: none;
 }
@@ -10474,7 +10479,7 @@ ul#megamenu_icon_menu {
 }
 /* line 63, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_blue li {
-  background-image: url(../images/png/white-arrow.png);
+  background-image: url("../images/png/white-arrow.png");
   background-position: 95%;
   background-repeat: no-repeat;
   padding: 8px 80px 8px 10px;
@@ -10509,7 +10514,7 @@ ul#megamenu_icon_menu {
 }
 /* line 81, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange a {
-  color: #FFF;
+  color: #002E6D;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -10534,17 +10539,18 @@ ul#megamenu_icon_menu {
 }
 /* line 90, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange li {
-  background-image: url(../images/png/white-arrow.png);
+  background-image: url("../images/png/dkblue-arrow.png");
   background-position: 95%;
   background-repeat: no-repeat;
   padding: 8px 80px 8px 10px;
   padding: 15px 60px 15px 15px;
   line-height: 1.12;
-  background-color: #FFA300;
+  background-color: #FFCC4F;
 }
 /* line 95, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange li:hover {
   background-image: url(../images/png/dkblue-arrow.png);
+  background-color: #F1D48B;
 }
 
 /* line 3, ../sass/custom/_profile.scss */
@@ -10637,7 +10643,7 @@ ul#megamenu_icon_menu {
 }
 /* line 93, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_email a {
-  color: #019CDB;
+  color: #017CAD;
   font-size: 13px;
   line-height: 1.4em;
   text-decoration: underline;
@@ -10666,7 +10672,7 @@ ul#megamenu_icon_menu {
 }
 /* line 122, ../sass/custom/_profile.scss */
 .profile-feed-wrapper .profile_link a {
-  color: #73B865;
+  color: #4C8C40;
   display: block;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 17px;
@@ -10737,7 +10743,7 @@ nav[role=navigation] {
 }
 /* line 35, ../sass/custom/_mainnav.scss */
 .main_nav .child_class, .main_nav .grandchild_class, .main_nav .great_grandchild_class {
-  border-left: 2px solid #019cdb;
+  border-left: 2px solid #017CAD;
   margin-left: 10px;
   padding-left: 10px;
 }
@@ -11355,7 +11361,7 @@ nav[role=navigation] {
 }
 /* line 51, ../sass/custom/_spotlight.scss */
 .view-spotlight .views-row .sptlt-text-wrapper a {
-  color: #73B865;
+  color: #4C8C40;
   display: block;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 17px;
@@ -11627,7 +11633,7 @@ table .tbody .tr .td a,
 .table .tbody tr .td a,
 .table .tbody .tr td a,
 .table .tbody .tr .td a {
-  color: #019CDB;
+  color: #017CAD;
 }
 /* line 99, ../sass/custom/_tables.scss */
 table tbody tr td a:hover,
@@ -11818,7 +11824,7 @@ article figcaption {
 
 /* line 39, ../sass/custom/_flexpage.scss */
 .front_page_callout_green {
-  color: #73B865;
+  color: #4C8C40;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 26px;
   font-weight: 700;
@@ -11856,7 +11862,7 @@ article figcaption {
 }
 /* line 62, ../sass/custom/_flexpage.scss */
 .front_page_callout_green a {
-  color: #73B865;
+  color: #4C8C40;
   text-decoration: underline;
 }
 
@@ -12456,7 +12462,7 @@ article figcaption {
 /* line 42, ../sass/custom/_news.scss */
 .view-cu-news .views-row .news_text .news_headline h2 {
   margin-top: 0;
-  color: #019CDB;
+  color: #017CAD;
   font-size: 24px;
 }
 /* line 47, ../sass/custom/_news.scss */
@@ -12480,7 +12486,7 @@ article figcaption {
 }
 /* line 64, ../sass/custom/_news.scss */
 .view-cu-news .views-row .news_text .learn_more_link a {
-  color: #73B865;
+  color: #4C8C40;
   display: block;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 17px;
@@ -14668,33 +14674,32 @@ ol, ul {
   border-top: 1px solid #E5E5E5;
 }
 
-@media all and (min-width: 1051px) {
-  /* line 44, ../sass/_overrides.scss */
-  p:last-child,
-  .form-group:last-child,
-  .panel:last-child {
-    margin-bottom: 0;
-  }
+/* line 44, ../sass/_overrides.scss */
+.front p:last-child,
+.form-group:last-child,
+.panel:last-child {
+  margin-bottom: 0;
 }
-/* line 53, ../sass/_overrides.scss */
+
+/* line 52, ../sass/_overrides.scss */
 .region-help > .glyphicon {
   font-size: 18px;
   float: left;
   margin: -0.05em 0.5em 0 0;
 }
-/* line 58, ../sass/_overrides.scss */
+/* line 57, ../sass/_overrides.scss */
 .region-help .block {
   overflow: hidden;
 }
 
-/* line 63, ../sass/_overrides.scss */
+/* line 62, ../sass/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #777777;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 68, ../sass/_overrides.scss */
+/* line 67, ../sass/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
 }
