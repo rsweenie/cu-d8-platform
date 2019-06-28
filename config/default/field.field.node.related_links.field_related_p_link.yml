@@ -1,0 +1,37 @@
+uuid: fb5ee288-c57b-4cd9-865c-003726d9a585
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_p_link
+    - node.type.related_links
+    - paragraphs.paragraphs_type.ief_link
+  module:
+    - entity_reference_revisions
+id: node.related_links.field_related_p_link
+field_name: field_related_p_link
+entity_type: node
+bundle: related_links
+label: 'Related Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ief_link: ief_link
+    target_bundles_drag_drop:
+      accordion:
+        weight: 4
+        enabled: false
+      featured_content_item:
+        weight: 5
+        enabled: false
+      ief_link:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

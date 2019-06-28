@@ -11,12 +11,14 @@ module:
   auto_entitylabel: 0
   blazy: 0
   block: 0
+  block_aria_landmark_roles: 0
   block_content: 0
   breakpoint: 0
   captcha: 0
   cer: 0
   ckeditor: 0
   ckeditor_markdown: 0
+  coffee: 0
   config: 0
   config_filter: 0
   config_ignore: 0
@@ -29,14 +31,13 @@ module:
   context: 0
   context_ui: 0
   contextual: 0
-  creighton_ckeditorbtn_replace: 0
   crop: 0
   csv_serialization: 0
   ctools: 0
   ctools_block: 0
   cu_breadcrumbs: 0
-  cu_footer_badge: 0
-  cu_footer_contact: 0
+  cu_data_transform: 0
+  cu_entity_embed: 0
   datetime: 0
   dblog: 0
   diff: 0
@@ -64,8 +65,10 @@ module:
   file: 0
   file_mdm: 0
   file_mdm_exif: 0
+  file_replace: 0
   filter: 0
   focal_point: 0
+  google_tag: 0
   help: 0
   history: 0
   honeypot: 0
@@ -190,6 +193,7 @@ theme:
   seven: 0
   cu2017: 0
   cu8: 0
+  cu2017_alliance: 0
 profile: creighton
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

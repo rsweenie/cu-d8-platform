@@ -1,0 +1,44 @@
+uuid: f84a0ea3-b461-4dbf-845a-72b1494aa2a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_aria_landmark_roles
+    - ctools
+    - ctools_block
+  theme:
+    - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'Sidebar Items'
+_core:
+  default_config_hash: jugVEblX9os43CkvpWfEGeqmdkd7cNnEFqenIOxgfDs
+id: cu2017_alliance_sidebaritems_profile
+theme: cu2017_alliance
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'entity_field:node:field_sidebar_items'
+settings:
+  id: 'entity_field:node:field_sidebar_items'
+  label: 'Sidebar Items Profile'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      profile: profile
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

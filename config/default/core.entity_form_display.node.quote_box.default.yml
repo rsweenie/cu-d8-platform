@@ -10,13 +10,13 @@ dependencies:
     - field.field.node.quote_box.field_quote_box_quote_text
     - field.field.node.quote_box.field_quote_box_quotes
     - field.field.node.quote_box.field_quote_link
+    - field.field.node.quote_box.field_quote_p_link
     - node.type.quote_box
   module:
     - content_moderation
     - entity_browser
-    - entity_browser_entity_form
-    - inline_entity_form
     - name
+    - paragraphs
     - private_content
     - scheduler
 _core:
@@ -42,7 +42,7 @@ content:
     region: content
   field_quote_box_photo:
     type: entity_browser_entity_reference
-    weight: 6
+    weight: 5
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -64,32 +64,26 @@ content:
     type: string_textarea
     region: content
   field_quote_box_quotes:
-    weight: 8
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
-  field_quote_link:
-    weight: 5
+  field_quote_p_link:
+    type: entity_reference_paragraphs
+    weight: 11
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Link
-      label_plural: Links
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: browse_content
-    type: inline_entity_form_complex
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 12
+    weight: 10
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -101,7 +95,7 @@ content:
     type: private
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -121,17 +115,18 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 9
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
+  field_quote_link: true
   path: true
   promote: true
   status: true

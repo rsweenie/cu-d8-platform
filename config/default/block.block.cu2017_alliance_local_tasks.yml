@@ -1,0 +1,28 @@
+uuid: 4f526707-5d46-4cf9-bbd2-5be3fe49356e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_aria_landmark_roles
+  theme:
+    - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'Tabbed Navigation'
+_core:
+  default_config_hash: _DgMiu9XFgPTQMJgiHgDhCHPjesQMeUx08ZwQcuArzI
+id: cu2017_alliance_local_tasks
+theme: cu2017_alliance
+region: content
+weight: -9
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

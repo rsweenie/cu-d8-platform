@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.content_page.field_display
     - field.field.node.content_page.field_display_publish_on_date
     - field.field.node.content_page.field_header_background_image
+    - field.field.node.content_page.field_large_horiz_image
     - field.field.node.content_page.field_links_for_news
     - field.field.node.content_page.field_meta_tags
     - field.field.node.content_page.field_new
@@ -121,7 +122,7 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
             region: content
-            weight: 0
+            weight: 1
             uuid: 29dfb971-b168-4612-8a78-27d9967cb492
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -133,7 +134,7 @@ third_party_settings:
             views_label: ''
             items_per_page: none
             region: content
-            weight: -1
+            weight: 0
             uuid: 5d5d8583-eb3b-42a2-9dcf-689f7bd7e91d
             context_mapping:
               nid: '@panelizer.entity_context:entity'
@@ -150,7 +151,7 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
             region: content
-            weight: 1
+            weight: 2
             uuid: 20089067-a37a-4004-ae8a-02e58bc7de66
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -188,6 +189,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_large_horiz_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
   field_meta_tags:
     weight: 4
     label: above

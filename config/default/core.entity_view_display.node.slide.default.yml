@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.slide.field_slide_caption
     - field.field.node.slide.field_slide_image
     - field.field.node.slide.field_slide_link
+    - field.field.node.slide.field_slide_p_link
     - image.style.rectangle_horizontal_front_slider_1440x480_
     - node.type.slide
   module:
+    - entity_reference_revisions
     - media
     - panelizer
     - text
@@ -50,6 +52,15 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_slide_p_link:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
 hidden:
   links: true

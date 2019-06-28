@@ -16,6 +16,7 @@ dependencies:
     - link
     - media
     - node
+    - paragraphs
     - rest
     - serialization
     - text
@@ -195,7 +196,7 @@ display:
           type: media_thumbnail
           settings:
             image_style: square_medium_275x275_
-            image_link: content
+            image_link: ''
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -413,7 +414,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ view_node }}<span class="hidden"> about {{ title_1 }}</span>'
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -451,7 +452,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           text: 'Learn More'
-          output_url_as_text: false
+          output_url_as_text: true
           absolute: false
           entity_type: node
           plugin_id: entity_link
@@ -1093,6 +1094,15 @@ display:
           relationship: none
           group_type: group
           admin_label: 'field_new: Content'
+          required: false
+          plugin_id: standard
+        field_news_spotlight_p_link:
+          id: field_news_spotlight_p_link
+          table: node__field_news_spotlight_p_link
+          field: field_news_spotlight_p_link
+          relationship: none
+          group_type: group
+          admin_label: 'field_news_spotlight_p_link: Paragraph'
           required: false
           plugin_id: standard
       arguments: {  }
