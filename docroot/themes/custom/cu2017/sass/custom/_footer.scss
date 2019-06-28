@@ -1,3 +1,6 @@
+/* The footer is styled in a very specific, non-generalized way. We are expecting precisely the elements in the footer.html.twig
+ file and nothing else.
+*/
 footer {
   background-color: $mediumBlue;
   display: block;
@@ -52,22 +55,16 @@ footer {
 
     .footer_logo_wrapper {
       align-self: flex-start;
-      flex-basis: 25%;
-      height: 60px;
-      margin-bottom: 20px;
+      flex-basis: 30%;
       order: 1;
-      width: 40%;
 
       @include respond-to(null, mobile-max) {
-        flex-basis: 100%;
         order: 1;
         width: 100%;
-
       }
       @include respond-to(tablet-min, tablet-max) {
-        flex-basis: 15%;
         order: 1;
-        width: 60%;
+        flex-basis: 15%;
       }
 
       img {
@@ -79,19 +76,47 @@ footer {
       }
     }
 
+    .footer_contact_wrapper {
+      color: $white;
+      align-self: flex-start;
+      order: 2;
+      flex-basis: 70%;
+
+      @include respond-to(null, mobile-max) {
+        order: 2;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        order: 2;
+        flex-basis: 15%;
+      }
+
+      p {
+        margin: 0 0 5px;
+
+        a {
+          text-decoration: none;
+          font-weight: $semiBold;
+          color: $white;
+          white-space: nowrap;
+
+          &:hover {
+            background-color: $mediumBlue;
+            color: $white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
     .footer_social_wrapper {
       align-self: flex-start;
-      flex-basis: 25%;
+      flex-basis: auto;
       order: 3;
-      padding: 8px 0;
-      width: 35%;
+      flex-basis: 30%;
 
       @include respond-to(null, mobile-max) {
         flex-basis: 100%;
         order: 3;
-        width: 100%;
-        margin-top: 30px;
-        margin-bottom: -10px;
       }
       @include respond-to(tablet-min, tablet-max) {
         flex-basis: 15%;
@@ -121,8 +146,8 @@ footer {
 
     .footer_menu_wrapper {
       align-self: flex-start;
-      flex-basis: 50%;
       order: 4;
+      flex-basis: 70%;
       padding-top: 8px;
 
       ul {
@@ -134,12 +159,13 @@ footer {
       }
 
       @include respond-to(null, mobile-max) {
-        flex-basis: 100%;
         order: 5;
         width: 100%;
+        flex-basis: 0%;
       }
       @include respond-to(tablet-min, tablet-max) {
         order: 4;
+        flex-basis: 50%;
       }
 
       a {
@@ -166,8 +192,7 @@ footer {
 
       @include respond-to(null, mobile-max) {
         align-self: flex-start;
-        flex-basis: 100%;
-        width: 100%;
+        width: 0%;
         order: 4;
       }
       @include respond-to(tablet-min, tablet-max) {
@@ -185,57 +210,19 @@ footer {
       }
     }
 
-    .footer_contact_wrapper {
-      color: $white;
-      align-self: flex-start;
-      flex-basis: 50%;
-      order: 2;
-      width: 40%;
-
-      @include respond-to(null, mobile-max) {
-        flex-basis: 100%;
-        order: 2;
-        width: 100%;
-      }
-      @include respond-to(tablet-min, tablet-max) {
-        flex-basis: 25%;
-        order: 2;
-        width: 60%;
-      }
-
-      p {
-        margin: 0 0 5px;
-
-        a {
-          text-decoration: none;
-          font-weight: $semiBold;
-          color: $white;
-          white-space: nowrap;
-
-          &:hover {
-            background-color: $mediumBlue;
-            color: $white;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
 
     .footer_gtranslate_wrapper {
-
-      //DEBUG:
-      border: 3px solid orange;
-
+      flex-basis: 100%;
       align-self: flex-start;
-      flex-basis: 0%;
       order: 5;
 
       @include respond-to(null, mobile-max) {
-        flex-basis: 0%;
+        padding-top: 20px;
+        flex-basis: auto;
         order: 5;
       }
       @include respond-to(tablet-min, tablet-max) {
-        flex-basis: 0%;
+        flex-basis: 60%;
         order: 3;
       }
     }
