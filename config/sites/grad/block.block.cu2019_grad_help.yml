@@ -1,0 +1,22 @@
+uuid: 82e73df8-155f-4966-8e25-1173c2c2c0f6
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: 0trM1yXNDM2LUbbIQQOlqOTm2mWjrFY8hR9wYHygAd8
+id: cu2019_grad_help
+theme: cu2019_grad
+region: dump
+weight: -10
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

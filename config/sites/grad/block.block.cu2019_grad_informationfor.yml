@@ -1,0 +1,27 @@
+uuid: 76f62595-842e-4f21-b5a4-7ab5d884ef5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.information-for
+  module:
+    - menu_block
+  theme:
+    - cu2019_grad
+id: cu2019_grad_informationfor
+theme: cu2019_grad
+region: footer_top
+weight: -8
+provider: null
+plugin: 'menu_block:information-for'
+settings:
+  id: 'menu_block:information-for'
+  label: 'Information for'
+  provider: menu_block
+  label_display: visible
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'information-for:'
+  suggestion: information_for
+visibility: {  }

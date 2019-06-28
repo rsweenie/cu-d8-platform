@@ -1,0 +1,39 @@
+uuid: cf88dc96-a5c3-4a78-a0d9-e33fc843d84f
+langcode: en
+status: false
+dependencies:
+  module:
+    - ctools
+    - ctools_block
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: FOVmJ1HjNDlLo2RiA8b3FFBV2gAURh8rWHushGr4d5o
+id: cu2019_grad_sidebaritems_profile
+theme: cu2019_grad
+region: header
+weight: 0
+provider: null
+plugin: 'entity_field:node:field_sidebar_items'
+settings:
+  id: 'entity_field:node:field_sidebar_items'
+  label: 'Sidebar Items Profile'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      profile: profile
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

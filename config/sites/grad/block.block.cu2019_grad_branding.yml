@@ -1,0 +1,25 @@
+uuid: 64a86958-1383-47c2-97a9-94d588888f66
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: zU8UqOxrMw2UiegdfZ0UKJ6pHRVIds6IsfsFywjLqMU
+id: cu2019_grad_branding
+theme: cu2019_grad
+region: header
+weight: -1
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

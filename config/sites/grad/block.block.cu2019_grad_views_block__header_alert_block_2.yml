@@ -1,0 +1,26 @@
+uuid: 004fc4e9-08aa-4a21-b609-23059bbf524d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.header_alert
+  module:
+    - views
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: jvp-bbEPHaLnZztBVyHMKKk19vgcR0zevCrW8o3g3xI
+id: cu2019_grad_views_block__header_alert_block_2
+theme: cu2019_grad
+region: header
+weight: -9
+provider: null
+plugin: 'views_block:header_alert-block_2'
+settings:
+  id: 'views_block:header_alert-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

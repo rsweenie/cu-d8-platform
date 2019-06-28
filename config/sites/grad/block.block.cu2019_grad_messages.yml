@@ -1,0 +1,22 @@
+uuid: c9766bf9-3d53-4f80-8e20-889c11979951
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: gaGhscE7DicPpFWFrTbfcLxEmqwv7UVNsaUAzlorNsM
+id: cu2019_grad_messages
+theme: cu2019_grad
+region: dump
+weight: -9
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

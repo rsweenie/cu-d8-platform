@@ -1,0 +1,22 @@
+uuid: 4fa105ba-048e-4651-89dd-b5d872682e09
+langcode: en
+status: false
+dependencies:
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: CCIpy-4T7S_2Lionve-TiFU2LmQ_cdV6YmnL4bCIt4I
+id: cu2019_grad_local_tasks
+theme: cu2019_grad
+region: dump
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

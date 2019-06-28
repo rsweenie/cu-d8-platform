@@ -1,0 +1,26 @@
+uuid: 852610e5-95ca-4f73-9d1d-ea743b5b154d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: P0uKHc2Z_NHW8Lzk9ptKWufvdUaNkh1eFLZ0X2gHTVE
+id: cu2019_grad_main_menu
+theme: cu2019_grad
+region: primary_menu
+weight: -11
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+visibility: {  }
