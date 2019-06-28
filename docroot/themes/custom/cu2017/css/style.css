@@ -9161,7 +9161,7 @@ footer {
 @media all and (min-width: 481px) and (max-width: 768px) {
   /* line 4, ../sass/custom/_footer.scss */
   footer {
-    height: 480px;
+    height: 280px;
   }
 }
 /* line 19, ../sass/custom/_footer.scss */
@@ -9292,6 +9292,7 @@ footer .footer_wrapper .footer_social_wrapper {
   /* line 111, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_social_wrapper {
     flex-basis: 100%;
+    padding-top: 20px;
     order: 3;
   }
 }
@@ -9302,11 +9303,11 @@ footer .footer_wrapper .footer_social_wrapper {
     order: 4;
   }
 }
-/* line 126, ../sass/custom/_footer.scss */
+/* line 127, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_social_wrapper ul {
   white-space: nowrap;
 }
-/* line 129, ../sass/custom/_footer.scss */
+/* line 130, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_social_wrapper ul li {
   background-color: #FFF;
   height: 40px;
@@ -9314,22 +9315,22 @@ footer .footer_wrapper .footer_social_wrapper ul li {
   padding-top: 7px;
   width: 40px;
 }
-/* line 137, ../sass/custom/_footer.scss */
+/* line 138, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_social_wrapper ul li:hover {
   background-color: #FFCC4F;
 }
-/* line 141, ../sass/custom/_footer.scss */
+/* line 142, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_social_wrapper ul a {
   color: #0054A6;
 }
-/* line 147, ../sass/custom/_footer.scss */
+/* line 148, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_menu_wrapper {
   align-self: flex-start;
   order: 4;
   flex-basis: 70%;
   padding-top: 8px;
 }
-/* line 153, ../sass/custom/_footer.scss */
+/* line 154, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_menu_wrapper ul {
   list-style-type: none;
   margin: 0px;
@@ -9337,7 +9338,7 @@ footer .footer_wrapper .footer_menu_wrapper ul {
   margin-top: 4px;
 }
 @media all and (max-width: 480px) {
-  /* line 147, ../sass/custom/_footer.scss */
+  /* line 148, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_menu_wrapper {
     order: 5;
     width: 100%;
@@ -9345,13 +9346,13 @@ footer .footer_wrapper .footer_menu_wrapper ul {
   }
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
-  /* line 147, ../sass/custom/_footer.scss */
+  /* line 148, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_menu_wrapper {
     order: 4;
     flex-basis: 50%;
   }
 }
-/* line 171, ../sass/custom/_footer.scss */
+/* line 172, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_menu_wrapper a {
   color: #FFF;
   padding: 2px 0px;
@@ -9359,19 +9360,19 @@ footer .footer_wrapper .footer_menu_wrapper a {
   line-height: 1.75em;
   font-weight: 600;
 }
-/* line 178, ../sass/custom/_footer.scss */
+/* line 179, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_menu_wrapper a:hover {
   background-color: #0054A6;
   color: #FFF;
   text-decoration: underline;
 }
-/* line 189, ../sass/custom/_footer.scss */
+/* line 190, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_badge_wrapper {
   align-self: flex-end;
   order: 5;
 }
 @media all and (max-width: 480px) {
-  /* line 189, ../sass/custom/_footer.scss */
+  /* line 190, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_badge_wrapper {
     align-self: flex-start;
     width: 0%;
@@ -9379,31 +9380,31 @@ footer .footer_wrapper .footer_badge_wrapper {
   }
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
-  /* line 189, ../sass/custom/_footer.scss */
+  /* line 190, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_badge_wrapper {
     align-self: flex-start;
     order: 3;
   }
 }
-/* line 203, ../sass/custom/_footer.scss */
+/* line 204, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_badge_wrapper img {
   float: right;
   max-width: 175px;
 }
 @media all and (max-width: 480px) {
-  /* line 203, ../sass/custom/_footer.scss */
+  /* line 204, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_badge_wrapper img {
     float: none;
   }
 }
-/* line 214, ../sass/custom/_footer.scss */
+/* line 215, ../sass/custom/_footer.scss */
 footer .footer_wrapper .footer_gtranslate_wrapper {
   flex-basis: 100%;
   align-self: flex-start;
   order: 5;
 }
 @media all and (max-width: 480px) {
-  /* line 214, ../sass/custom/_footer.scss */
+  /* line 215, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_gtranslate_wrapper {
     padding-top: 20px;
     flex-basis: auto;
@@ -9411,7 +9412,7 @@ footer .footer_wrapper .footer_gtranslate_wrapper {
   }
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
-  /* line 214, ../sass/custom/_footer.scss */
+  /* line 215, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_gtranslate_wrapper {
     flex-basis: 60%;
     order: 3;

@@ -13,7 +13,7 @@ footer {
     height: 100%;
   }
   @include respond-to(tablet-min, tablet-max) {
-    height: 480px;
+    height: 280px;
   }
 
   .transaction_menu_wrapper {
@@ -116,6 +116,7 @@ footer {
 
       @include respond-to(null, mobile-max) {
         flex-basis: 100%;
+        padding-top: 20px;
         order: 3;
       }
       @include respond-to(tablet-min, tablet-max) {
