@@ -10661,7 +10661,7 @@ form.search .search button {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    padding: 0 2.5rem 0 0;
+    padding: 3.8rem 2.5rem 3.8rem 3rem;
     font-family: proxima-nova, sans-serif;
   }
 
@@ -10672,6 +10672,21 @@ form.search .search button {
   }
 
   .main-header nav.mega > ul div > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
     width: 36%;
     color: #555555;
     background: #F0F5FA;
@@ -10681,7 +10696,29 @@ form.search .search button {
             order: 2;
     font-size: 2.1rem;
     line-height: 1.4em;
+    padding: 3.8rem 3rem;
     font-style: italic;
+  }
+
+  .main-header nav.mega > ul div > div a {
+    font-style: normal;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002E6D;
+  }
+
+  .main-header nav.mega > ul div > div a i {
+    -webkit-transition: -webkit-transform 0.25s;
+    transition: -webkit-transform 0.25s;
+    transition: transform 0.25s;
+    transition: transform 0.25s, -webkit-transform 0.25s;
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+
+  .main-header nav.mega > ul div > div a:hover i {
+    -webkit-transform: translateX(15px);
+            transform: translateX(15px);
   }
 
   .main-header nav.mega > ul div > div + ul {
