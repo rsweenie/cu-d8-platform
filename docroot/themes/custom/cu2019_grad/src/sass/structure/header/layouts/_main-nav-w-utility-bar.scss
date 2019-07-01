@@ -13,7 +13,7 @@
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
     @media #{$mediaFullHeader} {
-        padding: 0;
+        //padding: 0;
     }
 
     .utility-bar {
@@ -58,11 +58,10 @@
 
 > div {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    @include flex(space-between, center, center);
+    @include flex(space-between, stretch, stretch);
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     max-width: $siteWMx;
     margin: 0 auto;
-    padding: 0 #{$gutter}rem;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)

@@ -25,12 +25,16 @@
     width: 100%;
     \* -------------------------- */
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: #{$gutter * .8}rem 0;
+
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     background: $white;
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    @media #{$mediaFullHeader} {
+      padding: #{$gutter * .8}rem 0;
+    }
 
     /* -------------------------- *\
 

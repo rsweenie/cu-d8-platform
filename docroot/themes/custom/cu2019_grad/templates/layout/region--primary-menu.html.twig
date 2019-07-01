@@ -19,14 +19,16 @@
   ]
 %}
 {% if content %}
+  <input type="checkbox" id="{{ headerID }}ToggleNav" />
+  <label class="toggle" for="{{ headerID }}ToggleNav">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="sr-only">Menu</span>
+  </label>
   <div{{ attributes.addClass(classes) }}>
-    <input type="checkbox" id="{{ headerID }}ToggleNav" />
-    <label class="toggle" for="{{ headerID }}ToggleNav">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="sr-only">Menu</span>
-    </label>
+    <div>
     {{ content }}
+    </div>
   </div>
 {% endif %}

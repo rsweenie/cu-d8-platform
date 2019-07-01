@@ -723,7 +723,6 @@ nav a {
     @include position(sticky, 1000, (top), (-3.8rem));
     width: 100%;
     \* -------------------------- */
-  padding: 2rem 0;
   background: #fff;
   /* -------------------------- *\
 
@@ -857,18 +856,17 @@ nav a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   max-width: 1350px;
   margin: 0 auto;
-  padding: 0 2.5rem;
   width: 100%;
 }
 
@@ -896,7 +894,7 @@ nav a {
 }
 
 .main-header .logo svg {
-  width: 34.7rem;
+  width: 21.1rem;
   height: auto;
   fill: currentColor;
 }
@@ -909,9 +907,24 @@ nav a {
 .main-header .toggle {
   position: relative;
   z-index: 100;
-  width: 3.5rem;
-  height: 2.4rem;
+  width: 5.2rem;
+  background: #f0f5fa;
   cursor: pointer;
+}
+
+.main-header .toggle:after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  content: "";
+  background: #002E6D;
+  z-index: 0;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
 .main-header .toggle .bar {
@@ -922,23 +935,24 @@ nav a {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 0.4rem;
-  width: 100%;
+  height: 0.2rem;
+  width: 1.8rem;
   background: #002E6D;
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
   transition: transform 0.25s, -webkit-transform 0.25s;
+  z-index: 1;
 }
 
 .main-header .toggle .bar:nth-child(2) {
-  -webkit-transform: translate(-50%, -1.2rem);
-  transform: translate(-50%, -1.2rem);
+  -webkit-transform: translate(-50%, -6px);
+  transform: translate(-50%, -6px);
 }
 
 .main-header .toggle .bar:nth-child(3) {
-  -webkit-transform: translate(-50%, 0.8rem);
-  transform: translate(-50%, 0.8rem);
+  -webkit-transform: translate(-50%, 4px);
+  transform: translate(-50%, 4px);
 }
 
 .main-header nav.mega {
@@ -955,6 +969,15 @@ nav a {
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+}
+
+.main-header input[type="checkbox"]:checked + .toggle:after {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.main-header input[type="checkbox"]:checked + .toggle .bar {
+  background: #fff;
 }
 
 .main-header input[type="checkbox"]:checked + .toggle .bar:nth-child(1) {
@@ -10484,7 +10507,7 @@ form.search .search button {
   }
 
   .main-header {
-    padding: 0;
+    padding: 2rem 0;
   }
 
   .main-header > div {
@@ -11650,7 +11673,12 @@ form.search .search button {
     text-align: center;
   }
 
-  .main-header nav.mega {
+  .main-header input[type="checkbox"]:checked ~ nav {
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+
+  .main-header .region-primary-menu {
     position: absolute;
     z-index: 1;
     left: 100%;
@@ -11666,22 +11694,22 @@ form.search .search button {
     transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
   }
 
-  .main-header nav.mega > ul {
+  .main-header .region-primary-menu > ul {
     width: 100%;
     background: #F0F5FA;
   }
 
-  .main-header nav.mega > ul > li:nth-last-child(n + 3) {
+  .main-header .region-primary-menu > ul > li:nth-last-child(n + 3) {
     display: none;
     border-top: none;
   }
 
-  .main-header nav.mega > ul > li:nth-last-child(n + 3) a {
+  .main-header .region-primary-menu > ul > li:nth-last-child(n + 3) a {
     background: #FFCC4F;
     text-align: center;
   }
 
-  .main-header nav.mega > ul div {
+  .main-header .region-primary-menu > ul div {
     position: absolute;
     z-index: 100;
     left: 100%;
@@ -11694,52 +11722,52 @@ form.search .search button {
     transition: transform 0.25s, -webkit-transform 0.25s;
   }
 
-  .main-header nav.mega > ul div > ul {
+  .main-header .region-primary-menu > ul div > ul {
     background: #F0F5FA;
     height: 100%;
     overflow: auto;
   }
 
-  .main-header nav.mega > ul div > ul > li:nth-child(-n + 2) {
+  .main-header .region-primary-menu > ul div > ul > li:nth-child(-n + 2) {
     font-weight: bold;
   }
 
-  .main-header nav.mega p {
+  .main-header .region-primary-menu p {
     display: none;
   }
 
-  .main-header nav.mega li {
+  .main-header .region-primary-menu li {
     position: static;
   }
 
-  .main-header nav.mega li + li {
+  .main-header .region-primary-menu li + li {
     border-top: 0.2rem solid #FFCC4F;
   }
 
-  .main-header nav.mega a,
-  .main-header nav.mega label,
-  .main-header nav.mega button {
+  .main-header .region-primary-menu a,
+  .main-header .region-primary-menu label,
+  .main-header .region-primary-menu button {
     display: block;
     padding: 2rem;
   }
 
-  .main-header nav.mega a:hover,
-  .main-header nav.mega a:focus,
-  .main-header nav.mega label:hover,
-  .main-header nav.mega label:focus,
-  .main-header nav.mega button:hover,
-  .main-header nav.mega button:focus {
+  .main-header .region-primary-menu a:hover,
+  .main-header .region-primary-menu a:focus,
+  .main-header .region-primary-menu label:hover,
+  .main-header .region-primary-menu label:focus,
+  .main-header .region-primary-menu button:hover,
+  .main-header .region-primary-menu button:focus {
     text-decoration: underline;
   }
 
-  .main-header nav.mega label {
+  .main-header .region-primary-menu label {
     display: block;
     position: relative;
     z-index: 0;
     padding: 2rem;
   }
 
-  .main-header nav.mega label .fa-chevron-right {
+  .main-header .region-primary-menu label .fa-chevron-right {
     position: absolute;
     z-index: 100;
     left: calc(100% - 2.5rem);
@@ -11748,21 +11776,16 @@ form.search .search button {
             transform: translate(-100%, -50%);
   }
 
-  .main-header nav.mega .toggle-text {
+  .main-header .region-primary-menu .toggle-text {
     display: none;
   }
 
-  .main-header nav.mega input[type="checkbox"]:focus + label {
+  .main-header input[type="checkbox"]:focus + label {
     text-decoration: underline;
   }
 
-  .main-header nav.mega input[type="checkbox"]:checked ~ div,
-  .main-header nav.mega input[type="checkbox"]:checked ~ ul {
-    -webkit-transform: translate(-100%, 0);
-    transform: translate(-100%, 0);
-  }
-
-  .main-header input[type="checkbox"]:checked ~ nav {
+  .main-header input[type="checkbox"]:checked ~ div,
+  .main-header input[type="checkbox"]:checked ~ ul {
     -webkit-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
   }
