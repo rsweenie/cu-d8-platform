@@ -5,7 +5,6 @@
 \*  --------------------------------------------------------------------------  */
 nav.util {
     font-family: $headingFF;
-    padding: 16px 0;
 
     @media #{$mediaFullHeader} {
       padding: 46px 0;
@@ -14,18 +13,44 @@ nav.util {
     ul {
         @media #{$mediaToggleHeader} {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            padding-top: 30px;
             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            background: $tertiary;
-            border-top: .2rem solid $secondary;
+            background: $primary;
+            // border-top: .2rem solid $secondary;
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            font-size: 17px;
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
             li {
+                position: relative;
+
                 + li {
-                    border-top-color: $secondary;
+                  &:before {
+                    width: 1px;
+                    height: 12px;
+                    content: "";
+                    background: $white;
+                    display: block;
+                  }
                 }
+
+                &:last-child {
+                  width: 100%;
+
+                  &:before {
+                    display: none;
+                  }
+                }
+            }
+
+            a {
+              color: $white;
+              padding: 0 20px;
             }
         }
 

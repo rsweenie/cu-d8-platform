@@ -7,7 +7,7 @@
 
     .search {
         @include flex(space-between, center, center, row nowrap);
-        border-bottom: .2rem solid $tertiary;        
+        border-bottom: .2rem solid $tertiary;
 
         input:not([type="checkbox"]):not([type="radio"]) {
             background: none;
@@ -21,13 +21,13 @@
             display: none;
         }
     }
-    
+
     @media #{$mediaToggleHeader} {
-        @include position(fixed, 900, (left, top), (0, 100vh));
-        height: 100vh;
-        width: 100%;
-        background: $white;
-        transition: transform .25s;
+        // @include position(fixed, 900, (left, top), (0, 100vh));
+        // height: 100vh;
+        // width: 100%;
+        // background: $white;
+        // transition: transform .25s;
 
         .toggle {
             @include position(absolute, null, (left, top), (0, 0), translate(0, -100%));
@@ -37,24 +37,24 @@
             background: $primary;
             color: $white;
         }
-        
+
         .opened {
             display: none;
         }
-    
+
         input[type="checkbox"]:checked + & {
             @include transform(translate(0, -100%));
             z-index: 1100;
-            
+
             .toggle {
                 position: relative;
                 @include transform(translate(0, 0));
             }
-            
+
             .closed {
                 display: none;
             }
-            
+
             .opened {
                 display: block;
             }
@@ -101,10 +101,10 @@
                 padding: #{$gutter * .4}rem;
                 margin: 0;
                 border-bottom: .2rem solid $accent-2;
-                
+
                 &.active {
                     @include position(relative, null);
-                    
+
                     &:after {
                         display: block;
                         @include position(absolute, null, (right, top), (0, 50%), translate(0, -50%));
@@ -117,7 +117,7 @@
                     }
                 }
             }
-        }    
+        }
 
         .filters {
             display: none;
@@ -130,7 +130,7 @@
             font-size: 1.4rem;
         }
 
-        input[type="radio"] {            
+        input[type="radio"] {
             &:checked {
 
                 + .filters {
@@ -144,9 +144,9 @@
             display: none;
         }
     }
-    
-    
-    
+
+
+
     @media #{$mediaFullHeader} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         @include flex(space-between, center, center, row wrap);
@@ -168,7 +168,7 @@
                 padding: #{$gutter * .4}rem 0;
                 border-bottom: none;
             }
-    
+
             button {
                 display: block;
             }
@@ -195,9 +195,9 @@
                     border-right: .2rem solid currentColor;
                     content: "";
                 }
-                
+
                 &.active {
-                    
+
                     &:after {
                         height: 0;
                         @include transform(translate(0, -50%));
@@ -250,7 +250,7 @@
 
                 label {
                     width: auto;
-                    
+
                     ~ label {
                         margin-left: #{$gutter * .8}rem;
                     }
@@ -263,13 +263,13 @@
         }
 
         > input[type="radio"] {
-            
+
             &:checked {
-            
+
                 + .filters {
                     @include flex(flex-start, flex-start, null, row wrap);
                     text-align: right;
-            
+
                     &[role="radiogroup"] {
                         justify-content: flex-end;
                     }
@@ -293,7 +293,7 @@
             width: 100%;
             margin: #{$gutter}rem 0 0;
         }
-        
+
         .form-btns, .toggle {
             display: none;
         }

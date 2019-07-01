@@ -29,7 +29,7 @@
       left: 100%;
 
       content: "";
-      background: $primary;
+      background: $secondary;
       z-index: 0;
       @include transition(transform .25s ease-out);
     }
@@ -178,7 +178,34 @@ nav.mega {
 
                     a {
                         padding: 18px 14px 14px;
-                        //padding: #{$gutter * .4}rem;
+                        position: relative;
+                        color: $white;
+                        background: $secondary;
+                        transition: all .25s;
+
+                        &:hover {
+                          text-decoration: none;
+                          color: $white;
+                          background: $tertiary;
+                        }
+
+                        &:after {
+                          width: 1px;
+                          height: calc(100% - 16px);
+                          position: absolute;
+                          right: 0;
+                          top: 8px;
+                          content: "";
+                          background: $white;
+                        }
+                    }
+
+                    &:last-child {
+                      a {
+                        &:after {
+                          display: none;
+                        }
+                      }
                     }
                 }
             }
@@ -196,7 +223,7 @@ nav.mega {
                     font-size: 17px;
 
                     &:nth-child(-n + 2) {
-                        display: none;
+                        //display: none;
                     }
                 }
             }
@@ -423,35 +450,8 @@ nav.mega {
                 &:nth-child(n + 5) {
                     a {
                         //padding: #{$gutter * .4rem} #{$gutter * .8rem};
-                        position: relative;
-                        color: $white;
-                        background: $secondary;
-                        transition: all .25s;
 
-                        &:hover {
-                          text-decoration: none;
-                          color: $white;
-                          background: $tertiary;
-                        }
-
-                        &:after {
-                          width: 1px;
-                          height: calc(100% - 16px);
-                          position: absolute;
-                          right: 0;
-                          top: 8px;
-                          content: "";
-                          background: $white;
-                        }
                     }
-                }
-
-                &:last-child {
-                  a {
-                    &:after {
-                      display: none;
-                    }
-                  }
                 }
             }
         }
@@ -561,9 +561,9 @@ input[type="checkbox"] {
         @include position(absolute, 1, (left, top), (100%, 100%));
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         width: 100vw;
-        height: calc(100vh - 8.2rem);
+        height: calc(100vh - 70px);
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        background: $tertiary;
+        background: rgba($black,.7);
         overflow-y: auto;
         overflow-x: hidden;
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
@@ -571,31 +571,32 @@ input[type="checkbox"] {
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         @include transition(transform .25s ease-out);
 
-        > ul {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            width: 100%;
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            background: $accent-1;
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        nav.mega {
+          background: $secondary;
+          font-size: 18px;
 
+          > ul {
             > li {
-                &:nth-last-child(n + 3) {
-                    display: none;
-                    border-top: none;
-                    //padding: #{$gutter * .4}rem;
+              display: flex;
+              padding: 0 13px;
 
-                    a {
-                        background: $accent-3;
-                        text-align: center;
-                        //padding: #{$gutter * .4}rem;
-                    }
+              a {
+                color: $white;
+                padding: 12px 0;
+                flex-grow: 1;
+              }
+
+              ~ li {
+                a {
+                  border-top: 1px solid rgba($white,.3);
                 }
-            }
+              }
 
-            div {
+              &:nth-child(n + 5) {
+                @include srOnly;
+              }
+
+              > div {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 @include position(absolute, 100, (left, top), (100%, 0));
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -606,120 +607,160 @@ input[type="checkbox"] {
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
                 @include transition(transform .25s);
-
-                > ul {
-                    background: $accent-1;
-                    height: 100%;
-                    overflow: auto;
-
-                    > li {
-                        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-                        &:nth-child(-n + 2) {
-                            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                            font-weight: bold;
-                            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                        }
-                    }
-                }
+              }
             }
+          }
         }
 
-        p {
-            display: none;
-        }
-
-        li {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            position: static;
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-            + li {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                border-top: .2rem solid $accent-3;
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            }
-        }
-
-        a, label, button {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            display: block;
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            padding: #{$gutter * .8}rem;
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-            @include hover {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                text-decoration: underline;
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            }
-        }
-
-        label {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            display: block;
-            @include position(relative, 0);
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            padding: #{$gutter * .8}rem;
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-            .fa-chevron-right {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                @include position(absolute, 100, (left, top), (calc(100% - #{$gutter}rem), 50%), translate(-100%, -50%));
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            }
-        }
-
-        .toggle-text {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            display: none;
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
-
-        a:not(:only-child) {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            //display: none;
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
+        // > ul {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     width: 100%;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     background: $accent-1;
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        //     > li {
+        //         &:nth-last-child(n + 3) {
+        //             display: none;
+        //             border-top: none;
+        //             //padding: #{$gutter * .4}rem;
+        //
+        //             a {
+        //                 background: $accent-3;
+        //                 text-align: center;
+        //                 //padding: #{$gutter * .4}rem;
+        //             }
+        //         }
+        //     }
+        //
+        //     div {
+        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //         @include position(absolute, 100, (left, top), (100%, 0));
+        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //         width: 100%;
+        //         height: 100%;
+        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //         @include transition(transform .25s);
+        //
+        //         > ul {
+        //             background: $accent-1;
+        //             height: 100%;
+        //             overflow: auto;
+        //
+        //             > li {
+        //                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //                 // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //                 // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        //                 &:nth-child(-n + 2) {
+        //                     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //                     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //                     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //                     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //                     font-weight: bold;
+        //                     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //                     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        //
+        // p {
+        //     display: none;
+        // }
+        //
+        // li {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     position: static;
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        //     + li {
+        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //         border-top: .2rem solid $accent-3;
+        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //     }
+        // }
+        //
+        // a, label, button {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     display: block;
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     padding: #{$gutter * .8}rem;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        //     @include hover {
+        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //         text-decoration: underline;
+        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //     }
+        // }
+        //
+        // label {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     display: block;
+        //     @include position(relative, 0);
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     padding: #{$gutter * .8}rem;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        //     .fa-chevron-right {
+        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //         @include position(absolute, 100, (left, top), (calc(100% - #{$gutter}rem), 50%), translate(-100%, -50%));
+        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //     }
+        // }
+        //
+        // .toggle-text {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     display: none;
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        // }
+        //
+        // a:not(:only-child) {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     //display: none;
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        // }
   }
 
   input[type="checkbox"] {

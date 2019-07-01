@@ -8,6 +8,7 @@
     @include flex(space-between, center, center, row nowrap);
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    padding: 15px 0 15px 13px;
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
@@ -16,6 +17,10 @@
 
     &:hover {
       color: $tertiary;
+    }
+
+    @media #{$mediaFullHeader} {
+      padding: 0;
     }
 
     svg {
@@ -29,11 +34,7 @@
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         fill: currentColor;
 
-        @media #{$mediaMd} {
-            width: 347px;
-        }
-
-        @media #{$mediaXl} {
+        @media #{$mediaFullHeader} {
             width: 347px;
         }
     }
