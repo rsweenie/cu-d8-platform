@@ -10779,7 +10779,6 @@ form.search .search button {
 
   .main-header nav.mega li li + li {
     margin: 0;
-    white-space: nowrap;
   }
 
   .main-header nav.mega li:hover > div {
@@ -11673,6 +11672,10 @@ form.search .search button {
 @media screen and (min-width: 1600px) {
   .main-header > div {
     width: 85%;
+  }
+
+  .main-header nav.mega li li + li {
+    white-space: nowrap;
   }
 
   .main-footer > div {

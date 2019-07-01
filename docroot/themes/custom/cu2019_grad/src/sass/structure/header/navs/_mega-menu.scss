@@ -394,7 +394,7 @@ nav.mega {
                     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
                     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                    white-space: nowrap;
+
                     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
                 }
 
@@ -494,6 +494,14 @@ nav.mega {
                     }
                 }
             }
+        }
+
+        li {
+          li {
+            + li {
+              white-space: nowrap;
+            }
+          }
         }
     }
 }
