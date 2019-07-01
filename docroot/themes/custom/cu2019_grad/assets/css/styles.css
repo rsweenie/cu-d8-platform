@@ -10671,7 +10671,7 @@ form.search .search button {
     font-size: 1.7rem;
   }
 
-  .main-header nav.mega > ul div > div {
+  .main-header nav.mega > ul .mega_content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10700,14 +10700,14 @@ form.search .search button {
     font-style: italic;
   }
 
-  .main-header nav.mega > ul div > div a {
+  .main-header nav.mega > ul .mega_content a {
     font-style: normal;
     font-size: 2rem;
     font-weight: bold;
     color: #002E6D;
   }
 
-  .main-header nav.mega > ul div > div a i {
+  .main-header nav.mega > ul .mega_content a i {
     -webkit-transition: -webkit-transform 0.25s;
     transition: -webkit-transform 0.25s;
     transition: transform 0.25s;
@@ -10716,12 +10716,12 @@ form.search .search button {
             transform: translateX(10px);
   }
 
-  .main-header nav.mega > ul div > div a:hover i {
+  .main-header nav.mega > ul .mega_content a:hover i {
     -webkit-transform: translateX(15px);
             transform: translateX(15px);
   }
 
-  .main-header nav.mega > ul div > div + ul {
+  .main-header nav.mega > ul .mega_content ~ ul {
     -webkit-column-count: 2;
     -ms-column-count: 2;
     -moz-column-count: 2;
@@ -10757,11 +10757,6 @@ form.search .search button {
 
   .main-header nav.mega > ul input[type="checkbox"]:checked + label {
     display: none;
-  }
-
-  .main-header nav.mega > ul input[type="checkbox"]:checked ~ div,
-  .main-header nav.mega > ul input[type="checkbox"]:checked ~ ul {
-    display: block;
   }
 
   .main-header nav.mega a {
@@ -11732,14 +11727,14 @@ form.search .search button {
     font-size: 1.8rem;
   }
 
-  .main-header .region-primary-menu nav.mega > ul > li {
+  .main-header .region-primary-menu nav.mega li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding: 0 1.3rem;
   }
 
-  .main-header .region-primary-menu nav.mega > ul > li a {
+  .main-header .region-primary-menu nav.mega li a {
     color: #fff;
     padding: 1.2rem 0;
     -webkit-box-flex: 1;
@@ -11747,8 +11742,38 @@ form.search .search button {
             flex-grow: 1;
   }
 
-  .main-header .region-primary-menu nav.mega > ul > li ~ li a {
+  .main-header .region-primary-menu nav.mega li ~ li a {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .main-header .region-primary-menu nav.mega li > div {
+    position: absolute;
+    z-index: 100;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #0054A6;
+    -webkit-transition: -webkit-transform 0.25s;
+    transition: -webkit-transform 0.25s;
+    transition: transform 0.25s;
+    transition: transform 0.25s, -webkit-transform 0.25s;
+  }
+
+  .main-header .region-primary-menu nav.mega li > div .sm_toggle {
+    width: auto;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    color: #fff;
+    padding: 1.3rem 0;
+    margin: 0 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }
+
+  .main-header .region-primary-menu nav.mega li > div .sm_toggle i {
+    padding-right: 1rem;
   }
 
   .main-header .region-primary-menu nav.mega > ul > li:nth-child(n + 5) {
@@ -11762,17 +11787,22 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
-  .main-header .region-primary-menu nav.mega > ul > li > div {
-    position: absolute;
-    z-index: 100;
-    left: 100%;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: -webkit-transform 0.25s;
-    transition: -webkit-transform 0.25s;
-    transition: transform 0.25s;
-    transition: transform 0.25s, -webkit-transform 0.25s;
+  .main-header .region-primary-menu .sm_toggle {
+    color: #8AC8FF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 5.2rem;
+  }
+
+  .main-header .region-primary-menu .mega_content {
+    display: none;
   }
 
   .main-header input[type="checkbox"]:focus + label {
