@@ -550,13 +550,13 @@ display:
       footer: {  }
       empty: {  }
       relationships:
-        field_content_taxo:
-          id: field_content_taxo
-          table: node__field_content_taxo
-          field: field_content_taxo
+        field_content_taxonomy:
+          id: field_content_taxonomy
+          table: node__field_content_taxonomy
+          field: field_content_taxonomy
           relationship: none
           group_type: group
-          admin_label: 'field_content_taxo: Taxonomy term'
+          admin_label: 'field_content_taxonomy: Taxonomy term'
           required: false
           plugin_id: standard
         field_news_spotlight_p_link:
@@ -573,7 +573,7 @@ display:
           id: name
           table: taxonomy_term_field_data
           field: name
-          relationship: field_content_taxo
+          relationship: field_content_taxonomy
           group_type: group
           admin_label: ''
           default_action: ignore
