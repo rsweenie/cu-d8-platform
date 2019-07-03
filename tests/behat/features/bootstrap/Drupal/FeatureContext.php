@@ -152,7 +152,15 @@ JS;
     return $instance;
   }
 
+  /**
+ * @Then I select :arg1 in the :arg2 select
+ */
+public function selectState($arg1, $arg2) {
+  $page = $this->getSession()->getPage();
+  $selectElement = $page->find('xpath', '//select[@onchange = "' . $arg2 . '"]');
 
+  $selectElement->selectOption($arg1);
+}
 
     /**
    * @Then /^(?:|I )visit (?:|the )"([^"]*)"(?:|.*)$/
