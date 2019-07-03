@@ -6,7 +6,7 @@
 
     Each navigation should have it's own file
 
-    The main, and utility, navigations should be defined in the 
+    The main, and utility, navigations should be defined in the
         structure/header.scss file
 
 \*  --------------------------------------------------------------------------  */
@@ -17,5 +17,6 @@ nav {
     //@import '_sitemap';
     @import '_pagination';
     @import '_jump';
-    @import '_mobi-cta';
 }
+
+//@import '_mobi-cta';

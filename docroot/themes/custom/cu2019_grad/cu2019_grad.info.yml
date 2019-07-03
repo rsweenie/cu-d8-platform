@@ -8,6 +8,8 @@ libraries:
 regions:
   header: 'Header'
   primary_menu: 'Primary Menu'
+  util_menu: 'Utility Menu'
+  mobile_cta: 'Mobile CTAs'
   search: 'Search'
   footer_top: 'Footer Top'
   footer_bottom: 'Footer Bottom'

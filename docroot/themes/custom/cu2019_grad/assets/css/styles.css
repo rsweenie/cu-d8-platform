@@ -957,7 +957,6 @@ nav a {
 }
 
 .main-header nav.mega {
-  background: #fff;
   font-family: "Conduit";
 }
 
@@ -1007,6 +1006,50 @@ nav a {
 .main-header nav.util ul a:hover,
 .main-header nav.util ul a:focus {
   color: #8AC8FF;
+}
+
+.main-header .menu--cta ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Conduit";
+}
+
+.main-header .menu--cta ul li {
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.main-header .menu--cta ul li a {
+  display: block;
+  padding: 1.8rem 1.4rem 1.4rem;
+  position: relative;
+  color: #fff;
+  background: #0054A6;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.main-header .menu--cta ul li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #6CACE4;
+}
+
+.main-header .menu--cta ul li a:after {
+  width: 0.1rem;
+  height: calc(100% - 1.6rem);
+  position: absolute;
+  right: 0;
+  top: 0.8rem;
+  content: "";
+  background: #fff;
+}
+
+.main-header .menu--cta ul li:last-child a:after {
+  display: none;
 }
 
 .main-header form.search {
@@ -7841,7 +7884,7 @@ blockquote .tooltip-trigger {
 
     Each navigation should have it's own file
 
-    The main, and utility, navigations should be defined in the 
+    The main, and utility, navigations should be defined in the
         structure/header.scss file
 
 \*  --------------------------------------------------------------------------  */
@@ -7870,11 +7913,6 @@ nav {
   /*  --------------------------------------------------------------------------  *\
 
     LANDING NAVIGATIONS
-
-\*  --------------------------------------------------------------------------  */
-  /*  --------------------------------------------------------------------------  *\
-
-    MOBILE CTAS
 
 \*  --------------------------------------------------------------------------  */
 }
@@ -8046,41 +8084,6 @@ nav.jn {
 
 nav.jn li + li {
   margin: 2rem 0 0;
-}
-
-nav.mobi-cta {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-}
-
-nav.mobi-cta > a {
-  display: block;
-  -webkit-box-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
-  width: auto;
-  padding: .5rem;
-  background: #8AC8FF;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  text-align: center;
-  white-space: nowrap;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -10502,6 +10505,52 @@ form.search .search button {
     display: table;
   }
 
+  .main-header .region-primary-menu {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 13.1rem;
+  }
+
+  .main-header .region-primary-menu:before {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 100vw;
+    height: 100%;
+    background: #F0F5FA;
+    content: "";
+  }
+
+  .main-header .region-primary-menu:after {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    bottom: -0.5rem;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 100vw;
+    height: 0.5rem;
+    background: rgba(33, 35, 34, 0.1);
+    content: "";
+  }
+
+  .main-header .region-primary-menu > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+
   .main-header > div {
     position: relative;
     z-index: 0;
@@ -10532,12 +10581,8 @@ form.search .search button {
   }
 
   .main-header nav.mega {
+    background-color: transparent;
     font-size: 1.9rem;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 13.1rem;
   }
 
   .main-header nav.mega > ul {
@@ -10610,42 +10655,6 @@ form.search .search button {
   .main-header nav.mega > ul > li:nth-child(-n + 4) li a:hover {
     text-decoration: underline;
     color: #019cdb;
-  }
-
-  .main-header nav.mega > ul > li:nth-child(n + 5) {
-    font-size: 1.7rem;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .main-header nav.mega > ul > li:nth-child(n + 5) a {
-    padding: 1.8rem 1.4rem 1.4rem;
-    position: relative;
-    color: #fff;
-    background: #0054A6;
-    -webkit-transition: all .25s;
-    transition: all .25s;
-  }
-
-  .main-header nav.mega > ul > li:nth-child(n + 5) a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: #6CACE4;
-  }
-
-  .main-header nav.mega > ul > li:nth-child(n + 5) a:after {
-    width: 0.1rem;
-    height: calc(100% - 1.6rem);
-    position: absolute;
-    right: 0;
-    top: 0.8rem;
-    content: "";
-    background: #fff;
-  }
-
-  .main-header nav.mega > ul > li:nth-child(n + 5):last-child a:after {
-    display: none;
   }
 
   .main-header nav.mega > ul ul {
@@ -10797,32 +10806,6 @@ form.search .search button {
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
-  }
-
-  .main-header nav.mega:before {
-    position: absolute;
-    z-index: -1;
-    left: 50%;
-    top: 0;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    width: 100vw;
-    height: 100%;
-    background: #F0F5FA;
-    content: "";
-  }
-
-  .main-header nav.mega:after {
-    position: absolute;
-    z-index: -1;
-    left: 50%;
-    bottom: -0.5rem;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    width: 100vw;
-    height: 0.5rem;
-    background: rgba(33, 35, 34, 0.1);
-    content: "";
   }
 
   .main-header nav.util {
@@ -11402,10 +11385,6 @@ form.search .search button {
     padding: 0;
   }
 
-  nav.mobi-cta {
-    display: none;
-  }
-
   .f-basic h3 {
     font-size: 2.2rem;
   }
@@ -11725,19 +11704,19 @@ form.search .search button {
     transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
   }
 
-  .main-header .region-primary-menu nav.mega {
+  .main-header nav.mega {
     background: #0054A6;
     font-size: 1.8rem;
   }
 
-  .main-header .region-primary-menu nav.mega li {
+  .main-header nav.mega li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding: 0 1.3rem;
   }
 
-  .main-header .region-primary-menu nav.mega li a {
+  .main-header nav.mega li a {
     color: #fff;
     padding: 1.2rem 0;
     -webkit-box-flex: 1;
@@ -11745,11 +11724,11 @@ form.search .search button {
             flex-grow: 1;
   }
 
-  .main-header .region-primary-menu nav.mega li ~ li a {
+  .main-header nav.mega li ~ li a {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  .main-header .region-primary-menu nav.mega li > div {
+  .main-header nav.mega li > div {
     position: absolute;
     z-index: 100;
     left: 100%;
@@ -11763,7 +11742,7 @@ form.search .search button {
     transition: transform 0.25s, -webkit-transform 0.25s;
   }
 
-  .main-header .region-primary-menu nav.mega li > div .sm_toggle {
+  .main-header nav.mega li > div .sm_toggle {
     width: auto;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -11775,22 +11754,11 @@ form.search .search button {
     font-weight: bold;
   }
 
-  .main-header .region-primary-menu nav.mega li > div .sm_toggle i {
+  .main-header nav.mega li > div .sm_toggle i {
     padding-right: 1rem;
   }
 
-  .main-header .region-primary-menu nav.mega > ul > li:nth-child(n + 5) {
-    position: absolute;
-    width: 0.1rem;
-    height: 0.1rem;
-    padding: 0;
-    margin: -1px;
-    border: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-  }
-
-  .main-header .region-primary-menu .sm_toggle {
+  .main-header .sm_toggle {
     color: #8AC8FF;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -11804,7 +11772,7 @@ form.search .search button {
     width: 5.2rem;
   }
 
-  .main-header .region-primary-menu .mega_content {
+  .main-header .mega_content {
     display: none;
   }
 

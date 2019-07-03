@@ -1,0 +1,47 @@
+.menu--cta {
+  ul {
+    display: flex;
+    font-family: $headingFF;
+
+    li {
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: (50 / 1000) * 1em;
+
+      text-transform: uppercase;
+
+      a {
+          display: block;
+          padding: 18px 14px 14px;
+          position: relative;
+          color: $white;
+          background: $secondary;
+          transition: all .25s;
+
+          &:hover {
+            text-decoration: none;
+            color: $white;
+            background: $tertiary;
+          }
+
+          &:after {
+            width: 1px;
+            height: calc(100% - 16px);
+            position: absolute;
+            right: 0;
+            top: 8px;
+            content: "";
+            background: $white;
+          }
+      }
+
+      &:last-child {
+        a {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
