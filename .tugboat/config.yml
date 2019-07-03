@@ -121,3 +121,12 @@ services:
 
         # Install the initial DB backup as a base.
         - zcat "${TUGBOAT_ROOT}/.tugboat/live-reference-db.sql.gz" | mysql tugboat
+
+
+  apache:
+    visualdiffs:
+      # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
+      # Check some pages using the default options
+      - /
+      - /residencies-fellowships
+      - /about
