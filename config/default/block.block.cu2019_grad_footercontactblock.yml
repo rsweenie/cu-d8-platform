@@ -1,0 +1,20 @@
+uuid: a420a61f-08fa-40a1-ae3a-442714bfe910
+langcode: en
+status: false
+dependencies:
+  module:
+    - cu_footer_contact
+  theme:
+    - cu2019_grad
+id: cu2019_grad_footercontactblock
+theme: cu2019_grad
+region: dump
+weight: -1
+provider: null
+plugin: footercontactblock
+settings:
+  id: footercontactblock
+  label: 'Footer Contact block'
+  provider: cu_footer_contact
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: 268039f0-8ced-4ff5-8c69-1c1d4a1dfb10
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.cta
+  module:
+    - menu_block
+  theme:
+    - cu2019_grad
+id: cta
+theme: cu2019_grad
+region: primary_menu
+weight: -14
+provider: null
+plugin: 'menu_block:cta'
+settings:
+  id: 'menu_block:cta'
+  label: CTA
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand: 0
+  parent: 'cta:'
+  suggestion: cta
+visibility: {  }
