@@ -84,13 +84,6 @@ services:
       # base preview, the build workflow starts here, skipping the init
       # and update steps, because the results of those are inherited
       # from the base preview.
-      apache:
-        visualdiffs:
-          # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
-          # Check some pages using the default options
-          - /
-          - /residencies-fellowships
-          - /about
       build:
         - composer install --no-ansi
         - mkdir -p "${DOCROOT}/sites/default/files"
@@ -99,6 +92,14 @@ services:
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
         - drush -r "${DOCROOT}" cache-rebuild
         - drush -r "${DOCROOT}" updb -y
+
+      apache:
+        visualdiffs:
+          # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
+          # Check some pages using the default options
+          - /
+          - /residencies-fellowships
+          - /about
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
