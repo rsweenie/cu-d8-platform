@@ -10,6 +10,14 @@
 
       text-transform: uppercase;
 
+      @media #{$mediaToggleHeader} {
+        width: 33%;
+        flex-grow: 1;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1em;
+      }
+
       a {
           display: block;
           padding: 18px 14px 14px;
@@ -17,6 +25,14 @@
           color: $white;
           background: $secondary;
           transition: all .25s;
+
+          @media #{$mediaToggleHeader} {
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5px;
+          }
 
           &:hover {
             text-decoration: none;
@@ -48,5 +64,13 @@
     .region-primary-menu & {
       @include srOnly;
     }
+  }
+}
+
+
+.region-mobile-cta {
+  padding-top: 70px;
+  @media #{$mediaFullHeader} {
+    @include srOnly;
   }
 }
