@@ -44,4 +44,9 @@
       }
     }
   }
+  @media #{$mediaToggleHeader} {
+    .region-primary-menu & {
+      @include srOnly;
+    }
+  }
 }

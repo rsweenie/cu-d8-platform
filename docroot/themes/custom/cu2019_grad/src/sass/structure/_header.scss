@@ -127,7 +127,6 @@
     } // COMMENT THIS OUT FOR PRODUCTION USE
     \* ------------------ */
     @import 'header/navs/_utility-nav';
-    @import 'header/navs/_cta';
 
     /* -------------------------- *\
 
@@ -150,6 +149,9 @@
     Search Dialog - does not require a css file to be imported
     \* ------------------ */
 }
+
+
+@import 'header/navs/_cta';
 /* -------------------------- *\
 
 COMPONENT LIBRARY MODIFICATIONS

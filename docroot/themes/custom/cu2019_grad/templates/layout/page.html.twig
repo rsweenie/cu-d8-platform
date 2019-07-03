@@ -50,8 +50,17 @@
         {% include '@cu2019_grad/components/logo.html.twig' %}
       </a>
       {{ page.header }}
-      {{ page.primary_menu }}
-      {{ page.util_menu }}
+      <input type="checkbox" id="{{ headerID }}ToggleNav" />
+      <label class="toggle" for="{{ headerID }}ToggleNav">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="sr-only">Menu</span>
+      </label>
+      <div class="nav-wrapper">
+        {{ page.primary_menu }}
+        {{ page.util_menu }}
+      </div>
     </div>
     {{ page.search }}
   </header>

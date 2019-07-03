@@ -511,19 +511,7 @@ input[type="checkbox"] {
 
 @media #{$mediaToggleHeader} {
     .region-primary-menu {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @include position(absolute, 1, (left, top), (100%, 100%));
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        width: 100vw;
-        height: calc(100vh - 70px);
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        background: rgba($black,.7);
-        overflow-y: auto;
-        overflow-x: hidden;
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        @include transition(transform .25s ease-out);
+        
     }
 
     nav.mega {

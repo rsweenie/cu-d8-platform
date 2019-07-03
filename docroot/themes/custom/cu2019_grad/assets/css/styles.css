@@ -1008,50 +1008,6 @@ nav a {
   color: #8AC8FF;
 }
 
-.main-header .menu--cta ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: "Conduit";
-}
-
-.main-header .menu--cta ul li {
-  font-size: 1.7rem;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.main-header .menu--cta ul li a {
-  display: block;
-  padding: 1.8rem 1.4rem 1.4rem;
-  position: relative;
-  color: #fff;
-  background: #0054A6;
-  -webkit-transition: all .25s;
-  transition: all .25s;
-}
-
-.main-header .menu--cta ul li a:hover {
-  text-decoration: none;
-  color: #fff;
-  background: #6CACE4;
-}
-
-.main-header .menu--cta ul li a:after {
-  width: 0.1rem;
-  height: calc(100% - 1.6rem);
-  position: absolute;
-  right: 0;
-  top: 0.8rem;
-  content: "";
-  background: #fff;
-}
-
-.main-header .menu--cta ul li:last-child a:after {
-  display: none;
-}
-
 .main-header form.search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1131,6 +1087,50 @@ nav a {
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+}
+
+.menu--cta ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Conduit";
+}
+
+.menu--cta ul li {
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.menu--cta ul li a {
+  display: block;
+  padding: 1.8rem 1.4rem 1.4rem;
+  position: relative;
+  color: #fff;
+  background: #0054A6;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.menu--cta ul li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #6CACE4;
+}
+
+.menu--cta ul li a:after {
+  width: 0.1rem;
+  height: calc(100% - 1.6rem);
+  position: absolute;
+  right: 0;
+  top: 0.8rem;
+  content: "";
+  background: #fff;
+}
+
+.menu--cta ul li:last-child a:after {
+  display: none;
 }
 
 /* -------------------------- *\
@@ -11683,12 +11683,7 @@ form.search .search button {
     text-align: center;
   }
 
-  .main-header input[type="checkbox"]:checked ~ nav {
-    -webkit-transform: translate(-100%, 0);
-    transform: translate(-100%, 0);
-  }
-
-  .main-header .region-primary-menu {
+  .main-header .nav-wrapper {
     position: absolute;
     z-index: 1;
     left: 100%;
@@ -11702,6 +11697,11 @@ form.search .search button {
     transition: -webkit-transform 0.25s ease-out;
     transition: transform 0.25s ease-out;
     transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  }
+
+  .main-header input[type="checkbox"]:checked ~ nav {
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
   }
 
   .main-header nav.mega {
@@ -11823,6 +11823,17 @@ form.search .search button {
   .main-header nav.util ul a {
     color: #fff;
     padding: 0 2rem;
+  }
+
+  .region-primary-menu .menu--cta {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
   }
 
   section.ptb {
