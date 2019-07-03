@@ -1,0 +1,8 @@
+global-styling:
+  css:
+    theme:
+      css/hide-menu.css: {}
+
+custom-javascript:
+  js:
+    js/hide-menu.js: {}

@@ -1,0 +1,26 @@
+uuid: 36efe982-d962-4d04-9662-0676034b1eb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: 630co6dU041AhfnjiW_9P6loK53ufYjKk3064cAzJIs
+id: cu2017_alliance_account_menu
+theme: cu2017_alliance
+region: navigation_collapsible
+weight: 11
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+visibility: {  }

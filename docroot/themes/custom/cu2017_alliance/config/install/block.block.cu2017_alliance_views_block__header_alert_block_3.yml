@@ -1,0 +1,26 @@
+uuid: 5f40880e-432a-453f-a01c-4dc22d4b31d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.header_alert
+  module:
+    - views
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: uFI5TB-jxcRYrzur2P38loUnUkVHElhPXyMWIfvKg5g
+id: cu2017_alliance_views_block__header_alert_block_3
+theme: cu2017_alliance
+region: header_alert
+weight: -4
+provider: null
+plugin: 'views_block:header_alert-block_3'
+settings:
+  id: 'views_block:header_alert-block_3'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

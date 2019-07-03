@@ -1,0 +1,30 @@
+uuid: 8c171188-7b2c-4bd5-ac72-479993776206
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools_block
+  theme:
+    - cu2017_alliance
+id: cu2017_alliance_largehorizimage
+theme: cu2017_alliance
+region: large_horiz_image
+weight: 0
+provider: null
+plugin: 'entity_field:node:field_large_horiz_image'
+settings:
+  id: 'entity_field:node:field_large_horiz_image'
+  label: 'Large Horiz Image'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: media_thumbnail
+    settings:
+      image_style: rectangle_horizontal_large_940x300_
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }

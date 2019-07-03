@@ -4,15 +4,15 @@
  * Promo Box template.
  */
 #}
+{# File link mmc 4.12.19#}
 <div{{ attributes.addClass('clearfix', 'promo_box_wrapper') }}>
-    {{ title_suffix.contextual_links }}
-
-    {% if node.field_promo_link.entity.field_links_open_in_new_window.0.value|render == 0 %}      
-        <a href="{{ node.field_promo_link.entity.field_links_link.0.uri }}">
-    {% else %}
-        <a href="{{ node.field_promo_link.entity.field_links_link.0.uri }}" target="_blank">
-    {% endif %}
+    {{ title_suffix.contextual_links }} 
+        {# int/ext link and open in new window decision #}
+        <a href="{{ node.field_promo_p_link.entity.field_internal_or_external_link.0.url }}" {{ node.field_promo_p_link.entity.field_open_in_new_window.value ? 'target="_blank"':'' }}>
         <span class="promo_text">{{ content.field_promo_box_promo_text }}</span>
-        <div class="promo_btn">{{ node.field_promo_link.entity.field_links_link_text.0.value }}</div>
+        {# link text #}
+        <div class="promo_btn">{{ node.field_promo_p_link.entity.field_link_text.0.value}}</div>
+        {# File link mmc 4.12.19 #}
+        {# {{ file_url(node.field_promo_p_link.entity.field_file_link.entity.field_document.entity.uri.value) }} #}
     </a> 
 </div>

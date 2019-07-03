@@ -6,7 +6,6 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.node.slide.field_slide_caption
     - field.field.node.slide.field_slide_image
-    - field.field.node.slide.field_slide_link
     - field.field.node.slide.field_slide_p_link
     - node.type.slide
   module:

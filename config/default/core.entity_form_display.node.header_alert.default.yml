@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.header_alert.field_alert_link
     - field.field.node.header_alert.field_emergency_headline
     - field.field.node.header_alert.field_header_alert_activate
     - field.field.node.header_alert.field_header_alert_markup

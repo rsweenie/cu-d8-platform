@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.related_links.field_related_link
     - field.field.node.related_links.field_related_p_link
     - node.type.related_links
   module:

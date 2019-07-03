@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.quote_box.field_quote_box_photo
     - field.field.node.quote_box.field_quote_box_quote_text
     - field.field.node.quote_box.field_quote_box_quotes
-    - field.field.node.quote_box.field_quote_link
     - field.field.node.quote_box.field_quote_p_link
     - node.type.quote_box
   module:

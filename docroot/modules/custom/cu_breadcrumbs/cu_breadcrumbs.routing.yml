@@ -1,0 +1,9 @@
+cu_breadcrumbs.settings:
+  path: '/admin/config/cu_breadcrumbs/settings'
+  defaults:
+    _form: '\Drupal\cu_breadcrumbs\Form\CUBreadcrumbsSettingsForm'
+    _title: 'CU Breadcrumbs'
+  requirements:
+    _permission: 'administer site configuration'
+  options:  
+    _admin_route: TRUE  

@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_profile_email
     - field.storage.node.field_profile_image
-    - field.storage.node.field_profile_link
     - field.storage.node.field_profile_name
     - field.storage.node.field_profile_office_location
     - field.storage.node.field_profile_p_link
@@ -708,10 +707,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_profile_link:
-          id: field_profile_link
-          table: node__field_profile_link
-          field: field_profile_link
+        field_profile_p_link:
+          id: field_profile_p_link
+          table: node__field_profile_p_link
+          field: field_profile_p_link
           relationship: none
           group_type: group
           admin_label: ''
@@ -757,10 +756,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_entity_view
+          type: entity_reference_revisions_entity_view
           settings:
             view_mode: default
-          group_column: target_id
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -953,7 +952,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -1009,7 +1007,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -1124,7 +1121,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -1239,7 +1235,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -2834,7 +2829,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -6982,7 +6976,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -14318,7 +14311,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -15088,7 +15080,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -15203,7 +15194,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -15318,7 +15308,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -15433,7 +15422,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -15548,7 +15536,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -15663,7 +15650,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -15778,7 +15764,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -15893,7 +15878,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -16008,7 +15992,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -16123,7 +16106,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -16932,7 +16914,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -17054,7 +17035,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -17169,7 +17149,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -17284,7 +17263,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -18113,7 +18091,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -18214,7 +18191,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -18315,7 +18291,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -18416,7 +18391,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -18531,7 +18505,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
@@ -18840,7 +18813,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_profile_email'
         - 'config:field.storage.node.field_profile_image'
-        - 'config:field.storage.node.field_profile_link'
         - 'config:field.storage.node.field_profile_name'
         - 'config:field.storage.node.field_profile_office_location'
         - 'config:field.storage.node.field_profile_p_link'
