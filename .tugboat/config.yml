@@ -84,6 +84,13 @@ services:
       # base preview, the build workflow starts here, skipping the init
       # and update steps, because the results of those are inherited
       # from the base preview.
+      apache:
+        visualdiffs:
+          # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
+          # Check some pages using the default options
+          - /
+          - /residencies-fellowships
+          - /about
       build:
         - composer install --no-ansi
         - mkdir -p "${DOCROOT}/sites/default/files"
@@ -121,12 +128,3 @@ services:
 
         # Install the initial DB backup as a base.
         - zcat "${TUGBOAT_ROOT}/.tugboat/live-reference-db.sql.gz" | mysql tugboat
-
-
-  apache:
-    visualdiffs:
-      # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
-      # Check some pages using the default options
-      - /
-      - /residencies-fellowships
-      - /about
