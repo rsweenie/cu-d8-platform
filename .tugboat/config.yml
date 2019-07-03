@@ -93,13 +93,13 @@ services:
         - drush -r "${DOCROOT}" cache-rebuild
         - drush -r "${DOCROOT}" updb -y
 
-      apache:
-        visualdiffs:
-          # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
-          # Check some pages using the default options
-          - /
-          - /residencies-fellowships
-          - /about
+    apache:
+      visualdiffs:
+        # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
+        # Check some pages using the default options
+        - /
+        - /residencies-fellowships
+        - /about
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
