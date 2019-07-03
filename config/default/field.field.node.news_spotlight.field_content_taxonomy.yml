@@ -1,21 +1,19 @@
-uuid: 87dc3bb1-ea65-4eaa-92f5-8f068bb7de3e
+uuid: 6f4205fb-2790-4a13-9068-1258673b525a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_content_taxo
-    - node.type.content_page
+    - field.storage.node.field_content_taxonomy
+    - node.type.news_spotlight
     - taxonomy.vocabulary.content_taxonomy
-_core:
-  default_config_hash: d5K30kRCsGq8ziUVzZsYwj6SL228GPLwGkGGEBPgyrs
-id: node.content_page.field_content_taxo
-field_name: field_content_taxo
+id: node.news_spotlight.field_content_taxonomy
+field_name: field_content_taxonomy
 entity_type: node
-bundle: content_page
+bundle: news_spotlight
 label: 'Content Taxonomy'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

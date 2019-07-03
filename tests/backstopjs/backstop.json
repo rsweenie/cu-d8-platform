@@ -21,7 +21,7 @@
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "alliance index",
+      "label": "local alliance index",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "http://local.creighton.com/",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/",
@@ -40,17 +40,17 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance related links",
+      "label": "alliance index menu",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com/profile/shaghayegh-abdollahi-md",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/profile/shaghayegh-abdollahi-md",
+      "url": "http://local.creighton.com/",
+      "referenceUrl": "http://alliance.creighton.acsitefactory.com/",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
       "hideSelectors": [],
       "removeSelectors": [],
       "hoverSelector": "",
-      "clickSelector": "",
+      "clickSelector": ".header_top_section_menu",
       "postInteractionWait": 0,
       "selectors": [],
       "selectorExpansion": true,
@@ -59,124 +59,10 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance news",
+      "label": "local alliance creighton profile landing page",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com/news",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/news",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.04,
-      "requireSameDimensions": true
-    },
-    {
-      "label": "alliance image slider",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com/spotlight",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/spotlight",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.04,
-      "requireSameDimensions": true
-    },
-    {
-      "label": "alliance profiles",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com/node/7171",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/node/7171",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.04,
-      "requireSameDimensions": true
-    },
-    {
-      "label": "alliance featured links",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com/about/graduate-medical-education-office",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/about/graduate-medical-education-office",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.04,
-      "requireSameDimensions": true
-    },
-    {
-      "label": "alliance promo box",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com/about/creighton-university-arizona-health-education-alliance",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/about/creighton-university-arizona-health-education-alliance",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.04,
-      "requireSameDimensions": true
-    },
-    {
-      "label": "alliance quote box",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com/residencies-fellowships",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/residencies-fellowships",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.04,
-      "requireSameDimensions": true
-    },
-    {
-      "label": "alliance spotlight",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com/residencies-fellowships/residency-programs/emergency-medicine/curriculum",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/residencies-fellowships/residency-programs/emergency-medicine/curriculum",
+      "url": "http://local.creighton.com/creighton_profiles",
+      "referenceUrl": "http://alliance.creighton.acsitefactory.com/creighton_profiles",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
@@ -211,10 +97,10 @@
       "requireSameDimensions": true
     },
     {
-      "label": "dev alliance index",
+      "label": "local alliance profile landing page",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/",
-      "referenceUrl": "http://alliance.creighton.acsitefactory.com/",
+      "url": "http://local.creighton.com/profile",
+      "referenceUrl": "http://alliance.creighton.acsitefactory.com/profile",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
@@ -230,9 +116,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance related links",
+      "label": "local alliance shaghayegh-abdollahi-md",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/profile/shaghayegh-abdollahi-md",
+      "url": "http://local.creighton.com/profile/shaghayegh-abdollahi-md",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/profile/shaghayegh-abdollahi-md",
       "readyEvent": "",
       "readySelector": "",
@@ -249,9 +135,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance news",
+      "label": "local alliance news",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/news",
+      "url": "http://local.creighton.com/news",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/news",
       "readyEvent": "",
       "readySelector": "",
@@ -268,9 +154,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance image slider",
+      "label": "local alliance spotlight",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/spotlight",
+      "url": "http://local.creighton.com/spotlight",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/spotlight",
       "readyEvent": "",
       "readySelector": "",
@@ -287,9 +173,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance profiles",
+      "label": "local alliance node/7171",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/node/7171",
+      "url": "http://local.creighton.com/node/7171",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/node/7171",
       "readyEvent": "",
       "readySelector": "",
@@ -306,9 +192,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance featured links",
+      "label": "local alliance graduate-medical-education-office",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/about/graduate-medical-education-office",
+      "url": "http://local.creighton.com/about/graduate-medical-education-office",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/about/graduate-medical-education-office",
       "readyEvent": "",
       "readySelector": "",
@@ -325,9 +211,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance promo box",
+      "label": "local alliance creighton-university-arizona-health-education-alliance",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/about/creighton-university-arizona-health-education-alliance",
+      "url": "http://local.creighton.com/about/creighton-university-arizona-health-education-alliance",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/about/creighton-university-arizona-health-education-alliance",
       "readyEvent": "",
       "readySelector": "",
@@ -344,9 +230,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance quote box",
+      "label": "local alliance residencies-fellowships",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/residencies-fellowships",
+      "url": "http://local.creighton.com/residencies-fellowships",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/residencies-fellowships",
       "readyEvent": "",
       "readySelector": "",
@@ -363,9 +249,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "alliance spotlight",
+      "label": "local alliance curriculum",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://alliance.dev-creighton.acsitefactory.com/residencies-fellowships/residency-programs/emergency-medicine/curriculum",
+      "url": "http://local.creighton.com/residencies-fellowships/residency-programs/emergency-medicine/curriculum",
       "referenceUrl": "http://alliance.creighton.acsitefactory.com/residencies-fellowships/residency-programs/emergency-medicine/curriculum",
       "readyEvent": "",
       "readySelector": "",
@@ -393,9 +279,9 @@
   "engine": "puppeteer",
   "engineOptions": {
     "args": ["--no-sandbox",
-              "--ignore-certificate-errors",
-              "--ignore-certificate-errors-spki-list"
-            ]
+      "--ignore-certificate-errors",
+      "--ignore-certificate-errors-spki-list"
+    ]
   },
   "resembleOutputOptions": {
     "errorColor": {

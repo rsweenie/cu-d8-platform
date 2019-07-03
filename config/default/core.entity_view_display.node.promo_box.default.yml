@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.promo_box.field_promo_box_promo_text
-    - field.field.node.promo_box.field_promo_link
     - field.field.node.promo_box.field_promo_p_link
     - node.type.promo_box
   module:
@@ -39,15 +38,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_promo_link:
-    weight: 3
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
     region: content
   field_promo_p_link:
     type: entity_reference_revisions_entity_view

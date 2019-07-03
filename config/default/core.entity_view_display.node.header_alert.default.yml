@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.header_alert.field_alert_link
     - field.field.node.header_alert.field_emergency_headline
     - field.field.node.header_alert.field_header_alert_activate
     - field.field.node.header_alert.field_header_alert_markup
@@ -30,15 +29,6 @@ targetEntityType: node
 bundle: header_alert
 mode: default
 content:
-  field_alert_link:
-    weight: 5
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   field_emergency_headline:
     weight: 3
     label: above
