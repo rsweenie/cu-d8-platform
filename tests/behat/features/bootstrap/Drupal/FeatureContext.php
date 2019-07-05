@@ -157,7 +157,7 @@ JS;
    */
   public function iSelectLanguage($arg1, $arg2) {
     $page = $this->getSession()->getPage();
-    $selectElement = $page->find('xpath', '//select[@onchange = "' . $arg2 . '"]');
+    $selectElement = $page->find('xpath', '//select[' . $arg2 . ']');
     $selectElement->selectOption($arg1);
   }
 
