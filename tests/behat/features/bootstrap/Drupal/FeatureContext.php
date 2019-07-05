@@ -153,9 +153,9 @@ JS;
   }
 
     /**
-   * @Then I select :arg1 in the :arg2 select
+   * @Then I select :arg1 in the :arg2 select menu
    */
-  public function iSelectLanguage($arg1, $arg2) {
+  public function iSelectFromMenu($arg1, $arg2) {
     $page = $this->getSession()->getPage();
     $selectElement = $page->find('xpath', '//select[' . $arg2 . ']');
     $selectElement->selectOption($arg1);

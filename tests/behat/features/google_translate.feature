@@ -14,7 +14,7 @@ Feature: Google Translate
     @364480301 @api @javascript
     Scenario: Change Language to German
     Then I should see "Select Language"
-    And I select "German" in the "@onchange = 'doGTranslate(this);'" select
+    And I select "German" in the "@onchange = 'doGTranslate(this);'" select menu
     And I wait "3" seconds
     Then I should see "Humanressourcen"
     And I should not see "Human Resources"
@@ -22,7 +22,7 @@ Feature: Google Translate
     @364480301 @api @javascript
     Scenario: Change Language to Italian 
     Then I should see "Select Language"
-    And I select "Italian" in the "@onchange = 'doGTranslate(this);'" select
+    And I select "Italian" in the "@onchange = 'doGTranslate(this);'" select menu
     And I wait "3" seconds
     Then I should see "Risorse umane"
     And I should not see "Human Resources"
