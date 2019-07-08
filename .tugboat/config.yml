@@ -98,7 +98,6 @@ services:
         - drush -r "${DOCROOT}" updatedb -y
         - drush -r "${DOCROOT}" cache-rebuild
 
-    apache:
       visualdiffs:
         # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
         # Check some pages using the default options
