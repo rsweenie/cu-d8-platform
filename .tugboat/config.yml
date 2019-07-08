@@ -57,6 +57,12 @@ services:
         # Install/update packages managed by composer, including drush
         - composer install --no-ansi
 
+        # CU specific commands
+        - mkdir -p "${DOCROOT}/sites/default/files"
+        - chgrp -R www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
+
         # Have BLT setup the DB and such.
         #- yes | ${TUGBOAT_ROOT}/vendor/bin/blt setup
 
@@ -86,14 +92,10 @@ services:
       # from the base preview.
       build:
         - composer install --no-ansi
-        - mkdir -p "${DOCROOT}/sites/default/files"
-        - chgrp -R www-data "${DOCROOT}/sites/default/files"
-        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
-        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
         - drush -r "${DOCROOT}" sql:sync "@alliance.01live" @self -y
         - drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
         - drush -r "${DOCROOT}" cron -y
-        - drush -r "${DOCROOT}" updb -y
+        - drush -r "${DOCROOT}" updatedb -y
         - drush -r "${DOCROOT}" cache-rebuild
 
     apache:
