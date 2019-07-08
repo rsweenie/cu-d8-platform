@@ -1,15 +1,14 @@
 services:
-  apache:
+
+  # What to call the service hosting the site.
+  php:
+
     visualdiffs:
       # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
       # Check some pages using the default options
       - /
       - /residencies-fellowships
       - /about
-
-
-  # What to call the service hosting the site.
-  php:
 
     # Use PHP 7.1 with Apache
     image: tugboatqa/php:7.1-apache
