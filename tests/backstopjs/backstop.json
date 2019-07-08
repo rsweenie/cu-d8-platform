@@ -59,6 +59,25 @@
       "requireSameDimensions": true
     },
     {
+      "label": "local alliance frequently-asked-questions",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://local.creighton.com/residencies-fellowships/frequently-asked-questions",
+      "referenceUrl": "http://alliance.creighton.acsitefactory.com/residencies-fellowships/frequently-asked-questions",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.04,
+      "requireSameDimensions": true
+    },
+    {
       "label": "local alliance creighton profile landing page",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "http://local.creighton.com/creighton_profiles",
