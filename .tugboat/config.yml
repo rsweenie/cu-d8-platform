@@ -98,13 +98,6 @@ services:
         - drush -r "${DOCROOT}" updatedb -y
         - drush -r "${DOCROOT}" cache-rebuild
 
-      visualdiffs:
-        # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
-        # Check some pages using the default options
-        - /
-        - /residencies-fellowships
-        - /about
-
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
   mysql:
@@ -133,3 +126,12 @@ services:
 
         # Install the initial DB backup as a base.
         # - zcat "${TUGBOAT_ROOT}/.tugboat/live-reference-db.sql.gz" | mysql tugboat
+
+  apache:
+
+    visualdiffs:
+      # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
+      # Check some pages using the default options
+      - /
+      - /residencies-fellowships
+      - /about
