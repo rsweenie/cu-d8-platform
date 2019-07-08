@@ -1,74 +1,38 @@
-{#
-/**
- * @file
- * Default view template to display all the fields in a row.
- *
- * Available variables:
- * - view: The view in use.
- * - fields: A list of fields, each one contains:
- *   - content: The output of the field.
- *   - raw: The raw data for the field, if it exists. This is NOT output safe.
- *   - class: The safe class ID to use.
- *   - handler: The Views field handler controlling this field.
- *   - inline: Whether or not the field should be inline.
- *   - wrapper_element: An HTML element for a wrapper.
- *   - wrapper_attributes: List of attributes for wrapper element.
- *   - separator: An optional separator that may appear before a field.
- *   - label: The field's label text.
- *   - label_element: An HTML element for a label wrapper.
- *   - label_attributes: List of attributes for label wrapper.
- *   - label_suffix: Colon after the label.
- *   - element_type: An HTML element for the field content.
- *   - element_attributes: List of attributes for HTML element for field content.
- *   - has_label_colon: A boolean indicating whether to display a colon after
- *     the label.
- *   - element_type: An HTML element for the field content.
- *   - element_attributes: List of attributes for HTML element for field content.
- * - row: The raw result from the query, with all data it fetched.
- *
- * @see template_preprocess_views_view_fields()
- *
- * @ingroup themeable`
- */
-#}
+{# mmc 4.15.19 #}
+
+{# link text #}
+{# {{ _context.row._relationship_entities['field_news_spotlight_p_link'].field_link_text.value }}  #}
+
+{# set up variables for theme #}
+{# set href and node_url to same value, node_url if we want the learn more and news headline links to be different at some point #}
+{% set href, node_url = fields.view_node.content,fields.view_node.content %}
+{# set target #}
+{% set target = _context.row._relationship_entities['field_news_spotlight_p_link'].field_open_in_new_window.value ? 'target="_blank"' : '' %}
+{# if paragraph link set href to link url #}
+{% if _context.row._relationship_entities['field_news_spotlight_p_link'].field_internal_or_external_link.0.url is not empty %}
+  {% set href = _context.row._relationship_entities['field_news_spotlight_p_link'].field_internal_or_external_link.0.url %}
+{% endif %}
+{# if file set href to files path and open in new page #}
+{% if _context.row._relationship_entities['field_news_spotlight_p_link'].field_file_link.entity.field_document.entity.uri.value is not empty %}
+  {% set target = 'target="_blank"' %}
+  {% set href = file_url(_context.row._relationship_entities['field_news_spotlight_p_link'].field_file_link.entity.field_document.entity.uri.value) %}
+{% endif %}
 
 <div class="news_image">
-    {{fields.field_content_page_image.content}}
+  <a href="{{ href|render }}" {{ target }}>
+    {{ fields.field_content_page_image.content }}
+  </a>
 </div>
 <div class="news_text">
-    <div class="news_headline">
-        {# If there is a news link (meaning the news is not the node, wrap the headline with the link #}
-        {% if fields.field_links_link.content or fields.field_links_file_link_upload.content %}
-            <div class="links_wrapper">
-                {% if field_links_open_in_new_window.content != "false" %}  
-                    {% set target = '_blank' %} 
-                {% elseif fields.field_links_file_link_upload.content is not empty %}         
-                    {% set target = '_blank' %} 
-                {% endif %}
-               
-                {% if fields.field_links_file_link_upload.content %}
-                    {% set href = fields.field_links_file_link_upload.content %}
-                    
-                {% else %}
-                    {% set href = fields.field_links_link.content %}
-                {% endif %}
+  <div class="news_headline">
+    <div class="links_wrapper">
+      <a href="{{ href|render }}" {{ target }}><h2>{{ fields.field_content_page_headline.content }}</h2></a>
+    </div>
+  </div>
 
-                <a href="{{ href }}" target="{{ target }}"><h2>{{ fields.field_content_page_headline.content }}</h2> </a> 
-            </div>
-        {% else %}
-            <a href="{{ fields.view_node_1.content }}"><h2>{{ fields.field_content_page_headline.content }}</h2></a>
-        {% endif %}
-    </div>
-   
-    <p class="date">{{ fields.created.content }}</p>
-    <div class="summary">{{ fields.body.content }}</div>
-    <div class="learn_more_link">
-        {# If there is a news link (meaning the news is not the node, wrap the headline with the link #}
-        {% if fields.field_links_link.content or fields.field_links_file_link_upload.content %}
-            <a href="{{ href }}" target="{{ target }}">Learn More </a><span class="hidden">: {{ fields.field_content_page_headline.content }}</span> 
-        {% else %}
-             {# see view for rendering of this field "Content: Link to Content" #}
-            {{ fields.view_node.content }}
-        {% endif %}
-    </div>
+  <p class="date">{{ fields.created.content }}</p>
+  <div class="summary">{{ fields.body.content }}</div>
+  <div class="learn_more_link">
+    <a href="{{ href|render }}" title="{{ fields.field_content_page_headline.content }}" {{ target }}>Learn More </a>
+  </div>
 </div>

@@ -1,0 +1,8 @@
+change:
+  js:
+    js/change.js: {}
+  dependencies:
+    - core/backbone
+    - core/jquery
+    - core/jquery.conce
+    - core/ckeditor

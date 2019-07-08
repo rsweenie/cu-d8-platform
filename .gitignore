@@ -3,6 +3,10 @@ local.*
 *.local
 local.blt.yml
 
+# Ignore Lando configs.
+.lando.yml
+.lando.local.yml
+
 # Ignore drupal core.
 docroot/core
 

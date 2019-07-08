@@ -105,10 +105,21 @@
 	}
 }
 @include respond-to(null , desktop-min) {
-	.center_column {		
+	.center_column {
 		#{$bootstrapColumns} {
 			padding-left: 0px;
 			padding-right: 0px;
 		}
+	}
+}
+@include respond-to(null, lg-tablet-max) {
+	.flexbox_three_section_wrapper .left_column, .flexbox_three_section_wrapper .right_column {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+@include respond-to(desktop-min, null) {
+	.flexbox_three_section_wrapper .left_column {
+		padding-left: 0;
 	}
 }

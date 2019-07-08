@@ -6,9 +6,12 @@
 
 .breadcrumb_region {
 	.breadcrumb {
+		padding: 20px 15px 15px;
+		margin-bottom: 0;
 		background-color: $white;
 
 		li {
+			white-space: nowrap;
 			a {
 				@include breadcrumb;
 
@@ -33,4 +36,7 @@
 			@include breadcrumb;
 		}
 	}
+}
+.breadcrumb_region .breadcrumb {
+
 }

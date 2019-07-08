@@ -16,8 +16,8 @@
 		// 		height: 515px;
 		// 	}
 		// }
-		
-	} 
+
+	}
 	.slick-slider {
 		button {
 			background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
@@ -37,15 +37,14 @@
 				bottom: -5px;
 			}
 		}
-		
-		
+
+
 	}
 	.slick-slider.slick-list {
         overflow: visible;
-	}
+	}	  
 	.slick-prev,
-		.slick-prev:hover,
-		.slick-prev:focus {
+		.slick-prev:hover{
 			background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
 			outline: none;
 			right: 90px;
@@ -56,8 +55,7 @@
 			}
 		}
 		.slick-next,
-		.slick-next:hover,
-		.slick-next:focus {
+		.slick-next:hover{
 			background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
 			background-position: -46px 0;
 			outline: none;
@@ -71,6 +69,13 @@
 	.slick-arrow::before, .slick-arrow::after {
 		content: unset;
 	}
+
+	.slick-arrow:focus {
+		outline-color: rgb(59, 153, 252);   
+		outline-width: 5px;
+		outline-style: auto;
+	  }
+	  
 	.slide__caption {
 		margin-top: -80px;
 		padding: 10px 45px;
@@ -84,7 +89,7 @@
 			margin: 0 auto;
 			position: relative;
 			top: -4%;
-			
+
 			}
 			.slide_text{
 				background: transparent !important;
@@ -95,7 +100,7 @@
 				color: $yellow;
 				text-transform: uppercase;
 				font-weight: $bold;
-				font-size: 4em;
+				font-size: 3.5em;
 				font-family: $condensedFont;
 				margin-top: -10px;
 				margin-bottom: -10px;
@@ -106,7 +111,7 @@
 					font-size: 34px;
 				}
 			}
-	
+
 			h2 {
 				color: $white;
 				font-weight: $bold;
@@ -119,16 +124,21 @@
 					font-size: 24px;
 				}
 			}
-	
+
 			a {
 				background-image: url(../images/png/white-arrow.png);
 				background-position: 100%;
 				background-repeat: no-repeat;
+				margin-top: 2rem;
 				padding: 0px 20px 0px 0px;
 				font-size:1.6em;
 				@include respond-to(null , tablet-max ){
 					font-size: 18px;
 				}
+				@include respond-to(null, mobile-max) {
+					margin-top: 0;
+				}
+
 			}
 			p {
 				font-weight: $regular;

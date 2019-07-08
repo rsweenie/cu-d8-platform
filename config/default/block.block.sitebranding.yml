@@ -9,7 +9,7 @@ dependencies:
 id: sitebranding
 theme: cu2017
 region: footer
-weight: 0
+weight: -11
 provider: null
 plugin: system_branding_block
 settings:

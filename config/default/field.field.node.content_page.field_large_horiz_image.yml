@@ -1,0 +1,28 @@
+uuid: e9922cb6-96fa-45e5-8804-f0894fd8134d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_large_horiz_image
+    - media.type.image
+    - node.type.content_page
+id: node.content_page.field_large_horiz_image
+field_name: field_large_horiz_image
+entity_type: node
+bundle: content_page
+label: 'Large Horiz Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

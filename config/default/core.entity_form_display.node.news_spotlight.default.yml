@@ -8,10 +8,10 @@ dependencies:
     - field.field.node.news_spotlight.field_content_page_headline
     - field.field.node.news_spotlight.field_content_page_image
     - field.field.node.news_spotlight.field_content_page_sidebar_items
-    - field.field.node.news_spotlight.field_content_taxo
+    - field.field.node.news_spotlight.field_content_taxonomy
     - field.field.node.news_spotlight.field_display_publish_on_date
     - field.field.node.news_spotlight.field_display_type
-    - field.field.node.news_spotlight.field_new
+    - field.field.node.news_spotlight.field_news_spotlight_p_link
     - field.field.node.news_spotlight.field_tabbed_accordion
     - node.type.news_spotlight
   module:
@@ -20,6 +20,7 @@ dependencies:
     - entity_browser_entity_form
     - field_group
     - inline_entity_form
+    - paragraphs
     - path
     - private_content
     - scheduler
@@ -30,7 +31,7 @@ third_party_settings:
       children:
         - field_display_publish_on_date
         - field_content_page_image
-        - field_new
+        - field_news_spotlight_p_link
       parent_name: ''
       weight: 7
       format_type: details
@@ -83,6 +84,7 @@ content:
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
+      field_widget_replace: false
     region: content
     third_party_settings: {  }
   field_content_page_sidebar_items:
@@ -103,14 +105,14 @@ content:
         entity_browser_id: creighton_sidebar_items
     type: inline_entity_form_complex
     region: content
-  field_content_taxo:
-    weight: 6
+  field_content_taxonomy:
+    weight: 26
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+    type: entity_reference_autocomplete
     region: content
   field_display_publish_on_date:
     weight: 10
@@ -125,19 +127,17 @@ content:
     third_party_settings: {  }
     type: options_buttons
     region: content
-  field_new:
-    weight: 12
+  field_news_spotlight_p_link:
+    type: entity_reference_paragraphs
+    weight: 13
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Link
-      label_plural: Links
-      collapsible: false
-      collapsed: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: creighton_link_bros
-    type: inline_entity_form_simple
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_tabbed_accordion:
     weight: 4
@@ -199,7 +199,7 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: 'NE- for News / SP- for Spotlight'
+      placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
@@ -222,6 +222,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_new: true
   promote: true
   scheduled_publication: true
   sticky: true

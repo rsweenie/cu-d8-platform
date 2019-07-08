@@ -6,13 +6,12 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.node.slide.field_slide_caption
     - field.field.node.slide.field_slide_image
-    - field.field.node.slide.field_slide_link
+    - field.field.node.slide.field_slide_p_link
     - node.type.slide
   module:
     - entity_browser
-    - entity_browser_entity_form
     - field_group
-    - inline_entity_form
+    - paragraphs
     - private_content
     - scheduler
     - text
@@ -21,7 +20,7 @@ third_party_settings:
     group_links:
       children: {  }
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: details
       format_settings:
         id: ''
@@ -59,23 +58,17 @@ content:
       field_widget_replace: false
     region: content
     third_party_settings: {  }
-  field_slide_link:
-    weight: 4
+  field_slide_p_link:
+    type: entity_reference_paragraphs
+    weight: 7
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Link
-      label_plural: Links
-      allow_new: true
-      match_operator: CONTAINS
-      collapsible: false
-      collapsed: false
-      allow_existing: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: _none
-    type: inline_entity_form_complex
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   private:
     weight: 2
@@ -105,6 +98,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_slide_link: true
   moderation_state: true
   path: true
   promote: true

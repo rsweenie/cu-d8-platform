@@ -1,0 +1,119 @@
+uuid: e44757e1-9e2a-45e2-889f-6374557770ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_aria_landmark_roles
+    - social_media_links
+  theme:
+    - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: complementary
+    label: 'Creighton Social Links'
+_core:
+  default_config_hash: NE1CvJuzMnM08v6M-Gp2PEl0EIlkZ4lz0LnV7Kf9FxY
+id: cu2017_alliance_socialmedialinks
+theme: cu2017_alliance
+region: footer
+weight: -10
+provider: null
+plugin: social_media_links_block
+settings:
+  id: social_media_links_block
+  label: 'Social Media Links'
+  provider: social_media_links
+  label_display: '0'
+  platforms:
+    linkedin:
+      value: company/cu-azhealthedalliance/
+      description: 'Follow Creighton on LinkedIn'
+      weight: '-30'
+    facebook:
+      value: creightonuniversity/
+      description: 'Follow Creighton on Facebook'
+      weight: '-29'
+    rss:
+      value: ''
+      description: ''
+      weight: '-28'
+    email:
+      value: ''
+      description: ''
+      weight: '-27'
+    youtube_channel:
+      value: ''
+      description: ''
+      weight: '-26'
+    instagram:
+      value: ''
+      description: ''
+      weight: '-25'
+    vimeo:
+      value: ''
+      description: ''
+      weight: '-24'
+    github:
+      value: ''
+      description: ''
+      weight: '-23'
+    bitbucket:
+      value: ''
+      description: ''
+      weight: '-22'
+    drupal:
+      value: ''
+      description: ''
+      weight: '-21'
+    tumblr:
+      value: ''
+      description: ''
+      weight: '-20'
+    contact:
+      value: ''
+      description: ''
+      weight: '-19'
+    behance:
+      value: ''
+      description: ''
+      weight: '-18'
+    flickr:
+      value: ''
+      description: ''
+      weight: '-17'
+    twitter:
+      value: ''
+      description: ''
+      weight: '-16'
+    youtube:
+      value: ''
+      description: ''
+      weight: '-15'
+    pinterest:
+      value: ''
+      description: ''
+      weight: '-14'
+    vkontakte:
+      value: ''
+      description: ''
+      weight: '-13'
+    googleplus:
+      value: ''
+      description: ''
+      weight: '-12'
+    slideshare:
+      value: ''
+      description: ''
+      weight: '-11'
+  appearance:
+    orientation: h
+    show_name: 0
+  link_attributes:
+    target: '<none>'
+    rel: '<none>'
+  iconset:
+    style: 'fontawesome:2x'
+    installed_iconsets:
+      fontawesome:
+        examples: ''
+visibility: {  }

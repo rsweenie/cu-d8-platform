@@ -248,6 +248,20 @@ BLT uses a number of configuration (.yml or .json) files to define and customize
 * `drush/sites` - contains Drush aliases for this project
 * `composer.json` - includes required components, including Drupal Modules, for this project
 
+## XDebug and VSCode
+
+[VSCode XDebug Extension provided by Felix Becker](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug) allows local XDebug capabilities. To leverage remote debugging there are a few steps involved:
+
+* `<project root>/box/config.yml` settings are set automatically to configure XDebug in your Vagrant box after running ```vendor/bin/blt vm```
+* Install PHP Debug VSCode Extension by Felix Becker
+* Also see https://www.drupal.org/docs/develop/development-tools/configuring-visual-studio-code under section Configuring XDebug
+* See `<project root>/vscode-launch.json.md` file for an example of additional pathMappings in your VSCode configuration in `.vscode/launch.json` i.e.
+```json
+"pathMappings": {
+  "/var/www/creighton": "${workspaceRoot}"
+}
+```
+
 ## Resources
 
 * [Acquia Cloud](https://cloud.acquia.com)
