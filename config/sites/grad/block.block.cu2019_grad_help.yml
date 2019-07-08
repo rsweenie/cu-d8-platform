@@ -1,4 +1,4 @@
-uuid: 82e73df8-155f-4966-8e25-1173c2c2c0f6
+uuid: ebd0ee66-d338-429b-9c0e-6d54f3279c50
 langcode: en
 status: false
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: cu2019_grad_help
 theme: cu2019_grad
 region: dump
-weight: -10
+weight: -11
 provider: null
 plugin: help_block
 settings:

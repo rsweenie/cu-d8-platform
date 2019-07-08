@@ -1,4 +1,4 @@
-uuid: 95398c6d-9582-4165-8acf-85ec901becba
+uuid: df68cec0-ace8-4d41-84af-a9115e1351fc
 langcode: en
 status: false
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
     - cu2019_grad
 id: cu2019_grad_socialmedialinks
 theme: cu2019_grad
-region: footer_top
-weight: -10
+region: dump
+weight: 7
 provider: null
 plugin: social_media_links_block
 settings:

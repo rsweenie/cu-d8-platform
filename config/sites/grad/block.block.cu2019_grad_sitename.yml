@@ -1,4 +1,4 @@
-uuid: 40c201d2-1ed5-4790-bb1c-f10a8f16c734
+uuid: 2a190e33-6109-40ac-8a7f-ec8b2e091012
 langcode: en
 status: false
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
     - cu2019_grad
 id: cu2019_grad_sitename
 theme: cu2019_grad
-region: header
-weight: 0
+region: dump
+weight: -10
 provider: null
 plugin: system_branding_block
 settings:

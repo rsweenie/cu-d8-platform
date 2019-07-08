@@ -1,4 +1,4 @@
-uuid: c9766bf9-3d53-4f80-8e20-889c11979951
+uuid: 4c95ab52-bee3-44d0-877e-bd645235c8f3
 langcode: en
 status: false
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: cu2019_grad_messages
 theme: cu2019_grad
 region: dump
-weight: -9
+weight: -12
 provider: null
 plugin: system_messages_block
 settings:

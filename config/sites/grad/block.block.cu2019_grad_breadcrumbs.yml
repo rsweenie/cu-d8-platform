@@ -1,4 +1,4 @@
-uuid: 27dca69f-d3bc-4fad-89ac-748d8430db3b
+uuid: 80dcc75f-3d24-4cea-9dfb-3564205a1f6e
 langcode: en
 status: false
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: cu2019_grad_breadcrumbs
 theme: cu2019_grad
 region: dump
-weight: -11
+weight: -9
 provider: null
 plugin: system_breadcrumb_block
 settings:

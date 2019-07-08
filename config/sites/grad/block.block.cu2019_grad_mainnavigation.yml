@@ -1,4 +1,4 @@
-uuid: 407249c1-37ba-4309-ad08-e7a5b1c20c09
+uuid: 2462a30d-f5b2-4c45-b432-0aa6e9c69f1d
 langcode: en
 status: false
 dependencies:
@@ -12,8 +12,8 @@ _core:
   default_config_hash: DZnHGcVB_w9jT1aRIIHFlIQWkFB6aq1cJAYxe-j7ObA
 id: cu2019_grad_mainnavigation
 theme: cu2019_grad
-region: header
-weight: 0
+region: dump
+weight: 2
 provider: null
 plugin: 'menu_block:main'
 settings:

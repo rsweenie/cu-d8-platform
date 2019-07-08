@@ -1,4 +1,4 @@
-uuid: cf88dc96-a5c3-4a78-a0d9-e33fc843d84f
+uuid: e2a2b923-86b9-430c-89d2-0117c1029455
 langcode: en
 status: false
 dependencies:
@@ -11,8 +11,8 @@ _core:
   default_config_hash: FOVmJ1HjNDlLo2RiA8b3FFBV2gAURh8rWHushGr4d5o
 id: cu2019_grad_sidebaritems_profile
 theme: cu2019_grad
-region: header
-weight: 0
+region: dump
+weight: 5
 provider: null
 plugin: 'entity_field:node:field_sidebar_items'
 settings:

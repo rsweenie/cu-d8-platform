@@ -1,6 +1,6 @@
-uuid: d380660a-56dc-4c25-ac44-1522325fbdef
+uuid: 33a394ed-8f96-41e3-9d35-1e965cca6568
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.header_alert
@@ -12,8 +12,8 @@ _core:
   default_config_hash: SQ9p86xbYTzBCGiD_PMZ6dku75CvuIXsjIrJ1vDT50A
 id: cu2019_grad_views_block__header_alert_block_1
 theme: cu2019_grad
-region: header
-weight: -10
+region: dump
+weight: -5
 provider: null
 plugin: 'views_block:header_alert-block_1'
 settings:

@@ -1,4 +1,4 @@
-uuid: 289c8947-e17e-44bf-b171-a6ec969c12c4
+uuid: 168bdce5-a59a-457b-aab0-769b1b46046f
 langcode: en
 status: false
 dependencies:
@@ -13,8 +13,8 @@ _core:
   default_config_hash: XIThus9EJ_ebeudvMLjctQRTIqKsbHgirR7NPYcpWEE
 id: cu2019_grad_profile_contact_info
 theme: cu2019_grad
-region: header
-weight: 0
+region: dump
+weight: 3
 provider: null
 plugin: 'views_block:profile-contact_info'
 settings:

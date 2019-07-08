@@ -1,6 +1,6 @@
-uuid: 76f62595-842e-4f21-b5a4-7ab5d884ef5d
+uuid: ad931de1-15ba-4579-a0b2-f60088cdb373
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.information-for
@@ -10,8 +10,8 @@ dependencies:
     - cu2019_grad
 id: cu2019_grad_informationfor
 theme: cu2019_grad
-region: footer_top
-weight: -8
+region: dump
+weight: 1
 provider: null
 plugin: 'menu_block:information-for'
 settings:

@@ -1,4 +1,4 @@
-uuid: 5da9f46a-5a5f-44c3-a36d-837e31b2bde9
+uuid: d1e360fb-baa1-4f92-825b-74a036804e10
 langcode: en
 status: false
 dependencies:
@@ -10,8 +10,8 @@ _core:
   default_config_hash: '-MQmSeI4xBDx3Lipxd4BkxJgN-BEeHpPDQmqbTFwOVE'
 id: cu2019_grad_headerbackgroundimage
 theme: cu2019_grad
-region: header
-weight: -7
+region: dump
+weight: 0
 provider: null
 plugin: 'entity_field:node:field_header_background_image'
 settings:

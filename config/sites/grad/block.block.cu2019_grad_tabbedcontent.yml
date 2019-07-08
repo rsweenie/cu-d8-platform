@@ -1,4 +1,4 @@
-uuid: f3c81275-e638-4c90-b452-d8e83884377c
+uuid: eea54450-5a6f-4de6-8473-4c58ef565d03
 langcode: en
 status: false
 dependencies:
@@ -8,8 +8,8 @@ _core:
   default_config_hash: o2bUWt_UvMXmSRQjojfb5KgEJAfOs6tULI202cR7Shk
 id: cu2019_grad_tabbedcontent
 theme: cu2019_grad
-region: header
-weight: -8
+region: dump
+weight: -6
 provider: null
 plugin: 'entity_field:node:field_profile_tabbed_content'
 settings:

@@ -1,6 +1,6 @@
-uuid: 247365d0-5928-4c03-8338-56f244c5d719
+uuid: 23e265c6-3506-41f1-ba59-ed8af33ba824
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.account
@@ -12,8 +12,8 @@ _core:
   default_config_hash: 630co6dU041AhfnjiW_9P6loK53ufYjKk3064cAzJIs
 id: cu2019_grad_account_menu
 theme: cu2019_grad
-region: header
-weight: -3
+region: dump
+weight: 8
 provider: null
 plugin: 'system_menu_block:account'
 settings:

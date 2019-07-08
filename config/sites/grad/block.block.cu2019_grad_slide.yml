@@ -1,4 +1,4 @@
-uuid: fa6d9166-44d8-4ffa-814e-efa3da2ba365
+uuid: fc0a7567-09fd-424c-a00e-e974a994faca
 langcode: en
 status: false
 dependencies:
@@ -11,8 +11,8 @@ _core:
   default_config_hash: Ifug_a7aP4eMTePmZ7m7z0t9irdGhtXrNY7xvzF70ZI
 id: cu2019_grad_slide
 theme: cu2019_grad
-region: header
-weight: 1
+region: dump
+weight: -8
 provider: null
 plugin: 'entity_field:node:field_slide'
 settings:

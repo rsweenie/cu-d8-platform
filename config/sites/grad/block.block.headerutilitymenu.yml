@@ -1,0 +1,27 @@
+uuid: 695001cf-4254-4fb9-8739-96b1a6067eef
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-utility-menu
+  module:
+    - menu_block
+  theme:
+    - cu2019_grad
+id: headerutilitymenu
+theme: cu2019_grad
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'menu_block:header-utility-menu'
+settings:
+  id: 'menu_block:header-utility-menu'
+  label: 'Header Utility Menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand: 0
+  parent: 'header-utility-menu:'
+  suggestion: header_utility_menu
+visibility: {  }
