@@ -9,7 +9,7 @@
     }
 
     %orange-h2{
-        color: $orange;
+        color: $darkBlue;
         font-size: $h2LargerFontSize;
         font-weight: $semiBold;
     } 
@@ -174,7 +174,7 @@
                             text-decoration: none;
                             text-transform: none;
                             &:hover li{
-                                color:$darkBlue;
+                                color:$mediumBlue;
                             }
                         }
                         li {
@@ -191,11 +191,11 @@
                         a {
                             font-family: $condensedFont;
                             font-weight: $bold;
-                            color: $orange;
+                            color: $darkBlue;
                             text-transform: uppercase;
                             text-decoration: none;
                             li{
-                                background-image: url(../images/png/orange-arrow.png);
+                                background-image: url(../images/png/dkblue-arrow.png);
                                 background-position: 100%;
                                 font-size: $pLargerFontSize;
                                 background-repeat: no-repeat;
@@ -203,8 +203,8 @@
                                 margin-top:10px;
                                 display: inline-flex;
                                 &:hover {
-                                    color:$darkBlue;
-                                    background-image: url(../images/png/dkblue-arrow.png);
+                                    color:$mediumBlue;
+                                    background-image: url(../images/png/ltblue-arrow.png);
                         }
                             }
                         }
