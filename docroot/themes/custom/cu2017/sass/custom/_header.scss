@@ -100,6 +100,7 @@ header {
 		position: relative;
 		background: $white;
 		order: 1;
+		height: 35px;
 
 		@include respond-to(null , tablet-max) {
 			order: 2;
@@ -302,7 +303,7 @@ ul#megamenu_icon_menu{
 .transaction_menu_wrapper {
 	margin: 0 4px;
 	order: 3;
-	padding-left: 4px;
+	padding-left: 5px;
 
 	@include respond-to(null , tablet-max) {
 		order: 1;
@@ -367,17 +368,16 @@ ul#megamenu_icon_menu{
 			color: $white;
 			float: left;
 			font-size: 20px;
-			padding: 3px 15px;
+			padding: 4px 15px;
 			position: relative;
 			text-decoration: none;
 			text-transform: uppercase;
 
 			@include respond-to(null , tablet-max) {
 				font-size: 18px;
-				padding: 6px 15px 2px;
+				padding: 5px 15px;
 			}
 			@media all and (max-width: 375px) {
-				font-size: 18px;
 				padding: 6px 10px 2px;
 			}
 
