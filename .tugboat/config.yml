@@ -57,7 +57,7 @@ services:
       # skipping the init step, because the results of that step will
       # already be present.
       update:
-        # CU: Things needed to establish a clean env based on production
+        # CU: Things needed to establish a clean baseline env based on production
 
         # Use the tugboat-specific Drupal settings
         - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
@@ -99,11 +99,14 @@ services:
       # from the base preview.
       build:
         # CU: Things needed when updating code/config
+        # CU TODO: Do we want to --no-dev flag on this composer install?
         - composer install --no-ansi
+        - drush -r "${DOCROOT}" updatedb -y
         - drush -r "${DOCROOT}" config-import -y
         - drush -r "${DOCROOT}" cron -y
-        - drush -r "${DOCROOT}" updatedb -y
         - drush -r "${DOCROOT}" cache-rebuild
+        # Just in case we need to log in as admin
+        - drush -r "${DOCROOT}" uli
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
