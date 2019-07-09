@@ -9604,7 +9604,7 @@ header .header_top_section_menu_wrapper {
   header .header_top_section_menu_wrapper {
     align-self: flex-end;
     position: relative;
-    top: 50px;
+    top: 95px;
   }
 }
 /* line 152, ../sass/custom/_header.scss */

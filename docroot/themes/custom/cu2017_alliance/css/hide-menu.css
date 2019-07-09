@@ -17,10 +17,7 @@ header .header_top_section_mega_menu.hidden-menu .mega_menu_bottom_wrapper {
   header .header_top_section_mega_menu {
     top: 135px;
   }
-  header .header_top_section_menu_wrapper {
-    top: 35px;
+  header .header_top_section_menu.hidden-menu {
+    display: block;
   }
-    header .header_top_section_menu.hidden-menu {
-      display: block;
-    }
 }
