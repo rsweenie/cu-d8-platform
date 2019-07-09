@@ -9,20 +9,18 @@ commands in the Tugboat build process. This requires SSH key setup between
 Tugboat and Acquia.
 
 One developer should configure this once, and it will work for everyone. If that
-developer's keys become invalid for whatever reason, 
+developer's keys become invalid for whatever reason, you will probably seen an 
+error similar to this:
 
- [error]  The command could not be executed successfully (returned: Warning:
-Permanently added 'web-1747.enterprise-g1.hosting.acquia.com,52.91.59.211' (RSA)
+```` 
+[error]  The command could not be executed successfully (returned: Warning: Permanently added 'web-1747.enterprise-g1.hosting.acquia.com,52.91.59.211' (RSA)
 to the list of known hosts.
 Permission denied (publickey).  , code: 255)
- [error]  The external command could not be executed due to an application error.
-
-In SqlSyncCommands.php line 86:
-
-  Error: no database record could be found for source @alliance.01live
+[error]  The external command could not be executed due to an application error.
+````
 
 In this case, you will need to generate a new key pair (or use an existing),
-upload the private key to Tugboat, and upload the public key to is individual
+upload the private key to Tugboat, and upload the public key to his individual
 account on Acquia Cloud. It can take up to ten minutes for the key to
 propogate on Acquia.
 
