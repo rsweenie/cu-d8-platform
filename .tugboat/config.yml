@@ -27,6 +27,7 @@ services:
 
       # Commands that set up the basic preview infrastructure
       init:
+        # CU: Things needed to set up the LAMP stack
 
         # Install prerequisite packages
         - apt-get update
@@ -54,6 +55,7 @@ services:
       # skipping the init step, because the results of that step will
       # already be present.
       update:
+        # CU: Things needed to establish a clean env based on production
 
         # Use the tugboat-specific Drupal settings
         - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
@@ -75,6 +77,8 @@ services:
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
+        - drush -r "${DOCROOT}" sql:sync "@alliance.01live" @self -y
+        - drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
 
         # Alternatively, another common practice is to use the
         # stage_file_proxy Drupal module. This module lets Drupal serve
@@ -92,9 +96,9 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        # CU: Things needed when updating code/config
         - composer install --no-ansi
-        - drush -r "${DOCROOT}" sql:sync "@alliance.01live" @self -y
-        - drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
+        - drush -r "${DOCROOT}" config-import -y
         - drush -r "${DOCROOT}" cron -y
         - drush -r "${DOCROOT}" updatedb -y
         - drush -r "${DOCROOT}" cache-rebuild
