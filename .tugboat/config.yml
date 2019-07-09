@@ -39,7 +39,7 @@ services:
         #- docker-php-ext-install bz2 dom filter gd hash json opcache pdo pdo_mysql session simplexml sodium spl tokenizer xml
         - docker-php-ext-install bz2 gd opcache pdo_mysql
         # CU: Our own custom php tweaks 
-        - cp "${TUGBOAT_ROOT}/.tugboat/php.ini" "${DOCROOT}" /usr/local/etc/php/conf.d/creighton.ini
+        - cp "${TUGBOAT_ROOT}/.tugboat/php.ini" /usr/local/etc/php/conf.d/creighton.ini
 
         - a2enmod headers rewrite
 
