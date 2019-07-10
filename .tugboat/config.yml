@@ -83,11 +83,17 @@ services:
         #- chmod 777 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/temp"
         #- chmod 777 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
 #
-        # Sync files before fixing settings on /files dir
+        # Fix settings on /files dir before rsync
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
+
         - drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
+        # The rsync breaks settings, so fix again
+        - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
+
         - drush -r "${DOCROOT}" sql:sync "@alliance.01live" @self -y
 
         # Alternatively, another common practice is to use the
