@@ -84,7 +84,6 @@ services:
         #- chmod 777 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
 #
         # Sync files before fixing settings on /files dir
-        - drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
