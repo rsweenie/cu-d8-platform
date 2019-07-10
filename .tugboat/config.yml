@@ -9,6 +9,18 @@ services:
       - /
       - /residencies-fellowships
       - /about
+      - /residencies-fellowships/frequently-asked-questions
+      - /creighton_profiles
+      - /about/creighton-university-arizona-health-education-alliance
+      - /profile
+      - /profile/shaghayegh-abdollahi-md
+      - /news
+      - /spotlight
+      - /node/7171
+      - /about/graduate-medical-education-office
+      - /about/creighton-university-arizona-health-education-alliance
+      - /residencies-fellowships
+      - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
 
     # Use PHP 7.1 with Apache
     image: tugboatqa/php:7.1-apache
@@ -78,10 +90,10 @@ services:
         
         # CU: absolute ugly workaround for the fact that Acquia has certain file
         # locations hard coded in our config, against our will. FUD.
-        #- mkdir -p "${DOCROOT}c"
-        #- mkdir -p "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
-        #- chmod 777 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/temp"
-        #- chmod 777 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
+        - mkdir -p "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/temp"
+        - mkdir -p "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
+        - chmod 775 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/temp"
+        - chmod 775 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
 #
         # Fix settings on /files dir before rsync
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
@@ -90,10 +102,10 @@ services:
         # DB sync MUST come before filesync always
         - drush -r "${DOCROOT}" sql:sync "@alliance.01live" @self -y
         - drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
-        # The rsync breaks settings, so fix again
-#        - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
-#        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
-#        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
+        # The rsync breaks settings, so them fix again
+        - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
 
 
         # Alternatively, another common practice is to use the
