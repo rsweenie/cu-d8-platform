@@ -1,0 +1,13 @@
+{% if wrapper == 'section' %}
+<section id="Sect-{{ par_id }}">
+  <div>
+{% endif %}
+<dl class="tabs{% if class %} {{ class }}{% endif %}" role="presentation">
+  {% for item in tabsContent %}
+  {{ item }}
+  {% endfor %}
+</dl>
+{% if wrapper %}
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,4 @@
+  <dt><button id="tab-{{ par_id }}-toggle" aria-expanded="{% if i == 0 %}true{% else %}false{% endif %}" aria-controls="tab-{{ par_id }}" type="button" {% if i == 0 %}aria-disabled="true"{% endif %}>{{ name }}</button></dt>
+  <dd id="tab-{{ par_id }}" aria-labelledby="tab-{{ par_id }}-toggle" {% if i > 0 %}hidden{% endif %}>
+    {{ content }}
+  </dd>

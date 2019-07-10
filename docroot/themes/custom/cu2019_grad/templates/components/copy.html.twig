@@ -1,0 +1,11 @@
+{% if wrapper == 'section' %}
+<section id="Sect-{{ par_id }}"{% if bg %} class="{{ bg }}"{% endif %}>
+  <div>
+{% endif %}
+    <article>
+      {{ body }}
+    </article>
+{% if wrapper %}
+  </div>
+</section>
+{% endif %}
