@@ -19,21 +19,10 @@
     @include letterSpacing(50);
     text-transform: uppercase;
     font-weight: bold;
-    
+    margin-bottom: 0;
+
     @media #{$mediaLg} {
       font-size: 40px;
     }
   }
-//   position: relative;
-//
-//   .field--name-field-fwp-background {
-//     img {
-//       width: 100%;
-//
-//       position: absolute;
-//       top: 50%;
-//       left: 0;
-//       transform:
-//     }
-//   }
 }

@@ -1598,11 +1598,34 @@ section[class*="sbg-"]:after {
 \*  --------------------------------------------------------------------------  */
 }
 
+[class*="btn-"] span {
+  position: relative;
+  z-index: 1;
+}
+
+[class*="btn-"] .arrow:last-child {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
 [class*="btn-"]:hover,
 [class*="btn-"]:focus {
   border-color: currentColor;
   background: #002E6D;
   color: #F0F5FA;
+}
+
+[class*="btn-"]:hover .arrow:last-child,
+[class*="btn-"]:focus .arrow:last-child {
+  -webkit-transform: translate(3px, -50%);
+          transform: translate(3px, -50%);
 }
 
 [class*="btn-"].icon-right .fas,
@@ -1652,9 +1675,15 @@ section[class*="sbg-"]:after {
 \*  --------------------------------------------------------------------------  */
 
 .btn-primary {
-  background: #8AC8FF;
-  border-color: #8AC8FF;
+  position: relative;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFCC4F), to(#ffd673));
+  background: linear-gradient(0deg, #FFCC4F 0%, #ffd673 100%);
+  border: none;
+  border-radius: 0.3rem;
   color: #002E6D;
+  font-weight: bold;
+  padding: 1rem 6.5rem 1rem 1.5rem;
   /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
     &:not([class*="btn-ani-fill-"]) {
         @include hover {
@@ -1668,7 +1697,7 @@ section[class*="sbg-"]:after {
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
     }
-    
+
     @include hover {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -1683,11 +1712,37 @@ section[class*="sbg-"]:after {
     \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
 }
 
+.btn-primary:before {
+  width: 8.3rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -2rem;
+  z-index: 0;
+  content: "";
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFB82A), to(#ffc44e));
+  background: linear-gradient(0deg, #FFB82A 0%, #ffc44e 100%);
+  -webkit-transform: skew(-42deg);
+          transform: skew(-42deg);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
 .btn-primary:hover,
 .btn-primary:focus {
-  background: #002E6D;
-  border-color: #002E6D;
-  color: #fff;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFCC4F), to(#ffd673));
+  background: linear-gradient(0deg, #FFCC4F 0%, #ffd673 100%);
+  color: #002E6D;
+}
+
+.btn-primary:hover:before,
+.btn-primary:focus:before {
+  -webkit-transform: translateX(-3px) skew(-42deg);
+          transform: translateX(-3px) skew(-42deg);
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -2378,6 +2433,7 @@ aside .card.img-side + p {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -11310,6 +11366,10 @@ form.search .search button {
 
   .skip-section {
     display: none;
+  }
+
+  .btn-primary {
+    max-width: 380px;
   }
 
   main > header > div {
