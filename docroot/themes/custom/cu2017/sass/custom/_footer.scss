@@ -93,6 +93,10 @@ footer {
       p {
         margin: 0 0 5px;
 
+        &:first-of-type {
+          margin-top: 18px;
+        }
+
         a {
           text-decoration: none;
           font-weight: $semiBold;
