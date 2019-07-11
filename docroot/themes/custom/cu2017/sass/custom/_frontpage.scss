@@ -66,6 +66,15 @@
             background-position: 95%;
             background-repeat: no-repeat;
             max-width: 300px;
+            -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+
+            &:hover {
+                cursor: pointer;
+                -webkit-transition-property: background-color;
+                transition-property: background-color;
+                background-color: #002E6D;
+            }
         }
         a {
             color: $white;
@@ -74,10 +83,7 @@
             text-transform: uppercase;
 
             &:hover {
-                text-decoration: none;
-                color: $white;
-                background-color: $darkBlue;
-                text-transform: uppercase;
+                cursor: pointer;
             }
         }
     }
