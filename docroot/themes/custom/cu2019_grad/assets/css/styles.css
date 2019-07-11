@@ -1157,6 +1157,7 @@ Delete everything below including comment
 }
 
 .dialog-off-canvas-main-canvas > main {
+  padding-top: 6.9rem;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -2007,10 +2008,6 @@ main > header.program .dates a.active {
 \*  --------------------------------------------------------------------------  */
 }
 
-.card > div {
-  padding: 2.5rem;
-}
-
 .card > a {
   display: block;
 }
@@ -2024,7 +2021,6 @@ main > header.program .dates a.active {
 .card.img-behind {
   position: relative;
   z-index: 0;
-  width: calc(90vw - (5rem));
   margin: 0 auto;
 }
 
@@ -2081,16 +2077,16 @@ main > header.program .dates a.active {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
+  z-index: 0;
 }
 
 .full-screen .card.img-behind > div {
   position: relative;
   left: auto;
   bottom: auto;
-  width: 95%;
-  max-width: 900.45px;
+  max-width: 1350px;
   margin: 0 auto;
-  background: rgba(108, 172, 228, 0.25);
+  width: 100%;
 }
 
 .card.img-side {
@@ -2360,6 +2356,28 @@ aside .card.img-side + p {
 .full-screen .card.story > div {
   padding: 0;
   text-align: left;
+}
+
+.card.fw_photo {
+  color: #fff;
+}
+
+.card.fw_photo:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: rgba(0, 46, 109, 0.85);
+  z-index: 1;
+}
+
+.card.fw_photo h3 {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -9662,10 +9680,6 @@ form.search .search button {
     padding: 15rem 0;
   }
 
-  .card > div {
-    padding: 5rem;
-  }
-
   .card.img-behind {
     width: 100%;
   }
@@ -10876,6 +10890,10 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
+  .dialog-off-canvas-main-canvas > main {
+    padding-top: 19.4rem;
+  }
+
   .main-footer > div {
     width: 95%;
   }
@@ -11355,6 +11373,10 @@ form.search .search button {
     text-align: right;
   }
 
+  .full-screen .card.img-behind > div {
+    width: 95%;
+  }
+
   .card h2 {
     font-size: 2em;
   }
@@ -11370,6 +11392,10 @@ form.search .search button {
 
   .full-screen .card.story > div {
     width: 41.667%;
+  }
+
+  .card.fw_photo h3 {
+    font-size: 4rem;
   }
 
   .fact strong {
@@ -11609,10 +11635,6 @@ form.search .search button {
     width: 90%;
   }
 
-  .dialog-off-canvas-main-canvas > main {
-    padding-top: 19.4rem;
-  }
-
   .main-footer > div {
     width: 90%;
   }
@@ -11626,6 +11648,10 @@ form.search .search button {
   }
 
   main > header > div {
+    width: 90%;
+  }
+
+  .full-screen .card.img-behind > div {
     width: 90%;
   }
 
@@ -11681,6 +11707,10 @@ form.search .search button {
   }
 
   main > header > div {
+    width: 85%;
+  }
+
+  .full-screen .card.img-behind > div {
     width: 85%;
   }
 }

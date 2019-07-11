@@ -5,14 +5,15 @@
   min-height: 100vh;
 
   > main {
+    padding-top: 69px;
     flex-grow: 1;
 
     @media #{$mediaFullHeader} {
+      padding-top: 194px;
         //padding: 11.4rem 0 0;
     }
 
     @media #{$mediaXl} {
-      padding-top: 194px;
         //padding: 13.4rem 0 0;
     }
   }
