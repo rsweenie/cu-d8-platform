@@ -1,0 +1,28 @@
+&.fw_photo {
+  color: $white;
+
+  &:before {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: "";
+    background: rgba($primary,.85);
+    z-index: 1;
+  }
+
+  h3 {
+    font-size: 30px;
+    @include letterSpacing(50);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0;
+
+    @media #{$mediaLg} {
+      font-size: 40px;
+    }
+  }
+}

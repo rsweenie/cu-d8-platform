@@ -1,0 +1,44 @@
+{% if wrapper == 'section' %}
+<section id="Sect-{{ par_id }}" class="section{% if class %} {{ class }}{% endif %}">
+  <div>
+    <div class="card">
+{% else %}
+    <div class="card{% if class %} {{ class }}{% endif %}">
+{% endif %}
+        {% if image %}
+          {% if button.url %}
+          <a href="{{ button.url }}">
+              {{ image }}
+          </a>
+          {% else %}
+          {{ image }}
+          {% endif %}
+        {% endif %}
+        <div>
+          {% if tag %}
+            <p class="type">{{ tag }}</p>
+          {% endif %}
+          {% if icon %}
+              <span class="{{ icon }}"></span>
+          {% endif %}
+          {% if title %}
+              <h3>{{ title }}</h3>
+          {% endif %}
+          {% if body %}
+              {{ body }}
+          {% endif %}
+          {% if button.url %}
+            {% include '@cu2019_grad/components/button.html.twig' with {
+              'class': (button.class) ? button.class : 'btn-primary',
+              'url': button.url,
+              'text': button.title,
+              'arrow': 'arrow fas fa-arrow-right',
+              'arrowPosition': 'after'
+            } %}
+          {% endif %}
+        </div>
+    </div>
+{% if wrapper %}
+  </div>
+</section>
+{% endif %}

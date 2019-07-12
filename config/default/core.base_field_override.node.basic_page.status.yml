@@ -1,14 +1,14 @@
-uuid: c6cd1b05-c5c4-4b8b-895f-c162f4b9229a
+uuid: 7129ed12-1eaa-4594-a2fb-f7e3500622af
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.basic_page
-id: node.basic_page.promote
-field_name: promote
+id: node.basic_page.status
+field_name: status
 entity_type: node
 bundle: basic_page
-label: 'Promoted to front page'
+label: Published
 description: ''
 required: false
 translatable: true

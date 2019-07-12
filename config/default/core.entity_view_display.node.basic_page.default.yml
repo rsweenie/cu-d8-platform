@@ -1,11 +1,13 @@
-uuid: eec84d72-1b08-4150-81b0-d11287c0359e
+uuid: 9480952f-e5b1-4c9a-bda3-6a5d6d243889
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.basic_page.body
+    - field.field.node.basic_page.field_components
     - node.type.basic_page
   module:
+    - entity_reference_revisions
     - panelizer
     - text
     - user
@@ -23,14 +25,19 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  links:
     weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_components:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
 hidden:
+  links: true
   private: true

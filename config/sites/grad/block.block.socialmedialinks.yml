@@ -1,15 +1,15 @@
-uuid: df68cec0-ace8-4d41-84af-a9115e1351fc
+uuid: 250cc349-335b-42ee-a0a0-0cfd5d7e9e9d
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - social_media_links
   theme:
-    - cu2019_grad
-id: cu2019_grad_socialmedialinks
-theme: cu2019_grad
-region: dump
-weight: 7
+    - cu2017
+id: socialmedialinks
+theme: cu2017
+region: footer
+weight: 0
 provider: null
 plugin: social_media_links_block
 settings:

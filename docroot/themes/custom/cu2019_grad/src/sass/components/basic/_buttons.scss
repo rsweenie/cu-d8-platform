@@ -27,8 +27,21 @@
     text-align: center;
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     transition: all .25s;
-    
-    // WHEN DEFINING HOVER, BE SURE TO ADD , &:focus TO STYLE THE FOCUS STATE OF THE ELEMENT     
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .arrow:last-child {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      transition: transform 0.25s;
+    }
+
+    // WHEN DEFINING HOVER, BE SURE TO ADD , &:focus TO STYLE THE FOCUS STATE OF THE ELEMENT
     // AS WELL.  THIS IS EXTREMELY IMPORTANT TO MEET WCAG 2.1 LEVEL AA COMPLIANCE
     @include hover {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
@@ -40,14 +53,18 @@
         color: $accent-1;
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        .arrow:last-child {
+          transform: translate(3px, -50%);
+        }
     }
-    
+
     @media #{$mediaFullHeader} {
         display: inline-block;
         width: auto;
         text-align: left;
     }
-    
+
     // SETUP FOR ALL ARROWS
     //@import 'buttons/icon/_icon-top';
     //@import 'buttons/icon/_icon-bottom';
@@ -64,12 +81,12 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    
+
     span {
         display: block;
         margin: #{$gutter * .4}rem 0 0;
     }
-    
+
     @media #{$mediaFullHeader} {
         display: none;
     }

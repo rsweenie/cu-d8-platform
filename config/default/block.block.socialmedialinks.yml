@@ -79,10 +79,6 @@ settings:
       value: ''
       description: ''
       weight: '1'
-    linkedin:
-      value: company/cu-azhealthedalliance/
-      description: ''
-      weight: '2'
     twitter:
       value: ''
       description: ''
@@ -99,10 +95,6 @@ settings:
       value: ''
       description: ''
       weight: '6'
-    facebook:
-      value: cuazhealthedalliance/
-      description: ''
-      weight: '7'
     googleplus:
       value: ''
       description: ''
