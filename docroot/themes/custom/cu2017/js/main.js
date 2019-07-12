@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+
   // added function to clean up Mega Menu functionality -Abe
   function menuLoader() {
     var megaToggle = jQuery('#mega_menu_toggle')[0],
@@ -15,6 +16,12 @@ jQuery(document).ready(function() {
       }
     });
   }
+  
+    //make parent div of front-page call-to-action button clickable
+    jQuery(".front-page-classic .first-content p:last-of-type").click(function(){
+      window.location=jQuery(this).find("a").attr("href"); 
+      return false;
+  });
 
   // find the size of the header logo and assign classes accordingly
   var logo = jQuery('.cu2017_logo');
