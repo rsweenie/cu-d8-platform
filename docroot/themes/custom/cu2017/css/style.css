@@ -9418,6 +9418,7 @@ footer .footer_wrapper .footer_gtranslate_wrapper {
 @media all and (min-width: 481px) and (max-width: 768px) {
   /* line 219, ../sass/custom/_footer.scss */
   footer .footer_wrapper .footer_gtranslate_wrapper {
+    padding-top: 20px;
     flex-basis: 60%;
     order: 3;
   }
