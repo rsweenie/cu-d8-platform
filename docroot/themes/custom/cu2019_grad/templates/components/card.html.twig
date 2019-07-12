@@ -1,10 +1,8 @@
 {% if wrapper == 'section' %}
-<section id="Sect-{{ par_id }}" class="section{% if class %} {{ class }}{% endif %}">
+<section id="Sect-{{ par_id }}" class="section full-screen">
   <div>
-    <div class="card">
-{% else %}
-    <div class="card{% if class %} {{ class }}{% endif %}">
 {% endif %}
+    <div class="card{% if class %} {{ class }}{% endif %}">
         {% if image %}
           {% if button.url %}
           <a href="{{ button.url }}">
