@@ -10,8 +10,8 @@ dependencies:
     - cu2019_grad
 id: headerutilitymenu
 theme: cu2019_grad
-region: primary_menu
-weight: 0
+region: util_menu
+weight: -12
 provider: null
 plugin: 'menu_block:header-utility-menu'
 settings:

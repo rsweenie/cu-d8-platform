@@ -5,6 +5,7 @@ core: 8.x
 base theme: classy
 libraries:
   - cu2019_grad/global-styling
+  - cu2019_grad/global-scripts
 regions:
   header: 'Header'
   primary_menu: 'Primary Menu'

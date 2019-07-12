@@ -425,3 +425,7 @@
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 }
+
+@mixin letterSpacing($ls) {
+  letter-spacing: ($ls / 1000) * 1em;
+}

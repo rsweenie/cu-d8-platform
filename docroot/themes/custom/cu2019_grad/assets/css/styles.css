@@ -1157,6 +1157,7 @@ Delete everything below including comment
 }
 
 .dialog-off-canvas-main-canvas > main {
+  padding-top: 6.9rem;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -1264,15 +1265,21 @@ Delete everything below including comment
   height: 116rem;
   z-index: 1;
   content: "";
-  background: #6CACE4;
+  background: rgba(33, 35, 34, 0.15);
   -webkit-transform: translate(85%, 39%) rotate(45deg);
           transform: translate(85%, 39%) rotate(45deg);
   opacity: .49;
-  mix-blend-mode: multiply;
   -webkit-transition: -webkit-transform .25s;
   transition: -webkit-transform .25s;
   transition: transform .25s;
   transition: transform .25s, -webkit-transform .25s;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .main-footer:before {
+    background: #6CACE4;
+    mix-blend-mode: multiply;
+  }
 }
 
 .main-footer > div {
@@ -1597,11 +1604,34 @@ section[class*="sbg-"]:after {
 \*  --------------------------------------------------------------------------  */
 }
 
+[class*="btn-"] span {
+  position: relative;
+  z-index: 1;
+}
+
+[class*="btn-"] .arrow:last-child {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
 [class*="btn-"]:hover,
 [class*="btn-"]:focus {
   border-color: currentColor;
   background: #002E6D;
   color: #F0F5FA;
+}
+
+[class*="btn-"]:hover .arrow:last-child,
+[class*="btn-"]:focus .arrow:last-child {
+  -webkit-transform: translate(3px, -50%);
+          transform: translate(3px, -50%);
 }
 
 [class*="btn-"].icon-right .fas,
@@ -1651,9 +1681,22 @@ section[class*="sbg-"]:after {
 \*  --------------------------------------------------------------------------  */
 
 .btn-primary {
-  background: #8AC8FF;
-  border-color: #8AC8FF;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  min-height: 60px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFCC4F), to(#ffd673));
+  background: linear-gradient(0deg, #FFCC4F 0%, #ffd673 100%);
+  border: none;
+  border-radius: 0.3rem;
   color: #002E6D;
+  font-weight: bold;
+  padding: 1rem 6.5rem 1rem 1.5rem;
   /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
     &:not([class*="btn-ani-fill-"]) {
         @include hover {
@@ -1667,7 +1710,7 @@ section[class*="sbg-"]:after {
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
     }
-    
+
     @include hover {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -1682,11 +1725,31 @@ section[class*="sbg-"]:after {
     \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
 }
 
+.btn-primary:before {
+  width: 9rem;
+  height: 150%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  content: "";
+  background: linear-gradient(-45deg, #FFB82A 50%, rgba(255, 184, 42, 0) 50%);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
 .btn-primary:hover,
 .btn-primary:focus {
-  background: #002E6D;
-  border-color: #002E6D;
-  color: #fff;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFB82A), to(#ffc44e));
+  background: linear-gradient(0deg, #FFB82A 0%, #ffc44e 100%);
+  color: #002E6D;
+}
+
+.btn-primary:hover:before,
+.btn-primary:focus:before {
+  opacity: 0;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -2007,10 +2070,6 @@ main > header.program .dates a.active {
 \*  --------------------------------------------------------------------------  */
 }
 
-.card > div {
-  padding: 2.5rem;
-}
-
 .card > a {
   display: block;
 }
@@ -2024,8 +2083,20 @@ main > header.program .dates a.active {
 .card.img-behind {
   position: relative;
   z-index: 0;
-  width: calc(90vw - (5rem));
   margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.card.img-behind.js-background > a img {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
 
 .grid .card.img-behind {
@@ -2046,7 +2117,7 @@ main > header.program .dates a.active {
   z-index: 100;
   left: 0;
   bottom: 0;
-  padding: 2.5rem;
+  padding: 0 2.5rem;
 }
 
 .card.img-behind.hov-eff {
@@ -2081,16 +2152,16 @@ main > header.program .dates a.active {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
+  z-index: 0;
 }
 
 .full-screen .card.img-behind > div {
   position: relative;
   left: auto;
   bottom: auto;
-  width: 95%;
-  max-width: 900.45px;
+  max-width: 1350px;
   margin: 0 auto;
-  background: rgba(108, 172, 228, 0.25);
+  width: 100%;
 }
 
 .card.img-side {
@@ -2360,6 +2431,42 @@ aside .card.img-side + p {
 .full-screen .card.story > div {
   padding: 0;
   text-align: left;
+}
+
+.card.fw_photo {
+  color: #fff;
+}
+
+.card.fw_photo.img-behind {
+  padding: 4.5rem 0;
+}
+
+.card.fw_photo:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: rgba(0, 46, 109, 0.85);
+  z-index: 1;
+}
+
+.card.fw_photo h3 {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.card.fw_photo p {
+  font-size: 1.4rem;
+  line-height: 1.4em;
+}
+
+.card.fw_photo [class*="btn-"] {
+  margin-top: 20px;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -9259,6 +9366,18 @@ form.search .search button {
     position: relative;
   }
 
+  [class*="btn-"] {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+  }
+
+  .btn-primary {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+
   .tooltip {
     width: 30vw;
   }
@@ -9654,16 +9773,16 @@ form.search .search button {
     z-index: 10;
   }
 
+  .btn-primary {
+    max-width: 320px;
+  }
+
   main > header {
     padding: 6.25rem 0;
   }
 
   main > header.p-lg {
     padding: 15rem 0;
-  }
-
-  .card > div {
-    padding: 5rem;
   }
 
   .card.img-behind {
@@ -9813,6 +9932,18 @@ form.search .search button {
     padding: 2.5rem;
     width: calc(50% - 2.5rem);
     background: #fff;
+  }
+
+  .card.fw_photo h3 {
+    font-size: 4rem;
+  }
+
+  .card.fw_photo p {
+    font-size: 1.9rem;
+  }
+
+  .card.fw_photo [class*="btn-"] {
+    float: right;
   }
 
   .fact {
@@ -10876,6 +11007,10 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
+  .dialog-off-canvas-main-canvas > main {
+    padding-top: 19.4rem;
+  }
+
   .main-footer > div {
     width: 95%;
   }
@@ -11284,12 +11419,6 @@ form.search .search button {
     width: calc(66.667% - 2.5rem);
   }
 
-  [class*="btn-"] {
-    display: inline-block;
-    width: auto;
-    text-align: left;
-  }
-
   .skip-section {
     display: none;
   }
@@ -11355,6 +11484,10 @@ form.search .search button {
     text-align: right;
   }
 
+  .full-screen .card.img-behind > div {
+    width: 95%;
+  }
+
   .card h2 {
     font-size: 2em;
   }
@@ -11370,6 +11503,10 @@ form.search .search button {
 
   .full-screen .card.story > div {
     width: 41.667%;
+  }
+
+  .card.fw_photo.img-behind {
+    padding: 13.5rem 0 8rem;
   }
 
   .fact strong {
@@ -11609,10 +11746,6 @@ form.search .search button {
     width: 90%;
   }
 
-  .dialog-off-canvas-main-canvas > main {
-    padding-top: 19.4rem;
-  }
-
   .main-footer > div {
     width: 90%;
   }
@@ -11626,6 +11759,10 @@ form.search .search button {
   }
 
   main > header > div {
+    width: 90%;
+  }
+
+  .full-screen .card.img-behind > div {
     width: 90%;
   }
 
@@ -11681,6 +11818,10 @@ form.search .search button {
   }
 
   main > header > div {
+    width: 85%;
+  }
+
+  .full-screen .card.img-behind > div {
     width: 85%;
   }
 }
