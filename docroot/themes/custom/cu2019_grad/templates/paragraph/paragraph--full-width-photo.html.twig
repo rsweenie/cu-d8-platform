@@ -47,23 +47,21 @@
   ]
 %}
 {% block paragraph %}
-<!-- ?????? -->
-<p>{{ content.field_fw_photo_overlay }}</p>
-<p>{{ meh }}</p>
+<section class="full-screen" id="Sect-{{ par_id }}">
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {# { content } #}
       {% include '@cu2019_grad/components/card.html.twig' with {
-        'wrapper': 'section',
-        'image': content.field_fw_photo_image,
-        'title': content.field_fw_photo_title,
-        'body': content.field_fw_photo_body,
-        'class': 'fw_photo',
+        'image': content.field_fwp_background,
+        'title': content.field_fwp_title,
+        'body': content.field_fwp_body,
+        'class': 'fw_photo img-behind ' ~ overlay,
         'button': {
-          'url': content.field_fw_photo_cta[0]['#url'],
-          'title': content.field_fw_photo_cta[0]['#title']
+          'url': content.field_fwp_cta[0]['#url'],
+          'title': content.field_fwp_cta[0]['#title']
         }
       } %}
     {% endblock %}
   </div>
+</section>
 {% endblock paragraph %}
