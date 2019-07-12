@@ -47,11 +47,11 @@
   ]
 %}
 {% block paragraph %}
-<section class="full-screen" id="Sect-{{ par_id }}">
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {# { content } #}
       {% include '@cu2019_grad/components/card.html.twig' with {
+        'wrapper': 'section',
         'image': content.field_fwp_background,
         'title': content.field_fwp_title,
         'body': content.field_fwp_body,
@@ -63,5 +63,4 @@
       } %}
     {% endblock %}
   </div>
-</section>
 {% endblock paragraph %}
