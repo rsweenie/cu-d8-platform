@@ -103,7 +103,7 @@ services:
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
 
         # Runt hrough extra steps in the build script.
-        - ${TUGBOAT_ROOT}/.tugboat/php-update.sh
+        - ${TUGBOAT_ROOT}/.tugboat/scripts/php-update.sh
 
         # Alternatively, another common practice is to use the
         # stage_file_proxy Drupal module. This module lets Drupal serve
@@ -169,4 +169,4 @@ services:
       # from the base preview.
       build:
 
-        - ${TUGBOAT_ROOT}/.tugboat/db-build.sh
+        - ${TUGBOAT_ROOT}/.tugboat/scripts/db-build.sh
