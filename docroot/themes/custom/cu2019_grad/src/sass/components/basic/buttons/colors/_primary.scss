@@ -6,8 +6,11 @@
 .btn-primary {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     position: relative;
+    display: flex;
+    align-items: center;
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     overflow: hidden;
+    min-height: 60px;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     background: linear-gradient(0deg, $accent-3 0%, lighten($accent-3, 7) 100%);
     border: none;
@@ -20,23 +23,25 @@
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
     &:before {
-      width: 105px;
-      height: 100%;
+      width: 90px;
+      height: 150%;
       position: absolute;
-      top: 0;
-      right: -20px;
+      bottom: 0;
+      right: 0;
       z-index: 0;
       content: "";
-      background: linear-gradient(0deg, $accent-4 0%, lighten($accent-4, 7) 100%);
-      transform: skew(-42deg);
+      background: linear-gradient(-45deg, $accent-4 50%, rgba($accent-4,0) 50%);
       transform-origin: bottom right;
-      transition: transform 0.25s;
+      transition: opacity 0.25s;
 
       @media #{$mediaSm} {
-        width: 83px;
+        //width: 83px;
       }
     }
 
+    @media #{$mediaSm} {
+      display: inline-flex;
+    }
 
     /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
     &:not([class*="btn-ani-fill-"]) {
@@ -76,11 +81,11 @@
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
         &:before {
-          transform: translateX(-3px) skew(-42deg);
+          opacity: 0;
         }
     }
 
     @media #{$mediaMd} {
-      max-width: 280px;
+      max-width: 320px;
     }
 }

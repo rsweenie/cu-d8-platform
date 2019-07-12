@@ -1682,7 +1682,14 @@ section[class*="sbg-"]:after {
 
 .btn-primary {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
+  min-height: 60px;
   background: -webkit-gradient(linear, left bottom, left top, from(#FFCC4F), to(#ffd673));
   background: linear-gradient(0deg, #FFCC4F 0%, #ffd673 100%);
   border: none;
@@ -1719,23 +1726,18 @@ section[class*="sbg-"]:after {
 }
 
 .btn-primary:before {
-  width: 10.5rem;
-  height: 100%;
+  width: 9rem;
+  height: 150%;
   position: absolute;
-  top: 0;
-  right: -2rem;
+  bottom: 0;
+  right: 0;
   z-index: 0;
   content: "";
-  background: -webkit-gradient(linear, left bottom, left top, from(#FFB82A), to(#ffc44e));
-  background: linear-gradient(0deg, #FFB82A 0%, #ffc44e 100%);
-  -webkit-transform: skew(-42deg);
-          transform: skew(-42deg);
+  background: linear-gradient(-45deg, #FFB82A 50%, rgba(255, 184, 42, 0) 50%);
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right;
-  -webkit-transition: -webkit-transform 0.25s;
-  transition: -webkit-transform 0.25s;
-  transition: transform 0.25s;
-  transition: transform 0.25s, -webkit-transform 0.25s;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
 }
 
 .btn-primary:hover,
@@ -1747,8 +1749,7 @@ section[class*="sbg-"]:after {
 
 .btn-primary:hover:before,
 .btn-primary:focus:before {
-  -webkit-transform: translateX(-3px) skew(-42deg);
-          transform: translateX(-3px) skew(-42deg);
+  opacity: 0;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -9371,8 +9372,10 @@ form.search .search button {
     text-align: left;
   }
 
-  .btn-primary:before {
-    width: 8.3rem;
+  .btn-primary {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
 
   .tooltip {
@@ -9771,7 +9774,7 @@ form.search .search button {
   }
 
   .btn-primary {
-    max-width: 280px;
+    max-width: 320px;
   }
 
   main > header {
