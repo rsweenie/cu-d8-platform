@@ -1264,15 +1264,21 @@ Delete everything below including comment
   height: 116rem;
   z-index: 1;
   content: "";
-  background: #6CACE4;
+  background: rgba(33, 35, 34, 0.15);
   -webkit-transform: translate(85%, 39%) rotate(45deg);
           transform: translate(85%, 39%) rotate(45deg);
   opacity: .49;
-  mix-blend-mode: multiply;
   -webkit-transition: -webkit-transform .25s;
   transition: -webkit-transform .25s;
   transition: transform .25s;
   transition: transform .25s, -webkit-transform .25s;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .main-footer:before {
+    background: #6CACE4;
+    mix-blend-mode: multiply;
+  }
 }
 
 .main-footer > div {

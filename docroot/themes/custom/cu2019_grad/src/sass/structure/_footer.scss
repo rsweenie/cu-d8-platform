@@ -39,11 +39,15 @@
       z-index: 1;
 
       content: "";
-      background: $tertiary;
+      background: rgba($black,.15);
       transform: translate(85%, 39%) rotate(45deg);
       opacity: .49;
-      mix-blend-mode: multiply;
       transition: transform .25s;
+
+      @supports(mix-blend-mode: multiply) {
+        background: $tertiary;
+        mix-blend-mode: multiply;
+      }
 
       @media #{$mediaMd} {
           transform: translate(29%, 39%) rotate(45deg);
