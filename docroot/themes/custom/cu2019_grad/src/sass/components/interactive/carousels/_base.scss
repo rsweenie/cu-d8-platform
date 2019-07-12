@@ -1,0 +1,67 @@
+/*  --------------------------------------------------------------------------  *\
+
+    CAROUSEL
+
+\*  --------------------------------------------------------------------------  */
+.owl-carousel {
+    /* -------------------------- *\
+    LOAD CORE
+    \* -------------------------- */
+    @import '_core';
+    /* -------------------------- *\
+    ITEM
+    
+    This adds styles to use on all slides w/in the owl carousel.
+    \* -------------------------- */
+    @import '_item';
+    /* -------------------------- *\
+    DOTS OPTIONS
+    
+    Comment out what you don't want to include.  Also, if only one style is used, remove the class
+    name from the imported file to reduce output of code.
+    \* -------------------------- */
+    &.traditional {
+        @import 'dots/_dot';
+    }
+    &.counter-of {
+        @import 'dots/_counter-of';
+    }
+    &.counter-slash {
+        @import 'dots/_counter-slash';
+    }
+    &.dots-left {
+        @import 'dots/_left';
+    }
+    &.dots-right {
+        @import 'dots/_right';
+    }
+    &.dots-centered {
+        @import 'dots/_centered';
+    }
+    /* -------------------------- *\
+    NAV OPTIONS
+    
+    Comment out what you don't want to include.  Also, if only one style is used, remove the class
+    name from the imported file to reduce output of code.
+    \* -------------------------- */
+    &.nav-over-centered {
+        @import 'navs/_over-centered';
+    }
+    &.nav-below-left {
+        @import 'navs/_below-left';
+    }
+    &.nav-below-right {
+        @import 'navs/_below-right';
+    }
+    &.nav-below-centered {
+        @import 'navs/_below-centered';
+    }
+    /* -------------------------- *\
+    DISPLAY OPTIONS
+    
+    Comment out what you don't want to include.  Also, if only one style is used, remove the class
+    name from the imported file to reduce output of code.
+    \* -------------------------- */
+    @import '_show-overflow';
+    @import '_animated'; // ONLY INCLUDE THIS IF USING ANIMATION LIBRARY TO ALTER EFFECT
+}

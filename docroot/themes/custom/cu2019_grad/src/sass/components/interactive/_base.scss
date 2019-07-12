@@ -1,0 +1,47 @@
+/*  --------------------------------------------------------------------------  *\
+
+    INTERACTIVE COMPONENTS
+
+    Each interactive component should have it's own file, along with the base file
+    for each interactive component, we should have alteration files for each version.
+
+\*  --------------------------------------------------------------------------  */
+@import 'tabs/_base';
+//@import 'accordions/_base';
+@import 'carousels/_base';
+@import '_dialog';
+//@import '_hot-spots';
+@import '_tooltip';
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATIONS.CSS
+
+    This library can be used to add simple animations to things, it should 
+    only be included if animations are going to be used to enhance the website 
+    because this file adds a substantial amount of weight to the file size.
+
+    Go into the _animations.scss file and remove any animations that aren't going
+    to be used on the website so that the final CSS file's output is reduced to only 
+    what is necessary.
+
+    Animations.css is good to use with Owl Carousel to alter the animation effects
+    of the slide transitions. Examples of this in action can be seen on 
+    interactive/carousels.html .
+
+    We also use animations.css to control the animated loading of content. Examples 
+    of all the animations available are located in interactive/animations.html.
+
+\*  --------------------------------------------------------------------------  */
+@import '_animations';
+/*  --------------------------------------------------------------------------  *\
+
+    EFFECTS LIBRARY
+
+    This library can be used to add simple interactive effects to components found
+    throughout the Component Library.
+
+    These are meant to show what we can do, and be a solid starting point. They may
+    require some additional work to get things to work completely as expected.
+
+\*  --------------------------------------------------------------------------  */
+//@import '_effects';

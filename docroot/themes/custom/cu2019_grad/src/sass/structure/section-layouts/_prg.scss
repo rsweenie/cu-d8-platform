@@ -1,0 +1,62 @@
+/*  --------------------------------------------------------------------------  *\
+
+    SECTION LAYOUTS > INTERIOR
+
+\*  --------------------------------------------------------------------------  */
+&.prg-layout {
+    padding: 0;
+    
+    > div {
+        padding: #{$gutter}rem #{$gutter}rem 0;
+        
+        > aside {
+            width: calc(100% + #{$gutter * 2}rem);
+            margin: #{$gutter}rem #{$gutter * -1}rem 0;
+            padding: #{$gutter}rem;
+        }
+        
+        @media #{$mediaMd} {
+            @include flex(space-between, flex-start, flex-start, row-nowrap);
+            padding: #{$gutter}rem;
+
+            > nav {
+                @include flexItem(0, 0, auto, 0);
+                width: 33.333%;
+                margin: 0 #{$gutter}rem 0 0;
+            }
+
+            > article {
+                @include flexItem(0, 0, auto, 1);
+                width: 66.667%;
+            }
+            
+            > aside {
+                @include flexItem(0, 0, auto, 2);
+                width: 33.333%;
+                margin: 0 0 0 #{$gutter}rem;
+                padding: 0 #{$gutter}rem #{$gutter}rem;
+                background: none;
+                font-size: .8125em;
+                
+                ul {
+                    li {
+                        &:before {
+                            background: $tertiary;
+                        }
+                    }
+                }
+                
+                &.sticky {
+                    @include position(sticky, null, top, 16rem);
+                }
+            }
+        }
+        
+        @media #{$mediaLg} {
+            
+            > article {
+                width: 58.333%;
+            }
+        }
+    }
+}

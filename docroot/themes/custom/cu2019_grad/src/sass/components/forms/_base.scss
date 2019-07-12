@@ -1,0 +1,45 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FORMS
+
+    Each form component should have it's own file each alteration should have it's
+    own file.
+
+    The default files below will be used to show a basic form with labels above.
+    
+    Additional styling of forms can be found in the themes > component library
+    folder to show examples of the other forms found in the component library.
+
+\*  --------------------------------------------------------------------------  */
+form {
+    // FORM WRAPPER
+    @import '_form';
+    // FORM ELEMENTS
+    @import '_elements';
+    // FORM LABELS
+    @import '_labels';
+    // FIELDS
+    @import '_fields';
+    // CHECKBOX AND RADIO
+    @import '_check-radio';
+    // FORM BUTTON
+    @import '_form-btn';
+    // LABEL LEFT OF ELEMENT
+    @import 'label-left/_form';
+    // LABEL ATTACHED TO ELEMENT (SIMILAR TO LABEL LEFT)
+    @import 'label-attached/_form';
+    // LABEL OVER ELEMENT
+    @import 'label-over/_form';
+    // STACKED ELEMENTS
+    @import 'stacked/_form';
+    // SEARCH FORMS
+    @import 'search/_form';
+    // CHOSEN
+    // @import 'chosen';
+    // DATE PICKER
+    // @import 'date-picker';
+    // VALIDATION
+    // @import 'parsley';
+    // @import 'sitecore';
+    // @import 'drupal';
+}

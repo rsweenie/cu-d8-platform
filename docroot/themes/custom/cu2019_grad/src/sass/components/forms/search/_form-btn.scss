@@ -1,0 +1,19 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FORM BUTTOn
+
+    Each form component should have it's own file each alteration should have it's
+    own file.
+
+\*  --------------------------------------------------------------------------  */
+.form-btn {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include flexItem(0, 0, auto);
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    padding-right: #{$gutter}rem;
+    max-width: 15rem;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+}

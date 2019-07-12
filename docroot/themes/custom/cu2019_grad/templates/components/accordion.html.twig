@@ -1,0 +1,13 @@
+{% if wrapper == 'section' %}
+<section id="Sect-{{ par_id }}">
+  <div>
+{% endif %}
+<dl class="accordion{% if class %} {{ class }}{% endif %}" role="presentation"{% if allowMultiple %} data-allow-multiple="true"{% endif %}>
+  {% for item in accordionContent %}
+  {{ item }}
+  {% endfor %}
+</dl>
+{% if wrapper %}
+  </div>
+</section>
+{% endif %}
