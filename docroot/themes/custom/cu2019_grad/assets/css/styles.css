@@ -1684,8 +1684,6 @@ section[class*="sbg-"]:after {
   color: #002E6D;
   font-weight: bold;
   padding: 1rem 6.5rem 1rem 1.5rem;
-  -webkit-transition: all 5s;
-  transition: all 5s;
   /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
     &:not([class*="btn-ani-fill-"]) {
         @include hover {
@@ -1715,7 +1713,7 @@ section[class*="sbg-"]:after {
 }
 
 .btn-primary:before {
-  width: 8.3rem;
+  width: 10.5rem;
   height: 100%;
   position: absolute;
   top: 0;
@@ -2112,7 +2110,7 @@ main > header.program .dates a.active {
   z-index: 100;
   left: 0;
   bottom: 0;
-  padding: 2.5rem;
+  padding: 0 2.5rem;
 }
 
 .card.img-behind.hov-eff {
@@ -2432,6 +2430,10 @@ aside .card.img-side + p {
   color: #fff;
 }
 
+.card.fw_photo.img-behind {
+  padding: 4.5rem 0;
+}
+
 .card.fw_photo:before {
   width: 100%;
   height: 100%;
@@ -2449,6 +2451,15 @@ aside .card.img-side + p {
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 0;
+}
+
+.card.fw_photo p {
+  font-size: 1.4rem;
+  line-height: 1.4em;
+}
+
+.card.fw_photo [class*="btn-"] {
+  margin-top: 20px;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -9348,6 +9359,16 @@ form.search .search button {
     position: relative;
   }
 
+  [class*="btn-"] {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+  }
+
+  .btn-primary:before {
+    width: 8.3rem;
+  }
+
   .tooltip {
     width: 30vw;
   }
@@ -9743,6 +9764,10 @@ form.search .search button {
     z-index: 10;
   }
 
+  .btn-primary {
+    max-width: 280px;
+  }
+
   main > header {
     padding: 6.25rem 0;
   }
@@ -9898,6 +9923,18 @@ form.search .search button {
     padding: 2.5rem;
     width: calc(50% - 2.5rem);
     background: #fff;
+  }
+
+  .card.fw_photo h3 {
+    font-size: 4rem;
+  }
+
+  .card.fw_photo p {
+    font-size: 1.9rem;
+  }
+
+  .card.fw_photo [class*="btn-"] {
+    float: right;
   }
 
   .fact {
@@ -11373,18 +11410,8 @@ form.search .search button {
     width: calc(66.667% - 2.5rem);
   }
 
-  [class*="btn-"] {
-    display: inline-block;
-    width: auto;
-    text-align: left;
-  }
-
   .skip-section {
     display: none;
-  }
-
-  .btn-primary {
-    max-width: 380px;
   }
 
   main > header > div {
@@ -11469,8 +11496,8 @@ form.search .search button {
     width: 41.667%;
   }
 
-  .card.fw_photo h3 {
-    font-size: 4rem;
+  .card.fw_photo.img-behind {
+    padding: 13.5rem 0 8rem;
   }
 
   .fact strong {
