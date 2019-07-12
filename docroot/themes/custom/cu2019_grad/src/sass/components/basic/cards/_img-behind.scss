@@ -10,9 +10,17 @@
     //width: calc(90vw - (#{$gutter * 2}rem));
     margin: 0 auto;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    background-position: center;
+    background-size: cover;
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    &.js-background {
+      > a img {
+        @include srOnly;
+      }
+    }
 
     .grid & {
         width: 100%;

@@ -16,6 +16,7 @@
     color: $primary;
     font-weight: bold;
     padding: 10px 65px 10px 15px;
+    transition: all 5s;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
@@ -65,7 +66,7 @@
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        background: linear-gradient(0deg, $accent-3 0%, lighten($accent-3, 7) 100%);
+        background: linear-gradient(0deg, $accent-4 0%, lighten($accent-4, 7) 100%);
         color: $primary;
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)

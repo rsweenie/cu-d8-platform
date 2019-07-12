@@ -1684,6 +1684,8 @@ section[class*="sbg-"]:after {
   color: #002E6D;
   font-weight: bold;
   padding: 1rem 6.5rem 1rem 1.5rem;
+  -webkit-transition: all 5s;
+  transition: all 5s;
   /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
     &:not([class*="btn-ani-fill-"]) {
         @include hover {
@@ -1734,8 +1736,8 @@ section[class*="sbg-"]:after {
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background: -webkit-gradient(linear, left bottom, left top, from(#FFCC4F), to(#ffd673));
-  background: linear-gradient(0deg, #FFCC4F 0%, #ffd673 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFB82A), to(#ffc44e));
+  background: linear-gradient(0deg, #FFB82A 0%, #ffc44e 100%);
   color: #002E6D;
 }
 
@@ -2077,6 +2079,19 @@ main > header.program .dates a.active {
   position: relative;
   z-index: 0;
   margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.card.img-behind.js-background > a img {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
 
 .grid .card.img-behind {
