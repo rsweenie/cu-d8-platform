@@ -58,24 +58,32 @@
         p {
             font-size: $pLargerFontSize;
         }
-        a {
+         p:last-of-type{
             font-size: $h3FontSize ;
             background-color: $mediumBlue;
             padding: 8px 80px 8px 10px;
             background-image: url(../images/png/white-arrow.png);
             background-position: 95%;
             background-repeat: no-repeat;
-            padding: 8px 80px 8px 10px;
+            max-width: 300px;
+            -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+
+            &:hover {
+                cursor: pointer;
+                -webkit-transition-property: background-color;
+                transition-property: background-color;
+                background-color: #002E6D;
+            }
+        }
+        a {
             color: $white;
             font-family: "Open Sans Condensed", sans-serif;
             text-decoration: none;
             text-transform: uppercase;
-            
+
             &:hover {
-                text-decoration: none;
-                color: $white;
-                background-color: $darkBlue;
-                text-transform: uppercase;
+                cursor: pointer;
             }
         }
     }

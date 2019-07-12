@@ -93,6 +93,10 @@ footer {
       p {
         margin: 0 0 5px;
 
+        &:first-of-type {
+          margin-top: 18px;
+        }
+
         a {
           text-decoration: none;
           font-weight: $semiBold;
@@ -223,6 +227,7 @@ footer {
         order: 5;
       }
       @include respond-to(tablet-min, tablet-max) {
+        padding-top: 20px;
         flex-basis: 60%;
         order: 3;
       }
