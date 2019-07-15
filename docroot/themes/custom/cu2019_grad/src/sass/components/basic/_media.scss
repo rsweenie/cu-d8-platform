@@ -2,7 +2,7 @@
 
     MEDIA OBJECTS
 
-    All of our media elements should be wrapped in a <figure> tag to help provide 
+    All of our media elements should be wrapped in a <figure> tag to help provide
     context to the element.
 
 \*  --------------------------------------------------------------------------  */
@@ -14,10 +14,12 @@ figure {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
-    > video, > img, > picture > img {
+
+    video, img {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         display: block;
+        position: relative;
+        z-index: 1;
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         width: 100%;
         height: auto;
@@ -26,24 +28,65 @@ figure {
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
+    .img {
+      position: relative;
+
+      &:after {
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
+
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 2;
+
+        content: "";
+        border: 2px solid rgba($white,.3);
+      }
+    }
+
     > figcaption {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         display: block;
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        padding: #{$gutter * .4}rem #{$gutter * .8}rem;
+        padding: 20px 0;
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        border-top: .2rem solid $accent-3;
-        border-bottom: .2rem solid $accent-3;
+        //border-top: .2rem solid $accent-3;
+        border-bottom: 1px solid #888888;
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        color: $gray1;
+        font-size: 14px;
+        font-style: italic;
+        line-height: 1.4em;
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
+        @media #{$mediaMd} {
+          font-size: 16px;
+          padding: 28px 0;
+        }
+
         :last-child {
             margin-bottom: 0;
         }
     }
-    
+
+    .video {
+      width: 100%;
+      position: relative;
+      padding-bottom: 56%;
+      background: $black;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
     &[class*="img-"] {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         @include flex(space-between, center, center, row nowrap);
@@ -53,7 +96,7 @@ figure {
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         > video, > img, > picture {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             @include flexItem(0 ,0, auto, 0);
@@ -66,7 +109,7 @@ figure {
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
-        
+
         > figcaption {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             @include flexItem(1, 1, auto, 0);
@@ -78,9 +121,9 @@ figure {
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
     }
-    
+
     &.img-right {
-        > video, > img, > picture {
+        video, img, picture {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             order: 1;
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -91,20 +134,34 @@ figure {
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
     }
-    
+
     @import 'media/_hover-effects';
     @import 'media/_draw-border';
     @import 'media/_fade-in';
     @import 'media/_move-up';
     @import 'media/_zoom';
-    
+
     &.float-left, &.float-right {
         padding: 0;
         margin-bottom: #{$gutter}rem;
-        
+
         > figcaption {
             padding: #{$gutter * .4}rem 0;
         }
+    }
+
+    .video {
+      display: none;
+    }
+
+    &.playing {
+      .video {
+        display: block;
+      }
+
+      .img {
+        display: none;
+      }
     }
 }
 @import 'media/_gallery';
