@@ -4,11 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.full_width_photo.field_fwp_background
+    - field.field.paragraph.full_width_photo.field_fwp_body
     - field.field.paragraph.full_width_photo.field_fwp_color
+    - field.field.paragraph.full_width_photo.field_fwp_cta
+    - field.field.paragraph.full_width_photo.field_fwp_title
     - paragraphs.paragraphs_type.full_width_photo
   module:
     - image
+    - link
     - options
+    - text
 id: paragraph.full_width_photo.default
 targetEntityType: paragraph
 bundle: full_width_photo
@@ -16,18 +21,45 @@ mode: default
 content:
   field_fwp_background:
     weight: 0
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
     region: content
+  field_fwp_body:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_fwp_color:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_fwp_cta:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_fwp_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden: {  }
