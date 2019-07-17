@@ -1,0 +1,54 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FEED - FEATURED - GRID
+
+\*  --------------------------------------------------------------------------  */
+.f-feat-grid {
+    
+    @media #{$mediaMd} {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 41.667% 58.333%;
+        grid-template-areas: "article1 article2" "article1 article3" "article1 article4";
+        grid-auto-flow: row;
+        grid-column-gap: #{$gutter}rem;
+        grid-row-gap: #{$gutter}rem;
+        justify-items: stretch;
+        align-items: stretch;
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        > article {
+
+            &:nth-child(1) {
+                grid-area: article1;
+            }
+
+            &:nth-child(n + 2) {
+                @include flex(space-between, stretch, stretch, row nowrap);
+
+                > a {
+                    @include flexItem(0, 0, auto);
+                    @include position(relative);
+                    width: 41.667%;
+                    overflow: hidden;
+
+                    > img {
+                        @include position(absolute, 0, (left, top), (50%, 50%), translate(-50%, -50%));
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+                
+                > div {
+                    @include flexItem(0, 0, auto);
+                    width: 58.333%;
+                }
+            }
+        }
+    }
+}

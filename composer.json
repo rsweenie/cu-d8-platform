@@ -57,6 +57,7 @@
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
         "drupal/menu_breadcrumb": "^1.5",
+        "drupal/menu_item_extras": "^2.6",
         "drupal/mimemail": "^1.0@alpha",
         "drupal/module_filter": "^3.1",
         "drupal/name": "^1.0@RC",

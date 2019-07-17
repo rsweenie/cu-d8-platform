@@ -1,0 +1,14 @@
+{% if wrapper == 'section' %}
+<section id="Sect-{{ par_id }}">
+  <div>
+{% endif %}
+<figure class="hot-spot">
+	<img src="{{ file_url(img['#object'].field_hotspots_img.0.entity.uri.value) }}" alt="{{ img['#object'].field_hotspots_img.0.alt }}">
+	{% for key, item in items %}
+    {{ item }}
+	{% endfor %}
+</figure>
+{% if wrapper %}
+  </div>
+</section>
+{% endif %}

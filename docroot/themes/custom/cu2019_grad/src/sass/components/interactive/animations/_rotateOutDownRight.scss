@@ -1,0 +1,21 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > ROTATE OUT DOWN RIGHT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(rotateOutDownRight) {
+    from {
+        @include transformOrigin(right bottom);
+        opacity: 1;
+    }
+
+    to {
+        @include transformOrigin(right bottom);
+        @include transform(rotate3d(0, 0, 1, -45deg));
+        opacity: 0;
+    }
+}
+
+&.rotate-out-down-right {
+    @include animationName(rotateOutDownRight);
+}

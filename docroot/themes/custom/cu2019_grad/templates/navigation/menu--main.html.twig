@@ -1,0 +1,77 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+      {% if items %}
+        <ul>
+          {% if menu_level > 0 %}
+          <!-- <li>Back</li>
+          <li></li> -->
+          {% endif %}
+          {% for item in items %}
+            {% set counter = ( counter | default(0) ) + 1 %}
+            {%
+              set classes = [
+                'menu-item',
+                item.is_expanded ? 'menu-item--expanded',
+                item.is_collapsed ? 'menu-item--collapsed',
+                item.in_active_trail ? 'menu-item--active-trail',
+              ]
+            %}
+            <li>
+              {{ link(item.title, item.url) }}
+              {% if item.below %}
+                {% if menu_level == 0 %}
+                <input type="checkbox" id="SM_Nav_{{ counter }}" />
+                <label class="sm_toggle" for="SM_Nav_{{ counter }}">
+                    <i class="fas fa-chevron-right"></i>
+                    <span class="sr-only">Subpages</span>
+                </label>
+                <div>
+                  <div class="mega_content">
+                    <aside>
+                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                      <p><a href="#">Optional Tertiary Link <i class="fas fa-arrow-right"></i></a></p>
+                    </aside>
+                  </div>
+                  {% endif %}
+                  <label class="sm_toggle" for="SM_Nav_{{ counter }}">
+                      <i class="fas fa-chevron-left"></i>
+                      <span>Back to Main Nav</span>
+                  </label>
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                  {% if menu_level == 0 %}
+                </div>
+                {% endif %}
+              {% endif %}
+            </li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+{% endmacro %}

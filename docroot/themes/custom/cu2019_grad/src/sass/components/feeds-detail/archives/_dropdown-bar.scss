@@ -1,0 +1,44 @@
+.dropdown-bar {
+    margin: 0 0 #{$gutter * 2}rem;
+    
+    @media #{$mediaMd} {
+        @include flex(space-between, center, center, row nowrap);
+    }
+    
+    select {
+        padding: #{$gutter * .4}rem;
+        margin: 0 0 0 #{$gutter * .4}rem;
+        background: $white;
+        border-bottom: .2rem solid $accent-3;
+        min-width: 10rem;
+        width: auto;
+    }
+    
+    input:not([type="checkbox"]):not([type="radio"]) {
+        @include flexItem(0, 1, auto);
+        width: 100%;
+        padding: #{$gutter * .4 + .1}rem;
+        border: none;
+    }
+    
+    button {
+        padding: #{$gutter * .4 + .1}rem;
+        color: $accent-3;
+        
+        &:hover {
+            color: $primary;
+        }
+    }
+    
+    > div {
+        @include flex(flex-start, center, center, row nowrap);
+        
+        &:last-of-type {
+            border-bottom: .2rem solid $accent-3;
+        }
+        
+        &:only-child {
+            border-bottom: none;
+        }
+    }
+}

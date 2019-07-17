@@ -1,0 +1,55 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FEED - FEATURED - RELATED
+
+\*  --------------------------------------------------------------------------  */
+.f-feat-faculty {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include flex(space-between, center, center, row wrap);
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    
+    > article {
+        @include flexItem(0, 0, auto);
+        @include flex(space-between, center, center, row nowrap);
+        width: 100%;
+        margin: #{$gutter * .8}rem 0;
+        
+        > a {
+            @include flexItem(0, 0, auto);
+            width: 25%;
+            margin: 0 #{$gutter}rem 0 0;
+            
+            > img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+        > div {
+            @include flexItem(1, 0, auto);
+            width: 25%;
+        }
+        
+        @media #{$mediaMd} {
+            width: calc(50% - #{$gutter}rem);
+        }
+        
+        @media #{$mediaLg} {
+            width: calc(33.333% - #{$gutter}rem);
+        }
+    }
+    
+    h3 {
+        font-size: 1.2em;
+        margin: 0 0 .5em;
+    }
+    
+    p {
+        margin: 0;
+    }
+}

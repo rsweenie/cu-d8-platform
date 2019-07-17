@@ -1,0 +1,25 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > FLIP OUT Y
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(flipOutY) {
+    from {
+        @include transform(perspective(400px));
+    }
+
+    30% {
+        @include transform(perspective(400px) rotate3d(0, 1, 0, -15deg));
+        opacity: 1;
+    }
+
+    to {
+        @include transform(perspective(400px) rotate3d(0, 1, 0, 90deg));
+        opacity: 0;
+    }
+}
+
+&.flip-out-y {
+    @include animationName(flipOutY);
+    @include backface(visible);
+}
