@@ -1742,14 +1742,14 @@ section[class*="sbg-"]:after {
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background: -webkit-gradient(linear, left bottom, left top, from(#FFB82A), to(#ffc44e));
-  background: linear-gradient(0deg, #FFB82A 0%, #ffc44e 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#ffde8c), to(#ffdf91));
+  background: linear-gradient(0deg, #ffde8c 0%, #ffdf91 100%);
   color: #002E6D;
 }
 
 .btn-primary:hover:before,
 .btn-primary:focus:before {
-  opacity: 0;
+  background: linear-gradient(-45deg, #ffd072 50%, rgba(255, 208, 114, 0) 50%);
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -2450,6 +2450,10 @@ aside .card.img-side + p {
   content: "";
   background: rgba(0, 46, 109, 0.85);
   z-index: 1;
+}
+
+.card.fw_photo.bg-grey:before {
+  background: rgba(33, 35, 34, 0.82);
 }
 
 .card.fw_photo h3 {
