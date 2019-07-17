@@ -17,7 +17,7 @@
 	.field--name-field-profile-name {
 		color: $darkBlue;
 		font-family: $condensedFont;
-		font-size: 2em;
+		font-size: .9em;
 		font-weight: $bold;
 		margin-bottom: 8px;
 	}
@@ -44,7 +44,7 @@
 	flex: 0 1 auto;
 	flex-direction: column;
 	float: left;
-	margin: 5px 5px 1.5em;
+	margin: 0 10px 1.5em 0;
 	padding: 10px;
 	padding-bottom: 34px;
 	position: relative;
@@ -58,6 +58,14 @@
 		display: block;
 		margin-bottom: 5px;
 		width: 100%;
+	}
+
+	.profile_office_location {
+		padding-bottom: 20px;
+	}
+
+	.paragraph--type--ief-link {
+		margin-bottom: 0;
 	}
 
 	.profile_name {
@@ -109,12 +117,23 @@
 	.profile_link {
 		bottom: 5px;
 		position: absolute;
+		margin-bottom: 10px;
 
 		a {
 			@include green-arrow-link(false);
 			display: flex;
 			flex-direction: row-reverse;
 			list-style-type: none;
+			padding-right:30px;
+		}
+
+		span.invisible {
+		 position: absolute;
+		}
+
+		.paragraph {
+			margin-bottom: 0;
+			padding-bottom: 0;
 		}
 	}
 }

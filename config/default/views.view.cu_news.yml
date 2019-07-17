@@ -6,16 +6,12 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_content_page_headline
     - field.storage.node.field_content_page_image
-    - field.storage.node.field_links_file_link_upload
-    - field.storage.node.field_links_link
-    - field.storage.node.field_links_open_in_new_window
-    - field.storage.node.field_new
     - image.style.square_medium_275x275_
     - node.type.news_spotlight
   module:
-    - link
     - media
     - node
+    - paragraphs
     - rest
     - serialization
     - text
@@ -195,7 +191,7 @@ display:
           type: media_thumbnail
           settings:
             image_style: square_medium_275x275_
-            image_link: content
+            image_link: ''
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -413,7 +409,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ view_node }}<span class="hidden"> about {{ title_1 }}</span>'
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -451,7 +447,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           text: 'Learn More'
-          output_url_as_text: false
+          output_url_as_text: true
           absolute: false
           entity_type: node
           plugin_id: entity_link
@@ -507,69 +503,6 @@ display:
           type: basic_string
           settings: {  }
           group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_new:
-          id: field_new
-          table: node__field_new
-          field: field_new
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<p>{{ field_new }}</p>\n<p>{{ field_content_page_headline }}</p>"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: true
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: full
-          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -732,201 +665,6 @@ display:
           hide_alter_empty: true
           counter_start: 0
           plugin_id: counter
-        field_links_link:
-          id: field_links_link
-          table: node__field_links_link
-          field: field_links_link
-          relationship: field_new
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: uri
-          type: link
-          settings:
-            trim_length: 80
-            url_only: true
-            url_plain: true
-            rel: '0'
-            target: '0'
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_links_file_link_upload:
-          id: field_links_file_link_upload
-          table: node__field_links_file_link_upload
-          field: field_links_file_link_upload
-          relationship: field_new
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: true
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: file_as_url
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_links_open_in_new_window:
-          id: field_links_open_in_new_window
-          table: node__field_links_open_in_new_window
-          field: field_links_open_in_new_window
-          relationship: field_new
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: default
-            format_custom_true: ''
-            format_custom_false: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         nothing_1:
           id: nothing_1
           table: views
@@ -1086,13 +824,13 @@ display:
       footer: {  }
       empty: {  }
       relationships:
-        field_new:
-          id: field_new
-          table: node__field_new
-          field: field_new
+        field_news_spotlight_p_link:
+          id: field_news_spotlight_p_link
+          table: node__field_news_spotlight_p_link
+          field: field_news_spotlight_p_link
           relationship: none
           group_type: group
-          admin_label: 'field_new: Content'
+          admin_label: 'field_news_spotlight_p_link: Paragraph'
           required: false
           plugin_id: standard
       arguments: {  }
@@ -1113,10 +851,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_content_page_headline'
         - 'config:field.storage.node.field_content_page_image'
-        - 'config:field.storage.node.field_links_file_link_upload'
-        - 'config:field.storage.node.field_links_link'
-        - 'config:field.storage.node.field_links_open_in_new_window'
-        - 'config:field.storage.node.field_new'
   block_1:
     display_plugin: block
     id: block_1
@@ -1140,10 +874,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_content_page_headline'
         - 'config:field.storage.node.field_content_page_image'
-        - 'config:field.storage.node.field_links_file_link_upload'
-        - 'config:field.storage.node.field_links_link'
-        - 'config:field.storage.node.field_links_open_in_new_window'
-        - 'config:field.storage.node.field_new'
   page_1:
     display_plugin: page
     id: page_1
@@ -1166,10 +896,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_content_page_headline'
         - 'config:field.storage.node.field_content_page_image'
-        - 'config:field.storage.node.field_links_file_link_upload'
-        - 'config:field.storage.node.field_links_link'
-        - 'config:field.storage.node.field_links_open_in_new_window'
-        - 'config:field.storage.node.field_new'
   rest_export_1:
     display_plugin: rest_export
     id: rest_export_1
@@ -1203,7 +929,3 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_content_page_headline'
         - 'config:field.storage.node.field_content_page_image'
-        - 'config:field.storage.node.field_links_file_link_upload'
-        - 'config:field.storage.node.field_links_link'
-        - 'config:field.storage.node.field_links_open_in_new_window'
-        - 'config:field.storage.node.field_new'

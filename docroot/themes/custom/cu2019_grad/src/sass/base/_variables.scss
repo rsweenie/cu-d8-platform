@@ -17,6 +17,7 @@ $tertiary: #6CACE4;
 $accent-1: #F0F5FA;
 $accent-2: #8AC8FF;
 $accent-3: #FFCC4F;
+$accent-4: #FFB82A;
 
 $gray1: #5D6468;
 $gray2: #555555;
@@ -50,6 +51,8 @@ $mediaXxl: " screen and (min-width: 1600px)"; // LARGER MONITORS
 $mediaToggleHeader: " screen and (max-width: 991.9px)"; // ALL PHONES DEVICES
 $mediaFullHeader: " screen and (min-width: 992px)"; // ALL PHONES DEVICES
 $darkMode: " screen and (prefers-color-scheme: dark)"; // LARGER MONITORS
+
+$mediaMdMax: " screen and (max-width: 767.9px)"; 
 /*---=== GRID ===---*/
 $siteWList: 100%, 95%, 90%, 85%;
 $siteWQueryList: $mediaXs, $mediaLg, $mediaXl, $mediaXxl;

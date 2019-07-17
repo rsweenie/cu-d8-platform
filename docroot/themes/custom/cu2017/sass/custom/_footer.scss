@@ -1,218 +1,236 @@
+/* The footer is styled in a very specific, non-generalized way. We are expecting precisely the elements in the footer.html.twig
+ file and nothing else.
+*/
 footer {
-	background-color: $mediumBlue;
-	color: $white;
-	display: block;
-	height: 280px;
-	margin-top: 20px;
-	position: relative;
-	width: 100%;
+  background-color: $mediumBlue;
+  display: block;
+  height: 280px;
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
 
-	@include respond-to(null , mobile-max) {
-		height: 100%;
-	}
-	@include respond-to(tablet-min , tablet-max) {
-		height: 480px;
-	}
+  @include respond-to(null, mobile-max) {
+    height: 100%;
+  }
+  @include respond-to(tablet-min, tablet-max) {
+    height: 280px;
+  }
 
-	.transaction_menu_wrapper {
-		text-align: center;
+  .transaction_menu_wrapper {
+    text-align: center;
 
-		@include respond-to(null , mobile-max) {
-			background-color: $blue;
-			margin: 0;
-			font-size: 16px;
-			text-align: left;
-			padding-left: 10px;
-			height: auto;
-		}
-			
-	}
+    @include respond-to(null, mobile-max) {
+      background-color: $blue;
+      margin: 0;
+      font-size: 16px;
+      text-align: left;
+      padding-left: 10px;
+      height: auto;
+    }
 
-	.footer_wrapper {
-		display: flex;
-		flex-flow: column wrap;
-		height: 245px;
-		justify-content: flex-start;
-		margin: auto;
-		max-width: $maxContentWidth;
-		padding: 20px;
-		font-size: 14px;
+  }
 
-		@include respond-to(null , mobile-max) {
-			flex-flow: column nowrap;
-			height: 100%;
-			padding: 20px;
-		}
-		@include respond-to(tablet-min , tablet-max) {
-			height: 450px;
-			padding: 20px 50px;
-		}
-		@include respond-to(lg-tablet-min , lg-tablet-max) {
-			padding: 20px 50px;
-		}
+  .footer_wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    height: 245px;
+    justify-content: flex-start;
+    margin: auto;
+    max-width: $maxContentWidth;
+    padding: 20px;
+    font-size: 14px;
 
-		.footer_logo_wrapper {
-			align-self: flex-start;
-			flex-basis: 25%;
-			height: 60px;
-			margin-bottom: 20px;
-			order: 1;
-			width: 40%;
+    @include respond-to(null, mobile-max) {
+      flex-flow: column nowrap;
+      height: 100%;
+      padding: 20px;
+    }
+    @include respond-to(tablet-min, tablet-max) {
+      height: 450px;
+      padding: 20px 50px;
+    }
+    @include respond-to(lg-tablet-min, lg-tablet-max) {
+      padding: 20px 50px;
+    }
 
-			@include respond-to(null , mobile-max) {
-				flex-basis: 100%;
-				width: 100%;
+    .footer_logo_wrapper {
+      align-self: flex-start;
+      flex-basis: 30%;
+      order: 1;
 
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				flex-basis: 15%;
-				width: 60%;
-			}
+      @include respond-to(null, mobile-max) {
+        order: 1;
+        width: 100%;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        order: 1;
+        flex-basis: 15%;
+      }
 
-			img {
-				max-height: 60px;
+      img {
+        max-height: 60px;
 
-				@include respond-to(lg-tablet-min , null) {
-					height: 60px;
-				}
-			}
-		}
+        @include respond-to(lg-tablet-min, null) {
+          height: 60px;
+        }
+      }
+    }
 
-		.footer_social_wrapper {
-			align-self: flex-start;
-			flex-basis: 25%;
-			order: 3;
-			padding: 8px 0;
-			width: 35%;
+    .footer_contact_wrapper {
+      color: $white;
+      align-self: flex-start;
+      order: 2;
+      flex-basis: 70%;
 
-			@include respond-to(null , mobile-max) {
-				flex-basis: 100%;
-				width: 100%;
-				margin-top: 30px;
-				margin-bottom:-10px;
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				flex-basis: 15%;
-				order: 4;
-			}
+      @include respond-to(null, mobile-max) {
+        order: 2;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        order: 2;
+        flex-basis: 15%;
+      }
 
-			ul {
-				white-space: nowrap;
+      p {
+        margin: 0 0 5px;
 
-				li {
-					background-color: $white;
-					height: 40px;
-					margin: 0px 2px;
-					padding-top: 7px;
-					width: 40px;
-				}
+        &:first-of-type {
+          margin-top: 18px;
+        }
 
-				li:hover {
-					background-color: $yellow;
-				}
+        a {
+          text-decoration: none;
+          font-weight: $semiBold;
+          color: $white;
+          white-space: nowrap;
 
-				a {
-					color: $mediumBlue;
-				}
-			}
-		}
+          &:hover {
+            background-color: $mediumBlue;
+            color: $white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
 
-		.footer_menu_wrapper {
-			align-self: flex-start;
-			flex-basis: 50%;
-			order: 4;
-			padding-top: 8px;
-			width: 35%;
+    .footer_social_wrapper {
+      align-self: flex-start;
+      flex-basis: auto;
+      order: 3;
+      flex-basis: 30%;
 
-			ul {
-				list-style-type: none;
-				margin:0px;
-				padding: 0px;
-				// margin top aligns baseline with the address block
-				margin-top: 4px;
-			}
+      @include respond-to(null, mobile-max) {
+        flex-basis: 100%;
+        padding-top: 20px;
+        order: 3;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        flex-basis: 15%;
+        order: 4;
+      }
 
-			@include respond-to(null , mobile-max) {
-				flex-basis: 100%;
-				width: 100%;
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				order: 5;
-			}
+      ul {
+        white-space: nowrap;
 
-			a {
-				color: $white;
-				padding: 2px 0px;
-				text-decoration: none;
-				line-height:1.75em;
-				font-weight: $semiBold;
-				
-				&:hover {
-					background-color: $mediumBlue;
-					color: $white;
-					text-decoration: underline;
-				}
-			}
-		}
+        li {
+          background-color: $white;
+          height: 40px;
+          margin: 0px 2px;
+          padding-top: 7px;
+          width: 40px;
+        }
 
-		.footer_badge_wrapper {
-			align-self: flex-end;
-			order: 5;
+        li:hover {
+          background-color: $yellow;
+        }
 
-			@include respond-to(null , mobile-max) {
-				align-self: flex-start;
-				flex-basis: 100%;
-				margin-left: -25px;
-				width: 100%;
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				align-self: flex-start;
-				flex-basis: 35%;
-				margin-left: -25px;
-				order: 3;
-			}
+        a {
+          color: $mediumBlue;
+        }
+      }
+    }
 
-			img {
-				float: right;
-				max-width: 175px;
+    .footer_menu_wrapper {
+      align-self: flex-start;
+      order: 4;
+      flex-basis: 70%;
+      padding-top: 8px;
 
-				@include respond-to(null , mobile-max) {
-					float: none;
-				}
-			}
-		}
+      ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        // margin top aligns baseline with the address block
+        margin-top: 4px;
+      }
 
-		.footer_contact_wrapper {
-			align-self: flex-start;
-			flex-basis: 50%;
-			order: 2;
-			width: 40%;
+      @include respond-to(null, mobile-max) {
+        order: 5;
+        width: 100%;
+        flex-basis: 0%;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        order: 4;
+        flex-basis: 50%;
+      }
 
-			@include respond-to(null , mobile-max) {
-				flex-basis: 100%;
-				width: 100%;
-			}
-			@include respond-to(tablet-min , tablet-max) {
-				flex-basis: 25%;
-				width: 60%;
-			}
+      a {
+        color: $white;
+        padding: 2px 0px;
+        text-decoration: none;
+        line-height: 1.75em;
+        font-weight: $semiBold;
 
-			p {
-				margin: 0 0 5px;
+        &:hover {
+          background-color: $mediumBlue;
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+    }
 
-				a {	
-					text-decoration: none;
-					font-weight: $semiBold;
-					color: $white;
-					white-space: nowrap;
-				
-				&:hover {
-					background-color: $mediumBlue;
-					color: $white;
-					text-decoration: underline;
-				}
-				}
-			}
-		}
-	}
+    /* This section is subject to being empty, so we need to be careful not to apply height/width/margin things
+       that will break us when it's empty.
+     */
+    .footer_badge_wrapper {
+      align-self: flex-end;
+      order: 5;
+
+      @include respond-to(null, mobile-max) {
+        align-self: flex-start;
+        width: 0%;
+        order: 4;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        align-self: flex-start;
+        order: 3;
+      }
+
+      img {
+        float: right;
+        max-width: 175px;
+
+        @include respond-to(null, mobile-max) {
+          float: none;
+        }
+      }
+    }
+
+
+    .footer_gtranslate_wrapper {
+      flex-basis: 100%;
+      align-self: flex-start;
+      order: 5;
+
+      @include respond-to(null, mobile-max) {
+        padding-top: 20px;
+        flex-basis: auto;
+        order: 5;
+      }
+      @include respond-to(tablet-min, tablet-max) {
+        padding-top: 20px;
+        flex-basis: 60%;
+        order: 3;
+      }
+    }
+  }
 }

@@ -1,0 +1,25 @@
+uuid: 7c355b97-bc8c-47c8-be29-f6f2cffadd5e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cu2017_alliance
+_core:
+  default_config_hash: zU8UqOxrMw2UiegdfZ0UKJ6pHRVIds6IsfsFywjLqMU
+id: cu2017_alliance_branding
+theme: cu2017_alliance
+region: header
+weight: -110
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

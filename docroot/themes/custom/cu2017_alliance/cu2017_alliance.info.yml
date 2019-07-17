@@ -1,0 +1,31 @@
+core: 8.x
+type: theme
+base theme: cu2017
+
+name: 'cu2017 Alliance'
+description: 'Uses the Creighton Theme for the purposes of similarity, but with JS/CSS to hide the Mega Menu'
+package: 'Creighton'
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header_alert: 'Header Alert'
+  header: 'Header'
+  header_html: 'Header HTML'
+  header_background_image: 'Header Background Image'
+  hero_slideshow: 'Hero Slideshow'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  sitename: 'Site Name'
+  breadcrumbs: 'Breadcrumbs'
+  content: 'Content'
+  large_horiz_image: 'Large Horizontal Image'
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  - 'cu2017_alliance/custom-javascript'
+  - 'cu2017_alliance/global-styling'

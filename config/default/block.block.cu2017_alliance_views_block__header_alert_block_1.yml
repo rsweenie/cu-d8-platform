@@ -1,0 +1,31 @@
+uuid: 12d33be4-5111-4721-96a2-779121061a2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.header_alert
+  module:
+    - block_aria_landmark_roles
+    - views
+  theme:
+    - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: 'Alert - Dangerous'
+_core:
+  default_config_hash: '-3-29cG8DukjsNtXwcmDEMIW6ooV1f5O7mpDqy8e_z0'
+id: cu2017_alliance_views_block__header_alert_block_1
+theme: cu2017_alliance
+region: header_alert
+weight: -6
+provider: null
+plugin: 'views_block:header_alert-block_1'
+settings:
+  id: 'views_block:header_alert-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

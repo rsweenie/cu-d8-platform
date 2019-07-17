@@ -1,0 +1,30 @@
+uuid: 05afbd50-668a-4b84-afb7-5533b6fa2e2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_aria_landmark_roles
+    - system
+  theme:
+    - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: 'Site branding'
+_core:
+  default_config_hash: T_nvuNp-v92b-OYhIo4y4szuko85sJe-mgAADADJDZA
+id: cu2017_alliance_sitebranding
+theme: cu2017_alliance
+region: footer
+weight: -11
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

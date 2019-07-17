@@ -1,0 +1,29 @@
+uuid: 697526e0-434f-4341-8729-28092f488980
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.site_footer_section_content_view
+  module:
+    - block_aria_landmark_roles
+    - views
+  theme:
+    - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: 'Site Footer'
+id: views_block__site_footer_section_badges_content
+theme: cu2017_alliance
+region: footer
+weight: -8
+provider: null
+plugin: 'views_block:site_footer_section_content_view-block_site_footer_badges'
+settings:
+  id: 'views_block:site_footer_section_content_view-block_site_footer_badges'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

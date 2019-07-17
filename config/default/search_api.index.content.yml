@@ -38,14 +38,12 @@ field_settings:
         anonymous: anonymous
       view_mode:
         'entity:node':
-          basic_page: default
           content_page: default
           copy_box: default
           documentation: default
           featured_content: default
           featured_links: default
           header_alert: default
-          links: default
           news_spotlight: default
           profile: default
           promo_box: default

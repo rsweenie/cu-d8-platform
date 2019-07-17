@@ -39,18 +39,22 @@
       z-index: 1;
 
       content: "";
-      background: $tertiary;
+      background: rgba($black,.15);
       transform: translate(85%, 39%) rotate(45deg);
       opacity: .49;
-      mix-blend-mode: multiply;
       transition: transform .25s;
+
+      @supports(mix-blend-mode: multiply) {
+        background: $tertiary;
+        mix-blend-mode: multiply;
+      }
 
       @media #{$mediaMd} {
           transform: translate(29%, 39%) rotate(45deg);
       }
     }
 
-    @media #{$mediaXs} {
+    @media #{$mediaMdMax} {
       .row {
         > div {
           &:first-child {
@@ -85,7 +89,7 @@
       }
     }
 
-    @media #{$mediaSm} {
+    @media #{$mediaMd} {
       padding: 108px 0 135px;
 
       &:after {
@@ -105,7 +109,7 @@
     > div {
 
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @media #{$mediaSm} {
+        @media #{$mediaMd} {
           position: relative;
         }
         z-index: 2;

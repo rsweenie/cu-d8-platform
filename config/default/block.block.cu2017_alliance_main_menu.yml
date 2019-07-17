@@ -1,0 +1,31 @@
+uuid: 16505e9f-0b7c-4226-adcb-e0ec973d7c76
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - block_aria_landmark_roles
+    - system
+  theme:
+    - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'Main navigation'
+_core:
+  default_config_hash: G1nOo4p8YFfCFwdSixk__DbUwUBb6ck8tROJLEke4_U
+id: cu2017_alliance_main_menu
+theme: cu2017_alliance
+region: navigation_collapsible
+weight: -9
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+visibility: {  }

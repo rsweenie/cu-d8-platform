@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Component\Utility\Html as HtmlUtility;
+use Drupal\Core\Render\Markup;
+use Drupal\Component\Render\HtmlEscapedText;
+
+function cu2019_grad_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $variables['par_id'] = $paragraph->id();
+  $variables['par_type'] = $paragraph->getType();
+
+  if ($paragraph->hasField('field_fwp_color') && !$paragraph->field_fwp_color->isEmpty()) {
+    $variables['bg_style'] = $paragraph->get('field_fwp_color')->getString();
+    switch ($variables['bg_style']) {
+      default:
+        $variables['overlay'] = 'bg-blue';
+        break;
+      case 'grey':
+        $variables['overlay'] = 'bg-grey';
+        break;
+    }
+  }
+}

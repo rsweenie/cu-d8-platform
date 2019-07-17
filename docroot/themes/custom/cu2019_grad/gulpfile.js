@@ -94,7 +94,8 @@ pleeeaseProd = {
 // TEMP SASS
 var sassOptions = {
   errLogToConsole: true,
-  outputStyle: 'expanded'
+  outputStyle: 'compact',
+  sourceComments: true
 };
 
 var autoprefixerOptions = {

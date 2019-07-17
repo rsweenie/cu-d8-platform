@@ -6,9 +6,12 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_content_page_headline
     - field.storage.node.field_content_page_image
+    - field.storage.node.field_news_spotlight_p_link
     - node.type.news_spotlight
   module:
+    - entity_reference_revisions
     - node
+    - paragraphs
     - taxonomy
     - text
     - user
@@ -77,7 +80,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -139,7 +142,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -202,7 +205,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -267,7 +270,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -330,7 +333,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -371,71 +374,22 @@ display:
           empty_zero: false
           hide_alter_empty: true
           text: 'Learn More'
+          output_url_as_text: true
+          absolute: false
           entity_type: node
           plugin_id: entity_link
-          output_url_as_text: false
-          absolute: false
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: '{{ view_node }} <span class="invisible"> about {{ title }}</span>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-        nothing_1:
-          id: nothing_1
-          table: views
-          field: nothing
+        field_news_spotlight_p_link:
+          id: field_news_spotlight_p_link
+          table: node__field_news_spotlight_p_link
+          field: field_news_spotlight_p_link
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: "<div class=\"sptlt-image-wrapper\">{{ field_content_page_image }}</div>\n<div class=\"sptlt-text-wrapper\">\n<div class=\"sptlt-title\">{{ field_content_page_headline }}</div>\n<div class=\"sptlt-body\">{{ body|nl2br }}</div>\n<div class=\"sptlt-link\">{{ nothing }}</div>\n</div>"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -471,8 +425,22 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
+          settings:
+            view_mode: default
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -582,13 +550,22 @@ display:
       footer: {  }
       empty: {  }
       relationships:
-        field_content_taxo:
-          id: field_content_taxo
-          table: node__field_content_taxo
-          field: field_content_taxo
+        field_content_taxonomy:
+          id: field_content_taxonomy
+          table: node__field_content_taxonomy
+          field: field_content_taxonomy
           relationship: none
           group_type: group
-          admin_label: 'field_content_taxo: Taxonomy term'
+          admin_label: 'field_content_taxonomy: Taxonomy term'
+          required: false
+          plugin_id: standard
+        field_news_spotlight_p_link:
+          id: field_news_spotlight_p_link
+          table: node__field_news_spotlight_p_link
+          field: field_news_spotlight_p_link
+          relationship: none
+          group_type: group
+          admin_label: 'field_news_spotlight_p_link: Paragraph'
           required: false
           plugin_id: standard
       arguments:
@@ -596,7 +573,7 @@ display:
           id: name
           table: taxonomy_term_field_data
           field: name
-          relationship: field_content_taxo
+          relationship: field_content_taxonomy
           group_type: group
           admin_label: ''
           default_action: ignore
@@ -652,6 +629,7 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_content_page_headline'
         - 'config:field.storage.node.field_content_page_image'
+        - 'config:field.storage.node.field_news_spotlight_p_link'
   block_1:
     display_plugin: block
     id: block_1
@@ -671,6 +649,7 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_content_page_headline'
         - 'config:field.storage.node.field_content_page_image'
+        - 'config:field.storage.node.field_news_spotlight_p_link'
   page_1:
     display_plugin: page
     id: page_1
@@ -691,3 +670,4 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_content_page_headline'
         - 'config:field.storage.node.field_content_page_image'
+        - 'config:field.storage.node.field_news_spotlight_p_link'

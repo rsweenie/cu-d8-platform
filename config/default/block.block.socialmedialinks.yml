@@ -9,7 +9,7 @@ dependencies:
 id: socialmedialinks
 theme: cu2017
 region: footer
-weight: 0
+weight: -10
 provider: null
 plugin: social_media_links_block
 settings:
@@ -67,7 +67,7 @@ settings:
       description: ''
       weight: '1'
     linkedin:
-      value: ''
+      value: company/cu-azhealthedalliance/
       description: ''
       weight: '2'
     twitter:
@@ -87,7 +87,7 @@ settings:
       description: ''
       weight: '6'
     facebook:
-      value: creightonuniversity/
+      value: cuazhealthedalliance/
       description: ''
       weight: '7'
     googleplus:
@@ -102,7 +102,7 @@ settings:
     orientation: h
     show_name: 0
   link_attributes:
-    target: '<none>'
+    target: _blank
     rel: '<none>'
   iconset:
     style: 'fontawesome:2x'

@@ -1,0 +1,17 @@
+uuid: c76e9604-2642-4734-a6fa-308d4ac375da
+langcode: en
+status: false
+dependencies: {  }
+id: grad_school
+label: 'Grad School'
+description: ''
+folder: ../config/sites/grad
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - system.theme
+  - 'block.block.*'
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

@@ -1,0 +1,30 @@
+{% if wrapper == 'section' %}
+<section id="Sect-{{ par_id }}">
+  <div>
+{% endif %}
+<div class="fact {# {include.class} #}">
+    <div>
+        <h3>
+            {{ textAbove }}
+            {#
+            <strong {% if include.factStart %} data-start="{{ include.factStart }}"{% endif %}
+                    {% if include.factStart and include.factEnd %} data-end="{{ include.factEnd }}"{% endif %}
+                    {% if include.factStart and include.factBefore %} data-before="{{ include.factBefore }}"{% endif %}
+                    {% if include.factStart and include.factAfter %} data-after="{{ include.factAfter }}"{% endif %}
+                    {% if include.factStart and include.factIncrement %} data-increment="{{ include.factIncrement }}"{% endif %}
+                    {% if include.factStart and include.factInterval %} data-interval="{{ include.factInterval }}"{% endif %}>
+                {{ figure }}
+            </strong>
+            #}
+            <strong>{{ figure }}</strong>
+            {{ textBelow }}
+        </h3>
+    </div>
+    {% if include.factIcon %}
+        <span class="{{ include.factIcon }}"></span>
+    {% endif %}
+</div>
+{% if wrapper %}
+  </div>
+</section>
+{% endif %}

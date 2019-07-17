@@ -1,18 +1,20 @@
 <div class="footer_wrapper">
-    <div class="footer_logo_wrapper">
-        {{ drupal_entity('block', 'sitebranding') }}
-    </div>
-    <div class="footer_social_wrapper">
-        {{ drupal_entity('block', 'socialmedialinks') }}
-    </div>
-    <div class="footer_badge_wrapper">
-        {{ drupal_entity('block', 'footerbadgeblock') }}
-    </div>
-    <div class="footer_contact_wrapper">
-        {{ drupal_entity('block', 'footercontactblock') }}
-    </div> 
-
-    <div class="footer_menu_wrapper">
-        {{ drupal_menu('footer-vertical') }}
-    </div>
+  <div class="footer_logo_wrapper" aria-label="{{ 'Site Branding'|t }}">
+    {{ drupal_entity('block', 'sitebranding') }}
+  </div>
+  <div class="footer_contact_wrapper" aria-label="{{ 'Contact Us'|t }}">
+    {{ drupal_entity('block', 'views_block__site_footer_section_contact') }}
+  </div>
+  <div class="footer_social_wrapper" aria-label="{{ 'Social Media Links'|t }}">
+    {{ drupal_entity('block', 'socialmedialinks') }}
+  </div>
+  <div class="footer_badge_wrapper" aria-label="{{ 'Footer Element'|t }}">
+    {{ drupal_entity('block', 'views_block__site_footer_section_badges_content') }}
+  </div>
+  <div class="footer_menu_wrapper" aria-label="{{ 'Footer Links'|t }}">
+    {{ drupal_menu('footer-vertical') }}
+  </div>
+  <div class="footer_gtranslate_wrapper" aria-label="{{ 'Translate'|t }}">
+    {{ drupal_entity('block', 'gtranslate') }}
+  </div>
 </div>
