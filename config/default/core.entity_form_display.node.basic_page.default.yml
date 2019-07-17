@@ -37,8 +37,8 @@ content:
     type: paragraphs
     weight: 122
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Section
+      title_plural: Sections
       edit_mode: closed
       closed_mode: summary
       autocollapse: all

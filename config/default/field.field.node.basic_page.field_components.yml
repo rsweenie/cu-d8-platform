@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.node.field_components
     - node.type.basic_page
+    - paragraphs.paragraphs_type.full_width_photo
+    - paragraphs.paragraphs_type.image_video
   module:
     - entity_reference_revisions
 id: node.basic_page.field_components
@@ -21,7 +23,9 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      full_width_photo: full_width_photo
+      image_video: image_video
     target_bundles_drag_drop:
       accordion:
         weight: 4
@@ -32,4 +36,10 @@ settings:
       ief_link:
         weight: 6
         enabled: false
+      full_width_photo:
+        enabled: true
+        weight: 7
+      image_video:
+        enabled: true
+        weight: 10
 field_type: entity_reference_revisions
