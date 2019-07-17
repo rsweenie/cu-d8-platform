@@ -150,18 +150,18 @@ figure {
         }
     }
 
-    .video {
-      display: none;
-    }
-
-    &.playing {
-      .video {
-        display: block;
-      }
-
-      .img {
-        display: none;
-      }
-    }
+    // .video {
+    //   display: none;
+    // }
+    //
+    // &.playing {
+    //   .video {
+    //     display: block;
+    //   }
+    //
+    //   .img {
+    //     display: none;
+    //   }
+    // }
 }
 @import 'media/_gallery';

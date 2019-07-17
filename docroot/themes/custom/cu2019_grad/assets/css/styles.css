@@ -3191,24 +3191,6 @@ figure.float-right > figcaption {
   padding: 1rem 0;
 }
 
-/* line 153, src/sass/components/basic/_media.scss */
-
-figure .video {
-  display: none;
-}
-
-/* line 158, src/sass/components/basic/_media.scss */
-
-figure.playing .video {
-  display: block;
-}
-
-/* line 162, src/sass/components/basic/_media.scss */
-
-figure.playing .img {
-  display: none;
-}
-
 /*  --------------------------------------------------------------------------  *\
 
     TESTIMONIALS/QUOTES
