@@ -240,6 +240,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_profile_link: true
   moderation_state: true
   sticky: true

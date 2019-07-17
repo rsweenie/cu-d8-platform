@@ -12,6 +12,3 @@ tooling:
   blt:
     service: appserver
     cmd: /app/vendor/acquia/blt/bin/blt
-excludes:
-  - deploy
-  - vendor

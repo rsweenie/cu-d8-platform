@@ -14,6 +14,9 @@
  *
  */
 
+$site = $_ENV['AH_SITE_GROUP'];
+$env = $_ENV['AH_SITE_ENVIRONMENT'];
+$target_env = $site . $env;
 // Acquia hosting site / environment names.
 $site = getenv('AH_SITE_GROUP');
 $env = getenv('AH_SITE_ENVIRONMENT');
@@ -78,14 +81,23 @@ $command = sprintf(
 );
 fwrite(STDERR, "Executing: $command with cache dir $cache_directory;\n");
 
+// The public domain name of the website.
+// Run updates against requested domain rather than acsf primary domain.
+$domain = $_SERVER['HTTP_HOST'];
 $result = 0;
 $output = array();
 exec($command, $output, $result);
 print implode("\n", $output);
 
+$domain_fragments = explode('.', $_SERVER['HTTP_HOST']);
+$site_name = array_shift($domain_fragments);
 // Clean up the drush cache directory.
 shell_exec(sprintf('rm -rf %s', escapeshellarg($cache_directory)));
 
+exec("/mnt/www/html/$site.$env/vendor/acquia/blt/bin/blt drupal:update --environment=$env --site=$site_name --define drush.uri=$domain --verbose --yes");
+echo "ENVIRONMENT: $env";
+// Run sso-config.sh to set sp_entity_id in config when a new site is created.
+exec("bash ../sso-config.sh $site_name $env");
 if ($result) {
   fwrite(STDERR, "Command execution returned status code: $result!\n");
   exit($result);

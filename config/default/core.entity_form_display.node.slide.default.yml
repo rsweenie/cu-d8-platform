@@ -98,7 +98,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_slide_link: true
   moderation_state: true
   path: true
   promote: true
