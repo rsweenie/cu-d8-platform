@@ -50,17 +50,12 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {# { content } #}
-      {% include '@cu2019_grad/components/card.html.twig' with {
+      {% include '@cu2019_grad/components/image-video.html.twig' with {
         'wrapper': 'section',
-        'wrapper_class': 'full-screen',
-        'image': content.field_fwp_background,
-        'title': content.field_fwp_title,
-        'body': content.field_fwp_body,
-        'class': 'fw_photo img-behind ' ~ overlay,
-        'button': {
-          'url': content.field_fwp_cta[0]['#url'],
-          'title': content.field_fwp_cta[0]['#title']
-        }
+        'media_type': content.field_media_type['#items'].getString(),
+        'image': content.field_media_asset,
+        'video_id': content.field_media_vid_id.0,
+        'caption': content.field_media_caption.0
       } %}
     {% endblock %}
   </div>
