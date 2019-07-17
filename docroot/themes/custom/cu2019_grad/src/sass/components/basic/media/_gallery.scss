@@ -1,0 +1,72 @@
+.gallery {
+    
+    @media #{$mediaMd} {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-flow: row;
+        grid-column-gap: #{$gutter}rem;
+        grid-row-gap: #{$gutter * .6}rem;
+        justify-items: stretch;
+        align-items: stretch;
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        
+        :nth-child(30n + 1), :nth-child(30n + 4), :nth-child(30n + 9), :nth-child(30n + 12), :nth-child(30n + 17), :nth-child(30n + 23) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        figure {
+            margin: 0;
+            
+            figcaption {
+                display: none;
+                @include position(fixed, 10000, (left, top), (50%, 95%), translate(-50%, -100%));
+                width: 85vw;
+                max-width: 1600px;
+                color: $white;
+            }
+            
+            &:before {
+                display: none;
+                @include position(relative, 0);
+                padding: percentage(9 / 16) 0 0;
+                width: 100%;
+                background: $tertiary;
+                content: "";
+            }
+            
+            &:after {
+                display: none;
+                @include position(fixed, 9999, (left, top), (0, 0));
+                height: 100vh;
+                width: 100vw;
+                background: rgba($primary, .85);
+                content: "";
+            }
+            
+            &:active {
+                
+                &:before, &:after {
+                    display: block;
+                }
+                
+                img {
+                    @include position(fixed, 10000, (left, top), (50%, 50%), translate(-50%, -50%));
+                    width: 85vw;
+                    max-width: 1600px;
+                    height: auto;
+                }
+                
+                figcaption {
+                    display: block;
+                }
+            }
+        }
+    }
+}

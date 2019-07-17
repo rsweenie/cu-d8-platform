@@ -1,0 +1,23 @@
+uuid: b3a28b8d-b104-4760-8691-1bb2e1f9e647
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fwp_color
+    - paragraphs.paragraphs_type.full_width_photo
+  module:
+    - options
+id: paragraph.full_width_photo.field_fwp_color
+field_name: field_fwp_color
+entity_type: paragraph
+bundle: full_width_photo
+label: 'Overlay Color'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: blue
+default_value_callback: ''
+settings: {  }
+field_type: list_string

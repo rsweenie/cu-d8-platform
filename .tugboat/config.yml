@@ -50,7 +50,7 @@ services:
         - docker-php-ext-configure gd --enable-gd-native-ttf --with-freetype-dir=/usr/include/freetype2 --with-png-dir=/usr/include --with-jpeg-dir=/usr/include
         #- docker-php-ext-install bz2 dom filter gd hash json opcache pdo pdo_mysql session simplexml sodium spl tokenizer xml
         - docker-php-ext-install bz2 gd opcache pdo_mysql
-        # CU: Our own custom php tweaks 
+        # CU: Our own custom php tweaks
         - cp "${TUGBOAT_ROOT}/.tugboat/php.ini" /usr/local/etc/php/conf.d/creighton.ini
 
         - a2enmod headers rewrite
@@ -87,29 +87,24 @@ services:
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use rsync over SSH.
         - mkdir -p "${DOCROOT}/sites/default/files"
-        
+
         # CU: absolute ugly workaround for the fact that Acquia has certain file
         # locations somehow hard coded in our config, against our will. FUD.
         # We are not able to set the value of $settings['file_temporary_path']
-        # in any of our settings.php files for some reason. 
+        # in any of our settings.php files for some reason.
         - mkdir -p "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/temp"
         - mkdir -p "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
         - chmod 775 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/temp"
         - chmod 775 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
         - chown -R www-data:www-data "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu"
 
-        # Fix settings on /files dir before rsync
-        - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
-        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
-        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
-        # DB sync MUST come before filesync always
-        - drush -r "${DOCROOT}" sql:sync "@alliance.01live" @self -y
-        - drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
-        # The rsync breaks settings, so them fix again
+        # Fix settings on /files dir
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
 
+        # Runt hrough extra steps in the build script.
+        - ${TUGBOAT_ROOT}/.tugboat/scripts/php-update.sh
 
         # Alternatively, another common practice is to use the
         # stage_file_proxy Drupal module. This module lets Drupal serve
@@ -131,6 +126,8 @@ services:
         # CU TODO: Do we want to --no-dev flag on this composer install?
         - composer install --no-ansi
         - drush -r "${DOCROOT}" updatedb -y
+        - drush -r "${DOCROOT}" config-import -y
+        # Run config import a second time to capture changes from new config splits.
         - drush -r "${DOCROOT}" config-import -y
         - drush -r "${DOCROOT}" cron -y
         - drush -r "${DOCROOT}" cache-rebuild
@@ -165,3 +162,14 @@ services:
 
         # Install the initial DB backup as a base.
         # - zcat "${TUGBOAT_ROOT}/.tugboat/live-reference-db.sql.gz" | mysql tugboat
+        #- ${TUGBOAT_ROOT}/.tugboat/db-update.sh
+
+      # Commands that build the site. This is where you would add things
+      # like feature reverts or any other drush commands required to
+      # set up or configure the site. When a preview is built from a
+      # base preview, the build workflow starts here, skipping the init
+      # and update steps, because the results of those are inherited
+      # from the base preview.
+      build:
+
+        - ${TUGBOAT_ROOT}/.tugboat/scripts/db-build.sh

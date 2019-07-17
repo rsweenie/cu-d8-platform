@@ -1,0 +1,55 @@
+/*  --------------------------------------------------------------------------  *\
+
+    SECTION BACKGROUNDS
+
+    These can be used to provide some design concepts in wireframes, or in build
+    they can be good starting points to solve backgrounds and shapes used in the
+    design.
+
+    These are included individually to make commenting out easier. Please comment 
+    out the backgrounds that you don't need for your site's design.
+
+\*  --------------------------------------------------------------------------  */
+section[class*="sbg-"] {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include position(relative, 0);
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    background: $accent-2;
+    overflow: hidden;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    
+    &:before, &:after {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        display: block;
+        @include position(absolute, -1);
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        width: 100%;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        background: $white;
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        content: "";
+    }
+}
+//section, header {
+//    @import 'section-backgrounds/_angles';
+//    @import 'section-backgrounds/_triangles';
+//    @import 'section-backgrounds/_path';
+//    @import 'section-backgrounds/_curved';
+//    @import 'section-backgrounds/_fan';
+//    @import 'section-backgrounds/_caret-top';
+//    @import 'section-backgrounds/_caret-bottom';
+//}
+@import 'section-backgrounds/_basic';
+/*  --------------------------------------------------------------------------  *\
+    DELETE THIS SECTION OUT WHEN NOT USING ON COMPONENT LIBRARY SITE
+\*  --------------------------------------------------------------------------  */
+.cl-bg {
+    > section {
+        min-height: 75vh;
+    }
+}

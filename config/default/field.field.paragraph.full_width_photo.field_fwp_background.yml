@@ -1,0 +1,38 @@
+uuid: 044bb22a-16da-4ca6-be78-98285224d551
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fwp_background
+    - paragraphs.paragraphs_type.full_width_photo
+  module:
+    - image
+id: paragraph.full_width_photo.field_fwp_background
+field_name: field_fwp_background
+entity_type: paragraph
+bundle: full_width_photo
+label: 'Background Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

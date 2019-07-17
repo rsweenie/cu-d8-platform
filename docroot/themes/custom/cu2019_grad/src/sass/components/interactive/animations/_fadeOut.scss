@@ -1,0 +1,18 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > FADE OUT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(fadeOut) {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+&.fade-out {
+    @include animationName(fadeOut);
+}

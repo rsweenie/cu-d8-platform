@@ -1,0 +1,212 @@
+/*  --------------------------------------------------------------------------  *\
+
+    THE SITES FOOTER
+
+    Make sure to keep the footer within the body so that we can use <footer> in
+    other places as well and style it differently
+
+\*  --------------------------------------------------------------------------  */
+//main > .footer-cl, // COMMENT OUT FOR PRODUCTION, USED FOR CL SITE ONLY
+.main-footer {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    position: relative;
+
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    padding: 40px 0 0;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    background: $secondary;
+    //border-bottom: 75px solid darken($secondary,5);
+    overflow: hidden;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    font-size: 15px;
+    line-height: (24 / 15) * 1em;
+    color: $accent-2;
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    // Use gutters to set up definitions of padding and margins
+    // This helps create consistent spacing
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 750px;
+      height: 1160px;
+      z-index: 1;
+
+      content: "";
+      background: rgba($black,.15);
+      transform: translate(85%, 39%) rotate(45deg);
+      opacity: .49;
+      transition: transform .25s;
+
+      @supports(mix-blend-mode: multiply) {
+        background: $tertiary;
+        mix-blend-mode: multiply;
+      }
+
+      @media #{$mediaMd} {
+          transform: translate(29%, 39%) rotate(45deg);
+      }
+    }
+
+    @media #{$mediaXs} {
+      .row {
+        > div {
+          &:first-child {
+            padding-bottom: 28px;
+            position: relative;
+            z-index: 3;
+          }
+          &:last-child {
+            background: darken($secondary,5);
+            padding-top: 37px;
+            padding-bottom: 28px;
+            // position: relative;
+            //
+            // &:after {
+            //   width: 100vh;
+            //   height: 100%;
+            //
+            //   position: absolute;
+            //   bottom: 0;
+            //   left: 0;
+            //   z-index: 0;
+            //
+            //   content: "";
+            // }
+            //
+            > * {
+              position: relative;
+              z-index: 3;
+            }
+          }
+        }
+      }
+    }
+
+    @media #{$mediaSm} {
+      padding: 108px 0 135px;
+
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+
+        width: 100%;
+        height: 75px;
+
+        content: "";
+        background: darken($secondary,5);
+      }
+    }
+
+    > div {
+
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        @media #{$mediaSm} {
+          position: relative;
+        }
+        z-index: 2;
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        max-width: $siteWMx;
+        margin: 0 auto;
+        padding: 0 #{$gutter}rem;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        // ADJUST THE WIDTH FOR $siteWList IN EACH MEDIA QUERY USING $siteWQueryList
+        @each $q in $siteWQueryList {
+            $i: index($siteWQueryList, $q);
+
+            @if $i == 1 {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                width: nth($siteWList, $i);
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            } @else {
+                @media #{$q} {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    width: nth($siteWList, $i);
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                }
+            }
+        }
+    }
+
+    /* -------------------------- *\
+
+    FOOTER LAYOUT OPTIONS
+
+    \* -------------------------- */
+    /* ------------------- *\
+    Super Footer
+    &.super {// COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'footer/layouts/super';
+    }// COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------- */
+
+    /* -------------------------- *\
+
+    LOGO OPTIONS
+
+    We want to use SVG for our logos when available.
+
+    Choose which option below is the most relevant to your site.
+
+    \* -------------------------- */
+    /* ------------------ *\
+    SVG Logo
+    @import 'footer/logo/_svg';
+    @import 'footer/logo/_svg-w-tagline';
+    \* ------------------ */
+
+    /* ------------------ *\
+    Text Logo
+    @import 'footer/logo/_text';
+    \* ------------------ */
+
+    /* ------------------ *\
+    IMG Logo
+    @import 'footer/logo/_img';
+    @import 'footer/logo/_img-w-tagline';
+    \* ------------------ */
+
+    /* -------------------------- *\
+
+    FOOTER ELEMENTS
+
+    \* -------------------------- */
+
+    /* ------------------ *\
+    Links
+    \* ------------------ */
+    @import 'footer/elements/_links';
+    /* ------------------ *\
+    Copyright
+    \* ------------------ */
+    @import 'footer/elements/_copyright';
+    /* ------------------ *\
+    Social Navigation
+    \* ------------------ */
+    @import 'footer/elements/_social';
+    /* ------------------ *\
+    Social Navigation
+    \* ------------------ */
+    @import 'footer/elements/_sitemap';
+}

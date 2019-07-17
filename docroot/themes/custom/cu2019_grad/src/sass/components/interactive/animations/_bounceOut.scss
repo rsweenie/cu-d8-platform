@@ -1,0 +1,25 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > BOUNCE OUT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(bounceOut) {
+    20% {
+        @include transform(scale3d(0.9, 0.9, 0.9));
+    }
+
+    50%,
+    55% {
+        opacity: 1;
+        @include transform(scale3d(1.1, 1.1, 1.1));
+    }
+
+    to {
+        opacity: 0;
+        @include transform(scale3d(0.3, 0.3, 0.3));
+    }
+}
+
+&.bounce-out {
+    @include animationName(bounceOut);
+}

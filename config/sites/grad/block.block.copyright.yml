@@ -1,0 +1,25 @@
+uuid: a97b06fa-1bd9-4683-8593-94926216671e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:76f536bd-1465-442a-b5a5-05a4eecd3a10'
+  module:
+    - block_content
+  theme:
+    - cu2019_grad
+id: copyright
+theme: cu2019_grad
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'block_content:76f536bd-1465-442a-b5a5-05a4eecd3a10'
+settings:
+  id: 'block_content:76f536bd-1465-442a-b5a5-05a4eecd3a10'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

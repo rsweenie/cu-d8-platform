@@ -1,0 +1,22 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > ROTATE IN
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(rotateIn) {
+    from {
+        @include transformOrigin(center);
+        @include transform(rotate3d(0, 0, 1, -200deg));
+        opacity: 0;
+    }
+
+    to {
+        @include transformOrigin(center);
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
+    }
+}
+
+&.rotate-in {
+    @include animationName(rotateIn);
+}
