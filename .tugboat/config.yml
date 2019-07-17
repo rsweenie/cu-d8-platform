@@ -127,6 +127,8 @@ services:
         - composer install --no-ansi
         - drush -r "${DOCROOT}" updatedb -y
         - drush -r "${DOCROOT}" config-import -y
+        # Run config import a second time to capture changes from new config splits.
+        - drush -r "${DOCROOT}" config-import -y
         - drush -r "${DOCROOT}" cron -y
         - drush -r "${DOCROOT}" cache-rebuild
         # Just in case we need to log in as admin
