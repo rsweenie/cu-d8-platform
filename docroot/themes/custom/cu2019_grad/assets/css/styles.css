@@ -1291,12 +1291,6 @@ nav a {
   display: none;
 }
 
-/* line 71, src/sass/structure/header/navs/_cta.scss */
-
-.region-mobile-cta {
-  padding-top: 7rem;
-}
-
 /* -------------------------- *\
 
 COMPONENT LIBRARY MODIFICATIONS
@@ -1822,7 +1816,7 @@ section[class*="sbg-"]:after {
 
 /* line 31, src/sass/components/basic/_buttons.scss */
 
-[class*="btn-"] span {
+[class*="btn-"] span:not(.sr-only) {
   position: relative;
   z-index: 1;
 }
@@ -12047,6 +12041,12 @@ form.search .search button {
 
   table {
     display: table;
+  }
+
+  /* line 10, src/sass/structure/_header.scss */
+
+  .main-header {
+    height: 13.2rem;
   }
 
   /* line 58, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
