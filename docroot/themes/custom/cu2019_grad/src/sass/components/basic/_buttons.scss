@@ -28,7 +28,7 @@
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     transition: all .25s;
 
-    span {
+    span:not(.sr-only) {
       position: relative;
       z-index: 1;
     }
