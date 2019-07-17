@@ -15,8 +15,11 @@ nav.menu--footer {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
 
         font-size: 16px;
-        @media #{$mediaMd} {
+        @media #{$mediaLg} {
           @include flex(flex-start, center, center, row wrap);
+        }
+
+        @media #{$mediaXl} {
           font-size: 17px;
         }
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -43,11 +46,11 @@ nav.menu--footer {
         }
 
 
-        @media #{$mediaMd} {
+        @media #{$mediaLg} {
             @include flexItem(0, 1, auto);
             width: auto;
-            margin: 0 #{$gutter * .6}rem;
-            text-align: center;
+            margin: 0 10px;
+            //text-align: center;
 
             + li {
               margin-top: 0;
@@ -56,6 +59,10 @@ nav.menu--footer {
             &:nth-child(n + 3) {
                 margin-top: 0;
             }
+        }
+
+        @media #{$mediaXl} {
+          margin: 0 15px;
         }
     }
 }

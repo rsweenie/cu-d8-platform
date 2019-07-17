@@ -1,4 +1,4 @@
-uuid: 45089834-d2cb-4252-9c83-e020493e99c8
+uuid: 62938848-e338-46b1-bf5d-f62a503f5dd7
 langcode: en
 status: true
 dependencies:
@@ -37,8 +37,8 @@ content:
     type: paragraphs
     weight: 122
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Section
+      title_plural: Sections
       edit_mode: closed
       closed_mode: summary
       autocollapse: all

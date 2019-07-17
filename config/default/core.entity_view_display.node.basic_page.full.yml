@@ -1,9 +1,9 @@
-uuid: 5dbe7989-1c41-4443-ad28-b929fb150446
+uuid: 16db3182-e566-4a44-94e6-daf1cddb41b5
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.full
     - field.field.node.basic_page.body
     - field.field.node.basic_page.field_components
     - node.type.basic_page
@@ -18,28 +18,27 @@ third_party_settings:
     custom: false
     allow: false
     default: default
-id: node.basic_page.teaser
+id: node.basic_page.full
 targetEntityType: node
 bundle: basic_page
-mode: teaser
+mode: full
 content:
   body:
     label: hidden
-    type: text_summary_or_trimmed
+    type: text_default
     weight: 0
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
     region: content
   field_components:
     type: entity_reference_revisions_entity_view
     weight: 1
-    region: content
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   links: true
   private: true
