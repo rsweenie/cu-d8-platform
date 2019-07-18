@@ -76,9 +76,9 @@ Feature: Content Page
     And I wait "3" seconds
     #Trouble with two identical iframes, have to compromise 
     And I switch to the "entity_browser_iframe_creighton_slideshow" frame
-    #Add two slides: THESE MIGHT NEED TO CHANGE AS SITE GETS UPDATED
-    And I check the box "entity_browser_select[node:11]"
-    And I check the box "entity_browser_select[node:96]"
+    #Hijacking css finder to check the first two items in media browser
+    And I visit the "tr:nth-of-type(1) td input" link
+    And I visit the "tr:nth-of-type(2) td input" link
     #Press save in the iframe
     And I press "op"
     And I switch to the window

@@ -6,6 +6,7 @@ Feature: Panelizer IPE
 
   Background: edit content page with ipe
     Given I am logged in as a user with the "administrator" role
+    And I set browser window size to "1920" x "1080"
     And I am viewing a "content_page" with the title "panel test"
     And I visit the edit form
     And I fill in "field_content_page_headline[0][value]" with "content page headline"
@@ -13,8 +14,8 @@ Feature: Panelizer IPE
     And I press "Add existing Slide"
     And I wait for AJAX to finish
     Then I switch to the "entity_browser_iframe_creighton_slideshow" frame
-    And I check the box "entity_browser_select[node:11]"
-    And I check the box "entity_browser_select[node:96]"
+    And I visit the "tr:nth-of-type(1) td input" link
+    And I visit the "tr:nth-of-type(2) td input" link
     And I press "op"
     Then I wait for AJAX to finish
     And I switch to the window
@@ -24,8 +25,9 @@ Feature: Panelizer IPE
     Then I wait for AJAX to finish
     And I switch to the "entity_browser_iframe_creighton_tabbed_accordion" frame
     And I press "Apply" 
-    Then I wait for AJAX to finish 
-    And I check "entity_browser_select[node:21]"
+    Then I wait for AJAX to finish
+    And I wait for "3" seconds
+    And I visit the "tr:nth-of-type(1) td input" link
     And I press "Add Item"
     Then I wait for AJAX to finish
     And I switch to the window
@@ -54,6 +56,7 @@ Feature: Panelizer IPE
     #verify
     Then I should not see "REGION: TOP"
     And I should not see "BLOCK: SLICK SLIDESHOW"
+    And I take a screenshot with size "1920" x "full"
     And I should see "You can include captions"
     And I should see the link "And links"
     And I should not see "BLOCK: BODY"
