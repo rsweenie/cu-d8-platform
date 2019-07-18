@@ -10515,13 +10515,13 @@ ul#megamenu_icon_menu {
   padding: 15px 60px 15px 15px;
   line-height: 1.12;
   background-color: #0054A6;
-}
-/* line 68, ../sass/custom/_featuredlinks.scss */
-.featured_links_wrapper .featured_links_blue li:hover {
   -webkit-transition-property: background-color;
   transition-property: background-color;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
+}
+/* line 69, ../sass/custom/_featuredlinks.scss */
+.featured_links_wrapper .featured_links_blue li:hover {
   background-color: #002E6D;
 }
 /* line 74, ../sass/custom/_featuredlinks.scss */
@@ -10575,8 +10575,12 @@ ul#megamenu_icon_menu {
   padding: 15px 60px 15px 15px;
   line-height: 1.12;
   background-color: #FFCC4F;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
-/* line 95, ../sass/custom/_featuredlinks.scss */
+/* line 96, ../sass/custom/_featuredlinks.scss */
 .featured_links_wrapper .featured_links_orange li:hover {
   background-image: url(../images/png/dkblue-arrow.png);
   background-color: #F1D48B;
