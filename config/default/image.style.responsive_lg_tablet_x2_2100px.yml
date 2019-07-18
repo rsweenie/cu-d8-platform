@@ -1,0 +1,15 @@
+uuid: 85971372-ed28-42a8-b2c2-1f794812019a
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_lg_tablet_x2_2100px
+label: 'Responsive: lg-tablet x2 (2100px)'
+effects:
+  8f2e65f5-b901-488e-b0c5-2f6a8db82b09:
+    uuid: 8f2e65f5-b901-488e-b0c5-2f6a8db82b09
+    id: image_scale
+    weight: 1
+    data:
+      width: 2100
+      height: null
+      upscale: false

@@ -1,0 +1,15 @@
+uuid: fe2beb5e-9b60-4ec1-8d43-7e41ce7a834b
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_tablet_x1_768px
+label: 'Responsive: tablet x1 (768px)'
+effects:
+  8f5bff00-4d59-45c8-9633-3598adbb5f5d:
+    uuid: 8f5bff00-4d59-45c8-9633-3598adbb5f5d
+    id: image_scale
+    weight: 1
+    data:
+      width: 768
+      height: null
+      upscale: false

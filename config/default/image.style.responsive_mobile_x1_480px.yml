@@ -1,0 +1,15 @@
+uuid: 48232439-d6b3-4bcc-b58f-29e3f133b4c4
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_mobile_x1_480px
+label: 'Responsive: mobile x1 (480px)'
+effects:
+  9a991782-eb13-4c0b-87a2-572aafc8361e:
+    uuid: 9a991782-eb13-4c0b-87a2-572aafc8361e
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: false
