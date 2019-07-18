@@ -31,7 +31,7 @@
 {% macro menu_links(items, attributes, level) %}
 	{% import _self as menus %}
 	{% if items %}
-		<ul id="header_nav" class="header_nav">
+		<ul class="header_nav">
 			{% for item in items %}
 				{% set item_attributes = create_attribute() %}
 				{% set classes = [] %}

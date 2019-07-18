@@ -1,18 +1,36 @@
-favicon:
-  mimetype: image/vnd.microsoft.icon
-  path: /themes/custom/cu2017/images/favicon.ico
-  url: /themes/custom/cu2017/images/favicon.ico
-  use_default: true
-features:
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: true
-  node_user_picture: true
-logo:
-  path: 'public://CU_Logo_AZ.png'
-  url: ''
-  use_default: false
 schemas:
   bootstrap: 8000
   cu2017: 8000
   cu2017_alliance: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: themes/custom/cu2017/images/favicon.ico
+  url: themes/custom/cu2017/images/favicon.ico
+  use_default: 0
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+  node_user_picture: true
+logo:
+  path: 'public://CU_Logo_AZ.png'
+  url: ''
+  use_default: 0
+region_wells:
+  navigation: ''
+  navigation_collapsible: ''
+  header_alert: ''
+  header: ''
+  header_html: ''
+  header_background_image: ''
+  hero_slideshow: ''
+  highlighted: ''
+  help: ''
+  sitename: ''
+  breadcrumbs: ''
+  content: ''
+  large_horiz_image: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  footer: ''
+table: ''

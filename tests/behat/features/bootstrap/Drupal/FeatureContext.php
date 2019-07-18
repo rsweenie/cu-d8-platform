@@ -13,6 +13,8 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   //requested page not found
   const RPNF = "The requested page could not be found";
   private $output = '';
+  private $screenshotCount = 0;
+  private $document = 'document';
   /**
    * Every scenario gets its own context instance.
    *
@@ -21,6 +23,99 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    */
   public function __construct() {
 
+  }
+
+  /**
+   * Sets screen height
+   */
+  public function setScreenHeight($height){
+      $this->getSession()->resizeWindow((int) $this->getCurrentScreenWidth(), (int) $height, 'current');
+  }
+
+  /**
+   * Sets screen width
+   */
+  public function setScreenWidth($width){
+      $this->getSession()->resizeWindow((int) $width, (int) $this->getCurrentScreenHeight(), 'current');
+  }
+
+  /**
+   * returns the page height
+   */
+  private function getPageHeight(){
+    return (int) $this->getSession()->getDriver()->evaluateScript(
+      "function(){ var body = document.body,
+        html = document.documentElement;
+    
+        return Math.max( body.scrollHeight, body.offsetHeight, 
+                           html.clientHeight, html.scrollHeight, html.offsetHeight ); }()"
+    );
+  }
+
+  /**
+   * returns the page width
+   */
+  private function getPageWidth(){
+    return (int) $this->getSession()->getDriver()->evaluateScript(
+      "function(){ var body = document.body,
+        html = document.documentElement;
+    
+        return Math.max( body.scrollWidth, body.offsetWidth, 
+                           html.clientWidth, html.scrollWidth, html.offsetWidth ); }()"
+    );
+  }
+
+  /**
+     * Gets current screen height
+     */
+    private function getCurrentScreenHeight(){
+      return (int) $this->getSession()->getDriver()->evaluateScript(
+          "function(){ return screen.height; }()"
+      );
+  }    
+
+  /**
+   * Gets current screen width
+   */
+  private function getCurrentScreenWidth(){
+      return (int) $this->getSession()->getDriver()->evaluateScript(
+          "function(){ return screen.width; }()"
+      );
+  }
+
+  /**
+   * @Given /^I set browser window size to "([^"]*)" x "([^"]*)"$/
+   * set height to full to match page height
+   */
+  public function iSetBrowserWindowSizeToX($width, $height) {
+    $this->getSession()->resizeWindow((int)$width, (int)$height, 'current');
+  }
+
+/**
+   * @Then /^I take a screenshot with size "([^"]*)" x "([^"]*)"$/
+   */
+  public function iTakeAScreenshotWithSizeX($width, $height)
+  {
+    //set to page height if height is full
+    if($height == "full"){
+      $height = $this->getPageHeight();
+    }
+    $this->iSetBrowserWindowSizeToX($width, $height);
+    $filename = sprintf('%s_%d.png', $this->getMinkParameter('browser_name'), ++$this->screenshotCount);
+    //save screenshot to reports dir
+    $filepath = \Drupal::root() . '/../reports';
+    parent::saveScreenshot($filename, $filepath);
+  }
+  /**
+   * @Given I execute JS :js
+   */
+  public function iExecuteJS($js){
+    $script = <<<JS
+function(){{$js}}()
+JS;
+    $this->getSession()->evaluateScript(
+      $script
+    );
   }
 
   /**
@@ -55,6 +150,33 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       throw new \Exception(sprintf('The editor "%s" was not found on the page %s', $instanceId, $this->getSession()->getCurrentUrl()));
     }
     return $instance;
+  }
+
+
+    /**
+   * @Then /^(?:|I )visit (?:|the )"([^"]*)"(?:|.*)$/
+   */
+  public function iVisitTheLink($arg1)
+  {
+      $findName = $this->getSession()->getPage()->find("css", $arg1);
+      if (!$findName) {
+          throw new Exception($arg1 . " could not be found");
+      } else {
+          $findName->click();
+      }
+  }
+
+  /**
+   * @Then I fill in class :css with :value
+   */
+  public function iFillInClassWith($css,$value)
+  {
+      $findName = $this->getSession()->getPage()->find("css", $css);
+      if (!$findName) {
+          throw new Exception($css . " could not be found");
+      } else {
+          $findName->setValue($value);
+      }
   }
 
   /**
@@ -135,4 +257,38 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       );
     }
   }
+
+  /**
+   * @Then I move block :label to region :region
+   */
+  public function iMoveBlockToRegion($label, $region)
+  {
+    //get the block
+    $block = $this->getSession()->getPage()->find("named",["content","Block: ".$label])->getParent();
+    //get the move select
+    $select = $block->find("named",["option","Move"])->getParent();
+    //click it to expose the options
+    $select->click();
+    //select the region you want to move the block to
+    $select->find("named",["option",$region])->click();
+    //verify movement
+    $region_element = $this->getSession()->getPage()->find("named",["content","Region: ".$region])->getParent();
+    if(empty($region_element->find("named",["content","Block: ".$label])))
+      throw new \Exception("Block Move Failed");
+  }
+
+  /**
+   * @Then the canonical link should be https
+   */
+  public function theCanonicalLinkShouldBeHttps()
+  {
+    //return all link elements with rel attribute 'canonical' and href attributes which contain https://
+    $link = $this->getSession()->getPage()->findAll('xpath','//link[@rel = "canonical" and contains(@href,"https://")]');
+    //if there are none fail, there should be 1
+    if(empty($link))
+      throw new \Exception(
+        'Canonical Link is not https'
+      );
+  }
+
 }

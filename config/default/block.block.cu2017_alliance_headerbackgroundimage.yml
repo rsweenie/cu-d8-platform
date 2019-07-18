@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_aria_landmark_roles
     - ctools_block
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: 'Background Image'
 _core:
   default_config_hash: Udb1my5Paa-j9xAkfQw0nNujdKl3VUu9JXXavVX69V4
 id: cu2017_alliance_headerbackgroundimage

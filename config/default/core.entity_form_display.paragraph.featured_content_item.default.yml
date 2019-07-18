@@ -8,8 +8,6 @@ dependencies:
     - field.field.paragraph.featured_content_item.field_fc_p_link
     - field.field.paragraph.featured_content_item.field_fc_supporting_p_links
     - field.field.paragraph.featured_content_item.field_featured_content_image
-    - field.field.paragraph.featured_content_item.field_link
-    - field.field.paragraph.featured_content_item.field_supporting_links
     - paragraphs.paragraphs_type.featured_content_item
   module:
     - entity_browser
@@ -82,7 +80,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_link: true
-  field_supporting_links: true
   status: true
   uid: true

@@ -38,14 +38,24 @@
 			}
 
 			&:hover {
-				background: $orange;
+				background: $yellow;
+				color: $darkBlue;
+				&::after {
+					background-image: url(../images/png/dkblue-arrow.png);
+				}
 			}
 
 			&.active {
-				background: $orange;
+				background: $yellow;
+				color: $darkBlue;
 
 				&::after {
 					@include rotate(90deg);
+					background-image: url(../images/png/dkblue-arrow.png);
+				}
+
+				&:hover {
+					background: $lightYellow;
 				}
 			}
 		}

@@ -5,25 +5,25 @@
  */
 #}
 {% if is_front %}
-<div{{ attributes.addClass('clearfix', 'front_page_slide_wrapper') }}>
+  <div{{ attributes.addClass('clearfix', 'front_page_slide_wrapper') }}></div>
 {% else %}
-<div{{ attributes.addClass('clearfix', 'inline_slide_wrapper') }}>
+  <div{{ attributes.addClass('clearfix', 'inline_slide_wrapper') }}></div>
 {% endif %}
-    {{ title_suffix.contextual_links }}
-    <div class="slide_wrapper">
-        <div class="slide_image_wrapper">  
-            {{ content.field_slide_image }}  
-        </div>
-        <div class="slide_text_wrapper">
-                <div class="slide_text">
-                    {{ content.field_slide_caption }}
-                    {{ node.field_slide_p_link.entity.field_internal_or_external_link.0.url|render}}
-                    {# other paragraph link fields
-                        node.field_slide_link.entity.field_open_in_new_window.value 
-                        node.field_slide_link.entity.field_link_text.0.value
-                        file_url(node.field_slide_link.entity.field_file_link.entity.field_document.entity.uri.value)
-                    #}
-                </div>
-        </div>
+{{ title_suffix.contextual_links }}
+<div class="slide_wrapper">
+  <div class="slide_image_wrapper">
+    {{ content.field_slide_image }}
+  </div>
+  <div class="slide_text_wrapper">
+    <div class="slide_text">
+      {{ content.field_slide_caption }}
+      {{ node.field_slide_p_link.entity.field_internal_or_external_link.0.url|render }}
+      {# other paragraph link fields
+          node.field_slide_link.entity.field_open_in_new_window.value
+          node.field_slide_link.entity.field_link_text.0.value
+          file_url(node.field_slide_link.entity.field_file_link.entity.field_document.entity.uri.value)
+      #}
     </div>
+  </div>
 </div>
+
