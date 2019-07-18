@@ -3,6 +3,7 @@ default:
     default:
       paths:
         - %paths.base%/features
+      contexts:
         - Acquia\DrupalSpecTool\Context\AccessControlContext
         - Acquia\DrupalSpecTool\Context\ContentModelContext
         - Acquia\DrupalSpecTool\Context\MediaContext

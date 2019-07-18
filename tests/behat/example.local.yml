@@ -21,6 +21,12 @@ local:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
         - Drupal\DrupalExtension\Context\ConfigContext
+        - Acquia\DrupalSpecTool\Context\AccessControlContext
+        - Acquia\DrupalSpecTool\Context\ContentModelContext
+        - Acquia\DrupalSpecTool\Context\MediaContext
+        - Acquia\DrupalSpecTool\Context\MenuContext
+        - Acquia\DrupalSpecTool\Context\ViewsContext
+        - Acquia\DrupalSpecTool\Context\WorkflowContext
   extensions:
     DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
     Behat\MinkExtension:
