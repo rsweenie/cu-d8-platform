@@ -10,6 +10,14 @@ module: {  }
 theme: {  }
 blacklist: {  }
 graylist:
+  - core.entity_form_display.menu_link_content.main.default
+  - core.entity_view_display.menu_link_content.main.default
+  - core.entity_view_display.menu_link_content.main.tier1
+  - core.entity_view_mode.menu_link_content.tier1
+  - field.field.menu_link_content.main.field_mainmenu_feat_content
+  - field.field.menu_link_content.main.field_mainmenu_feat_link
+  - field.storage.menu_link_content.field_mainmenu_feat_content
+  - field.storage.menu_link_content.field_mainmenu_feat_link
   - system.theme
   - 'block.block.*'
 graylist_dependents: true

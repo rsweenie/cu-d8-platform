@@ -1,0 +1,19 @@
+uuid: ad4b4252-db0a-4988-b75e-5be312880c56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_mainmenu_feat_content
+    - system.menu.main
+id: menu_link_content.main.field_mainmenu_feat_content
+field_name: field_mainmenu_feat_content
+entity_type: menu_link_content
+bundle: main
+label: 'Featured content'
+description: 'This will only be displayed on tier-1 links.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
