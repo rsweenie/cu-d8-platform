@@ -25,7 +25,7 @@ Feature: Content Page
     And I should see "Sat, 11/23/2019 - 20:22"
     And I should see "Sat, 11/23/2019 - 20:23"
 
-  @api @javascript
+  @api @javascript @374991306
   Scenario: create/edit content page
     And I wait for AJAX to finish
     # hax happen here wysiwyg embed image/video/text
@@ -36,8 +36,10 @@ Feature: Content Page
     And I wait for AJAX to finish
     # save the content
     And I press "Save"
-    #verify
+    # verify
     Then I should see "http://www.creighton.edu"
+    # check that all vertical footer links open in new windows
+    And All links in "#footer-vertical" open in a new window
 
   @api @javascript
   Scenario: Adding Header Image
