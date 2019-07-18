@@ -1,0 +1,14 @@
+name: creighton-d8
+recipe: drupal8
+config:
+  php: 7.1
+  webroot: ./docroot
+  xdebug: false
+services:
+  appserver:
+    build:
+      - composer install
+tooling:
+  blt:
+    service: appserver
+    cmd: /app/vendor/acquia/blt/bin/blt

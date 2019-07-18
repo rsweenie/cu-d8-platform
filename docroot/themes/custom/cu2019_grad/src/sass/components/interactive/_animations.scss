@@ -1,0 +1,141 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION LIBRARY
+
+    These animations do not use the comments that are found in other places w/in
+    the component library, they should all follow the same convention of 
+    outside - in so that we maintain that organization w/in our styling.
+
+    Comment out animations not used by the design.
+
+\*  --------------------------------------------------------------------------  */
+.animated, .in-view {
+    @include animationDuration(1000ms);
+    @include animationFillMode(both);
+    
+    &.infinite {
+        @include animationIteration(infinite);
+    }
+
+    &.delay-1s {
+        @include animationDelay(1000ms);
+    }
+
+    &.delay-2s {
+        @include animationDelay(2000ms);
+    }
+
+    &.delay-3s {
+        @include animationDelay(3000ms);
+    }
+
+    &.delay-4s {
+        @include animationDelay(4000ms);
+    }
+
+    &.delay-5s {
+        @include animationDelay(5000ms);
+    }
+
+    &.fast {
+        @include animationDuration(800ms);
+    }
+
+    &.faster {
+        @include animationDuration(500s);
+    }
+
+    &.slow {
+        @include animationDuration(2s);
+    }
+
+    &.slower {
+        @include animationDuration(3s);
+    }
+    
+    @import 'animations/_bounce';
+    @import 'animations/_bounceIn';
+    @import 'animations/_bounceInDown';
+    @import 'animations/_bounceInLeft';
+    @import 'animations/_bounceInRight';
+    @import 'animations/_bounceInUp';
+    @import 'animations/_bounceOut';
+    @import 'animations/_bounceOutDown';
+    @import 'animations/_bounceOutLeft';
+    @import 'animations/_bounceOutRight';
+    @import 'animations/_bounceOutUp';
+    @import 'animations/_fadeIn';
+    @import 'animations/_fadeInDown';
+    @import 'animations/_fadeInLeft';
+    @import 'animations/_fadeInRight';
+    @import 'animations/_fadeInUp';
+    @import 'animations/_fadeOut';
+    @import 'animations/_fadeOutDown';
+    @import 'animations/_fadeOutLeft';
+    @import 'animations/_fadeOutRight';
+    @import 'animations/_fadeOutUp';
+    @import 'animations/_fadeInDownBig';
+    @import 'animations/_fadeInLeftBig';
+    @import 'animations/_fadeInRightBig';
+    @import 'animations/_fadeInUpBig';
+    @import 'animations/_fadeOutDownBig';
+    @import 'animations/_fadeOutLeftBig';
+    @import 'animations/_fadeOutRightBig';
+    @import 'animations/_fadeOutUpBig';
+    @import 'animations/_flash';
+    @import 'animations/_flip';
+    @import 'animations/_flipInX';
+    @import 'animations/_flipInY';
+    @import 'animations/_flipOutX';
+    @import 'animations/_flipOutY';
+    @import 'animations/_headshake';
+    @import 'animations/_heartBeat';
+    @import 'animations/_hinge';
+    @import 'animations/_jackInTheBox';
+    @import 'animations/_jello';
+    @import 'animations/_lightSpeedIn';
+    @import 'animations/_lightSpeedOut';
+    @import 'animations/_pulse';
+    @import 'animations/_rollIn';
+    @import 'animations/_rollOut';
+    @import 'animations/_rotateIn';
+    @import 'animations/_rotateInDownLeft';
+    @import 'animations/_rotateInDownRight';
+    @import 'animations/_rotateInUpLeft';
+    @import 'animations/_rotateInUpRight';
+    @import 'animations/_rotateOut';
+    @import 'animations/_rotateOutDownLeft';
+    @import 'animations/_rotateOutDownRight';
+    @import 'animations/_rotateOutUpLeft';
+    @import 'animations/_rotateOutUpRight';
+    @import 'animations/_rubberband';
+    @import 'animations/_shake';
+    @import 'animations/_slideInDown';
+    @import 'animations/_slideInLeft';
+    @import 'animations/_slideInRight';
+    @import 'animations/_slideInUp';
+    @import 'animations/_slideOutDown';
+    @import 'animations/_slideOutLeft';
+    @import 'animations/_slideOutRight';
+    @import 'animations/_slideOutUp';
+    @import 'animations/_swing';
+    @import 'animations/_tada';
+    @import 'animations/_wobble';
+    @import 'animations/_zoomIn';
+    @import 'animations/_zoomInDown';
+    @import 'animations/_zoomInLeft';
+    @import 'animations/_zoomInRight';
+    @import 'animations/_zoomInUp';
+    @import 'animations/_zoomOut';
+    @import 'animations/_zoomOutDown';
+    @import 'animations/_zoomOutLeft';
+    @import 'animations/_zoomOutRight';
+    @import 'animations/_zoomOutUp';
+}
+
+@media (print), (prefers-reduced-motion) {
+    .animated {
+        @include animation(unset);
+        @include transition(none);
+    }
+}

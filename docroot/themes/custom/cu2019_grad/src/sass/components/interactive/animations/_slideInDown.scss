@@ -1,0 +1,19 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > SLIDE IN DOWN
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(slideInDown) {
+    from {
+        @include transform(translate3d(0, -100%, 0));
+        visibility: visible;
+    }
+
+    to {
+        @include transform(translate3d(0, 0, 0));
+    }
+}
+
+&.slide-in-down {
+    @include animationName(slideInDown);
+}

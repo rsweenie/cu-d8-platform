@@ -1,0 +1,17 @@
+name: "CU 2019 Grad Site"
+type: theme
+description: "Creighton's Graduate site theme."
+core: 8.x
+base theme: classy
+libraries:
+  - cu2019_grad/global-styling
+  - cu2019_grad/global-scripts
+regions:
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+  util_menu: 'Utility Menu'
+  mobile_cta: 'Mobile CTAs'
+  search: 'Search'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'
+  dump: 'Everything else'

@@ -1,0 +1,19 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > ZOOM IN
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(zoomIn) {
+    from {
+        opacity: 0;
+        @include transform(scale3d(0.3, 0.3, 0.3));
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+&.zoom-in {
+    @include animationName(zoomIn);
+}

@@ -1,0 +1,29 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > JACK IN THE BOX
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(jackInTheBox) {
+    from {
+        opacity: 0;
+        @include transform(scale(0.1) rotate(30deg));
+        @include transformOrigin(center bottom);
+    }
+
+    50% {
+        @include transform(rotate(-10deg));
+    }
+
+    70% {
+        @include transform(rotate(3deg));
+    }
+
+    to {
+        opacity: 1;
+        @include transform(scale(1));
+    }
+}
+
+&.jack-in-the-box {
+    @include animationName(jackInTheBox);
+}

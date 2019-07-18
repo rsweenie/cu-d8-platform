@@ -1,0 +1,36 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > FLIP
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(flip) {
+    from {
+        @include transform(perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg));
+        @include animationTiming(ease-out);
+    }
+
+    40% {
+        @include transform(perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg));
+        @include animationTiming(ease-out);
+    }
+
+    50% {
+        @include transform(perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg));
+        @include animationTiming(ease-in);
+    }
+
+    80% {
+        @include transform(perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg));
+        @include animationTiming(ease-in);
+    }
+
+    to {
+        @include transform(perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg));
+        @include animationTiming(ease-in);
+    }
+}
+
+&.flip {
+    @include animationName(flip);
+    @include backface(visible);
+}

@@ -1,0 +1,41 @@
+uuid: ac153c34-3cfa-40cf-8ff3-5a26bd920e02
+langcode: en
+status: false
+dependencies:
+  module:
+    - ctools
+    - ctools_block
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: ldpemAeQlxgvTUd8EejD-lOg442gy4pNGxEcsGRfYpQ
+id: cu2019_grad_sidebaritems_content_page
+theme: cu2019_grad
+region: dump
+weight: 4
+provider: null
+plugin: 'entity_field:node:field_content_page_sidebar_items'
+settings:
+  id: 'entity_field:node:field_content_page_sidebar_items'
+  label: 'Sidebar Items Content Page'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      content_page: content_page
+      news_spotlight: news_spotlight
+      profile: profile
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

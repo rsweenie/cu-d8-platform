@@ -1,0 +1,22 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > ROTATE IN DOWN RIGHT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(rotateInDownRight) {
+    from {
+        @include transformOrigin(right bottom);
+        @include transform(rotate3d(0, 0, 1, 45deg));
+        opacity: 0;
+    }
+
+    to {
+        @include transformOrigin(right bottom);
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
+    }
+}
+
+&.rotate-in-down-right {
+    @include animationName(rotateInDownRight);
+}
