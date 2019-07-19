@@ -4,6 +4,7 @@ services:
   php:
 
     visualdiffs:
+      # TODO: These are specific to alliance. Would there be a way to import site specific urls?
       # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
       # Check some pages using the default options
       - /
@@ -23,10 +24,7 @@ services:
       - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
 
     # Use PHP 7.1 with Apache
-    #image: tugboatqa/php:7.1-apache
-    #image: geerlingguy/drupal-vm
-    image: geerlingguy/drupal-vm:4.9.1
-
+    image: tugboatqa/php:7.1-apache
 
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
@@ -46,6 +44,7 @@ services:
 
         # Install prerequisite packages
         - apt-get update
+        #- apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
         - apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
         #- yes | pecl install mcrypt-1.0.2
 
