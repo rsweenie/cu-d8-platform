@@ -125,9 +125,9 @@ services:
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 
         # Any rsync done in the build script may break file settings, so them fix again
-        chown -R www-data:www-data "${DOCROOT}/sites/default/files"
-        find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
-        find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
+        - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
 
         # CU: Things needed when updating code/config
         # CU TODO: Do we want to --no-dev flag on this composer install?
