@@ -98,8 +98,12 @@ services:
         - find "${DOCROOT}/sites/default/files-private/temp" -type d -exec chmod 775 {} \;
         - find "${DOCROOT}/sites/default/files-private/temp" -type f -exec chmod 664 {} \;
 
-        # Run through extra steps in the build script.
-        - ${TUGBOAT_ROOT}/.tugboat/scripts/php-update.sh
+        # Handle site specific update tasks.
+        # TODO: may not need this script at all
+        - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
+
+        # TODO: may want to do a base install of site with no specific DB
+
 
         # Alternatively, another common practice is to use the
         # stage_file_proxy Drupal module. This module lets Drupal serve
@@ -117,6 +121,14 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        #
+        - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
+
+        # Any rsync done in the build script may break file settings, so them fix again
+        chown -R www-data:www-data "${DOCROOT}/sites/default/files"
+        find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
+        find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
+
         # CU: Things needed when updating code/config
         # CU TODO: Do we want to --no-dev flag on this composer install?
         - composer install --no-ansi
@@ -128,6 +140,8 @@ services:
         - drush -r "${DOCROOT}" cache-rebuild
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli
+
+
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
@@ -167,4 +181,3 @@ services:
       # from the base preview.
       build:
 
-        - ${TUGBOAT_ROOT}/.tugboat/scripts/db-build.sh
