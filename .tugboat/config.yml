@@ -102,10 +102,10 @@ services:
         - find "${DOCROOT}/sites/default/files-private" -type f -exec chmod 664 {} \;
 
         # Handle site specific update tasks.
-        - . ${TUGBOAT_ROOT}/.tugboat/scripts/set_site_env.sh
-        - echo "DETECTED CU_SITE_NAME:" $CU_SITE_NAME
-        # TODO: may not need this script at all
-        - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
+#        - . ${TUGBOAT_ROOT}/.tugboat/scripts/set_site_env.sh
+#        - echo "DETECTED CU_SITE_NAME:" $CU_SITE_NAME
+#        # TODO: may not need this script at all
+#        - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
 
         # TODO: may want to do a base install of site with no specific DB
 
@@ -127,7 +127,7 @@ services:
       # from the base preview.
       build:
         # 
-        - . ${TUGBOAT_ROOT}/.tugboat/scripts/set_site_env.sh
+        - cd ${TUGBOAT_ROOT}/.tugboat/scripts/ ; . set_site_env.sh
         - echo "DETECTED CU_SITE_NAME:" $CU_SITE_NAME
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 
