@@ -128,7 +128,7 @@ services:
       build:
         # 
         - ${TUGBOAT_ROOT}/.tugboat/scripts/set_site_env.sh
-        - source ${TUGBOAT_ROOT}/.tugboat/scripts/CU_SITE_NAME.sh
+        - source ${TUGBOAT_ROOT}/CU_SITE_NAME.sh
         - echo "DETECTED CU_SITE_NAME:" $CU_SITE_NAME
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 

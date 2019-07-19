@@ -6,7 +6,7 @@
 regex='^([^\/]*)/([^\/]*)/([^\/]*)$'
 
 # We're writing to a file (that we'll later source from) because it's easier to source from parent process than to
-# set parent ENV from here
+# set parent ENV from here. Output will be saved to ${TUGBOAT_ROOT}
 if [[ $TUGBOAT_PREVIEW =~ $regex ]]; then
   echo "export CU_SITE_NAME=${BASH_REMATCH[2]}" > CU_SITE_NAME.sh
 else
