@@ -23,7 +23,7 @@ services:
       - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
 
     # Use PHP 7.1 with Apache
-    image: tugboatqa/php:7.1-apache
+    image: geerlingguy/drupal-vm
 
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
