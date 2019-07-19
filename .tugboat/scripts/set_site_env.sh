@@ -5,8 +5,10 @@
 ## this will only match */*/* format, else we assume no site name in branch
 regex='^([^\/]*)/([^\/]*)/([^\/]*)$'
 
+# We're writing to a file (that we'll later source from) because it's easier to source from parent process than to
+# set parent ENV from here
 if [[ $TUGBOAT_PREVIEW =~ $regex ]]; then
-  export CU_SITE_NAME=${BASH_REMATCH[2]}
+  echo "export CU_SITE_NAME=${BASH_REMATCH[2]}" > CU_SITE_NAME.sh
 else
-  export CU_SITE_NAME=none
+  echo "export CU_SITE_NAME=none" > CU_SITE_NAME.sh
 fi
