@@ -45,7 +45,7 @@ services:
         # Install prerequisite packages
         - apt-get update
         #- apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
-        - apt-get install -y default-mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
+        - apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
         #- yes | pecl install mcrypt-1.0.2
 
         # Install PHP exts and mod-rewrite.
@@ -93,16 +93,18 @@ services:
         - mkdir -p "${DOCROOT}/sites/default/files-private/temp"
 
         # Fix settings on /files dir
-        - chown -R www-data:www-data "${DOCROOT}/sites/default/files-private/temp"
+        - chown -R www-data:www-data "${DOCROOT}/sites/default/files-private"
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
 
-        - find "${DOCROOT}/sites/default/files-private/temp" -type d -exec chmod 775 {} \;
-        - find "${DOCROOT}/sites/default/files-private/temp" -type f -exec chmod 664 {} \;
+        - find "${DOCROOT}/sites/default/files-private" -type d -exec chmod 775 {} \;
+        - find "${DOCROOT}/sites/default/files-private" -type f -exec chmod 664 {} \;
 
         # Handle site specific update tasks.
         # TODO: may not need this script at all
+        - . ${TUGBOAT_ROOT}/.tugboat/scripts/set_site_env.sh
+        - echo "DETECTED CU_SITE_NAME: $CU_SITE_NAME
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
 
         # TODO: may want to do a base install of site with no specific DB
@@ -124,7 +126,9 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
-        #
+        # 
+        - . ${TUGBOAT_ROOT}/.tugboat/scripts/set_site_env.sh
+        - echo "DETECTED CU_SITE_NAME: $CU_SITE_NAME
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 
         # Any rsync done in the build script may break file settings, so them fix again
