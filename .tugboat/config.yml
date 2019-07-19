@@ -102,9 +102,9 @@ services:
         - find "${DOCROOT}/sites/default/files-private" -type f -exec chmod 664 {} \;
 
         # Handle site specific update tasks.
-        # TODO: may not need this script at all
         - . ${TUGBOAT_ROOT}/.tugboat/scripts/set_site_env.sh
-        - echo "DETECTED CU_SITE_NAME: $CU_SITE_NAME"
+        - echo "DETECTED CU_SITE_NAME:" $CU_SITE_NAME
+        # TODO: may not need this script at all
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
 
         # TODO: may want to do a base install of site with no specific DB
@@ -128,7 +128,7 @@ services:
       build:
         # 
         - . ${TUGBOAT_ROOT}/.tugboat/scripts/set_site_env.sh
-        - echo "DETECTED CU_SITE_NAME: $CU_SITE_NAME"
+        - echo "DETECTED CU_SITE_NAME:" $CU_SITE_NAME
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 
         # Any rsync done in the build script may break file settings, so them fix again
