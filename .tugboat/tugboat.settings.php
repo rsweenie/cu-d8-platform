@@ -1,5 +1,6 @@
 <?php
 
+
 $databases['default']['default'] = array (
   'database' => 'tugboat',
   'username' => 'tugboat',
@@ -10,3 +11,18 @@ $databases['default']['default'] = array (
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
+
+
+// Site specific settings
+
+$cu_site_name = $_ENV['CU_SITE_NAME'];
+
+switch ($cu_site_name) {
+  case 'alliance':
+    break;
+  case '':
+
+    break;
+  default:
+    break;
+}
