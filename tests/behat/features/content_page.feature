@@ -6,6 +6,7 @@ Feature: Content Page
 
   Background: Create/Edit Content Page
     Given I am logged in as a user with the "administrator" role
+    And I set browser window size to "1920" x "1080"
     And I am viewing a "content_page" with the title "title"
     And I visit the edit form
 
@@ -66,7 +67,7 @@ Feature: Content Page
     And I press "Save"
     Then I should see "Content Page Header Image Test has been created"
  
-  @api @javascript
+  @api @javascript @374990656
   Scenario: Adding Inline Slide
     Given I am logged in as a user with the "administrator" role
     And I am on "/node/add/content_page"
