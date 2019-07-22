@@ -292,9 +292,9 @@ JS;
   }
 
   /**
-     * @Given I switch to Iframe :css
-     */
-    public function iSwitchToIframe($css){
+   * @Given I switch to Iframe :css
+   */
+  public function iSwitchToIframe($css){
     $function = <<<JS
         (function(){
              var iframe = document.querySelector("$css");
@@ -309,16 +309,36 @@ JS;
     }
 
     $this->getSession()->getDriver()->switchToIFrame("iframeToSwitchTo");
-}
-/**
-* @Then All links in :id open in a new window
-*/
-public function allLinksInOpenInANewWindow($id)
-{
- $element = $this->getSession()->getPage()->find('css',$id);
- if(!empty($element->findAll('xpath','//a[@target != "_blank"]')))
-   throw new \Exception(
-     "Not all links in footer open in new window"
-   );
-}
+  }
+  /**
+  * @Then All links in :id should open in a new window
+  */
+  public function allLinksInShouldOpenInANewWindow($id)
+  {
+    $element = $this->getSession()->getPage()->find('css',$id);
+    if(!empty($element->findAll('xpath','//a[@target != "_blank"]')))
+      throw new \Exception(
+        "Not all links open in new window"
+      );
+  }
+
+  /**
+   * @Given I right click the :css link
+   */
+  public function iRightClickTheLink($css) {
+    $links = $this->getSession()->getPage()->findAll('xpath',"//a[@href = '$css']");
+    $links[0]->rightClick();
+  }
+
+  /**
+  * @Then All links in :css should not open in a new window
+  */
+  public function allLinksInShouldNotOpenInANewWindow($css)
+  {
+    $element = $this->getSession()->getPage()->find('css',$css);
+    if(!empty($element->findAll('xpath','//a[@target = "_blank"]')))
+      throw new \Exception(
+        "One or more links open in new window"
+      );
+  }
 }
