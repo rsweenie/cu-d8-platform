@@ -14,7 +14,7 @@ _core:
 id: cu2019_grad_profile_contact_info
 theme: cu2019_grad
 region: dump
-weight: 3
+weight: -1
 provider: null
 plugin: 'views_block:profile-contact_info'
 settings:
