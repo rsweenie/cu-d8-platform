@@ -169,7 +169,7 @@ gulp.task('iconfont', function(){
   gulp.src(['./src/icons/*.svg'], {base: './src'})
     .pipe(iconfontCss({
       fontName: fontName,
-      targetPath: '../../src/sass/base/_icons.scss',
+      targetPath: '../../../src/sass/base/fonts/_icons.scss',
       fontPath: '../fonts/icons/'
     }))
     .pipe(iconfont({
