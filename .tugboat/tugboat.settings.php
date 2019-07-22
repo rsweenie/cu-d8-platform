@@ -15,9 +15,7 @@ $databases['default']['default'] = array (
 
 // Site specific settings
 
-system(dirname(__FILE__) . '/scripts/get_site_alias.sh', $cu_site_name);
-
-print $cu_site_name;
+system(${TUGBOAT_ROOT} . '/.tugboat/scripts/get_site_alias.sh', $cu_site_name);
 
 switch ($cu_site_name) {
   case 'alliance':
