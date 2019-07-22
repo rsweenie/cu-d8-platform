@@ -10,8 +10,13 @@ regex='^([^\/]*)/([^\/]*)/([^\/]*)$'
 
 # We cannot reliably set ENV vars in the tugboat environment, so our scripts
 # will each call this script directly.
-if [[ $TUGBOAT_PREVIEW =~ $regex ]]; then
-  echo -n ${BASH_REMATCH[2]} 
+
+# If this is a PR, Tugboat sets this
+if [[ $TUGBOAT_GITHUB_HEAD  =~ $regex ]]; then
+  echo -n ${BASH_REMATCH[2]}
+# If this is manual branch build, Tugboat sets this
+elif [[ $TUGBOAT_PREVIEW =~ $regex ]]; then
+  echo -n ${BASH_REMATCH[2]}
 else
   echo -n "none" 
 fi
