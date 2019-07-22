@@ -33,7 +33,7 @@ var sass_build = 'src/sass/',
     js_output = 'assets/js/';
 
 // Fontname
-var fontName = 'aw_glyphs';
+var fontName = 'cu_icons';
 
 var prefixes = { "browsers":[
   "last 3 versions",
@@ -178,7 +178,7 @@ gulp.task('iconfont', function(){
       normalize:true,
       fontHeight: 1001
      }))
-    .pipe(gulp.dest('fonts/icons/'));
+    .pipe(gulp.dest('assets/fonts/icons/'));
 });
 
 gulp.task('watch', function() {
