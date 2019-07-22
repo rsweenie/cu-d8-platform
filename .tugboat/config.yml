@@ -38,7 +38,8 @@ services:
     # A set of commands to run while building this service
     commands:
 
-      # Commands that set up the basic preview infrastructure
+      # Commands that set up the basic preview infrastructure as well as system and Drupally things
+      # shared across all websites
       init:
         # CU: Things needed to set up the LAMP stack
 
@@ -67,13 +68,6 @@ services:
         # repository, change that here. This example links /web to the docroot
         - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
 
-      # Commands that import files, databases,  or other assets. When an
-      # existing preview is refreshed, the build workflow starts here,
-      # skipping the init step, because the results of that step will
-      # already be present.
-      update:
-        # CU: Things needed to establish a clean baseline env based on production
-
         # Use the tugboat-specific Drupal settings
         - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
 
@@ -100,6 +94,13 @@ services:
 
         - find "${DOCROOT}/sites/default/files-private" -type d -exec chmod 775 {} \;
         - find "${DOCROOT}/sites/default/files-private" -type f -exec chmod 664 {} \;
+
+      # Commands that import files, databases,  or other assets. When an
+      # existing preview is refreshed, the build workflow starts here,
+      # skipping the init step, because the results of that step will
+      # already be present.
+      update:
+        # CU: Things needed to establish a clean baseline env based on production
 
 
         # Site alias specific build steps
@@ -129,7 +130,7 @@ services:
 
         # All sites build steps
 
-        # Any rsync done in the build script may break file settings, so them fix again
+        # Any rsync done in the build script above may break file and directory settings, so them fix again
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
