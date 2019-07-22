@@ -28,3 +28,15 @@ specific to the current site alias.
 
 This is a custom drupal settings.php file used only in the Tugboat environment.
 Any Drupal configuration that is specific to a site alias should be set here. 
+
+## Default Database
+
+Where there is no site alias passed in via our branch naming convention,
+a default installation takes place for that branch.  Ideally we would
+simply do a clean install of our default profile using `drush site-install
+creighton`. Unfortunately, this does not currently result in a working site,
+and our tugboat build process breaks. So for the meanwhile, our generic
+previews are being built with a copy of the alliance site database. When custom
+site previews are built on top of this, they simply overwrite the database and
+import fresh settings.
+
