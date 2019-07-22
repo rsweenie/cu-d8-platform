@@ -26,7 +26,7 @@ Feature: Content Page
     And I should see "Sat, 11/23/2019 - 20:22"
     And I should see "Sat, 11/23/2019 - 20:23"
 
-  @api @javascript @375963940
+  @api @javascript @375963940 @374991306
   Scenario: create/edit content page
     And I wait for AJAX to finish
     # order matters here...
@@ -37,18 +37,20 @@ Feature: Content Page
     And I select "Rich Text" from "body[0][format]"
     And I press "Continue"
     And I wait for "3" seconds
-    And I fill in class "#linkit-editor-dialog-form form .form-text" with "http://www.smokedhamandstuff.com"
+    And I fill in class "#linkit-editor-dialog-form form .form-text" with "http://www.creighton.com"
     # open in new window
     And I visit the "#linkit-editor-dialog-form form .form-checkbox" link
     # save link
     And I visit the ".editor-linkit-dialog button.form-submit" link
     # And I wait for AJAX to finish
     And I switch to Iframe ".cke_wysiwyg_frame.cke_reset"
-    And I select "http://www.smokedhamandstuff.com"
+    And I select "http://www.creighton.com"
     # save the content
     And I press "Save"
     #verify
-    Then I should see "http://www.smokedhamandstuff.com"
+    Then I should see "http://www.creighton.com"
+    # check that all vertical footer links open in new windows
+    And All links in "#footer-vertical" open in a new window
 
   @api @javascript
   Scenario: Adding Header Image

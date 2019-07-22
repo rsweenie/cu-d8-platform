@@ -310,5 +310,15 @@ JS;
 
     $this->getSession()->getDriver()->switchToIFrame("iframeToSwitchTo");
 }
-
+/**
+* @Then All links in :id open in a new window
+*/
+public function allLinksInOpenInANewWindow($id)
+{
+ $element = $this->getSession()->getPage()->find('css',$id);
+ if(!empty($element->findAll('xpath','//a[@target != "_blank"]')))
+   throw new \Exception(
+     "Not all links in footer open in new window"
+   );
+}
 }
