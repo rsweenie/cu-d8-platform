@@ -10,6 +10,9 @@ dependencies:
   - field_permissions
   - link
   - media
+  - menu_ui
   - node
   - paragraphs
+  - private_content
+  - scheduler
 package: 'Creighton Grad'
