@@ -27,12 +27,8 @@ case $CU_SITE_ALIAS in
 
   # DEFAULT
   # TODO: Possibly do a base db install. Myabe using drush install? Something we can test the core codebase with,
-  # something not tied to a specific site. Meanwhile, we'll use Alliance as our base.
+  # something not tied to a specific site.
   *)
-
-    drush -r "${DOCROOT}" sql:sync "@alliance.01live" @self -y
-    drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
-
   ;;
 esac
 

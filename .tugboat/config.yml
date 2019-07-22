@@ -45,7 +45,6 @@ services:
 
         # Install prerequisite packages
         - apt-get update
-        #- apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
         - apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
         #- yes | pecl install mcrypt-1.0.2
 
