@@ -8,6 +8,7 @@ Feature: Content Page
     Given I am logged in as a user with the "administrator" role
     And I set browser window size to "1920" x "1080"
     And I am viewing a "content_page" with the title "title"
+    And I set browser window size to "1920" x "1080"
     And I visit the edit form
 
   @api @javascript
@@ -26,21 +27,35 @@ Feature: Content Page
     And I should see "Sat, 11/23/2019 - 20:22"
     And I should see "Sat, 11/23/2019 - 20:23"
 
-  @api @javascript @374991306
+  @api @javascript @375963940 @374991306
   Scenario: create/edit content page
     And I wait for AJAX to finish
     # hax happen here wysiwyg embed image/video/text
     And I select "Raw HTML" from "body[0][format]"
-    And I fill in "body[0][value]" with "<a href='http://www.creighton.edu' target='_blank'>http://www.creighton.edu</a>Here's some text using the rich text editor <drupal-entity alt='Karole Davis' data-embed-button='media_browser' data-entity-embed-display='media_image' data-entity-embed-display-settings='{&quot;image_style&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;link_url&quot;:&quot;&quot;}' data-entity-type='media' data-entity-uuid='81f57d5f-e518-407c-95a5-64ee6bd2c6b9' title='Karole Davis'></drupal-entity><drupal-entity data-align='center' data-embed-button='media_browser' data-entity-embed-display='view_mode:media.embedded' data-entity-embed-display-settings='{&quot;link_url&quot;:&quot;&quot;}' data-entity-type='media' data-entity-uuid='188e59f2-fb84-4499-aa05-18d00799b815'></drupal-entity>"
+    And I fill in "body[0][value]" with "<a href='http://www.creighton.edu' target='_blank'>http://www.creighton.edu</a> Here's some text using the rich text editor <drupal-entity alt='Karole Davis' data-embed-button='media_browser' data-entity-embed-display='media_image' data-entity-embed-display-settings='{&quot;image_style&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;link_url&quot;:&quot;&quot;}' data-entity-type='media' data-entity-uuid='81f57d5f-e518-407c-95a5-64ee6bd2c6b9' title='Karole Davis'></drupal-entity><drupal-entity data-align='center' data-embed-button='media_browser' data-entity-embed-display='view_mode:media.embedded' data-entity-embed-display-settings='{&quot;link_url&quot;:&quot;&quot;}' data-entity-type='media' data-entity-uuid='188e59f2-fb84-4499-aa05-18d00799b815'></drupal-entity>"
     And I select "Rich Text" from "body[0][format]"
     And I press "Continue"
+    And I wait "3" seconds
+    # order matters here...
+    And I switch to Iframe ".cke_wysiwyg_frame.cke_reset"
+    And I right click the "http://www.creighton.edu" link
+    #Switch back to the main window
+    And I switch to the window
+    And I visit the "span.cke_toolgroup a:nth-of-type(8)" link
+    And I wait "3" seconds
+    # dont open in new window (unselect the checkbox)
+    And I visit the "#linkit-editor-dialog-form form .form-checkbox" link
+    # save link
+    And I visit the ".editor-linkit-dialog button.form-submit" link
     And I wait for AJAX to finish
     # save the content
     And I press "Save"
-    # verify
-    Then I should see "http://www.creighton.edu"
+    #verify that the linkit open in new window is working wrike 375963940
+    And All links in "div.field--name-body p" should not open in a new window
+    #verify text
+    Then I should see "Here's some text using the rich text editor"
     # check that all vertical footer links open in new windows
-    And All links in "#footer-vertical" open in a new window
+    And All links in "#footer-vertical" should open in a new window
 
   @api @javascript
   Scenario: Adding Header Image
