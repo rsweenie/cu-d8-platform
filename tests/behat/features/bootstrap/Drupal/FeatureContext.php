@@ -291,4 +291,24 @@ JS;
       );
   }
 
+  /**
+     * @Given I switch to Iframe :css
+     */
+    public function iSwitchToIframe($css){
+    $function = <<<JS
+        (function(){
+             var iframe = document.querySelector("$css");
+             iframe.name = "iframeToSwitchTo";
+        })()
+JS;
+    try{
+        $this->getSession()->executeScript($function);
+    }catch (Exception $e){
+        print_r($e->getMessage());
+        throw new \Exception("Element $css was NOT found.".PHP_EOL . $e->getMessage());
+    }
+
+    $this->getSession()->getDriver()->switchToIFrame("iframeToSwitchTo");
+}
+
 }
