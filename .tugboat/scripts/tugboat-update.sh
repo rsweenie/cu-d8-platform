@@ -12,6 +12,8 @@ case $CU_SITE_ALIAS in
   grad-site)
   ;;
   # DEFAULT
+  # TODO: Possibly do a base db install. Myabe using drush install? Something we can test the core codebase with,
+  # something not tied to a specific site.
   *)
 
   ;;

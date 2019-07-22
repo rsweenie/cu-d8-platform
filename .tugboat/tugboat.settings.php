@@ -13,15 +13,13 @@ $databases['default']['default'] = array (
 );
 
 
-// Site specific settings
-
-system($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh', $cu_site_name);
+// Site specific Drupal settings
+system($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh > /dev/null', $cu_site_name);
 
 switch ($cu_site_name) {
   case 'alliance':
     break;
   case 'grad-site':
-
     break;
   default:
     break;

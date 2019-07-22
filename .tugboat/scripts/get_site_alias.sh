@@ -2,7 +2,10 @@
 
 #TUGBOAT_PREVIEW=feature/alliance/wrike-375584714-tugboat-multisite
 
-## this will only match */*/* format, else we assume no site name in branch
+## We are going to grab a value based on the current branch name to use a a switch in various parts of
+## the tugboat setup. Example: The value for a branch named 'feature/sitename/ticket-12345' would be 'sitename'.
+
+## this will only match */*/* format, else we assume no site name in branch.
 regex='^([^\/]*)/([^\/]*)/([^\/]*)$'
 
 # We cannot reliably set ENV vars in the tugboat environment, so our scripts
