@@ -1,1 +1,12 @@
 bundle: cu_grad
+required:
+  - paragraphs.paragraphs_type.hp_hero_bg
+  - field.field.paragraph.hp_hero.field_hp_hero_bg
+  - field.field.paragraph.hp_hero.field_hp_hero_cta
+  - field.field.paragraph.hp_hero.field_hp_hero_heading
+  - field.field.paragraph.hp_hero.field_hp_hero_sub_heading
+  - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_caption
+  - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_caption2
+  - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_img
+  - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_link
+  - node.type.landing_page
