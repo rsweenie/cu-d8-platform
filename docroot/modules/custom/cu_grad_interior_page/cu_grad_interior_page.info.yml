@@ -9,6 +9,9 @@ dependencies:
   - entity_reference_revisions
   - field
   - field_permissions
+  - lightning_media
+  - link
+  - media
   - menu_ui
   - node
   - panelizer
@@ -18,4 +21,5 @@ dependencies:
   - scheduler
   - text
   - user
+  - views
 package: 'Creighton Grad'
