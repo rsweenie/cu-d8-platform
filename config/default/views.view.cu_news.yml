@@ -833,15 +833,6 @@ display:
           admin_label: 'field_news_spotlight_p_link: Paragraph'
           required: false
           plugin_id: standard
-        field_news_spotlight_p_link:
-          id: field_news_spotlight_p_link
-          table: node__field_news_spotlight_p_link
-          field: field_news_spotlight_p_link
-          relationship: none
-          group_type: group
-          admin_label: 'field_news_spotlight_p_link: Paragraph'
-          required: false
-          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
       filter_groups:

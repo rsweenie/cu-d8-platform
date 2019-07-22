@@ -1,10 +1,10 @@
 sudo: true
 language: php
-dist: xenial
+dist: trusty
 
 # Adjust the version of PHP to match your production environment.
-# Making this version number greater than the production environment can have unintended consequences
-# including a non-functional prod environment.
+# Making this version number greater than the production environment can unintended consequences including a
+# non-functional prod environment.
 php:
   - 7.1
 
@@ -29,13 +29,9 @@ cache:
     - "$HOME/.npm"
     - "$HOME/.nvm"
     - ".rules"
-    # Cache front end dependencies to dramatically improve build time.
-    # - "docroot/themes/custom/mytheme/node_modules"
-    # - "docroot/themes/custom/mytheme/bower_components"
-
-services:
-- mysql
-- xvfb
+  # Cache front end dependencies to dramatically improve build time.
+  # - "docroot/themes/custom/mytheme/node_modules"
+  # - "docroot/themes/custom/mytheme/bower_components"
 
 addons:
   ssh_known_hosts:
@@ -45,12 +41,11 @@ addons:
     access_key:
       secure: "Z7KYrManWdReaYbd3F58/qIN1Vg+wI+mJI4f9lU+3k4VuauWXpOt8uaafBVfxsUtl8qf48SXP1IGqiM0FT3MEGqi7Ml0grzPMYKUs7iNp3aTFs2vIWds5ZDzcXUSdvf4wpD9kLXvX51981OEmKcY+YnFSrd56lN5x9Ng3WNav4qH0I1ALKZQDUOwjVAdN4DNGbOGj32tyqipFcM3TbaNISIoFTNfP8fX3XdazXLRUy7B2P8NVb1Sa+i3+i43JwIlDbBi7Nr8gI1+qxWxVhPUG6Zmmv3WQVYcUENNdoGBmxWwBEmJFGJxvlk35JTCvKZaVKXDqixTP4NNmWif5nPBNswu/zUT3V7tqj13btNVz8T2s7deTxG6Zs7g1eAah97Y4dPXuvJiK8GUmjWbpGJzP8T7K/rJoHDYcE4V4My2Re30lChmm1ndeSff8KRaT0LJV9gUoqJJXoVu/+8g1W+MrT36f3uVxWS542Ch5+UYp0KaoiSEokKW6ekpGl6txbYnySVFvUgcbD365u7Bx2qTu4cYGhA5HNK9R4kJd1RyzNw2x5WeTLd/COVN3ScfD4KkTrVWMErVPMRRH1bnYWfqAEncHVU8iR4jCzUS4Qos7yQiBnrm4t49Pd2lHmqITgwJwBD03M5O2ZkGj3borTde06skGdgn9rWbif+0QJbyySQ="  # chrome: stable
       # browserstack setup docs here: https://docs.travis-ci.com/user/browserstack/
-  # chrome: stable
 
 # @see https://docs.travis-ci.com/user/notifications
 notifications:
   slack:
-      rooms:
+      rooms: 
         - creightonuniversity:iSkHf85JV4Z9k2s7k5rwdIxy'
       on_success: always
       on_failure: always

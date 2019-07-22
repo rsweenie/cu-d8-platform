@@ -125,7 +125,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_quote_link: true
   path: true
   promote: true
   status: true

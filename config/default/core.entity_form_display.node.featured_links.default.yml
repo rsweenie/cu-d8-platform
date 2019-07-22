@@ -81,7 +81,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_featured_link: true
   path: true
   promote: true
   status: true
