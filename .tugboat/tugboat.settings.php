@@ -15,12 +15,14 @@ $databases['default']['default'] = array (
 
 // Site specific settings
 
-$cu_site_name = $_ENV['CU_SITE_NAME'];
+system(dirname(__FILE__) . '/scripts/get_site_alias.sh', $cu_site_name);
+
+print $cu_site_name;
 
 switch ($cu_site_name) {
   case 'alliance':
     break;
-  case '':
+  case 'grad-site':
 
     break;
   default:
