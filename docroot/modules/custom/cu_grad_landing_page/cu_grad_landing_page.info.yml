@@ -8,6 +8,8 @@ dependencies:
   - entity_reference_revisions
   - field
   - field_permissions
+  - link
+  - media
   - node
   - paragraphs
 package: 'Creighton Grad'
