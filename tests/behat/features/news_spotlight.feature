@@ -25,7 +25,21 @@ Feature: News and Spotlight
     And I press "Create Accordion Set"
     Then I wait for AJAX to finish
 
-  @api @javascript
+  @api @javascript @374990656
+  Scenario: Add existing Sidebar
+    # new copy box sidebar items
+    Then I select "Copy Box" from "field_content_page_sidebar_items[actions][bundle]"
+    And I press "Add existing Sidebar Item"
+    And I wait for AJAX to finish
+    And I switch to the "entity_browser_iframe_creighton_sidebar_items" frame 
+    #Check the first item in media browser
+    And I visit the "tr:nth-of-type(1) td input" checkbox
+    And I press "Add Item"
+    And I wait for AJAX to finish
+    And I switch to the window
+    Then I should see "Sidebar Items"
+
+  @api @javascript 
   Scenario: Sidebar items
     # new copy box sidebar items
     Then I select "Copy Box" from "field_content_page_sidebar_items[actions][bundle]"
@@ -46,6 +60,7 @@ Feature: News and Spotlight
     And I fill in "field_content_page_sidebar_items[1][field_featured_p_link][0][subform][field_internal_or_external_link][0][uri]" with "/Featured-Links-link"
     And I press "Create Sidebar Item"
     Then I wait for AJAX to finish
+
 
     # new promo box sidebar items
     Then I select "Promo Box" from "field_content_page_sidebar_items[actions][bundle]"
@@ -87,10 +102,10 @@ Feature: News and Spotlight
     Then I wait for AJAX to finish
 
     # more news spotlight fields
-    And I fill in "field_content_taxo[target_id]" with "news"
+    And I fill in "field_content_taxonomy[0][target_id]" with "news"
     And I check the box "field_display_publish_on_date[value]"
     Then I switch to the "entity_browser_iframe_media_browser" frame
-    And I check the box "entity_browser_select[media:1836]"
+    And I visit the "tr:nth-of-type(1) td input" link
     And I press "Place"
     And I switch to the window
 

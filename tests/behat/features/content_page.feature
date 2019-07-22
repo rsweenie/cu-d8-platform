@@ -6,6 +6,7 @@ Feature: Content Page
 
   Background: Create/Edit Content Page
     Given I am logged in as a user with the "administrator" role
+    And I set browser window size to "1920" x "1080"
     And I am viewing a "content_page" with the title "title"
     And I visit the edit form
 
@@ -68,7 +69,7 @@ Feature: Content Page
     And I press "Save"
     Then I should see "Content Page Header Image Test has been created"
  
-  @api @javascript
+  @api @javascript @374990656
   Scenario: Adding Inline Slide
     Given I am logged in as a user with the "administrator" role
     And I am on "/node/add/content_page"
@@ -78,9 +79,9 @@ Feature: Content Page
     And I wait "3" seconds
     #Trouble with two identical iframes, have to compromise 
     And I switch to the "entity_browser_iframe_creighton_slideshow" frame
-    #Add two slides: THESE MIGHT NEED TO CHANGE AS SITE GETS UPDATED
-    And I check the box "entity_browser_select[node:11]"
-    And I check the box "entity_browser_select[node:96]"
+    #Check the first two items in media browser
+    And I visit the "tr:nth-of-type(1) td input" checkbox
+    And I visit the "tr:nth-of-type(2) td input" checkbox
     #Press save in the iframe
     And I press "op"
     And I switch to the window
