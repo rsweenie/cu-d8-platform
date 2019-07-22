@@ -9,7 +9,7 @@ dependencies:
 id: cu2019_grad_sitename
 theme: cu2019_grad
 region: dump
-weight: -10
+weight: -11
 provider: null
 plugin: system_branding_block
 settings:
