@@ -3,25 +3,25 @@ services:
   # What to call the service hosting the site.
   php:
 
-    visualdiffs:
-      # TODO: These are specific to alliance. Would there be a way to import site specific urls?
-      # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
-      # Check some pages using the default options
-      - /
-      - /residencies-fellowships
-      - /about
-      - /residencies-fellowships/frequently-asked-questions
-      - /creighton_profiles
-      - /about/creighton-university-arizona-health-education-alliance
-      - /profile
-      - /profile/shaghayegh-abdollahi-md
-      - /news
-      - /spotlight
-      - /node/7171
-      - /about/graduate-medical-education-office
-      - /about/creighton-university-arizona-health-education-alliance
-      - /residencies-fellowships
-      - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
+#    visualdiffs:
+#      # TODO: These are specific to alliance. Would there be a way to import site specific urls?
+#      # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
+#      # Check some pages using the default options
+#      - /
+#      - /residencies-fellowships
+#      - /about
+#      - /residencies-fellowships/frequently-asked-questions
+#      - /creighton_profiles
+#      - /about/creighton-university-arizona-health-education-alliance
+#      - /profile
+#      - /profile/shaghayegh-abdollahi-md
+#      - /news
+#      - /spotlight
+#      - /node/7171
+#      - /about/graduate-medical-education-office
+#      - /about/creighton-university-arizona-health-education-alliance
+#      - /residencies-fellowships
+#      - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
 
     # Use PHP 7.1 with Apache
     image: tugboatqa/php:7.1-apache-stretch
@@ -46,7 +46,7 @@ services:
         # Install prerequisite packages
         - apt-get update
         #- apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
-        - apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
+        - apt-get install -y default-mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
         #- yes | pecl install mcrypt-1.0.2
 
         # Install PHP exts and mod-rewrite.
@@ -146,9 +146,6 @@ services:
         - drush -r "${DOCROOT}" cache-rebuild
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli
-        - printenv
-
-
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
