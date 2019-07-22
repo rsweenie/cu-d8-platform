@@ -5,6 +5,7 @@ dependencies:
     - field.storage.node.field_landing_page_content
     - node.type.landing_page
     - paragraphs.paragraphs_type.full_width_photo
+    - paragraphs.paragraphs_type.hp_hero
     - paragraphs.paragraphs_type.image_video
     - paragraphs.paragraphs_type.next_step
   module:
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       full_width_photo: full_width_photo
       image_video: image_video
+      hp_hero: hp_hero
       next_step: next_step
     target_bundles_drag_drop:
       accordion:
@@ -43,7 +45,13 @@ settings:
       image_video:
         enabled: true
         weight: 11
+      hp_hero:
+        enabled: true
+        weight: 12
       next_step:
         enabled: true
         weight: 12
+      hp_hero_bg:
+        weight: 13
+        enabled: false
 field_type: entity_reference_revisions

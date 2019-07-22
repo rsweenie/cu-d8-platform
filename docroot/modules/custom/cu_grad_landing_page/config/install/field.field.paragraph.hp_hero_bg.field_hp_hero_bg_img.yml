@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hp_hero_bg_img
+    - paragraphs.paragraphs_type.hp_hero_bg
+id: paragraph.hp_hero_bg.field_hp_hero_bg_img
+field_name: field_hp_hero_bg_img
+entity_type: paragraph
+bundle: hp_hero_bg
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings: {  }
+field_type: entity_reference

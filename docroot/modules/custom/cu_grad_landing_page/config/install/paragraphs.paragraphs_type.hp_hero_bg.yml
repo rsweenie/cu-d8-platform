@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hp_hero_bg
+label: 'HP Hero Background'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
