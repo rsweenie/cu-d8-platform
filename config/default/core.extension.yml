@@ -23,6 +23,7 @@ module:
   config_filter: 0
   config_ignore: 0
   config_split: 0
+  config_update: 0
   consumers: 0
   contact: 0
   contact_storage: 0
@@ -57,6 +58,8 @@ module:
   entity_reference_revisions: 0
   eva: 0
   externalauth: 0
+  features: 0
+  features_ui: 0
   field: 0
   field_formatter: 0
   field_group: 0
