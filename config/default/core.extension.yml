@@ -40,6 +40,9 @@ module:
   cu_breadcrumbs: 0
   cu_data_transform: 0
   cu_entity_embed: 0
+  cu_grad_interior_page: 0
+  cu_grad_landing_page: 0
+  cu_next_steps: 0
   datetime: 0
   dblog: 0
   diff: 0
