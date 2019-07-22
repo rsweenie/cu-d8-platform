@@ -12,7 +12,10 @@ case $CU_SITE_ALIAS in
   ;;
   grad-site)
   ;;
+  none)
+  ;;
   *)
-
+    echo "Could not determine site alias"
+    exit 1
   ;;
 esac
