@@ -72,7 +72,6 @@ services:
         # Use the tugboat-specific Drupal settings
         - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
 
-
         # Install/update packages managed by composer, including drush
         - composer install --no-ansi
 

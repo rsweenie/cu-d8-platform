@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Site specific build steps. Does NOT include anything done globally. That goes in config.yml.
+# Site specific build steps. Does NOT include anything done globally (the stuff in config.yml).
 # DB/Asset sync for aliased sites should take place here (PR builds start here)
 #
 
@@ -33,7 +33,7 @@ case $CU_SITE_ALIAS in
     fi
   ;;
   none)
-    echo "Nothing to do for generic site"
+    echo "Nothing to do for generic install"
   ;;
   *)
     echo "ERROR: Could not determine site alias"
