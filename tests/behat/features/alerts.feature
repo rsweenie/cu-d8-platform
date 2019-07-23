@@ -26,6 +26,7 @@ Feature: Alerts
     And I press "Filter"
     And I click "Testing Red Header Alert"
     And I click "edit-form"
+    And I wait for "3" seconds
     And I put "Red Alert copy 2" into CKEditor
     And I press "edit-submit"
     Then I should see "Red Alert copy 2"
@@ -47,6 +48,7 @@ Feature: Alerts
     Given I am on "/admin/content?title=&type=header_alert&status=All&langcode=All"
     And I click "Testing Red Header Alert"
     And I click "edit-form"
+    And I wait for "3" seconds
     And I select "No Alert" from "field_header_alert_activate"
     And I press "edit-submit"
     And I am on "/"
@@ -55,6 +57,7 @@ Feature: Alerts
     Given I am on "/admin/content?title=&type=header_alert&status=All&langcode=All"
     And I click "Testing Red Header Alert"
     And I click "edit-form"
+    And I wait for "3" seconds
     And I click "edit-delete"
     And I press "edit-submit"
     And I am on "/"
@@ -79,6 +82,7 @@ Feature: Alerts
     And I press "Filter"
     And I click "Testing Orange (Weather) Header Alert"
     And I click "edit-form"
+    And I wait for "3" seconds
     And I put "Orange (Weather) Alert copy 2" into CKEditor
     And I press "edit-submit"
     Then I should see "Orange (Weather) Alert copy 2"
@@ -87,12 +91,14 @@ Feature: Alerts
     And I am on "/"
     Then I should see "Orange (Weather) Alert copy 2"
     #Deleting Alert
+    And I wait for "3" seconds
     Given I am logged in as a user with the "administrator" role
     And I am on "/admin/content"
     And I select "header_alert" from "edit-type"
     And I press "Filter"
     And I click "Testing Orange (Weather) Header Alert"
     And I click "edit-form"
+    And I wait for "3" seconds
     And I click "edit-delete"
     And I press "edit-submit"
     And I am on "/"
@@ -117,6 +123,7 @@ Feature: Alerts
     And I press "Filter"
     And I click "Testing Orange (Non-Weather) Header Alert"
     And I click "edit-form"
+    And I wait for "3" seconds
     And I put "Orange (Non-Weather) Alert copy 2" into CKEditor
     And I press "edit-submit"
     Then I should see "Orange (Non-Weather) Alert copy 2"
@@ -131,6 +138,7 @@ Feature: Alerts
     And I press "Filter"
     And I click "Testing Orange (Non-Weather) Header Alert"
     And I click "edit-form"
+    And I wait for "3" seconds
     And I click "edit-delete"
     And I press "edit-submit"
     And I am on "/"
