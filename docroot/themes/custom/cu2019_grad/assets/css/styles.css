@@ -1405,18 +1405,25 @@ nav a {
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
   border-left: 0;
-  font-size: 1em;
+  font-size: 2.2rem;
   text-align: center;
 }
 
-/* line 50, src/sass/structure/header/search/_search-inline.scss */
+/* line 44, src/sass/structure/header/search/_search-inline.scss */
+
+.main-header form.search [class*="btn-"] span {
+  top: 0.3rem;
+  left: -0.1rem;
+}
+
+/* line 55, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search [class*="btn-"]:hover {
   background: #8AC8FF;
   color: #fff;
 }
 
-/* line 56, src/sass/structure/header/search/_search-inline.scss */
+/* line 61, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search .form-el {
   -webkit-box-flex: 1 1 auto;
@@ -1430,13 +1437,13 @@ nav a {
   width: 100%;
 }
 
-/* line 63, src/sass/structure/header/search/_search-inline.scss */
+/* line 68, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search .form-btn {
   padding: 0;
 }
 
-/* line 67, src/sass/structure/header/search/_search-inline.scss */
+/* line 72, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search input:not([type="checkbox"]):not([type="radio"]) {
   width: 100%;
@@ -1452,7 +1459,7 @@ nav a {
   font-family: "Conduit";
 }
 
-/* line 86, src/sass/structure/header/search/_search-inline.scss */
+/* line 91, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search label {
   position: absolute;
@@ -3876,7 +3883,7 @@ blockquote .tooltip-trigger {
 
 /* line 10, src/sass/components/basic/_ns.scss */
 
-.ns .fas {
+.ns .icon {
   width: 6.4rem;
   height: 6.4rem;
   display: -webkit-box;
@@ -3911,7 +3918,7 @@ blockquote .tooltip-trigger {
 
 /* line 39, src/sass/components/basic/_ns.scss */
 
-.ns a:hover .fas {
+.ns a:hover .icon {
   background: #019cdb;
 }
 
@@ -3927,14 +3934,11 @@ blockquote .tooltip-trigger {
 /* line 67, src/sass/components/basic/_ns.scss */
 
 .ns ul li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0;
   padding: 0;
   font-size: 1.8rem;
 }
 
-/* line 71, src/sass/components/basic/_ns.scss */
+/* line 70, src/sass/components/basic/_ns.scss */
 
 .ns ul li:before {
   display: none;
@@ -12733,7 +12737,7 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 67, src/sass/structure/header/search/_search-inline.scss */
+  /* line 72, src/sass/structure/header/search/_search-inline.scss */
 
   .main-header form.search input:not([type="checkbox"]):not([type="radio"]) {
     width: 15.5rem;
@@ -13482,7 +13486,7 @@ form.search .search button {
 
   /* line 10, src/sass/components/basic/_ns.scss */
 
-  .ns .fas {
+  .ns .icon {
     width: 13.6rem;
     height: 13.6rem;
     font-size: 6rem;
@@ -13501,8 +13505,9 @@ form.search .search button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   /* line 67, src/sass/components/basic/_ns.scss */

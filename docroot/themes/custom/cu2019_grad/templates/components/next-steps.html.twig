@@ -3,16 +3,7 @@
   <div>
 {% endif %}
     <h2>{{ title }}</h2>
-    <ul>
-      {% for item in items %}
-        <li>
-          <a href="{{ item.link }}">
-            <span class="fas fa-search"></span>
-            <span>{{ item.text }}</span>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+    {{ items }}
 {% if wrapper %}
   </div>
 </section>

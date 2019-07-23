@@ -7,7 +7,7 @@
     padding: 75px 0;
   }
 
-  .fas {
+  .icon {
     width: 64px;
     height: 64px;
     display: flex;
@@ -36,7 +36,7 @@
       span:last-child {
         text-decoration: underline;
       }
-      .fas {
+      .icon {
         background: #019cdb;
       }
     }
@@ -61,11 +61,10 @@
   ul {
     @media #{$mediaFullHeader} {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
     }
 
     li {
-      flex: 1 1 0;
       padding: 0;
       font-size: 18px;
       &:before {
