@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# These processes will affect any 'base previews'. Building from a preview will skip these steps. Site specific
-# DB/Asset tasks for the generic site used for base previews should go here
+# These processes will affect any 'base previews'. Building from a preview will skip these steps.
+# DB/Asset tasks for a generic site (often used for base previews should go here).
 
 CU_SITE_ALIAS=$(`dirname "$0"`/get_site_alias.sh)
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #
-# Site specific build steps. Does NOT include anything done globally. That goes in config.yml. DB/Asset sync for
-# none generic sites should take place here (PR builds start here)
+# Site specific build steps. Does NOT include anything done globally. That goes in config.yml.
+# DB/Asset sync for aliased sites should take place here (PR builds start here)
 #
 
 CU_SITE_ALIAS=$(`dirname "$0"`/get_site_alias.sh)
