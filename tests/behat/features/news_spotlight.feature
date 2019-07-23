@@ -134,34 +134,3 @@ Feature: News and Spotlight
     And I should see "Affiliation"
     # verify related links
     And I should see "Related Link text"
-
-  @api @javascript
-  Scenario Outline: Adding Existing Entity
-    # adding existing here
-    And I press "Add existing <type> <grouping>"
-    Then I wait for AJAX to finish
-    And I switch to the "entity_browser_iframe_creighton_<frame_id>" frame
-    Then I fill in "title" with "<search>"
-    And I press "Apply" 
-    Then I wait for AJAX to finish
-    # having issues with loading content
-    Then I wait "3" seconds 
-    And I check "entity_browser_select[node:<nid>]"
-    And I press "Add Item"
-    Then I wait for AJAX to finish
-    And I switch to the window
-    # save and verify
-    Then I press "Save"
-    # verify
-    And the response status code should be 200
-    Then I should see "News/Spotlight title has been updated."
-    And I should see "<verify_text>"
-
-  Examples:
-    |frame_id|type|grouping|name|search|nid|verify_text|
-    |sidebar_items|Sidebar|Item|Copy Box|CB -|56|Name of Dept or person to contact|
-    |sidebar_items|Sidebar|Item|Feature Links|FL -|31|About Phoenix|
-    |sidebar_items|Sidebar|Item|Promo Box|PB -|91|important image sizes|
-    |sidebar_items|Sidebar|Item|Quote Box|QB -|81|First Middle Last|
-    |sidebar_items|Sidebar|Item|Related Link|RL -|76|Policies and procedures|
-    |tabbed_accordion|Accordion|Set|Accordion||21|TA - standard content page|
