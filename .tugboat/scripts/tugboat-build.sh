@@ -5,9 +5,9 @@
 # none generic sites should take place here (PR builds start here)
 #
 
-echo "Doing Tugboat build steps for $CU_SITE_ALIAS"
-
 CU_SITE_ALIAS=$(`dirname "$0"`/get_site_alias.sh)
+
+echo "Doing Tugboat build steps for $CU_SITE_ALIAS"
 
 case $CU_SITE_ALIAS in
   alliance)
@@ -24,9 +24,12 @@ case $CU_SITE_ALIAS in
     # Tries to import a branch specific DB first, else falls back on a base copy.
     #
     if [[ -f "${DB_FILE}" ]]; then
-      zcat "${DB_FILE}" | mysql tugboat
-    elif [[ -f "${TUGBOAT_ROOT}/.tugboat/db/base.sql.gz" ]]; then
-      zcat "${TUGBOAT_ROOT}/.tugboat/db/base.sql.gz" | mysql tugboat
+      zcat "${DB_FILE}" | drush -r ${DOCROOT} sql:cli
+    elif [[ -f "${TUGBOAT_ROOT}/.tugboat/db/r2i/grad-site.sql.gz" ]]; then
+      zcat "${TUGBOAT_ROOT}/.tugboat/db/r2i/grad-site.sql.gz" | drush -r ${DOCROOT} sql:cli
+    else
+      echo "Could not find appropriate database to import"
+      exit 1
     fi
   ;;
   none)
