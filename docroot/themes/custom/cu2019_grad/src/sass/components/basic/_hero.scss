@@ -2,38 +2,73 @@
 
     HEROES
 
-    Heroes are used to build the first component on each page.  This component is 
-    the header for the main element of the mark-up.  So we will style the hero 
+    Heroes are used to build the first component on each page.  This component is
+    the header for the main element of the mark-up.  So we will style the hero
     using a <header> in the <main id="content"> tag.
 
 \*  --------------------------------------------------------------------------  */
-main > header {
+.node__content > header {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    @include position(relative, 100);
+
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: #{$gutter * 2}rem 0;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    overflow: hidden;
-    background: $accent-1;
+
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     > div {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @include position(relative, 100);
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+      @include position(relative, 100);
+      overflow: hidden;
+      background: $accent-1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero_title {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: rgba($secondary,.85);
+      padding: 25px 0;
+
+      h1 {
+        margin: 0;
+        color: $white;
+
+        @media #{$mediaLg} {
+          width: 80%;
+        }
+      }
+    }
+
+    .breadcrumb {
+      height: 42px;
+      background-color: rgba($secondary,.85);
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      @media #{$mediaFullHeader} {
+        height: 72px;
+      }
+    }
+
+    .hero_title,
+    .breadcrumb {
+      > div {
         max-width: $siteWMx;
         margin: 0 auto;
         padding: 0 #{$gutter}rem;
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         @each $q in $siteWQueryList {
             $i: index($siteWQueryList, $q);
-                
+
             @if $i == 1 {
                 width: nth($siteWList, $i);
             } @else {
@@ -42,70 +77,106 @@ main > header {
                 }
             }
         }
-        
-        :last-child {
-            margin-bottom: 0;
-        }
-    }
-        
-    @media #{$mediaMd} {
-        padding: #{$gutter * 2.5}rem 0;
+      }
     }
 
-    @media #{$mediaLg} {
-        padding: #{$gutter * 3}rem 0;
-    }
-    
-    &.p-lg {
-        padding: #{$gutter * 4}rem 0;
-        
-        @media #{$mediaMd} {
-            padding: #{$gutter * 6}rem 0;
-        }
-        
-        @media #{$mediaLg} {
-            padding: #{$gutter * 8}rem 0;
-        }
-    }
-    
-    &.program {
-        .dates {
-            text-align: center;
+    &.interior_page {
+      > div {
+        max-height: 164px;
 
-            a {
-                font-weight: bold;
-                text-decoration: none;
-
-                &.active {
-                    text-decoration: underline;
-                }
-            }
+        @media #{$mediaFullHeader} {
+          max-height: 511px;
         }
+      }
     }
-    
-    @media #{$mediaLg} {
-        &.program {
-            > div {
-                @include flex(space-between, center, center, row wrap);
 
-                > nav {
-                    @include flexItem(0, 0, auto);
-                    width: 100%;
-                }
-                
-                h1 {
-                    @include flexItem(0, 0, auto);
-                    margin-bottom: 0;
-                    width: calc(66.667% - #{$gutter}rem);
-                }
-            }
-                
-            .dates {
-                @include flexItem(0, 0, auto);
-                text-align: right;
-            }
-        }
-    }
+    // > div {
+    //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //     @include position(relative, 100);
+    //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //     max-width: $siteWMx;
+    //     margin: 0 auto;
+    //     padding: 0 #{$gutter}rem;
+    //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
+    //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //
+    //     @each $q in $siteWQueryList {
+    //         $i: index($siteWQueryList, $q);
+    //
+    //         @if $i == 1 {
+    //             width: nth($siteWList, $i);
+    //         } @else {
+    //             @media #{$q} {
+    //                 width: nth($siteWList, $i);
+    //             }
+    //         }
+    //     }
+    //
+    //     :last-child {
+    //         margin-bottom: 0;
+    //     }
+    // }
+    //
+    // @media #{$mediaMd} {
+    //     padding: #{$gutter * 2.5}rem 0;
+    // }
+    //
+    // @media #{$mediaLg} {
+    //     padding: #{$gutter * 3}rem 0;
+    // }
+    //
+    // &.p-lg {
+    //     padding: #{$gutter * 4}rem 0;
+    //
+    //     @media #{$mediaMd} {
+    //         padding: #{$gutter * 6}rem 0;
+    //     }
+    //
+    //     @media #{$mediaLg} {
+    //         padding: #{$gutter * 8}rem 0;
+    //     }
+    // }
+    //
+    // &.program {
+    //     .dates {
+    //         text-align: center;
+    //
+    //         a {
+    //             font-weight: bold;
+    //             text-decoration: none;
+    //
+    //             &.active {
+    //                 text-decoration: underline;
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    // @media #{$mediaLg} {
+    //     &.program {
+    //         > div {
+    //             @include flex(space-between, center, center, row wrap);
+    //
+    //             > nav {
+    //                 @include flexItem(0, 0, auto);
+    //                 width: 100%;
+    //             }
+    //
+    //             h1 {
+    //                 @include flexItem(0, 0, auto);
+    //                 margin-bottom: 0;
+    //                 width: calc(66.667% - #{$gutter}rem);
+    //             }
+    //         }
+    //
+    //         .dates {
+    //             @include flexItem(0, 0, auto);
+    //             text-align: right;
+    //         }
+    //     }
+    // }
     /*  --------------------------------------------------------------------------  *\
 
     IMAGES, PICTURES, AND VIDEOS
@@ -119,7 +190,7 @@ main > header {
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         + div {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -129,7 +200,7 @@ main > header {
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
-        
+
         @media screen and (orientation: portrait) {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -154,7 +225,7 @@ main > header {
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         > div {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             top: 75%;
@@ -164,21 +235,21 @@ main > header {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
+
             @media #{$mediaMd} {
                 padding: 0 25rem 0 #{$gutter}rem;
             }
-            
+
             @media #{$mediaLg} {
                 padding: 0 5rem 0 #{$gutter}rem;
             }
-            
+
             @media #{$mediaXl} {
                 padding: 0 75rem 0 #{$gutter}rem;
             }
         }
     }
-    
+
     &.cnt-tr {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -186,7 +257,7 @@ main > header {
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         > div {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             top: 25%;
