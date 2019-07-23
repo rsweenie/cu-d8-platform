@@ -78,6 +78,236 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "cu_icons";
+  src: url("../fonts/icons/cu_icons.eot");
+  src: url("../fonts/icons/cu_icons.eot?#iefix") format("eot"), url("../fonts/icons/cu_icons.woff2") format("woff2"), url("../fonts/icons/cu_icons.woff") format("woff"), url("../fonts/icons/cu_icons.ttf") format("truetype"), url("../fonts/icons/cu_icons.svg#cu_icons") format("svg");
+}
+
+/* line 11, src/sass/base/fonts/_icons.scss */
+
+.icon:before {
+  font-family: "cu_icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none;
+}
+
+/* line 24, src/sass/base/fonts/_icons.scss */
+
+.icon-apply:before {
+  content: "\E001";
+}
+
+/* line 28, src/sass/base/fonts/_icons.scss */
+
+.icon-ask-bubble:before {
+  content: "\E002";
+}
+
+/* line 32, src/sass/base/fonts/_icons.scss */
+
+.icon-blog:before {
+  content: "\E003";
+}
+
+/* line 36, src/sass/base/fonts/_icons.scss */
+
+.icon-checkbox-checked:before {
+  content: "\E004";
+}
+
+/* line 40, src/sass/base/fonts/_icons.scss */
+
+.icon-checkbox-unchecked:before {
+  content: "\E005";
+}
+
+/* line 44, src/sass/base/fonts/_icons.scss */
+
+.icon-chevron-right-double:before {
+  content: "\E006";
+}
+
+/* line 48, src/sass/base/fonts/_icons.scss */
+
+.icon-chevron-right:before {
+  content: "\E007";
+}
+
+/* line 52, src/sass/base/fonts/_icons.scss */
+
+.icon-chevron-up:before {
+  content: "\E008";
+}
+
+/* line 56, src/sass/base/fonts/_icons.scss */
+
+.icon-close-window-filled:before {
+  content: "\E009";
+}
+
+/* line 60, src/sass/base/fonts/_icons.scss */
+
+.icon-close-window:before {
+  content: "\E00A";
+}
+
+/* line 64, src/sass/base/fonts/_icons.scss */
+
+.icon-contact:before {
+  content: "\E00B";
+}
+
+/* line 68, src/sass/base/fonts/_icons.scss */
+
+.icon-envelope:before {
+  content: "\E00C";
+}
+
+/* line 72, src/sass/base/fonts/_icons.scss */
+
+.icon-event-calendar:before {
+  content: "\E00D";
+}
+
+/* line 76, src/sass/base/fonts/_icons.scss */
+
+.icon-expand-arrow:before {
+  content: "\E00E";
+}
+
+/* line 80, src/sass/base/fonts/_icons.scss */
+
+.icon-filter:before {
+  content: "\E00F";
+}
+
+/* line 84, src/sass/base/fonts/_icons.scss */
+
+.icon-forward:before {
+  content: "\E010";
+}
+
+/* line 88, src/sass/base/fonts/_icons.scss */
+
+.icon-google-translate:before {
+  content: "\E011";
+}
+
+/* line 92, src/sass/base/fonts/_icons.scss */
+
+.icon-help:before {
+  content: "\E012";
+}
+
+/* line 96, src/sass/base/fonts/_icons.scss */
+
+.icon-hybrid:before {
+  content: "\E013";
+}
+
+/* line 100, src/sass/base/fonts/_icons.scss */
+
+.icon-location-thin:before {
+  content: "\E014";
+}
+
+/* line 104, src/sass/base/fonts/_icons.scss */
+
+.icon-location:before {
+  content: "\E015";
+}
+
+/* line 108, src/sass/base/fonts/_icons.scss */
+
+.icon-news:before {
+  content: "\E016";
+}
+
+/* line 112, src/sass/base/fonts/_icons.scss */
+
+.icon-off-campus:before {
+  content: "\E017";
+}
+
+/* line 116, src/sass/base/fonts/_icons.scss */
+
+.icon-on-campus:before {
+  content: "\E018";
+}
+
+/* line 120, src/sass/base/fonts/_icons.scss */
+
+.icon-online:before {
+  content: "\E019";
+}
+
+/* line 124, src/sass/base/fonts/_icons.scss */
+
+.icon-phone:before {
+  content: "\E01A";
+}
+
+/* line 128, src/sass/base/fonts/_icons.scss */
+
+.icon-right:before {
+  content: "\E01B";
+}
+
+/* line 132, src/sass/base/fonts/_icons.scss */
+
+.icon-search-more:before {
+  content: "\E01C";
+}
+
+/* line 136, src/sass/base/fonts/_icons.scss */
+
+.icon-search:before {
+  content: "\E01D";
+}
+
+/* line 140, src/sass/base/fonts/_icons.scss */
+
+.icon-social-facebook:before {
+  content: "\E01E";
+}
+
+/* line 144, src/sass/base/fonts/_icons.scss */
+
+.icon-social-instagram:before {
+  content: "\E01F";
+}
+
+/* line 148, src/sass/base/fonts/_icons.scss */
+
+.icon-social-linkedin:before {
+  content: "\E020";
+}
+
+/* line 152, src/sass/base/fonts/_icons.scss */
+
+.icon-social-twitter:before {
+  content: "\E021";
+}
+
+/* line 156, src/sass/base/fonts/_icons.scss */
+
+.icon-social-youtube:before {
+  content: "\E022";
+}
+
+/* line 160, src/sass/base/fonts/_icons.scss */
+
+.icon-tag:before {
+  content: "\E023";
+}
+
 /*---===<<< UNIVERSAL RESETS >>>===---*/
 
 /* line 2, src/sass/base/_resets.scss */
@@ -1175,18 +1405,25 @@ nav a {
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
   border-left: 0;
-  font-size: 1em;
+  font-size: 2.2rem;
   text-align: center;
 }
 
-/* line 50, src/sass/structure/header/search/_search-inline.scss */
+/* line 44, src/sass/structure/header/search/_search-inline.scss */
+
+.main-header form.search [class*="btn-"] span {
+  top: 0.3rem;
+  left: -0.1rem;
+}
+
+/* line 55, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search [class*="btn-"]:hover {
   background: #8AC8FF;
   color: #fff;
 }
 
-/* line 56, src/sass/structure/header/search/_search-inline.scss */
+/* line 61, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search .form-el {
   -webkit-box-flex: 1 1 auto;
@@ -1200,13 +1437,13 @@ nav a {
   width: 100%;
 }
 
-/* line 63, src/sass/structure/header/search/_search-inline.scss */
+/* line 68, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search .form-btn {
   padding: 0;
 }
 
-/* line 67, src/sass/structure/header/search/_search-inline.scss */
+/* line 72, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search input:not([type="checkbox"]):not([type="radio"]) {
   width: 100%;
@@ -1222,7 +1459,7 @@ nav a {
   font-family: "Conduit";
 }
 
-/* line 86, src/sass/structure/header/search/_search-inline.scss */
+/* line 91, src/sass/structure/header/search/_search-inline.scss */
 
 .main-header form.search label {
   position: absolute;
@@ -3633,6 +3870,78 @@ blockquote .tooltip-trigger {
 
 .tooltip p:last-child {
   margin-bottom: 0;
+}
+
+/* line 1, src/sass/components/basic/_ns.scss */
+
+.ns {
+  background: -webkit-gradient(linear, left bottom, left top, from(#00204c), to(#002E6D));
+  background: linear-gradient(0deg, #00204c 0%, #002E6D 100%);
+  color: #fff;
+  padding: 4.8rem 0;
+}
+
+/* line 10, src/sass/components/basic/_ns.scss */
+
+.ns .icon {
+  width: 6.4rem;
+  height: 6.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #0054A6;
+  border-radius: 50%;
+  font-size: 2.6rem;
+  margin: 0 18px 0 0;
+  -webkit-transition: background .25s;
+  transition: background .25s;
+}
+
+/* line 31, src/sass/components/basic/_ns.scss */
+
+.ns a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 36, src/sass/components/basic/_ns.scss */
+
+.ns a:hover span:last-child {
+  text-decoration: underline;
+}
+
+/* line 39, src/sass/components/basic/_ns.scss */
+
+.ns a:hover .icon {
+  background: #019cdb;
+}
+
+/* line 50, src/sass/components/basic/_ns.scss */
+
+.ns h2 {
+  font-size: 3.2rem;
+  line-height: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 67, src/sass/components/basic/_ns.scss */
+
+.ns ul li {
+  padding: 0;
+  font-size: 1.8rem;
+}
+
+/* line 70, src/sass/components/basic/_ns.scss */
+
+.ns ul li:before {
+  display: none;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -12428,7 +12737,7 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 67, src/sass/structure/header/search/_search-inline.scss */
+  /* line 72, src/sass/structure/header/search/_search-inline.scss */
 
   .main-header form.search input:not([type="checkbox"]):not([type="radio"]) {
     width: 15.5rem;
@@ -13169,6 +13478,46 @@ form.search .search button {
     font-size: 1.1em;
   }
 
+  /* line 1, src/sass/components/basic/_ns.scss */
+
+  .ns {
+    padding: 7.5rem 0;
+  }
+
+  /* line 10, src/sass/components/basic/_ns.scss */
+
+  .ns .icon {
+    width: 13.6rem;
+    height: 13.6rem;
+    font-size: 6rem;
+    margin: 0 auto 20px auto;
+  }
+
+  /* line 50, src/sass/components/basic/_ns.scss */
+
+  .ns h2 {
+    font-size: 4.2rem;
+  }
+
+  /* line 61, src/sass/components/basic/_ns.scss */
+
+  .ns ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  /* line 67, src/sass/components/basic/_ns.scss */
+
+  .ns ul li {
+    margin: 0 35px;
+    font-size: 2.1rem;
+    text-align: center;
+  }
+
   /* line 6, src/sass/components/navigation/_landing.scss */
 
   nav.cp {
@@ -13870,6 +14219,17 @@ form.search .search button {
     z-index: 90;
     padding-top: 0;
     margin-top: -7.5rem;
+  }
+
+  /* line 31, src/sass/components/basic/_ns.scss */
+
+  .ns a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   /* line 27, src/sass/components/navigation/_breadcrumb.scss */
