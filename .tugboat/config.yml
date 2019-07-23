@@ -24,6 +24,8 @@ services:
 #      - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
 
     # Use PHP 7.1 with Apache
+    # The -stretch label lets us use the old version of this container which doesn't break us ;)
+    # But it's not static so it will probably still break in the future
     image: tugboatqa/php:7.1-apache-stretch
 
     # Set this as the default service. This does a few things
@@ -70,14 +72,14 @@ services:
         # Use the tugboat-specific Drupal settings
         - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
 
-        # Generate a unique hash_salt to secure the site
-        - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
-
         # Install/update packages managed by composer, including drush
         - composer install --no-ansi
 
-        # Have BLT setup the DB and such.
-        #- yes | ${TUGBOAT_ROOT}/vendor/bin/blt setup
+        # Our baseline is our defaulty Acquia setup
+        - ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+
+        # Generate a unique hash_salt to secure the site
+        - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
 
         # Copy the files directory from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
@@ -104,9 +106,6 @@ services:
 
         # Site alias specific build steps
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
-
-        # TODO: may want to do a base install of site with no specific DB
-
 
         # Alternatively, another common practice is to use the
         # stage_file_proxy Drupal module. This module lets Drupal serve
@@ -183,4 +182,3 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
-
