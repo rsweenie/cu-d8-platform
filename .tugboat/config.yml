@@ -71,15 +71,15 @@ services:
         - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
 
 
+        # Install/update packages managed by composer, including drush
+        - composer install --no-ansi
 
-
+        # Our baseline is our defaulty Acquia setup
         - ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
 
 #        # Generate a unique hash_salt to secure the site
 #        - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
 #
-#        # Install/update packages managed by composer, including drush
-#        - composer install --no-ansi
 #
 #        # Have BLT setup the DB and such.
 #        #- yes | ${TUGBOAT_ROOT}/vendor/bin/blt setup
