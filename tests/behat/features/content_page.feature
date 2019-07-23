@@ -8,7 +8,6 @@ Feature: Content Page
     Given I am logged in as a user with the "administrator" role
     And I set browser window size to "1920" x "1080"
     And I am viewing a "content_page" with the title "title"
-    And I set browser window size to "1920" x "1080"
     And I visit the edit form
 
   @api @javascript
@@ -164,4 +163,34 @@ Feature: Content Page
     And I visit the ".nav-tabs li:nth-child(2) a" link
     #Verify the "Private" option is selected
     Then the "private[0][stored]" checkbox should be checked
+
+  @api @javascript @377515710
+  Scenario Outline: Adding Existing Entity
+    # adding existing here
+    And I press "Add existing <type> <grouping>"
+    Then I wait for AJAX to finish
+    Then I wait for AJAX to finish
+    And I switch to the "entity_browser_iframe_creighton_<frame_id>" frame
+    Then I fill in "title" with "<search>"
+    And I press "Apply" 
+    Then I wait for AJAX to finish
+    Then I wait for AJAX to finish
+    And I visit the "tr:nth-of-type(1) td input" link
+    And I press "Add Item"
+    Then I wait for AJAX to finish
+    And I switch to the window
+    # save and verify
+    Then I press "Save"
+    # verify
+    And the response status code should be 200
+    And the "<class>" class should exist
+
+  Examples:
+    |frame_id|type|grouping|name|search|class|
+    |tabbed_accordion|Accordion|Set|Accordion|TA -|tabbed_accordion_wrapper|
+    |sidebar_items|Sidebar|Item|Copy Box|CB -|copy_box_wrapper|
+    |sidebar_items|Sidebar|Item|Feature Links|FL -|featured_links_wrapper|
+    |sidebar_items|Sidebar|Item|Promo Box|PB -|promo_box_wrapper|
+    |sidebar_items|Sidebar|Item|Quote Box|QB -|quote_box_wrapper|
+    |sidebar_items|Sidebar|Item|Related Link|RL -|related_links_wrapper|
     
