@@ -341,4 +341,14 @@ JS;
         "One or more links open in new window"
       );
   }
+  /**
+   * @Then the :class class should exist
+   */
+  public function theClassShouldExist($class)
+  {
+    if(empty($this->getSession()->getPage()->find('css','.'.$class)))
+      throw new \Exception(
+        "Class does not exist"
+      );
+  }
 }
