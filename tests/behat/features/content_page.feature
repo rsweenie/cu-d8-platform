@@ -174,7 +174,7 @@ Feature: Content Page
     Then I fill in "title" with "<search>"
     And I press "Apply" 
     Then I wait for AJAX to finish
-    Then I wait for AJAX to finish
+    Then I wait "3" seconds
     And I visit the "tr:nth-of-type(1) td input" link
     And I press "Add Item"
     Then I wait for AJAX to finish
@@ -186,11 +186,11 @@ Feature: Content Page
     And the "<class>" class should exist
 
   Examples:
-    |frame_id|type|grouping|name|search|class|
-    |tabbed_accordion|Accordion|Set|Accordion|TA -|tabbed_accordion_wrapper|
-    |sidebar_items|Sidebar|Item|Copy Box|CB -|copy_box_wrapper|
-    |sidebar_items|Sidebar|Item|Feature Links|FL -|featured_links_wrapper|
-    |sidebar_items|Sidebar|Item|Promo Box|PB -|promo_box_wrapper|
-    |sidebar_items|Sidebar|Item|Quote Box|QB -|quote_box_wrapper|
-    |sidebar_items|Sidebar|Item|Related Link|RL -|related_links_wrapper|
+    |frame_id|type|grouping|search|class|
+    |tabbed_accordion|Accordion|Set|TA -|tabbed_accordion_wrapper|
+    |sidebar_items|Sidebar|Item|CB -|copy_box_wrapper|
+    |sidebar_items|Sidebar|Item|FL -|featured_links_wrapper|
+    |sidebar_items|Sidebar|Item|PB -|promo_box_wrapper|
+    |sidebar_items|Sidebar|Item|QB -|quote_box_wrapper|
+    |sidebar_items|Sidebar|Item|RL -|related_links_wrapper|
     

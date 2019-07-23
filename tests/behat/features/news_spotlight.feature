@@ -10,14 +10,11 @@ Feature: News and Spotlight
     And I visit the edit form
     And I select the radio button "News"
     And I fill in "edit-title-0-value" with "title"
-    And I set browser window size to "1920" x "1080"
 
   # News/Spotlight Fields
     And I fill in "edit-field-content-page-headline-0-value" with "News/Spotlight headline"
     And I put "News/Spotlight body" into CKEditor
 
-  @api @javascript
-  Scenario: Add existing Accordion
     # adding new accordion here
     And I press "Add new Accordion Set"
     Then I wait for AJAX to finish
