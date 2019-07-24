@@ -1,0 +1,17 @@
+diff --git a/src/Form/LinkitEditorDialog.php b/src/Form/LinkitEditorDialog.php
+index 8f3b8f5..9823856 100644
+--- a/src/Form/LinkitEditorDialog.php
++++ b/src/Form/LinkitEditorDialog.php
+@@ -133,6 +133,12 @@ class LinkitEditorDialog extends FormBase {
+    * {@inheritdoc}
+    */
+   public function validateForm(array &$form, FormStateInterface $form_state) {
++    //if attr target = 0, set target to _self to avoid being removed by array_filter
++    if($form_state->getValue('attributes')['target']===0){
++      $attributes = $form_state->getValue('attributes');
++      $attributes['target'] = '_self';
++      $form_state->setValue('attributes',$attributes);
++    }
+     $attributes = array_filter($form_state->getValue('attributes'));
+     $form_state->setValue('attributes', $attributes);
+   }

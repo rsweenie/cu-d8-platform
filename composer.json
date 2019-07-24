@@ -140,7 +140,7 @@
                 "bootstrap Warning: array_search() expects parameter":"https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
             },
             "drupal/linkit": {
-                "linkit popup open in new window not saving changes":"https://www.drupal.org/files/issues/2912517-2-linkit--fix-removing-link-attributes.patch"
+                "linkit popup open in new window not saving changes":"patches/linkit_target_value_zero.patch"
             }
         },
         "installer-types": [

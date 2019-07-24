@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86888c8284fc4c7c6a97de87b7031906",
+    "content-hash": "dc876418ded77459a353408b61de15fb",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -8228,7 +8228,7 @@
                     }
                 },
                 "patches_applied": {
-                    "linkit popup open in new window not saving changes": "https://www.drupal.org/files/issues/2912517-2-linkit--fix-removing-link-attributes.patch"
+                    "linkit popup open in new window not saving changes": "patches/linkit_target_value_zero.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
