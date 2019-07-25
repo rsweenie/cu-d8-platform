@@ -6,6 +6,7 @@ dependencies:
   - entity_reference_revisions
   - field
   - field_permissions
+  - lightning_core
   - link
   - menu_ui
   - node

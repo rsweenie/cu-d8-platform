@@ -22,4 +22,8 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
         break;
     }
   }
+
+  if ($paragraph->hasField('field_next_step_icon') && !$paragraph->field_next_step_icon->isEmpty()) {
+    $variables['icon'] = $paragraph->get('field_next_step_icon')->getString();
+  }
 }
