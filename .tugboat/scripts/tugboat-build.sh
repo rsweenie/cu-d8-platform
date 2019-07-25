@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Site specific build steps. Does NOT include anything done globally. That goes in config.yml.
+# Site specific build steps. Does NOT include anything done globally (the stuff in config.yml).
 # DB/Asset sync for aliased sites should take place here (PR builds start here)
 #
 
@@ -10,11 +10,11 @@ CU_SITE_ALIAS=$(`dirname "$0"`/get_site_alias.sh)
 echo "Doing Tugboat build steps for $CU_SITE_ALIAS"
 
 case $CU_SITE_ALIAS in
-  alliance)
+  demo|hrnew|alliance)
     echo "Syncing DB and assets for Alliance"
     # DB sync MUST come before filesync always
-    drush -r "${DOCROOT}" sql:sync "@alliance.01live" @self -y
-    drush -r "${DOCROOT}" rsync "@alliance.01live":%files @self:%files -y
+    drush -r "${DOCROOT}" sql:sync "@${CU_SITE_ALIAS}.01live" @self -y
+    drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y
   ;;
   grad-site)
     echo "Importing local DB file for Grad Site"
@@ -33,7 +33,7 @@ case $CU_SITE_ALIAS in
     fi
   ;;
   none)
-    echo "Nothing to do for generic site"
+    echo "Nothing to do for generic install"
   ;;
   *)
     echo "ERROR: Could not determine site alias"
