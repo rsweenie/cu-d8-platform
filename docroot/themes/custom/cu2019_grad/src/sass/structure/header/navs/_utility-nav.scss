@@ -1,0 +1,103 @@
+/*  --------------------------------------------------------------------------  *\
+
+    UTILITY NAVIGATION
+
+\*  --------------------------------------------------------------------------  */
+nav.util {
+    font-family: $headingFF;
+
+    @media #{$mediaFullHeader} {
+      padding: 46px 0;
+    }
+
+    ul {
+        @media #{$mediaToggleHeader} {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            padding-top: 30px;
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            background: $primary;
+            // border-top: .2rem solid $secondary;
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            font-size: 17px;
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+            li {
+                position: relative;
+
+                + li {
+                  &:before {
+                    width: 1px;
+                    height: 12px;
+                    content: "";
+                    background: $white;
+                    display: block;
+                  }
+                }
+
+                &:last-child {
+                  width: 100%;
+
+                  &:before {
+                    display: none;
+                  }
+                }
+            }
+
+            a {
+              color: $white;
+              padding: 0 20px;
+            }
+        }
+
+        @media #{$mediaFullHeader} {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            @include flex(flex-end, center, center);
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            font-size: 17px;
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+            li {
+                + li {
+                    margin: 0 0 0 #{$gutter * .6}rem;
+                }
+            }
+
+            a {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                padding: 0;
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                //color: $white;
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+                @include hover {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    text-decoration: underline;
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                }
+            }
+        }
+
+        a {
+            color: $gray3;
+
+            @include hover {
+                color: $accent-2;
+            }
+        }
+    }
+}

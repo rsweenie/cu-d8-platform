@@ -1,0 +1,301 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FORM > SEARCH STYLING
+
+\*  --------------------------------------------------------------------------  */
+&.search {
+
+    .search {
+        @include flex(space-between, center, center, row nowrap);
+        border-bottom: .2rem solid $tertiary;
+
+        input:not([type="checkbox"]):not([type="radio"]) {
+            background: none;
+            border: none;
+            border-bottom: .2rem solid $tertiary;
+            padding: #{$gutter * .4rem}rem 0;
+            @include flexItem(0, 1, auto);
+        }
+
+        button {
+            display: none;
+        }
+    }
+
+    @media #{$mediaToggleHeader} {
+        // @include position(fixed, 900, (left, top), (0, 100vh));
+        // height: 100vh;
+        // width: 100%;
+        // background: $white;
+        // transition: transform .25s;
+
+        .toggle {
+            @include position(absolute, null, (left, top), (0, 0), translate(0, -100%));
+            width: 100%;
+            padding: #{$gutter * .6}rem;
+            margin: 0;
+            background: $primary;
+            color: $white;
+        }
+
+        .opened {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked + & {
+            @include transform(translate(0, -100%));
+            z-index: 1100;
+
+            .toggle {
+                position: relative;
+                @include transform(translate(0, 0));
+            }
+
+            .closed {
+                display: none;
+            }
+
+            .opened {
+                display: block;
+            }
+        }
+
+        .search {
+            background: $accent-2;
+            padding: #{$gutter * .6}rem #{$gutter}rem;
+            @include position(relative, 1000);
+
+            button {
+                display: none;
+            }
+        }
+
+        .form-btns {
+            @include position(absolute, null, (left, bottom), (0, 0));
+            @include flex(space-between, center, center, row nowrap);
+            padding: #{$gutter * .6}rem;
+            border-top: .2rem solid $tertiary;
+            background: $accent-2;
+            width: 100%;
+
+            button, label {
+                width: calc(50% - (#{$gutter * .3}rem));
+                text-align: center;
+            }
+        }
+
+        .toggles {
+            width: 33.333%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            .h5 {
+                padding: #{$gutter * .4}rem;
+                margin: 0;
+                background: $primary;
+                color: $white;
+            }
+
+            label {
+                padding: #{$gutter * .4}rem;
+                margin: 0;
+                border-bottom: .2rem solid $accent-2;
+
+                &.active {
+                    @include position(relative, null);
+
+                    &:after {
+                        display: block;
+                        @include position(absolute, null, (right, top), (0, 50%), translate(0, -50%));
+                        height: 0;
+                        width: 0;
+                        border-top: 1rem solid transparent;
+                        border-bottom: 1rem solid transparent;
+                        border-right: 1rem solid $accent-2;
+                        content: "";
+                    }
+                }
+            }
+        }
+
+        .filters {
+            display: none;
+            @include position(absolute, 50, (right, top), (0, 12.8rem));
+            height: calc(100vh - 21.4rem);
+            background: $accent-2;
+            width: 66.667%;
+            overflow: auto;
+            padding: #{$gutter * .6}rem;
+            font-size: 1.4rem;
+        }
+
+        input[type="radio"] {
+            &:checked {
+
+                + .filters {
+                    display: block;
+                    z-index: 100;
+                }
+            }
+        }
+
+        .sort, .facets, > p, hr {
+            display: none;
+        }
+    }
+
+
+
+    @media #{$mediaFullHeader} {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        @include flex(space-between, center, center, row wrap);
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        margin: 0 0 #{$gutter * 2}rem;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        > div {
+            @include flexItem(0, 0, auto);
+        }
+
+        .search {
+            border-bottom: .2rem solid $accent-3;
+
+            input:not([type="checkbox"]):not([type="radio"]) {
+                padding: #{$gutter * .4}rem 0;
+                border-bottom: none;
+            }
+
+            button {
+                display: block;
+            }
+        }
+
+        .toggles {
+            .h5 {
+                display: inline-block;
+                margin: 0;
+            }
+
+            label {
+                @include position(relative, null);
+                display: inline-block;
+                margin: 0 0 0 #{$gutter}rem;
+                padding: 0 #{$gutter}rem 0 0;
+                cursor: pointer;
+
+                &:after {
+                    @include position(absolute, 0, (right, top), (0, 50%), translate(0, -50%) rotate(45deg));
+                    height: .5rem;
+                    width: .5rem;
+                    border-bottom: .2rem solid currentColor;
+                    border-right: .2rem solid currentColor;
+                    content: "";
+                }
+
+                &.active {
+
+                    &:after {
+                        height: 0;
+                        @include transform(translate(0, -50%));
+                    }
+                }
+            }
+        }
+
+        .sort {
+            @include flex(flex-start, center, center, row nowrap);
+
+            input[type="radio"] {
+                + label {
+                    margin: 0 0 0 #{$gutter * .6}rem;
+                    padding: 0;
+
+                    &:before {
+                        display: none;
+                    }
+                }
+
+                &:checked {
+                    + label {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .filters {
+            display: none;
+            width: 100%;
+            border-top: .2rem solid $accent-2;
+            margin: #{$gutter}rem 0 0;
+            padding: #{$gutter}rem 0 0;
+
+            label {
+                @include flexItem(0, 0, auto);
+                width: 25%;
+                text-align: left;
+                line-height: 1.75;
+                padding: 0 0 0 2em;
+            }
+
+            &[role="group"] {
+                text-align: left;
+            }
+
+            &[role="radiogroup"] {
+
+                label {
+                    width: auto;
+
+                    ~ label {
+                        margin-left: #{$gutter * .8}rem;
+                    }
+                }
+            }
+        }
+
+        hr {
+            margin: #{$gutter}rem 0;
+        }
+
+        > input[type="radio"] {
+
+            &:checked {
+
+                + .filters {
+                    @include flex(flex-start, flex-start, null, row wrap);
+                    text-align: right;
+
+                    &[role="radiogroup"] {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+
+        .facets {
+            button {
+                span {
+                    margin: 0 .5rem 0 0;
+                }
+
+                + button {
+                    margin: 0 0 0 #{$gutter * .6}rem;
+                }
+            }
+        }
+
+        > p {
+            width: 100%;
+            margin: #{$gutter}rem 0 0;
+        }
+
+        .form-btns, .toggle {
+            display: none;
+        }
+    }
+}

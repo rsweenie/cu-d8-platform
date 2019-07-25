@@ -1,0 +1,21 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > ROTATE OUT UP LEFT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(rotateOutUpLeft) {
+    from {
+        @include transformOrigin(left bottom);
+        opacity: 1;
+    }
+
+    to {
+        @include transformOrigin(left bottom);
+        @include transform(rotate3d(0, 0, 1, -45deg));
+        opacity: 0;
+    }
+}
+
+&.rotate-out-up-left {
+    @include animationName(rotateOutUpLeft);
+}

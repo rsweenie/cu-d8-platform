@@ -1,0 +1,20 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > LIGHT SPEED OUT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(lightSpeedOut) {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        @include transform(translate3d(100%, 0, 0) skewX(30deg));
+        opacity: 0;
+    }
+}
+
+&.lightspeed-out {
+    @include animationName(lightSpeedOut);
+    @include animationTiming(ease-in);
+}

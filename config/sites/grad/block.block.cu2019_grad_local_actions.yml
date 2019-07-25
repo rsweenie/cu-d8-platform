@@ -1,0 +1,20 @@
+uuid: e458365e-7a6e-431e-bba1-1e97e5d9f37b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: hWp5vDK5Ok8Q3zL_EeNVE9dqvbVwpkoOOC4GvzUdmXo
+id: cu2019_grad_local_actions
+theme: cu2019_grad
+region: dump
+weight: -13
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

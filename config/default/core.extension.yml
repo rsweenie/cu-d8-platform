@@ -102,6 +102,7 @@ module:
   media_entity_twitter: 0
   media_library: 0
   menu_block: 0
+  menu_item_extras: 0
   menu_ui: 0
   metatag: 0
   mimemail: 0
@@ -195,6 +196,7 @@ theme:
   cu2017: 0
   cu8: 0
   cu2017_alliance: 0
+  cu2019_grad: 0
 profile: creighton
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

@@ -1,0 +1,153 @@
+/*  --------------------------------------------------------------------------  *\
+
+    MAIN NAV W/ UTILITY BAR
+
+\*  --------------------------------------------------------------------------  */
+& {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //padding: 1.5rem 0;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    @media #{$mediaFullHeader} {
+        //padding: 0;
+    }
+
+    .utility-bar {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //width: 100%;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        @media #{$mediaFullHeader} {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            //@include flex(flex-end, center, center, row nowrap);
+            //@include position(absolute, 0, (left, top), (50%, 0), translate(-50%, 0));
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            //padding: #{$gutter * .2}rem #{$gutter}rem;
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            //background: $primary;
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+            &:before {
+                // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // @include position(absolute, -1, (left, top), (50%, 0), translate(-50%, 0));
+                // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // width: 100vw;
+                // height: 100%;
+                // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // background: $primary;
+                // border-bottom: 1px solid $accent-2;
+                // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                // content: "";
+            }
+        }
+    }
+}
+
+.region-primary-menu {
+  @media #{$mediaFullHeader} {
+    width: 100%;
+    @include position(absolute, 1, (left, top), (0, 131px));
+
+    &:before {
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, 0);
+      width: 100vw;
+      height: 100%;
+      background: $accent-1;
+      content: "";
+    }
+
+    &:after {
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      bottom: -5px;
+      transform: translate(-50%, 0);
+      width: 100vw;
+      height: 5px;
+      background: rgba($black,.1);
+      content: "";
+    }
+
+    > div {
+      display: flex;
+      justify-content: flex-end;
+      align-items: stretch;
+    }
+  }
+}
+
+.nav-wrapper {
+  @media #{$mediaToggleHeader} {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include position(absolute, 1, (left, top), (100%, 100%));
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    width: 100vw;
+    height: calc(100vh - 70px);
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    background: rgba($black,.7);
+    overflow-y: auto;
+    overflow-x: hidden;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    @include transition(transform .25s ease-out);
+  }
+}
+
+> div {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include flex(space-between, stretch, stretch);
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    max-width: $siteWMx;
+    margin: 0 auto;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    @media #{$mediaFullHeader} {
+        @include position(relative, 0);
+        padding: 0 3.6rem;
+    }
+
+    // ADJUST THE WIDTH FOR $siteWList IN EACH MEDIA QUERY USING $siteWQueryList
+    @each $q in $siteWQueryList {
+        $i: index($siteWQueryList, $q);
+
+        @if $i == 1 {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            width: nth($siteWList, $i);
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        } @else {
+            @media #{$q} {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                width: nth($siteWList, $i);
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+        }
+    }
+}

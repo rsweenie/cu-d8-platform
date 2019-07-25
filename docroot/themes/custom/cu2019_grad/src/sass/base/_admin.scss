@@ -1,0 +1,16 @@
+#toolbar-administration {
+  ~ .dialog-off-canvas-main-canvas {
+    padding: 8.2rem 0 0;
+    @media #{$mediaFullHeader} {
+        padding: 11.4rem 0 0;
+    }
+
+    @media #{$mediaXl} {
+        padding: 13.4rem 0 0;
+    }
+
+    .main-header {
+      top: 78px;
+    }
+  }
+}

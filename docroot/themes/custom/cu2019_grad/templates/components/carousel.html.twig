@@ -1,0 +1,15 @@
+{% if wrapper == 'section' %}
+<section id="Sect-{{ par_id }}">
+  <div>
+{% endif %}
+<div class="owl-carousel {{ class }}" {% if options %}data-options='{{ options }}'{% endif %}>
+    {% for item in slideContent %}
+    <div class="item">
+        {{ item }}
+    </div>
+    {% endfor %}
+</div>
+{% if wrapper %}
+  </div>
+</section>
+{% endif %}

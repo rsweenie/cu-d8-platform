@@ -1,0 +1,19 @@
+/*  --------------------------------------------------------------------------  *\
+
+    Buttons - ICON TOP
+
+\*  --------------------------------------------------------------------------  */
+&.icon-top {
+    
+    .fab, .fas, .far {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        display: block;
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        margin: 0 0 #{$gutter * .4}rem;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        text-align: center;
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    }
+}

@@ -1,0 +1,25 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FIELDS
+
+    Each form component should have it's own file each alteration should have it's
+    own file.
+
+\*  --------------------------------------------------------------------------  */
+input:not([type="checkbox"]):not([type="radio"]), textarea, select {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    padding: #{$gutter * .4}rem;
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    width: 100%;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    border: .2rem solid $accent-3;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    font-family: $copyFF;
+    @include fontSize(1.6, 1.25);
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    
+    &:focus {
+        border-color: $tertiary;
+    }
+}

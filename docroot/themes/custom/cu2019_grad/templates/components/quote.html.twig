@@ -1,0 +1,32 @@
+{% if wrapper == 'section' %}
+<section id="Sect-{{ par_id }}">
+  <div>
+{% endif %}
+<blockquote {% if class %}class="{{ class }}"{% endif %}>
+    <div class="quote">
+        {% if quote %}
+            <p>{{ quote }}</p>
+        {% else %}
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nobis itaque, non optio quod ad delectus soluta, quo vitae, labore reiciendis recusandae beatae ea quisquam.</p>
+        {% endif %}
+    </div>
+    <div class="attr">
+        {% if img %}
+            {{ img }}
+        {% endif %}
+        <p>
+            {% if attr %}
+                {{ attr }}
+            {% else %}
+                John Doe
+            {% endif %}
+            {% if title %}
+                <small>{{ title }}</small>
+            {% endif %}
+        </p>
+    </div>
+</blockquote>
+{% if wrapper %}
+  </div>
+</section>
+{% endif %}
