@@ -138,6 +138,9 @@
             },
             "drupal/panels": {
                 "bootstrap Warning: array_search() expects parameter":"https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
+            },
+            "drupal/linkit": {
+                "linkit popup open in new window not saving changes":"patches/linkit_target_value_zero_3.patch"
             }
         },
         "installer-types": [

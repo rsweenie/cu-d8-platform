@@ -64,9 +64,9 @@
 			@include button("../images/png/white-arrow.png");
 			@include featured-link;
 			background-color: $mediumBlue;
+			@include background-transition;
 
 			&:hover {
-				@include background-transition;
 				background-color: $darkBlue;
 			}
 		}
@@ -91,6 +91,7 @@
 			@include button("../images/png/dkblue-arrow.png");
 			@include featured-link;
 			background-color: $yellow;
+			@include background-transition;
 
 			&:hover {
 				background-image: url(../images/png/dkblue-arrow.png);
