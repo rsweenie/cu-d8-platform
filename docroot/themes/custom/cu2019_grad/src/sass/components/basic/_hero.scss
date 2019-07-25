@@ -16,11 +16,29 @@
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      width: 100vh;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: "";
+      background: rgba($secondary,.65);
+      transform-origin: top right;
+      transform: rotate(-45deg);
+      z-index: 100;
+    }
 
     > div {
-      @include position(relative, 100);
-      overflow: hidden;
-      background: $accent-1;
+
+    }
+
+    .field--name-field-interior-page-hero-img {
+      position: relative;
+      z-index: 0;
     }
 
     img {
@@ -33,9 +51,14 @@
       width: 100%;
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: 42px;
       background-color: rgba($secondary,.85);
       padding: 25px 0;
+      z-index: 200;
+
+      @media #{$mediaFullHeader} {
+        bottom: 72px;
+      }
 
       h1 {
         margin: 0;
@@ -49,10 +72,17 @@
 
     .breadcrumb {
       height: 42px;
+      position: relative;
+      z-index: 0;
       background-color: rgba($secondary,.85);
       padding: 0;
       display: flex;
       align-items: center;
+
+      @supports (mix-blend-mode: lighten) {
+        z-index: 200;
+        mix-blend-mode: lighten;
+      }
 
       @media #{$mediaFullHeader} {
         height: 72px;
@@ -81,12 +111,26 @@
     }
 
     &.interior_page {
-      > div {
-        max-height: 164px;
+      > .field {
+        height: 164px;
+        overflow: hidden;
+
+        @media #{$mediaSm} {
+          height: 320px;
+        }
 
         @media #{$mediaFullHeader} {
-          max-height: 511px;
+          height: 515px;
         }
+      }
+    }
+
+    .js-background {
+      background-size: cover;
+      background-position: top center;
+      
+      img {
+        @include srOnly;
       }
     }
 

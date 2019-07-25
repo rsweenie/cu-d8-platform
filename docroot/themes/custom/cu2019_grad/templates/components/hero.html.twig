@@ -1,5 +1,4 @@
-<header{% if heroType != null %} class="{{ heroType }}"{% endif %}>
-  <div>
+<header {% if heroType != null %}class="{{ heroType }}"{% endif %}>
   {% if heroVid|length > 0 %}
     <video width="320" height="240" autoplay="true" poster="{% if heroVidPoster != "/" %}{{ heroVidPoster }}{% elseif heroVidPosterUrl != null %}{{ heroVidPosterUrl }}{% endif %}" loop>
       {% for vid in heroVid %}
@@ -25,7 +24,6 @@
       </div>
     </div>
     {% endif %}
-  </div>
   {% if breadcrumb %}
   <div class="breadcrumb">
     <div>
