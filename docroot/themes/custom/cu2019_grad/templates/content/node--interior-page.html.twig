@@ -104,7 +104,7 @@
   <div{{ content_attributes.addClass('node__content') }}>
   {% include '@cu2019_grad/components/hero.html.twig' with {
     'heroType': 'interior_page',
-    'heroTitle': content.field_interior_page_hero_hl.0,
+    'heroTitle': label,
     'heroImg': content.field_interior_page_hero_img
   } %}
     {{ content|without('field_interior_page_hero_hl','field_interior_page_hero_img') }}

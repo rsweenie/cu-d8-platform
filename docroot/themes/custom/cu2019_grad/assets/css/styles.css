@@ -2308,8 +2308,8 @@ aside .btn-text:hover {
 /* line 22, src/sass/components/basic/_hero.scss */
 
 .node__content > header:after {
-  width: 100vh;
-  height: 100vh;
+  width: 200vh;
+  height: 200vh;
   position: absolute;
   top: 0;
   right: 0;
