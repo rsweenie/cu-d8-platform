@@ -1,0 +1,13 @@
+uuid: 7de4fe6c-6eb2-44fb-ae0e-71f6de13c552
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_100x100_
+  theme:
+    - cu2017
+id: front_page_slider
+label: 'Front Page Slider'
+image_style_mappings: {  }
+breakpoint_group: cu2017
+fallback_image_style: square_100x100_
