@@ -12,7 +12,8 @@ case $CU_SITE_ALIAS in
     echo "Nothing to do for ${CU_SITE_ALIAS}"
   ;;
   grad-site)
-    echo "Nothing to do for Grad Site"
+    # Temporary fix.
+    drush dre cu_next_steps,cu_grad_interior_page,cu_grad_landing_pag -y
   ;;
 
   none)
