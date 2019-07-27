@@ -12,8 +12,6 @@ services:
     type: 'mailhog'
     hogfrom:
       - 'appserver'
-  database:
-    portforward: 33306
 tooling:
   blt:
     service: appserver
