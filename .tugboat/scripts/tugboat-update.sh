@@ -12,7 +12,7 @@ case $CU_SITE_ALIAS in
     echo "Nothing to do for ${CU_SITE_ALIAS}"
   ;;
   grad-site)
-    echo "Nothing to do for Grad Site"
+    echo "Nothing to do for ${CU_SITE_ALIAS}"
   ;;
 
   none)

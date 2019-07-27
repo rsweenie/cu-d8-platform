@@ -16,4 +16,5 @@ dependencies:
   - private_content
   - scheduler
   - user
+  - views
 package: Creighton

@@ -142,6 +142,10 @@ services:
         - drush -r "${DOCROOT}" config-import -y
         - drush -r "${DOCROOT}" cron -y
         - drush -r "${DOCROOT}" cache-rebuild
+
+        # Site alias specific post-build steps
+        - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-postbuild.sh
+
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli
 

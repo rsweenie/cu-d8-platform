@@ -731,39 +731,56 @@ h5,
 h6 {
   margin: 0 0 .75em;
   padding: 0;
+}
+
+/* line 18, src/sass/components/copy/_headings.scss */
+
+h1 {
+  font-family: proxima-nova, sans-serif;
+}
+
+/* line 22, src/sass/components/copy/_headings.scss */
+
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Conduit";
 }
 
-/* line 21, src/sass/components/copy/_headings.scss */
+/* line 29, src/sass/components/copy/_headings.scss */
 
 h1,
 .h1 {
-  font-size: 2.5em;
-  line-height: 1.25;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 0.94em;
+  text-transform: uppercase;
 }
 
-/* line 51, src/sass/components/copy/_headings.scss */
+/* line 61, src/sass/components/copy/_headings.scss */
 
 h2,
 .h2 {
   font-size: 1.75em;
 }
 
-/* line 87, src/sass/components/copy/_headings.scss */
+/* line 97, src/sass/components/copy/_headings.scss */
 
 h3,
 .h3 {
   font-size: 1.5em;
 }
 
-/* line 116, src/sass/components/copy/_headings.scss */
+/* line 126, src/sass/components/copy/_headings.scss */
 
 aside h3,
 aside .h3 {
   font-size: 1.125em;
 }
 
-/* line 119, src/sass/components/copy/_headings.scss */
+/* line 129, src/sass/components/copy/_headings.scss */
 
 aside h3 ~ h3,
 aside h3 ~ .h3,
@@ -774,21 +791,21 @@ aside .h3 ~ .h3 {
   border-top: 0.1rem solid #6CACE4;
 }
 
-/* line 126, src/sass/components/copy/_headings.scss */
+/* line 136, src/sass/components/copy/_headings.scss */
 
 h4,
 .h4 {
   font-size: 1.25em;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
+/* line 165, src/sass/components/copy/_headings.scss */
 
 aside h4,
 aside .h4 {
   font-size: 1em;
 }
 
-/* line 158, src/sass/components/copy/_headings.scss */
+/* line 168, src/sass/components/copy/_headings.scss */
 
 aside h4 ~ h4,
 aside h4 ~ .h4,
@@ -797,7 +814,7 @@ aside .h4 ~ .h4 {
   margin-top: 0.5rem;
 }
 
-/* line 163, src/sass/components/copy/_headings.scss */
+/* line 173, src/sass/components/copy/_headings.scss */
 
 h5,
 .h5 {
@@ -806,14 +823,14 @@ h5,
   text-transform: uppercase;
 }
 
-/* line 174, src/sass/components/copy/_headings.scss */
+/* line 184, src/sass/components/copy/_headings.scss */
 
 aside h5,
 aside .h5 {
   font-size: 1em;
 }
 
-/* line 177, src/sass/components/copy/_headings.scss */
+/* line 187, src/sass/components/copy/_headings.scss */
 
 aside h5 ~ h5,
 aside h5 ~ .h5,
@@ -822,7 +839,7 @@ aside .h5 ~ .h5 {
   margin-top: 2.5rem;
 }
 
-/* line 182, src/sass/components/copy/_headings.scss */
+/* line 192, src/sass/components/copy/_headings.scss */
 
 h6,
 .h6 {
@@ -2273,64 +2290,132 @@ aside .btn-text:hover {
 
     HEROES
 
-    Heroes are used to build the first component on each page.  This component is 
-    the header for the main element of the mark-up.  So we will style the hero 
+    Heroes are used to build the first component on each page.  This component is
+    the header for the main element of the mark-up.  So we will style the hero
     using a <header> in the <main id="content"> tag.
 
 \*  --------------------------------------------------------------------------  */
 
 /* line 10, src/sass/components/basic/_hero.scss */
 
-main > header {
+.node__content > header {
   position: relative;
-  z-index: 100;
-  padding: 5rem 0;
   overflow: hidden;
-  background: #F0F5FA;
   /*  --------------------------------------------------------------------------  *\ IMAGES, PICTURES, AND VIDEOS > img, > picture > img, > video { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) @include position(absolute, 0, (left, top), (50%, 50%), translate(-50%, -50%)); // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) width: 100%; height: auto; // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT) // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) + div { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT) color: $white; // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) } @media screen and (orientation: portrait) { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) width: auto; height: 100%; // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT) // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) } } \*  --------------------------------------------------------------------------  */
   /*  --------------------------------------------------------------------------  *\ OPTIONS &.full-screen { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) height: 100vh; // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) > div { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) top: 75%; @include transform(translate(0, -50%)); // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) @media  screen and (min-width: 768px) { padding: 0 25rem 0 2.5rem; } @media  screen and (min-width: 992px) { padding: 0 5rem 0 2.5rem; } @media  screen and (min-width: 1210px) { padding: 0 75rem 0 2.5rem; } } } &.cnt-tr { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) > div { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) top: 25%; // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) text-align: left; // OTHER (TRANSITONS, ANIMATIONS, CURSOR) } } \*  --------------------------------------------------------------------------  */
 }
 
 /* line 22, src/sass/components/basic/_hero.scss */
 
-main > header > div {
-  position: relative;
+.node__content > header:after {
+  width: 200vh;
+  height: 200vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  background: rgba(0, 84, 166, 0.65);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   z-index: 100;
+}
+
+/* line 39, src/sass/components/basic/_hero.scss */
+
+.node__content > header .field--name-field-interior-page-hero-img {
+  position: relative;
+  z-index: 0;
+}
+
+/* line 44, src/sass/components/basic/_hero.scss */
+
+.node__content > header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 50, src/sass/components/basic/_hero.scss */
+
+.node__content > header .hero_title {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 4.2rem;
+  background-color: rgba(0, 84, 166, 0.85);
+  padding: 2.5rem 0;
+  z-index: 200;
+}
+
+/* line 63, src/sass/components/basic/_hero.scss */
+
+.node__content > header .hero_title h1 {
+  margin: 0;
+  color: #fff;
+}
+
+/* line 73, src/sass/components/basic/_hero.scss */
+
+.node__content > header .breadcrumb {
+  height: 4.2rem;
+  position: relative;
+  z-index: 0;
+  background-color: rgba(0, 84, 166, 0.85);
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@supports (mix-blend-mode: lighten) {
+  /* line 73, src/sass/components/basic/_hero.scss */
+
+  .node__content > header .breadcrumb {
+    z-index: 200;
+    mix-blend-mode: lighten;
+  }
+}
+
+/* line 94, src/sass/components/basic/_hero.scss */
+
+.node__content > header .hero_title > div,
+.node__content > header .breadcrumb > div {
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 2.5rem;
   width: 100%;
 }
 
-/* line 46, src/sass/components/basic/_hero.scss */
+/* line 114, src/sass/components/basic/_hero.scss */
 
-main > header > div :last-child {
-  margin-bottom: 0;
+.node__content > header.interior_page > .field {
+  height: 16.4rem;
+  overflow: hidden;
 }
 
-/* line 59, src/sass/components/basic/_hero.scss */
+/* line 128, src/sass/components/basic/_hero.scss */
 
-main > header.p-lg {
-  padding: 10rem 0;
+.node__content > header .js-background {
+  background-size: cover;
+  background-position: top center;
 }
 
-/* line 72, src/sass/components/basic/_hero.scss */
+/* line 132, src/sass/components/basic/_hero.scss */
 
-main > header.program .dates {
-  text-align: center;
-}
-
-/* line 75, src/sass/components/basic/_hero.scss */
-
-main > header.program .dates a {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* line 79, src/sass/components/basic/_hero.scss */
-
-main > header.program .dates a.active {
-  text-decoration: underline;
+.node__content > header .js-background img {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -9185,11 +9270,10 @@ nav.cp a.active {
 /* line 6, src/sass/components/navigation/_breadcrumb.scss */
 
 nav.bc {
-  margin: 0 0 1rem;
   text-transform: capitalize;
 }
 
-/* line 16, src/sass/components/navigation/_breadcrumb.scss */
+/* line 15, src/sass/components/navigation/_breadcrumb.scss */
 
 nav.bc ol {
   display: -webkit-box;
@@ -9207,16 +9291,35 @@ nav.bc ol {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  font-size: 1.4rem;
+  font-family: "Conduit";
+  font-size: 1.3rem;
 }
 
-/* line 43, src/sass/components/navigation/_breadcrumb.scss */
+/* line 47, src/sass/components/navigation/_breadcrumb.scss */
 
 nav.bc li + li:before {
-  display: inline;
+  display: inline-block;
   position: static;
   margin: 0 1rem;
-  content: "\00bb";
+  font-family: proxima-nova, sans-serif;
+  font-weight: 600;
+  color: #6CACE4;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  content: "/";
+}
+
+/* line 80, src/sass/components/navigation/_breadcrumb.scss */
+
+nav.bc a {
+  color: #fff;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+nav.bc a:hover,
+nav.bc a:focus {
+  text-decoration: underline;
 }
 
 /* line 6, src/sass/components/navigation/_interior.scss */
@@ -10708,6 +10811,12 @@ form.search .search button {
     display: inline-flex;
   }
 
+  /* line 114, src/sass/components/basic/_hero.scss */
+
+  .node__content > header.interior_page > .field {
+    height: 32rem;
+  }
+
   /* line 65, src/sass/components/basic/_tooltips.scss */
 
   .tooltip {
@@ -10879,28 +10988,28 @@ form.search .search button {
          column-gap: 2.5rem;
   }
 
-  /* line 21, src/sass/components/copy/_headings.scss */
+  /* line 29, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
-    font-size: 3em;
+    font-size: 5rem;
   }
 
-  /* line 51, src/sass/components/copy/_headings.scss */
+  /* line 61, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 1.875em;
   }
 
-  /* line 87, src/sass/components/copy/_headings.scss */
+  /* line 97, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
     font-size: 1.625em;
   }
 
-  /* line 126, src/sass/components/copy/_headings.scss */
+  /* line 136, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
@@ -11197,18 +11306,6 @@ form.search .search button {
 
   .btn-primary {
     max-width: 320px;
-  }
-
-  /* line 10, src/sass/components/basic/_hero.scss */
-
-  main > header {
-    padding: 6.25rem 0;
-  }
-
-  /* line 59, src/sass/components/basic/_hero.scss */
-
-  main > header.p-lg {
-    padding: 15rem 0;
   }
 
   /* line 6, src/sass/components/basic/cards/_img-behind.scss */
@@ -12277,28 +12374,28 @@ form.search .search button {
          column-count: 4;
   }
 
-  /* line 21, src/sass/components/copy/_headings.scss */
+  /* line 29, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
     font-size: 3.5em;
   }
 
-  /* line 51, src/sass/components/copy/_headings.scss */
+  /* line 61, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 2em;
   }
 
-  /* line 87, src/sass/components/copy/_headings.scss */
+  /* line 97, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
     font-size: 1.75em;
   }
 
-  /* line 126, src/sass/components/copy/_headings.scss */
+  /* line 136, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
@@ -13348,79 +13445,35 @@ form.search .search button {
     display: none;
   }
 
-  /* line 22, src/sass/components/basic/_hero.scss */
+  /* line 50, src/sass/components/basic/_hero.scss */
 
-  main > header > div {
+  .node__content > header .hero_title {
+    bottom: 7.2rem;
+  }
+
+  /* line 63, src/sass/components/basic/_hero.scss */
+
+  .node__content > header .hero_title h1 {
+    width: 80%;
+  }
+
+  /* line 73, src/sass/components/basic/_hero.scss */
+
+  .node__content > header .breadcrumb {
+    height: 7.2rem;
+  }
+
+  /* line 94, src/sass/components/basic/_hero.scss */
+
+  .node__content > header .hero_title > div,
+  .node__content > header .breadcrumb > div {
     width: 95%;
   }
 
-  /* line 10, src/sass/components/basic/_hero.scss */
+  /* line 114, src/sass/components/basic/_hero.scss */
 
-  main > header {
-    padding: 7.5rem 0;
-  }
-
-  /* line 59, src/sass/components/basic/_hero.scss */
-
-  main > header.p-lg {
-    padding: 20rem 0;
-  }
-
-  /* line 88, src/sass/components/basic/_hero.scss */
-
-  main > header.program > div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-  }
-
-  /* line 91, src/sass/components/basic/_hero.scss */
-
-  main > header.program > div > nav {
-    -webkit-box-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-    width: 100%;
-  }
-
-  /* line 96, src/sass/components/basic/_hero.scss */
-
-  main > header.program > div h1 {
-    -webkit-box-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-    margin-bottom: 0;
-    width: calc(66.667% - 2.5rem);
-  }
-
-  /* line 103, src/sass/components/basic/_hero.scss */
-
-  main > header.program .dates {
-    -webkit-box-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-    text-align: right;
+  .node__content > header.interior_page > .field {
+    height: 51.5rem;
   }
 
   /* line 103, src/sass/components/basic/cards/_img-behind.scss */
@@ -13528,6 +13581,12 @@ form.search .search button {
 
   nav.cp li {
     width: calc(20% - 5rem);
+  }
+
+  /* line 15, src/sass/components/navigation/_breadcrumb.scss */
+
+  nav.bc ol {
+    font-size: 1.8rem;
   }
 
   /* line 6, src/sass/components/navigation/_jump.scss */
@@ -13841,9 +13900,10 @@ form.search .search button {
     width: 90%;
   }
 
-  /* line 22, src/sass/components/basic/_hero.scss */
+  /* line 94, src/sass/components/basic/_hero.scss */
 
-  main > header > div {
+  .node__content > header .hero_title > div,
+  .node__content > header .breadcrumb > div {
     width: 90%;
   }
 
@@ -13928,9 +13988,10 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 22, src/sass/components/basic/_hero.scss */
+  /* line 94, src/sass/components/basic/_hero.scss */
 
-  main > header > div {
+  .node__content > header .hero_title > div,
+  .node__content > header .breadcrumb > div {
     width: 85%;
   }
 
@@ -13950,7 +14011,7 @@ form.search .search button {
     overflow-x: hidden;
   }
 
-  /* line 81, src/sass/components/copy/_headings.scss */
+  /* line 91, src/sass/components/copy/_headings.scss */
 
   h2.ph,
   .h2.ph {
@@ -14232,19 +14293,19 @@ form.search .search button {
             align-items: center;
   }
 
-  /* line 27, src/sass/components/navigation/_breadcrumb.scss */
+  /* line 31, src/sass/components/navigation/_breadcrumb.scss */
 
   nav.bc li {
     display: none;
   }
 
-  /* line 60, src/sass/components/navigation/_breadcrumb.scss */
+  /* line 68, src/sass/components/navigation/_breadcrumb.scss */
 
   nav.bc li:nth-last-child(-n + 2) {
     display: block;
   }
 
-  /* line 65, src/sass/components/navigation/_breadcrumb.scss */
+  /* line 73, src/sass/components/navigation/_breadcrumb.scss */
 
   nav.bc li:nth-last-child(2):before {
     display: none;
