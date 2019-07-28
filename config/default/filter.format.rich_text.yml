@@ -5,6 +5,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - noreferrer
     - responsive_table_filter
     - responsive_tables_filter
     - responsivewrappers
@@ -108,4 +109,10 @@ filters:
     provider: video_embed_wysiwyg
     status: false
     weight: -41
+    settings: {  }
+  noreferrer:
+    id: noreferrer
+    provider: noreferrer
+    status: true
+    weight: 10
     settings: {  }

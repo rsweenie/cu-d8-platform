@@ -69,10 +69,10 @@ settings:
           items:
             - Markdown
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: ''
+    language:
+      language_list: un
     linkit:
       linkit_profile: cu_default_profile
     video_embed:
