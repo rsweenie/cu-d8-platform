@@ -1,7 +1,7 @@
 #!/bin/bash
 # Rub bare site install
-
-echo 'Please select the local enviroment you are using (vagrant, lando): '
+set -e
+echo 'Please select the local development environment you are using (vagrant, lando): '
 devoptions=('vagrant' 'lando')
 declare local
 select option in "${devoptions[@]}"
@@ -25,7 +25,7 @@ then
     local=""
 fi
 
-echo 'Please enter the name of the site you would like to copy files from (alliance, hrnew): '
+echo 'Please enter the name of the site you would like to copy files from (alliance, hrnew, demo, etc.): '
 read site_name
 
 echo 'Please select the site environment you want to use (live, test, dev): '
