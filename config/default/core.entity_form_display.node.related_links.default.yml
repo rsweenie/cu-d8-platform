@@ -56,7 +56,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_related_link: true
   moderation_state: true
   path: true
   promote: true

@@ -1,0 +1,23 @@
+uuid: 95cb5aa0-0252-454b-b48a-a932306718ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fwp_cta
+    - paragraphs.paragraphs_type.full_width_photo
+  module:
+    - link
+id: paragraph.full_width_photo.field_fwp_cta
+field_name: field_fwp_cta
+entity_type: paragraph
+bundle: full_width_photo
+label: CTA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -61,6 +61,7 @@
         "drupal/mimemail": "^1.0@alpha",
         "drupal/module_filter": "^3.1",
         "drupal/name": "^1.0@RC",
+        "drupal/noreferrer": "^1.7",
         "drupal/openapi": "^1.0",
         "drupal/panelizer": "^4.1",
         "drupal/panels": "^4.3",
@@ -138,6 +139,9 @@
             },
             "drupal/panels": {
                 "bootstrap Warning: array_search() expects parameter":"https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
+            },
+            "drupal/linkit": {
+                "linkit popup open in new window not saving changes":"patches/linkit_target_value_zero_3.patch"
             }
         },
         "installer-types": [

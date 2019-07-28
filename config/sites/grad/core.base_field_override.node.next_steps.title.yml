@@ -1,0 +1,20 @@
+uuid: f70794aa-e686-4fad-bc11-8889ac845972
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.next_steps
+_core:
+  default_config_hash: Z9duukqxEF6m1lG86c0mkcfrs_HkD7Y6DB6xF4ynhTw
+id: node.next_steps.title
+field_name: title
+entity_type: node
+bundle: next_steps
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

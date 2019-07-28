@@ -47,14 +47,16 @@
             </li>
           {% endfor %}
           <li>
-            <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8" class="search">
+            {{ attach_library('cu2019_grad/search-autocomplete') }}
+            <form action="//search.creighton.edu/s/search.html" method="get" accept-charset="UTF-8" class="search">
+              <input type="hidden" name="collection" value="creighton-search">
               <div class="form-el">
-                <label for="edit-keywords">Keywords</label>
-                <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text" placeholder="Search">
+                <label for="search-keywords">Keywords</label>
+                <input type="text" id="search-keywords" name="query" value="" size="30" maxlength="128" class="form-text" placeholder="Search">
               </div>
               <div class="form-btn">
-                <button data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="btn-secondary js-form-submit form-submit">
-                  <span class="fas fa-search"></span>
+                <button type="submit" id="search-submit" class="btn-secondary" aria-label="Submit Creighton Search">
+                  <span class="icon icon-search"></span>
                   <span class="sr-only">Search</span>
                 </button>
               </div>

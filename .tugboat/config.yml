@@ -2,27 +2,31 @@ services:
 
   # What to call the service hosting the site.
   php:
-    visualdiffs:
-      # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
-      # Check some pages using the default options
-      - /
-      - /residencies-fellowships
-      - /about
-      - /residencies-fellowships/frequently-asked-questions
-      - /creighton_profiles
-      - /about/creighton-university-arizona-health-education-alliance
-      - /profile
-      - /profile/shaghayegh-abdollahi-md
-      - /news
-      - /spotlight
-      - /node/7171
-      - /about/graduate-medical-education-office
-      - /about/creighton-university-arizona-health-education-alliance
-      - /residencies-fellowships
-      - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
+
+#    visualdiffs:
+#      # TODO: These are specific to alliance. Would there be a way to import site specific urls?
+#      # SEE: https://docs.tugboat.qa/configuring-tugboat/#visual-diffs
+#      # Check some pages using the default options
+#      - /
+#      - /residencies-fellowships
+#      - /about
+#      - /residencies-fellowships/frequently-asked-questions
+#      - /creighton_profiles
+#      - /about/creighton-university-arizona-health-education-alliance
+#      - /profile
+#      - /profile/shaghayegh-abdollahi-md
+#      - /news
+#      - /spotlight
+#      - /node/7171
+#      - /about/graduate-medical-education-office
+#      - /about/creighton-university-arizona-health-education-alliance
+#      - /residencies-fellowships
+#      - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
 
     # Use PHP 7.1 with Apache
-    image: tugboatqa/php:7.1-apache
+    # The -stretch label lets us use the old version of this container which doesn't break us ;)
+    # But it's not static so it will probably still break in the future
+    image: tugboatqa/php:7.1-apache-stretch
 
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
@@ -36,7 +40,8 @@ services:
     # A set of commands to run while building this service
     commands:
 
-      # Commands that set up the basic preview infrastructure
+      # Commands that set up the basic preview infrastructure as well as system and Drupally things
+      # shared across all websites
       init:
         # CU: Things needed to set up the LAMP stack
 
@@ -49,6 +54,7 @@ services:
         - docker-php-ext-configure gd --enable-gd-native-ttf --with-freetype-dir=/usr/include/freetype2 --with-png-dir=/usr/include --with-jpeg-dir=/usr/include
         #- docker-php-ext-install bz2 dom filter gd hash json opcache pdo pdo_mysql session simplexml sodium spl tokenizer xml
         - docker-php-ext-install bz2 gd opcache pdo_mysql
+
         # CU: Our own custom php tweaks
         - cp "${TUGBOAT_ROOT}/.tugboat/php.ini" /usr/local/etc/php/conf.d/creighton.ini
 
@@ -63,6 +69,33 @@ services:
         # repository, change that here. This example links /web to the docroot
         - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
 
+        # Use the tugboat-specific Drupal settings
+        - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
+
+        # Install/update packages managed by composer, including drush
+        - composer install --no-ansi
+
+        # Our baseline is our defaulty Acquia setup
+        - ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+
+        # Generate a unique hash_salt to secure the site
+        - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
+
+        # Copy the files directory from an external server. The public
+        # SSH key found in the Tugboat Repository configuration must be
+        # copied to the external server in order to use rsync over SSH.
+        - mkdir -p "${DOCROOT}/sites/default/files"
+        - mkdir -p "${DOCROOT}/sites/default/files-private/temp"
+
+        # Fix settings on /files dir
+        - chown -R www-data:www-data "${DOCROOT}/sites/default/files-private"
+        - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
+
+        - find "${DOCROOT}/sites/default/files-private" -type d -exec chmod 775 {} \;
+        - find "${DOCROOT}/sites/default/files-private" -type f -exec chmod 664 {} \;
+
       # Commands that import files, databases,  or other assets. When an
       # existing preview is refreshed, the build workflow starts here,
       # skipping the init step, because the results of that step will
@@ -70,40 +103,9 @@ services:
       update:
         # CU: Things needed to establish a clean baseline env based on production
 
-        # Use the tugboat-specific Drupal settings
-        - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
 
-        # Generate a unique hash_salt to secure the site
-        - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
-
-        # Install/update packages managed by composer, including drush
-        - composer install --no-ansi
-
-        # Have BLT setup the DB and such.
-        #- yes | ${TUGBOAT_ROOT}/vendor/bin/blt setup
-
-        # Copy the files directory from an external server. The public
-        # SSH key found in the Tugboat Repository configuration must be
-        # copied to the external server in order to use rsync over SSH.
-        - mkdir -p "${DOCROOT}/sites/default/files"
-
-        # CU: absolute ugly workaround for the fact that Acquia has certain file
-        # locations somehow hard coded in our config, against our will. FUD.
-        # We are not able to set the value of $settings['file_temporary_path']
-        # in any of our settings.php files for some reason.
-        - mkdir -p "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/temp"
-        - mkdir -p "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
-        - chmod 775 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/temp"
-        - chmod 775 "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu/private/files"
-        - chown -R www-data:www-data "${DOCROOT}/sites/mother-site.drupal8-dev.creighton.edu"
-
-        # Fix settings on /files dir
-        - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
-        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
-        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
-
-        # Runt hrough extra steps in the build script.
-        - ${TUGBOAT_ROOT}/.tugboat/scripts/php-update.sh
+        # Site alias specific build steps
+        - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
 
         # Alternatively, another common practice is to use the
         # stage_file_proxy Drupal module. This module lets Drupal serve
@@ -121,13 +123,29 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        # Site alias specific build steps
+        - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
+
+        # All sites build steps
+
+        # Any rsync done in the build script above may break file and directory settings, so them fix again
+        - chown -R www-data:www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 664 {} \;
+
         # CU: Things needed when updating code/config
         # CU TODO: Do we want to --no-dev flag on this composer install?
         - composer install --no-ansi
         - drush -r "${DOCROOT}" updatedb -y
         - drush -r "${DOCROOT}" config-import -y
+        # Run config import a second time to capture changes from new config splits.
+        - drush -r "${DOCROOT}" config-import -y
         - drush -r "${DOCROOT}" cron -y
         - drush -r "${DOCROOT}" cache-rebuild
+
+        # Site alias specific post-build steps
+        - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-postbuild.sh
+
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli
 
@@ -168,5 +186,3 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
-
-        - ${TUGBOAT_ROOT}/.tugboat/scripts/db-build.sh

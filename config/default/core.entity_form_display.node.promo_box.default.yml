@@ -91,7 +91,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_promo_link: true
   path: true
   promote: true
   status: true

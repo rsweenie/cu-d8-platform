@@ -1,0 +1,14 @@
+uuid: 46be51cc-8a64-4f22-8545-5b0bd640b3b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - menu_link_content
+third_party_settings:
+  lightning_core:
+    description: ''
+id: menu_link_content.tier1
+label: 'Tier 1'
+targetEntityType: menu_link_content
+cache: true

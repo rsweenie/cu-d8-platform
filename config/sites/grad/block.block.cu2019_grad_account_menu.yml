@@ -13,7 +13,7 @@ _core:
 id: cu2019_grad_account_menu
 theme: cu2019_grad
 region: dump
-weight: 8
+weight: 4
 provider: null
 plugin: 'system_menu_block:account'
 settings:

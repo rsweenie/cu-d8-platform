@@ -1,0 +1,11 @@
+uuid: 2ce26d64-4531-4ddf-96b7-1a47895e91f4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sPvbGvVmKlfFj3gWqy4TS29-0Y7B-Bb7RsbexXJ__Gw
+id: next_step
+label: 'Next step'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
