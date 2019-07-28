@@ -1,4 +1,4 @@
-uuid: 31bab3a5-ee4c-4d6b-bff7-64f7bb67ebff
+uuid: e3290612-d8ec-4e94-afa4-1d29f99d3359
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_media_caption
-field_name: field_media_caption
+id: paragraph.field_image_video_caption
+field_name: field_image_video_caption
 entity_type: paragraph
 type: string_long
 settings:

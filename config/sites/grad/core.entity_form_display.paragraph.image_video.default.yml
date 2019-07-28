@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.paragraph.image_video.field_media_asset
-    - field.field.paragraph.image_video.field_media_caption
-    - field.field.paragraph.image_video.field_media_type
-    - field.field.paragraph.image_video.field_media_vid_id
+    - field.field.paragraph.image_video.field_image_video_file
+    - field.field.paragraph.image_video.field_image_video_caption
+    - field.field.paragraph.image_video.field_image_video_type
+    - field.field.paragraph.image_video.field_image_video_vid_id
     - paragraphs.paragraphs_type.image_video
   module:
     - entity_browser
@@ -54,4 +54,8 @@ content:
     region: content
 hidden:
   created: true
+  field_image_video_caption: true
+  field_image_video_file: true
+  field_image_video_type: true
+  field_image_video_vid_id: true
   status: true
