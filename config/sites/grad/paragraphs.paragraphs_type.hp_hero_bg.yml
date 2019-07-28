@@ -1,0 +1,11 @@
+uuid: 809717a9-c355-4ead-9d95-813925cafaee
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: E3zu4y74yOJL4ik4yhZ1yUjX-iZuthh8-y745-LtaD8
+id: hp_hero_bg
+label: 'HP Hero Background'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

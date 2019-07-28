@@ -1,0 +1,66 @@
+uuid: 9ecc7051-3b1a-4ed4-b7df-f00ea8e5a76f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hp_hero.field_hp_hero_bg
+    - field.field.paragraph.hp_hero.field_hp_hero_cta
+    - field.field.paragraph.hp_hero.field_hp_hero_heading
+    - field.field.paragraph.hp_hero.field_hp_hero_sub_heading
+    - paragraphs.paragraphs_type.hp_hero
+  module:
+    - link
+    - paragraphs
+_core:
+  default_config_hash: 85dQivJrkHMWE0njoRKHJpy7US5errhAPwMZnL2idu0
+id: paragraph.hp_hero.default
+targetEntityType: paragraph
+bundle: hp_hero
+mode: default
+content:
+  field_hp_hero_bg:
+    type: paragraphs
+    weight: 4
+    settings:
+      title: Background
+      title_plural: Backgrounds
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: hp_hero_bg
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_hp_hero_cta:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_hp_hero_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hp_hero_sub_heading:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
