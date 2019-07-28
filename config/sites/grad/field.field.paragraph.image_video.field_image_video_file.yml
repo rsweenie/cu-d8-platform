@@ -1,14 +1,14 @@
-uuid: 16f76680-0c09-48d8-9793-9ccc50b55103
+uuid: f2041bd3-b488-4dca-8575-55737471a51d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_media_asset
+    - field.storage.paragraph.field_image_video_file
     - paragraphs.paragraphs_type.image_video
   module:
     - image
-id: paragraph.image_video.field_media_asset
-field_name: field_media_asset
+id: paragraph.image_video.field_image_video_file
+field_name: field_image_video_file
 entity_type: paragraph
 bundle: image_video
 label: 'Media Asset'

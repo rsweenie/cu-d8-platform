@@ -1,12 +1,12 @@
-uuid: d083a2b2-6ef1-402f-a90e-6ef38032969a
+uuid: fa3d7f0f-0d97-4da2-872a-ecb4663d7f2a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_media_vid_id
+    - field.storage.paragraph.field_image_video_vid_id
     - paragraphs.paragraphs_type.image_video
-id: paragraph.image_video.field_media_vid_id
-field_name: field_media_vid_id
+id: paragraph.image_video.field_image_video_vid_id
+field_name: field_image_video_vid_id
 entity_type: paragraph
 bundle: image_video
 label: 'Video ID (If Video)'

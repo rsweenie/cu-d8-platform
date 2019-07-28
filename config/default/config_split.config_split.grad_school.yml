@@ -48,6 +48,7 @@ blacklist:
   - 'field.field.paragraph.quote.*'
   - 'field.storage.paragraph.field_fwp_*'
   - 'field.storage.paragraph.field_hp_hero_*'
+  - 'field.storage.paragraph.field_image_video_*'
   - 'field.storage.node.field_interior_page_*'
   - 'field.storage.node.field_landing_page_*'
   - 'field.storage.node.field_next_steps_*'
