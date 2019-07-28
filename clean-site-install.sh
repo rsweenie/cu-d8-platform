@@ -1,9 +1,6 @@
 #!/bin/bash
 # Rub bare site install
 
-echo 'Please enter the name of the site you would like to copy files from (alliance, hrnew): '
-read site_name
-
 echo 'Please select the local enviroment you are using (vagrant, lando): '
 devoptions=('vagrant' 'lando')
 declare local
@@ -20,7 +17,18 @@ do
     esac
 done
 
-echo 'Please select the site environment you want to use (dev, live, test): '
+if [[ $local = "lando" ]]
+then
+    local=$local
+elif [[ $local = "vagrant" ]]
+then
+    local=""
+fi
+
+echo 'Please enter the name of the site you would like to copy files from (alliance, hrnew): '
+read site_name
+
+echo 'Please select the site environment you want to use (live, test, dev): '
 options=('01live' '01test' '01dev')
 declare env
 select option in "${options[@]}"
@@ -35,14 +43,6 @@ do
             ;;
     esac
 done
-
-if [[ $local = "lando" ]]
-then
-    local=$local
-elif [[ $local = "vagrant" ]]
-then
-    local=""
-fi
 
 site_alias="@$site_name.$env"
 
