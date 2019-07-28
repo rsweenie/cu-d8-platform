@@ -102,12 +102,6 @@ AddEncoding gzip svgz
   # downloaded.
   RewriteRule "/\.|^\.(?!well-known/)" - [F]
 
-  # Redirect HTTP to HTTPS
-  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} 01live [NC] # only prod
-  RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
-
   # If your site can be accessed both with and without the 'www.' prefix, you
   # can use one of the following settings to redirect users to your preferred
   # URL, either WITH or WITHOUT the 'www.' prefix. Choose ONLY one option:
@@ -163,6 +157,8 @@ AddEncoding gzip svgz
   # Copy and adapt this rule to directly execute PHP files in contributed or
   # custom modules or to run another PHP application in the same directory.
   RewriteCond %{REQUEST_URI} !/core/modules/statistics/statistics.php$
+  # ACSF requirement: allow access to apc_rebuild.php.	
+  RewriteCond %{REQUEST_URI} !/sites/g/apc_rebuild.php$
   # Deny access to any other PHP files that do not match the rules above.
   # Specifically, disallow autoload.php from being served directly.
   RewriteRule "^(.+/.*|autoload)\.php($|/)" - [F]

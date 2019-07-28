@@ -1,0 +1,6 @@
+bundle: cu
+required:
+  - core.entity_form_display.paragraph.next_step.default
+  - core.entity_view_display.paragraph.next_step.default
+  - field.field.paragraph.next_step.field_next_step_icon
+  - field.field.paragraph.next_step.field_next_step_link

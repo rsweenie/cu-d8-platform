@@ -1,0 +1,22 @@
+uuid: f9c7d0c2-3c95-4990-a45c-a6ddd6d9bd13
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+_core:
+  default_config_hash: vrD2OiX7PpKaay11OfnntvRdzX7ggUw3dpiubP4mg40
+id: paragraph.field_hp_hero_bg_img
+field_name: field_hp_hero_bg_img
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

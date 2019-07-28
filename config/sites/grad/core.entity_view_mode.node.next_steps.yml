@@ -1,0 +1,16 @@
+uuid: 196724c2-3de4-4cf5-a1fc-cbfb9361669d
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+_core:
+  default_config_hash: KPmUG-0SuPFPn5UUp4gulgzV2jB1O0GaOpc1A9CHS9s
+id: node.next_steps
+label: 'Next Steps'
+targetEntityType: node
+cache: true

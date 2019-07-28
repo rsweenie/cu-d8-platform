@@ -52,10 +52,10 @@
       {# { content } #}
       {% include '@cu2019_grad/components/image-video.html.twig' with {
         'wrapper': 'section',
-        'media_type': content.field_media_type['#items'].getString(),
-        'image': content.field_media_asset,
-        'video_id': content.field_media_vid_id.0,
-        'caption': content.field_media_caption.0
+        'media_type': content.field_image_video_type['#items'].getString(),
+        'image': content.field_image_video_file,
+        'video_id': content.field_image_video_vid_id.0,
+        'caption': content.field_image_video_caption.0
       } %}
     {% endblock %}
   </div>

@@ -10,9 +10,17 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    font-family: $headingFF;
+
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+}
+
+h1 {
+  font-family: $copyFF;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: $headingFF;
 }
 // Each of our headings will have the same styles applied to the class version
 // this way our heading tag can always follow the semantic version, while the
@@ -23,21 +31,23 @@ h1, .h1 {
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    font-size: 2.5em;
-    line-height: 1.25;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: (47 / 50) * 1em;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    text-transform: uppercase;
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     @media #{$mediaMd} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        font-size: 3em;
+        font-size: 50px;
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
     @media #{$mediaLg} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -56,7 +66,7 @@ h2, .h2 {
     font-size: 1.75em;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     @media #{$mediaMd} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -66,7 +76,7 @@ h2, .h2 {
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
     @media #{$mediaLg} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -76,7 +86,7 @@ h2, .h2 {
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
     @media #{$mediaToggleHeader} {
         &.ph {
             padding: 0 #{$gutter}rem;
@@ -92,7 +102,7 @@ h3, .h3 {
     font-size: 1.5em;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     @media #{$mediaMd} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -102,7 +112,7 @@ h3, .h3 {
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
     @media #{$mediaLg} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -112,7 +122,7 @@ h3, .h3 {
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
     aside & {
         font-size: 1.125em;
 
@@ -131,7 +141,7 @@ h4, .h4 {
     font-size: 1.25em;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     @media #{$mediaMd} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -141,7 +151,7 @@ h4, .h4 {
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
     @media #{$mediaLg} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -151,7 +161,7 @@ h4, .h4 {
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
     aside & {
         font-size: 1em;
 
@@ -170,7 +180,7 @@ h5, .h5 {
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     text-transform: uppercase;
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     aside & {
         font-size: 1em;
 

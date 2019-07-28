@@ -1,9 +1,0 @@
-uuid: 278b3056-f38c-4437-8b7b-455934f3750d
-langcode: en
-status: true
-dependencies: {  }
-id: image_video
-label: Image/Video
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

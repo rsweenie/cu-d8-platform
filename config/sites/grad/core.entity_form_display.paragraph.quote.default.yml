@@ -1,0 +1,78 @@
+uuid: ee5578c8-eaa8-42f2-a004-1a18804f0d12
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.quote.field_quote_background_area
+    - field.field.paragraph.quote.field_quote_faculty_link
+    - field.field.paragraph.quote.field_quote_full_name
+    - field.field.paragraph.quote.field_quote_image
+    - field.field.paragraph.quote.field_quote_quote
+    - field.field.paragraph.quote.field_quote_title
+    - paragraphs.paragraphs_type.quote
+  module:
+    - entity_browser
+    - link
+    - name
+    - text
+id: paragraph.quote.default
+targetEntityType: paragraph
+bundle: quote
+mode: default
+content:
+  field_quote_background_area:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_quote_faculty_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_quote_full_name:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_quote_image:
+    type: entity_browser_file
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      field_widget_replace: false
+      selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
+  field_quote_quote:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_quote_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,70 @@
+uuid: 0e245256-419d-46d4-b57e-278a48d83180
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.next_steps.field_next_steps_heading
+    - field.field.node.next_steps.field_next_steps_items
+    - node.type.next_steps
+  module:
+    - paragraphs
+_core:
+  default_config_hash: ES4LpwX5Ah-FmPHv6Di-alLFv1F1TVTu7ItQILVqFMU
+id: node.next_steps.default
+targetEntityType: node
+bundle: next_steps
+mode: default
+content:
+  field_next_steps_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_next_steps_items:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Step
+      title_plural: Steps
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  private: true
+  promote: true
+  publish_on: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true
