@@ -1,4 +1,4 @@
-uuid: b75e42f2-549c-43ab-96d8-c0850f655537
+uuid: b1363893-e845-41a5-856c-d729cc1511ce
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_media_type
-field_name: field_media_type
+id: paragraph.field_image_video_type
+field_name: field_image_video_type
 entity_type: paragraph
 type: list_string
 settings:
