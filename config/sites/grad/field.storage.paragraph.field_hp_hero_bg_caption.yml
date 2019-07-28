@@ -1,0 +1,27 @@
+uuid: 14865a42-7c18-45e6-b0a8-cb28d87e6e98
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: jOWYts3p09Duu5s7KKT5u2I5witEHQ2vV306_qSp24w
+id: paragraph.field_hp_hero_bg_caption
+field_name: field_hp_hero_bg_caption
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

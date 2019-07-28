@@ -1,0 +1,24 @@
+uuid: f9958d7f-9082-44bd-bec9-ce933b4a7d96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.interior_page
+  module:
+    - text
+_core:
+  default_config_hash: FdtGjxDQoVejnbkWIf9uM9UhwNyQPr3wk3wBHH5LZZM
+id: node.interior_page.body
+field_name: body
+entity_type: node
+bundle: interior_page
+label: Summary
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

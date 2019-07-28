@@ -1,0 +1,11 @@
+uuid: 824f9d81-f9aa-4843-97f2-d40bee83f56d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IJ5Q-fapmEkCkJvF7F-FSYb7MumYDF-ntaDz9kV0oBM
+id: next_steps_collection
+label: 'Next Steps Collection'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
