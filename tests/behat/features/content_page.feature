@@ -14,17 +14,17 @@ Feature: Content Page
   Scenario: Un/publish
     And I press "Scheduling options"
     Then I fill in "edit-publish-on-0-value-date" with "2019-11-23"
-    And I fill in "edit-publish-on-0-value-time" with "20:22:45"
+    And I fill in "edit-publish-on-0-value-time" with "12:22:45"
     Then I fill in "edit-unpublish-on-0-value-date" with "2019-11-23"
-    And I fill in "edit-unpublish-on-0-value-time" with "20:23:45"
+    And I fill in "edit-unpublish-on-0-value-time" with "12:23:45"
     # save the content
     And I press "Save"
     #verify
     Then I go to "/admin/content/scheduled"
     Then I should see "title"
     And I should see "Content Page"
-    And I should see "Sat, 11/23/2019 - 20:22"
-    And I should see "Sat, 11/23/2019 - 20:23"
+    And I should see "Sat, 11/23/2019 - 06:22"
+    And I should see "Sat, 11/23/2019 - 06:23"
 
   @api @javascript @375963940 @374991306
   Scenario: create/edit content page
