@@ -1,5 +1,5 @@
 #!/bin/bash
-# Rub bare site install
+# Run bare site install
 set -e
 echo 'Please select the local development environment you are using (vagrant, lando): '
 devoptions=('vagrant' 'lando')
