@@ -1,0 +1,26 @@
+uuid: 5e74114e-783c-44c8-ae91-c77d2c206d61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.formatted_text.field_formatted_text_body
+    - paragraphs.paragraphs_type.formatted_text
+  module:
+    - text
+id: paragraph.formatted_text.default
+targetEntityType: paragraph
+bundle: formatted_text
+mode: default
+content:
+  field_formatted_text_body:
+    weight: 0
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+hidden:
+  created: true
+  status: true
