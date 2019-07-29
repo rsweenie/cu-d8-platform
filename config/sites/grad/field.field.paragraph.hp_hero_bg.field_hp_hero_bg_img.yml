@@ -1,0 +1,23 @@
+uuid: ef1654ba-803c-4766-92c1-c23f1b6c2a2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hp_hero_bg_img
+    - paragraphs.paragraphs_type.hp_hero_bg
+_core:
+  default_config_hash: xjlOA_2p2M1s6ZrgpyslAED-uietxgCF_OoakRMAnck
+id: paragraph.hp_hero_bg.field_hp_hero_bg_img
+field_name: field_hp_hero_bg_img
+entity_type: paragraph
+bundle: hp_hero_bg
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings: {  }
+field_type: entity_reference

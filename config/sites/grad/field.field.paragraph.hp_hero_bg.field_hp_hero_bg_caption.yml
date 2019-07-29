@@ -1,0 +1,21 @@
+uuid: e06960d3-1035-47de-abcb-4834448df8c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hp_hero_bg_caption
+    - paragraphs.paragraphs_type.hp_hero_bg
+_core:
+  default_config_hash: k8GAEuuo70i7yWNqOso4Xy2ikASjXbXD5y_6FdAqVPw
+id: paragraph.hp_hero_bg.field_hp_hero_bg_caption
+field_name: field_hp_hero_bg_caption
+entity_type: paragraph
+bundle: hp_hero_bg
+label: 'Caption (line 1)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

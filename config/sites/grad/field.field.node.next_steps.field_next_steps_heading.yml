@@ -1,0 +1,23 @@
+uuid: 2483d6d5-4cd9-46b7-b530-36f049b3753c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_next_steps_heading
+    - node.type.next_steps
+_core:
+  default_config_hash: VYfxu8TQLH-veJytj_EngMVtc0TXTkrdVBkET1_CYJ4
+id: node.next_steps.field_next_steps_heading
+field_name: field_next_steps_heading
+entity_type: node
+bundle: next_steps
+label: Heading
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Let''s take the next steps together'
+default_value_callback: ''
+settings: {  }
+field_type: string

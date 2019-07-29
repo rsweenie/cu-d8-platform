@@ -1,0 +1,26 @@
+uuid: cdfaf0b3-42ff-431b-a7ea-998e32efb3f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: gL1Gc0c7mOKtvzn-hdckfhpbsq1JUDDFBzq2Fy5Rrwg
+id: paragraph.field_next_steps_collection
+field_name: field_next_steps_collection
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
