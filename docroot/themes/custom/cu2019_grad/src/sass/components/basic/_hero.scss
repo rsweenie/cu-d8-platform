@@ -7,7 +7,8 @@
     using a <header> in the <main id="content"> tag.
 
 \*  --------------------------------------------------------------------------  */
-.node__content > header {
+.node__content > header,
+header.hp_header {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
 
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -315,4 +316,67 @@
     }
 
     \*  --------------------------------------------------------------------------  */
+}
+
+header.hp_header {
+  position: relative;
+}
+
+.hp_header_tag {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  > div {
+    max-width: $siteWMx;
+    margin: 0 auto;
+
+    @each $q in $siteWQueryList {
+        $i: index($siteWQueryList, $q);
+
+        @if $i == 1 {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            width: nth($siteWList, $i);
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        } @else {
+            @media #{$q} {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                width: nth($siteWList, $i);
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+        }
+    }
+
+    > div {
+      max-width: 545px;
+      margin: 0 25px;
+      padding: 50px;
+      background: rgba($secondary,.83);
+      color: $white;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .field--name-field-hp-hero-sub-heading {
+      font-size: 21px;
+      line-height: 1em;
+      text-transform: uppercase;
+
+      @media #{$mediaFullHeader} {
+        font-size: 35px;
+      }
+    }
+  }
 }
