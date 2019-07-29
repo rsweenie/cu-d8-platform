@@ -10,7 +10,6 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $variables['par_id'] = $paragraph->id();
   $variables['par_type'] = $paragraph->getType();
-  $variables['meh'] = "MEHHHH";
 
   if ($paragraph->hasField('field_fwp_color') && !$paragraph->field_fwp_color->isEmpty()) {
     $variables['bg_style'] = $paragraph->get('field_fwp_color')->getString();
@@ -22,5 +21,9 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
         $variables['overlay'] = 'bg-grey';
         break;
     }
+  }
+
+  if ($paragraph->hasField('field_next_step_icon') && !$paragraph->field_next_step_icon->isEmpty()) {
+    $variables['icon'] = $paragraph->get('field_next_step_icon')->getString();
   }
 }

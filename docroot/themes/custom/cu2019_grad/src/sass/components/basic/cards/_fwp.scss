@@ -22,6 +22,12 @@
     z-index: 1;
   }
 
+  &.bg-grey {
+    &:before {
+      background: rgba($black,.82);
+    }
+  }
+
   h3 {
     font-size: 30px;
     @include letterSpacing(50);

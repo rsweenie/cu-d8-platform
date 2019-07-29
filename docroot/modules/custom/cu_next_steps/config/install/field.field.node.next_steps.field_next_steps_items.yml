@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_next_steps_items
+    - node.type.next_steps
+    - paragraphs.paragraphs_type.next_step
+  module:
+    - entity_reference_revisions
+id: node.next_steps.field_next_steps_items
+field_name: field_next_steps_items
+entity_type: node
+bundle: next_steps
+label: Steps
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      next_step: next_step
+    target_bundles_drag_drop:
+      accordion:
+        weight: 7
+        enabled: false
+      featured_content_item:
+        weight: 8
+        enabled: false
+      full_width_photo:
+        weight: 9
+        enabled: false
+      ief_link:
+        weight: 10
+        enabled: false
+      image_video:
+        weight: 11
+        enabled: false
+      next_step:
+        enabled: true
+        weight: 12
+field_type: entity_reference_revisions

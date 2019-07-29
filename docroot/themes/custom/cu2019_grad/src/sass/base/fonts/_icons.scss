@@ -1,0 +1,162 @@
+@font-face {
+	font-family: "cu_icons";
+	src: url('../fonts/icons/cu_icons.eot');
+	src: url('../fonts/icons/cu_icons.eot?#iefix') format('eot'),
+		url('../fonts/icons/cu_icons.woff2') format('woff2'),
+		url('../fonts/icons/cu_icons.woff') format('woff'),
+		url('../fonts/icons/cu_icons.ttf') format('truetype'),
+		url('../fonts/icons/cu_icons.svg#cu_icons') format('svg');
+}
+
+.icon:before {
+	font-family: "cu_icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.icon-apply:before {
+	content: "\E001";
+}
+
+.icon-ask-bubble:before {
+	content: "\E002";
+}
+
+.icon-blog:before {
+	content: "\E003";
+}
+
+.icon-checkbox-checked:before {
+	content: "\E004";
+}
+
+.icon-checkbox-unchecked:before {
+	content: "\E005";
+}
+
+.icon-chevron-right-double:before {
+	content: "\E006";
+}
+
+.icon-chevron-right:before {
+	content: "\E007";
+}
+
+.icon-chevron-up:before {
+	content: "\E008";
+}
+
+.icon-close-window-filled:before {
+	content: "\E009";
+}
+
+.icon-close-window:before {
+	content: "\E00A";
+}
+
+.icon-contact:before {
+	content: "\E00B";
+}
+
+.icon-envelope:before {
+	content: "\E00C";
+}
+
+.icon-event-calendar:before {
+	content: "\E00D";
+}
+
+.icon-expand-arrow:before {
+	content: "\E00E";
+}
+
+.icon-filter:before {
+	content: "\E00F";
+}
+
+.icon-forward:before {
+	content: "\E010";
+}
+
+.icon-google-translate:before {
+	content: "\E011";
+}
+
+.icon-help:before {
+	content: "\E012";
+}
+
+.icon-hybrid:before {
+	content: "\E013";
+}
+
+.icon-location-thin:before {
+	content: "\E014";
+}
+
+.icon-location:before {
+	content: "\E015";
+}
+
+.icon-news:before {
+	content: "\E016";
+}
+
+.icon-off-campus:before {
+	content: "\E017";
+}
+
+.icon-on-campus:before {
+	content: "\E018";
+}
+
+.icon-online:before {
+	content: "\E019";
+}
+
+.icon-phone:before {
+	content: "\E01A";
+}
+
+.icon-right:before {
+	content: "\E01B";
+}
+
+.icon-search-more:before {
+	content: "\E01C";
+}
+
+.icon-search:before {
+	content: "\E01D";
+}
+
+.icon-social-facebook:before {
+	content: "\E01E";
+}
+
+.icon-social-instagram:before {
+	content: "\E01F";
+}
+
+.icon-social-linkedin:before {
+	content: "\E020";
+}
+
+.icon-social-twitter:before {
+	content: "\E021";
+}
+
+.icon-social-youtube:before {
+	content: "\E022";
+}
+
+.icon-tag:before {
+	content: "\E023";
+}

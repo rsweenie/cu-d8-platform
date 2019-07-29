@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.next_steps_collection.field_next_steps_collection
+    - paragraphs.paragraphs_type.next_steps_collection
+id: paragraph.next_steps_collection.default
+targetEntityType: paragraph
+bundle: next_steps_collection
+mode: default
+content:
+  field_next_steps_collection:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.creighton_image_browser
+    - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_caption
+    - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_caption2
+    - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_img
+    - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_link
+    - paragraphs.paragraphs_type.hp_hero_bg
+  module:
+    - entity_browser
+    - link
+id: paragraph.hp_hero_bg.default
+targetEntityType: paragraph
+bundle: hp_hero_bg
+mode: default
+content:
+  field_hp_hero_bg_caption:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hp_hero_bg_caption2:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hp_hero_bg_img:
+    type: entity_browser_entity_reference
+    weight: 0
+    settings:
+      entity_browser: creighton_image_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hp_hero_bg_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

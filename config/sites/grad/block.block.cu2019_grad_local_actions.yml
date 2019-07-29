@@ -8,8 +8,8 @@ _core:
   default_config_hash: hWp5vDK5Ok8Q3zL_EeNVE9dqvbVwpkoOOC4GvzUdmXo
 id: cu2019_grad_local_actions
 theme: cu2019_grad
-region: dump
-weight: -13
+region: content
+weight: -12
 provider: null
 plugin: local_actions_block
 settings:
