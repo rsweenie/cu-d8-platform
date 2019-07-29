@@ -47,5 +47,5 @@ done
 site_alias="@$site_name.$env"
 
 # Does all the things from the selected Acquia site to the local environment
-eval $local drush sql-drop -y; $local drush sql:sync $site_alias @self -y; $local drush rsync $site_alias:%files @self:%files -y; $local composer install; $local drush updatedb -y; $local drush cim -y; $local drush cron; $local drush cr; $local drush uli 
+eval $local drush sql-drop -y; $local drush sql:sync $site_alias @self -y; $local drush rsync $site_alias:%files @self:%files -y; $local composer install; $local drush updatedb -y; $local drush cim -y; $local drush cr; $local drush cron; $local drush uli 
 
