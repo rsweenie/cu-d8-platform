@@ -23,8 +23,8 @@ Feature: Content Page
     Then I go to "/admin/content/scheduled"
     Then I should see "title"
     And I should see "Content Page"
-    And I should see "Sat, 11/23/2019 - 06:22"
-    And I should see "Sat, 11/23/2019 - 06:23"
+    And I should see "Sat, 11/23/2019 - 12:22"
+    And I should see "Sat, 11/23/2019 - 12:23"
 
   @api @javascript @375963940 @374991306
   Scenario: create/edit content page
