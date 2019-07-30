@@ -11,7 +11,7 @@ _core:
 id: cu2019_grad_headerbackgroundimage
 theme: cu2019_grad
 region: dump
-weight: 0
+weight: -4
 provider: null
 plugin: 'entity_field:node:field_header_background_image'
 settings:

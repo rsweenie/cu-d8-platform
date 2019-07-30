@@ -74,14 +74,14 @@
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        background: linear-gradient(0deg, $accent-4 0%, lighten($accent-4, 7) 100%);
+        background: linear-gradient(0deg, #ffde8c 0%, #ffdf91 100%);
         color: $primary;
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
         &:before {
-          opacity: 0;
+          background: linear-gradient(-45deg, #ffd072 50%, rgba(#ffd072,0) 50%);
         }
     }
 

@@ -1,0 +1,20 @@
+name: 'CU Next Steps'
+description: 'Provides Next Steps content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - entity_reference_revisions
+  - field
+  - field_permissions
+  - lightning_core
+  - link
+  - menu_ui
+  - node
+  - options
+  - panelizer
+  - paragraphs
+  - private_content
+  - scheduler
+  - user
+  - views
+package: Creighton

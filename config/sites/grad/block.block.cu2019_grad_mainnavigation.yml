@@ -13,7 +13,7 @@ _core:
 id: cu2019_grad_mainnavigation
 theme: cu2019_grad
 region: dump
-weight: 2
+weight: -2
 provider: null
 plugin: 'menu_block:main'
 settings:

@@ -54,7 +54,7 @@
       }
     }
 
-    @media #{$mediaXs} {
+    @media #{$mediaMdMax} {
       .row {
         > div {
           &:first-child {
@@ -89,7 +89,7 @@
       }
     }
 
-    @media #{$mediaSm} {
+    @media #{$mediaMd} {
       padding: 108px 0 135px;
 
       &:after {
@@ -109,7 +109,7 @@
     > div {
 
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @media #{$mediaSm} {
+        @media #{$mediaMd} {
           position: relative;
         }
         z-index: 2;

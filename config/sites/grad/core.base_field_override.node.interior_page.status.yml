@@ -1,0 +1,24 @@
+uuid: 7fa4bb4e-3b41-4e3f-9674-085fa8f753d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.interior_page
+_core:
+  default_config_hash: a1LZ-rwiVv4l12w8Ie3PSksdE0mPEvTqScpP1sumM4s
+id: node.interior_page.status
+field_name: status
+entity_type: node
+bundle: interior_page
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

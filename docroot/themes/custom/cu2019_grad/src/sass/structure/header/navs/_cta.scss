@@ -69,7 +69,6 @@
 
 
 .region-mobile-cta {
-  padding-top: 70px;
   @media #{$mediaFullHeader} {
     @include srOnly;
   }

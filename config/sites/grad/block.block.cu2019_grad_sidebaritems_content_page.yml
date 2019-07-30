@@ -12,7 +12,7 @@ _core:
 id: cu2019_grad_sidebaritems_content_page
 theme: cu2019_grad
 region: dump
-weight: 4
+weight: 0
 provider: null
 plugin: 'entity_field:node:field_content_page_sidebar_items'
 settings:

@@ -1,0 +1,58 @@
+uuid: b89219e8-6fb1-435f-8987-75d0bb64a7c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hp_hero.field_hp_hero_bg
+    - field.field.paragraph.hp_hero.field_hp_hero_cta
+    - field.field.paragraph.hp_hero.field_hp_hero_heading
+    - field.field.paragraph.hp_hero.field_hp_hero_sub_heading
+    - paragraphs.paragraphs_type.hp_hero
+  module:
+    - entity_reference_revisions
+    - link
+_core:
+  default_config_hash: RY5sJgJ1zyIv6J6V3CqpyPxkQLVMKAH9DNCCph50CVI
+id: paragraph.hp_hero.default
+targetEntityType: paragraph
+bundle: hp_hero
+mode: default
+content:
+  field_hp_hero_bg:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_hp_hero_cta:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hp_hero_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hp_hero_sub_heading:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

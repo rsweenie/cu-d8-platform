@@ -1,0 +1,23 @@
+uuid: c9b967ab-f7bc-4b49-82eb-0769a94b4cfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_mainmenu_feat_link
+    - system.menu.main
+  module:
+    - link
+id: menu_link_content.main.field_mainmenu_feat_link
+field_name: field_mainmenu_feat_link
+entity_type: menu_link_content
+bundle: main
+label: 'Featured content link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

@@ -13,7 +13,7 @@ _core:
 id: cu2019_grad_views_block__header_alert_block_2
 theme: cu2019_grad
 region: dump
-weight: -4
+weight: -6
 provider: null
 plugin: 'views_block:header_alert-block_2'
 settings:
