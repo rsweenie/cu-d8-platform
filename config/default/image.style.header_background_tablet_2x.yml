@@ -1,0 +1,17 @@
+uuid: b38ec2ea-ecb1-4e3f-afa6-06fc93ada0f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: header_background_tablet_2x
+label: 'Header Background tablet 2x'
+effects:
+  25847c3c-3fe0-4bac-a3f5-e5b0789e314e:
+    uuid: 25847c3c-3fe0-4bac-a3f5-e5b0789e314e
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1536
+      height: 384
+      crop_type: focal_point

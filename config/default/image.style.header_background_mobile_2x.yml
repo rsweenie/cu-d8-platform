@@ -1,0 +1,17 @@
+uuid: a8b5e0ae-65c0-4a09-8672-efda594387b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: header_background_mobile_2x
+label: 'Header Background mobile 2x'
+effects:
+  71254dad-e5f4-4542-9e71-0ee394812ca9:
+    uuid: 71254dad-e5f4-4542-9e71-0ee394812ca9
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 240
+      crop_type: focal_point

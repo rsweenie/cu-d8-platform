@@ -1,0 +1,17 @@
+uuid: cfc9f95d-cc21-4044-a56a-95c133ee1707
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: header_background_large_tablet_1x
+label: 'Header Background large tablet 1x'
+effects:
+  6dcc90cf-e684-47ef-8e59-a199610f9d39:
+    uuid: 6dcc90cf-e684-47ef-8e59-a199610f9d39
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1050
+      height: 263
+      crop_type: focal_point
