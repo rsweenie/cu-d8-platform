@@ -85,6 +85,11 @@
 nav.mega {
     font-family: $headingFF;
 
+    .menu-item {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
     @media #{$mediaFullHeader} {
       background-color: transparent;
       font-size: 19px;
@@ -511,7 +516,7 @@ input[type="checkbox"] {
 
 @media #{$mediaToggleHeader} {
     .region-primary-menu {
-        
+
     }
 
     nav.mega {
