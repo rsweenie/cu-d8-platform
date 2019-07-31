@@ -1,0 +1,618 @@
+/*  --------------------------------------------------------------------------  *\
+
+    MAIN NAVIGATION - WITH DROPDOWNS
+
+\*  --------------------------------------------------------------------------  */
+// LABEL
+.toggle {
+    // VARIABLES
+    $barH: 2px;
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION)
+    @include position(relative, 100);
+    // BOX SIZING (DISPLAY, MARGIN, PADDING, WIDTH, HEIGHT)
+    width: 52px;
+    //height: #{$barH * 6};
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    background: #f0f5fa;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER
+    cursor: pointer;
+    // TRANSITIONS AND ANIMATIONS
+
+    &:after {
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 100%;
+
+      content: "";
+      background: $secondary;
+      z-index: 0;
+      @include transition(transform .25s ease-out);
+    }
+
+    .bar {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        display: block;
+        @include position(absolute, 100, (left, top), (50%, 50%), translate(-50%, -50%));
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        height: $barH;
+        width: 18px;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        background: $primary;
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        @include transition(transform .25s);
+        z-index: 1;
+
+        &:nth-child(2) {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            @include transform(translate(-50%, #{$barH * -3}));
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        }
+
+        &:nth-child(3) {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            @include transform(translate(-50%, #{$barH * 2}));
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        }
+    }
+
+    @media #{$mediaFullHeader} {
+        // VARIABLES
+        @include srOnly;
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION)
+        // BOX SIZING (DISPLAY, MARGIN, PADDING, WIDTH, HEIGHT)
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITIONS AND ANIMATIONS)
+    }
+}
+// NAV
+nav.mega {
+    font-family: $headingFF;
+
+    @media #{$mediaFullHeader} {
+      background-color: transparent;
+      font-size: 19px;
+
+        > ul {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            @include flex(flex-end, center, center);
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            font-weight: normal;
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+            /*-----------------------*\
+            The &:first-child is only necessary when used with a utility navigation
+            &:first-child {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                @include transform(translate(0, (#{$gutter * .8}rem)));
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+            \*-----------------------*/
+
+            li > div {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                display: none;
+                @include position(absolute, 100, (left, top), (50%, 100%), translate(-50%, 0));
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                //padding: #{$gutter}rem;
+                min-width: 15rem;
+                width: 100%;
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                background: $white;
+                @include boxShadow(0 1.5rem 1.5rem 0 rgba($black, .225));
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                font-weight: normal;
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                text-align: left;
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+
+            > li {
+                position: static;
+
+                > a {
+                    //margin: #{$gutter * .8rem} 0;
+                    padding: 17px 12px 13px;
+                }
+
+                &:nth-child(-n + 4) {
+                    > a {
+                        @include position(relative, 0);
+                        color: $tertiary;
+
+                        &:before {
+                            // @include position(absolute, 0, (left, top), (50%, 100%), translate(-50%, (#{$gutter * .6}rem)));
+                            // height: 0;
+                            // width: 0;
+                            // border-left: 15px solid transparent;
+                            // border-right: 15px solid transparent;
+                            // border-bottom: 15px solid transparent;
+                            // content: "";
+                        }
+                    }
+
+                    li {
+                        a {
+                          color: $gray2;
+                          text-decoration: none;
+
+                          &:hover {
+                            text-decoration: underline;
+                            color: #019cdb;
+                          }
+                        }
+                    }
+                }
+
+                &:nth-child(n + 5) {
+
+                }
+            }
+
+            ul {
+                @include multicolumn(3, #{$gutter * 2}rem);
+                width: 100%;
+                order: 1;
+                padding: 38px #{$gutter}rem 38px 30px;
+                font-family: $copyFF;
+
+                li {
+                    display: inline-block;
+                    width: 100%;
+                    font-size: 17px;
+
+                    &:nth-child(-n + 2) {
+                        //display: none;
+                    }
+                }
+            }
+
+            .mega_content {
+                @include flex(flex-start, center, center);
+                width: 36%;
+                color: $gray2;
+                background: $accent-1;
+                font-size: 2em;
+                order: 2;
+                font-size: 21px;
+                line-height: (29.4 / 21) * 1em;
+                padding: 38px 30px;
+                font-style: italic;
+
+                a {
+                  font-style: normal;
+                  font-size: 20px;
+                  font-weight: bold;
+                  color: $primary;
+
+                  i {
+                    transition: transform 0.25s;
+                    transform: translateX(10px);
+                  }
+
+                  &:hover {
+                    i {
+                      transform: translateX(15px);
+                    }
+                  }
+                }
+
+                ~ ul {
+                  @include multicolumn(2, #{$gutter * 2}rem);
+                  width: 64%;
+                }
+            }
+
+            label {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                display: none;
+                @include position(absolute, 100, (left, top), (100%, 100%), translate(-50%, -50%));
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                padding: #{$gutter * .4}rem #{$gutter * .6}rem;
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                border: .2rem solid $primary;
+                background: $primary;
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                color: $white;
+                @include fontSize(1.4, 1);
+                font-weight: normal;
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                white-space: nowrap;
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+
+            input[type="checkbox"] {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+                &:focus {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+                    + label {
+                        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                        display: block;
+                        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                    }
+                }
+
+                &:checked {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+                    + label {
+                        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                        display: none;
+                        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                    }
+
+                    ~ div, ~ ul {
+                        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                        //display: block;
+                        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                    }
+                }
+            }
+        }
+
+        a {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            display: block;
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+            @include hover {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                text-decoration: underline;
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+        }
+
+        li {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            @include position(relative, 0);
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+            + li {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+
+            li {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                margin: 0;
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+                + li {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    margin: 0;
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                }
+
+                a {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                }
+            }
+
+            &:hover {
+                // This is on purpose, because focus is given with the toggle of the checkbox
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+                > a:before {
+                    // border-bottom-color: $accent-1 !important;
+                }
+
+                > div {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    @include flex(space-between, stretch, stretch, row nowrap);
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                }
+            }
+        }
+    }
+
+    @media #{$mediaXl} {
+        > ul {
+
+            > li {
+
+                > a {
+                    //margin: #{$gutter * 1.2}rem 0;
+                    //padding: #{$gutter * .4}rem;
+                }
+            }
+        }
+    }
+
+    @media #{$mediaXxl} {
+        > ul {
+
+            > li {
+
+                > a {
+                    //padding: #{$gutter * .4}rem #{$gutter * .8rem};
+                }
+
+            }
+        }
+
+        li {
+          li {
+            + li {
+              white-space: nowrap;
+            }
+          }
+        }
+    }
+}
+// CHECKBOX
+input[type="checkbox"] {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include srOnly;
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    &:checked {
+        // LABEL
+        + .toggle {
+            // VARIABLES
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION)
+            // BOX SIZING (DISPLAY, MARGIN, PADDING, WIDTH, HEIGHT)
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITIONS AND ANIMATIONS)
+            &:after {
+              transform: translateX(-100%);
+            }
+
+            .bar {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                background: $white;
+
+                &:nth-child(1) {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    @include transform(scale(0));
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                }
+
+                &:nth-child(2) {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    @include transform(translate(-50%, -50%) rotate(45deg));
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                }
+
+                &:nth-child(3) {
+                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                    @include transform(translate(-50%, -50%) rotate(-45deg));
+                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+                }
+            }
+        }
+
+        @media #{$mediaToggleHeader} {
+            ~ nav {
+                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+                @include transform(translate(-100%, 0));
+                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+        }
+    }
+}
+
+@media #{$mediaToggleHeader} {
+    .region-primary-menu {
+        
+    }
+
+    nav.mega {
+      background: $secondary;
+      font-size: 18px;
+
+      li {
+        display: flex;
+        padding: 0 13px;
+
+        a{
+          color: $white;
+          padding: 12px 0;
+          flex-grow: 1;
+        }
+
+        ~ li {
+          a {
+            border-top: 1px solid rgba($white,.3);
+          }
+        }
+
+        > div {
+          // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+          @include position(absolute, 100, (left, top), (100%, 0));
+          // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+          width: 100%;
+          height: 100%;
+          // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+          background: $secondary;
+          // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+          // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+          // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+          @include transition(transform .25s);
+
+          .sm_toggle {
+            width: auto;
+            justify-content: flex-start;
+            color: $white;
+            padding: 13px 0;
+            margin: 0 13px;
+            border-bottom: 1px solid rgba($white,.3);
+            font-weight: bold;
+
+            i {
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .sm_toggle {
+      color: $accent-2;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 52px;
+    }
+
+    .mega_content {
+      display: none;
+    }
+
+  input[type="checkbox"] {
+      &:focus {
+          // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+          // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+          // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+          // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+          // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+          // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+          + label {
+              // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+              // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+              // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+              // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+              // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+              text-decoration: underline;
+              // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+          }
+      }
+
+      &:checked {
+          // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+          // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+          // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+          // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+          // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+          // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+          ~ div, ~ ul {
+              // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+              @include transform(translate(-100%, 0));
+              // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+              // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+              // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+              // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+              // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+          }
+      }
+  }
+}
