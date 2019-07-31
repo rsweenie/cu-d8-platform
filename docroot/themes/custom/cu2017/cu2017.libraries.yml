@@ -32,6 +32,7 @@ custom-javascript:
     js/typeahead.bundle.js: {}
     js/typeahead.fb.js: {}
     js/fitty.min.js: {}
+    js/creighton.edu.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
