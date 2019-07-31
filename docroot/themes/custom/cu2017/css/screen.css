@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+/* line 6, ../sass/screen.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,32 +25,36 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
+/* line 27, ../sass/screen.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+/* line 31, ../sass/screen.scss */
 body {
   line-height: 1;
 }
 
+/* line 34, ../sass/screen.scss */
 ol, ul {
   list-style: none;
 }
 
+/* line 37, ../sass/screen.scss */
 blockquote, q {
   quotes: none;
 }
 
+/* line 40, ../sass/screen.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
+/* line 45, ../sass/screen.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-/*# sourceMappingURL=screen.css.map */
