@@ -12,6 +12,18 @@ function cu2019_grad_preprocess_node(&$variables) {
   $variables['breadcrumb_links'] = \Drupal::service('breadcrumb')->build(\Drupal::routeMatch())->getLinks();
   // Uncomment the following to test with empty breadcrumbs.
   //$variables['breadcrumb_links'] = FALSE;
+
+  if ($node->bundle() == 'interior_page') {
+    if ($node->hasField('field_interior_page_side_nav') && !$node->field_interior_page_side_nav->isEmpty()) {
+      $variables['side_nav_type'] = $node->get('field_interior_page_side_nav')->getString();
+      switch ($variables['side_nav_type']) {
+        case 'siblings':
+          // @TODO do we need to make adjustments to the cache tags?
+          $variables['side_nav'] = _cu2019_grad_get_menu_sibling_tree();
+          break;
+      }
+    }
+  }
 }
 
 function cu2019_grad_preprocess_paragraph(&$variables) {
@@ -33,5 +45,72 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
 
   if ($paragraph->hasField('field_next_step_icon') && !$paragraph->field_next_step_icon->isEmpty()) {
     $variables['icon'] = $paragraph->get('field_next_step_icon')->getString();
+  }
+}
+
+// Returns a render array with the sub-tree of the current active link.
+function _cu2019_grad_get_menu_sub_tree($menu_name = 'main') {
+  $menu_tree = \Drupal::menuTree();
+
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+  $currentLinkId = reset($parameters->activeTrail);
+
+  if ($currentLinkId) {
+    $parameters->setRoot($currentLinkId);
+    $parameters->setMinDepth(1);
+    $parameters->setMaxDepth(1);
+    $tree = $menu_tree->load($menu_name, $parameters);
+
+    // Transform the tree using the manipulators you want.
+    $manipulators = array(
+      // Only show links that are accessible for the current user.
+      array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+      // Use the default sorting of menu links.
+      array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+    );
+    $tree = $menu_tree->transform($tree, $manipulators);
+
+    // Finally, build a renderable array.
+    $build = $menu_tree->build($tree);
+
+    // Mark this as being in the special "embedded" region so it's available in
+    // template suggestions.
+    $build['#attributes']['data-region'] = 'embedded';
+
+    return $build;
+  }
+}
+
+// Returns a render array with the sub-tree of the current active link.
+function _cu2019_grad_get_menu_sibling_tree($menu_name = 'main') {
+  $menu_tree = \Drupal::menuTree();
+
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+  $currentLinkId = reset($parameters->activeTrail);
+  $parentLinkId = next($parameters->activeTrail);
+
+  if ($parentLinkId) {
+    $parameters->setRoot($parentLinkId);
+    $parameters->setMinDepth(1);
+    $parameters->setMaxDepth(1);
+    $tree = $menu_tree->load($menu_name, $parameters);
+
+    // Transform the tree using the manipulators you want.
+    $manipulators = array(
+      // Only show links that are accessible for the current user.
+      array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+      // Use the default sorting of menu links.
+      array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+    );
+    $tree = $menu_tree->transform($tree, $manipulators);
+
+    // Finally, build a renderable array.
+    $build = $menu_tree->build($tree);
+
+    // Mark this as being in the special "embedded" region so it's available in
+    // template suggestions.
+    $build['#attributes']['data-region'] = 'embedded';
+
+    return $build;
   }
 }

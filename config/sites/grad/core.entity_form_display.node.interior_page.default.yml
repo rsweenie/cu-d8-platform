@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.interior_page.body
     - field.field.node.interior_page.field_interior_page_content
     - field.field.node.interior_page.field_interior_page_hero_img
+    - field.field.node.interior_page.field_interior_page_side_nav
     - node.type.interior_page
   module:
     - content_moderation
@@ -72,6 +73,12 @@ content:
       open: false
     region: content
     third_party_settings: {  }
+  field_interior_page_side_nav:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   moderation_state:
     type: moderation_state_default
     weight: 13
