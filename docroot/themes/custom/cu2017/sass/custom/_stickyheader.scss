@@ -7,10 +7,15 @@
     margin-top:0;
 }
 
-.sticky-header .header_top_section_menu.hidden-menu{
-    position: fixed;
-    top: 65px;
-    right: 2px;
+
+
+.sticky-header .header_top_section_menu{
+    @media all and (max-width:768px)
+    {
+        position: fixed;
+        top: 65px;
+        right: 2px;
+    }
 }
 
 .sticky-header.toolbar-vertical .header_bg_wrapper {

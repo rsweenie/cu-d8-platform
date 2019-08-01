@@ -35,7 +35,7 @@
       $(window, context).once('sticky')
         .scroll(stickyHeaderAction.makeHeaderSticky.bind(this));
     },
-    getMobileView: function(){
+    getTabletStart: function(){
     return $(creightonEdu.css_breakpoints.tablet_start);
     },
     getToolbarHeight: function () {
@@ -51,21 +51,21 @@
     initStickyHeader: function () {
       //var $header = $(this.elements.headerMain);
       //var toolbarHeight= $('#toolbar-bar').offset().top;
-      //var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
+      var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
       var headerTop = $('.header_top_section').height();
       //var sticky = $header.offset().top;
       //var $content = $(this.elements.content);
-     // var tablet = 768;
+      var tablet = 768;
+      //var tablet = this.getTabletStart();
       //var mobile = parseInt(headerTop + searchBar);
-     //console.log(tablet)
+     console.log(tablet)
 
-
-     //if ($(window).width() < tablet) {
-      // headerTop = searchBar + headerTop;
-      //}
-      //else {
-    //    headerTop = headerTop;
-    //  }
+     if ($(window).width() < tablet) {     
+       headerTop = searchBar + headerTop;
+      }
+      else {
+       headerTop = headerTop;
+      }
 
      //if (window.innerWidth < tablet) {
 //     var huh = mobile;
