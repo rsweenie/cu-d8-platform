@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.creighton_image_browser
+    - entity_browser.browser.media_browser
     - field.field.node.interior_page.body
     - field.field.node.interior_page.field_interior_page_content
     - field.field.node.interior_page.field_interior_page_hero_img
@@ -50,7 +50,7 @@ content:
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: _none
+      default_paragraph_type: formatted_text
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: '0'
@@ -61,15 +61,15 @@ content:
     type: entity_browser_entity_reference
     weight: 1
     settings:
-      entity_browser: creighton_image_browser
+      entity_browser: media_browser
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
-      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
       field_widget_replace: false
+      open: false
     region: content
     third_party_settings: {  }
   moderation_state:
