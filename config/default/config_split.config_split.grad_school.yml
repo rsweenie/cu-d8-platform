@@ -6,7 +6,8 @@ id: grad_school
 label: 'Grad School'
 description: ''
 folder: ../config/sites/grad
-module: {  }
+module:
+  cu2019_grad_util: 0
 theme: {  }
 blacklist:
   - core.entity_view_mode.node.next_steps
