@@ -6,6 +6,14 @@ use Drupal\Component\Utility\Html as HtmlUtility;
 use Drupal\Core\Render\Markup;
 use Drupal\Component\Render\HtmlEscapedText;
 
+function cu2019_grad_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  $variables['breadcrumb_links'] = \Drupal::service('breadcrumb')->build(\Drupal::routeMatch())->getLinks();
+  // Uncomment the following to test with empty breadcrumbs.
+  //$variables['breadcrumb_links'] = FALSE;
+}
+
 function cu2019_grad_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $variables['par_id'] = $paragraph->id();
