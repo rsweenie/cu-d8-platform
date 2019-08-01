@@ -56,3 +56,4 @@ hidden:
   field_news_spotlight_p_link: true
   field_tabbed_accordion: true
   scheduled_publication: true
+  search_api_excerpt: true

@@ -10,6 +10,7 @@ Feature: Featured Content Group
   Scenario: Adding Featured Content Group
     Given I am logged in as a user with the "administrator" role
     And I am on "/node/add/featured_content_group"
+    And I set browser window size to "1920" x "1080"
     #Filling in various information for a Featured Content Group Item
     And I fill in "title[0][value]" with "Testing Featured Content Group"
     And I put "Featured Content Group copy" into CKEditor
