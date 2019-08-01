@@ -1,4 +1,4 @@
-name: 'Landing Page'
+name: 'Landing Page (DEPRECATED)'
 description: 'Provides Landing Page content type and related configuration. '
 type: module
 core: 8.x
