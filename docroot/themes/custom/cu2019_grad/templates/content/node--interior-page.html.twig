@@ -105,7 +105,8 @@
   {% include '@cu2019_grad/components/hero.html.twig' with {
     'heroType': 'interior_page',
     'heroTitle': label,
-    'heroImg': content.field_interior_page_hero_img
+    'heroImg': content.field_interior_page_hero_img,
+    'breadcrumb': breadcrumb_links
   } %}
     {{ content|without('field_interior_page_hero_hl','field_interior_page_hero_img') }}
   </div>
