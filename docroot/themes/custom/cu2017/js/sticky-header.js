@@ -28,13 +28,12 @@
     attach: function (context, settings) {
       var stickyHeaderAction = this.initStickyHeader();
       
-      console.log(settings);
-      var toolbarPresent = settings.toolBar;
+      //console.log(settings);
+      //var toolbarPresent = (settings);
+      //console.log(toolbarPresent);
 
-      $(window, context).once('sticky').on('drupalViewportOffsetChange', function () {
-        $(window).trigger('resize').scroll(stickyHeaderAction.makeHeaderSticky.bind(this));
-      });
-        
+      $(window, context).once('sticky')
+        .scroll(stickyHeaderAction.makeHeaderSticky.bind(this));
     },
     getMobileView: function(){
     return $(creightonEdu.css_breakpoints.tablet_start);
@@ -50,25 +49,41 @@
         $(this.elements.alertsId).height() + $(this.elements.topSearchBar).height();
     },
     initStickyHeader: function () {
-      var $header = $(this.elements.headerMain);
-      var toolbarHeight= $('#toolbar-bar').offset().top;
-      var searchbar = this.getSearchBarHeight();
-      var headerTop = $('.header_top_section').offset().top;
-      var sticky = $header.offset().top;
-      var $content = $(this.elements.content);
-      var mobileView = this.getMobileView();
+      //var $header = $(this.elements.headerMain);
+      //var toolbarHeight= $('#toolbar-bar').offset().top;
+      //var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
+      var headerTop = $('.header_top_section').height();
+      //var sticky = $header.offset().top;
+      //var $content = $(this.elements.content);
+     // var tablet = 768;
+      //var mobile = parseInt(headerTop + searchBar);
+     //console.log(tablet)
 
 
+     //if ($(window).width() < tablet) {
+      // headerTop = searchBar + headerTop;
+      //}
+      //else {
+    //    headerTop = headerTop;
+    //  }
+
+     //if (window.innerWidth < tablet) {
+//     var huh = mobile;
+     // console.log(huh);
+     // } else {
+      //  headerTop = headerTop;
+     // }
+      
       return {
         makeHeaderSticky: function () {
           if (window.pageYOffset > (headerTop)) {
-            $('body').addClass('sticky-header');
-            console.log(mobileView, 'LOL ABE');
+            $('body').addClass('sticky-header');        
            // $('body.front.toolbar-vertical').addClass('responsive-toolbar');
           } else {
             $('body').removeClass('sticky-header');
             //$('body.front.toolbar-vertical').removeClass('responsive-toolbar');
           }
+        
         },
       }
     }

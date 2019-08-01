@@ -13934,11 +13934,38 @@ article.news .news_date {
 /* line 5, ../sass/custom/_stickyheader.scss */
 .sticky-header .header_bg_wrapper {
   position: fixed;
+  margin-top: 0;
 }
 
-/* line 8, ../sass/custom/_stickyheader.scss */
+/* line 10, ../sass/custom/_stickyheader.scss */
+.sticky-header .header_top_section_menu.hidden-menu {
+  position: fixed;
+  top: 65px;
+  right: 2px;
+}
+
+@media all and (max-width: 575px) {
+  /* line 16, ../sass/custom/_stickyheader.scss */
+  .sticky-header.toolbar-vertical .header_bg_wrapper {
+    margin-top: -35px;
+  }
+}
+
+/* line 24, ../sass/custom/_stickyheader.scss */
 .sticky-header .main_front.layout-content {
   padding-top: 85px;
+}
+
+@media all and (max-width: 768px) {
+  /* line 28, ../sass/custom/_stickyheader.scss */
+  .toolbar-tab {
+    font-size: 11px;
+  }
+}
+
+/* line 33, ../sass/custom/_stickyheader.scss */
+.site_name {
+  z-index: 1;
 }
 
 /* line 4, ../sass/custom/_bootstrapoverride.scss */
