@@ -15,6 +15,7 @@ blacklist:
   - node.type.landing_page
   - node.type.next_steps
   - paragraphs.paragraphs_type.formatted_text
+  - paragraphs.paragraphs_type.full_width_banner
   - paragraphs.paragraphs_type.full_width_photo
   - paragraphs.paragraphs_type.hp_hero
   - paragraphs.paragraphs_type.hp_hero_bg
@@ -28,6 +29,7 @@ blacklist:
   - 'core.entity_form_display.node.interior_page.*'
   - 'core.entity_form_display.node.landing_page.*'
   - 'core.entity_form_display.node.next_steps.*'
+  - 'core.entity_form_display.paragraph.full_width_banner.*'
   - 'core.entity_form_display.paragraph.full_width_photo.*'
   - 'core.entity_form_display.paragraph.formatted_text.*'
   - 'core.entity_form_display.paragraph.hp_hero.*'
@@ -36,6 +38,7 @@ blacklist:
   - 'core.entity_view_display.node.interior_page.*'
   - 'core.entity_view_display.node.landing_page.*'
   - 'core.entity_view_display.node.next_steps.*'
+  - 'core.entity_view_display.paragraph.full_width_banner.*'
   - 'core.entity_view_display.paragraph.full_width_photo.*'
   - 'core.entity_view_display.paragraph.formatted_text.*'
   - 'core.entity_view_display.paragraph.hp_hero.*'
@@ -44,6 +47,7 @@ blacklist:
   - 'field.field.node.interior_page.*'
   - 'field.field.node.landing_page.*'
   - 'field.field.node.next_steps.*'
+  - 'field.field.paragraph.full_width_banner.*'
   - 'field.field.paragraph.full_width_photo.*'
   - 'field.field.paragraph.formatted_text.*'
   - 'field.field.paragraph.hp_hero.*'
@@ -51,6 +55,7 @@ blacklist:
   - 'field.field.paragraph.next_step.*'
   - 'field.field.paragraph.next_steps_collection.*'
   - 'field.field.paragraph.quote.*'
+  - 'field.storage.paragraph.field_fwb_*'
   - 'field.storage.paragraph.field_fwp_*'
   - 'field.storage.paragraph.field_formatted_text_*'
   - 'field.storage.paragraph.field_hp_hero_*'
@@ -86,6 +91,7 @@ graylist:
   - 'views.view.*'
   - 'search_api.*'
   - 'system.*'
+  - 'user.role.*'
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
