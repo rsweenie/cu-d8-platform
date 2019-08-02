@@ -2088,8 +2088,9 @@ section[class*="sbg-"]:after {
   position: absolute;
   top: 50%;
   right: 1.5rem;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  font-size: 1.4em;
+  -webkit-transform: translateY(-46%);
+          transform: translateY(-46%);
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
@@ -2105,12 +2106,12 @@ section[class*="sbg-"]:after {
   color: #F0F5FA;
 }
 
-/* line 57, src/sass/components/basic/_buttons.scss */
+/* line 59, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"]:hover .arrow:last-child,
 [class*="btn-"]:focus .arrow:last-child {
-  -webkit-transform: translate(3px, -50%);
-          transform: translate(3px, -50%);
+  -webkit-transform: translate(3px, -46%);
+          transform: translate(3px, -46%);
 }
 
 /* line 8, src/sass/components/basic/buttons/icon/_icon-right.scss */
@@ -2137,7 +2138,7 @@ section[class*="sbg-"]:after {
   transform: translate(1rem, 0);
 }
 
-/* line 74, src/sass/components/basic/_buttons.scss */
+/* line 76, src/sass/components/basic/_buttons.scss */
 
 .skip-section {
   position: fixed;
@@ -2154,7 +2155,7 @@ section[class*="sbg-"]:after {
   text-decoration: none;
 }
 
-/* line 85, src/sass/components/basic/_buttons.scss */
+/* line 87, src/sass/components/basic/_buttons.scss */
 
 .skip-section span {
   display: block;
@@ -13612,7 +13613,7 @@ form.search .search button {
     width: calc(66.667% - 2.5rem);
   }
 
-  /* line 74, src/sass/components/basic/_buttons.scss */
+  /* line 76, src/sass/components/basic/_buttons.scss */
 
   .skip-section {
     display: none;

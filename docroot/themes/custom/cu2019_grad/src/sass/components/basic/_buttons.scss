@@ -37,7 +37,9 @@
       position: absolute;
       top: 50%;
       right: 15px;
-      transform: translateY(-50%);
+
+      font-size: 1.4em;
+      transform: translateY(-46%);
       transition: transform 0.25s;
     }
 
@@ -55,7 +57,7 @@
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
         .arrow:last-child {
-          transform: translate(3px, -50%);
+          transform: translate(3px, -46%);
         }
     }
 
