@@ -1,0 +1,14 @@
+name: creighton-d8
+config:
+  xdebug: false
+services:
+  database:
+    portforward: 33306
+tooling:
+  foo:
+    service: appserver
+    cmd: /app/vendor/bin/bar
+proxy:
+  appserver:
+    - local.creighton.com
+    - creighton-d8.lndo.site

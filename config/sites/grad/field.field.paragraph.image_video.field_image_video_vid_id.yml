@@ -1,0 +1,19 @@
+uuid: fa3d7f0f-0d97-4da2-872a-ecb4663d7f2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_video_vid_id
+    - paragraphs.paragraphs_type.image_video
+id: paragraph.image_video.field_image_video_vid_id
+field_name: field_image_video_vid_id
+entity_type: paragraph
+bundle: image_video
+label: 'Video ID (If Video)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

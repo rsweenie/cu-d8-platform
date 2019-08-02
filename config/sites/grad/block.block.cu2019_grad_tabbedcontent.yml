@@ -9,7 +9,7 @@ _core:
 id: cu2019_grad_tabbedcontent
 theme: cu2019_grad
 region: dump
-weight: -6
+weight: -8
 provider: null
 plugin: 'entity_field:node:field_profile_tabbed_content'
 settings:

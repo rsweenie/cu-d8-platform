@@ -1,0 +1,37 @@
+uuid: 1f096ed9-bc40-43f1-8c1a-fcf5396cbed0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.next_steps.field_next_steps_heading
+    - field.field.node.next_steps.field_next_steps_items
+    - node.type.next_steps
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: D4HYI1xR9R-AUmQzJewDRhBSWJV6iGsjdrHi6JrgTJ0
+id: node.next_steps.teaser
+targetEntityType: node
+bundle: next_steps
+mode: teaser
+content:
+  field_next_steps_heading:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_next_steps_items: true
+  links: true
+  private: true

@@ -1,0 +1,68 @@
+uuid: 4992b0c9-8c15-42f8-99ba-0de73c103ef2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.full_width_photo.field_fwp_background
+    - field.field.paragraph.full_width_photo.field_fwp_body
+    - field.field.paragraph.full_width_photo.field_fwp_color
+    - field.field.paragraph.full_width_photo.field_fwp_cta
+    - field.field.paragraph.full_width_photo.field_fwp_title
+    - image.style.square_100x100_
+    - paragraphs.paragraphs_type.full_width_photo
+  module:
+    - image
+    - lightning_media
+    - link
+    - text
+id: paragraph.full_width_photo.default
+targetEntityType: paragraph
+bundle: full_width_photo
+mode: default
+content:
+  field_fwp_background:
+    weight: 0
+    settings:
+      preview_image_style: square_100x100_
+      progress_indicator: throbber
+    third_party_settings:
+      lightning_media:
+        file_links: true
+        remove_button: true
+    type: image_image
+    region: content
+  field_fwp_body:
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_fwp_color:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_fwp_cta:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_fwp_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

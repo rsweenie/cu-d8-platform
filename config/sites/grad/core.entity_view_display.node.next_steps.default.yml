@@ -1,0 +1,45 @@
+uuid: 8fcc142b-3f2f-4b3a-9980-4c4fcf269be0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.next_steps.field_next_steps_heading
+    - field.field.node.next_steps.field_next_steps_items
+    - node.type.next_steps
+  module:
+    - entity_reference_revisions
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: ICAXrO3rebxyyLTEgCU6LCz0PjO2nEfAuVlGyPAASQg
+id: node.next_steps.default
+targetEntityType: node
+bundle: next_steps
+mode: default
+content:
+  field_next_steps_heading:
+    type: string
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_next_steps_items:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true
+  private: true

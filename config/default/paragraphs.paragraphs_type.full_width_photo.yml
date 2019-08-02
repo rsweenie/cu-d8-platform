@@ -1,9 +1,0 @@
-uuid: a7ad91a5-768a-42f0-a9b6-aeef9c34c27c
-langcode: en
-status: true
-dependencies: {  }
-id: full_width_photo
-label: 'Full Width Photo'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

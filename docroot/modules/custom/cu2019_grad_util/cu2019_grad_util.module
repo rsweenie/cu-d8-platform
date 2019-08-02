@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function cu2019_grad_util_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity, $context) {
+  // Only run if using the cu2019_grad theme.
+  if (\Drupal::service('theme.manager')->getActiveTheme()->getName() == 'cu2019_grad') {
+
+    // For menu_link_content on the main menu, change the view mode when it is tier 1.
+    if ($entity->getEntityTypeId() == 'menu_link_content' && $view_mode == 'default') {
+      // If no parent ID it's a tier 1 link.
+      if (!$entity->getParentId()) {
+        $view_mode = 'tier1';
+      }
+    }
+  }
+}

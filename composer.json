@@ -8,18 +8,18 @@
     "require": {
         "acquia/acsf-tools": "dev-9.x-dev",
         "acquia/blt": "^9.1.0",
-        "acquia/lightning": "~3.2.2",
+        "acquia/lightning": "^3.2",
         "bower-asset/masonry": "^4.2",
         "bower-asset/slick-carousel": "^1.8",
-        "drupal/acsf": "^2.47.0",
-        "drupal/acsf_sso": "^2.47.0",
+        "drupal/acsf": "^2.54.0",
+        "drupal/acsf_sso": "2.54.0",
         "drupal/address": "^1.4",
         "drupal/admin_toolbar": "^1.24",
         "drupal/admin_toolbar_tools": "^1.24",
         "drupal/anchor_link": "^1.6",
         "drupal/auto_entitylabel": "^2.1@beta",
         "drupal/block_aria_landmark_roles": "^1.3",
-        "drupal/bootstrap": "^3.11",
+        "drupal/bootstrap": "3.16",
         "drupal/cer": "^4.0@alpha",
         "drupal/ckeditor_markdown": "^1.0",
         "drupal/coffee": "^1.0@beta",
@@ -28,12 +28,13 @@
         "drupal/config_split": "^1.3",
         "drupal/content_browser": "^1.0@alpha",
         "drupal/context": "^4.0@beta",
-        "drupal/core": "^8.5",
+        "drupal/core": "^8.7",
         "drupal/disable_messages": "^1.1",
         "drupal/easy_install": "^10.1",
         "drupal/editor_advanced_link": "^1.4",
         "drupal/entity_browser": "^2.0",
         "drupal/entity_clone": "^1.0@alpha",
+        "drupal/entity_embed": "1.0.0-beta2",
         "drupal/entity_embed_link": "^1.0",
         "drupal/entity_embed_linkit": "^1.0@beta",
         "drupal/eva": "^1.3",
@@ -52,7 +53,7 @@
         "drupal/imagemagick": "^2.3",
         "drupal/inline_entity_form": "^1.0",
         "drupal/libraries": "^3.0@alpha",
-        "drupal/lightning_core": "^3.2",
+        "drupal/lightning_core": "^4.0",
         "drupal/mailsystem": "^4.1",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
@@ -61,6 +62,7 @@
         "drupal/mimemail": "^1.0@alpha",
         "drupal/module_filter": "^3.1",
         "drupal/name": "^1.0@RC",
+        "drupal/noreferrer": "^1.7",
         "drupal/openapi": "^1.0",
         "drupal/panelizer": "^4.1",
         "drupal/panels": "^4.3",
@@ -84,7 +86,7 @@
         "drupal/scheduled_updates": "^1.0@alpha",
         "drupal/scheduler": "^1.0",
         "drupal/simplesamlphp_auth": "^3.0",
-        "drupal/slick": "^1.0",
+        "drupal/slick": "^1.1",
         "drupal/slick_views": "^1.0@RC",
         "drupal/social_media_links": "^2.6",
         "drupal/token": "^1.3",
@@ -102,9 +104,9 @@
         "onelogin/php-saml": "dev-remove_mcrypt as 2.11.0"
     },
     "require-dev": {
-        "drupal/devel": "^1.2",
-        "drupal/devel_generate": "^1.2",
-        "drupal/kint": "^1.2",
+        "drupal/devel": "^2.0",
+        "drupal/devel_generate": "^2.0",
+        "drupal/kint": "^2.0",
         "drupal/webform_devel": "^5.0@RC",
         "geerlingguy/drupal-vm": "^4.8"
     },
@@ -140,7 +142,7 @@
                 "bootstrap Warning: array_search() expects parameter":"https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
             },
             "drupal/linkit": {
-                "linkit popup open in new window not saving changes":"https://www.drupal.org/files/issues/2912517-2-linkit--fix-removing-link-attributes.patch"
+                "linkit popup open in new window not saving changes":"patches/linkit_target_value_zero_3.patch"
             }
         },
         "installer-types": [

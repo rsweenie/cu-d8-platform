@@ -1,0 +1,11 @@
+uuid: 08a9922f-3122-446b-9baf-5dc9ff235884
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Bf0G87urkyhWVzCaieoRsi-4CEdhxG99WgzSD1u29QE
+id: hp_hero
+label: 'HP Hero'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
