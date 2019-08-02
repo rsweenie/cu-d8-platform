@@ -4,7 +4,7 @@
 
 .sticky-header .header_bg_wrapper {
     position: fixed;
-   // margin-top:0;
+    margin-top:0;
 }
 
 
@@ -20,10 +20,10 @@
 
 .sticky-header.toolbar-vertical .header_bg_wrapper {
 
- @media all and (max-width:576px)
- {
-    margin-top: -35px;
- }
+//  @media all and (max-width:576px)
+//  {
+//     margin-top: -35px;
+//  }
 }
 
 .sticky-header .main_front.layout-content {
@@ -35,6 +35,12 @@ padding-top: 85px;
     font-size: 10px;
 }
 }
+.toolbar .toolbar-bar .toolbar-tab > .toolbar-icon{
+    @include respond-to(null, tablet-max) {
+        padding-right: 1em;
+    }
+}
+
 .site_name {
     z-index: 1;
 }

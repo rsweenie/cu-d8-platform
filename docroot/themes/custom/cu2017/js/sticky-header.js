@@ -25,6 +25,11 @@
       toolBar: '#toolbar-bar',
       content: 'main'
     },
+    state: {
+      headerTop: 0
+    },
+
+
     attach: function (context, settings) {
       var stickyHeaderAction = this.initStickyHeader();
       
@@ -34,9 +39,15 @@
 
       $(window, context).once('sticky')
         .scroll(stickyHeaderAction.makeHeaderSticky.bind(this));
-    },
-    getTabletStart: function(){
-    return (creightonEdu.css_breakpoints.tablet_start);
+
+        $(window, context).once('sticky-resize')
+        .resize(stickyHeaderAction.makeHeaderSticky.bind(this));
+        $(window, context).once('sticky-refresh')
+        .ready(stickyHeaderAction.makeHeaderSticky.bind(this));
+
+        // $(window, context).once('sticky-refresh')
+        // .onload(stickyHeaderAction.makeHeaderSticky.bind(this));
+
     },
     getToolbarHeight: function () {
       return $(this.elements.tbAdmnTray).height() + $(this.elements.toolBar).height();
@@ -51,24 +62,28 @@
 
     initStickyHeader: function () {
       //var $header = $(this.elements.headerMain);
-      var toolbarHeight= $('#toolbar-bar').height();
-      var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
-      var headerTop = $('.header_top_section').height();
+      //var toolbarHeight= $('#toolbar-bar').height();
+      //var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
+      //var headerTop = $('.header_top_section').height();
       //var sticky = $header.offset().top;
       //var $content = $(this.elements.content);
-      var tablet = 768;
-      //var tablet = this.getTabletStart();
+
       //var mobile = parseInt(headerTop + searchBar);
      //console.log(tablet)
+
 
 
       
       return {
         makeHeaderSticky: function () {
+          var tablet = creightonEdu.css_breakpoints.tablet_start;
+          var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
+          var headerTop = $('.header_top_section').height();
+          console.log('fire away');
+          
           if ($(window).width() < tablet) {     
-            headerTop = $('#toolbar-bar').height() + $('header .header_top_section_search_wrapper .cu-query').height();
-             
-            console.log(headerTop);
+            headerTop = searchBar + headerTop;         
+           // console.log(headerTop);
            }
            else {
             headerTop = headerTop;
