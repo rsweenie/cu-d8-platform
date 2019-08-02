@@ -13934,19 +13934,18 @@ article.news .news_date {
 /* line 5, ../sass/custom/_stickyheader.scss */
 .sticky-header .header_bg_wrapper {
   position: fixed;
-  margin-top: 0;
 }
 
 @media all and (max-width: 768px) {
   /* line 12, ../sass/custom/_stickyheader.scss */
   .sticky-header .header_top_section_menu {
     position: fixed;
-    top: 65px;
-    right: 2px;
+    top: 95px;
+    right: 2.5px;
   }
 }
 
-@media all and (max-width: 575px) {
+@media all and (max-width: 576px) {
   /* line 21, ../sass/custom/_stickyheader.scss */
   .sticky-header.toolbar-vertical .header_bg_wrapper {
     margin-top: -35px;
@@ -13961,7 +13960,7 @@ article.news .news_date {
 @media all and (max-width: 768px) {
   /* line 33, ../sass/custom/_stickyheader.scss */
   .toolbar-tab {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
 

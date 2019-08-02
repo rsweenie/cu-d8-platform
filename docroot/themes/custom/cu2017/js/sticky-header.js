@@ -36,7 +36,7 @@
         .scroll(stickyHeaderAction.makeHeaderSticky.bind(this));
     },
     getTabletStart: function(){
-    return $(creightonEdu.css_breakpoints.tablet_start);
+    return (creightonEdu.css_breakpoints.tablet_start);
     },
     getToolbarHeight: function () {
       return $(this.elements.tbAdmnTray).height() + $(this.elements.toolBar).height();
@@ -48,9 +48,10 @@
       return $(this.elements.topNavSection).height() + 
         $(this.elements.alertsId).height() + $(this.elements.topSearchBar).height();
     },
+
     initStickyHeader: function () {
       //var $header = $(this.elements.headerMain);
-      //var toolbarHeight= $('#toolbar-bar').offset().top;
+      var toolbarHeight= $('#toolbar-bar').height();
       var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
       var headerTop = $('.header_top_section').height();
       //var sticky = $header.offset().top;
@@ -58,24 +59,20 @@
       var tablet = 768;
       //var tablet = this.getTabletStart();
       //var mobile = parseInt(headerTop + searchBar);
-     console.log(tablet)
+     //console.log(tablet)
 
-     if ($(window).width() < tablet) {     
-       headerTop = searchBar + headerTop;
-      }
-      else {
-       headerTop = headerTop;
-      }
 
-     //if (window.innerWidth < tablet) {
-//     var huh = mobile;
-     // console.log(huh);
-     // } else {
-      //  headerTop = headerTop;
-     // }
       
       return {
         makeHeaderSticky: function () {
+          if ($(window).width() < tablet) {     
+            headerTop = $('#toolbar-bar').height() + $('header .header_top_section_search_wrapper .cu-query').height();
+             
+            console.log(headerTop);
+           }
+           else {
+            headerTop = headerTop;
+           }
           if (window.pageYOffset > (headerTop)) {
             $('body').addClass('sticky-header');        
            // $('body.front.toolbar-vertical').addClass('responsive-toolbar');
