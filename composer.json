@@ -136,6 +136,7 @@
                 "Unable to keep nested IEF data separate with multivalue fields.": "https://www.drupal.org/files/issues/2018-05-30/multivalue-complex-and-simple-ief-fix-2653574-100.patch"
             },
             "drupal/core": {
+                "Display mode configurations don't get updated with new fields": "https://www.drupal.org/files/issues/2019-06-26/2915036-83.patch",
                 "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch"
             },
             "drupal/panels": {

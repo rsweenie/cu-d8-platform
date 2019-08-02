@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "843169cc1e3b3eb2f3f78f6b3ac1ef62",
+    "content-hash": "722e683ce896883b84742a1d7d2c5a51",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -1050,7 +1050,7 @@
             "version": "v1.8.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:kenwheeler/slick.git",
+                "url": "https://github.com/kenwheeler/slick.git",
                 "reference": "0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee"
             },
             "dist": {
@@ -5426,6 +5426,7 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "Display mode configurations don't get updated with new fields": "https://www.drupal.org/files/issues/2019-06-26/2915036-83.patch",
                     "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
                     "2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
                     "2885441 - EntityReferenceAutocompleteWidget should define its size setting as an integer": "https://www.drupal.org/files/issues/2885441-2.patch",
