@@ -2082,7 +2082,7 @@ section[class*="sbg-"]:after {
   z-index: 1;
 }
 
-/* line 36, src/sass/components/basic/_buttons.scss */
+/* line 40, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"] .arrow:last-child {
   position: absolute;
@@ -2106,7 +2106,7 @@ section[class*="sbg-"]:after {
   color: #F0F5FA;
 }
 
-/* line 59, src/sass/components/basic/_buttons.scss */
+/* line 63, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"]:hover .arrow:last-child,
 [class*="btn-"]:focus .arrow:last-child {
@@ -2138,7 +2138,7 @@ section[class*="sbg-"]:after {
   transform: translate(1rem, 0);
 }
 
-/* line 76, src/sass/components/basic/_buttons.scss */
+/* line 80, src/sass/components/basic/_buttons.scss */
 
 .skip-section {
   position: fixed;
@@ -2155,7 +2155,7 @@ section[class*="sbg-"]:after {
   text-decoration: none;
 }
 
-/* line 87, src/sass/components/basic/_buttons.scss */
+/* line 91, src/sass/components/basic/_buttons.scss */
 
 .skip-section span {
   display: block;
@@ -2194,7 +2194,7 @@ section[class*="sbg-"]:after {
 /* line 25, src/sass/components/basic/buttons/colors/_primary.scss */
 
 .btn-primary:before {
-  width: 9rem;
+  width: 13rem;
   height: 150%;
   position: absolute;
   bottom: 0;
@@ -13613,7 +13613,13 @@ form.search .search button {
     width: calc(66.667% - 2.5rem);
   }
 
-  /* line 76, src/sass/components/basic/_buttons.scss */
+  /* line 11, src/sass/components/basic/_buttons.scss */
+
+  [class*="btn-"] {
+    font-size: 2.4rem;
+  }
+
+  /* line 80, src/sass/components/basic/_buttons.scss */
 
   .skip-section {
     display: none;
