@@ -3106,15 +3106,17 @@ aside .card.img-side + p {
 
 .card.fw_photo {
   color: #fff;
+  border-top: 8px solid #6CACE4;
+  border-bottom: 8px solid #6CACE4;
 }
 
-/* line 4, src/sass/components/basic/cards/_fwp.scss */
+/* line 6, src/sass/components/basic/cards/_fwp.scss */
 
 .card.fw_photo.img-behind {
   padding: 4.5rem 0;
 }
 
-/* line 12, src/sass/components/basic/cards/_fwp.scss */
+/* line 14, src/sass/components/basic/cards/_fwp.scss */
 
 .card.fw_photo:before {
   width: 100%;
@@ -3127,13 +3129,13 @@ aside .card.img-side + p {
   z-index: 1;
 }
 
-/* line 26, src/sass/components/basic/cards/_fwp.scss */
+/* line 28, src/sass/components/basic/cards/_fwp.scss */
 
 .card.fw_photo.bg-grey:before {
   background: rgba(33, 35, 34, 0.82);
 }
 
-/* line 31, src/sass/components/basic/cards/_fwp.scss */
+/* line 33, src/sass/components/basic/cards/_fwp.scss */
 
 .card.fw_photo h3 {
   font-size: 3rem;
@@ -3143,14 +3145,14 @@ aside .card.img-side + p {
   margin-bottom: 0;
 }
 
-/* line 43, src/sass/components/basic/cards/_fwp.scss */
+/* line 45, src/sass/components/basic/cards/_fwp.scss */
 
 .card.fw_photo p {
   font-size: 1.4rem;
   line-height: 1.4em;
 }
 
-/* line 53, src/sass/components/basic/cards/_fwp.scss */
+/* line 55, src/sass/components/basic/cards/_fwp.scss */
 
 .card.fw_photo [class*="btn-"] {
   margin-top: 20px;
@@ -11681,19 +11683,19 @@ form.search .search button {
     background: #fff;
   }
 
-  /* line 31, src/sass/components/basic/cards/_fwp.scss */
+  /* line 33, src/sass/components/basic/cards/_fwp.scss */
 
   .card.fw_photo h3 {
     font-size: 4rem;
   }
 
-  /* line 43, src/sass/components/basic/cards/_fwp.scss */
+  /* line 45, src/sass/components/basic/cards/_fwp.scss */
 
   .card.fw_photo p {
     font-size: 1.9rem;
   }
 
-  /* line 53, src/sass/components/basic/cards/_fwp.scss */
+  /* line 55, src/sass/components/basic/cards/_fwp.scss */
 
   .card.fw_photo [class*="btn-"] {
     float: right;
@@ -13762,7 +13764,7 @@ form.search .search button {
     width: 41.667%;
   }
 
-  /* line 4, src/sass/components/basic/cards/_fwp.scss */
+  /* line 6, src/sass/components/basic/cards/_fwp.scss */
 
   .card.fw_photo.img-behind {
     padding: 13.5rem 0 8rem;
