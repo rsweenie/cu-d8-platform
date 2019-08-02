@@ -2183,7 +2183,7 @@ section[class*="sbg-"]:after {
   background: -webkit-gradient(linear, left bottom, left top, from(#FFCC4F), to(#ffd673));
   background: linear-gradient(0deg, #FFCC4F 0%, #ffd673 100%);
   border: none;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
   color: #002E6D;
   font-weight: bold;
   padding: 1rem 6.5rem 1rem 1.5rem;
