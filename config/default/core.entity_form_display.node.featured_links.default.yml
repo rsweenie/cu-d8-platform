@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.featured_links.field_featured_p_link
     - node.type.featured_links
   module:
-    - content_moderation
     - paragraphs
     - private_content
     - scheduler
@@ -36,12 +35,6 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  moderation_state:
-    type: moderation_state_default
-    weight: 6
-    settings: {  }
-    region: content
-    third_party_settings: {  }
   private:
     weight: 1
     region: content
