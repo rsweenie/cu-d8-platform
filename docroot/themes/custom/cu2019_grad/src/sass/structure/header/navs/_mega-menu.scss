@@ -142,14 +142,17 @@ nav.mega {
                 position: static;
 
                 > a {
-                    //margin: #{$gutter * .8rem} 0;
-                    padding: 17px 12px 13px;
+                    &,
+                    &.is-active {
+                      @include position(relative, 0);
+                      color: $tertiary;
+                      padding: 17px 12px 13px;
+                    }
                 }
 
                 &:nth-child(-n + 4) {
-                    > a {
-                        @include position(relative, 0);
-                        color: $tertiary;
+                    > a,
+                    > a.is-active {
 
                         &:before {
                             // @include position(absolute, 0, (left, top), (50%, 100%), translate(-50%, (#{$gutter * .6}rem)));

@@ -79,3 +79,9 @@
     }
   }
 }
+
+.field--name-field-next-steps-heading {
+  .field__label {
+    @include srOnly;
+  }
+}
