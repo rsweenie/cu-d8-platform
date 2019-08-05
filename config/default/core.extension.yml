@@ -37,7 +37,6 @@ module:
   csv_serialization: 0
   ctools: 0
   ctools_block: 0
-  cu2019_grad_util: 0
   cu_breadcrumbs: 0
   cu_data_transform: 0
   cu_entity_embed: 0
