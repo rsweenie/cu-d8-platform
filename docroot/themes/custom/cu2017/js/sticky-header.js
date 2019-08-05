@@ -34,8 +34,13 @@
       var stickyHeaderAction = this.initStickyHeader();
       
       //console.log(settings);
-      //var toolbarPresent = (settings);
+      var toolbarPresent = (settings.toolbar);
       //console.log(toolbarPresent);
+
+      if (typeof settings.toolbar != 'undefined') {
+        console.log("There is a toolbar");
+        $('body').addClass('toolbar-adjust'); 
+      }
 
       $(window, context).once('sticky')
         .scroll(stickyHeaderAction.makeHeaderSticky.bind(this));
@@ -79,12 +84,19 @@
           var tablet = creightonEdu.css_breakpoints.tablet_start;
           var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
           var headerTop = $('.header_top_section').height();
-          console.log('fire away');
+          var transactionMenu = $('.transaction_menu_wrapper').height();
+          var toolBar = $('#toolbar-bar').height();
+          //console.log('resize is firing');
+
+          if (toolBar == null) {
+            toolBar = 0;
+       }
           
           if ($(window).width() < tablet) {     
-            headerTop = searchBar + headerTop;         
-           // console.log(headerTop);
-           }
+            //headerTop = searchBar + headerTop;  
+            headerTop = toolBar + transactionMenu + searchBar;       
+            console.log(headerTop);
+           }       
            else {
             headerTop = headerTop;
            }
