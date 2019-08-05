@@ -88,8 +88,8 @@ services:
         # Copy the files directory from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use rsync over SSH.
-        - mkdir -p "${DOCROOT}/sites/default/files"
-        - mkdir -p "${DOCROOT}/sites/default/files-private/temp"
+        #- mkdir -p "${DOCROOT}/sites/default/files"
+        #- mkdir -p "${DOCROOT}/sites/default/files-private/temp"
 
         # Fix settings on /files dir
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files-private"
