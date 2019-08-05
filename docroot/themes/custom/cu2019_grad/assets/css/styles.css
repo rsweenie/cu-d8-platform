@@ -4181,7 +4181,7 @@ blockquote .tooltip-trigger {
   display: none;
 }
 
-/* line 84, src/sass/components/basic/_ns.scss */
+/* line 85, src/sass/components/basic/_ns.scss */
 
 .field--name-field-next-steps-heading .field__label {
   position: absolute;
@@ -13864,6 +13864,7 @@ form.search .search button {
   /* line 67, src/sass/components/basic/_ns.scss */
 
   .ns ul li {
+    width: 20%;
     margin: 0 35px;
     font-size: 2.1rem;
     text-align: center;
