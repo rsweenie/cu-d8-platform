@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "843169cc1e3b3eb2f3f78f6b3ac1ef62",
+    "content-hash": "6e45a75a840a7ac173a5c4f87bb8e7dd",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -3370,24 +3370,23 @@
         },
         {
             "name": "drupal/acsf",
-            "version": "2.54.0",
+            "version": "2.51.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/acsf.git",
-                "reference": "8.x-2.54"
+                "reference": "8.x-2.51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/acsf-8.x-2.54.zip",
-                "reference": "8.x-2.54",
-                "shasum": "bd5e2765cb7635c4b31c725b9e2e2c46ba234ec4"
+                "url": "https://ftp.drupal.org/files/projects/acsf-8.x-2.51.zip",
+                "reference": "8.x-2.51",
+                "shasum": "2c7cc9f02e3323daa01cb7774e333b8569cf3922"
             },
             "require": {
                 "drupal/acsf_duplication": "*",
                 "drupal/acsf_theme": "*",
                 "drupal/acsf_variables": "*",
-                "drupal/core": "~8.0",
-                "ext-json": "*"
+                "drupal/core": "~8.0"
             },
             "require-dev": {
                 "drupal/acsf_variables": "*",
@@ -3403,8 +3402,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.54",
-                    "datestamp": "1557315785",
+                    "version": "8.x-2.51",
+                    "datestamp": "1548245280",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3471,7 +3470,7 @@
         },
         {
             "name": "drupal/acsf_duplication",
-            "version": "2.54.0",
+            "version": "2.51.0",
             "require": {
                 "drupal/acsf": "self.version",
                 "drupal/core": "~8.0"
@@ -3482,8 +3481,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.54",
-                    "datestamp": "1557315785",
+                    "version": "8.x-2.51",
+                    "datestamp": "1548245280",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3544,7 +3543,7 @@
         },
         {
             "name": "drupal/acsf_sso",
-            "version": "2.54.0",
+            "version": "2.51.0",
             "require": {
                 "drupal/acsf": "self.version",
                 "drupal/core": "~8.0",
@@ -3556,8 +3555,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.54",
-                    "datestamp": "1557315785",
+                    "version": "8.x-2.51",
+                    "datestamp": "1548245280",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3618,7 +3617,7 @@
         },
         {
             "name": "drupal/acsf_theme",
-            "version": "2.54.0",
+            "version": "2.51.0",
             "require": {
                 "drupal/acsf": "self.version",
                 "drupal/acsf_variables": "*",
@@ -3630,8 +3629,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.54",
-                    "datestamp": "1557315785",
+                    "version": "8.x-2.51",
+                    "datestamp": "1548245280",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3692,7 +3691,7 @@
         },
         {
             "name": "drupal/acsf_variables",
-            "version": "2.54.0",
+            "version": "2.51.0",
             "require": {
                 "drupal/acsf": "self.version",
                 "drupal/core": "~8.0"
@@ -3703,8 +3702,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.54",
-                    "datestamp": "1557315785",
+                    "version": "8.x-2.51",
+                    "datestamp": "1548245280",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7880,6 +7879,10 @@
                 {
                     "name": "Pol",
                     "homepage": "https://www.drupal.org/user/47194"
+                },
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
                 },
                 {
                     "name": "rjacobs",

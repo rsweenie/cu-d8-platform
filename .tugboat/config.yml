@@ -76,7 +76,9 @@ services:
         - composer install --no-ansi
 
         # Our baseline is our defaulty Acquia setup
-        - ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+        #- ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+
+        - drush -r "${DOCROOT}" -y site-install standard
 
         # If there are issues running blt setup, another option is a simple
         # drupal install
