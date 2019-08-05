@@ -76,7 +76,9 @@ services:
         - composer install --no-ansi
 
         # Our baseline is our defaulty Acquia setup
-        - ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+        #- ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+
+        - drush -r "${DOCROOT}" -y site-install standard
 
         # Generate a unique hash_salt to secure the site
         - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
