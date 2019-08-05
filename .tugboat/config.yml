@@ -80,6 +80,10 @@ services:
 
         - drush -r "${DOCROOT}" -y site-install standard
 
+        # If there are issues running blt setup, another option is a simple
+        # drupal install
+        #- drush -r "${DOCROOT}" -y site-install standard
+
         # Generate a unique hash_salt to secure the site
         - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
 
