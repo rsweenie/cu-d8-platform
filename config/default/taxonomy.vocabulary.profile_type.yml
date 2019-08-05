@@ -7,5 +7,4 @@ _core:
 name: 'Profile Type'
 vid: profile_type
 description: ''
-hierarchy: 0
 weight: 0
