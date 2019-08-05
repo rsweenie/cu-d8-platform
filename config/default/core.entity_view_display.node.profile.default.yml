@@ -62,20 +62,19 @@ content:
     type: media_thumbnail
     region: content
   field_profile_name:
+    type: name_default
+    settings:
+      list_format: default
+      format: default
+      markup: none
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
     weight: 0
     label: hidden
-    settings:
-      format: default
-      markup: ''
-      output: default
-      multiple: default
-      multiple_delimiter: ', '
-      multiple_and: text
-      multiple_delimiter_precedes_last: never
-      multiple_el_al_min: '3'
-      multiple_el_al_first: '1'
     third_party_settings: {  }
-    type: name_default
     region: content
   field_profile_office_location:
     weight: 6

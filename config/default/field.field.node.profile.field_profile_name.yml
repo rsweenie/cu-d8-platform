@@ -60,13 +60,19 @@ settings:
     generational: true
     credentials: true
   minimum_components:
-    title: false
     given: true
-    middle: false
     family: true
+    title: false
+    middle: false
     generational: false
     credentials: false
-  allow_family_or_given: false
+  labels:
+    title: Title
+    given: Given
+    middle: 'Middle name(s)'
+    family: Family
+    generational: Generational
+    credentials: Credentials
   max_length:
     title: 31
     given: 63
@@ -76,12 +82,12 @@ settings:
     credentials: 255
   autocomplete_source:
     title:
-      - title
+      title: title
     given: {  }
     middle: {  }
     family: {  }
     generational:
-      - generation
+      generational: '0'
     credentials: {  }
   autocomplete_separator:
     title: ' '
@@ -90,6 +96,7 @@ settings:
     family: ' -'
     generational: ' '
     credentials: ', '
+  allow_family_or_given: false
   title_options:
     - '-- --'
     - Mr.
@@ -98,6 +105,7 @@ settings:
     - Ms.
     - Dr.
     - Prof.
+    - Hon.
   generational_options:
     - '-- --'
     - Jr.
@@ -114,18 +122,7 @@ settings:
     - X
   sort_options:
     title: false
-    given: false
-    middle: false
-    family: false
     generational: false
-    credentials: false
-  labels:
-    title: Title
-    given: Given
-    middle: 'Middle name(s)'
-    family: Family
-    generational: Generational
-    credentials: Credentials
   widget_layout: stacked
   preferred_field_reference: ''
   preferred_field_reference_separator: ', '

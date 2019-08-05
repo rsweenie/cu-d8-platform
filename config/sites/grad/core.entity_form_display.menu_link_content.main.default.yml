@@ -8,6 +8,7 @@ dependencies:
     - system.menu.main
   module:
     - link
+    - link_attributes
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
 bundle: main
