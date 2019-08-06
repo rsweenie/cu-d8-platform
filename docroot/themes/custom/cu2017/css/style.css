@@ -13966,7 +13966,12 @@ body.sticky-header header.header_opacity .header_bg_wrapper {
   }
 }
 
-/* line 64, ../sass/custom/_stickyheader.scss */
+/* line 49, ../sass/custom/_stickyheader.scss */
+.sticky-header main {
+  padding-top: 85px;
+}
+
+/* line 67, ../sass/custom/_stickyheader.scss */
 .site_name {
   z-index: 1;
 }
