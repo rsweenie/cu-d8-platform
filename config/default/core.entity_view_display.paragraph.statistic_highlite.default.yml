@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.statistic_highlite.field_stat_highlite_background
-    - field.field.paragraph.statistic_highlite.field_stat_highlite_border
     - field.field.paragraph.statistic_highlite.field_stat_highlite_bottom_text
     - field.field.paragraph.statistic_highlite.field_stat_highlite_icon
     - field.field.paragraph.statistic_highlite.field_stat_highlite_statistic
@@ -23,16 +22,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
-    region: content
-  field_stat_highlite_border:
-    weight: 5
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
     region: content
   field_stat_highlite_bottom_text:
     weight: 3
