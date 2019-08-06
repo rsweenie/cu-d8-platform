@@ -64,7 +64,7 @@ options:
     cssEaseOverride: ''
     useTransform: true
     easing: linear
-    variableWidth: false
+    variableWidth: true
     vertical: false
     verticalSwiping: false
     waitForAnimate: true
