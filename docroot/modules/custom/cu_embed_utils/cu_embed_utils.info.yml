@@ -1,0 +1,7 @@
+name: 'cu_embed_utils'
+type: module
+description: 'Creighton Entity Embed Utils'
+core: 8.x
+package: 'Creighton'
+dependencies:
+  - ckeditor

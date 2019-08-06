@@ -4,7 +4,7 @@
  *
  * This file provides a mechanism for ckeditor button image substitution
  */
-(function ($, Drupal) {
+(function ($, Drupal, CKEDITOR) {
   "use strict";
   /**
    * @see {@link: https://www.drupal.org/docs/8/api/javascript-api/javascript-api-overview|Drupal}
@@ -26,6 +26,15 @@
     },
     attach: function (context, settings) {
       this.initChangeButtonImages();
+      var dtd = CKEDITOR.dtd;
+
+      CKEDITOR.on('instanceReady', function() {
+        // Display the drupal-entity element inline.
+        dtd.$inline['drupal-entity'] = 1;
+        dtd['p']['drupal-entity'] = 1;
+        dtd['span']['drupal-entity'] = 1;
+        dtd['span']['article'] = 1;
+      });
       
       // This will listen for change on the CKEditor's edit mode dropdown since it currently somehow 
       // changes the button back to default image.
@@ -74,4 +83,4 @@
       }
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, CKEDITOR);

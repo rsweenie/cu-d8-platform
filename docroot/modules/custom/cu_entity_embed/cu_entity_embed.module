@@ -46,3 +46,12 @@ function cu_entity_embed_element_info_alter(&$info) {
     $info['toolbar']['#attached']['library'][] = 'cu_entity_embed/change';
   }
 }
+
+/**
+ * Implements hook_entity_embed_alter
+ */
+function cu_entity_embed_entity_embed_alter(&$build, $entity, &$context) {
+  //ksm($entity);
+  ksm($build['#context']);
+  ksm($build['entity']);
+}

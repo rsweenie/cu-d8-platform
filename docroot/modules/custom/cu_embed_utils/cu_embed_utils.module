@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains cu_embed_utils.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cu_embed_utils_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cu_embed_utils module.
+    case 'help.page.cu_embed_utils':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Creighton Entity Embed Utils') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cu_embed_utils_theme() {
+  return [
+    'cu_embed_utils' => [
+      'render element' => 'children',
+    ],
+  ];
+}
