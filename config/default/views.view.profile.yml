@@ -274,7 +274,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -1336,7 +1336,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -2064,7 +2064,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -2912,7 +2912,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -3717,7 +3717,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -4522,7 +4522,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -5327,7 +5327,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -6132,7 +6132,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -7059,7 +7059,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -7864,7 +7864,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -8669,7 +8669,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -9474,7 +9474,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -10279,7 +10279,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -11084,7 +11084,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -11865,7 +11865,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -12670,7 +12670,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -13475,7 +13475,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -14410,7 +14410,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -16189,7 +16189,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -17364,7 +17364,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -18074,7 +18074,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -18879,7 +18879,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -19684,7 +19684,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -20489,7 +20489,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -21294,7 +21294,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -22199,7 +22199,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -23004,7 +23004,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -23809,7 +23809,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -24614,7 +24614,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -25419,7 +25419,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -26224,7 +26224,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -27029,7 +27029,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -27834,7 +27834,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -28639,7 +28639,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
@@ -29444,7 +29444,7 @@ display:
           type: name_default
           settings:
             format: default
-            markup: false
+            markup: ''
             output: default
             multiple: default
             multiple_delimiter: ', '
