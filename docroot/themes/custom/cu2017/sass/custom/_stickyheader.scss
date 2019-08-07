@@ -5,6 +5,7 @@
 .sticky-header .header_bg_wrapper {
     position: fixed;
     margin-top:0;
+    top:0;
 
 }
 
@@ -52,17 +53,6 @@ body.toolbar-vertical.sticky-header .header_bg_wrapper {
       //  padding-top: 125px;
     }
 }
-
-// .toolbar-tab {
-//     @include respond-to(null, tablet-max) {
-//     font-size: 10px;
-// }
-// }
-// .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon{
-//     @include respond-to(null, tablet-max) {
-//         padding-right: 1em;
-//     }
-// }
 
 .site_name {
     z-index: 1;

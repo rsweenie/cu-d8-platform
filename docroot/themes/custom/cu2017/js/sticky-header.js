@@ -54,12 +54,6 @@
         // .onload(stickyHeaderAction.makeHeaderSticky.bind(this));
 
     },
-    getToolbarHeight: function () {
-      return $(this.elements.tbAdmnTray).height() + $(this.elements.toolBar).height();
-    },
-    getSearchBarHeight: function () {
-      return $(this.elements.topSearchBar).height();
-    },
     getTotalHeight: function () {
       return $(this.elements.topNavSection).height() + 
         $(this.elements.alertsId).height() + $(this.elements.topSearchBar).height();
@@ -71,13 +65,10 @@
       //var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
       //var headerTop = $('.header_top_section').height();
       //var sticky = $header.offset().top;
-      //var $content = $(this.elements.content);
-
+      //var $content = $(this.elements.content)
       //var mobile = parseInt(headerTop + searchBar);
      //console.log(tablet)
-
-
-
+      console.log('resize is firing');
       
       return {
         makeHeaderSticky: function () {
@@ -86,26 +77,22 @@
           var headerTop = $('.header_top_section').height();
           var transactionMenu = $('.transaction_menu_wrapper').height();
           var toolBar = $('#toolbar-bar').height();
-          //console.log('resize is firing');
+          var alerts = $('#alerts').height();
 
           if (toolBar == null) {
             toolBar = 0;
-       }
-          
+       }        
           if ($(window).width() < tablet) {     
-            //headerTop = searchBar + headerTop;  
-            headerTop = toolBar + transactionMenu + searchBar;       
+            headerTop = toolBar + transactionMenu + searchBar + alerts;       
             console.log(headerTop);
            }       
            else {
-            headerTop = headerTop;
+            headerTop = headerTop + alerts;
            }
           if (window.pageYOffset > (headerTop)) {
-            $('body').addClass('sticky-header');        
-           // $('body.front.toolbar-vertical').addClass('responsive-toolbar');
+            $('body').addClass('sticky-header');            
           } else {
             $('body').removeClass('sticky-header');
-            //$('body.front.toolbar-vertical').removeClass('responsive-toolbar');
           }
         
         },
