@@ -16,7 +16,7 @@ function cu_embed_utils_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.cu_embed_utils':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Creighton Entity Embed Utils') . '</p>';
+      $output .= '<p>' . t('Provide utility functions to adjust the way entity embed behaves.') . '</p>';
       return $output;
 
     default:
