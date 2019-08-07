@@ -109,6 +109,8 @@ services:
       update:
         # CU: Things needed to establish a clean baseline env based on production
 
+        # Install/update packages managed by composer, including drush
+        - composer install --no-ansi
 
         # Site alias specific build steps
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
