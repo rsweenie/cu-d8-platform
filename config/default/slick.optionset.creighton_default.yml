@@ -21,7 +21,7 @@ options:
     mobileFirst: false
     asNavFor: ''
     accessibility: true
-    adaptiveHeight: true
+    adaptiveHeight: false
     autoplay: false
     autoplaySpeed: 3000
     pauseOnHover: true
@@ -64,7 +64,7 @@ options:
     cssEaseOverride: ''
     useTransform: true
     easing: linear
-    variableWidth: true
+    variableWidth: false
     vertical: false
     verticalSwiping: false
     waitForAnimate: true
