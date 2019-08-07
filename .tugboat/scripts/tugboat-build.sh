@@ -34,6 +34,7 @@ case $CU_SITE_ALIAS in
     #fi
     echo "Syncing DB and assets for Grad"
     # DB sync MUST come before filesync always
+    drush -r "${DOCROOT}" sql:drop -y
     drush -r "${DOCROOT}" sql:sync "@grad.01dev" @self -y
     drush -r "${DOCROOT}" rsync "@grad.01dev":%files @self:%files -y
   ;;
