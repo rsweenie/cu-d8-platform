@@ -1,6 +1,25 @@
 //specific to slideshow_wrapper, currently only used on front page
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper {
 
+
+
+
+  @include respond-to(null , mobile-max) {
+    border: 2px solid yellow;
+  }
+  @include respond-to(tablet-min , tablet-max) {
+    border: 2px solid orange;
+  }
+  @include respond-to(lg-tablet-min , lg-tablet-max) {
+    border: 2px solid red;
+    max-height: 515px;
+  }
+  @include respond-to(desktop-min , null) {
+    border: 2px solid purple;
+    max-height: 515px;
+  }
+
+
   .field--type-image {
     @include respond-to(desktop-min , null) {
       max-height: 510px;

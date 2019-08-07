@@ -251,6 +251,7 @@
       margin-top: -32px;
     }
   }
+  // Much of the relevant slideshow style is also in _slideshow.scss
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper {
     //START Slide info TODO..move?
     height: 100%;
@@ -309,10 +310,8 @@
 
 @media (min-width: 481px) and (max-width: 768px) {
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper {
-    height: 256px;
 
     .media--slick img {
-      height: 256px;
       object-fit: cover;
 
       .slide_text_wrapper {
@@ -358,12 +357,10 @@
 
 @media (min-width: 769px) and (max-width: 1050px) {
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper {
-    height: 350px;
     margin-top: -1px;
 
     .media--slick img {
       object-fit: cover;
-      height: 350px;
     }
 
     .slide_text_wrapper {
@@ -419,23 +416,17 @@
 
 @media (min-width: 1051px) and (max-width: 1300px) {
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper {
-    height: 515px;
 
     .media--slick img {
-      height: 515px;
       object-fit: cover;
     }
   }
-
 }
-
 
 @media (min-width: 1300px) {
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper {
-    height: 515px;
 
     .media--slick img {
-      height: 515px;
       object-fit: cover;
       width: 100%;
     }
