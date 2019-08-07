@@ -2,15 +2,16 @@
 local.*
 *.local
 local.blt.yml
+
+# Private lando config
 .lando.local.yml
 
 # Ignore drupal core.
 docroot/core
 
-# Ignore paths that contain user-generated content.
-/docroot/sites/*/files/
-/docroot/sites/*/private/
-/files-private/
+# Ignore user-generated content.
+/docroot/sites/*/files/*
+/docroot/sites/*/private-files/*
 
 # Ignore build artifacts.
 /tmp/
@@ -417,3 +418,5 @@ drush/sites/.checksums
 
 # Deployment identifier
 deployment_identifier
+
+.lando.local.yml

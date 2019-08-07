@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.promo_box.field_promo_p_link
     - node.type.promo_box
   module:
-    - content_moderation
     - paragraphs
     - private_content
     - scheduler
@@ -46,12 +45,6 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  moderation_state:
-    type: moderation_state_default
-    weight: 6
-    settings: {  }
-    region: content
-    third_party_settings: {  }
   private:
     weight: 2
     region: content

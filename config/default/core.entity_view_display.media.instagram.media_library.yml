@@ -1,0 +1,33 @@
+uuid: 1350e2f5-acb5-4404-86c7-6d3355a388a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.instagram.embed_code
+    - field.field.media.instagram.field_media_in_library
+    - image.style.media_library
+    - media.type.instagram
+  module:
+    - image
+id: media.instagram.media_library
+targetEntityType: media
+bundle: instagram
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: media_library
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  embed_code: true
+  field_media_in_library: true
+  name: true
+  search_api_excerpt: true
+  uid: true

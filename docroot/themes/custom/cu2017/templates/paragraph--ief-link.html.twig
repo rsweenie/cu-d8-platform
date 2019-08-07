@@ -45,6 +45,7 @@
   not paragraph.isPublished() ? 'paragraph--unpublished',
   'links_wrapper'
 ] %}
+{% set target = "_self" %}
 {% set linkPresent = 0 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
@@ -53,7 +54,7 @@
     {{ title_suffix.contextual_links }}
     {# if new window is checked, set the target #}
     {% if content.field_open_in_new_window.0['#markup'] != "Off" %}
-      {% set target = 'target="_blank"' %}
+      {% set target = '_blank' %}
     {% endif %}
     {# if there's a file, use that link #}
     {% if content.field_file_link.0 %}
@@ -66,7 +67,7 @@
     {% endif %}
     {# build the <a> itself #}
     {% if linkPresent == 1 %}
-      <a href="{{ href }}" title="{{ content.field_link_text.0['#context'].value }}" {{ target }}>
+      <a href="{{ href }}" title="{{ content.field_link_text.0['#context'].value }}" target="{{ target }}">
         <li>{{ content.field_link_text }}</li>
       </a>
     {% else %}

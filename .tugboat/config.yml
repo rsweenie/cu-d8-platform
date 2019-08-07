@@ -76,7 +76,13 @@ services:
         - composer install --no-ansi
 
         # Our baseline is our defaulty Acquia setup
-        - ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+        #- ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+
+        - drush -r "${DOCROOT}" -y site-install standard
+
+        # If there are issues running blt setup, another option is a simple
+        # drupal install
+        #- drush -r "${DOCROOT}" -y site-install standard
 
         # Generate a unique hash_salt to secure the site
         - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
@@ -84,8 +90,8 @@ services:
         # Copy the files directory from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use rsync over SSH.
-        - mkdir -p "${DOCROOT}/sites/default/files"
-        - mkdir -p "${DOCROOT}/sites/default/files-private/temp"
+        #- mkdir -p "${DOCROOT}/sites/default/files"
+        #- mkdir -p "${DOCROOT}/sites/default/files-private/temp"
 
         # Fix settings on /files dir
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files-private"
