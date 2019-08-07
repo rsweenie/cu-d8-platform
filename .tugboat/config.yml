@@ -131,6 +131,9 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        # Install/update packages managed by composer, including drush
+        - composer install --no-ansi
+
         # Site alias specific build steps
         - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 
