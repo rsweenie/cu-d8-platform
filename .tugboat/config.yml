@@ -76,9 +76,10 @@ services:
         - composer install --no-ansi
 
         # Our baseline is our defaulty Acquia setup
-        #- ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+        - ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
 
-        - drush -r "${DOCROOT}" -y site-install standard
+        # If blt setup fails, may need to try something like this:
+        #- drush -r "${DOCROOT}" -y site-install standard
 
         # If there are issues running blt setup, another option is a simple
         # drupal install
@@ -109,7 +110,8 @@ services:
       update:
         # CU: Things needed to establish a clean baseline env based on production
 
-
+        # We do a composer install here for an edge case in which there is a drush version mismatch
+        - composer install --no-ansi
         # Site alias specific build steps
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
 
