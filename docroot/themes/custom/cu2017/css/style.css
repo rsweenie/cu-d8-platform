@@ -13948,16 +13948,19 @@ article.news .news_date {
   .sticky-header .header_top_section_mega_menu {
     position: fixed;
     top: 100px;
+    max-height: 100vh;
+    overflow-y: scroll;
+    padding: 0 0 100px 0;
   }
 }
 
-/* line 24, ../sass/custom/_stickyheader.scss */
+/* line 27, ../sass/custom/_stickyheader.scss */
 body.sticky-header header.header_opacity .header_bg_wrapper {
   background-color: #0054a6;
 }
 
 @media all and (max-width: 768px) {
-  /* line 30, ../sass/custom/_stickyheader.scss */
+  /* line 32, ../sass/custom/_stickyheader.scss */
   .sticky-header .header_top_section_menu {
     position: fixed;
     top: 65px;
@@ -13966,18 +13969,18 @@ body.sticky-header header.header_opacity .header_bg_wrapper {
 }
 
 @media all and (max-width: 600px) {
-  /* line 46, ../sass/custom/_stickyheader.scss */
+  /* line 48, ../sass/custom/_stickyheader.scss */
   body.toolbar-vertical.sticky-header .header_bg_wrapper {
     top: 0;
   }
 }
 
-/* line 55, ../sass/custom/_stickyheader.scss */
+/* line 57, ../sass/custom/_stickyheader.scss */
 .sticky-header main {
   padding-top: 85px;
 }
 
-/* line 62, ../sass/custom/_stickyheader.scss */
+/* line 64, ../sass/custom/_stickyheader.scss */
 .site_name {
   z-index: 1;
 }
