@@ -34,9 +34,7 @@
     attach: function (context, settings) {
       var stickyHeaderAction = this.initStickyHeader();
       
-      //console.log(settings);
       var toolbarPresent = (settings.toolbar);
-      //console.log(toolbarPresent);
 
       if (typeof settings.toolbar != 'undefined') {
         console.log("There is a toolbar");
@@ -48,47 +46,39 @@
 
         $(window, context).once('sticky-resize')
         .resize(stickyHeaderAction.makeHeaderSticky.bind(this));
+
         $(window, context).once('sticky-refresh')
         .ready(stickyHeaderAction.makeHeaderSticky.bind(this));
-
-        // $(window, context).once('sticky-refresh')
-        // .onload(stickyHeaderAction.makeHeaderSticky.bind(this));
-
     },
-    getTotalHeight: function () {
+
+    getDesktopHeight: function () {
       return $(this.elements.topNavSection).height() + 
-        $(this.elements.alertsId).height() + $(this.elements.topSearchBar).height() + $(this.elements.transactionMenu).height();;
+        $(this.elements.alertsId).height();
+    },
+
+    getMobileHeight: function () {
+      return $(this.elements.alertsId).height() + $(this.elements.topSearchBar).height() + $(this.elements.transactionMenu).height();
     },
 
     initStickyHeader: function () {
-      //var $header = $(this.elements.headerMain);
-      //var toolbarHeight= $('#toolbar-bar').height();
-      //var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
-      //var headerTop = $('.header_top_section').height();
-      //var sticky = $header.offset().top;
-      //var $content = $(this.elements.content)
-      //var mobile = parseInt(headerTop + searchBar);
-     //console.log(tablet)
-      console.log('resize is firing');
+      var tablet = creightonEdu.css_breakpoints.tablet_start;
+      var headerTop = null;
       
       return {
         makeHeaderSticky: function () {
-          var tablet = creightonEdu.css_breakpoints.tablet_start;
-          var searchBar = $('header .header_top_section_search_wrapper .cu-query').height();
-          var headerTop = $('.header_top_section').height();
-          var transactionMenu = $('.transaction_menu_wrapper').height();
-          var toolBar = $('#toolbar-bar').height();
-          var alerts = $('#alerts').height();
+          console.log('resize is firing');
+          var toolBar = $(this.elements.toolBar);
+          var desktopHeight = this.getDesktopHeight();
+          var mobileHeight = this.getMobileHeight();
 
           if (toolBar == null) {
             toolBar = 0;
        }        
           if ($(window).width() < tablet) {     
-            headerTop = toolBar + transactionMenu + searchBar + alerts;       
-            console.log(headerTop);
+            headerTop = mobileHeight;       
            }       
            else {
-            headerTop = headerTop + alerts + toolBar;
+            headerTop = desktopHeight;
            }
           if (window.pageYOffset > (headerTop)) {
             $('body').addClass('sticky-header');            
