@@ -1600,7 +1600,7 @@ Delete everything below including comment
   overflow: hidden;
   font-size: 1.5rem;
   line-height: 1.6em;
-  color: #8AC8FF;
+  color: #99CFFF;
   /* -------------------------- *\ FOOTER LAYOUT OPTIONS \* -------------------------- */
   /* ------------------- *\ Super Footer &.super {// COMMENT THIS OUT FOR PRODUCTION USE @import 'footer/layouts/super'; }// COMMENT THIS OUT FOR PRODUCTION USE \* ------------------- */
   /* -------------------------- *\ LOGO OPTIONS We want to use SVG for our logos when available. Choose which option below is the most relevant to your site. \* -------------------------- */
@@ -1677,6 +1677,19 @@ Delete everything below including comment
   margin: 0 auto;
   padding: 0 2.5rem;
   width: 100%;
+}
+
+/* line 153, src/sass/structure/_footer.scss */
+
+.main-footer .region-footer-bottom a {
+  color: #99CFFF;
+  text-decoration: underline;
+}
+
+/* line 157, src/sass/structure/_footer.scss */
+
+.main-footer .region-footer-bottom a:hover {
+  color: #fff;
 }
 
 /* line 6, src/sass/structure/footer/elements/_links.scss */
