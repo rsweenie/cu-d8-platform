@@ -4168,20 +4168,20 @@ blockquote .tooltip-trigger {
   text-transform: uppercase;
 }
 
-/* line 67, src/sass/components/basic/_ns.scss */
+/* line 69, src/sass/components/basic/_ns.scss */
 
 .ns ul li {
   padding: 0;
   font-size: 1.8rem;
 }
 
-/* line 70, src/sass/components/basic/_ns.scss */
+/* line 72, src/sass/components/basic/_ns.scss */
 
 .ns ul li:before {
   display: none;
 }
 
-/* line 85, src/sass/components/basic/_ns.scss */
+/* line 87, src/sass/components/basic/_ns.scss */
 
 .field--name-field-next-steps-heading .field__label {
   position: absolute;
@@ -13859,9 +13859,11 @@ form.search .search button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin: auto;
+    max-width: 1084px;
   }
 
-  /* line 67, src/sass/components/basic/_ns.scss */
+  /* line 69, src/sass/components/basic/_ns.scss */
 
   .ns ul li {
     width: 20%;
