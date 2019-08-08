@@ -2217,7 +2217,7 @@ section[class*="sbg-"]:after {
   color: #002E6D;
 }
 
-/* line 83, src/sass/components/basic/buttons/colors/_primary.scss */
+/* line 84, src/sass/components/basic/buttons/colors/_primary.scss */
 
 .btn-primary:hover:before,
 .btn-primary:focus:before {
@@ -10974,6 +10974,7 @@ form.search .search button {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    padding: 1.6rem 8rem 1.6rem 3rem;
   }
 
   /* line 115, src/sass/components/basic/_hero.scss */
