@@ -9,6 +9,11 @@
 
 }
 
+.sticky-header.toolbar-adjust .header_bg_wrapper {
+    top: auto;
+
+}
+
 .sticky-header .header_top_section_mega_menu {
     @include respond-to(null, tablet-max) {
          position: fixed;

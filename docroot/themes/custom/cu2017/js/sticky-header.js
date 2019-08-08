@@ -87,7 +87,7 @@
             console.log(headerTop);
            }       
            else {
-            headerTop = headerTop + alerts;
+            headerTop = headerTop + alerts + toolBar;
            }
           if (window.pageYOffset > (headerTop)) {
             $('body').addClass('sticky-header');            
