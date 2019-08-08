@@ -1,0 +1,30 @@
+uuid: 57e37087-a3c2-48b1-9451-060d44ed160c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_interior_page_hero_img
+    - media.type.image
+    - node.type.interior_page
+_core:
+  default_config_hash: nLpMXX64jZ5XnKAt1nm2NJwNNFjS3y4Ictll_bnj65Y
+id: node.interior_page.field_interior_page_hero_img
+field_name: field_interior_page_hero_img
+entity_type: node
+bundle: interior_page
+label: 'Hero Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

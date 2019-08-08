@@ -160,7 +160,7 @@ JS;
   {
       $findName = $this->getSession()->getPage()->find("css", $arg1);
       if (!$findName) {
-          throw new Exception($arg1 . " could not be found");
+          throw new \Exception($arg1 . " could not be found");
       } else {
           $findName->click();
       }
@@ -173,7 +173,7 @@ JS;
   {
       $findName = $this->getSession()->getPage()->find("css", $css);
       if (!$findName) {
-          throw new Exception($css . " could not be found");
+          throw new \Exception($css . " could not be found");
       } else {
           $findName->setValue($value);
       }

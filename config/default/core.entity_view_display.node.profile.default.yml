@@ -66,7 +66,7 @@ content:
     label: hidden
     settings:
       format: default
-      markup: false
+      markup: ''
       output: default
       multiple: default
       multiple_delimiter: ', '
@@ -149,3 +149,4 @@ hidden:
   links: true
   private: true
   scheduled_publication: true
+  search_api_excerpt: true

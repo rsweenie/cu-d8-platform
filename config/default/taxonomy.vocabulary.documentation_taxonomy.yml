@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Documentation Taxonomy'
 vid: documentation_taxonomy
 description: 'Taxonomy for the Documentation content type.'
-hierarchy: 0
 weight: 0

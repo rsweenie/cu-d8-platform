@@ -52,4 +52,5 @@ content:
       image_style: square_medium_large_395_x_395_
       image_link: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  search_api_excerpt: true

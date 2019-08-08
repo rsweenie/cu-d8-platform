@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_next_steps_heading
+    - node.type.next_steps
+id: node.next_steps.field_next_steps_heading
+field_name: field_next_steps_heading
+entity_type: node
+bundle: next_steps
+label: Heading
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Let''s take the next steps together'
+default_value_callback: ''
+settings: {  }
+field_type: string

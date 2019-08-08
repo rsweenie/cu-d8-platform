@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: next_steps_collection
+label: 'Next Steps Collection'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

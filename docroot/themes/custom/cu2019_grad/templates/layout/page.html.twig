@@ -64,7 +64,6 @@
     </div>
     {{ page.search }}
   </header>
-  {{ page.mobile_cta }}
   {{ page.breadcrumb }}
 
   {{ page.highlighted }}
@@ -72,6 +71,7 @@
   {{ page.help }}
 
   <main role="main">
+    {{ page.mobile_cta }}
     <a id="content" tabindex="-1"></a>{# link is in html.html.twig #}
     {{ page.content }}
   </main>
