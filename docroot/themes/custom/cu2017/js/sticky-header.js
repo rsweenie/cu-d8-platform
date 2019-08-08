@@ -23,6 +23,7 @@
       alertsId: '#alerts',
       tbAdmnTray: '#toolbar-item-administration-tray',
       toolBar: '#toolbar-bar',
+      transactionMenu: '.transaction_menu_wrapper',
       content: 'main'
     },
     state: {
@@ -56,7 +57,7 @@
     },
     getTotalHeight: function () {
       return $(this.elements.topNavSection).height() + 
-        $(this.elements.alertsId).height() + $(this.elements.topSearchBar).height();
+        $(this.elements.alertsId).height() + $(this.elements.topSearchBar).height() + $(this.elements.transactionMenu).height();;
     },
 
     initStickyHeader: function () {

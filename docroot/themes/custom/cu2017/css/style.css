@@ -13950,7 +13950,7 @@ article.news .news_date {
     top: 100px;
     max-height: 100vh;
     overflow-y: scroll;
-    padding: 0 0 100px 0;
+    padding: 0 20px 100px 20px;
   }
 }
 
