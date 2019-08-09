@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59e79f351f1fb3cd5042d2f706a4f5ce",
+    "content-hash": "d5037add83c9203158d82e75c2869b4e",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -4446,7 +4446,7 @@
             "version": "8.3.5",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "35277fc8675b6a2cbb194f8880145a9c85c845c4"
             },
             "require": {
