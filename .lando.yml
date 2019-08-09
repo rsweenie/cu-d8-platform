@@ -8,6 +8,14 @@ services:
   appserver:
     config:
       conf: lando/lando_php.ini
+    run:
+      ## For running drush/alias commands against Acquia
+      ## We assume our own local keys have been uploaded to Acquia
+      - cp /user/.ssh/id_rsa /var/www/.ssh/id_rsa
+      - cp /user/.ssh/id_rsa.pub /var/www/.ssh/id_rsa.pub
+      - chmod 700 /var/www/.ssh
+      - chmod 600 /var/www/.ssh/id_rsa
+      - chmod 644 /var/www/.ssh/id_rsa.pub
   mailhog:
     type: 'mailhog'
     hogfrom:
@@ -16,8 +24,7 @@ tooling:
   blt:
     service: appserver
     cmd: /app/vendor/bin/blt
-  ## For running drush/alias commands against Acquia
-  ## We assume our own local keys have been uploaded to Acquia
+  ## In case SSH breaks, allow us to fix at will
   fixssh:
     service: appserver
     cmd:
@@ -26,6 +33,3 @@ tooling:
       - chmod 700 /var/www/.ssh
       - chmod 600 /var/www/.ssh/id_rsa
       - chmod 644 /var/www/.ssh/id_rsa.pub
-proxy:
-  appserver:
-    - local.creighton.com
