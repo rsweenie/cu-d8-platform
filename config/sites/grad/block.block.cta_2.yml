@@ -1,0 +1,32 @@
+uuid: 6105371d-0ccb-436c-a93f-f912f9412716
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.cta
+  module:
+    - block_aria_landmark_roles
+    - menu_block
+  theme:
+    - cu2019_grad
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: ''
+id: cta_2
+theme: cu2019_grad
+region: mobile_cta
+weight: 0
+provider: null
+plugin: 'menu_block:cta'
+settings:
+  id: 'menu_block:cta'
+  label: CTA
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand: 0
+  parent: 'cta:'
+  suggestion: cta
+visibility: {  }

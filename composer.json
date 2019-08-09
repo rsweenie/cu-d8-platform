@@ -11,8 +11,8 @@
         "acquia/lightning": "^3.2",
         "bower-asset/masonry": "^4.2",
         "bower-asset/slick-carousel": "^1.8",
-        "drupal/acsf": "^2.54.0",
-        "drupal/acsf_sso": "2.54.0",
+        "drupal/acsf": "^2.51",
+        "drupal/acsf_sso": "2.51",
         "drupal/address": "^1.4",
         "drupal/admin_toolbar": "^1.24",
         "drupal/admin_toolbar_tools": "^1.24",
@@ -138,7 +138,8 @@
                 "Unable to keep nested IEF data separate with multivalue fields.": "https://www.drupal.org/files/issues/2018-05-30/multivalue-complex-and-simple-ief-fix-2653574-100.patch"
             },
             "drupal/core": {
-                "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch"
+                "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
+                "Santize file names on upload":"https://www.drupal.org/files/issues/2019-05-04/2492171-285.patch"
             },
             "drupal/panels": {
                 "bootstrap Warning: array_search() expects parameter":"https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"

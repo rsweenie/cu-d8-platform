@@ -430,6 +430,12 @@ nav.mega {
             }
           }
         }
+
+        .menu-level-1 {
+          > .menu-item {
+            margin-bottom: 12px;
+          }
+        }
     }
 
     @media #{$mediaXl} {

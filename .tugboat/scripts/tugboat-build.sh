@@ -11,8 +11,9 @@ echo "Doing Tugboat build steps for $CU_SITE_ALIAS"
 
 case $CU_SITE_ALIAS in
   demo|hrnew|alliance)
-    echo "Syncing DB and assets for Alliance"
+    echo "Syncing DB and assets for $CU_SITE_ALIAS"
     # DB sync MUST come before filesync always
+    drush -r "${DOCROOT}" sql:drop -y
     drush -r "${DOCROOT}" sql:sync "@${CU_SITE_ALIAS}.01live" @self -y
     drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y
   ;;

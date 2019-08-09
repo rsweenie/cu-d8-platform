@@ -10,6 +10,8 @@ module:
   cu2019_grad_util: 0
 theme: {  }
 blacklist:
+  - block.block.cta
+  - block.block.cta_2
   - core.entity_view_mode.node.next_steps
   - node.type.interior_page
   - node.type.landing_page
@@ -23,6 +25,7 @@ blacklist:
   - paragraphs.paragraphs_type.next_step
   - paragraphs.paragraphs_type.next_steps_collection
   - paragraphs.paragraphs_type.quote
+  - system.menu.cta
   - 'core.base_field_override.node.interior_page.*'
   - 'core.base_field_override.node.landing_page.*'
   - 'core.base_field_override.node.next_steps.*'
