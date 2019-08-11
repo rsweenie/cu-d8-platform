@@ -1,0 +1,19 @@
+uuid: c68c62f9-c2d3-4bcc-8758-b87043e269f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fwb_title
+    - paragraphs.paragraphs_type.full_width_banner
+id: paragraph.full_width_banner.field_fwb_title
+field_name: field_fwb_title
+entity_type: paragraph
+bundle: full_width_banner
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

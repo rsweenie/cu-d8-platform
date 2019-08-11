@@ -1,0 +1,19 @@
+uuid: 58c78702-f6ee-4c3a-8e56-18e7b2bcb955
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_stat_highlite_bottom_text
+    - paragraphs.paragraphs_type.statistic_highlite
+id: paragraph.statistic_highlite.field_stat_highlite_bottom_text
+field_name: field_stat_highlite_bottom_text
+entity_type: paragraph
+bundle: statistic_highlite
+label: 'Bottom Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

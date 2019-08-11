@@ -1,4 +1,4 @@
-name: 'Interior Page'
+name: 'Interior Page (DEPRECATED)'
 description: 'Provides Interior Page content type and related configuration. '
 type: module
 core: 8.x

@@ -1,0 +1,29 @@
+uuid: 7abfeabc-8b49-4bbd-923f-54d436284036
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fwb_body
+    - paragraphs.paragraphs_type.full_width_banner
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_text: basic_text
+    rich_text: '0'
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: paragraph.full_width_banner.field_fwb_body
+field_name: field_fwb_body
+entity_type: paragraph
+bundle: full_width_banner
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

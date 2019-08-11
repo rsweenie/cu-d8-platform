@@ -1,0 +1,19 @@
+uuid: ca4b6ee7-df75-45ed-84f1-951b94be1b0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fwb_title2
+    - paragraphs.paragraphs_type.full_width_banner
+id: paragraph.full_width_banner.field_fwb_title2
+field_name: field_fwb_title2
+entity_type: paragraph
+bundle: full_width_banner
+label: 'Secondary Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

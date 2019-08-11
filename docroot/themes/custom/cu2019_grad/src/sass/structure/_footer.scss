@@ -20,7 +20,7 @@
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     font-size: 15px;
     line-height: (24 / 15) * 1em;
-    color: $accent-2;
+    color: $accent-2Lt;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     // Use gutters to set up definitions of padding and margins
@@ -148,6 +148,18 @@
             }
         }
     }
+
+    .region-footer-bottom {
+      a {
+        color: $accent-2Lt;
+        text-decoration: underline;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+
 
     /* -------------------------- *\
 
