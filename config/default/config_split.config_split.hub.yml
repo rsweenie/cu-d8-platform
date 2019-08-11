@@ -1,0 +1,21 @@
+uuid: b875a8d4-3f1b-40be-8abe-9eac72797e9e
+langcode: en
+status: false
+dependencies: {  }
+id: hub
+label: Hub
+description: ''
+folder: ''
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - 'block.block.*'
+  - 'filter.format.*'
+  - 'views.view.*'
+  - 'search_api.*'
+  - 'system.*'
+  - 'user.role.*'
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
