@@ -1,0 +1,61 @@
+uuid: 8f8ad438-b4e9-48a9-8be5-7e485a14f283
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_text
+  module:
+    - ckeditor
+format: basic_text
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Copy/Cut/Paste
+          items:
+            - Copy
+            - Cut
+            - PasteText
+            - PasteFromWord
+        -
+          name: Undo/Redo
+          items:
+            - Undo
+            - Redo
+            - Maximize
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Linkit
+            - DrupalUnlink
+            - Superscript
+            - Subscript
+            - '-'
+            - RemoveFormat
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    linkit:
+      linkit_profile: cu_default_profile
+    video_embed:
+      defaults:
+        children:
+          autoplay: true
+          responsive: true
+          width: '854'
+          height: '480'
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null
