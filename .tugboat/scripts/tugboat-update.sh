@@ -11,7 +11,7 @@ case $CU_SITE_ALIAS in
   demo|hrnew|alliance)
     echo "Nothing to do for ${CU_SITE_ALIAS}"
   ;;
-  grad-site)
+  grad-site|hub)
     echo "Nothing to do for ${CU_SITE_ALIAS}"
   ;;
 
