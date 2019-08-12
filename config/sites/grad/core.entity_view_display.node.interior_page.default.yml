@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.interior_page.body
     - field.field.node.interior_page.field_interior_page_content
     - field.field.node.interior_page.field_interior_page_hero_img
+    - field.field.node.interior_page.field_interior_page_side_nav
     - node.type.interior_page
   module:
     - entity_reference_revisions
@@ -26,7 +27,7 @@ mode: default
 content:
   field_interior_page_content:
     type: entity_reference_revisions_entity_view
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -43,10 +44,11 @@ content:
     third_party_settings: {  }
     region: content
   links:
-    weight: 3
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   body: true
+  field_interior_page_side_nav: true
   private: true
