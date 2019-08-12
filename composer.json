@@ -12,7 +12,7 @@
         "bower-asset/masonry": "^4.2",
         "bower-asset/slick-carousel": "^1.8",
         "drupal/acsf": "^2.47.0",
-        "drupal/acsf_sso": "^2.54",
+        "drupal/acsf_sso": "^2.47.0",
         "drupal/address": "^1.4",
         "drupal/admin_toolbar": "^1.24",
         "drupal/admin_toolbar_tools": "^1.24",
