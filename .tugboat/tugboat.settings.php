@@ -22,6 +22,9 @@ switch ($cu_site_name) {
   case 'grad-site':
     $config['config_split.config_split.grad_school']['status'] = 1;
     break;
+  case 'hub':
+    $config['config_split.config_split.hub']['status'] = 1;
+    break;
   default:
     break;
 }

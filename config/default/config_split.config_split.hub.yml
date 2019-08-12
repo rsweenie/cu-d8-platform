@@ -5,13 +5,16 @@ dependencies: {  }
 id: hub
 label: Hub
 description: ''
-folder: ''
+folder: ../config/sites/hub
 module: {  }
 theme: {  }
 blacklist: {  }
 graylist:
   - 'block.block.*'
   - 'filter.format.*'
+  - 'jsonapi.*'
+  - 'jsonapi_defaults.*'
+  - 'jsonapi_extras.*'
   - 'views.view.*'
   - 'search_api.*'
   - 'system.*'
