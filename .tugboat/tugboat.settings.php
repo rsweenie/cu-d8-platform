@@ -20,7 +20,8 @@ switch ($cu_site_name) {
   case 'alliance':
     break;
   case 'grad-site':
-    $config['config_split.config_split.grad_school']['status'] = 1;
+  case 'grad':
+    $config['config_split.config_split.grad']['status'] = 1;
     break;
   default:
     break;
