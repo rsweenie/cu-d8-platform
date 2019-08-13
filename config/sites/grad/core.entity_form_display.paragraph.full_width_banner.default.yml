@@ -1,0 +1,84 @@
+uuid: bb673b70-d466-4ace-a1a5-c7d8a26db673
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_browser
+    - field.field.paragraph.full_width_banner.field_fwb_body
+    - field.field.paragraph.full_width_banner.field_fwb_cta
+    - field.field.paragraph.full_width_banner.field_fwb_image
+    - field.field.paragraph.full_width_banner.field_fwb_title
+    - field.field.paragraph.full_width_banner.field_fwb_title2
+    - paragraphs.paragraphs_type.full_width_banner
+  module:
+    - allowed_formats
+    - entity_browser
+    - link_attributes
+    - text
+id: paragraph.full_width_banner.default
+targetEntityType: paragraph
+bundle: full_width_banner
+mode: default
+content:
+  field_fwb_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    type: text_textarea
+    region: content
+  field_fwb_cta:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_fwb_image:
+    type: entity_browser_entity_reference
+    weight: 0
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      field_widget_replace: false
+      open: false
+    third_party_settings: {  }
+    region: content
+  field_fwb_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_fwb_title2:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

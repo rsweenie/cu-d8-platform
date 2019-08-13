@@ -15,7 +15,7 @@ case $CU_SITE_ALIAS in
   grad-site)
     echo "Reinstalling grad features"
     # Temporary fix to make sure features aren't overridden by config import.
-    drush dre cu_next_steps,cu_grad_interior_page,cu_grad_landing_page -y
+    #drush dre cu_next_steps,cu_grad_interior_page,cu_grad_landing_page -y
   ;;
   none)
     echo "Nothing to do for generic install"
