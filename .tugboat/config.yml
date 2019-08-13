@@ -35,8 +35,8 @@ services:
     #   3. Routes requests to the preview URL to this service
     default: true
 
-    # Wait until the mysql service is done building
-    depends: mysql
+    # Wait until the mariadb service is done building
+    depends: mariadb
 
     # A set of commands to run while building this service
     commands:
@@ -48,13 +48,13 @@ services:
 
         # Install prerequisite packages
         - apt-get update
-        - apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
+        - apt-get install -y mariadb-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
         #- yes | pecl install mcrypt-1.0.2
 
         # Install PHP exts and mod-rewrite.
         - docker-php-ext-configure gd --enable-gd-native-ttf --with-freetype-dir=/usr/include/freetype2 --with-png-dir=/usr/include --with-jpeg-dir=/usr/include
         #- docker-php-ext-install bz2 dom filter gd hash json opcache pdo pdo_mysql session simplexml sodium spl tokenizer xml
-        - docker-php-ext-install bz2 gd opcache pdo_mysql
+        - docker-php-ext-install bz2 gd opcache pdo_mariadb
 
         # CU: Our own custom php tweaks
         - cp "${TUGBOAT_ROOT}/.tugboat/php.ini" /usr/local/etc/php/conf.d/creighton.ini
@@ -160,10 +160,10 @@ services:
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
-  mysql:
+  mariadb:
 
     # Use the latest available 5.x version of MySQL
-    image: tugboatqa/mysql:5
+    image: tugboatqa/mariadb:5
 
     # We need access to the git repository to install the intial DB image.
     checkout: true
@@ -181,11 +181,11 @@ services:
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use scp.
         #- scp user@example.com:database.sql.gz /tmp/database.sql.gz
-        #- zcat /tmp/database.sql.gz | mysql tugboat
+        #- zcat /tmp/database.sql.gz | mariadb tugboat
         #- rm /tmp/database.sql.gz
 
         # Install the initial DB backup as a base.
-        # - zcat "${TUGBOAT_ROOT}/.tugboat/live-reference-db.sql.gz" | mysql tugboat
+        # - zcat "${TUGBOAT_ROOT}/.tugboat/live-reference-db.sql.gz" | mariadb tugboat
         #- ${TUGBOAT_ROOT}/.tugboat/db-update.sh
 
       # Commands that build the site. This is where you would add things
