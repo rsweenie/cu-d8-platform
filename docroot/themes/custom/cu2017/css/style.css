@@ -11269,21 +11269,22 @@ nav[role=navigation] {
 /* line 108, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text_wrapper {
   background: transparent !important;
+  max-width: 1300px;
   margin: 0 auto;
   position: relative;
   top: -4%;
 }
-/* line 115, ../sass/custom/_slideshow.scss */
+/* line 116, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text {
   background: transparent !important;
 }
 @media all and (min-width: 1390px) {
-  /* line 115, ../sass/custom/_slideshow.scss */
+  /* line 116, ../sass/custom/_slideshow.scss */
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text {
     margin-left: 42px;
   }
 }
-/* line 121, ../sass/custom/_slideshow.scss */
+/* line 122, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text h1 {
   color: #FFCC4F;
   text-transform: uppercase;
@@ -11294,18 +11295,18 @@ nav[role=navigation] {
   margin-bottom: -10px;
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
-  /* line 121, ../sass/custom/_slideshow.scss */
+  /* line 122, ../sass/custom/_slideshow.scss */
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text h1 {
     font-size: 48px;
   }
 }
 @media all and (max-width: 480px) {
-  /* line 121, ../sass/custom/_slideshow.scss */
+  /* line 122, ../sass/custom/_slideshow.scss */
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text h1 {
     font-size: 34px;
   }
 }
-/* line 137, ../sass/custom/_slideshow.scss */
+/* line 138, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text h2 {
   color: #FFF;
   font-weight: 700;
@@ -11313,18 +11314,18 @@ nav[role=navigation] {
   font-size: 36px;
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
-  /* line 137, ../sass/custom/_slideshow.scss */
+  /* line 138, ../sass/custom/_slideshow.scss */
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text h2 {
     font-size: 30px;
   }
 }
 @media all and (max-width: 480px) {
-  /* line 137, ../sass/custom/_slideshow.scss */
+  /* line 138, ../sass/custom/_slideshow.scss */
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text h2 {
     font-size: 24px;
   }
 }
-/* line 150, ../sass/custom/_slideshow.scss */
+/* line 151, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text a {
   background-image: url(../images/png/white-arrow.png);
   background-position: 100%;
@@ -11334,28 +11335,28 @@ nav[role=navigation] {
   font-size: 1.6em;
 }
 @media all and (max-width: 768px) {
-  /* line 150, ../sass/custom/_slideshow.scss */
+  /* line 151, ../sass/custom/_slideshow.scss */
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text a {
     font-size: 18px;
   }
 }
 @media all and (max-width: 480px) {
-  /* line 150, ../sass/custom/_slideshow.scss */
+  /* line 151, ../sass/custom/_slideshow.scss */
   #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text a {
     margin-top: 0;
   }
 }
-/* line 165, ../sass/custom/_slideshow.scss */
+/* line 166, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slide__caption .slide_text p {
   font-weight: 400;
 }
-/* line 171, ../sass/custom/_slideshow.scss */
+/* line 172, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slick__arrow {
   display: flex;
   justify-content: flex-end;
   top: 90%;
 }
-/* line 176, ../sass/custom/_slideshow.scss */
+/* line 177, ../sass/custom/_slideshow.scss */
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper .slick__arrow .slick-arrow {
   position: static;
   margin-right: 20px;
