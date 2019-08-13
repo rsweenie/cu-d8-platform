@@ -1,0 +1,9 @@
+uuid: 9daa2821-f038-421d-94c1-ce89e95d855d
+langcode: en
+status: true
+dependencies: {  }
+id: full_width_banner
+label: 'Full Width Banner'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
