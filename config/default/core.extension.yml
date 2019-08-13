@@ -40,6 +40,7 @@ module:
   cu_breadcrumbs: 0
   cu_data_transform: 0
   cu_entity_embed: 0
+  cu_hub_api: 0
   datetime: 0
   dblog: 0
   decoupled_router: 0
@@ -165,6 +166,7 @@ module:
   social_media_links_field: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   token: 0
   toolbar: 0

@@ -8,8 +8,19 @@ description: ''
 folder: ../config/sites/hub
 module: {  }
 theme: {  }
-blacklist: {  }
+blacklist:
+  - 'core.base_field_override.node.hub_*'
+  - 'core.entity_form_display.node.hub_*'
+  - 'core.entity_view_display.node.hub_*'
+  - 'field.field.node.hub_*'
+  - 'field.storage.node.field_hub_*'
+  - 'node.type.hub_*'
+  - 'cu_hub_api.*'
+  - taxonomy.vocabulary.degree_type
+  - taxonomy.vocabulary.program_availability
+  - taxonomy.vocabulary.program_interests
 graylist:
+  - 'auto_entitylabel.settings.*'
   - 'block.block.*'
   - 'filter.format.*'
   - 'jsonapi.*'
