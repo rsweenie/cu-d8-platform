@@ -202,7 +202,7 @@ nav.mega {
             }
 
             .mega_content {
-                @include flex(flex-start, center, center);
+                //@include flex(flex-start, center, center);
                 width: 36%;
                 color: $gray2;
                 background: $accent-1;
