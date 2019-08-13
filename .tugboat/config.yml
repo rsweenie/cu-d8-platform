@@ -27,7 +27,7 @@ services:
     # The -stretch label lets us use the old version of this container which doesn't break us ;)
     # But it's not static so it will probably still break in the future
     #image: tugboatqa/php:7.1-apache-stretch
-    image: tugboatqa/php:7.2-apache
+    image: tugboatqa/php:7.2-apache-stretch
 
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
@@ -35,8 +35,8 @@ services:
     #   3. Routes requests to the preview URL to this service
     default: true
 
-    # Wait until the mariadb service is done building
-    depends: mariadb
+    # Wait until the mysql service is done building
+    depends: mysql
 
     # A set of commands to run while building this service
     commands:
@@ -48,13 +48,13 @@ services:
 
         # Install prerequisite packages
         - apt-get update
-        - apt-get install -y mariadb-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
+        - apt-get install -y mysql-client libbz2-dev libpng-dev libjpeg-dev libfreetype6-dev
         #- yes | pecl install mcrypt-1.0.2
 
         # Install PHP exts and mod-rewrite.
         - docker-php-ext-configure gd --enable-gd-native-ttf --with-freetype-dir=/usr/include/freetype2 --with-png-dir=/usr/include --with-jpeg-dir=/usr/include
         #- docker-php-ext-install bz2 dom filter gd hash json opcache pdo pdo_mysql session simplexml sodium spl tokenizer xml
-        - docker-php-ext-install bz2 gd opcache pdo_mariadb
+        - docker-php-ext-install bz2 gd opcache pdo_mysql
 
         # CU: Our own custom php tweaks
         - cp "${TUGBOAT_ROOT}/.tugboat/php.ini" /usr/local/etc/php/conf.d/creighton.ini
@@ -160,10 +160,10 @@ services:
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
-  mariadb:
+  mysql:
 
     # Use the latest available 5.x version of MySQL
-    image: tugboatqa/mariadb:5
+    image: tugboatqa/mysql:5
 
     # We need access to the git repository to install the intial DB image.
     checkout: true
@@ -181,11 +181,11 @@ services:
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use scp.
         #- scp user@example.com:database.sql.gz /tmp/database.sql.gz
-        #- zcat /tmp/database.sql.gz | mariadb tugboat
+        #- zcat /tmp/database.sql.gz | mysql tugboat
         #- rm /tmp/database.sql.gz
 
         # Install the initial DB backup as a base.
-        # - zcat "${TUGBOAT_ROOT}/.tugboat/live-reference-db.sql.gz" | mariadb tugboat
+        # - zcat "${TUGBOAT_ROOT}/.tugboat/live-reference-db.sql.gz" | mysql tugboat
         #- ${TUGBOAT_ROOT}/.tugboat/db-update.sh
 
       # Commands that build the site. This is where you would add things
