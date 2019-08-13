@@ -1,0 +1,9 @@
+uuid: 6a59b50f-b840-4b74-8490-e435a6dbe78f
+langcode: en
+status: true
+dependencies: {  }
+id: formatted_text
+label: 'Text Content'
+icon_uuid: null
+description: 'Standard rich text content.'
+behavior_plugins: {  }

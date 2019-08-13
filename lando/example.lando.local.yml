@@ -1,0 +1,12 @@
+# If you want to make private changes to the lando config, copy this file to
+# projectroot/.lando.local.yml and make changes here. 
+# You can set a static mysql port to connect to from your host if you use a desktop mysql client
+#services:
+#  database:
+#    portforward: 33306
+
+# Setting a specific domain name can be useful when running backport tests or if relying on the URL
+# in any way. This is not required
+proxy:
+  appserver:
+    - local.creighton.com
