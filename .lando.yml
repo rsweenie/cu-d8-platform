@@ -2,7 +2,7 @@ name: d8-platform
 recipe: drupal8
 config:
   webroot: docroot
-  php: 7.1
+  php: 7.2
   xdebug: true
 services:
   appserver:
