@@ -13,7 +13,7 @@ $env = getenv('AH_SITE_ENVIRONMENT');
 $target_env = $site . $env;
 // The public domain name of the website.
 // Run updates against requested domain rather than acsf primary domain.
-$domain = getenv('HTTP_HOST');
+$domain = $_SERVER['HTTP_HOST'];
 $domain_fragments = explode('.', $domain);
 $site_name = array_shift($domain_fragments);
 
