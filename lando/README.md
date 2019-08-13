@@ -12,7 +12,7 @@ and work within that environment, which *will* work.
 ## Basic useage
 
 Optionally, you can copy the file projectdir/lando/example.lando.local.yml to
-projectroot/.loando.local.yml and add any customizations for you particular use
+projectroot/.lando.local.yml and add any customizations for you particular use
 case. This is not required, however.
 
 If everything is working properly, simply run `lando start`. The first time this
