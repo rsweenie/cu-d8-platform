@@ -1,0 +1,17 @@
+uuid: 9f867481-4dec-44a4-8468-9fb6c749de73
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: front_page_slider_desktop_1x
+label: 'Front Page Slider desktop 1x'
+effects:
+  333f5942-e234-424a-a284-9bf09eeb81a6:
+    uuid: 333f5942-e234-424a-a284-9bf09eeb81a6
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2560
+      height: 850
+      crop_type: focal_point

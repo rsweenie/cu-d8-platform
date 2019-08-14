@@ -1,0 +1,17 @@
+uuid: 95d19525-2656-4aaa-a4a3-2f2e23672244
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: front_page_slider_mobile_2x
+label: 'Front Page Slider mobile 2x'
+effects:
+  6e4aba00-9c76-432c-88d8-1a7b99fead9a:
+    uuid: 6e4aba00-9c76-432c-88d8-1a7b99fead9a
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 320
+      crop_type: focal_point

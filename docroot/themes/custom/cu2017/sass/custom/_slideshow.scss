@@ -1,157 +1,182 @@
 //specific to slideshow_wrapper, currently only used on front page
 #slick-views-slick-slideshow-block-1-1.slick.front_page_slide_wrapper {
-	//firefox adjustment
-	@-moz-document url-prefix() {
-		margin-top:-1px;
-	}
-	&.logged-in-slideshow{
-		margin-top:0px;
-	}
-	@include respond-to ( desktop-min, null) {
-		margin-top:-85px;
-	}
-	.slide_wrapper{
-		// .slide_image_wrapper {
-		// 	img {
-		// 		height: 515px;
-		// 	}
-		// }
 
-	}
-	.slick-slider {
-		button {
-			background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
-			bottom: 0;
-			height: 44px;
-			left: auto;
-			position: absolute;
-			top: auto;
-			width: 44px;
-			z-index: 1;
-
-			&::before {
-				display: none;
-			}
-
-			@media all and (max-width: 900px) {
-				bottom: -5px;
-			}
-		}
+  @include respond-to(lg-tablet-min , lg-tablet-max) {
+    max-height: 515px;
+  }
+  @include respond-to(desktop-min , null) {
+    max-height: 515px;
+  }
 
 
-	}
-	.slick-slider.slick-list {
-        overflow: visible;
-	}	  
-	.slick-prev,
-		.slick-prev:hover{
-			background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
-			outline: none;
-			right: 90px;
-			top: 91%;
-			// get rid of the buttons on mobile (to overide in the in-line css)
-			@include respond-to(null , tablet-max) {
-				display: none;
-			}
-		}
-		.slick-next,
-		.slick-next:hover{
-			background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
-			background-position: -46px 0;
-			outline: none;
-			right: 27px;
-			top: 91%;
-			// get rid of the buttons on mobile (to overide in the in-line css)
-			@include respond-to(null , tablet-max) {
-				display: none;
-			}
-		}
-	.slick-arrow::before, .slick-arrow::after {
-		content: unset;
-	}
+  .field--type-image {
+    @include respond-to(desktop-min , null) {
+      max-height: 510px;
+      overflow: hidden;
+    }
+  }
 
-	.slick-arrow:focus {
-		outline-color: rgb(59, 153, 252);   
-		outline-width: 5px;
-		outline-style: auto;
-	  }
-	  
-	.slide__caption {
-		margin-top: -80px;
-		padding: 10px 45px;
-		position: absolute;
-		bottom: 10px;
-		top: unset;
+  //firefox adjustment
+  @-moz-document url-prefix() {
+    margin-top: -1px;
+  }
 
-		.slide_text_wrapper {
-			background: transparent !important;
-			max-width: $maxContentWidth;
-			margin: 0 auto;
-			position: relative;
-			top: -4%;
+  &.logged-in-slideshow {
+    margin-top: 0px;
+  }
 
-			}
-			.slide_text{
-				background: transparent !important;
-				@include respond-to( slider-1390-hack , null){
-					margin-left:42px;
-			}
-			h1{
-				color: $yellow;
-				text-transform: uppercase;
-				font-weight: $bold;
-				font-size: 3.5em;
-				font-family: $condensedFont;
-				margin-top: -10px;
-				margin-bottom: -10px;
-				@include respond-to( tablet-min , tablet-max){
-					font-size: 48px;
-				}
-				@include respond-to(null , mobile-max ){
-					font-size: 34px;
-				}
-			}
+  @include respond-to (desktop-min, null) {
+    margin-top: -85px;
+  }
 
-			h2 {
-				color: $white;
-				font-weight: $bold;
-				font-family: $condensedFont;
-				font-size:36px;
-				@include respond-to( tablet-min , tablet-max){
-					font-size: 30px;
-				}
-				@include respond-to(null , mobile-max ){
-					font-size: 24px;
-				}
-			}
+  .slide_wrapper {
+    // .slide_image_wrapper {
+    // 	img {
+    // 		height: 515px;
+    // 	}
+    // }
 
-			a {
-				background-image: url(../images/png/white-arrow.png);
-				background-position: 100%;
-				background-repeat: no-repeat;
-				margin-top: 2rem;
-				padding: 0px 20px 0px 0px;
-				font-size:1.6em;
-				@include respond-to(null , tablet-max ){
-					font-size: 18px;
-				}
-				@include respond-to(null, mobile-max) {
-					margin-top: 0;
-				}
+  }
 
-			}
-			p {
-				font-weight: $regular;
-			}
-		}
-	}
-	.slick__arrow {
-		display: flex;
-		justify-content: flex-end;
-		top: 90%;
-		.slick-arrow {
-			position: static;
-			margin-right: 20px;
-		}
-	}
+  .slick-slider {
+    button {
+      background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
+      bottom: 0;
+      height: 44px;
+      left: auto;
+      position: absolute;
+      top: auto;
+      width: 44px;
+      z-index: 1;
+
+      &::before {
+        display: none;
+      }
+
+      @media all and (max-width: 900px) {
+        bottom: -5px;
+      }
+    }
+  }
+
+  .slick-slider.slick-list {
+    overflow: visible;
+  }
+
+  .slick-prev,
+  .slick-prev:hover {
+    background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
+    outline: none;
+    right: 90px;
+    top: 91%;
+    // get rid of the buttons on mobile (to overide in the in-line css)
+    @include respond-to(null, tablet-max) {
+      display: none;
+    }
+  }
+
+  .slick-next,
+  .slick-next:hover {
+    background: url(/themes/custom/cu2017/images/front-page/slider-arrows.png) no-repeat;
+    background-position: -46px 0;
+    outline: none;
+    right: 27px;
+    top: 91%;
+    // get rid of the buttons on mobile (to overide in the in-line css)
+    @include respond-to(null, tablet-max) {
+      display: none;
+    }
+  }
+
+  .slick-arrow::before, .slick-arrow::after {
+    content: unset;
+  }
+
+  .slick-arrow:focus {
+    outline-color: rgb(59, 153, 252);
+    outline-width: 5px;
+    outline-style: auto;
+  }
+
+  .slide__caption {
+    margin-top: -80px;
+    padding: 10px 45px;
+    position: absolute;
+    bottom: 10px;
+    top: unset;
+
+    .slide_text_wrapper {
+      background: transparent !important;
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+      top: -4%;
+    }
+
+    .slide_text {
+      background: transparent !important;
+      @include respond-to(slider-1390-hack, null) {
+        margin-left: 42px;
+      }
+
+      h1 {
+        color: $yellow;
+        text-transform: uppercase;
+        font-weight: $bold;
+        font-size: 3.5em;
+        font-family: $condensedFont;
+        margin-top: -10px;
+        margin-bottom: -10px;
+        @include respond-to(tablet-min, tablet-max) {
+          font-size: 48px;
+        }
+        @include respond-to(null, mobile-max) {
+          font-size: 34px;
+        }
+      }
+
+      h2 {
+        color: $white;
+        font-weight: $bold;
+        font-family: $condensedFont;
+        font-size: 36px;
+        @include respond-to(tablet-min, tablet-max) {
+          font-size: 30px;
+        }
+        @include respond-to(null, mobile-max) {
+          font-size: 24px;
+        }
+      }
+
+      a {
+        background-image: url(../images/png/white-arrow.png);
+        background-position: 100%;
+        background-repeat: no-repeat;
+        margin-top: 2rem;
+        padding: 0px 20px 0px 0px;
+        font-size: 1.6em;
+        @include respond-to(null, tablet-max) {
+          font-size: 18px;
+        }
+        @include respond-to(null, mobile-max) {
+          margin-top: 0;
+        }
+      }
+
+      p {
+        font-weight: $regular;
+      }
+    }
+  }
+
+  .slick__arrow {
+    display: flex;
+    justify-content: flex-end;
+    top: 90%;
+
+    .slick-arrow {
+      position: static;
+      margin-right: 20px;
+    }
+  }
 }
