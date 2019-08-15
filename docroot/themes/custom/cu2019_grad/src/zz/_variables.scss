@@ -1,0 +1,63 @@
+/*---===<<< VARIABLES >>>===---*/
+// ORGANIZATION OF OUR CSS DEFINITIONS
+// GROUP CLASS DEFINITIONS BY THE FOLLOWING TYPES
+// POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+// BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+// BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+// FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+// TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+// OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+// IF A MIXIN IS AVAILABLE USE THAT INSTEAD WRITING ALL PROPERTIES OUT
+/*---=== COLORS ===---*/
+$white: #fff;
+$black: #212322;
+$primary: #002E6D;
+$secondary: #0054A6;
+$tertiary: #6CACE4;
+$accent-1: #F0F5FA;
+$accent-2: #8AC8FF;
+$accent-3: #FFCC4F;
+$accent-4: #FFB82A;
+
+$gray1: #5D6468;
+$gray2: #555555;
+$gray3: #707070;
+
+$success: #76bd22;
+$warning: #fce300;
+$danger: #f32836;
+/*---=== FONT SETTINGS ===---*/
+$copyFF: proxima-nova, sans-serif; // FONT FAMILY FOR DEFAULT COPY
+$copyFS: 1.6rem;
+$copyLH: 1.5;
+$copyC: $primary;
+$headingFF: 'Conduit'; // FONT FAMILY FOR HEADINGS (H1-H6)
+$headingC: $secondary;
+$linkC: $tertiary;
+$linkCHov: $primary;
+$linkCAct: $secondary;
+$iconFF: "Font Awesome 5 Free"; // FONT FAMILY FOR HEADINGS (H1-H6)
+$remBase: 10; // REM BASE SHOULD REMAIN 10 UNLESS YOU WANT TO DO A DIFFERENT BASE FOR MEASUREMENT
+/*---=== MEDIA QUERIES ===---*/
+$mediaXs: " screen and (max-width: 575.9px)"; // MOBILE DEVICES
+$mediaSm: " screen and (min-width: 576px)"; // PHONES LANDSCAPE AND UP
+$mediaSmOnly: " screen and (min-width: 576px) and (max-width: 767.9px)"; // PHONES LANDSCAPE ONLY
+$mediaMd: " screen and (min-width: 768px)"; // TABLETS PORTRAIT AND UP
+$mediaMdOnly: " screen and (min-width: 768px) and (max-width: 991.9px)"; // TABLETS PORTRAIT ONLY
+$mediaLg: " screen and (min-width: 992px)"; // TABLETS LANDSCAPE AND UP
+$mediaLgOnly: " screen and (min-width: 992px) and (max-width: 1209.9px)"; // TABLETS LANDSCAPE ONLY
+$mediaXl: " screen and (min-width: 1210px)"; // SMALL MONITORS
+$mediaXxl: " screen and (min-width: 1600px)"; // LARGER MONITORS
+$mediaToggleHeader: " screen and (max-width: 991.9px)"; // ALL PHONES DEVICES
+$mediaFullHeader: " screen and (min-width: 992px)"; // ALL PHONES DEVICES
+$darkMode: " screen and (prefers-color-scheme: dark)"; // LARGER MONITORS
+
+$mediaMdMax: " screen and (max-width: 767.9px)"; 
+/*---=== GRID ===---*/
+$siteWList: 100%, 95%, 90%, 85%;
+$siteWQueryList: $mediaXs, $mediaLg, $mediaXl, $mediaXxl;
+$siteWMx: 1350px; // SITES CONTENT MAX WIDTH
+$gridMediaList: "XS", "SM", "MD", "LG"; // MEDIA QUERY LIST USED TO GENERATE GRID ELEMENTS
+$gridMediaQueryList: $mediaXs, $mediaSm, $mediaMd, $mediaLg; // MEDIA QUERIES USED IN COMBINATION WITH GRID MEDIA LIST
+$gridCount: 12; // GRID COUNT
+$gutter: 2.5; // GLOBALLY USED SPACING VARIABLE EQUAL TO THE GUTTER BETWEEN COLUMNS

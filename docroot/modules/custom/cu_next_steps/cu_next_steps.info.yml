@@ -1,4 +1,4 @@
-name: 'CU Next Steps'
+name: 'CU Next Steps (DEPRECATED)'
 description: 'Provides Next Steps content type and related configuration. '
 type: module
 core: 8.x
