@@ -2,7 +2,7 @@ name: d8-platform
 recipe: drupal8
 config:
   webroot: docroot
-  php: 7.3
+  php: 7.2
   xdebug: true
 services:
   appserver:
@@ -25,7 +25,7 @@ tooling:
     service: appserver
     description: Run Acquia blt commands in the lando environment
     cmd: /app/vendor/bin/blt
-  ## In case SSH breaks, allow us to fix at will
+  ## In case SSH breaks, allow us to fix it with a lando command
   fixssh:
     service: appserver
     description: Fixes ssh issues by copying your local key files into lando and fixing permissions
