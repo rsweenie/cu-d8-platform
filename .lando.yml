@@ -25,7 +25,7 @@ tooling:
     service: appserver
     description: Run Acquia blt commands in the lando environment
     cmd: /app/vendor/bin/blt
-  ## In case SSH breaks, allow us to fix at will
+  ## In case SSH breaks, allow us to fix it with a lando command
   fixssh:
     service: appserver
     description: Fixes ssh issues by copying your local key files into lando and fixing permissions

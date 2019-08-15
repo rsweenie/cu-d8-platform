@@ -1,0 +1,17 @@
+uuid: 6239226e-67d8-4a73-8c87-55a46c1385ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: front_page_slider_large_tablet_1x
+label: 'Front Page Slider large tablet 1x'
+effects:
+  85b89cf3-2dea-47b4-8a86-a7f9c238a6d2:
+    uuid: 85b89cf3-2dea-47b4-8a86-a7f9c238a6d2
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1050
+      height: 350
+      crop_type: focal_point

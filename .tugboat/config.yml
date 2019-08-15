@@ -23,10 +23,11 @@ services:
 #      - /residencies-fellowships
 #      - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
 
-    # Use PHP 7.1 with Apache
+    # Use PHP with Apache
     # The -stretch label lets us use the old version of this container which doesn't break us ;)
     # But it's not static so it will probably still break in the future
-    image: tugboatqa/php:7.1-apache-stretch
+    #image: tugboatqa/php:7.1-apache-stretch
+    image: tugboatqa/php:7.2-apache-stretch
 
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
