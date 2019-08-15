@@ -1,0 +1,14 @@
+uuid: 841b9f72-bfe6-48ba-9d87-b56773c19f26
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: 'Displays responsive image sizes for the slide show typically featured on the homepage.'
+id: media.front_page_slider
+label: 'Front Page Slider'
+targetEntityType: media
+cache: true
