@@ -1,0 +1,26 @@
+.fwb & {
+  .media {
+    position: relative;
+
+    &:after {
+      width: calc(100% - 30px);
+      height:  calc(100% - 30px);
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      content: "";
+      border: 1px solid $white;
+      opacity: .3;
+    }
+  }
+  @media #{$mediaMd} {
+    > a {
+      @include flexItem(1, 1, 33.3%);
+    }
+
+    > div {
+      @include flexItem(1, 1, 66.6%);
+      padding-left: 32px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+uuid: 17a89139-7f6f-4d35-afdc-363903413c92
+langcode: en
+status: true
+dependencies:
+  module:
+    - responsivewrappers
+name: 'Raw HTML'
+format: raw_html
+weight: -7
+filters:
+  filter_bootstrap_responsive_wrapper:
+    id: filter_bootstrap_responsive_wrapper
+    provider: responsivewrappers
+    status: false
+    weight: 0
+    settings:
+      responsive_iframe: '0'
+      responsive_iframe_pattern: '#.*(youtube.|vimeo.).*#ui'
+      responsive_table: '0'
+      responsive_image: '0'
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
+      filter_html_help: true
+      filter_html_nofollow: false

@@ -1,4 +1,4 @@
-<header{% if heroType != null %} class="{{ heroType }}"{% endif %}>
+<header {% if heroType != null %}class="{{ heroType }}"{% endif %}>
   {% if heroVid|length > 0 %}
     <video width="320" height="240" autoplay="true" poster="{% if heroVidPoster != "/" %}{{ heroVidPoster }}{% elseif heroVidPosterUrl != null %}{{ heroVidPosterUrl }}{% endif %}" loop>
       {% for vid in heroVid %}
@@ -15,28 +15,45 @@
       {% endif %}
     </video>
   {% elseif heroImg != null %}
-    <picture>
-      <img src="{{ heroImg }}" alt="{{ heroImgAlt }}">
-    </picture>
+    {{heroImg}}
   {% endif %}
-    <div>
-        {% if breadcrumb %}
-          <nav aria-label="Breadcrumb" class="bc">
-            <ol>
-            {% for item in breadcrumb %}
-              <li>
-                {% if item.url %}
-                  <a href="{{ item.url }}">{{ item.text }}</a>
-                {% else %}
-                  <a href="{{ item.url }}" aria-current="page">{{ item.text }}</a>
-                {% endif %}
-              </li>
-            {% endfor %}
-            </ol>
-          </nav>
-        {% endif %}
-        {% if heroTitle %}
+    {% if heroTitle %}
+    <div class="hero_title">
+      <div>
         <h1>{{ heroTitle }}</h1>
-        {% endif %}
+      </div>
     </div>
+    {% endif %}
+  {% if breadcrumb is iterable %}
+  <div class="breadcrumb">
+    <div>
+      <nav aria-label="Breadcrumb" class="bc">
+        <ol>
+        {% for item in breadcrumb %}
+          <li>
+            {% if item.url %}
+              <a href="{{ item.url }}">{{ item.text }}</a>
+            {% else %}
+              <a href="{{ item.url }}" aria-current="page">{{ item.text }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ol>
+      </nav>
+    </div>
+  </div>
+  {% else %}
+  <div class="breadcrumb">
+    <div>
+      <nav aria-label="Breadcrumb" class="bc">
+        <ol>
+          <li><a href="#">This</a></li>
+          <li><a href="#">Is</a></li>
+          <li><a href="#">A</a></li>
+          <li><a href="#">Test</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  {% endif %}
 </header>

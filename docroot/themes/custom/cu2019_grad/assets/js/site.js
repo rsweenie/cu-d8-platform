@@ -4,11 +4,13 @@
   Drupal.behaviors.fsbg = {
     attach: function (context, settings) {
       // Hide image and add background image
-      $('.card.img-behind',context).each(function() {
+      $('.card.img-behind, header.interior_page > .field, .hp_hero_bg',context).each(function() {
         var bg = $('img',this).attr('src');
         $(this).css({'background-image':'url('+bg+')'});
         $(this).addClass('js-background');
       });
+
+
 
       // Open all external links in new tab
       $("a", context).each(function() {
@@ -21,7 +23,7 @@
              });
          }
       });
-      
+
       // $('figure.img_vid.video', context).each(function() {
       //   $(this).on('click', function() {
       //     var src = $('iframe', this).attr('src') + '&autoplay=1';

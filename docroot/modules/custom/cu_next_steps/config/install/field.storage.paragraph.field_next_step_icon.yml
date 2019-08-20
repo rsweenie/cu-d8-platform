@@ -15,8 +15,20 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: mag-glass
+      value: search-more
       label: 'Magnifying Glass'
+    -
+      value: location-thin
+      label: Location
+    -
+      value: ask-bubble
+      label: 'Ask Bubble'
+    -
+      value: apply
+      label: Apply
+    -
+      value: contact
+      label: Contact
   allowed_values_function: ''
 module: options
 locked: false

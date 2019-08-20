@@ -30,20 +30,19 @@ bundle: quote_box
 mode: default
 content:
   field_name_person:
+    type: name_default
+    settings:
+      list_format: default
+      format: default
+      markup: none
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
     weight: 5
     label: hidden
-    settings:
-      format: default
-      markup: false
-      output: default
-      multiple: default
-      multiple_delimiter: ', '
-      multiple_and: text
-      multiple_delimiter_precedes_last: never
-      multiple_el_al_min: '3'
-      multiple_el_al_first: '1'
     third_party_settings: {  }
-    type: name_default
     region: content
   field_quote_box_affiliation:
     weight: 2
@@ -89,3 +88,4 @@ hidden:
   links: true
   private: true
   scheduled_publication: true
+  search_api_excerpt: true

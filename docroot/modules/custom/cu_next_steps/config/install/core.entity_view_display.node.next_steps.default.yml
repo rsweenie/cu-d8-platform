@@ -21,13 +21,13 @@ bundle: next_steps
 mode: default
 content:
   field_next_steps_heading:
+    type: string
     weight: 0
-    label: hidden
+    region: content
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
   field_next_steps_items:
     type: entity_reference_revisions_entity_view
     weight: 1

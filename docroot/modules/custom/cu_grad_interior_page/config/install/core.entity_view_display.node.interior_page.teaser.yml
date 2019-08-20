@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.interior_page.body
     - field.field.node.interior_page.field_interior_page_content
+    - field.field.node.interior_page.field_interior_page_hero_img
     - node.type.interior_page
   module:
     - panelizer
@@ -31,5 +32,6 @@ content:
     region: content
 hidden:
   field_interior_page_content: true
+  field_interior_page_hero_img: true
   links: true
   private: true

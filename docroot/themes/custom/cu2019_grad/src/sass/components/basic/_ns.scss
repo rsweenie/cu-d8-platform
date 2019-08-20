@@ -1,0 +1,90 @@
+.ns {
+  background: linear-gradient(0deg, darken($primary, 6.5) 0%, $primary 100%);
+  color: $white;
+  padding: 48px 0;
+
+  @media #{$mediaFullHeader} {
+    padding: 75px 0;
+  }
+
+  .icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: $secondary;
+    border-radius: 50%;
+    font-size: 26px;
+    margin: 0 18px 0 0;
+    transition: background .25s;
+
+    @media #{$mediaFullHeader} {
+      width: 136px;
+      height: 136px;
+      font-size: 60px;
+      margin: 0 auto 20px auto;
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      span:last-child {
+        text-decoration: underline;
+      }
+      .icon {
+        background: #019cdb;
+      }
+    }
+
+    @media #{$mediaToggleHeader} {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 1em;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media #{$mediaLg} {
+      font-size: 42px;
+    }
+  }
+
+  ul {
+    @media #{$mediaFullHeader} {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      max-width: 1084px;
+    }
+
+    li {
+      padding: 0;
+      font-size: 18px;
+      &:before {
+        display: none;
+      }
+
+      @media #{$mediaFullHeader} {
+        width: 20%;
+        margin: 0 35px;
+        font-size: 21px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.field--name-field-next-steps-heading {
+  .field__label {
+    @include srOnly;
+  }
+}

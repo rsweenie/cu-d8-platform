@@ -2,38 +2,104 @@
 
     HEROES
 
-    Heroes are used to build the first component on each page.  This component is 
-    the header for the main element of the mark-up.  So we will style the hero 
+    Heroes are used to build the first component on each page.  This component is
+    the header for the main element of the mark-up.  So we will style the hero
     using a <header> in the <main id="content"> tag.
 
 \*  --------------------------------------------------------------------------  */
-main > header {
+.node__content > header,
+header.hp_hero {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    @include position(relative, 100);
+
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: #{$gutter * 2}rem 0;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    overflow: hidden;
-    background: $accent-1;
+
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      width: 200vh;
+      height: 200vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: "";
+      background: rgba($secondary,.65);
+      transform-origin: top right;
+      transform: rotate(-45deg);
+      z-index: 100;
+    }
+
     > div {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @include position(relative, 100);
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+
+    }
+
+    .field--name-field-interior-page-hero-img {
+      position: relative;
+      z-index: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero_title {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 42px;
+      background-color: rgba($secondary,.85);
+      padding: 25px 0;
+      z-index: 200;
+
+      @media #{$mediaFullHeader} {
+        bottom: 72px;
+      }
+
+      h1 {
+        margin: 0;
+        color: $white;
+
+        @media #{$mediaLg} {
+          width: 67%;
+        }
+      }
+    }
+
+    .breadcrumb {
+      height: 42px;
+      position: relative;
+      z-index: 0;
+      background-color: rgba($secondary,.85);
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      @supports (mix-blend-mode: lighten) {
+        z-index: 200;
+        mix-blend-mode: lighten;
+      }
+
+      @media #{$mediaFullHeader} {
+        height: 72px;
+      }
+    }
+
+    .hero_title,
+    .breadcrumb {
+      > div {
         max-width: $siteWMx;
         margin: 0 auto;
         padding: 0 #{$gutter}rem;
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         @each $q in $siteWQueryList {
             $i: index($siteWQueryList, $q);
-                
+
             @if $i == 1 {
                 width: nth($siteWList, $i);
             } @else {
@@ -42,70 +108,120 @@ main > header {
                 }
             }
         }
-        
-        :last-child {
-            margin-bottom: 0;
-        }
-    }
-        
-    @media #{$mediaMd} {
-        padding: #{$gutter * 2.5}rem 0;
+      }
     }
 
-    @media #{$mediaLg} {
-        padding: #{$gutter * 3}rem 0;
-    }
-    
-    &.p-lg {
-        padding: #{$gutter * 4}rem 0;
-        
-        @media #{$mediaMd} {
-            padding: #{$gutter * 6}rem 0;
-        }
-        
-        @media #{$mediaLg} {
-            padding: #{$gutter * 8}rem 0;
-        }
-    }
-    
-    &.program {
-        .dates {
-            text-align: center;
+    &.interior_page {
+      > .field {
+        height: 164px;
+        overflow: hidden;
 
-            a {
-                font-weight: bold;
-                text-decoration: none;
-
-                &.active {
-                    text-decoration: underline;
-                }
-            }
+        @media #{$mediaSm} {
+          height: 320px;
         }
-    }
-    
-    @media #{$mediaLg} {
-        &.program {
-            > div {
-                @include flex(space-between, center, center, row wrap);
 
-                > nav {
-                    @include flexItem(0, 0, auto);
-                    width: 100%;
-                }
-                
-                h1 {
-                    @include flexItem(0, 0, auto);
-                    margin-bottom: 0;
-                    width: calc(66.667% - #{$gutter}rem);
-                }
-            }
-                
-            .dates {
-                @include flexItem(0, 0, auto);
-                text-align: right;
-            }
+        @media #{$mediaFullHeader} {
+          height: 515px;
         }
+      }
     }
+
+    .js-background {
+      background-size: cover;
+      background-position: top center;
+
+      img {
+        @include srOnly;
+      }
+    }
+
+    // > div {
+    //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //     @include position(relative, 100);
+    //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //     max-width: $siteWMx;
+    //     margin: 0 auto;
+    //     padding: 0 #{$gutter}rem;
+    //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
+    //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //
+    //     @each $q in $siteWQueryList {
+    //         $i: index($siteWQueryList, $q);
+    //
+    //         @if $i == 1 {
+    //             width: nth($siteWList, $i);
+    //         } @else {
+    //             @media #{$q} {
+    //                 width: nth($siteWList, $i);
+    //             }
+    //         }
+    //     }
+    //
+    //     :last-child {
+    //         margin-bottom: 0;
+    //     }
+    // }
+    //
+    // @media #{$mediaMd} {
+    //     padding: #{$gutter * 2.5}rem 0;
+    // }
+    //
+    // @media #{$mediaLg} {
+    //     padding: #{$gutter * 3}rem 0;
+    // }
+    //
+    // &.p-lg {
+    //     padding: #{$gutter * 4}rem 0;
+    //
+    //     @media #{$mediaMd} {
+    //         padding: #{$gutter * 6}rem 0;
+    //     }
+    //
+    //     @media #{$mediaLg} {
+    //         padding: #{$gutter * 8}rem 0;
+    //     }
+    // }
+    //
+    // &.program {
+    //     .dates {
+    //         text-align: center;
+    //
+    //         a {
+    //             font-weight: bold;
+    //             text-decoration: none;
+    //
+    //             &.active {
+    //                 text-decoration: underline;
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    // @media #{$mediaLg} {
+    //     &.program {
+    //         > div {
+    //             @include flex(space-between, center, center, row wrap);
+    //
+    //             > nav {
+    //                 @include flexItem(0, 0, auto);
+    //                 width: 100%;
+    //             }
+    //
+    //             h1 {
+    //                 @include flexItem(0, 0, auto);
+    //                 margin-bottom: 0;
+    //                 width: calc(66.667% - #{$gutter}rem);
+    //             }
+    //         }
+    //
+    //         .dates {
+    //             @include flexItem(0, 0, auto);
+    //             text-align: right;
+    //         }
+    //     }
+    // }
     /*  --------------------------------------------------------------------------  *\
 
     IMAGES, PICTURES, AND VIDEOS
@@ -119,7 +235,7 @@ main > header {
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         + div {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -129,7 +245,7 @@ main > header {
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
-        
+
         @media screen and (orientation: portrait) {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -154,7 +270,7 @@ main > header {
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         > div {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             top: 75%;
@@ -164,21 +280,21 @@ main > header {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
+
             @media #{$mediaMd} {
                 padding: 0 25rem 0 #{$gutter}rem;
             }
-            
+
             @media #{$mediaLg} {
                 padding: 0 5rem 0 #{$gutter}rem;
             }
-            
+
             @media #{$mediaXl} {
                 padding: 0 75rem 0 #{$gutter}rem;
             }
         }
     }
-    
+
     &.cnt-tr {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -186,7 +302,7 @@ main > header {
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         > div {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             top: 25%;
@@ -200,4 +316,164 @@ main > header {
     }
 
     \*  --------------------------------------------------------------------------  */
+}
+
+header.hp_hero {
+  position: relative;
+  margin-bottom: 128px;
+
+  @media #{$mediaMdMax} {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.hp_hero_tag {
+  position: relative;
+  z-index: 200;
+  width: 100%;
+  order: 2;
+
+  @media #{$mediaMd} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  > div {
+    @include contentConstrain;
+
+    > div {
+      padding: 25px 16px 16px 16px;
+      background: rgba($secondary,.83);
+      color: $white;
+
+      @media #{$mediaMd} {
+        max-width: 545px;
+        margin: 0 25px;
+        padding: 50px;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+
+      @media #{$mediaFullHeader} {
+        font-size: 50px;
+      }
+    }
+
+    .field--name-field-hp-hero-sub-heading {
+      font-size: 21px;
+      line-height: 1em;
+      text-transform: uppercase;
+
+      @media #{$mediaFullHeader} {
+        font-size: 35px;
+      }
+    }
+  }
+}
+
+.hp_hero_bg {
+  height: 160px;
+  position: relative;
+  order: 1;
+
+  @media #{$mediaMd} {
+    height: 320px;
+  }
+
+  @media #{$mediaFullHeader} {
+    height: 680px;
+  }
+}
+
+.bg_caption {
+  position: absolute;
+  bottom: 110px;
+  right: 25px;
+  color: $white;
+  font-size: 19px;
+  font-family: $headingFF;
+  line-height: 1.2em;
+  z-index: 200;
+
+  @media #{$mediaMdMax} {
+    display: none;
+  }
+
+  a {
+    color: $white;
+  }
+}
+
+
+.hp_hero_header {
+  position: relative;
+  background: $primary;
+  order: 3;
+
+  @media #{$mediaFullHeader} {
+    &:before {
+      width: 100vw;
+      height: 58px;
+      position: absolute;
+      top: -58px;
+      left: 0;
+      content: "";
+      background: rgba($primary,.85);
+    }
+
+    @supports (mix-blend-mode: screen) {
+      z-index: 300;
+      mix-blend-mode: screen;
+
+      &:before {
+        background: $primary;
+      }
+    }
+  }
+
+  > div {
+      @include contentConstrain;
+  }
+}
+
+.hp_hero_header_inner {
+  position: relative;
+  margin: 0;
+  padding: 50px 0;
+  font-size: 34px;
+  color: $white;
+
+  &:after {
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -30px;
+    left: 115px;
+    content: "";
+    border-style: solid;
+    border-width: 30px 31px 0 31px;
+    border-color: $primary transparent transparent transparent;
+  }
+
+  div:last-child {
+    font-family: $headingFF;
+    font-size: 21px;
+    font-weight: 500;
+    @include letterSpacing(50);
+  }
+
+  @media #{$mediaFullHeader} {
+    font-size: 45px;
+
+    div:last-child {
+      font-size: 36px;
+    }
+  }
 }

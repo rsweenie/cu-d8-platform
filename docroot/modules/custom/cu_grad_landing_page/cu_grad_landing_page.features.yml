@@ -9,3 +9,4 @@ required:
   - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_caption2
   - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_img
   - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_link
+  - node.type.landing_page

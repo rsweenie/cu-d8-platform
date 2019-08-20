@@ -1,0 +1,38 @@
+uuid: dbb15b29-ad37-4a42-a746-e7879b544bae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.next_step.field_next_step_icon
+    - field.field.paragraph.next_step.field_next_step_link
+    - paragraphs.paragraphs_type.next_step
+  module:
+    - link
+    - options
+_core:
+  default_config_hash: E7QeWXv38ZiSypibURTCPCeJlMBgz846-FMCCghQUL8
+id: paragraph.next_step.default
+targetEntityType: paragraph
+bundle: next_step
+mode: default
+content:
+  field_next_step_icon:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_next_step_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

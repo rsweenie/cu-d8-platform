@@ -1,14 +1,31 @@
-name: creighton-d8
+name: d8-platform
 recipe: drupal8
 config:
+  webroot: docroot
   php: 7.1
-  webroot: ./docroot
-  xdebug: false
+  xdebug: true
 services:
   appserver:
-    build:
-      - composer install
+    config:
+      conf: lando/lando_php.ini
+  mailhog:
+    type: 'mailhog'
+    hogfrom:
+      - 'appserver'
 tooling:
   blt:
     service: appserver
-    cmd: /app/vendor/acquia/blt/bin/blt
+    cmd: /app/vendor/bin/blt
+  ## For running drush/alias commands against Acquia
+  ## We assume our own local keys have been uploaded to Acquia
+  fixssh:
+    service: appserver
+    cmd:
+      - cp /user/.ssh/id_rsa /var/www/.ssh/id_rsa
+      - cp /user/.ssh/id_rsa.pub /var/www/.ssh/id_rsa.pub
+      - chmod 700 /var/www/.ssh
+      - chmod 600 /var/www/.ssh/id_rsa
+      - chmod 644 /var/www/.ssh/id_rsa.pub
+proxy:
+  appserver:
+    - local.creighton.com

@@ -6,7 +6,6 @@ dependencies:
     - node.type.interior_page
     - paragraphs.paragraphs_type.full_width_photo
     - paragraphs.paragraphs_type.image_video
-    - paragraphs.paragraphs_type.next_step
   module:
     - entity_reference_revisions
 id: node.interior_page.field_interior_page_content
@@ -26,7 +25,7 @@ settings:
     target_bundles:
       full_width_photo: full_width_photo
       image_video: image_video
-      next_step: next_step
+      next_steps_collection: next_steps_collection
     target_bundles_drag_drop:
       accordion:
         weight: 7
@@ -44,6 +43,15 @@ settings:
         enabled: true
         weight: 11
       next_step:
-        enabled: true
         weight: 12
+        enabled: false
+      hp_hero:
+        weight: 13
+        enabled: false
+      hp_hero_bg:
+        weight: 14
+        enabled: false
+      next_steps_collection:
+        enabled: true
+        weight: 18
 field_type: entity_reference_revisions
