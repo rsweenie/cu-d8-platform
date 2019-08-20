@@ -30,7 +30,7 @@ header.hp_hero {
       background: rgba($secondary,.65);
       transform-origin: top right;
       transform: rotate(-45deg);
-      z-index: 100;
+      z-index: 90;
     }
 
     > div {
@@ -326,6 +326,26 @@ header.hp_hero {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  &:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    content: "";
+    background: linear-gradient(0deg, rgba($black,.3) 5%, $black 90%);
+    opacity: 0;
+    transition: opacity .25s;
+    pointer-events: none;
+  }
+
+  .menuhover & {
+    &:before {
+      opacity: 1;
+    }
   }
 }
 

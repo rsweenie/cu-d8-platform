@@ -10,8 +10,17 @@
         $(this).addClass('js-background');
       });
 
-
-
+      // Menu/Hero hover interaction
+      $('nav.mega .menu-level-0 .menu-item').each(function() {
+        if( $('.menu-type-tier1', this).length ) {
+          $(this).on('mouseover',function() {
+            $('body').addClass('menuhover');
+          })
+          .on('mouseout',function() {
+            $('body').removeClass('menuhover');
+          });
+        }
+      });
       // Open all external links in new tab
       $("a", context).each(function() {
         var a = new RegExp('/' + window.location.host + '/');
