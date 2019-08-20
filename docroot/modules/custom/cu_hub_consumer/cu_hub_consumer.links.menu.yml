@@ -1,0 +1,17 @@
+cu_hub_consumer.settings: 
+  title: 'CU Hub Consumer'  
+  route_name: 'cu_hub_consumer.settings'
+  description: 'CU Hub Consumer settings'  
+  parent: system.admin_config_services
+
+entity.hub_reference_type.collection:
+  title: 'Hub reference types'
+  route_name: entity.hub_reference_type.collection
+  description: 'Reference types to Creighton Hub content.'
+  parent: cu_hub_consumer.settings
+
+entity.hub_reference.collection:
+  title: 'Hub references'
+  route_name: entity.hub_reference.collection
+  description: 'References to Creighton Hub content.'
+  parent: cu_hub_consumer.settings

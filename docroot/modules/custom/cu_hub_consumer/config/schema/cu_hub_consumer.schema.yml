@@ -1,0 +1,23 @@
+cu_hub_consumer.settings:
+  type: config_object
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enabled'
+    base_uri:
+      type: uri
+      label: 'Base URI'
+
+hub_reference.type.*:
+  type: config_entity
+  label: 'Hub reference type'
+  mapping:
+    id:
+      type: string
+      label: 'Machine name'
+    label:
+      type: label
+      label: 'Name'
+    description:
+      type: text
+      label: 'Description'

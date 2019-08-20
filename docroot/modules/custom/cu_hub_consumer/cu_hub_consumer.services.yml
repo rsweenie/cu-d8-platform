@@ -1,0 +1,7 @@
+services:
+  cu_hub_consumer.client:
+    class: '\Drupal\cu_hub_consumer\Client\HubClient'
+    arguments: ['@http_client', '@config.factory']
+  cu_hub_consumer.hub_reference_repository:
+    class: Drupal\cu_hub_consumer\HubReferenceRepository
+    arguments: ['@entity_type.manager', '@database', '@request_stack']

@@ -1,0 +1,69 @@
+<?php
+
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+/*
+function path_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'taxonomy_term' || $entity_type->id() === 'node') {
+    $fields['path'] = BaseFieldDefinition::create('path')
+      ->setLabel(t('The path alias'))
+      ->setComputed(TRUE);
+
+    return $fields;
+  }
+}
+*/
+
+/**
+ * Implements hook_theme().
+ */
+function cu_hub_consumer_theme() {
+  return [
+    'hub_reference' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function cu_hub_consumer_theme_suggestions_hub_reference(array $variables) {
+  $suggestions = [];
+
+  /** @var \Drupal\cu_hub_consumer\HubReferenceInterface $hub_reference */
+  $hub_reference = $variables['elements']['#hub_reference'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'hub_reference__' . $sanitized_view_mode;
+  $suggestions[] = 'hub_reference__' . $hub_reference->bundle();
+  $suggestions[] = 'hub_reference__' . $hub_reference->bundle() . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Prepares variables for hub_reference templates.
+ *
+ * Default template: hub_reference.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements to display in view mode.
+ *   - hub_reference: The hub_reference item.
+ *   - name: The label for the hub_reference item.
+ *   - view_mode: View mode; e.g., 'full', 'teaser', etc.
+ */
+function template_preprocess_hub_reference(array &$variables) {
+  $variables['hub_reference'] = $variables['elements']['#hub_reference'];
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $variables['name'] = $variables['hub_reference']->label();
+
+  // Helpful $content variable for templates.
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
