@@ -6,11 +6,9 @@ dependencies:
     - field.storage.node.field_slide_caption
     - field.storage.node.field_slide_image
     - field.storage.node.field_slide_p_link
-    - image.style.rectangle_horizontal_front_slider_1440x480_
     - node.type.slide
   module:
     - entity_reference_revisions
-    - media
     - node
     - slick
     - slick_views
@@ -286,10 +284,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: media_thumbnail
+          type: entity_reference_entity_view
           settings:
-            image_style: rectangle_horizontal_front_slider_1440x480_
-            image_link: ''
+            view_mode: front_page_slider
           group_column: target_id
           group_columns: {  }
           group_rows: true

@@ -11508,6 +11508,29 @@ form.search .search button {
     max-width: 320px;
   }
 
+  /* line 332, src/sass/components/basic/_hero.scss */
+
+  .hp_hero_tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  /* line 348, src/sass/components/basic/_hero.scss */
+
+  .hp_hero_tag > div > div {
+    max-width: 545px;
+    margin: 0 25px;
+    padding: 5rem;
+  }
+
+  /* line 381, src/sass/components/basic/_hero.scss */
+
+  .hp_hero_bg {
+    height: 32rem;
+  }
+
   /* line 6, src/sass/components/basic/cards/_img-behind.scss */
 
   .card.img-behind {
@@ -13682,6 +13705,12 @@ form.search .search button {
   }
 
   /* line 11, src/sass/components/basic/_buttons.scss */
+
+  [class*="btn-"] {
+    font-size: 2rem;
+  }
+
+  /* line 80, src/sass/components/basic/_buttons.scss */
 
   [class*="btn-"] {
     font-size: 2rem;

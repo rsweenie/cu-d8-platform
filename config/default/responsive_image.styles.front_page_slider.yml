@@ -1,0 +1,61 @@
+uuid: 7de4fe6c-6eb2-44fb-ae0e-71f6de13c552
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.front_page_slider_desktop_1x
+    - image.style.front_page_slider_desktop_2x
+    - image.style.front_page_slider_large_tablet_1x
+    - image.style.front_page_slider_large_tablet_2x
+    - image.style.front_page_slider_mobile_1x
+    - image.style.front_page_slider_mobile_2x
+    - image.style.front_page_slider_tablet_1x
+    - image.style.front_page_slider_tablet_2x
+    - image.style.square_100x100_
+  theme:
+    - cu2017
+id: front_page_slider
+label: 'Front Page Slider'
+image_style_mappings:
+  -
+    breakpoint_id: cu2017.desktop-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: front_page_slider_desktop_1x
+  -
+    breakpoint_id: cu2017.desktop-min
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: front_page_slider_desktop_2x
+  -
+    breakpoint_id: cu2017.lg-tablet-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: front_page_slider_large_tablet_1x
+  -
+    breakpoint_id: cu2017.lg-tablet-min
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: front_page_slider_large_tablet_2x
+  -
+    breakpoint_id: cu2017.tablet-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: front_page_slider_tablet_1x
+  -
+    breakpoint_id: cu2017.tablet-min
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: front_page_slider_tablet_2x
+  -
+    breakpoint_id: cu2017.mobile-max
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: front_page_slider_mobile_1x
+  -
+    breakpoint_id: cu2017.mobile-max
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: front_page_slider_mobile_2x
+breakpoint_group: cu2017
+fallback_image_style: square_100x100_
