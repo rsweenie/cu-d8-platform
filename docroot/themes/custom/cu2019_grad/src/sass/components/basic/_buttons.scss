@@ -33,11 +33,17 @@
       z-index: 1;
     }
 
+    @media #{$mediaLg} {
+      font-size: 20px;
+    }
+
     .arrow:last-child {
       position: absolute;
       top: 50%;
       right: 15px;
-      transform: translateY(-50%);
+
+      font-size: 1.4em;
+      transform: translateY(-46%);
       transition: transform 0.25s;
     }
 
@@ -55,7 +61,7 @@
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
         .arrow:last-child {
-          transform: translate(3px, -50%);
+          transform: translate(3px, -46%);
         }
     }
 
@@ -94,6 +100,7 @@
 // IMPORT BUTTON COLORS
 @import 'buttons/colors/_primary';
 @import 'buttons/colors/_secondary';
+@import 'buttons/colors/_hero';
 //@import 'buttons/colors/_tertiary';
 @import 'buttons/colors/_text';
 //@import 'buttons/colors/_success';

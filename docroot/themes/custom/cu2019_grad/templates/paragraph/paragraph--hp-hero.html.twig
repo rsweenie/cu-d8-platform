@@ -44,23 +44,31 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'hp_header'
+    'hp_hero'
   ]
 %}
 {% block paragraph %}
   <header{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div class="hp_header_tag">
+      <div class="hp_hero_tag">
         <div>
           <div>
             {{ content|without('field_hp_hero_bg','field_hp_hero_cta') }}
-            <a href="{{ content.field_hp_hero_cta[0]['#url'] }}" class="btn-primary">
+            <a href="{{ content.field_hp_hero_cta[0]['#url'] }}" class="btn-hero">
               <span>{{ content.field_hp_hero_cta[0]['#title'] }}</span>
             </a>
           </div>
         </div>
       </div>
       {{ content.field_hp_hero_bg }}
+      <div class="hp_hero_header">
+        <div>
+          <h1 class="hp_hero_header_inner">
+            <div>Your Education</div>
+            <div>From Creighton is...</div>
+          </h1>
+        </div>
+      </div>
     {% endblock %}
   </header>
 {% endblock paragraph %}

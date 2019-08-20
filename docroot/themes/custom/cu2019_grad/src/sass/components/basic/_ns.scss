@@ -62,6 +62,8 @@
     @media #{$mediaFullHeader} {
       display: flex;
       justify-content: center;
+      margin: auto;
+      max-width: 1084px;
     }
 
     li {
@@ -72,10 +74,17 @@
       }
 
       @media #{$mediaFullHeader} {
+        width: 20%;
         margin: 0 35px;
         font-size: 21px;
         text-align: center;
       }
     }
+  }
+}
+
+.field--name-field-next-steps-heading {
+  .field__label {
+    @include srOnly;
   }
 }
