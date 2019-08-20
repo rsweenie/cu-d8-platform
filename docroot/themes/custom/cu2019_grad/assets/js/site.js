@@ -4,7 +4,7 @@
   Drupal.behaviors.fsbg = {
     attach: function (context, settings) {
       // Hide image and add background image
-      $('.card.img-behind, header.interior_page > .field, .hp_hero_bg',context).each(function() {
+      $('.card.img-behind, header.interior_page > .field',context).each(function() {
         var bg = $('img',this).attr('src');
         $(this).css({'background-image':'url('+bg+')'});
         $(this).addClass('js-background');
