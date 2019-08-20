@@ -45,7 +45,8 @@
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
     'section',
-    'fwb'
+    'fwb',
+    'bg-gray4'
   ]
 %}
 {% block paragraph %}
@@ -61,7 +62,8 @@
       'class': 'img-side',
       'button': {
         'url': content.field_fwb_cta[0]['#url'],
-        'title': content.field_fwb_cta[0]['#title']
+        'title': content.field_fwb_cta[0]['#title'],
+        'class': 'btn-secondary'
       }
     } %}
     {% endblock %}

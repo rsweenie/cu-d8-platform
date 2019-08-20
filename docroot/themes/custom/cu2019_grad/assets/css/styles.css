@@ -721,25 +721,13 @@ a:focus {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 6, src/sass/components/copy/_headings.scss */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 .75em;
-  padding: 0;
-}
-
-/* line 18, src/sass/components/copy/_headings.scss */
+/* line 197, src/sass/components/copy/_headings.scss */
 
 h1 {
   font-family: proxima-nova, sans-serif;
 }
 
-/* line 22, src/sass/components/copy/_headings.scss */
+/* line 201, src/sass/components/copy/_headings.scss */
 
 h2,
 h3,
@@ -749,38 +737,44 @@ h6 {
   font-family: "Conduit";
 }
 
-/* line 29, src/sass/components/copy/_headings.scss */
+/* line 208, src/sass/components/copy/_headings.scss */
 
 h1,
 .h1 {
+  margin: 0 0 .75em;
+  padding: 0;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 0.94em;
   text-transform: uppercase;
 }
 
-/* line 61, src/sass/components/copy/_headings.scss */
+/* line 212, src/sass/components/copy/_headings.scss */
 
 h2,
 .h2 {
+  margin: 0 0 .75em;
+  padding: 0;
   font-size: 1.75em;
 }
 
-/* line 97, src/sass/components/copy/_headings.scss */
+/* line 216, src/sass/components/copy/_headings.scss */
 
 h3,
 .h3 {
+  margin: 0 0 .75em;
+  padding: 0;
   font-size: 1.5em;
 }
 
-/* line 126, src/sass/components/copy/_headings.scss */
+/* line 117, src/sass/components/copy/_headings.scss */
 
 aside h3,
 aside .h3 {
   font-size: 1.125em;
 }
 
-/* line 129, src/sass/components/copy/_headings.scss */
+/* line 120, src/sass/components/copy/_headings.scss */
 
 aside h3 ~ h3,
 aside h3 ~ .h3,
@@ -791,59 +785,30 @@ aside .h3 ~ .h3 {
   border-top: 0.1rem solid #6CACE4;
 }
 
-/* line 136, src/sass/components/copy/_headings.scss */
+/* line 220, src/sass/components/copy/_headings.scss */
 
 h4,
 .h4 {
+  margin: 0 0 .75em;
+  padding: 0;
   font-size: 1.25em;
+  text-transform: uppercase;
 }
 
-/* line 165, src/sass/components/copy/_headings.scss */
+/* line 158, src/sass/components/copy/_headings.scss */
 
 aside h4,
 aside .h4 {
   font-size: 1em;
 }
 
-/* line 168, src/sass/components/copy/_headings.scss */
+/* line 161, src/sass/components/copy/_headings.scss */
 
 aside h4 ~ h4,
 aside h4 ~ .h4,
 aside .h4 ~ h4,
 aside .h4 ~ .h4 {
   margin-top: 0.5rem;
-}
-
-/* line 173, src/sass/components/copy/_headings.scss */
-
-h5,
-.h5 {
-  font-size: 1em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* line 184, src/sass/components/copy/_headings.scss */
-
-aside h5,
-aside .h5 {
-  font-size: 1em;
-}
-
-/* line 187, src/sass/components/copy/_headings.scss */
-
-aside h5 ~ h5,
-aside h5 ~ .h5,
-aside .h5 ~ h5,
-aside .h5 ~ .h5 {
-  margin-top: 2.5rem;
-}
-
-/* line 192, src/sass/components/copy/_headings.scss */
-
-h6,
-.h6 {
-  font-size: 1em;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -1995,54 +1960,10 @@ section[class*="sbg-"]:after {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 6, src/sass/structure/section-backgrounds/_basic.scss */
+/* line 117, src/sass/structure/section-backgrounds/_basic.scss */
 
-.bg-primary,
-.bg-secondary,
-.bg-tertiary {
-  color: #fff;
-}
-
-/* line 15, src/sass/structure/section-backgrounds/_basic.scss */
-
-.bg-primary {
-  background: #002E6D;
-}
-
-/* line 24, src/sass/structure/section-backgrounds/_basic.scss */
-
-.bg-secondary {
-  background: #0054A6;
-}
-
-/* line 33, src/sass/structure/section-backgrounds/_basic.scss */
-
-.bg-tertiary {
-  background: #6CACE4;
-}
-
-/* line 42, src/sass/structure/section-backgrounds/_basic.scss */
-
-.bg-accent-1 {
-  background: #F0F5FA;
-}
-
-/* line 95, src/sass/structure/section-backgrounds/_basic.scss */
-
-.bg-accent-2 {
-  background: #8AC8FF;
-}
-
-/* line 104, src/sass/structure/section-backgrounds/_basic.scss */
-
-.bg-accent-3 {
-  background: #FFCC4F;
-}
-
-/* line 113, src/sass/structure/section-backgrounds/_basic.scss */
-
-.bg-blank {
-  background: none;
+.bg-gray4 {
+  background: #EEEFF0;
 }
 
 /*  --------------------------------------------------------------------------  *\ DELETE THIS SECTION OUT WHEN NOT USING ON COMPONENT LIBRARY SITE \*  --------------------------------------------------------------------------  */
@@ -2246,18 +2167,45 @@ section[class*="sbg-"]:after {
 /* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
 
 .btn-secondary {
-  background: #0054A6;
-  color: #fff;
+  position: relative;
+  min-width: 320px;
+  max-width: 100%;
+  padding: 1rem 2.2rem;
+  background: #A5D2F9;
+  border: 0;
+  border-radius: 0.3rem;
+  color: #002E6D;
+  font-weight: 600;
   /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\ &:not([class*="btn-ani-fill-"]) { @include hover { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) background: $white; // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT) color: $secondary; // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) } } @include hover { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT) color: $secondary; // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) } \*-------------------------------------------------------------------------------*/
   /*------  USE THIS IF YOU DO NOT HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------*\ \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
+}
+
+/* line 51, src/sass/components/basic/buttons/colors/_secondary.scss */
+
+.btn-secondary span {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 56, src/sass/components/basic/buttons/colors/_secondary.scss */
+
+.btn-secondary:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.2)), color-stop(0%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 0%);
 }
 
 /* line 59, src/sass/base/_mixins.scss */
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background: #fff;
-  color: #0054A6;
+  background: #0054A6;
+  color: #fff;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -2777,9 +2725,9 @@ header.hp_hero {
   -ms-flex-line-pack: stretch;
       align-content: stretch;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: column-reverse nowrap;
+          flex-flow: column-reverse nowrap;
 }
 
 /* line 15, src/sass/components/basic/cards/_img-side.scss */
@@ -2804,7 +2752,13 @@ header.hp_hero {
           order: 0;
 }
 
-/* line 36, src/sass/components/basic/cards/_img-side.scss */
+/* line 35, src/sass/components/basic/cards/_img-side.scss */
+
+.card.img-side .body + [class*="btn-"] {
+  margin-top: 1em;
+}
+
+/* line 40, src/sass/components/basic/cards/_img-side.scss */
 
 .card.img-side.invert > a {
   -webkit-box-ordinal-group: 1;
@@ -2812,7 +2766,26 @@ header.hp_hero {
           order: 0;
 }
 
-/* line 138, src/sass/components/basic/cards/_img-side.scss */
+/* line 45, src/sass/components/basic/cards/_img-side.scss */
+
+.card.img-side h3 {
+  position: relative;
+  padding-bottom: 0.25455em;
+}
+
+/* line 49, src/sass/components/basic/cards/_img-side.scss */
+
+.card.img-side h3:after {
+  width: 5.5rem;
+  height: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: #6CACE4;
+}
+
+/* line 167, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side {
   -webkit-box-orient: vertical;
@@ -2830,7 +2803,7 @@ aside .card.img-side {
   max-height: 12.5rem;
 }
 
-/* line 145, src/sass/components/basic/cards/_img-side.scss */
+/* line 174, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side:before {
   -webkit-box-ordinal-group: 3;
@@ -2841,7 +2814,7 @@ aside .card.img-side:before {
   content: "";
 }
 
-/* line 160, src/sass/components/basic/cards/_img-side.scss */
+/* line 189, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side > a {
   -webkit-box-ordinal-group: 1;
@@ -2850,7 +2823,7 @@ aside .card.img-side > a {
   width: 25%;
 }
 
-/* line 165, src/sass/components/basic/cards/_img-side.scss */
+/* line 194, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side > div,
 aside .card.img-side > p {
@@ -2861,14 +2834,14 @@ aside .card.img-side > p {
   padding: 0;
 }
 
-/* line 171, src/sass/components/basic/cards/_img-side.scss */
+/* line 200, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side h3,
 aside .card.img-side .h3 {
   font-size: 1.25em;
 }
 
-/* line 175, src/sass/components/basic/cards/_img-side.scss */
+/* line 204, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side + p {
   margin-top: 1em;
@@ -3169,6 +3142,25 @@ aside .card.img-side + p {
 
 .card.fw_photo [class*="btn-"] {
   margin-top: 20px;
+}
+
+/* line 2, src/sass/components/basic/cards/_fwb.scss */
+
+.fwb .card .media {
+  position: relative;
+}
+
+/* line 5, src/sass/components/basic/cards/_fwb.scss */
+
+.fwb .card .media:after {
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  content: "";
+  border: 0.1rem solid #fff;
+  opacity: .3;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -11168,28 +11160,28 @@ form.search .search button {
          column-gap: 2.5rem;
   }
 
-  /* line 29, src/sass/components/copy/_headings.scss */
+  /* line 208, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
     font-size: 5rem;
   }
 
-  /* line 61, src/sass/components/copy/_headings.scss */
+  /* line 212, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 1.875em;
   }
 
-  /* line 97, src/sass/components/copy/_headings.scss */
+  /* line 216, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
     font-size: 1.625em;
   }
 
-  /* line 136, src/sass/components/copy/_headings.scss */
+  /* line 220, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
@@ -11435,53 +11427,6 @@ form.search .search button {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  /* line 51, src/sass/structure/section-backgrounds/_basic.scss */
-
-  .bg-accent-2-prg {
-    position: relative;
-  }
-
-  /* line 62, src/sass/structure/section-backgrounds/_basic.scss */
-
-  .bg-accent-2-prg:before {
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    background: #8AC8FF;
-    content: "";
-  }
-
-  /* line 70, src/sass/structure/section-backgrounds/_basic.scss */
-
-  .bg-accent-2-prg > div {
-    position: relative;
-    z-index: 10;
-  }
-
-  /* line 73, src/sass/structure/section-backgrounds/_basic.scss */
-
-  .bg-accent-2-prg > div:before {
-    position: absolute;
-    z-index: 0;
-    left: 0;
-    top: 0;
-    background: #fff;
-    width: 66.667%;
-    height: 100%;
-    content: "";
-  }
-
-  /* line 81, src/sass/structure/section-backgrounds/_basic.scss */
-
-  .bg-accent-2-prg > div > article,
-  .bg-accent-2-prg > div > aside {
-    position: relative;
-    z-index: 10;
-  }
-
   /* line 6, src/sass/components/basic/buttons/colors/_primary.scss */
 
   .btn-primary {
@@ -11517,6 +11462,12 @@ form.search .search button {
     width: 100%;
   }
 
+  /* line 49, src/sass/components/basic/cards/_img-side.scss */
+
+  .card.img-side h3:after {
+    height: 0.8rem;
+  }
+
   /* line 6, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side {
@@ -11536,7 +11487,7 @@ form.search .search button {
 \*  --------------------------------------------------------------------------  */
   }
 
-  /* line 52, src/sass/components/basic/cards/_img-side.scss */
+  /* line 81, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side > a {
     -webkit-box-ordinal-group: 1;
@@ -11545,13 +11496,13 @@ form.search .search button {
     width: 50%;
   }
 
-  /* line 63, src/sass/components/basic/cards/_img-side.scss */
+  /* line 92, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side > div {
     width: 50%;
   }
 
-  /* line 81, src/sass/components/basic/cards/_img-side.scss */
+  /* line 110, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.alt > a,
   .card.img-side:nth-child(even) > a {
@@ -11584,7 +11535,7 @@ form.search .search button {
     max-width: calc(675px - 2.5rem);
   }
 
-  /* line 94, src/sass/components/basic/cards/_img-side.scss */
+  /* line 123, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.bot {
     -webkit-box-align: end;
@@ -11592,7 +11543,7 @@ form.search .search button {
             align-items: flex-end;
   }
 
-  /* line 98, src/sass/components/basic/cards/_img-side.scss */
+  /* line 127, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.small {
     -webkit-box-pack: start;
@@ -11600,21 +11551,21 @@ form.search .search button {
             justify-content: flex-start;
   }
 
-  /* line 101, src/sass/components/basic/cards/_img-side.scss */
+  /* line 130, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.small > a {
     width: 12.5%;
     margin: 0 25% 17.5% 0;
   }
 
-  /* line 106, src/sass/components/basic/cards/_img-side.scss */
+  /* line 135, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t-lg .card.img-side.small {
     padding: 0;
     position: relative;
   }
 
-  /* line 110, src/sass/components/basic/cards/_img-side.scss */
+  /* line 139, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t-lg .card.img-side.small > a {
     position: absolute;
@@ -11627,20 +11578,20 @@ form.search .search button {
     margin: 0;
   }
 
-  /* line 116, src/sass/components/basic/cards/_img-side.scss */
+  /* line 145, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t-lg .card.img-side.small > div {
     width: 100%;
   }
 
-  /* line 121, src/sass/components/basic/cards/_img-side.scss */
+  /* line 150, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t .align-center .card.img-side.small {
     padding: 0;
     position: relative;
   }
 
-  /* line 125, src/sass/components/basic/cards/_img-side.scss */
+  /* line 154, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t .align-center .card.img-side.small > a {
     -webkit-transform: translate(-300%, -120%);
@@ -11649,19 +11600,19 @@ form.search .search button {
     width: 25%;
   }
 
-  /* line 131, src/sass/components/basic/cards/_img-side.scss */
+  /* line 160, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t .align-center .card.img-side.small > div {
     width: 100%;
   }
 
-  /* line 138, src/sass/components/basic/cards/_img-side.scss */
+  /* line 167, src/sass/components/basic/cards/_img-side.scss */
 
   aside .card.img-side {
     max-height: 15rem;
   }
 
-  /* line 155, src/sass/components/basic/cards/_img-side.scss */
+  /* line 184, src/sass/components/basic/cards/_img-side.scss */
 
   aside .card.img-side:before {
     min-height: 12.5rem;
@@ -11726,6 +11677,29 @@ form.search .search button {
 
   .card.fw_photo [class*="btn-"] {
     float: right;
+  }
+
+  /* line 17, src/sass/components/basic/cards/_fwb.scss */
+
+  .fwb .card > a {
+    -webkit-box-flex: 1 1 33.3%;
+    -ms-flex: 1 1 33.3%;
+    flex: 1 1 33.3%;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+
+  /* line 21, src/sass/components/basic/cards/_fwb.scss */
+
+  .fwb .card > div {
+    -webkit-box-flex: 1 1 66.6%;
+    -ms-flex: 1 1 66.6%;
+    flex: 1 1 66.6%;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    padding-left: 3.2rem;
   }
 
   /* line 11, src/sass/components/basic/_facts.scss */
@@ -12577,28 +12551,28 @@ form.search .search button {
          column-count: 4;
   }
 
-  /* line 29, src/sass/components/copy/_headings.scss */
+  /* line 208, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
     font-size: 3.5em;
   }
 
-  /* line 61, src/sass/components/copy/_headings.scss */
+  /* line 212, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 2em;
   }
 
-  /* line 97, src/sass/components/copy/_headings.scss */
+  /* line 216, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
     font-size: 1.75em;
   }
 
-  /* line 136, src/sass/components/copy/_headings.scss */
+  /* line 220, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
@@ -13655,12 +13629,6 @@ form.search .search button {
     width: 58.333%;
   }
 
-  /* line 89, src/sass/structure/section-backgrounds/_basic.scss */
-
-  .bg-accent-2-prg > div:before {
-    width: calc(66.667% - 2.5rem);
-  }
-
   /* line 11, src/sass/components/basic/_buttons.scss */
 
   [class*="btn-"] {
@@ -14339,7 +14307,7 @@ form.search .search button {
     overflow-x: hidden;
   }
 
-  /* line 91, src/sass/components/copy/_headings.scss */
+  /* line 81, src/sass/components/copy/_headings.scss */
 
   h2.ph,
   .h2.ph {
@@ -14861,6 +14829,12 @@ form.search .search button {
 
   .bg_caption {
     display: none;
+  }
+
+  /* line 65, src/sass/components/basic/cards/_img-side.scss */
+
+  .card.img-side > a {
+    margin-bottom: 1em;
   }
 }
 
