@@ -876,7 +876,7 @@ ol ol {
 ul li:before {
   width: .4rem;
   height: .4rem;
-  background: #FFCC4F;
+  background: #002E6D;
   border-radius: .4rem;
   content: "";
 }
@@ -935,7 +935,7 @@ ol li {
 /* line 24, src/sass/components/copy/lists/_ordered.scss */
 
 ol li:before {
-  color: #FFCC4F;
+  color: #002E6D;
   content: counter(r2i-cl, decimal);
 }
 
