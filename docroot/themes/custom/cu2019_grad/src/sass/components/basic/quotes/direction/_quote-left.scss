@@ -7,7 +7,7 @@
     // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     position: relative;
     // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: 131px 81px 72px 81px;
+    padding: 86px 25px 36px 25px;
     // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     background: $secondary;
     // border-left: none;
@@ -17,6 +17,19 @@
     // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
+    p {
+      margin-bottom: 1em;
+    }
+
+    @media #{$mediaMdMax} {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+
+    @media #{$mediaMd} {
+      padding: 131px 81px 72px 81px;
+    }
+
     > div {
       position: relative;
       @include flex($ff: row-reverse nowrap);
@@ -25,43 +38,62 @@
         width: 100%;
         height: 1px;
         position: absolute;
-        top: -55px;
+        top: -44px;
         left: 0;
         content: "";
         background: $white;
+
+        @media #{$mediaMd} {
+          top: -55px;
+        }
       }
 
       &:after {
-        width: 84px;
-        height: 84px;
+        width: 64px;
+        height: 40px;
 
         position: absolute;
-        top: -97px;
-        left: calc(50% - 42px);
+        top: -76px;
+        left: calc(50% - 32px);
 
         content: "“";
         background: $secondary;
-        line-height: 153px;
+        line-height: 120px;
         font-family: $headingFF;
-        font-size: 162px;
+        font-size: 122px;
         text-align: center;
+
+        @media #{$mediaMd} {
+          width: 84px;
+          height: 84px;
+          left: calc(50% - 42px);
+          top: -97px;
+          font-size: 162px;
+          line-height: 153px;
+        }
       }
     }
 
-    &:after {
-      width: calc(100% - 30px);
-      height: calc(100% - 30px);
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      content: "";
-      border: 1px solid $white;
-      pointer-events: none;
+    @media #{$mediaMd} {
+      &:after {
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        content: "";
+        border: 1px solid rgba($white,.3);
+        pointer-events: none;
+      }
     }
 
     .quote {
       flex-grow: 1;
-      padding-left: 46px;
+      padding-left: 20px;
+
+      @media #{$mediaSm} {
+        padding-left: 46px;
+      }
 
       &:only-child {
         padding: 0;
@@ -75,6 +107,35 @@
 
       @media #{$mediaLg} {
         font-size: 30px;
+      }
+    }
+
+    .field--name-field-quote-image {
+      @media #{$mediaXs} {
+        flex: 0 0 20%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .attr {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.2em;
+
+      @media #{$mediaMd} {
+        font-size: 16px;
+      }
+
+      small {
+        font-size: 1em;
+        font-weight: 500;
+      }
+      div {
+        display: inline;
       }
     }
     //
