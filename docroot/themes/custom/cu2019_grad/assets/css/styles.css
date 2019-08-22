@@ -2318,8 +2318,6 @@ aside .btn-text:hover {
 header.hp_hero {
   position: relative;
   overflow: hidden;
-  /*  --------------------------------------------------------------------------  *\ IMAGES, PICTURES, AND VIDEOS > img, > picture > img, > video { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) @include position(absolute, 0, (left, top), (50%, 50%), translate(-50%, -50%)); // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) width: 100%; height: auto; // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT) // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) + div { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT) color: $white; // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) } @media screen and (orientation: portrait) { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) width: auto; height: 100%; // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT) // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) } } \*  --------------------------------------------------------------------------  */
-  /*  --------------------------------------------------------------------------  *\ OPTIONS &.full-screen { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) height: 100vh; // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) > div { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) top: 75%; @include transform(translate(0, -50%)); // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) @media  screen and (min-width: 768px) { padding: 0 25rem 0 2.5rem; } @media  screen and (min-width: 992px) { padding: 0 5rem 0 2.5rem; } @media  screen and (min-width: 1210px) { padding: 0 75rem 0 2.5rem; } } } &.cnt-tr { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) // OTHER (TRANSITONS, ANIMATIONS, CURSOR) > div { // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM) top: 25%; // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING) // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW) // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW) text-align: left; // OTHER (TRANSITONS, ANIMATIONS, CURSOR) } } \*  --------------------------------------------------------------------------  */
 }
 
 /* line 23, src/sass/components/basic/_hero.scss */
@@ -2447,22 +2445,16 @@ header.hp_hero .js-background img {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 321, src/sass/components/basic/_hero.scss */
+/* line 138, src/sass/components/basic/_hero.scss */
 
-header.hp_hero {
-  position: relative;
-  margin-bottom: 128px;
-}
-
-/* line 331, src/sass/components/basic/_hero.scss */
-
+.node__content > header:before,
 header.hp_hero:before {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 300;
   content: "";
   background: -webkit-gradient(linear, left bottom, left top, color-stop(5%, rgba(33, 35, 34, 0.3)), color-stop(90%, #212322));
   background: linear-gradient(0deg, rgba(33, 35, 34, 0.3) 5%, #212322 90%);
@@ -2472,13 +2464,21 @@ header.hp_hero:before {
   pointer-events: none;
 }
 
-/* line 346, src/sass/components/basic/_hero.scss */
+/* line 153, src/sass/components/basic/_hero.scss */
 
+.menuhover .node__content > header:before,
 .menuhover header.hp_hero:before {
   opacity: 1;
 }
 
-/* line 352, src/sass/components/basic/_hero.scss */
+/* line 159, src/sass/components/basic/_hero.scss */
+
+header.hp_hero {
+  position: relative;
+  margin-bottom: 128px;
+}
+
+/* line 170, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag {
   position: relative;
@@ -2489,7 +2489,7 @@ header.hp_hero:before {
           order: 2;
 }
 
-/* line 365, src/sass/components/basic/_hero.scss */
+/* line 183, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div {
   max-width: 1350px;
@@ -2497,7 +2497,7 @@ header.hp_hero:before {
   width: 100%;
 }
 
-/* line 368, src/sass/components/basic/_hero.scss */
+/* line 186, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div > div {
   padding: 2.5rem 1.6rem 1.6rem 1.6rem;
@@ -2505,14 +2505,14 @@ header.hp_hero:before {
   color: #fff;
 }
 
-/* line 380, src/sass/components/basic/_hero.scss */
+/* line 198, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
   margin: 0;
   font-size: 3.4rem;
 }
 
-/* line 389, src/sass/components/basic/_hero.scss */
+/* line 207, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
   font-family: "Conduit";
@@ -2524,7 +2524,7 @@ header.hp_hero:before {
   letter-spacing: 0.05em;
 }
 
-/* line 405, src/sass/components/basic/_hero.scss */
+/* line 223, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg {
   position: relative;
@@ -2535,7 +2535,7 @@ header.hp_hero:before {
   max-height: 680px;
 }
 
-/* line 413, src/sass/components/basic/_hero.scss */
+/* line 231, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image {
   position: relative;
@@ -2543,7 +2543,7 @@ header.hp_hero:before {
   padding-bottom: 50%;
 }
 
-/* line 422, src/sass/components/basic/_hero.scss */
+/* line 240, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image img {
   width: auto;
@@ -2557,7 +2557,7 @@ header.hp_hero:before {
           transform: translate(-50%, -50%);
 }
 
-/* line 443, src/sass/components/basic/_hero.scss */
+/* line 261, src/sass/components/basic/_hero.scss */
 
 .bg_caption {
   position: absolute;
@@ -2567,16 +2567,16 @@ header.hp_hero:before {
   font-size: 1.9rem;
   font-family: "Conduit";
   line-height: 1.2em;
-  z-index: 200;
+  z-index: 95;
 }
 
-/* line 457, src/sass/components/basic/_hero.scss */
+/* line 275, src/sass/components/basic/_hero.scss */
 
 .bg_caption a {
   color: #fff;
 }
 
-/* line 463, src/sass/components/basic/_hero.scss */
+/* line 281, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header {
   position: relative;
@@ -2586,7 +2586,7 @@ header.hp_hero:before {
           order: 3;
 }
 
-/* line 489, src/sass/components/basic/_hero.scss */
+/* line 307, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header > div {
   max-width: 1350px;
@@ -2594,7 +2594,7 @@ header.hp_hero:before {
   width: 100%;
 }
 
-/* line 494, src/sass/components/basic/_hero.scss */
+/* line 312, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner {
   position: relative;
@@ -2605,7 +2605,7 @@ header.hp_hero:before {
   z-index: 200;
 }
 
-/* line 502, src/sass/components/basic/_hero.scss */
+/* line 320, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner:after {
   width: 0;
@@ -2619,7 +2619,7 @@ header.hp_hero:before {
   border-color: #002E6D transparent transparent transparent;
 }
 
-/* line 514, src/sass/components/basic/_hero.scss */
+/* line 332, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner div:last-child {
   font-family: "Conduit";
@@ -13225,7 +13225,7 @@ form.search .search button {
     height: 51.5rem;
   }
 
-  /* line 352, src/sass/components/basic/_hero.scss */
+  /* line 170, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag {
     position: absolute;
@@ -13234,13 +13234,13 @@ form.search .search button {
     z-index: 10;
   }
 
-  /* line 365, src/sass/components/basic/_hero.scss */
+  /* line 183, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 95%;
   }
 
-  /* line 368, src/sass/components/basic/_hero.scss */
+  /* line 186, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div > div {
     max-width: 545px;
@@ -13248,25 +13248,25 @@ form.search .search button {
     padding: 5rem;
   }
 
-  /* line 380, src/sass/components/basic/_hero.scss */
+  /* line 198, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div h1 {
     font-size: 5rem;
   }
 
-  /* line 389, src/sass/components/basic/_hero.scss */
+  /* line 207, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
     font-size: 3.6rem;
   }
 
-  /* line 413, src/sass/components/basic/_hero.scss */
+  /* line 231, src/sass/components/basic/_hero.scss */
 
   .hp_hero_bg .field--name-image {
     padding-bottom: 42%;
   }
 
-  /* line 469, src/sass/components/basic/_hero.scss */
+  /* line 287, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:before {
     width: 100vw;
@@ -13279,34 +13279,34 @@ form.search .search button {
   }
 
 @supports (mix-blend-mode: screen) {
-    /* line 463, src/sass/components/basic/_hero.scss */
+    /* line 281, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header {
       z-index: 300;
       mix-blend-mode: screen;
     }
 
-    /* line 483, src/sass/components/basic/_hero.scss */
+    /* line 301, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header:before {
       background: #002E6D;
     }
 }
 
-  /* line 489, src/sass/components/basic/_hero.scss */
+  /* line 307, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 95%;
   }
 
-  /* line 494, src/sass/components/basic/_hero.scss */
+  /* line 312, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     font-size: 4.5rem;
     padding: 5rem 2.5rem;
   }
 
-  /* line 525, src/sass/components/basic/_hero.scss */
+  /* line 343, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner div:last-child {
     font-size: 3.6rem;
@@ -13751,13 +13751,13 @@ form.search .search button {
     width: 90%;
   }
 
-  /* line 365, src/sass/components/basic/_hero.scss */
+  /* line 183, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 90%;
   }
 
-  /* line 489, src/sass/components/basic/_hero.scss */
+  /* line 307, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 90%;
@@ -13835,13 +13835,13 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 365, src/sass/components/basic/_hero.scss */
+  /* line 183, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 85%;
   }
 
-  /* line 489, src/sass/components/basic/_hero.scss */
+  /* line 307, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 85%;
@@ -13924,11 +13924,12 @@ form.search .search button {
 
   /* line 574, src/sass/structure/header/navs/_mega-menu.scss */
 
-  .main-header nav.mega li ~ li a {
+  .main-header nav.mega li ~ li a,
+  .main-header nav.mega li ~ li label {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  /* line 579, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 580, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li > div {
     position: absolute;
@@ -13944,7 +13945,7 @@ form.search .search button {
     transition: transform 0.25s, -webkit-transform 0.25s;
   }
 
-  /* line 592, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 593, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li > div .sm_toggle {
     width: auto;
@@ -13958,13 +13959,15 @@ form.search .search button {
     font-weight: bold;
   }
 
-  /* line 601, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 602, src/sass/structure/header/navs/_mega-menu.scss */
 
-  .main-header nav.mega li > div .sm_toggle i {
-    padding-right: 1rem;
+  .main-header nav.mega li > div .sm_toggle .icon {
+    padding: 0 1rem;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 
-  /* line 609, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 611, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header .sm_toggle {
     color: #8AC8FF;
@@ -13980,19 +13983,19 @@ form.search .search button {
     width: 5.2rem;
   }
 
-  /* line 617, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 619, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header .mega_content {
     display: none;
   }
 
-  /* line 630, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 632, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header input[type="checkbox"]:focus + label {
     text-decoration: underline;
   }
 
-  /* line 649, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 651, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header input[type="checkbox"]:checked ~ div,
   .main-header input[type="checkbox"]:checked ~ ul {
@@ -14134,7 +14137,7 @@ form.search .search button {
     margin-top: -7.5rem;
   }
 
-  /* line 321, src/sass/components/basic/_hero.scss */
+  /* line 159, src/sass/components/basic/_hero.scss */
 
   header.hp_hero {
     width: 100%;
@@ -14147,7 +14150,7 @@ form.search .search button {
             flex-direction: column;
   }
 
-  /* line 443, src/sass/components/basic/_hero.scss */
+  /* line 261, src/sass/components/basic/_hero.scss */
 
   .bg_caption {
     display: none;

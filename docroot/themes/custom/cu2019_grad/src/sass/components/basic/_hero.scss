@@ -135,187 +135,25 @@ header.hp_hero {
       }
     }
 
-    // > div {
-    //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    //     @include position(relative, 100);
-    //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    //     max-width: $siteWMx;
-    //     margin: 0 auto;
-    //     padding: 0 #{$gutter}rem;
-    //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
-    //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-    //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    //
-    //     @each $q in $siteWQueryList {
-    //         $i: index($siteWQueryList, $q);
-    //
-    //         @if $i == 1 {
-    //             width: nth($siteWList, $i);
-    //         } @else {
-    //             @media #{$q} {
-    //                 width: nth($siteWList, $i);
-    //             }
-    //         }
-    //     }
-    //
-    //     :last-child {
-    //         margin-bottom: 0;
-    //     }
-    // }
-    //
-    // @media #{$mediaMd} {
-    //     padding: #{$gutter * 2.5}rem 0;
-    // }
-    //
-    // @media #{$mediaLg} {
-    //     padding: #{$gutter * 3}rem 0;
-    // }
-    //
-    // &.p-lg {
-    //     padding: #{$gutter * 4}rem 0;
-    //
-    //     @media #{$mediaMd} {
-    //         padding: #{$gutter * 6}rem 0;
-    //     }
-    //
-    //     @media #{$mediaLg} {
-    //         padding: #{$gutter * 8}rem 0;
-    //     }
-    // }
-    //
-    // &.program {
-    //     .dates {
-    //         text-align: center;
-    //
-    //         a {
-    //             font-weight: bold;
-    //             text-decoration: none;
-    //
-    //             &.active {
-    //                 text-decoration: underline;
-    //             }
-    //         }
-    //     }
-    // }
-    //
-    // @media #{$mediaLg} {
-    //     &.program {
-    //         > div {
-    //             @include flex(space-between, center, center, row wrap);
-    //
-    //             > nav {
-    //                 @include flexItem(0, 0, auto);
-    //                 width: 100%;
-    //             }
-    //
-    //             h1 {
-    //                 @include flexItem(0, 0, auto);
-    //                 margin-bottom: 0;
-    //                 width: calc(66.667% - #{$gutter}rem);
-    //             }
-    //         }
-    //
-    //         .dates {
-    //             @include flexItem(0, 0, auto);
-    //             text-align: right;
-    //         }
-    //     }
-    // }
-    /*  --------------------------------------------------------------------------  *\
-
-    IMAGES, PICTURES, AND VIDEOS
-    > img, > picture > img, > video {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @include position(absolute, 0, (left, top), (50%, 50%), translate(-50%, -50%));
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        width: 100%;
-        height: auto;
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-        + div {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            color: $white;
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
-
-        @media screen and (orientation: portrait) {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            width: auto;
-            height: 100%;
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
+    &:before {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 300;
+      content: "";
+      background: linear-gradient(0deg, rgba($black,.3) 5%, $black 90%);
+      opacity: 0;
+      transition: opacity .25s;
+      pointer-events: none;
     }
 
-    \*  --------------------------------------------------------------------------  */
-    /*  --------------------------------------------------------------------------  *\
-
-    OPTIONS
-    &.full-screen {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        height: 100vh;
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-        > div {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            top: 75%;
-            @include transform(translate(0, -50%));
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-            @media #{$mediaMd} {
-                padding: 0 25rem 0 #{$gutter}rem;
-            }
-
-            @media #{$mediaLg} {
-                padding: 0 5rem 0 #{$gutter}rem;
-            }
-
-            @media #{$mediaXl} {
-                padding: 0 75rem 0 #{$gutter}rem;
-            }
-        }
+    .menuhover & {
+      &:before {
+        opacity: 1;
+      }
     }
-
-    &.cnt-tr {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-        > div {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            top: 25%;
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            text-align: left;
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
-    }
-
-    \*  --------------------------------------------------------------------------  */
 }
 
 header.hp_hero {
@@ -326,26 +164,6 @@ header.hp_hero {
     width: 100%;
     display: flex;
     flex-direction: column;
-  }
-
-  &:before {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    content: "";
-    background: linear-gradient(0deg, rgba($black,.3) 5%, $black 90%);
-    opacity: 0;
-    transition: opacity .25s;
-    pointer-events: none;
-  }
-
-  .menuhover & {
-    &:before {
-      opacity: 1;
-    }
   }
 }
 
@@ -448,7 +266,7 @@ header.hp_hero {
   font-size: 19px;
   font-family: $headingFF;
   line-height: 1.2em;
-  z-index: 200;
+  z-index: 95;
 
   @media #{$mediaToggleHeader} {
     display: none;
