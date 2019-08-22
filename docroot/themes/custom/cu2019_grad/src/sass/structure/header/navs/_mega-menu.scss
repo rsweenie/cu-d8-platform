@@ -96,7 +96,7 @@ nav.mega {
 
         > ul {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            @include flex(flex-end, center, center);
+            @include flex($jc: flex-end);
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
@@ -184,16 +184,20 @@ nav.mega {
             }
 
             ul {
-                @include multicolumn(3, #{$gutter * 2}rem);
+                //@include multicolumn(3, #{$gutter * 2}rem);
+                @include flex($jc: space-between);
                 width: 100%;
                 order: 1;
-                padding: 38px #{$gutter}rem 38px 30px;
+                padding: 38px 0 38px 5px;
                 font-family: $copyFF;
 
                 li {
-                    display: inline-block;
-                    width: 100%;
+                    flex: 1 1 33.3%;
                     font-size: 17px;
+
+                    a {
+                      padding: 0 25px;
+                    }
 
                     &:nth-child(-n + 2) {
                         //display: none;
@@ -232,8 +236,12 @@ nav.mega {
                 }
 
                 ~ ul {
-                  @include multicolumn(2, #{$gutter * 2}rem);
+                  //@include multicolumn(2, #{$gutter * 2}rem);
                   width: 64%;
+
+                  li {
+                      flex: 1 1 50%;
+                    }
                 }
             }
 
@@ -571,7 +579,8 @@ input[type="checkbox"] {
         }
 
         ~ li {
-          a {
+          a,
+          label {
             border-top: 1px solid rgba($white,.3);
           }
         }
@@ -598,8 +607,9 @@ input[type="checkbox"] {
             border-bottom: 1px solid rgba($white,.3);
             font-weight: bold;
 
-            i {
-              padding-right: 10px;
+            .icon {
+              padding: 0 10px;
+              transform: rotate(180deg);
             }
           }
         }
