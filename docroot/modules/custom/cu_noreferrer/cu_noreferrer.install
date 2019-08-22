@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Update hooks for CU No Referrer module.
+ */
+
+/**
+ * The rel="noopener" and rel="noreferrer" link types can now be toggled.
+ */
+function cu_noreferrer_update_8001() {
+  \Drupal::configFactory()->getEditable('cu_noreferrer.settings')
+    ->clear('link')
+    ->set('noreferrer', TRUE)
+    ->save();
+}

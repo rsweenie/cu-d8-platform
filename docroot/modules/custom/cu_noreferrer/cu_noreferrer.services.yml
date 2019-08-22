@@ -1,0 +1,5 @@
+services:
+  cu_noreferrer.subscriber:
+    class: Drupal\cu_noreferrer\EventSubscriber\CUNoReferrerResponseSubscriber
+    tags:
+      - {name: event_subscriber}
