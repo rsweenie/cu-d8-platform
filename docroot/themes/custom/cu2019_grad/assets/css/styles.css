@@ -3266,113 +3266,12 @@ aside .card.img-side + p {
 
     FACTS
 
-    These elements are used to display content, most likely in a sidebar, column 
+    These elements are used to display content, most likely in a sidebar, column
     in the body of the page, or as a slide in a carousel.
 
     They can include images, icons, and text.
 
 \*  --------------------------------------------------------------------------  */
-
-/* line 11, src/sass/components/basic/_facts.scss */
-
-.fact {
-  background: #6CACE4;
-  width: calc(90vw - (5rem));
-  padding: 2.5rem;
-  margin: 0 auto 2.5rem;
-  color: #fff;
-  text-align: center;
-}
-
-/* line 25, src/sass/components/basic/_facts.scss */
-
-.grid .fact {
-  margin-bottom: 0;
-  width: 100%;
-}
-
-/* line 48, src/sass/components/basic/_facts.scss */
-
-.fact > img,
-.fact > span {
-  display: none;
-  width: 30%;
-  color: #FFCC4F;
-  font-size: 8em;
-  text-align: center;
-}
-
-/* line 71, src/sass/components/basic/_facts.scss */
-
-.fact h3 {
-  font-size: 1.5em;
-}
-
-/* line 74, src/sass/components/basic/_facts.scss */
-
-.fact h3 > img {
-  margin: 0.333em -2.5rem;
-  width: 100%;
-  height: auto;
-}
-
-/* line 81, src/sass/components/basic/_facts.scss */
-
-.fact strong {
-  display: block;
-  margin: 0.333em -2.5rem;
-  font-size: 1.5em;
-  line-height: 1.25em;
-}
-
-/* line 94, src/sass/components/basic/_facts.scss */
-
-.fact em {
-  display: block;
-  font-size: .5em;
-  line-height: 1.5em;
-  font-weight: normal;
-}
-
-/* line 101, src/sass/components/basic/_facts.scss */
-
-.fact.bg-none {
-  background: none;
-  color: #002E6D;
-}
-
-/* line 106, src/sass/components/basic/_facts.scss */
-
-.fact.bg-accent-1 {
-  background: #F0F5FA;
-  color: #6CACE4;
-}
-
-/* line 111, src/sass/components/basic/_facts.scss */
-
-.fact.bg-accent-2 {
-  background: #8AC8FF;
-  color: #6CACE4;
-}
-
-/* line 116, src/sass/components/basic/_facts.scss */
-
-.fact.bg-accent-3 {
-  background: #FFCC4F;
-  color: #6CACE4;
-}
-
-/* line 121, src/sass/components/basic/_facts.scss */
-
-.fact.lg {
-  padding: 2.5rem 0;
-}
-
-/* line 142, src/sass/components/basic/_facts.scss */
-
-.grid .fact.lg {
-  padding: 2.5rem;
-}
 
 /* line 225, src/sass/components/basic/_facts.scss */
 
@@ -11562,108 +11461,6 @@ form.search .search button {
     padding-left: 3.2rem;
   }
 
-  /* line 11, src/sass/components/basic/_facts.scss */
-
-  .fact {
-    width: 33.333%;
-    max-width: 50rem;
-    margin: 0;
-    padding: 5rem;
-  }
-
-  /* line 36, src/sass/components/basic/_facts.scss */
-
-  .fact [class*="col-"] + .fact {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-
-  /* line 39, src/sass/components/basic/_facts.scss */
-
-  .fact [class*="col-"] + .fact.pull-left {
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-  }
-
-  /* line 42, src/sass/components/basic/_facts.scss */
-
-  .fact [class*="col-"] + .fact.push-right {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-
-  /* line 121, src/sass/components/basic/_facts.scss */
-
-  .fact.lg {
-    width: 100%;
-    max-width: none;
-    margin: 0 auto;
-  }
-
-  /* line 129, src/sass/components/basic/_facts.scss */
-
-  .fact.lg.float-left {
-    margin: 0 2.5rem 2.5rem 0;
-    width: 50%;
-  }
-
-  /* line 134, src/sass/components/basic/_facts.scss */
-
-  .fact.lg.float-right {
-    margin: 0 0 2.5rem 2.5rem;
-    width: 50%;
-  }
-
-  /* line 11, src/sass/components/basic/_facts.scss */
-
-  .fact {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    padding: 5rem;
-  }
-
-  /* line 157, src/sass/components/basic/_facts.scss */
-
-  .fact > img,
-  .fact > span {
-    display: block;
-  }
-
-  /* line 167, src/sass/components/basic/_facts.scss */
-
-  .fact > div {
-    width: 60%;
-  }
-
-  /* line 176, src/sass/components/basic/_facts.scss */
-
-  .fact > div:only-child {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  /* line 188, src/sass/components/basic/_facts.scss */
-
-  .fact strong {
-    font-size: 2em;
-  }
-
   /* line 235, src/sass/components/basic/_facts.scss */
 
   [class*="fact-offset-"] {
@@ -12447,11 +12244,6 @@ form.search .search button {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
@@ -13557,12 +13349,6 @@ form.search .search button {
     padding: 13.5rem 0 8rem;
   }
 
-  /* line 200, src/sass/components/basic/_facts.scss */
-
-  .fact strong {
-    font-size: 2.5em;
-  }
-
   /* line 28, src/sass/components/basic/_quotes.scss */
 
   .copy-block blockquote {
@@ -14000,12 +13786,6 @@ form.search .search button {
 
   .full-screen .card.story > div {
     width: 33.333%;
-  }
-
-  /* line 212, src/sass/components/basic/_facts.scss */
-
-  .fact strong {
-    font-size: 3em;
   }
 
   /* line 17, src/sass/components/feeds-detail/feeds/_profile.scss */
