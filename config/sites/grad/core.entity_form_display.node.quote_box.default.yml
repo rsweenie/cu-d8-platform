@@ -1,0 +1,125 @@
+uuid: e8eb4193-1e19-4267-a583-b96141e28103
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_browser
+    - field.field.node.quote_box.field_name_person
+    - field.field.node.quote_box.field_quote_box_affiliation
+    - field.field.node.quote_box.field_quote_box_photo
+    - field.field.node.quote_box.field_quote_box_quote_text
+    - field.field.node.quote_box.field_quote_box_quotes
+    - field.field.node.quote_box.field_quote_p_link
+    - node.type.quote_box
+  module:
+    - entity_browser
+    - name
+    - paragraphs
+    - private_content
+    - scheduler
+_core:
+  default_config_hash: svDvMNN7TT1SRTyt5LEGUssYjXFtWMj6gQBXyHzUIrg
+id: node.quote_box.default
+targetEntityType: node
+bundle: quote_box
+mode: default
+content:
+  field_name_person:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_quote_box_affiliation:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_quote_box_photo:
+    type: entity_browser_entity_reference
+    weight: 5
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      open: false
+      field_widget_replace: false
+    region: content
+    third_party_settings: {  }
+  field_quote_box_quote_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_quote_box_quotes:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_quote_p_link:
+    type: entity_reference_paragraphs
+    weight: 11
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: 'QB - Title of quote box'
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

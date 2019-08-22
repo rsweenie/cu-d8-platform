@@ -175,3 +175,5 @@ gtranslate: 1.13.0
 cu_next_steps: 0.0.0
 cu_grad_landing_page: 0.0.0
 cu_grad_interior_page: 0.0.0
+allowed_formats: 1.1.0
+link_attributes: 1.9.0

@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Site Footer Section'
 vid: site_footer_section_vocabulary
 description: 'Vocabulary content fields intended to appear in the footer'
-hierarchy: 0
 weight: 0

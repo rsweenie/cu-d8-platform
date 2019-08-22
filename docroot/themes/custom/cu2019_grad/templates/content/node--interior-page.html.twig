@@ -102,11 +102,17 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content') }}>
-  {% include '@cu2019_grad/components/hero.html.twig' with {
-    'heroType': 'interior_page',
-    'heroTitle': label,
-    'heroImg': content.field_interior_page_hero_img
-  } %}
+    {% include '@cu2019_grad/components/hero.html.twig' with {
+      'heroType': 'interior_page',
+      'heroTitle': label,
+      'heroImg': content.field_interior_page_hero_img,
+      'breadcrumb': breadcrumb_links
+    } %}
+
+    {% if side_nav %}
+      <div class="side-nav">{{ side_nav }}</div>
+    {% endif %}
+
     {{ content|without('field_interior_page_hero_hl','field_interior_page_hero_img') }}
   </div>
 

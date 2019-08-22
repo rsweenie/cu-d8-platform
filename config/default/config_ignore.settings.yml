@@ -1,36 +1,36 @@
 ignored_config_entities:
   0: system.site
   2: system.theme
-  4: filter.format.rich_text
-  6: samlauth.authentication
-  8: block.block.socialmedialinks
-  10: webform.webform.contact
-  12: block.block.sitebranding
-  14: block.block.sitename
-  16: cu2017.settings
-  18: block.block.cu2017_alliance_account_menu.yml
-  20: block.block.cu2017_alliance_branding.yml
-  22: block.block.cu2017_alliance_breadcrumbs.yml
-  24: block.block.cu2017_alliance_footerbadgeblock.yml
-  26: block.block.cu2017_alliance_headerbackgroundimage.yml
-  28: block.block.cu2017_alliance_help.yml
-  30: block.block.cu2017_alliance_informationfor.yml
-  32: block.block.cu2017_alliance_largehorizimage.yml
-  34: block.block.cu2017_alliance_local_actions.yml
-  36: block.block.cu2017_alliance_local_tasks.yml
-  38: block.block.cu2017_alliance_main_menu.yml
-  40: block.block.cu2017_alliance_mainnavigation.yml
-  42: block.block.cu2017_alliance_messages.yml
-  44: block.block.cu2017_alliance_profile_contact_info.yml
-  46: block.block.cu2017_alliance_sidebaritems_content_page.yml
-  48: block.block.cu2017_alliance_sidebaritems_profile.yml
-  50: block.block.cu2017_alliance_sitebranding.yml
-  52: block.block.cu2017_alliance_sitename.yml
-  54: block.block.cu2017_alliance_slide.yml
-  56: block.block.cu2017_alliance_socialmedialinks.yml
-  58: block.block.cu2017_alliance_views_block__header_alert_block_1.yml
-  60: block.block.cu2017_alliance_views_block__header_alert_block_2.yml
-  62: block.block.cu2017_alliance_views_block__header_alert_block_3.yml
-  64: block.block.cu2017_alliance_views_block__site_footer_section_content.yml
+  4: samlauth.authentication
+  6: block.block.socialmedialinks
+  8: webform.webform.contact
+  10: block.block.sitebranding
+  12: block.block.sitename
+  14: cu2017.settings
+  16: block.block.cu2017_alliance_account_menu.yml
+  18: block.block.cu2017_alliance_branding.yml
+  20: block.block.cu2017_alliance_breadcrumbs.yml
+  22: block.block.cu2017_alliance_footerbadgeblock.yml
+  24: block.block.cu2017_alliance_headerbackgroundimage.yml
+  26: block.block.cu2017_alliance_help.yml
+  28: block.block.cu2017_alliance_informationfor.yml
+  30: block.block.cu2017_alliance_largehorizimage.yml
+  32: block.block.cu2017_alliance_local_actions.yml
+  34: block.block.cu2017_alliance_local_tasks.yml
+  36: block.block.cu2017_alliance_main_menu.yml
+  38: block.block.cu2017_alliance_mainnavigation.yml
+  40: block.block.cu2017_alliance_messages.yml
+  42: block.block.cu2017_alliance_profile_contact_info.yml
+  44: block.block.cu2017_alliance_sidebaritems_content_page.yml
+  46: block.block.cu2017_alliance_sidebaritems_profile.yml
+  48: block.block.cu2017_alliance_sitebranding.yml
+  50: block.block.cu2017_alliance_sitename.yml
+  52: block.block.cu2017_alliance_slide.yml
+  54: block.block.cu2017_alliance_socialmedialinks.yml
+  56: block.block.cu2017_alliance_views_block__header_alert_block_1.yml
+  58: block.block.cu2017_alliance_views_block__header_alert_block_2.yml
+  60: block.block.cu2017_alliance_views_block__header_alert_block_3.yml
+  62: block.block.cu2017_alliance_views_block__site_footer_section_content.yml
+  64: 'config_split.config_split.grad:status'
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

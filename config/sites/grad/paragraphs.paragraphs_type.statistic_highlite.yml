@@ -1,0 +1,9 @@
+uuid: 943295fe-a70e-43a7-95fb-fbe99d99e593
+langcode: en
+status: true
+dependencies: {  }
+id: statistic_highlite
+label: 'Statistic Highlite'
+icon_uuid: null
+description: 'Display content related to school or industry type of statistics. '
+behavior_plugins: {  }
