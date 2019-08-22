@@ -47,6 +47,7 @@
   ]
 %}
 {% block paragraph %}
+{{ field_stat_highlite_background }}
 {% if parent == 'field_landing_page_content' %}
 <section class="section">
   <div>
@@ -54,7 +55,7 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
     {% include '@cu2019_grad/components/fact.html.twig' with {
-      'class': 'q-left',
+      'class': 'stat_hl ' ~ bg,
       'textAbove': content.field_stat_highlite_top_text,
       'figure': content.field_stat_highlite_statistic,
       'textBelow': content.field_stat_highlite_bottom_text
