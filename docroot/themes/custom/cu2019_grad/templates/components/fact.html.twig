@@ -2,7 +2,7 @@
 <section id="Sect-{{ par_id }}">
   <div>
 {% endif %}
-<div class="fact {# {include.class} #}">
+<div class="fact{% if class %} {{ class }}{% endif %}">
     <div>
             {{ textAbove }}
             {#

@@ -9,6 +9,21 @@
 
 \*  --------------------------------------------------------------------------  */
 .fact {
+
+  &.stat_hl {
+    position: relative;
+    padding: 30px;
+    color: $white;
+    text-align: center;
+
+    @media #{$mediaMd} {
+      @include innerBorder;
+    }
+
+    > div {
+      @include flex($jc: center, $ff: column nowrap);
+    }
+  }
     // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)

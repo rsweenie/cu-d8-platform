@@ -46,6 +46,21 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
     }
   }
 
+  if ($paragraph->hasField('field_stat_highlite_background') && !$paragraph->field_stat_highlite_background->isEmpty()) {
+    $variables['bg_option'] = $paragraph->get('field_stat_highlite_background')->getString();
+    switch ($variables['bg_option']) {
+      default:
+        $variables['bg'] = 'bg-secondary';
+        break;
+      case 'color2':
+        $variables['bg'] = 'bg-primary';
+        break;
+      case 'color3':
+        $variables['bg'] = 'bg-gray2';
+        break;
+    }
+  }
+
   if ($paragraph->hasField('field_next_step_icon') && !$paragraph->field_next_step_icon->isEmpty()) {
     $variables['icon'] = $paragraph->get('field_next_step_icon')->getString();
   }

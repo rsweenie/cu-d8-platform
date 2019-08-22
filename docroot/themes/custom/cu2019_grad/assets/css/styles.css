@@ -1952,10 +1952,76 @@ section[class*="sbg-"]:after {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 117, src/sass/structure/section-backgrounds/_basic.scss */
+/* line 15, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-primary {
+  background: #002E6D;
+}
+
+/* line 24, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-secondary {
+  background: #0054A6;
+}
+
+/* line 33, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-tertiary {
+  background: #6CACE4;
+}
+
+/* line 42, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-accent-1 {
+  background: #F0F5FA;
+}
+
+/* line 95, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-accent-2 {
+  background: #8AC8FF;
+}
+
+/* line 104, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-accent-3 {
+  background: #FFCC4F;
+}
+
+/* line 113, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-accent-4 {
+  background: #FFB82A;
+}
+
+/* line 126, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-gray1 {
+  background: #5D6468;
+}
+
+/* line 129, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-gray2 {
+  background: #555555;
+}
+
+/* line 132, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-gray3 {
+  background: #707070;
+}
+
+/* line 135, src/sass/structure/section-backgrounds/_basic.scss */
 
 .bg-gray4 {
   background: #EEEFF0;
+}
+
+/* line 138, src/sass/structure/section-backgrounds/_basic.scss */
+
+.bg-gray5 {
+  background: #d4d4d4;
 }
 
 /*  --------------------------------------------------------------------------  *\ DELETE THIS SECTION OUT WHEN NOT USING ON COMPONENT LIBRARY SITE \*  --------------------------------------------------------------------------  */
@@ -3273,13 +3339,37 @@ aside .card.img-side + p {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 225, src/sass/components/basic/_facts.scss */
+/* line 13, src/sass/components/basic/_facts.scss */
+
+.fact.stat_hl {
+  position: relative;
+  padding: 3rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* line 23, src/sass/components/basic/_facts.scss */
+
+.fact.stat_hl > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+/* line 240, src/sass/components/basic/_facts.scss */
 
 .fact-offset-tr .fact {
   margin-top: -5rem;
 }
 
-/* line 229, src/sass/components/basic/_facts.scss */
+/* line 244, src/sass/components/basic/_facts.scss */
 
 .fact-offset-bc {
   margin-top: -5rem;
@@ -3766,7 +3856,7 @@ blockquote.q-left > div:after {
   text-align: center;
 }
 
-/* line 90, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 81, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote {
   -webkit-box-flex: 1;
@@ -3775,13 +3865,13 @@ blockquote.q-left .quote {
   padding-left: 2rem;
 }
 
-/* line 98, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 89, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote:only-child {
   padding: 0;
 }
 
-/* line 103, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 94, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .field--name-field-quote-quote {
   font-size: 1.8rem;
@@ -3789,7 +3879,7 @@ blockquote.q-left .field--name-field-quote-quote {
   font-weight: 600;
 }
 
-/* line 124, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 115, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr {
   font-size: 1.4rem;
@@ -3797,14 +3887,14 @@ blockquote.q-left .attr {
   line-height: 1.2em;
 }
 
-/* line 133, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 124, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr small {
   font-size: 1em;
   font-weight: 500;
 }
 
-/* line 137, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 128, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr div {
   display: inline;
@@ -10766,7 +10856,7 @@ form.search .search button {
     height: 32rem;
   }
 
-  /* line 90, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 81, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .quote {
     padding-left: 4.6rem;
@@ -11461,20 +11551,33 @@ form.search .search button {
     padding-left: 3.2rem;
   }
 
-  /* line 235, src/sass/components/basic/_facts.scss */
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .fact.stat_hl:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    content: "";
+    border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+  }
+
+  /* line 250, src/sass/components/basic/_facts.scss */
 
   [class*="fact-offset-"] {
     z-index: 115;
   }
 
-  /* line 237, src/sass/components/basic/_facts.scss */
+  /* line 252, src/sass/components/basic/_facts.scss */
 
   [class*="fact-offset-"] > div {
     position: relative;
     z-index: 115;
   }
 
-  /* line 242, src/sass/components/basic/_facts.scss */
+  /* line 257, src/sass/components/basic/_facts.scss */
 
   .fact-offset-tr .fact {
     position: absolute;
@@ -11485,13 +11588,13 @@ form.search .search button {
             transform: translate(0, -33.333%);
   }
 
-  /* line 246, src/sass/components/basic/_facts.scss */
+  /* line 261, src/sass/components/basic/_facts.scss */
 
   .fact-offset-bc {
     margin-top: 0;
   }
 
-  /* line 249, src/sass/components/basic/_facts.scss */
+  /* line 264, src/sass/components/basic/_facts.scss */
 
   .fact-offset-bc .fact {
     position: absolute;
@@ -11632,7 +11735,7 @@ form.search .search button {
     line-height: 15.3rem;
   }
 
-  /* line 78, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 463, src/sass/base/_mixins.scss */
 
   blockquote.q-left:after {
     width: calc(100% - 3rem);
@@ -11645,7 +11748,7 @@ form.search .search button {
     pointer-events: none;
   }
 
-  /* line 124, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 115, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .attr {
     font-size: 1.6rem;
@@ -13373,7 +13476,7 @@ form.search .search button {
     transition: all 10s;
   }
 
-  /* line 103, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 94, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-quote {
     font-size: 3rem;
@@ -14414,7 +14517,7 @@ form.search .search button {
 }
 
 @media screen and (max-width: 575.9px) {
-  /* line 113, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 104, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image {
     -webkit-box-flex: 0;
@@ -14422,7 +14525,7 @@ form.search .search button {
             flex: 0 0 20%;
   }
 
-  /* line 117, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 108, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image img {
     width: 100%;
