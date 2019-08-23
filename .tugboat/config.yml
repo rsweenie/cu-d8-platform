@@ -132,6 +132,8 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        # We do a composer install here for an edge case in which drush is not found.
+        - composer install --no-ansi
         # Site alias specific build steps
         - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 
