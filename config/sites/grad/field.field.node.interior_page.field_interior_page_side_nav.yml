@@ -1,0 +1,21 @@
+uuid: ea668bbe-0425-4355-9305-d4e97823827e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_interior_page_side_nav
+    - node.type.interior_page
+  module:
+    - options
+id: node.interior_page.field_interior_page_side_nav
+field_name: field_interior_page_side_nav
+entity_type: node
+bundle: interior_page
+label: 'Show side navigation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

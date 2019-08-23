@@ -1,0 +1,65 @@
+uuid: 653f5ad5-6233-40c0-b21d-669b121f8030
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.full_width_banner.field_fwb_body
+    - field.field.paragraph.full_width_banner.field_fwb_cta
+    - field.field.paragraph.full_width_banner.field_fwb_image
+    - field.field.paragraph.full_width_banner.field_fwb_title
+    - field.field.paragraph.full_width_banner.field_fwb_title2
+    - paragraphs.paragraphs_type.full_width_banner
+  module:
+    - link
+    - text
+id: paragraph.full_width_banner.default
+targetEntityType: paragraph
+bundle: full_width_banner
+mode: default
+content:
+  field_fwb_body:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_fwb_cta:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_fwb_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_fwb_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_fwb_title2:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true
