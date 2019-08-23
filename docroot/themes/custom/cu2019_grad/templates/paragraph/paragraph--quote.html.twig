@@ -51,18 +51,22 @@
   {% if parent == 'field_landing_page_content' %}
   <section class="section">
     <div>
+      <div class="row">
+        <div class="col-md-12 col-lg-7">
   {% endif %}
-      <div{{ attributes.addClass(classes) }}>
-      {% include '@cu2019_grad/components/quote.html.twig' with {
-        'class': 'q-left',
-        'quote': content.field_quote_quote,
-        'img': content.field_quote_image,
-        'name': content.field_quote_full_name,
-        'title': content.field_quote_title,
-        'area': content.field_quote_background_area
-      } %}
-      </div>
+          <div {{ attributes.addClass(classes) }}>
+          {% include '@cu2019_grad/components/quote.html.twig' with {
+            'class': 'q-left',
+            'quote': content.field_quote_quote,
+            'img': content.field_quote_image,
+            'name': content.field_quote_full_name,
+            'title': content.field_quote_title,
+            'area': content.field_quote_background_area
+          } %}
+          </div>
   {% if parent == 'field_landing_page_content' %}
+        </div>
+      </div>
     </div>
   </section>
   {% endif %}

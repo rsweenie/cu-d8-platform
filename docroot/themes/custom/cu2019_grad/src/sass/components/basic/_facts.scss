@@ -14,14 +14,97 @@
     position: relative;
     padding: 30px;
     color: $white;
-    text-align: center;
+
+    @media #{$mediaToggleHeader} {
+      padding: 30px 16px;
+      margin: 0 #{$gutter * -1}rem;
+    }
 
     @media #{$mediaMd} {
       @include innerBorder;
+      text-align: center;
+
+      &:before {
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        content: "";
+        background: rgba($white,.3);
+      }
     }
 
     > div {
       @include flex($jc: center, $ff: column nowrap);
+      align-items: center;
+    }
+
+    .field--name-field-stat-highlite-top-text {
+      order: 1;
+      font-size: 21px;
+      font-family: $headingFF;
+      line-height: 1.05em;
+      margin: (36 / 30) * 1em 0 (29 / 30) * 1em 0;
+      text-transform: uppercase;
+      @include letterSpacing(50);
+
+      @media #{$mediaLg} {
+        font-size: 30px;
+        max-width: 420px;
+      }
+    }
+
+    .field--name-field-stat-highlite-icon {
+      order: 2;
+
+      @media #{$mediaMdMax} {
+        width: 20%;
+        position: absolute;
+        top: 27px;
+        left: $gutter;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      // @media #{$mediaLgMax} {
+      //
+      // }
+    }
+
+    .field--name-field-stat-highlite-statistic {
+      order: 3;
+      color: $tertiary;
+      font-size: 46px;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      @media #{$mediaLg} {
+        font-size: 72px;
+      }
+    }
+
+    .field--name-field-stat-highlite-bottom-text {
+      order: 4;
+      font-size: 14px;
+      margin: 0 0 (29 / 16) * 1em 0;
+      max-width: 420px;
+
+      @media #{$mediaLg} {
+        font-size: 16px;
+        margin-top: (-21 / 16) * 1em;
+      }
+    }
+
+    @media #{$mediaMdMax} {
+      .field--name-field-stat-highlite-top-text,
+      .field--name-field-stat-highlite-statistic,
+      .field--name-field-stat-highlite-bottom-text {
+        padding-left: calc(20% + #{$gutter}rem);
+      }
     }
   }
     // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
