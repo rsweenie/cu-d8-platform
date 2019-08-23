@@ -4,6 +4,7 @@
 {% endif %}
 <div class="fact{% if class %} {{ class }}{% endif %}">
     <div>
+            {{ factIcon }}
             {{ textAbove }}
             {#
             <strong {% if include.factStart %} data-start="{{ include.factStart }}"{% endif %}
@@ -15,12 +16,9 @@
                 {{ figure }}
             </strong>
             #}
-            <strong>{{ figure }}</strong>
+            {{ figure }}
             {{ textBelow }}
     </div>
-    {% if include.factIcon %}
-        <span class="{{ include.factIcon }}"></span>
-    {% endif %}
 </div>
 {% if wrapper %}
   </div>
