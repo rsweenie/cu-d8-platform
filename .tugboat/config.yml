@@ -132,6 +132,9 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        # Use the tugboat-specific Drupal settings
+        - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
+
         # Site alias specific build steps
         - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 
