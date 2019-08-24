@@ -71,7 +71,7 @@ services:
         - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
 
         # Use the tugboat-specific Drupal settings
-        - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
+        - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/settings/tugboat.settings.php"
 
         # Install/update packages managed by composer, including drush
         - composer install --no-ansi
@@ -87,7 +87,7 @@ services:
         #- drush -r "${DOCROOT}" -y site-install standard
 
         # Generate a unique hash_salt to secure the site
-        - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
+        - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/settings/tugboat_hash.settings.php"
 
         # Copy the files directory from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
@@ -133,7 +133,7 @@ services:
       # from the base preview.
       build:
         # Use the tugboat-specific Drupal settings
-        - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
+        - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/settings/tugboat.settings.php"
 
         # Site alias specific build steps
         - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
