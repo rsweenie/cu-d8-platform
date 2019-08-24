@@ -9,207 +9,233 @@
 
 \*  --------------------------------------------------------------------------  */
 blockquote {
-    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    @include flexItem(0, 0, auto, 1);
-    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    margin: 0 auto #{$gutter}rem;
-    padding: #{$gutter}rem;
-    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    background: $tertiary;
-    color: $white;
-    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
-    @media #{$mediaFullHeader} {
-        padding: #{$gutter * 2}rem;
-    }
-    
-    &.sm {
-        width: calc(90vw - #{$gutter * 2}rem);
-        max-width: 50rem;
-        margin: 0 auto;
-    
-        @media #{$mediaMd} {
-            width: 33.333%;
-            margin: 0;
+    // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // @include flexItem(0, 0, auto, 1);
+    // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // margin: 0 auto #{$gutter}rem;
+    // padding: #{$gutter}rem;
+    // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // background: $tertiary;
+    // color: $white;
+    // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //
+    // @media #{$mediaFullHeader} {
+    //     padding: #{$gutter * 2}rem;
+    // }
+
+    .copy-block & {
+      margin-left: 42px;
+      color: $primary;
+      position: relative;
+
+      @media #{$mediaFullHeader} {
+        margin-left: 96px;
+      }
+
+      &:before {
+        height: 100%;
+        width: 12px;
+        position: absolute;
+        left: -26px;
+        top: 0;
+        content: "";
+        background: $primaryXLt;
+
+        @media #{$mediaFullHeader} {
+          width: 19px;
+          left: -54px;
+          transition: all 10s;
         }
+      }
     }
-    
-    &.float-left, &.float-right {
-        padding: #{$gutter}rem;
-        margin-bottom: #{$gutter}rem;
-    }
-    
-    .grid & {
-        margin-bottom: 0;
-    }
-    
-    &.bg-none {
-        background: none;
-        color: $primary;
-    }
-    
-    &.bg-accent-1 {
-        background: $accent-1;
-        color: $tertiary;
-    }
-    
-    &.bg-accent-2 {
-        background: $accent-2;
-        color: $tertiary;
-    }
-    
-    &.bg-accent-3 {
-        background: $accent-3;
-        color: $tertiary;    
-    }
-    
-    
+
+    // &.sm {
+    //     width: calc(90vw - #{$gutter * 2}rem);
+    //     max-width: 50rem;
+    //     margin: 0 auto;
+    //
+    //     @media #{$mediaMd} {
+    //         width: 33.333%;
+    //         margin: 0;
+    //     }
+    // }
+    //
+    // &.float-left, &.float-right {
+    //     padding: #{$gutter}rem;
+    //     margin-bottom: #{$gutter}rem;
+    // }
+    //
+    // .grid & {
+    //     margin-bottom: 0;
+    // }
+    //
+    // &.bg-none {
+    //     background: none;
+    //     color: $primary;
+    // }
+    //
+    // &.bg-accent-1 {
+    //     background: $accent-1;
+    //     color: $tertiary;
+    // }
+    //
+    // &.bg-accent-2 {
+    //     background: $accent-2;
+    //     color: $tertiary;
+    // }
+    //
+    // &.bg-accent-3 {
+    //     background: $accent-3;
+    //     color: $tertiary;
+    // }
+
+
     .quote {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        margin: 0 0 #{$gutter * 2}rem;
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
-        p {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            @include position(relative, 0);
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            
-            &:first-child {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                
-                &:before {
-                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                    content: "\201C";
-                }
-            }
-            
-            &:last-child {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                margin: 0;
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                
-                &:after {
-                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                    content: "\201D";
-                }
-            }
-        
-            @media #{$mediaMd} {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                font-size: 1.25em;
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            }
-        
-            @media #{$mediaXl} {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            }
-        }
+        // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // margin: 0 0 #{$gutter * 2}rem;
+        // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        // p {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     @include position(relative, 0);
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        //     &:first-child {
+        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        //         &:before {
+        //             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //             content: "\201C";
+        //         }
+        //     }
+        //
+        //     &:last-child {
+        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //         margin: 0;
+        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        //         &:after {
+        //             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //             content: "\201D";
+        //         }
+        //     }
+        //
+        //     @media #{$mediaMd} {
+        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //         font-size: 1.25em;
+        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //     }
+        //
+        //     @media #{$mediaXl} {
+        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //     }
+        // }
     }
-    
+
     .attr {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        text-align: right;
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
-        img {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            width: 40%;
-            height: auto;
-            margin: 0 #{$gutter}rem 0 0;
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            overflow: hidden;
-            border-radius: 100%;
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
-        
-        p {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            margin: 0;
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
-        
-        small {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            display: block;
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            margin: .5em 0 0;
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            font-size: .75em;
-            font-style: italic;
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
+        // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // text-align: right;
+        // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        // img {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     width: 40%;
+        //     height: auto;
+        //     margin: 0 #{$gutter}rem 0 0;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     overflow: hidden;
+        //     border-radius: 100%;
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        // }
+        //
+        // p {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     margin: 0;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        // }
+        //
+        // small {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     display: block;
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     margin: .5em 0 0;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     font-size: .75em;
+        //     font-style: italic;
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        // }
     }
 
     /*---------------------*\
       IMPORT STYLES FOR VARIOUS DIRECTIONS
 
-      The default styling is for the attribution to fall under the quote.  
+      The default styling is for the attribution to fall under the quote.
       The imports below will alter that.
     \*---------------------*/
     @import 'quotes/direction/_quote-left';
-    @import 'quotes/direction/_quote-right';
-    @import 'quotes/direction/_quote-bottom';
-    /*---------------------*\
-      IMPORT STYLES FOR BUBBLE STYLING
-    \*---------------------*/
-    @import 'quotes/bubbles/_bubbles';
-    @import 'quotes/bubbles/_bubbles-left';
-    @import 'quotes/bubbles/_bubbles-right';
-    @import 'quotes/bubbles/_bubbles-bottom';
-    /*---------------------*\
-      IMPORT STYLES FOR SMALL VARIATION
-    \*---------------------*/
-    @import 'quotes/_small';
-    @import 'quotes/bubbles/_bubbles-small';
+    // @import 'quotes/direction/_quote-right';
+    // @import 'quotes/direction/_quote-bottom';
+    // /*---------------------*\
+    //   IMPORT STYLES FOR BUBBLE STYLING
+    // \*---------------------*/
+    // @import 'quotes/bubbles/_bubbles';
+    // @import 'quotes/bubbles/_bubbles-left';
+    // @import 'quotes/bubbles/_bubbles-right';
+    // @import 'quotes/bubbles/_bubbles-bottom';
+    // /*---------------------*\
+    //   IMPORT STYLES FOR SMALL VARIATION
+    // \*---------------------*/
+    // @import 'quotes/_small';
+    // @import 'quotes/bubbles/_bubbles-small';
 }
