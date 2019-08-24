@@ -11,10 +11,6 @@ case $CU_SITE_ALIAS in
   demo|hrnew|alliance|grad)
     echo "Nothing to do for ${CU_SITE_ALIAS}"
   ;;
-  grad-site)
-    echo "Nothing to do for ${CU_SITE_ALIAS}"
-  ;;
-
   none)
     echo "Nothing to do for generic install"
   ;;
