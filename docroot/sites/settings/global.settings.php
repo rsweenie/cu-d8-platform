@@ -19,8 +19,8 @@
  */
 $additionalSettingsFiles = [
   // e.g,( DRUPAL_ROOT . "/sites/settings/foo.settings.php" )
-  DRUPAL_ROOT . "/sites/settings/tugboat.settings.php",
-  DRUPAL_ROOT . "/sites/settings/tugboat_hash.settings.php",
+  __DIR__ . "/tugboat.settings.php",
+  __DIR__ . "/tugboat_hash.settings.php",
 ];
 
 foreach ($additionalSettingsFiles as $settingsFile) {
