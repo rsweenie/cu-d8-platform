@@ -14,7 +14,7 @@ $databases['default']['default'] = array (
 
 
 // Site specific Drupal settings
-$cu_site_name = system($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh > /dev/null');
+$cu_site_name = system($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh');
 print_r($cu_site_name);
 
 switch ($cu_site_name) {
