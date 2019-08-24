@@ -10,7 +10,7 @@ CU_SITE_ALIAS=$(`dirname "$0"`/get_site_alias.sh)
 echo "Doing Tugboat build steps for $CU_SITE_ALIAS"
 
 case $CU_SITE_ALIAS in
-  demo|hrnew|alliance)
+  demo|hrnew|alliance|grad)
     echo "Syncing DB and assets for $CU_SITE_ALIAS"
     # DB sync MUST come before filesync always
     drush -r "${DOCROOT}" sql:drop -y
