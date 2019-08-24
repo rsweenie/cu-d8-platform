@@ -35,3 +35,4 @@ hidden:
   field_next_steps_items: true
   links: true
   private: true
+  search_api_excerpt: true

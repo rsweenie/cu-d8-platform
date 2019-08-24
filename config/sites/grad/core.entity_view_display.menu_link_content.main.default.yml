@@ -15,3 +15,4 @@ hidden:
   children: true
   field_mainmenu_feat_content: true
   field_mainmenu_feat_link: true
+  search_api_excerpt: true
