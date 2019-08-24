@@ -14,7 +14,7 @@ $databases['default']['default'] = array (
 
 
 // Site specific Drupal settings
-$cu_site_name = system($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh');
+$cu_site_name = exec($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh');
 
 switch ($cu_site_name) {
   case 'alliance':
