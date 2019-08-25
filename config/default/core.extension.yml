@@ -35,10 +35,8 @@ module:
   cu_breadcrumbs: 0
   cu_data_transform: 0
   cu_entity_embed: 0
-  cu_hub_api: 0
   datetime: 0
   dblog: 0
-  decoupled_router: 0
   diff: 0
   dropzonejs: 0
   easy_install: 0
@@ -79,8 +77,6 @@ module:
   imagemagick: 0
   inline_entity_form: 0
   jsonapi: 0
-  jsonapi_defaults: 0
-  jsonapi_extras: 0
   layout_discovery: 0
   libraries: 0
   lightning_api: 0
