@@ -6,9 +6,15 @@ id: hub
 label: Hub
 description: ''
 folder: ../config/sites/hub
-module: {  }
+module:
+  cu_hub_api: 0
+  jsonapi_defaults: 0
+  jsonapi_extras: 0
 theme: {  }
 blacklist:
+  - taxonomy.vocabulary.degree_type
+  - taxonomy.vocabulary.program_availability
+  - taxonomy.vocabulary.program_interests
   - 'core.base_field_override.node.hub_*'
   - 'core.entity_form_display.node.hub_*'
   - 'core.entity_view_display.node.hub_*'
@@ -16,16 +22,11 @@ blacklist:
   - 'field.storage.node.field_hub_*'
   - 'node.type.hub_*'
   - 'cu_hub_api.*'
-  - taxonomy.vocabulary.degree_type
-  - taxonomy.vocabulary.program_availability
-  - taxonomy.vocabulary.program_interests
 graylist:
   - 'auto_entitylabel.settings.*'
   - 'block.block.*'
   - 'filter.format.*'
   - 'jsonapi.*'
-  - 'jsonapi_defaults.*'
-  - 'jsonapi_extras.*'
   - 'views.view.*'
   - 'search_api.*'
   - 'system.*'
