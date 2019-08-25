@@ -1,0 +1,23 @@
+uuid: 39579529-12d0-4aa8-9fcc-830679b2da8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_faculty_provost_url
+    - node.type.hub_faculty
+  module:
+    - link
+id: node.hub_faculty.field_hub_faculty_provost_url
+field_name: field_hub_faculty_provost_url
+entity_type: node
+bundle: hub_faculty
+label: 'Provost URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

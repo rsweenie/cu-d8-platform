@@ -41,10 +41,16 @@
       }
     }
 
-    @media #{$mediaToggleHeader} {
+    @media #{$mediaToggleHeader} { 
       display: flex;
       align-items: center;
+      
+      .icon + span {
+        display: block;
+        margin: 0 -2rem;
+      }
     }
+
   }
 
   h2 {

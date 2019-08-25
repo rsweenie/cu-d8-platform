@@ -20,7 +20,7 @@
 
       a {
           display: block;
-          padding: 18px 14px 14px;
+          padding: 18px 22px 14px;
           position: relative;
           color: $white;
           background: $secondary;
@@ -34,7 +34,7 @@
             padding: 0 5px;
           }
 
-          &:hover {
+          &:hover, &:focus {
             text-decoration: none;
             color: $white;
             background: $tertiary;
@@ -47,7 +47,7 @@
             right: 0;
             top: 8px;
             content: "";
-            background: $white;
+            background: rgba($white, .5);
           }
       }
 

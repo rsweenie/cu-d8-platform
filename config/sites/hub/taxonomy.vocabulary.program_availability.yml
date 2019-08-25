@@ -1,0 +1,8 @@
+uuid: c44a0f8b-b828-401d-86b2-62d83e739434
+langcode: en
+status: true
+dependencies: {  }
+name: 'Program Availability / Method'
+vid: program_availability
+description: ''
+weight: 0

@@ -1,0 +1,8 @@
+uuid: 8cabafc9-81b7-4b7b-9eae-c64d703d206e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Degree Type'
+vid: degree_type
+description: ''
+weight: 0
