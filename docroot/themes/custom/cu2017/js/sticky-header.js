@@ -37,10 +37,9 @@
       var toolbarPresent = (settings.toolbar);
 
       if (typeof settings.toolbar != 'undefined') {
-        console.log("There is a toolbar");
         $('body').addClass('toolbar-adjust'); 
       }
-
+      
       $(window, context).once('sticky')
         .scroll(stickyHeaderAction.makeHeaderSticky.bind(this));
 
