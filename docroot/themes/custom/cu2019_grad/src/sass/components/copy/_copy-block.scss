@@ -1,0 +1,20 @@
+.copy-block {
+  h3 {
+    position: relative;
+    padding-bottom: (14 / 55) * 1em;
+
+    &:after {
+      width: 55px;
+      height: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background: $tertiary;
+
+      @media #{$mediaMd} {
+        height: 8px;
+      }
+    }
+  }
+}

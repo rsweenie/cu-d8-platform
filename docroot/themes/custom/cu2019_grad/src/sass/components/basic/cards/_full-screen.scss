@@ -26,7 +26,8 @@
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         padding: #{$gutter * 2}rem;
-        max-width: calc(#{$siteWMx * .5} - #{$gutter}rem);
+        //max-width: calc(#{$siteWMx * .5} - #{$gutter}rem);
+        max-width: 1084px;
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
