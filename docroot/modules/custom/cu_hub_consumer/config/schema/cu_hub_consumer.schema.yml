@@ -8,7 +8,7 @@ cu_hub_consumer.settings:
       type: uri
       label: 'Hub Base URI'
 
-hub_reference.type.*:
+cu_hub_consumer.hub_reference_type.*:
   type: config_entity
   label: 'Hub reference type'
   mapping:
@@ -25,22 +25,22 @@ hub_reference.type.*:
       type: string
       label: 'Source'
     source_configuration:
-      type: hub_reference.source.[%parent.source]
+      type: cu_hub_consumer.hub_reference_source.[%parent.source]
     field_map:
       type: sequence
       label: 'Field map'
       sequence:
         type: string
 
-hub_reference.source.*:
+cu_hub_consumer.hub_reference_source.*:
   type: mapping
   label: 'Hub reference source settings'
 
-hub_reference.source.node:*:
+cu_hub_consumer.hub_reference_source.node:*:
   type: hub_reference.source.field_aware
   label: 'Node hub reference source configuration'
 
-hub_reference.source.field_aware:
+cu_hub_consumer.hub_reference_source.field_aware:
   type: mapping
   mapping:
     source_field:

@@ -1,0 +1,11 @@
+uuid: e0c18f1b-15fd-4c88-bd27-bc5886d24887
+langcode: en
+status: true
+dependencies: {  }
+id: degree
+label: 'Academic Degree'
+description: ''
+source: 'node:degree'
+source_configuration:
+  source_field: hub_uuid
+field_map: {  }

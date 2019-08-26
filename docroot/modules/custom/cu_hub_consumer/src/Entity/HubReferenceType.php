@@ -32,7 +32,7 @@ use Drupal\Core\Plugin\DefaultSingleLazyPluginCollection;
  *     }
  *   },
  *   admin_permission = "administer cu hub consumer",
- *   config_prefix = "type",
+ *   config_prefix = "hub_reference_type",
  *   bundle_of = "hub_reference",
  *   entity_keys = {
  *     "id" = "id",
