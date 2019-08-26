@@ -45,11 +45,11 @@ class SettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('enabled'),
     ];
 
-    $form['base_uri'] = [
+    $form['hub_base_url'] = [
       '#type' => 'url',
-      '#title' => $this->t('Base URI'),
-      '#description' => $this->t('Example: %base_uri', ['%base_uri' => 'https://hub.creighton.com']),
-      '#default_value' => $config->get('base_uri'),
+      '#title' => $this->t('Base URL'),
+      '#description' => $this->t('Example: %hub_base_url', ['%hub_base_url' => 'https://hub.creighton.com/jsonapi']),
+      '#default_value' => $config->get('hub_base_url'),
     ];
 
     return parent::buildForm($form, $form_state);
@@ -63,7 +63,7 @@ class SettingsForm extends ConfigFormBase {
     $this->configFactory->getEditable(static::SETTINGS)
       // Set the submitted configuration setting.
       ->set('enabled', $form_state->getValue('enabled'))
-      ->set('base_uri', $form_state->getValue('base_uri'))
+      ->set('hub_base_url', $form_state->getValue('hub_base_url'))
       ->save();
 
     parent::submitForm($form, $form_state);

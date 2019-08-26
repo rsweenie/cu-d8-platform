@@ -7,9 +7,9 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\cu_hub_consumer\HubReferenceInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityChangedTrait;
+use Drupal\Core\Entity\EntityPublishedTrait;
 
 /**
  * The hub reference entity class.
@@ -19,8 +19,15 @@ use Drupal\Core\Entity\EntityChangedTrait;
  * @ContentEntityType(
  *   id = "hub_reference",
  *   label = @Translation("Hub Reference Entity"),
- *   bundle_label = @Translation("Hub Reference Entity type"),
+ *   label_singular = @Translation("hub reference item"),
+ *   label_plural = @Translation("hub reference items"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count hub reference item",
+ *     plural = "@count hub reference items"
+ *   ),
+ *   bundle_label = @Translation("Hub reference type"),
  *   handlers = {
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\Core\Entity\EntityListBuilder",
  *     "form" = {
  *       "default" = "Drupal\cu_hub_consumer\Form\HubReferenceForm",
@@ -28,7 +35,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
  *       "edit" = "Drupal\cu_hub_consumer\Form\HubReferenceForm"
  *     },
  *     "views_data" = "Drupal\views\EntityViewsData",
- *     "storage_schema" = "\Drupal\cu_hub_consumer\HubReferenceStorageSchema",
+ *     "storage" = "Drupal\cu_hub_consumer\HubReferenceStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     }
@@ -40,7 +47,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
  *   admin_permission = "administer cu hub references",
  *   field_ui_base_route = "entity.hub_reference_type.edit_form",
  *   entity_keys = {
- *     "id" = "rid",
+ *     "id" = "id",
  *     "label" = "title",
  *     "uuid" = "uuid",
  *     "bundle" = "bundle",
@@ -60,36 +67,18 @@ use Drupal\Core\Entity\EntityChangedTrait;
 class HubReference extends ContentEntityBase implements HubReferenceInterface {
 
   use EntityChangedTrait; // Implements methods defined by EntityChangedInterface.
+  use EntityPublishedTrait; // Implements methods defined by EntityPublishedInterface.
 
   /**
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-    $fields['rid'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Reference ID'))
-      ->setDescription(t('The hub reference ID.'))
-      ->setReadOnly(TRUE);
-
-    $fields['uuid'] = BaseFieldDefinition::create('uuid')
-      ->setLabel(t('UUID'))
-      ->setDescription(t('The record UUID.'))
-      ->setReadOnly(TRUE);
-
-    $fields['bundle'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Type'))
-      ->setDescription(t('The hub reference bundle.'));
-
-    // The hash field is used to check for duplicates.
-    $fields['hash'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Hash'))
-      ->setSetting('max_length', 64)
-      ->setDescription(t('The reference hash.'));
+    $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['title'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Title'))
       ->setDescription(t('The hub reference title.'));
 
-    // The hash field is used to check for duplicates.
     $fields['hub_uuid'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Hub UUID'))
       ->setSetting('max_length', 128)
@@ -97,57 +86,28 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
       ->setSetting('case_sensitive', false)
       ->setDescription(t('The entity UUID on hub.'));
 
-    $fields['hub_type'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Hub type'))
-      ->setDescription(t('The entity type on hub.'))
-      ->setSettings(array(
-        'default_value' => '',
-        'max_length' => 255,
-      ));
-
-    $fields['hub_bundle'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Hub bundle'))
-      ->setDescription(t('The entity bundle on hub.'))
-      ->setSettings(array(
-        'default_value' => '',
-        'max_length' => 255,
-      ));
-
-    /*
-    $fields['redirect_redirect'] = BaseFieldDefinition::create('link')
-      ->setLabel(t('Redirect target'))
-      ->setRequired(TRUE)
-      ->setTranslatable(FALSE)
-      ->setSettings([
-        'link_type' => LinkItemInterface::LINK_GENERIC,
-        'title' => DRUPAL_DISABLED,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'link',
-        'weight' => -4,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-    */
-
-    // Website field for the advertiser.
-    $fields['hub_uri'] = BaseFieldDefinition::create('string')
-        ->setLabel(t("The advertiser's website"))
-        ->setDescription(t('The website address of the advertiser.'))
-        ->setSettings(array(
-          'default_value' => '',
-          'max_length' => 2083,
-          'text_processing' => 0,
-        ))
-        // https://drupalwatchdog.com/volume-5/issue-2/introducing-drupal-8s-entity-validation-api
-        ->addPropertyConstraints('value', ['Url' => []]);
-
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
-      ->setDescription(t('The date when the hub reference was created.'));
-
+      ->setDescription(t('The time the hub reference item was created.'))
+      ->setDefaultValueCallback(static::class . '::getRequestTime')
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_timestamp',
+        'weight' => 10,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'timestamp',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+  
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))
-      ->setDescription(t('The date when the hub reference was changed.'));
+      ->setDescription(t('The time the hub reference item was last updated.'));
+
+    // Add the published field.
+    $fields += static::publishedBaseFieldDefinitions($entity_type);
 
     return $fields;
   }
@@ -155,17 +115,50 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
   /**
    * {@inheritdoc}
    */
-  public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
-    //$values += [
-    //  'type' => 'cu_hub_reference',
-    //];
+  public function getTitle() {
+    $title = $this->getEntityKey('label');
+
+    if (empty($title)) {
+      $hub_reference_source = $this->getSource();
+      return $hub_reference_source->getMetadata($this, $hub_reference_source->getPluginDefinition()['default_name_metadata_attribute']);
+    }
+
+    return $title;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function preSave(EntityStorageInterface $storage_controller) {
-    $this->set('hash', HubReference::generateHash($this->hub_type, $this->hub_uuid));
+  public function label() {
+    return $this->getTitle();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setTitle($title) {
+    return $this->set('title', $title);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getSource() {
+    return $this->bundle->entity->getSource();
+  }
+
+  /**
+   * Determines if the source field value has changed.
+   *
+   * @return bool
+   *   TRUE if the source field value changed, FALSE otherwise.
+   *
+   * @internal
+   */
+  protected function hasSourceFieldChanged() {
+    $source_field_name = $this->getSource()->getConfiguration()['source_field'];
+    $current_items = $this->get($source_field_name);
+    return isset($this->original) && !$current_items->equals($this->original->get($source_field_name));
   }
 
   /**
@@ -206,20 +199,88 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
   /**
    * {@inheritdoc}
    */
-  /*
-  public function save(array $form, FormStateInterface $form_state) {
-    $status = parent::save($form, $form_state);
+  public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
+    //$values += [
+    //  'type' => 'cu_hub_reference',
+    //];
+  }
 
-    $entity = $this->entity;
-    if ($status == SAVED_UPDATED) {
-      drupal_set_message($this->t('The hub reference %hub_reference has been updated.', ['%hub_reference' => $entity->toLink()->toString()]));
-    } else {
-      drupal_set_message($this->t('The hub reference %hub_reference has been added.', ['%hub_reference' => $entity->toLink()->toString()]));
+  /**
+   * {@inheritdoc}
+   */
+  public function preSave(EntityStorageInterface $storage_controller) {
+    parent::preSave($storage);
+    $this->set('hash', HubReference::generateHash($this->hub_type, $this->hub_uuid));
+  }
+
+  /**
+   * Sets the hub reference entity's field values from the source's metadata.
+   *
+   * Fetching the metadata could be slow (e.g., if requesting it from a remote
+   * API), so this is called by \Drupal\cu_hub_consumer\HubReferenceStorage::save() prior to it
+   * beginning the database transaction, whereas static::preSave() executes
+   * after the transaction has already started.
+   */
+  public function prepareSave() {
+    // @todo This code might be performing a fair number of HTTP requests. This is dangerously
+    // brittle and should probably be handled by a queue, to avoid doing HTTP
+    // operations during entity save. See
+    // https://www.drupal.org/project/drupal/issues/2976875 for more.
+
+    // In order for metadata to be mapped correctly, $this->original must be
+    // set. However, that is only set once parent::save() is called, so work
+    // around that by setting it here.
+    if (!isset($this->original) && $id = $this->id()) {
+      $this->original = $this->entityTypeManager()
+        ->getStorage('hub_reference')
+        ->loadUnchanged($id);
     }
 
-    $form_state->setRedirectUrl($this->entity->toUrl('collection'));
-    return $status;
+    $hub_reference_source = $this->getSource();
+    foreach ($this->translations as $langcode => $data) {
+      if ($this->hasTranslation($langcode)) {
+        $translation = $this->getTranslation($langcode);
+        // Try to set fields provided by the hub reference source and mapped in
+        // hub reference type config.
+        foreach ($translation->bundle->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
+          if ($translation->hasField($entity_field_name)) {
+            $translation->set($entity_field_name, $hub_reference_source->getMetadata($translation, $metadata_attribute_name));
+          }
+        }
+
+        // Try to set a default name for this hub reference item if no name is provided.
+        if ($translation->get('title')->isEmpty()) {
+          $translation->setName($translation->getName());
+        }
+
+        // Set thumbnail.
+        if ($translation->shouldUpdateThumbnail($this->isNew())) {
+          $translation->updateThumbnail();
+        }
+      }
+    }
   }
-  */
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validate() {
+    $hub_reference_source = $this->getSource();
+
+    /* @TODO: do we need this?
+    if ($hub_reference_source instanceof MediaSourceEntityConstraintsInterface) {
+      $entity_constraints = $hub_reference_source->getEntityConstraints();
+      $this->getTypedData()->getDataDefinition()->setConstraints($entity_constraints);
+    }
+
+    if ($hub_reference_source instanceof MediaSourceFieldConstraintsInterface) {
+      $source_field_name = $hub_reference_source->getConfiguration()['source_field'];
+      $source_field_constraints = $hub_reference_source->getSourceFieldConstraints();
+      $this->get($source_field_name)->getDataDefinition()->setConstraints($source_field_constraints);
+    }
+    */
+
+    return parent::validate();
+  }
 
 }

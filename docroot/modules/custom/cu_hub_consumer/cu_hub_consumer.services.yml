@@ -1,7 +1,10 @@
 services:
-  cu_hub_consumer.client:
-    class: '\Drupal\cu_hub_consumer\Client\HubClient'
+  plugin.manager.cu_hub_consumer.hub_reference_source:
+    class: Drupal\cu_hub_consumer\Hub\ReferenceSourceManager
+    parent: default_plugin_manager
+  plugin.manager.cu_hub_consumer.hub_resource_type:
+    class: Drupal\cu_hub_consumer\Hub\ResourceTypeManager
+    parent: default_plugin_manager
+  cu_hub_consumer.hub.client:
+    class: Drupal\cu_hub_consumer\Hub\Client
     arguments: ['@http_client', '@config.factory']
-  cu_hub_consumer.hub_reference_repository:
-    class: Drupal\cu_hub_consumer\HubReferenceRepository
-    arguments: ['@entity_type.manager', '@database', '@request_stack']
