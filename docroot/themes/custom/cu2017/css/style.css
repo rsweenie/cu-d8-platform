@@ -13930,6 +13930,63 @@ article.news .news_date {
   }
 }
 
+/*
+   Create sticky header for the creighton theme
+*/
+/* line 5, ../sass/custom/_stickyheader.scss */
+.sticky-header .header_bg_wrapper {
+  position: fixed;
+  margin-top: 0;
+  top: 0;
+}
+
+/* line 12, ../sass/custom/_stickyheader.scss */
+.sticky-header.toolbar-adjust .header_bg_wrapper {
+  top: auto;
+}
+
+@media all and (max-width: 768px) {
+  /* line 17, ../sass/custom/_stickyheader.scss */
+  .sticky-header .header_top_section_mega_menu {
+    position: fixed;
+    top: 100px;
+    max-height: 100vh;
+    overflow-y: scroll;
+    padding: 0 20px 100px 20px;
+  }
+}
+
+/* line 27, ../sass/custom/_stickyheader.scss */
+body.sticky-header header.header_opacity .header_bg_wrapper {
+  background-color: #0054a6;
+}
+
+@media all and (max-width: 768px) {
+  /* line 32, ../sass/custom/_stickyheader.scss */
+  .sticky-header .header_top_section_menu {
+    position: fixed;
+    top: 65px;
+    right: .5px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  /* line 41, ../sass/custom/_stickyheader.scss */
+  body.toolbar-vertical.sticky-header .header_bg_wrapper {
+    top: 0;
+  }
+}
+
+/* line 50, ../sass/custom/_stickyheader.scss */
+.sticky-header main {
+  padding-top: 85px;
+}
+
+/* line 56, ../sass/custom/_stickyheader.scss */
+.site_name {
+  z-index: 1;
+}
+
 /* line 4, ../sass/custom/_bootstrapoverride.scss */
 .nav li a:focus {
   background: transparent;
