@@ -64,4 +64,22 @@ class ResourceList implements ResourceListInterface {
     return $this->processedData;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getNextUrl() {
+    if (!empty($this->jsonData['links']['next'])) {
+      return $this->jsonData['links']['next'];
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getPrevUrl() {
+    if (!empty($this->jsonData['links']['prev'])) {
+      return $this->jsonData['links']['prev'];
+    }
+  }
+
 }

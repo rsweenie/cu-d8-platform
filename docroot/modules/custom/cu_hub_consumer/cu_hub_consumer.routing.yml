@@ -16,3 +16,12 @@ cu_hub_consumer.hub.test:
     _permission: 'administer cu hub consumer'
   options:
     _admin_route: TRUE
+cu_hub_consumer.hub.import:
+  path: '/admin/config/services/cu_hub_consumer/import'
+  defaults:
+    _form: '\Drupal\cu_hub_consumer\Form\HubReferenceImportForm'
+    _title: 'Hub Import'
+  requirements:
+    _permission: 'administer cu hub consumer'
+  options:
+    _admin_route: TRUE

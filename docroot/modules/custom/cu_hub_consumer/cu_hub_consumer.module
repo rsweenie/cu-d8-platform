@@ -1,6 +1,10 @@
 <?php
 
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\field\FieldConfigInterface;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * Implements hook_entity_base_field_info().
@@ -42,6 +46,20 @@ function cu_hub_consumer_theme_suggestions_hub_reference(array $variables) {
   $suggestions[] = 'hub_reference__' . $hub_reference->bundle();
   $suggestions[] = 'hub_reference__' . $hub_reference->bundle() . '__' . $sanitized_view_mode;
 
+  // Add suggestions based on the source plugin ID.
+  $source = $hub_reference->getSource();
+  if ($source instanceof DerivativeInspectionInterface) {
+    $source_id = $source->getBaseId();
+    $derivative_id = $source->getDerivativeId();
+    if ($derivative_id) {
+      $source_id .= '__derivative_' . $derivative_id;
+    }
+  }
+  else {
+    $source_id = $source->getPluginId();
+  }
+  $suggestions[] = "hub_reference__source_$source_id";
+
   return $suggestions;
 }
 
@@ -66,4 +84,96 @@ function template_preprocess_hub_reference(array &$variables) {
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function cu_hub_consumer_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($operation === 'delete' && $entity instanceof FieldConfigInterface && $entity->getTargetEntityTypeId() === 'hub_reference') {
+    /** @var \Drupal\cu_hub_consumer\Entity\HubReferenceTypeInterface $hub_reference_type */
+    $hub_reference_type = \Drupal::entityTypeManager()->getStorage('media_type')->load($entity->getTargetBundle());
+    return AccessResult::forbiddenIf($entity->id() === 'media.' . $hub_reference_type->id() . '.' . $hub_reference_type->getSource()->getConfiguration()['source_field']);
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_cron().
+ */
+function cu_hub_consumer_cron() {
+  /*
+  $state     = \Drupal::state();
+  $locked    = $state->get('iguana.tea_import_semaphore', FALSE);
+  $last_time = $state->get('iguana.tea_import_last', FALSE);
+ 
+  if (!$locked && $last_time) {
+    $database   = Database::getConnection();
+    $iguana     = new IguanaConnection();
+    $queue      = \Drupal::queue('iguana_tea_import_worker');
+    $api_limit  = $state->get('iguana.cron_download_limit', 100);
+    $save_limit = $state->get('iguana.cron_process_limit', 10);
+    $data       = NULL;
+    $new_data   = [];
+ 
+    // Pull all data into an array
+    // TODO: limit checks in case all of the thousands of Teas have new
+    // revisions
+    do {
+      // If there is have a 'next' URL returned, use that one for simplicity
+      $next_page = NULL;
+      if (isset($data->pagination->next)) {
+        $next_page = $data->pagination->next;
+      }
+      $data = $iguana->queryEndpoint('teasDetailFull', [
+        'limit'      => $api_limit,
+        'start_time' => $last_time,
+        'next_page'  => isset($next_page) ? $next_page : NULL,
+      ]);
+      $new_data = array_merge($new_data, $data->response_data);
+    } while (isset($data->pagination->next));
+ 
+    $gids      = [];
+    $new_count = count($new_data);
+    foreach ($new_data as $index => $tea_data) {
+      if (empty($tea_data->gid)) {
+        \Drupal::logger('iguana')->warning(t('Empty GID at progress @p for the data:<br /><pre>@v</pre>', [
+          '@v' => print_r($tea_data, TRUE),
+          '@p' => $index,
+        ]));
+        continue;
+      }
+      elseif (!is_numeric($tea_data->gid)) {
+        \Drupal::logger('iguana')->warning(t('Non-numeric GID at progress @p for the data:<br /><pre>@v</pre>', [
+          '@v' => print_r($tea_data, TRUE),
+          '@p' => $index,
+        ]));
+        continue;
+      }
+      // Save the data to the local database
+      $database->merge('iguana_tea_staging')
+        ->key(['gid' => (int) $tea_data->gid])
+        ->insertFields([
+          'gid'  => (int) $tea_data->gid,
+          'data' => serialize($tea_data),
+        ])
+        ->updateFields(['data' => serialize($tea_data)])
+        ->execute()
+      ;
+      $gids[] = (int) $tea_data->gid;
+      // If enough Teas have been stored or the last one just was strored,
+      // then queue up a worker to process them and reset the IDs array
+      if (count($gids) == $save_limit || $index + 1 == $new_count) {
+        $queue->createItem(['gids' => $gids]);
+        $gids = [];
+      }
+    }
+    // Store the timestamp in state
+    $last_time = \Drupal::time()->getRequestTime();
+    \Drupal::state()->set('iguana.tea_import_last', $last_time);
+  }
+  elseif ($locked) {
+    \Drupal::logger('iguana')->warning(t('Iguana Cron did not run because it is locked.'));
+  }
+  */
 }

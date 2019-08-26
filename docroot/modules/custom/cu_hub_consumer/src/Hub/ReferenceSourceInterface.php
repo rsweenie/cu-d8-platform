@@ -177,7 +177,7 @@ interface ReferenceSourceInterface extends PluginInspectionInterface, Configurab
    * 
    * @return string
    */
-  public function getSourceUrl(HubReferenceInterface $hub_reference);
+  //public function getSourceUrl(HubReferenceInterface $hub_reference);
 
   /**
    * Gets hub_reference source-specific validation constraints for a hub_reference item.
@@ -199,4 +199,10 @@ interface ReferenceSourceInterface extends PluginInspectionInterface, Configurab
    */
   //public function getSourceFieldConstraints();
 
+  /**
+   * Returns the matching ResourceType object.
+   *
+   * @return \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface
+   */
+  public function getResourceType();
 }

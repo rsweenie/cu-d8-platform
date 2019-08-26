@@ -37,4 +37,18 @@ interface ResourceListInterface {
    */
   public function getProcessedData();
 
+  /**
+   * Returns the URL to the next list page, if exists.
+   *
+   * @return string
+   */
+  public function getNextUrl();
+
+  /**
+   * Returns the URL to the previous list page, if exists.
+   *
+   * @return string
+   */
+  public function getPrevUrl();
+
 }

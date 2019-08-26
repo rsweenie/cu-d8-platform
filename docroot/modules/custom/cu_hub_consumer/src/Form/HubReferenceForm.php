@@ -6,7 +6,7 @@ use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Form controller for the hub_reference entity edit forms.
+ * Form controller for the hub reference entity edit forms.
  */
 class HubReferenceForm extends ContentEntityForm {
 

@@ -29,7 +29,7 @@ class NodeDeriver extends DeriverBase {
         'id' => 'program',
         'label' => t('Academic Program'),
         'description' => t('Program node source.'),
-        'hub_type_id' => 'node--hub_site',
+        'hub_type_id' => 'node--hub_program',
         'metadata_attributes' => $base_plugin_definition['metadata_attributes'] + [
           'field_hub_site' => $this->t('Site'),
           'field_hub_program_title' => $this->t('Title'),
@@ -41,7 +41,7 @@ class NodeDeriver extends DeriverBase {
         'id' => 'degree',
         'label' => t('Academic Degree'),
         'description' => t('Degree node source.'),
-        'hub_type_id' => 'node--hub_site',
+        'hub_type_id' => 'node--hub_degree',
         'metadata_attributes' => $base_plugin_definition['metadata_attributes'] + [
           'field_hub_site' => $this->t('Site'),
           'field_hub_program' => $this->t('Academic program'),

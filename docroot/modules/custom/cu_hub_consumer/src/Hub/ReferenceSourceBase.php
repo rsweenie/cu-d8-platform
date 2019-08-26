@@ -13,6 +13,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Plugin\DefaultSingleLazyPluginCollection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Drupal\cu_hub_consumer\Hub\Resource;
@@ -195,9 +196,9 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
   protected function resourceTypePluginCollection() {
     // Try to find a resource type plugin to use.
     $this->resource_type = 'fallback';
-    $plugins = \Drupal::service('plugin.manager.cu_hub_consumer.resource_type')->getDefinitions();
+    $plugins = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type')->getDefinitions();
     foreach ($plugins as $plugin_id => $definition) {
-      if ($this->hub_type_id == $definition['hub_type_id']) {
+      if ($this->pluginDefinition['hub_type_id'] == $definition['hub_type_id']) {
         $this->resource_type = $plugin_id;
       }
     }
@@ -248,12 +249,15 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    * {@inheritdoc}
    */
   public function getMetadata(HubReferenceInterface $hub_reference, $attribute_name) {
-    $hub_uuid = $this->getSourceFieldValue($hub_uuid);
+    $hub_uuid = $this->getSourceFieldValue($hub_reference);
     $resource_type = $this->getResourceType();
 
     try {
       //$resource_url = $this->urlResolver->getResourceUrl($hub_reference_id);
       //$resource = $this->resourceFetcher->fetchResource($resource_url);
+
+      $resource = $resource_type->fetchResource($hub_uuid);
+      $resource_data = $resource->getProcessedData();
     }
     catch (ResourceException $e) {
       $this->messenger->addError($e->getMessage());
@@ -271,10 +275,13 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         return 'hub_reference:' . $hub_reference->bundle() . ':' . $hub_reference->uuid();
 
       case 'type':
-        return $resource->getType();
+        return $resource_data['type'];
+      
+      case 'uuid':
+        return $resource_data['id'];
 
       case 'title':
-        return $resource->getTitle();
+        return NULL;
 
       default:
         break;
@@ -478,6 +485,7 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
     return $field_item->{$field_item->mainPropertyName()};
   }
 
+  /*
   public function getSourceUrl(HubReferenceInterface $hub_reference) {
     $hub_reference_source = $this->getSourceFieldValue($hub_reference);
 
@@ -489,6 +497,7 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
       return NULL;
     }
   }
+  */
 
   /**
    * {@inheritdoc}

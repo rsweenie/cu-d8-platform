@@ -220,12 +220,26 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   /**
    * {@inheritdoc}
    */
-  public function fetchResourceList() {
-    if ($url = $this->getResourceListUrl()) {
+  public function fetchResourceList($url = NULL, $limit=0) {
+    $orig_url = $url;
+
+    // If we aren't passed a URL for the next page in the list, generate the URL.
+    if (!$url) {
+      $url = $this->getResourceListUrl();
+    }
+
+    if ($url) {
+      $query = [
+        'fields[' . $this->pluginDefinition['hub_type_id'] . ']' => 'type,id',
+      ];
+
+      // If we didn't get passed in a URL, then we can set a limit.
+      if (!$orig_url && $limit) {
+        $query['page[limit]'] = $limit;
+      }
+
       try {
-        $response = $this->request('GET', $url, [
-          'fields[' . $this->pluginDefinition['hub_type_id'] . ']' => 'type,id',
-        ]);
+        $response = $this->request('GET', $url, $query);
       }
       catch (RequestException $e) {
         throw new ResourceException('Could not retrieve the hub resource list.', $url, [], $e);

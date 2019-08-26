@@ -24,6 +24,6 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
    *
    * @return []
    */
-  public function fetchResourceList();
+  public function fetchResourceList($url = NULL, $limit=0);
 
 }

@@ -26,13 +26,15 @@ use Drupal\Core\Entity\EntityPublishedTrait;
  *     plural = "@count hub reference items"
  *   ),
  *   bundle_label = @Translation("Hub reference type"),
+ *   bundle_entity_type = "hub_reference_type",
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\Core\Entity\EntityListBuilder",
+ *     "list_builder" = "Drupal\cu_hub_consumer\HubReferenceListBuilder",
  *     "form" = {
  *       "default" = "Drupal\cu_hub_consumer\Form\HubReferenceForm",
- *       "delete" = "Drupal\cu_hub_consumer\Form\HubReferenceDeleteForm",
- *       "edit" = "Drupal\cu_hub_consumer\Form\HubReferenceForm"
+ *       "edit" = "Drupal\cu_hub_consumer\Form\HubReferenceForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
+ *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
  *     },
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "storage" = "Drupal\cu_hub_consumer\HubReferenceStorage",
@@ -50,7 +52,7 @@ use Drupal\Core\Entity\EntityPublishedTrait;
  *     "id" = "id",
  *     "label" = "title",
  *     "uuid" = "uuid",
- *     "bundle" = "bundle",
+ *     "bundle" = "type",
  *     "published" = "status",
  *   },
  *   links = {
@@ -58,8 +60,8 @@ use Drupal\Core\Entity\EntityPublishedTrait;
  *     "edit-form" = "/hub-reference/{hub_reference}/edit",
  *     "delete-form" = "/hub-reference/{hub_reference}/delete",
  *     "delete-multiple-form" = "/admin/config/services/cu_hub_consumer/references/delete",
- *     "add-form" = "/admin/config/services/cu_hub_consumer/references/add/{hub_reference_type}",
  *     "add-page" = "/admin/config/services/cu_hub_consumer/references/add",
+ *     "add-form" = "/admin/config/services/cu_hub_consumer/references/add/{hub_reference_type}",
  *     "collection" = "/admin/config/services/cu_hub_consumer/references",
  *   },
  * )
@@ -74,6 +76,9 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
+
+    // Add the published field.
+    $fields += static::publishedBaseFieldDefinitions($entity_type);
 
     $fields['title'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Title'))
@@ -105,9 +110,6 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))
       ->setDescription(t('The time the hub reference item was last updated.'));
-
-    // Add the published field.
-    $fields += static::publishedBaseFieldDefinitions($entity_type);
 
     return $fields;
   }
@@ -144,7 +146,7 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
    * {@inheritdoc}
    */
   public function getSource() {
-    return $this->bundle->entity->getSource();
+    return $this->type->entity->getSource();
   }
 
   /**
@@ -209,8 +211,8 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
    * {@inheritdoc}
    */
   public function preSave(EntityStorageInterface $storage_controller) {
-    parent::preSave($storage);
-    $this->set('hash', HubReference::generateHash($this->hub_type, $this->hub_uuid));
+    parent::preSave($storage_controller);
+    //$this->set('hash', HubReference::generateHash($this->hub_type, $this->hub_uuid));
   }
 
   /**
@@ -236,13 +238,15 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         ->loadUnchanged($id);
     }
 
+    \Drupal::logger('cu_hub_consumer')->notice(print_r($this->bundle(), TRUE));
+
     $hub_reference_source = $this->getSource();
     foreach ($this->translations as $langcode => $data) {
       if ($this->hasTranslation($langcode)) {
         $translation = $this->getTranslation($langcode);
         // Try to set fields provided by the hub reference source and mapped in
         // hub reference type config.
-        foreach ($translation->bundle->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
+        foreach ($translation->type->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
           if ($translation->hasField($entity_field_name)) {
             $translation->set($entity_field_name, $hub_reference_source->getMetadata($translation, $metadata_attribute_name));
           }
@@ -250,15 +254,12 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
 
         // Try to set a default name for this hub reference item if no name is provided.
         if ($translation->get('title')->isEmpty()) {
-          $translation->setName($translation->getName());
-        }
-
-        // Set thumbnail.
-        if ($translation->shouldUpdateThumbnail($this->isNew())) {
-          $translation->updateThumbnail();
+          $translation->setTitle($translation->getTitle());
         }
       }
     }
+
+    \Drupal::logger('cu_hub_consumer')->notice(print_r($this->bundle(), TRUE));
   }
 
   /**
@@ -281,6 +282,13 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
     */
 
     return parent::validate();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getRequestTime() {
+    return \Drupal::time()->getRequestTime();
   }
 
 }

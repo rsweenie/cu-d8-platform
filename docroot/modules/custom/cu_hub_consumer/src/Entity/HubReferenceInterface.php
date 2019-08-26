@@ -3,7 +3,6 @@
 namespace Drupal\cu_hub_consumer\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\Core\Entity\EntityDescriptionInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
 use Drupal\Core\Entity\EntityPublishedInterface;
 

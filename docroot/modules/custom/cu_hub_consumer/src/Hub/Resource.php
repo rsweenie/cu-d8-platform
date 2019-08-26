@@ -67,6 +67,9 @@ class Resource implements ResourceInterface {
 
         if (!empty($this->jsonData['data']['relationships'])) {
           foreach ($this->jsonData['data']['relationships'] as $field_name => $field_data) {
+            if (!empty($this->jsonData['included'])) {
+              
+            }
             $this->processedData[$field_name] = $field_data;
           }
         }
