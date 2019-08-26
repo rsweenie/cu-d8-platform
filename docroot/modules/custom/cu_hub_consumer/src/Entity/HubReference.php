@@ -91,10 +91,15 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
       ->setSetting('case_sensitive', false)
       ->setDescription(t('The entity UUID on hub.'));
 
+    $fields['hub_data'] = BaseFieldDefinition::create('map')
+      ->setLabel(t('Hub Data'))
+      ->setDescription(t('The data that was last pulled from hub.'));
+
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time the hub reference item was created.'))
-      ->setDefaultValueCallback(static::class . '::getRequestTime')
+      ->setDefaultValueCallback(static::class . '::getRequestTime');
+      /*
       ->setDisplayOptions('form', [
         'type' => 'datetime_timestamp',
         'weight' => 10,
@@ -106,6 +111,7 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE);
+      */
   
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))

@@ -4,7 +4,6 @@ namespace Drupal\cu_hub_consumer\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Entity\EntityDescriptionInterface;
-use Drupal\Core\Entity\RevisionableEntityBundleInterface;
 
 /**
  * Provides an interface defining a hub reference type entity.
@@ -22,6 +21,13 @@ interface HubReferenceTypeInterface extends ConfigEntityInterface, EntityDescrip
    *   The hub reference source.
    */
   public function getSource();
+
+  /**
+   * Returns the matching ResourceType object from the source plugin.
+   *
+   * @return \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface
+   */
+  public function getResourceType();
 
   /**
    * Returns the metadata field map.

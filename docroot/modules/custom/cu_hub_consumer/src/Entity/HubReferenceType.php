@@ -5,6 +5,7 @@ namespace Drupal\cu_hub_consumer\Entity;
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
 use Drupal\Core\Entity\EntityWithPluginCollectionInterface;
 use Drupal\Core\Plugin\DefaultSingleLazyPluginCollection;
+use Drupal\cu_hub_consumer\Hub\ResourceTypeInterface;
 
 /**
  * Defines the hub reference type configuration entity.
@@ -143,6 +144,15 @@ class HubReferenceType extends ConfigEntityBundleBase implements HubReferenceTyp
    */
   public function getSource() {
     return $this->sourcePluginCollection()->get($this->source);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getResourceType() {
+    if ($source = $this->getSource()) {
+      return $source->getResourceType();
+    }
   }
 
   /**

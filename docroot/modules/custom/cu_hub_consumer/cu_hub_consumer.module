@@ -102,78 +102,24 @@ function cu_hub_consumer_entity_access(EntityInterface $entity, $operation, Acco
  * Implements hook_cron().
  */
 function cu_hub_consumer_cron() {
-  /*
-  $state     = \Drupal::state();
-  $locked    = $state->get('iguana.tea_import_semaphore', FALSE);
-  $last_time = $state->get('iguana.tea_import_last', FALSE);
- 
-  if (!$locked && $last_time) {
-    $database   = Database::getConnection();
-    $iguana     = new IguanaConnection();
-    $queue      = \Drupal::queue('iguana_tea_import_worker');
-    $api_limit  = $state->get('iguana.cron_download_limit', 100);
-    $save_limit = $state->get('iguana.cron_process_limit', 10);
-    $data       = NULL;
-    $new_data   = [];
- 
-    // Pull all data into an array
-    // TODO: limit checks in case all of the thousands of Teas have new
-    // revisions
-    do {
-      // If there is have a 'next' URL returned, use that one for simplicity
-      $next_page = NULL;
-      if (isset($data->pagination->next)) {
-        $next_page = $data->pagination->next;
-      }
-      $data = $iguana->queryEndpoint('teasDetailFull', [
-        'limit'      => $api_limit,
-        'start_time' => $last_time,
-        'next_page'  => isset($next_page) ? $next_page : NULL,
-      ]);
-      $new_data = array_merge($new_data, $data->response_data);
-    } while (isset($data->pagination->next));
- 
-    $gids      = [];
-    $new_count = count($new_data);
-    foreach ($new_data as $index => $tea_data) {
-      if (empty($tea_data->gid)) {
-        \Drupal::logger('iguana')->warning(t('Empty GID at progress @p for the data:<br /><pre>@v</pre>', [
-          '@v' => print_r($tea_data, TRUE),
-          '@p' => $index,
-        ]));
-        continue;
-      }
-      elseif (!is_numeric($tea_data->gid)) {
-        \Drupal::logger('iguana')->warning(t('Non-numeric GID at progress @p for the data:<br /><pre>@v</pre>', [
-          '@v' => print_r($tea_data, TRUE),
-          '@p' => $index,
-        ]));
-        continue;
-      }
-      // Save the data to the local database
-      $database->merge('iguana_tea_staging')
-        ->key(['gid' => (int) $tea_data->gid])
-        ->insertFields([
-          'gid'  => (int) $tea_data->gid,
-          'data' => serialize($tea_data),
-        ])
-        ->updateFields(['data' => serialize($tea_data)])
-        ->execute()
-      ;
-      $gids[] = (int) $tea_data->gid;
-      // If enough Teas have been stored or the last one just was strored,
-      // then queue up a worker to process them and reset the IDs array
-      if (count($gids) == $save_limit || $index + 1 == $new_count) {
-        $queue->createItem(['gids' => $gids]);
-        $gids = [];
-      }
+  $lock = \Drupal::lock();
+
+  if ($lock->acquire('cu_hub_consumer.cron')) {
+    $queue_factory = \Drupal::service('queue');
+    $list_fetch_queue = $queue_factory->get('hub_resource_list_fetch_worker');
+
+    $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference');
+    foreach ($bundles as $bundle => $bundle_info) {
+      // Create new queue item
+      $item = new \stdClass();
+      $item->bundle = $bundle;
+      $item->url = '';
+      $list_fetch_queue->createItem($item);
     }
-    // Store the timestamp in state
-    $last_time = \Drupal::time()->getRequestTime();
-    \Drupal::state()->set('iguana.tea_import_last', $last_time);
+
+    $lock->release('cu_hub_consumer.cron');
   }
-  elseif ($locked) {
-    \Drupal::logger('iguana')->warning(t('Iguana Cron did not run because it is locked.'));
+  else {
+    \Drupal::logger('cu_hub_consumer')->warning(t('Cron did not run because it is locked.'));
   }
-  */
 }

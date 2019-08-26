@@ -249,19 +249,20 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    * {@inheritdoc}
    */
   public function getMetadata(HubReferenceInterface $hub_reference, $attribute_name) {
+    $resource_data = &drupal_static(__FUNCTION__);
+    
     $hub_uuid = $this->getSourceFieldValue($hub_reference);
     $resource_type = $this->getResourceType();
 
-    try {
-      //$resource_url = $this->urlResolver->getResourceUrl($hub_reference_id);
-      //$resource = $this->resourceFetcher->fetchResource($resource_url);
-
-      $resource = $resource_type->fetchResource($hub_uuid);
-      $resource_data = $resource->getProcessedData();
-    }
-    catch (ResourceException $e) {
-      $this->messenger->addError($e->getMessage());
-      return NULL;
+    if (!isset($resource_data[$hub_reference->id()])) {
+      try {
+        $resource = $resource_type->fetchResource($hub_uuid);
+        $resource_data[$hub_reference->id()] = $resource->getProcessedData();
+      }
+      catch (ResourceException $e) {
+        $this->messenger->addError($e->getMessage());
+        return NULL;
+      }
     }
 
     switch ($attribute_name) {
@@ -269,16 +270,16 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         if ($title = $this->getMetadata($hub_reference, 'title')) {
           return $title;
         }
-        elseif ($type = $this->getMetadata($hub_reference, 'type') && $uuid = $this->getMetadata($hub_reference, 'uuid')) {
+        elseif (($type = $this->getMetadata($hub_reference, 'type')) && ($uuid = $this->getMetadata($hub_reference, 'uuid'))) {
           return $type . ':' . $uuid;
         }
         return 'hub_reference:' . $hub_reference->bundle() . ':' . $hub_reference->uuid();
 
       case 'type':
-        return $resource_data['type'];
+        return $resource_data[$hub_reference->id()]['type'];
       
       case 'uuid':
-        return $resource_data['id'];
+        return $resource_data[$hub_reference->id()]['id'];
 
       case 'title':
         return NULL;

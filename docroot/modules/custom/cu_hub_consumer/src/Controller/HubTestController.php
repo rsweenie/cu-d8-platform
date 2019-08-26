@@ -99,8 +99,9 @@ class HubTestController extends ControllerBase {
 
 
     $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('program');
-    $hub_ref_source = $hub_ref_type->getSource();
-    $resource_type = $hub_ref_source->getResourceType();
+    //$hub_ref_source = $hub_ref_type->getSource();
+    //$resource_type = $hub_ref_source->getResourceType();
+    $resource_type = $hub_ref_type->getResourceType();
 
     dsm($resource_type->getResourceListUrl());
 

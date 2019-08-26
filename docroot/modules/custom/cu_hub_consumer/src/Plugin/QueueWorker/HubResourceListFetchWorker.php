@@ -24,7 +24,7 @@ class HubResourceListFetchWorker extends QueueWorkerBase {
     $list_fetch_queue = $queue_factory->get('hub_resource_list_fetch_worker');
     $resource_process_queue = $queue_factory->get('hub_resource_process_worker');
 
-    \Drupal::logger('cu_hub_consumer')->notice(print_r($data, TRUE));
+    //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($data, TRUE));
 
     // @TODO: make this configurable.
     $limit = 20;
