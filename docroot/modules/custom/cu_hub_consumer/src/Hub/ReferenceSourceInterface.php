@@ -205,4 +205,5 @@ interface ReferenceSourceInterface extends PluginInspectionInterface, Configurab
    * @return \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface
    */
   public function getResourceType();
+
 }

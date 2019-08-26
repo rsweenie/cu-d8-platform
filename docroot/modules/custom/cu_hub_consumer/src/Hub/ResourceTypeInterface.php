@@ -26,4 +26,19 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
    */
   public function fetchResourceList($url = NULL, $limit=0);
 
+  /**
+   * Gets an array of entity keys.
+   *
+   * @return array
+   */
+  public function getKeys();
+
+  /**
+   * Gets a specific entity key.
+   *
+   * @param string $key
+   * @return string
+   */
+  public function getKey($key);
+  
 }

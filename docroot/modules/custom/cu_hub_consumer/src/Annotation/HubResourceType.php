@@ -65,4 +65,11 @@ class HubResourceType extends Plugin {
    */
   public $attribute_map = [];
 
+  /**
+   * The mapping of generic entity keys to specific data fields.
+   *
+   * @var array
+   */
+  public $entity_keys = [];
+
 }

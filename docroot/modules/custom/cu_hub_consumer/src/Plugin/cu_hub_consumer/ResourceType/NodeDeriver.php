@@ -23,6 +23,9 @@ class NodeDeriver extends DeriverBase {
         'attribute_map' => [
           'field_hub_site_base_uri' => 'link',
         ],
+        'entity_keys' => [
+          'label' => 'field_hub_site_title',
+        ],
       ] + $base_plugin_definition,
 
       'program' => [
@@ -32,6 +35,9 @@ class NodeDeriver extends DeriverBase {
         'hub_type_id' => 'node--hub_program',
         'hub_path' => 'node/hub_program',
         'attribute_map' => [],
+        'entity_keys' => [
+          'label' => 'field_hub_program_title',
+        ],
       ] + $base_plugin_definition,
 
       'degree' => [
@@ -44,6 +50,9 @@ class NodeDeriver extends DeriverBase {
           'field_hub_degree_description' => 'text_long',
           'field_hub_degree_requirements' => 'text_long',
           'field_hub_degree_other_programs' => 'link_array',
+        ],
+        'entity_keys' => [
+          'label' => 'field_hub_degree_title',
         ],
       ] + $base_plugin_definition,
     ];

@@ -282,6 +282,19 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         return $resource_data[$hub_reference->id()]['id'];
 
       case 'title':
+        /*
+        if (!empty($this->pluginDefinition['entity_keys']['label'])) {
+          $resource_field = $this->pluginDefinition['entity_keys']['label'];
+          if (!empty($resource_data[$hub_reference->id()][$resource_field])) {
+            return $resource_data[$hub_reference->id()][$resource_field];
+          }
+        }
+        */
+        if ($key = $resource_type->getKey('label')) {
+          if (!empty($resource_data[$hub_reference->id()][$key])) {
+            return $resource_data[$hub_reference->id()][$key];
+          }
+        }
         return NULL;
 
       default:

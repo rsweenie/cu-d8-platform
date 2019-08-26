@@ -255,6 +255,22 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function getKeys() {
+    return $this->pluginDefinition['entity_keys'];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getKey($key) {
+    $keys = $this
+      ->getKeys();
+    return isset($keys[$key]) ? $keys[$key] : FALSE;
+  }
+
+  /**
    * Make a request against hub.
    *
    * @param string $method
