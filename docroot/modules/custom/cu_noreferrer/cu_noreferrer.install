@@ -6,7 +6,7 @@
  */
 
 /**
- * The rel="noopener" and rel="noreferrer" link types can now be toggled.
+ * The rel="noopener" and rel="noreferrer" link attributes can now be toggled.
  */
 function cu_noreferrer_update_8001() {
   \Drupal::configFactory()->getEditable('cu_noreferrer.settings')

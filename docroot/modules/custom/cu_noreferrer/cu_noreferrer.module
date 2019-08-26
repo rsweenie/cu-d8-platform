@@ -9,30 +9,6 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 
 /**
- * Implements hook_link_alter().
- */
-function cu_noreferrer_link_alter(&$variables) {
-  $config = \Drupal::config('cu_noreferrer.settings');
-  if ($config->get('noopener') && isset($variables['options']['attributes']['target']) && $variables['options']['attributes']['target'] !== '') {
-    if (!isset($variables['options']['attributes']['rel']) || is_array($variables['options']['attributes']['rel'])) {
-      $variables['options']['attributes']['rel'][] = 'noopener';
-    }
-    else {
-      $variables['options']['attributes']['rel'] = [$variables['options']['attributes']['rel'], 'noopener'];
-    }
-  }
-  if (!$config->get('noreferrer') || !$variables['url']->isExternal() || noreferrer_is_whitelisted($variables['url']->toString())) {
-    return;
-  }
-  if (!isset($variables['options']['attributes']['rel']) || is_array($variables['options']['attributes']['rel'])) {
-    $variables['options']['attributes']['rel'][] = 'noreferrer';
-  }
-  else {
-    $variables['options']['attributes']['rel'] = [$variables['options']['attributes']['rel'], 'noreferrer'];
-  }
-}
-
-/**
  * Helper function to determine if a host is in the domain whitelist.
  */
 function cu_noreferrer_is_whitelisted($url) {

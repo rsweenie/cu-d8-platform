@@ -2,8 +2,8 @@
 
 namespace Drupal\cu_noreferrer\EventSubscriber;
 
+use Drupal\cu_noreferrer\Plugin\Filter\CUNoReferrerFilter;
 use Drupal\Core\Render\HtmlResponse;
-use Drupal\Core\Render\AttachmentsResponseProcessorInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -14,30 +14,24 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class CUNoReferrerResponseSubscriber implements EventSubscriberInterface {
 
   /**
-   * The HTML response attachments processor service.
-   *
-   * @var \Drupal\Core\Render\AttachmentsResponseProcessorInterface
+   * \Drupal::config object needed by filter
    */
-  protected $htmlResponseAttachmentsProcessor;
+  protected $config;
 
   /**
    */
-  public function __construct() {
+  public function __construct($config) {
+    $this->config = $config;
   }
 
   /**
-   * Processes attachments for HtmlResponse responses.
-   *
-   * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
-   *   The event to process.
    */
   public function onRespond(FilterResponseEvent $event) {
     $response = $event->getResponse();
     if (!$response instanceof HtmlResponse) {
       return;
     }
-    kint($response);
-    //$event->setResponse($this->htmlResponseAttachmentsProcessor->processAttachments($response));
+    $response->setContent(CUNoReferrerFilter::filter($response->getContent(),$this->config->get('cu_noreferrer.settings'))->getProcessedText());
   }
 
   /**

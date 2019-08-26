@@ -1,5 +1,6 @@
 services:
   cu_noreferrer.subscriber:
     class: Drupal\cu_noreferrer\EventSubscriber\CUNoReferrerResponseSubscriber
+    arguments: ['@config.factory']
     tags:
       - {name: event_subscriber}

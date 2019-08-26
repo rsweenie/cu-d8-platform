@@ -2,6 +2,6 @@ cu_noreferrer.settings:
   path: '/admin/config/content/cu_noreferrer'
   defaults:
     _form: 'Drupal\cu_noreferrer\Form\CUNoReferrerSettingsForm'
-    _title: 'Link types'
+    _title: 'CU Link No Referrer Settings'
   requirements:
     _permission: 'administer site configuration'
