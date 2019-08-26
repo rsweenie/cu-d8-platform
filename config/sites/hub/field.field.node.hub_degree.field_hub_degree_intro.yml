@@ -1,0 +1,19 @@
+uuid: 10678be2-2af6-462f-b28a-229d68454e41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_intro
+    - node.type.hub_degree
+id: node.hub_degree.field_hub_degree_intro
+field_name: field_hub_degree_intro
+entity_type: node
+bundle: hub_degree
+label: 'Intro Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
