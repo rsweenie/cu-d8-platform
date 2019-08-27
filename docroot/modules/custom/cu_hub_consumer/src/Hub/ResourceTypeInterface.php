@@ -40,5 +40,20 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
    * @return string
    */
   public function getKey($key);
+
+  /**
+   * Gets an array of attribute type mapping.
+   *
+   * @return array
+   */
+  public function getAttributeTypes();
+
+  /**
+   * Gets a specific attribute type mapping.
+   *
+   * @param string $key
+   * @return string
+   */
+  public function getAttributeType($attribute);
   
 }

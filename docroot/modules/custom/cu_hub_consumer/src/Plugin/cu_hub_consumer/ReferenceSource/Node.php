@@ -2,29 +2,7 @@
 
 namespace Drupal\cu_hub_consumer\Plugin\cu_hub_consumer\ReferenceSource;
 
-use Drupal\Component\Utility\Crypt;
-use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
-use Drupal\Core\Entity\EntityFieldManagerInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Field\FieldTypePluginManagerInterface;
-use Drupal\Core\File\Exception\FileException;
-use Drupal\Core\File\FileSystemInterface;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\Core\Url;
-use Drupal\cu_hub_consumer\Client\Resource;
-use Drupal\cu_hub_consumer\Client\ResourceException;
 use Drupal\cu_hub_consumer\Hub\ReferenceSourceBase;
-use Drupal\cu_hub_consumer\Entity\HubReferenceInterface;
-use Drupal\cu_hub_consumer\Entity\HubReferenceTypeInterface;
-use Drupal\cu_hub_consumer\Client\ResourceFetcherInterface;
-use Drupal\cu_hub_consumer\Client\UrlResolverInterface;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-use Psr\Log\LoggerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Undocumented class

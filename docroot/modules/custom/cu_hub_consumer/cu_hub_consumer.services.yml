@@ -5,6 +5,6 @@ services:
   plugin.manager.cu_hub_consumer.hub_resource_type:
     class: Drupal\cu_hub_consumer\Hub\ResourceTypeManager
     parent: default_plugin_manager
-  cu_hub_consumer.hub.client:
-    class: Drupal\cu_hub_consumer\Hub\Client
-    arguments: ['@http_client', '@config.factory']
+  plugin.manager.cu_hub_consumer.hub_resource_field_type:
+    class: Drupal\cu_hub_consumer\Hub\ResourceFieldTypeManager
+    parent: default_plugin_manager

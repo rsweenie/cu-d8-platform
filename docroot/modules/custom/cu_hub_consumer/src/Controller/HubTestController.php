@@ -98,11 +98,12 @@ class HubTestController extends ControllerBase {
 
 
 
-    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('program');
+    //$hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('program');
     //$hub_ref_source = $hub_ref_type->getSource();
     //$resource_type = $hub_ref_source->getResourceType();
-    $resource_type = $hub_ref_type->getResourceType();
+    //$resource_type = $hub_ref_type->getResourceType();
 
+    /*
     dsm($resource_type->getResourceListUrl());
 
     try {
@@ -113,18 +114,57 @@ class HubTestController extends ControllerBase {
     catch (ResourceException $e) {
       dsm($e);
     }
+    */
 
+    /*
+    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('program');
+    $resource_type = $hub_ref_type->getResourceType();
     $resource_uuid = '0d40a955-8399-42e9-8be8-c9544b84bb5e';
 
     dsm($resource_type->getResourceUrl($resource_uuid));
 
     try {
       $resource = $resource_type->fetchResource($resource_uuid);
-      dsm($resource->getJsonData());
-      dsm($resource->getProcessedData());
+      //dsm($resource->getJsonData());
+      $resource->getProcessedData();
     }
     catch (ResourceException $e) {
       dsm($e);
+    }
+
+    if ($resource->getProcessedData()) {
+      dsm($resource->type);
+      dsm($resource->id);
+      dsm($resource->field_hub_program_title->getString());
+
+      //dsm($resource->getProcessedData());
+    }
+    */
+
+
+    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('degree');
+    $resource_type = $hub_ref_type->getResourceType();
+    $resource_uuid = '9243a05e-396e-4aec-aed2-14f365b668ab';
+
+    dsm($resource_type->getResourceUrl($resource_uuid));
+
+    try {
+      $resource = $resource_type->fetchResource($resource_uuid);
+      //dsm($resource->getJsonData());
+      $resource->getProcessedData();
+    }
+    catch (ResourceException $e) {
+      dsm($e);
+    }
+
+    if ($resource->getProcessedData()) {
+      dsm($resource->type);
+      dsm($resource->id);
+      dsm($resource->field_hub_degree_title->getString());
+      dsm($resource->field_hub_degree_availability->getString());
+      dsm($resource->field_hub_degree_availability);
+
+      //dsm($resource->getProcessedData());
     }
 
     return $build;

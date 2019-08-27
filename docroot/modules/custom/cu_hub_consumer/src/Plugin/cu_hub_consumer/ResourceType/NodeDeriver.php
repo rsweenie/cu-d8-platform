@@ -20,7 +20,7 @@ class NodeDeriver extends DeriverBase {
         'description' => t('Site node resource type.'),
         'hub_type_id' => 'node--hub_site',
         'hub_path' => 'node/hub_site',
-        'attribute_map' => [
+        'attribute_types' => [
           'field_hub_site_base_uri' => 'link',
         ],
         'entity_keys' => [
@@ -34,7 +34,7 @@ class NodeDeriver extends DeriverBase {
         'description' => t('Academic Program node resource type.'),
         'hub_type_id' => 'node--hub_program',
         'hub_path' => 'node/hub_program',
-        'attribute_map' => [],
+        'attribute_types' => [],
         'entity_keys' => [
           'label' => 'field_hub_program_title',
         ],
@@ -46,10 +46,10 @@ class NodeDeriver extends DeriverBase {
         'description' => t('Academic Degree node resource type.'),
         'hub_type_id' => 'node--hub_degree',
         'hub_path' => 'node/hub_degree',
-        'attribute_map' => [
+        'attribute_types' => [
           'field_hub_degree_description' => 'text_long',
           'field_hub_degree_requirements' => 'text_long',
-          'field_hub_degree_other_programs' => 'link_array',
+          'field_hub_degree_other_programs' => 'link[]',
         ],
         'entity_keys' => [
           'label' => 'field_hub_degree_title',

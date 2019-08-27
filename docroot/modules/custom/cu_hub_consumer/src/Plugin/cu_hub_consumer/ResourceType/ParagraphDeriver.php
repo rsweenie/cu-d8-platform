@@ -20,7 +20,7 @@ class ParagraphDeriver extends DeriverBase {
         'description' => t('Copy paragraph resource type.'),
         'hub_type_id' => 'paragraph--copy',
         'hub_path' => 'paragraph/copy',
-        'attribute_map' => [
+        'attribute_types' => [
           'field_copy_body' => 'text_long',
         ],
       ] + $base_plugin_definition,

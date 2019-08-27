@@ -17,6 +17,15 @@ interface ResourceInterface {
   public static function createFromHttpResponse(ResourceTypeInterface $resource_type, \Psr\Http\Message\ResponseInterface $response);
 
   /**
+   * Create an instance from a data.
+   *
+   * @param \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface $resource_type
+   * @param array $data
+   * @return \Drupal\cu_hub_consumer\Hub\ResourceInterface
+   */
+  public static function createFromData(ResourceTypeInterface $resource_type, $data);
+
+  /**
    * Returns the resource type that generated this object.
    *
    * @return \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface

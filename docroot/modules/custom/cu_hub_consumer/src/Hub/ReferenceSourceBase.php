@@ -195,6 +195,7 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    */
   protected function resourceTypePluginCollection() {
     // Try to find a resource type plugin to use.
+    /*
     $this->resource_type = 'fallback';
     $plugins = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type')->getDefinitions();
     foreach ($plugins as $plugin_id => $definition) {
@@ -202,6 +203,8 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         $this->resource_type = $plugin_id;
       }
     }
+    */
+    $this->resource_type = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type')->findPluginByHubTypeId($this->pluginDefinition['hub_type_id']);
 
     if (!$this->resourceTypePluginCollection && $this->resource_type) {
       $this->resourceTypePluginCollection = new DefaultSingleLazyPluginCollection($this->resourceTypes, $this->resource_type, $this->resource_type_configuration);

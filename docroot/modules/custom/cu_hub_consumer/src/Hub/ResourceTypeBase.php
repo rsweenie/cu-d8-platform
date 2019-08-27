@@ -271,6 +271,25 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function getAttributeTypes() {
+    return $this->pluginDefinition['attribute_types'];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getAttributeType($attribute) {
+    $attribute_types = $this
+      ->getKeys();
+    $attribute_type = isset($attribute_types[$attribute]) ? $attribute_types[$attribute] : FALSE;
+
+    // Default to string if not specifically defined.
+    return $attribute_type ? $attribute_type : 'string';
+  }
+
+  /**
    * Make a request against hub.
    *
    * @param string $method
