@@ -1,0 +1,28 @@
+uuid: 4647fb18-5ebf-4cb5-84af-a87fdb48f880
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_faculty_image
+    - media.type.image
+    - node.type.hub_faculty
+id: node.hub_faculty.field_hub_faculty_image
+field_name: field_hub_faculty_image
+entity_type: node
+bundle: hub_faculty
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

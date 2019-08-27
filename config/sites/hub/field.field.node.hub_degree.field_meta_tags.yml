@@ -1,0 +1,21 @@
+uuid: 98601615-71c7-44ef-9eba-902f2617f721
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.hub_degree
+  module:
+    - metatag
+id: node.hub_degree.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: hub_degree
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag
