@@ -110,7 +110,15 @@
     } %}
 
     {% if side_nav %}
-      <div class="side-nav">{{ side_nav }}</div>
+    <div class="section side-nav-section">
+      <div>
+        <div class="row">
+          <div class="col-xs-12 col-md-2">
+            <nav class="side-nav">{{ side_nav }}</nav>
+          </div>
+        </div>
+      </div>
+    </div>
     {% endif %}
 
     {{ content|without('field_interior_page_hero_hl','field_interior_page_hero_img') }}
