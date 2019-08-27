@@ -7,7 +7,7 @@ use Drupal\Component\Utility\UrlHelper;
 use Drupal\filter\FilterProcessResult;
 
 /**
- * Provides a static filter to apply the noreferrer attribute.
+ * Provides a static filter to apply the rel attribute.
  */
 class CUNoReferrer {
 
