@@ -1,0 +1,18 @@
+uuid: 3851b417-ef70-442e-b04a-a504ab03e855
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_degree
+id: node.hub_degree.title
+field_name: title
+entity_type: node
+bundle: hub_degree
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

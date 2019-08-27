@@ -1,0 +1,35 @@
+uuid: 386fb5b2-76d6-421f-a044-f7157206b1b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - simple_oauth
+id: oauth2_token_type--oauth2_token_type
+disabled: true
+path: oauth2_token_type/oauth2_token_type
+resourceType: oauth2_token_type--oauth2_token_type
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  _core:
+    fieldName: _core
+    publicName: _core
+    enhancer:
+      id: ''
+    disabled: false
