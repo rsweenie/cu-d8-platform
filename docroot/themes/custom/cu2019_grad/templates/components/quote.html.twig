@@ -5,12 +5,14 @@
         {{ quote }}
       {% endif %}
       <div class="attr">
+        {% if link %}<a href="{{ link }}">{% endif %}
         {% if name %}
-            {{ name }}
+          {{ name }}
         {% endif %}
         {% if title %}
             <span>, </span>{{ title }}
         {% endif %}
+        {% if link %}</a>{% endif %}
         {% if area %}
             <br>
             <small>{{ area }}</small>
