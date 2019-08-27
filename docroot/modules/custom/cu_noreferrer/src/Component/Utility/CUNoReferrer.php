@@ -24,10 +24,10 @@ class CUNoReferrer {
     foreach ($links as $link) {
       $types = [];
       $rel = $link->getAttribute('rel');
-      if (!SELF::relValueExists($rel,'noopener') && SELF::isNoopener($noopener, $link->getAttribute('target'))) {
+      if (!SELF::relValueExists($rel,'noopener') && SELF::isNoOpener($noopener, $link->getAttribute('target'))) {
         $types[] = 'noopener';
       }
-      if (!SELF::relValueExists($rel,'noreferrer') && SELF::isNoreferrer($noreferrer, $link->getAttribute('href'))) {
+      if (!SELF::relValueExists($rel,'noreferrer') && SELF::isNoReferrer($noreferrer, $link->getAttribute('href'))) {
         $types[] = 'noreferrer';
       }
       if (!empty($types)) {
@@ -44,14 +44,14 @@ class CUNoReferrer {
    * checks if noopener value applies to the anchor tag
    * mostly for readbility
    */
-  private static function isNoopener($apply_noopener, $target){
+  private static function isNoOpener($apply_noopener, $target){
     return ($apply_noopener && $target !== '');
   }
   /**
    * checks if noreferrer value applies to anchor element
    * mostly for readability
    */
-  private static function isNoreferrer($apply_noreferrer, $href){
+  private static function isNoReferrer($apply_noreferrer, $href){
     return ($apply_noreferrer 
             && $href
             && UrlHelper::isExternal($href) 
