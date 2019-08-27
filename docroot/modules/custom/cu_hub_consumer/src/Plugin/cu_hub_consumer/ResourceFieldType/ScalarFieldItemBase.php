@@ -27,7 +27,7 @@ abstract class ScalarFieldItemBase extends ResourceFieldItemBase {
    * {@inheritdoc}
    */
   public function __toString() {
-    return ScalarFieldItemBase::castToString($this->value);
+    return (string) ScalarFieldItemBase::castToString($this->value);
   }
 
 }

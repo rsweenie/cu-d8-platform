@@ -45,6 +45,24 @@ class Resource implements ResourceInterface {
 
     $resource->jsonData = Json::decode($response->getBody());
     //$resource->jsonData = json_decode($response->getBody());
+    $resource->getProcessedData();
+
+    return $resource;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function createFromJson(ResourceTypeInterface $resource_type, $data) {
+    if (!is_array($data)) {
+      return NULL;
+    }
+
+    $resource = new static($resource_type);
+
+    $resource->jsonData = $data;
+    //$resource->jsonData = $data;
+    $resource->getProcessedData();
 
     return $resource;
   }
@@ -61,6 +79,7 @@ class Resource implements ResourceInterface {
 
     $resource->jsonData = ['data' => $data];
     //$resource->jsonData = $data;
+    $resource->getProcessedData();
 
     return $resource;
   }
