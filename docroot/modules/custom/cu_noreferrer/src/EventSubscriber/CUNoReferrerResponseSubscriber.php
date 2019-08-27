@@ -36,8 +36,7 @@ class CUNoReferrerResponseSubscriber implements EventSubscriberInterface {
      * if either apply, apply it.
      */
     if($this->config->get('cu_noreferrer.settings')->get('noreferrer') || $this->config->get('cu_noreferrer.settings')->get('noopener'))
-      $response->setContent(NoReferrer::filter($response->getContent()
-                                                        ,$this->config)->getProcessedText());
+      $response->setContent(CUNoReferrer::filter($response->getContent(),$this->config)->getProcessedText());
   }
 
   /**
