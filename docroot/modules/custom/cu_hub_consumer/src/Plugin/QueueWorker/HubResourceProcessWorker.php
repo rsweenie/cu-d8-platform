@@ -27,16 +27,14 @@ class HubResourceProcessWorker extends QueueWorkerBase {
 
     try {
       $resource = $resource_type->fetchResource($data->hub_uuid);
-      //$resource_data = $resource->getProcessedData();
-      $resource_data = $resource->getJsonData();
     }
     catch (ResourceException $e) {
       watchdog_exception('cu_hub_consumer', $e);
       throw new SuspendQueueException('Could not properly fetch the hub resource data.');
     }
 
-    if ($resource_data) {
-      //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($resource_data, TRUE));
+    if ($json_data = $resource->getJsonData()) {
+      //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($resource_data, TRUE))
 
       $query = \Drupal::entityQuery('hub_reference')
         ->condition('type', $data->bundle)
@@ -47,7 +45,16 @@ class HubResourceProcessWorker extends QueueWorkerBase {
       if ($ref_ids) {
         $hub_references = \Drupal::entityTypeManager()->getStorage('hub_reference')->loadMultiple($ref_ids);
         foreach ($hub_references as $hub_reference) {
-          $hub_reference->set('hub_data', $resource_data);
+          // Try to update the hub_reference title.
+          if ($key = $resource_type->getKey('label')) {
+            //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($key, TRUE));
+            if (!empty($resource->{$key})) {
+              $hub_reference->set('title', $resource->{$key}->getString());
+            }
+          }
+
+          $hub_reference->set('hub_data', $json_data);
+          $hub_reference->set('changed', \Drupal::time()->getRequestTime());
           $hub_reference->save();
         }
       }
@@ -55,7 +62,7 @@ class HubResourceProcessWorker extends QueueWorkerBase {
         $entity_data = [
           'type' => $data->bundle,
           'hub_uuid' => $data->hub_uuid,
-          'hub_data' => $resource_data,
+          'hub_data' => $json_data,
         ];
         //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($entity_data, TRUE));
 
