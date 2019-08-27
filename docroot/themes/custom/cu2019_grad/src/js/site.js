@@ -43,5 +43,3 @@
     }
 };
 })(jQuery, Drupal);
-
-//# sourceMappingURL=site.js.map
