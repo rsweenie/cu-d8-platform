@@ -4,7 +4,7 @@ namespace Drupal\cu_noreferrer\Plugin\Filter;
 
 use Drupal\filter\Plugin\FilterBase;
 use Drupal\Component\Utility\Html;
-use Drupal\cu_noreferrer\Utility\CUNoReferrer;
+use Drupal\cu_noreferrer\Component\Utility\CUNoReferrer;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\filter\FilterProcessResult;
 

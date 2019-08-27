@@ -2,7 +2,7 @@
 
 namespace Drupal\cu_noreferrer\EventSubscriber;
 
-use Drupal\cu_noreferrer\Utility\CUNoReferrer;
+use Drupal\cu_noreferrer\Component\Utility\CUNoReferrer;
 use Drupal\Core\Render\HtmlResponse;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
