@@ -171,39 +171,17 @@ interface ReferenceSourceInterface extends PluginInspectionInterface, Configurab
   public function getSourceFieldValue(HubReferenceInterface $hub_reference);
 
   /**
-   * Get the endpoint URL based on the value in the source field.
-   *
-   * @param \Drupal\cu_hub_consumer\Entity\HubReferenceInterface $hub_reference
-   * 
-   * @return string
-   */
-  //public function getSourceUrl(HubReferenceInterface $hub_reference);
-
-  /**
-   * Gets hub_reference source-specific validation constraints for a hub_reference item.
-   *
-   * @return \Symfony\Component\Validator\Constraint[]
-   *   An array of validation constraint definitions, keyed by constraint name.
-   *   Each constraint definition can be used for instantiating
-   *   \Symfony\Component\Validator\Constraint objects.
-   */
-  //public function getEntityConstraints();
-
-  /**
-   * Gets hub_reference source-specific validation constraints for a source field.
-   *
-   * @return \Symfony\Component\Validator\Constraint[]
-   *   An array of validation constraint definitions, keyed by constraint name.
-   *   Each constraint definition can be used for instantiating
-   *   \Symfony\Component\Validator\Constraint objects.
-   */
-  //public function getSourceFieldConstraints();
-
-  /**
    * Returns the matching ResourceType object.
    *
    * @return \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface
    */
   public function getResourceType();
+
+  /**
+   * REturns a list of resource fields that should be exposed as computed fields.
+   *
+   * @return void
+   */
+  public function getExposedFields();
 
 }

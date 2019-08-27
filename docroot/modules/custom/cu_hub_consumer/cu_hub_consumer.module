@@ -2,9 +2,15 @@
 
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\field\FieldConfigInterface;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Render\Element;
+use Drupal\Component\Plugin\DerivativeInspectionInterface;
+use Drupal\cu_hub_consumer\Entity\HubReferenceTypeInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\cu_hub_consumer\Entity\HubReferenceInterface;
 
 /**
  * Implements hook_entity_base_field_info().
@@ -22,6 +28,90 @@ function path_entity_base_field_info(EntityTypeInterface $entity_type) {
 */
 
 /**
+ * Implements hook_entity_base_field_info_alter().
+ */
+/*
+function cu_hub_consumer_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'hub_reference' && $entity_type instanceof HubReferenceTypeInterface) {
+    if ($resource_type = $entity_type->getResourceType()) {
+      if ($exposed_fields = $resource_type->getExposedFields()) {
+        foreach ($exposed_fields as $exposed_field) {
+          $fields['hub_reference_' . $exposed_field] = BaseFieldDefinition::create('string')
+            ->setName('my_computed_field')
+            ->setLabel(t('My computed field'))
+            ->setComputed(TRUE)
+            ->setClass(ComputedField::class);
+        }
+      }
+    }
+  }
+}
+*/
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function cu_hub_consumer_entity_extra_field_info() {
+  $display_fields = [];
+
+  // Go through each bundle, find the exposed source metadata fields, and make them displayable.
+  if ($bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference')) {
+    foreach ($bundles as $bundle => $bundle_info) {
+      if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
+        if ($reference_source = $hub_ref_type->getSource()) {
+          if ($exposed_fields = $reference_source->getMetadataAttributes()) {
+            foreach ($exposed_fields as $exposed_field => $label) {
+              $display_fields['hub_reference'][$bundle]['display']['hub_resource_' . $exposed_field] = [
+                'label' => t('Hub Resource Field: ' . $label),
+                'description' => t('Shows data from ' . $label),
+                'weight' => 100,
+                'visible' => TRUE,
+              ];
+            }
+          }
+        }
+      }
+    }
+  }
+ 
+  return $display_fields;
+}
+
+/**
+ * Implements hook_ENTIIY_TYPE_view().
+ */
+function cu_hub_consumer_hub_reference_view(array &$build, HubReferenceInterface $entity, EntityViewDisplayInterface $display) {
+  // Try to build any exposed resource fields.
+  $bundle = $entity->bundle();
+  if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
+    if ($reference_source = $hub_ref_type->getSource()) {
+      if ($exposed_fields = $reference_source->getMetadataAttributes()) {
+        foreach ($exposed_fields as $exposed_field => $label) {
+          if ($display->getComponent('hub_resource_' . $exposed_field)) {
+            $build['hub_resource_' . $exposed_field] = _cu_hub_consumer_build_resource_field($entity, $exposed_field);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Builds a common type field for article/event.
+ *
+ * @param array $build
+ * @param EntityInterface $entity
+ * @return void
+ */
+function _cu_hub_consumer_build_resource_field(EntityInterface $entity, $exposed_field) {
+  return [
+    '#theme' => 'hub_resource_field',
+    '#hub_reference' => $entity,
+    '#field_name' => $exposed_field,
+  ];
+}
+
+/**
  * Implements hook_theme().
  */
 function cu_hub_consumer_theme() {
@@ -29,6 +119,9 @@ function cu_hub_consumer_theme() {
     'hub_reference' => [
       'render element' => 'elements',
     ],
+    'hub_resource_field' => [
+      'variables' => ['hub_reference' => NULL, 'field_name' => ''],
+    ]
   ];
 }
 
@@ -38,7 +131,7 @@ function cu_hub_consumer_theme() {
 function cu_hub_consumer_theme_suggestions_hub_reference(array $variables) {
   $suggestions = [];
 
-  /** @var \Drupal\cu_hub_consumer\HubReferenceInterface $hub_reference */
+  /** @var \Drupal\cu_hub_consumer\Entity\HubReferenceInterface $hub_reference */
   $hub_reference = $variables['elements']['#hub_reference'];
   $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
 
@@ -50,15 +143,17 @@ function cu_hub_consumer_theme_suggestions_hub_reference(array $variables) {
   $source = $hub_reference->getSource();
   if ($source instanceof DerivativeInspectionInterface) {
     $source_id = $source->getBaseId();
-    $derivative_id = $source->getDerivativeId();
-    if ($derivative_id) {
-      $source_id .= '__derivative_' . $derivative_id;
+    $suggestions[] = "hub_reference__source_$source_id";
+
+    if ($derivative_id = $source->getDerivativeId()) {
+      $source_id .= '_' . $derivative_id;
+      $suggestions[] = "hub_reference__source_$source_id";
     }
   }
   else {
     $source_id = $source->getPluginId();
+    $suggestions[] = "hub_reference__source_$source_id";
   }
-  $suggestions[] = "hub_reference__source_$source_id";
 
   return $suggestions;
 }
@@ -78,7 +173,7 @@ function cu_hub_consumer_theme_suggestions_hub_reference(array $variables) {
 function template_preprocess_hub_reference(array &$variables) {
   $variables['hub_reference'] = $variables['elements']['#hub_reference'];
   $variables['view_mode'] = $variables['elements']['#view_mode'];
-  $variables['name'] = $variables['hub_reference']->label();
+  $variables['title'] = $variables['hub_reference']->label();
 
   // Helpful $content variable for templates.
   foreach (Element::children($variables['elements']) as $key) {
@@ -87,13 +182,31 @@ function template_preprocess_hub_reference(array &$variables) {
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function cu_hub_consumer_theme_suggestions_hub_resource_field(array $variables) {
+  $suggestions = [];
+
+  /** @var \Drupal\cu_hub_consumer\Entity\HubReferenceInterface $hub_reference */
+  $hub_reference = $variables['hub_reference'];
+
+  $field_name = $variables['field_name'];
+  $sanitized_field_name = strtr($field_name, '.', '_');
+
+  $suggestions[] = 'hub_resource_field__' . $hub_reference->bundle();
+  $suggestions[] = 'hub_resource_field__' . $hub_reference->bundle() . '__' . $sanitized_field_name;
+
+  return $suggestions;
+}
+
+/**
  * Implements hook_entity_access().
  */
 function cu_hub_consumer_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
   if ($operation === 'delete' && $entity instanceof FieldConfigInterface && $entity->getTargetEntityTypeId() === 'hub_reference') {
     /** @var \Drupal\cu_hub_consumer\Entity\HubReferenceTypeInterface $hub_reference_type */
-    $hub_reference_type = \Drupal::entityTypeManager()->getStorage('media_type')->load($entity->getTargetBundle());
-    return AccessResult::forbiddenIf($entity->id() === 'media.' . $hub_reference_type->id() . '.' . $hub_reference_type->getSource()->getConfiguration()['source_field']);
+    //$hub_reference_type = \Drupal::entityTypeManager()->getStorage('media_type')->load($entity->getTargetBundle());
+    //return AccessResult::forbiddenIf($entity->id() === 'media.' . $hub_reference_type->id() . '.' . $hub_reference_type->getSource()->getConfiguration()['source_field']);
   }
   return AccessResult::neutral();
 }

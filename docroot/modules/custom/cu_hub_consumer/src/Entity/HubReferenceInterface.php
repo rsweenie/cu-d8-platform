@@ -41,4 +41,18 @@ interface HubReferenceInterface extends ContentEntityInterface, EntityChangedInt
    */
   public function getSource();
 
+  /**
+   * Returns the stored JSON data from the hub API.
+   *
+   * @return mixed
+   */
+  public function getHubData();
+
+  /**
+   * Returns a resource object using the stored JSON data.
+   *
+   * @return \Drupal\cu_hub_consumer\Hub\Resource
+   */
+  public function getResourceObj();
+
 }

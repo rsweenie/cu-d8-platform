@@ -338,6 +338,13 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
   /**
    * {@inheritdoc}
    */
+  public function getExposedFields() {
+    return $this->pluginDefinition['exposed_fields'];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $options = $this->getSourceFieldOptions();
     $form['source_field'] = [

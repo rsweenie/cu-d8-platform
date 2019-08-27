@@ -76,4 +76,11 @@ class HubReferenceSource extends Plugin {
    */
   public $hub_type_id = '';
 
+  /**
+   * List of resource fields that should get an automatic computed field exposed.
+   *
+   * @var array
+   */
+  public $exposed_fields = [];
+
 }

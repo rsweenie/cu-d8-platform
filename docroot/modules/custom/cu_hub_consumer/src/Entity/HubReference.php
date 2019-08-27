@@ -207,6 +207,27 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
   /**
    * {@inheritdoc}
    */
+  public function getHubData() {
+    return $this->get('hub_data')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getResourceObj() {
+    if ($hub_data = $this->getHubData()) {
+      $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
+      $resource_type_id = $resource_type_manager->findPluginByHubTypeId($this->resourceType);
+      if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
+        $resource = Resource::createFromData($resource_type, $hub_data);
+        return $resource;
+      }
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
     //$values += [
     //  'type' => 'cu_hub_reference',

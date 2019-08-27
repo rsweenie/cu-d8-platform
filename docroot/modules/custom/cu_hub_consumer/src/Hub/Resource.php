@@ -136,39 +136,6 @@ class Resource implements ResourceInterface {
     if (!empty($this->jsonData['data']['relationships'])) {
       foreach ($this->jsonData['data']['relationships'] as $relationship_name => $relationship_data) {
         $this->processedData[$relationship_name] = $this->parseRelationship($relationship_name, $relationship_data);
-
-        /*
-        $this->processedData[$relationship] = [];
-
-        // If nothing in the data field, move to the next one.
-        if (empty($relationship_data['data'])) {
-          continue;
-        }
-
-        // If the relationship data is single value realtionship, make it look like a multi value one.
-        if (isset($relationship_data['data']['type'])) {
-          $relationship_data['data'] = [$relationship_data['data']];
-        }
-
-        // Try to pull in full data from the included section.
-        if (!empty($this->jsonData['included']) && is_array($this->jsonData['included'])) {
-          foreach ($this->jsonData['included'] as $included) {
-            foreach ($relationship_data['data'] as &$relationship_data_item) {
-              if ($included['type'] == $relationship_data_item['type'] && $included['id'] == $relationship_data_item['id']) {
-                $relationship_data_item = $included;
-              }
-            }
-          }
-        }
-
-        $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-        foreach ($relationship_data['data'] as $relationship_data_item) {
-          $resource_type_id = $resource_type_manager->findPluginByHubTypeId($relationship_data_item['type']);
-          if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
-            $this->processedData[$relationship][] = Resource::createFromData($resource_type, $relationship_data_item);
-          }
-        }
-        */
       }
     }
   }
@@ -202,15 +169,7 @@ class Resource implements ResourceInterface {
         }
       }
 
-      /*
-      $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-      foreach ($relationship_data['data'] as $relationship_data_item) {
-        $resource_type_id = $resource_type_manager->findPluginByHubTypeId($relationship_data_item['type']);
-        if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
-          $this->processedData[$relationship][] = Resource::createFromData($resource_type, $relationship_data_item);
-        }
-      }
-      */
+      // Now we can actually append the resources to the list.
       foreach ($relationship_data['data'] as $relationship_data_item) {
         $relationship_list->appendItem($relationship_data_item);
       }
@@ -236,20 +195,6 @@ class Resource implements ResourceInterface {
    */
   public function __isset($property_name) {
     return isset($this->getProcessedData()[$property_name]);
-  }
-
-  /**
-   * Helper function to safely cast a variable to a string.
-   *
-   * @param mixed $value
-   * @return string|FALSE
-   */
-  protected function castToString($value) {
-    if (is_scalar($value) || (is_object($value) && method_exists($value, '__toString'))) {
-      return (string) $value;
-    }
-
-    return FALSE;
   }
 
 }
