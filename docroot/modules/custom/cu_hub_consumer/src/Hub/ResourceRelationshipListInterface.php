@@ -3,14 +3,14 @@
 namespace Drupal\cu_hub_consumer\Hub;
 
 /**
- * Interface for resource fields, being lists of resource field items.
+ * Interface for resource relationships, being lists of resource objects.
  *
- * This interface must be implemented by every resource field, whereas contained
- * field items must implement the ResourceFieldInterface.
- * Some methods of the fields are delegated to the first contained item, in
+ * This interface must be implemented by every resource relationship, whereas contained
+ * resource items must implement the ResourceInterface.
+ * Some methods of the resources are delegated to the first contained item, in
  * particular get() and set() as well as their magic equivalences.
  */
-interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregate {
+interface ResourceRelationshipListInterface extends \ArrayAccess, \IteratorAggregate {
 
   /**
    * Gets the resource the list belongs to.
@@ -28,18 +28,12 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
   public function getFieldName();
 
   /**
-   * Gets the field type stored in this list.
+   * Gets the resource type stored in this list.
    *
    * @return void
    */
-  public function getFieldType();
+  public function getResourceType();
 
-  /**
-   * Gets whether this field is supposed to contain a single item or multiple.
-   *
-   * @return boolean
-   */
-  public function isSingular();
 
   /**
    * Filters out empty field items and re-numbers the item deltas.
@@ -49,12 +43,12 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
   public function filterEmptyItems();
 
   /**
-   * Append a field item to the list.
+   * Append a resource item to the list.
    *
-   * @param mixed $value
-   * @return \Drupal\cu_hub_consumer\Hub\ResourceFieldItemInterface
+   * @param mixed $data
+   * @return \Drupal\cu_hub_consumer\Hub\ResourceInterface
    */
-  public function appendItem($value = NULL);
+  public function appendItem($data = NULL);
 
   /**
    * Magic method: Gets a property value of to the first field item.
@@ -85,14 +79,14 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
   public function __unset($property_name);
 
   /**
-   * Determines equality to another object implementing ResourceFieldItemListInterface.
+   * Determines equality to another object implementing ResourceRelationshipListInterface.
    *
-   * @param \Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface $list_to_compare
-   *   The field item list to compare to.
+   * @param \Drupal\cu_hub_consumer\Hub\ResourceRelationshipListInterface $list_to_compare
+   *   The relationship item list to compare to.
    *
    * @return bool
    *   TRUE if the field item lists are equal, FALSE if not.
    */
-  public function equals(ResourceFieldItemListInterface $list_to_compare);
+  public function equals(ResourceRelationshipListInterface $list_to_compare);
 
 }

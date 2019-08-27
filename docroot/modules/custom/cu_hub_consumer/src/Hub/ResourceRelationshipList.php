@@ -10,7 +10,7 @@ namespace Drupal\cu_hub_consumer\Hub;
  * list of field items, however for easy access to the contained item the entity
  * field delegates __get() and __set() calls directly to the first item.
  */
-class ResourceFieldItemList implements ResourceFieldItemListInterface {
+class ResourceRelationshipList implements ResourceRelationshipListInterface {
 
   /**
    * Numerically indexed array of field items.
@@ -38,28 +38,20 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
    *
    * @var string
    */
-  protected $fieldType;
-
-  /**
-   * Whether field is singular or multiple value.
-   *
-   * @var [type]
-   */
-  protected $singular;
+  protected $resourceType;
 
   /**
    * Constructs a new ResourceFieldItemList.
    *
    * @param ResourceInterface $parent
    * @param string $field_name
-   * @param string $field_type
+   * @param string $resource_type
    * @param boolean $singular
    */
-  public function __construct(ResourceInterface $parent, $field_name, $field_type, $singular = TRUE) {
+  public function __construct(ResourceInterface $parent, $field_name, $resource_type) {
     $this->parent = $parent;
     $this->fieldName = $field_name;
-    $this->fieldType = $field_type;
-    $this->singular = $singular;
+    $this->resourceType = $resource_type;
   }
 
   /**
@@ -79,15 +71,8 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
   /**
    * {@inheritdoc}
    */
-  public function getFieldType() {
-    return $this->fieldType;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function isSingular() {
-    return $this->singular;
+  public function getResourceType() {
+    return $this->resourceType;
   }
 
   /**
@@ -227,27 +212,17 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
   /**
    * {@inheritdoc}
    */
-  public function appendItem($value = NULL) {
+  public function appendItem($data = NULL) {
     $offset = count($this->list);
-    $item = $this
-      ->createItem($value);
-    $this->list[$offset] = $item;
-    return $item;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function createItem($value = NULL) {
-    $resource_field_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_field_type');
-
-    if ($field_item = $resource_field_type_manager->createInstance($this->getFieldType(), [])) {
-      $field_item->setParentList($this);
-      $field_item->setValue($value);
-
-      return $field_item;
+    $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
+    $resource_type_id = $resource_type_manager->findPluginByHubTypeId($this->resourceType);
+    if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
+      $resource = Resource::createFromData($resource_type, $data);
+      $this->list[$offset] = $resource;
+      return $resource;
     }
   }
+
 
   /**
    * {@inheritdoc}
@@ -410,7 +385,7 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
   /**
    * {@inheritdoc}
    */
-  public function equals(ResourceFieldItemListInterface $list_to_compare) {
+  public function equals(ResourceRelationshipListInterface $list_to_compare) {
     $value1 = $this
       ->getValue();
     $value2 = $list_to_compare
@@ -419,5 +394,4 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
       return TRUE;
     }
   }
-
 }

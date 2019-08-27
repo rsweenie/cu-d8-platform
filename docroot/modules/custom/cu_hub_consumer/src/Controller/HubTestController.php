@@ -161,7 +161,7 @@ class HubTestController extends ControllerBase {
       dsm($resource->type);
       dsm($resource->id);
       dsm($resource->field_hub_degree_title->getString());
-      dsm($resource->field_hub_degree_availability->getString());
+      //dsm($resource->field_hub_degree_availability->getString());
       dsm($resource->field_hub_degree_availability);
 
       //dsm($resource->getProcessedData());

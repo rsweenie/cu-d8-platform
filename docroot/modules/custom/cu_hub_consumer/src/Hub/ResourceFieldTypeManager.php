@@ -41,8 +41,10 @@ class ResourceFieldTypeManager extends DefaultPluginManager {
    * @param bool $singular
    * @return \Drupal\cu_hub_consumer\Hub\ResourceFieldItemList
    */
+  /*
   public function createFieldItemList(ResourceInterface $resource, $field_name, $field_type, $singular = TRUE) {
     return new ResourceFieldItemList($resource, $field_name, $field_type, $singular);
   }
+  */
 
 }

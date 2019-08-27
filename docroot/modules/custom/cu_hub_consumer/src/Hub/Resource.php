@@ -93,17 +93,6 @@ class Resource implements ResourceInterface {
 
         $this->processAttributes();
         $this->processRelationships();
-
-        /*
-        if (!empty($this->jsonData['data']['relationships'])) {
-          foreach ($this->jsonData['data']['relationships'] as $field_name => $field_data) {
-            if (!empty($this->jsonData['included'])) {
-              
-            }
-            $this->processedData[$field_name] = $field_data;
-          }
-        }
-        */
       }
     }
 
@@ -112,22 +101,16 @@ class Resource implements ResourceInterface {
 
   protected function processAttributes() {
     if (!empty($this->jsonData['data']['attributes'])) {
-      foreach ($this->jsonData['data']['attributes'] as $attribute => $attribute_data) {
-        $this->processedData[$attribute] = $this->parseAttribute($attribute, $attribute_data);
+      foreach ($this->jsonData['data']['attributes'] as $attribute_name => $attribute_data) {
+        $this->processedData[$attribute_name] = $this->parseAttribute($attribute_name, $attribute_data);
       }
     }
   }
 
-  protected function parseAttribute($attribute, $attribute_data) {
-    $parsed = NULL;
-    $attribute_type = $this->getResourceType()->getAttributeType($attribute);
-
-    $resource_field_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_field_type');
-    //$resource_type_id = $resource_field_type_manager->findPluginByHubTypeId($relationship_data['data']['type']);
-    //if ($resource_type = $resource_type_manager->createInstance($attribute_type, [])) {
-    //}
-
-    
+  protected function parseAttribute($attribute_name, $attribute_data) {
+    //$parsed = NULL;
+    $attribute_type = $this->getResourceType()->getAttributeType($attribute_name);
+    //$resource_field_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_field_type');
 
     // Handle case of multi-value attributes.
     $singular = TRUE;
@@ -136,7 +119,8 @@ class Resource implements ResourceInterface {
       $attribute_type = $matches[1];
     }
 
-    $item_list = $resource_field_type_manager->createFieldItemList($this, $attribute, $attribute_type, $singular);
+    //$item_list = $resource_field_type_manager->createFieldItemList($this, $attribute, $attribute_type, $singular);
+    $item_list = new ResourceFieldItemList($this, $attribute_name, $attribute_type, $singular);
 
     if ($singular) {
       $attribute_data = [$attribute_data];
@@ -146,61 +130,15 @@ class Resource implements ResourceInterface {
     }
     
     return $item_list;
-
-    /*
-    if ($attribute_type && preg_match('/(.*)_array$/', $attribute_type, $matches)) {
-      $parsed = [];
-      if (is_array($attribute_data)) {
-        foreach ($attribute_data as $value) {
-          $parsed[] = parseAttribute($matches[1], $value);
-        }
-      }
-    }
-    else {
-      switch ($attribute_type) {
-        case 'link':
-          $parsed = $this->castToString((isset($attribute_data['uri']) ? $attribute_data['uri'] : ''));
-          break;
-  
-        case 'text':
-        case 'text_long':
-        case 'text_with_summary':
-          $parsed = $this->castToString((isset($attribute_data['processed']) ? $attribute_data['processed'] : ''));
-          break;
-  
-        case 'string':
-        default:
-          $parsed = $this->castToString($attribute_data);
-          break;
-      }
-    }
-    */
-
-    //return $parsed;
-  }
-
-  /**
-   * Helper function to safely cast a variable to a string.
-   *
-   * @param mixed $value
-   * @return string|FALSE
-   */
-  protected function castToString($value) {
-    if (is_scalar($value) || (is_object($value) && method_exists($value, '__toString'))) {
-      return (string) $value;
-    }
-
-    return FALSE;
   }
 
   protected function processRelationships() {
     if (!empty($this->jsonData['data']['relationships'])) {
-      foreach ($this->jsonData['data']['relationships'] as $relationship => $relationship_data) {
-        $this->processedData[$relationship] = [];
+      foreach ($this->jsonData['data']['relationships'] as $relationship_name => $relationship_data) {
+        $this->processedData[$relationship_name] = $this->parseRelationship($relationship_name, $relationship_data);
 
-        //print_r($relationship_data);
-        //$this->processedData[$relationship] = $relationship_data;
-        //$this->processedData[$relationship] = Resource::createFromData($resource_type, $data);
+        /*
+        $this->processedData[$relationship] = [];
 
         // If nothing in the data field, move to the next one.
         if (empty($relationship_data['data'])) {
@@ -215,12 +153,6 @@ class Resource implements ResourceInterface {
         // Try to pull in full data from the included section.
         if (!empty($this->jsonData['included']) && is_array($this->jsonData['included'])) {
           foreach ($this->jsonData['included'] as $included) {
-            if (!is_array($relationship_data['data'])) {
-              dsm(__LINE__);
-              dsm($relationship_data);
-              dsm(__LINE__);
-              dsm($orig_data);
-            }
             foreach ($relationship_data['data'] as &$relationship_data_item) {
               if ($included['type'] == $relationship_data_item['type'] && $included['id'] == $relationship_data_item['id']) {
                 $relationship_data_item = $included;
@@ -228,16 +160,6 @@ class Resource implements ResourceInterface {
             }
           }
         }
-        //print_r($relationship_data);
-
-        // Create the appropriate resource.
-        /*
-        $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-        $resource_type_id = $resource_type_manager->findPluginByHubTypeId($relationship_data['data']['type']);
-        if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
-          $this->processedData[$relationship] = Resource::createFromData($resource_type, $relationship_data);
-        }
-        */
 
         $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
         foreach ($relationship_data['data'] as $relationship_data_item) {
@@ -246,8 +168,60 @@ class Resource implements ResourceInterface {
             $this->processedData[$relationship][] = Resource::createFromData($resource_type, $relationship_data_item);
           }
         }
+        */
       }
     }
+  }
+
+  protected function parseRelationship($relationship_name, $relationship_data) {
+    // If nothing in the data, we skip processing it.
+    if (!empty($relationship_data['data'])) {
+      // If the relationship data is a single value realtionship, make it look like a multi value one.
+      if (isset($relationship_data['data']['type'])) {
+        $relationship_data['data'] = [$relationship_data['data']];
+      }
+
+      // Try to get the resource type of the first item.
+      $relationship_resource_type = 'fallback';
+      if ($first = reset($relationship_data['data'])) {
+        if (!empty($first['type'])) {
+          $relationship_resource_type = $first['type'];
+        }
+      }
+      
+      $relationship_list = new ResourceRelationshipList($this, $relationship_name, $relationship_resource_type);
+
+      // Try to pull in full data from the included section.
+      if (!empty($this->jsonData['included']) && is_array($this->jsonData['included'])) {
+        foreach ($this->jsonData['included'] as $included) {
+          foreach ($relationship_data['data'] as &$relationship_data_item) {
+            if ($included['type'] == $relationship_data_item['type'] && $included['id'] == $relationship_data_item['id']) {
+              $relationship_data_item = $included;
+            }
+          }
+        }
+      }
+
+      /*
+      $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
+      foreach ($relationship_data['data'] as $relationship_data_item) {
+        $resource_type_id = $resource_type_manager->findPluginByHubTypeId($relationship_data_item['type']);
+        if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
+          $this->processedData[$relationship][] = Resource::createFromData($resource_type, $relationship_data_item);
+        }
+      }
+      */
+      foreach ($relationship_data['data'] as $relationship_data_item) {
+        $relationship_list->appendItem($relationship_data_item);
+      }
+
+    }
+    else {
+      // Better to be an empty fallback than nothing.
+      $relationship_list = new ResourceRelationshipList($this, $relationship_name, 'fallback');
+    }
+
+    return $relationship_list;
   }
 
   /**
@@ -262,6 +236,20 @@ class Resource implements ResourceInterface {
    */
   public function __isset($property_name) {
     return isset($this->getProcessedData()[$property_name]);
+  }
+
+  /**
+   * Helper function to safely cast a variable to a string.
+   *
+   * @param mixed $value
+   * @return string|FALSE
+   */
+  protected function castToString($value) {
+    if (is_scalar($value) || (is_object($value) && method_exists($value, '__toString'))) {
+      return (string) $value;
+    }
+
+    return FALSE;
   }
 
 }
