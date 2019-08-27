@@ -10,7 +10,7 @@ use Drupal\Core\PrivateKey;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Implements a noreferrer Config form.
+ * Implements a cu_noreferrer Config form.
  */
 class CUNoReferrerSettingsForm extends ConfigFormBase {
 
@@ -60,26 +60,26 @@ class CUNoReferrerSettingsForm extends ConfigFormBase {
     $form['noopener'] = [
       '#type'          => 'checkbox',
       '#title'         => $this->t('Add <code>rel="noopener"</code> if link has a target'),
-      '#default_value' => $this->config('noreferrer.settings')->get('noopener'),
+      '#default_value' => $this->config('cu_noreferrer.settings')->get('noopener'),
       '#description'   => $this->t('If checked, the <code>rel="noopener"</code> link type will be added to links that have a target attribute.'),
     ];
     $form['noreferrer'] = [
       '#type'          => 'checkbox',
       '#title'         => $this->t('Add <code>rel="noreferrer"</code> to non-whitelisted links'),
-      '#default_value' => $this->config('noreferrer.settings')->get('noreferrer'),
+      '#default_value' => $this->config('cu_noreferrer.settings')->get('noreferrer'),
       '#description'   => $this->t('If checked, the <code>rel="noreferrer"</code> link type will be added to non-whitelisted external links.'),
     ];
     $form['whitelisted_domains'] = [
       '#type'          => 'textfield',
       '#title'         => $this->t('Whitelisted domains'),
-      '#default_value' => $this->config('noreferrer.settings')->get('whitelisted_domains'),
+      '#default_value' => $this->config('cu_noreferrer.settings')->get('whitelisted_domains'),
       '#description'   => $this->t('Enter a space-separated list of domains to which referrer URLs will be sent (e.g. <em>example.com example.org</em>). Links to all other domains will have a <code>rel="noreferrer"</code> link type added.'),
       '#maxlength'     => NULL,
     ];
     $form['publish'] = [
       '#type'          => 'checkbox',
       '#title'         => $this->t('Publish list of whitelisted domains'),
-      '#default_value' => $this->config('noreferrer.settings')->get('publish'),
+      '#default_value' => $this->config('cu_noreferrer.settings')->get('publish'),
       '#description'   => $this->t('If checked, the list of whitelisted domains will be published at <a href="@url">@url</a> when saving this form.', [
         '@url' => file_create_url($this->publishUri()),
       ]),
@@ -87,7 +87,7 @@ class CUNoReferrerSettingsForm extends ConfigFormBase {
     $form['subscribe_url'] = [
       '#type'          => 'url',
       '#title'         => $this->t('Subscribe to external list of whitelisted domains'),
-      '#default_value' => $this->config('noreferrer.settings')->get('subscribe_url'),
+      '#default_value' => $this->config('cu_noreferrer.settings')->get('subscribe_url'),
       '#description'   => $this->t('If configured, the list of whitelisted domains will be retrieved from the given URL during each cron run.'),
     ];
     return parent::buildForm($form, $form_state);

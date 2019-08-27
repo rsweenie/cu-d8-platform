@@ -2,7 +2,7 @@
 
 namespace Drupal\cu_noreferrer\EventSubscriber;
 
-use Drupal\cu_noreferrer\Plugin\Filter\CUNoReferrerFilter;
+use Drupal\cu_noreferrer\Utility\CUNoReferrer;
 use Drupal\Core\Render\HtmlResponse;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -19,6 +19,7 @@ class CUNoReferrerResponseSubscriber implements EventSubscriberInterface {
   protected $config;
 
   /**
+   * 
    */
   public function __construct($config) {
     $this->config = $config;
@@ -31,7 +32,12 @@ class CUNoReferrerResponseSubscriber implements EventSubscriberInterface {
     if (!$response instanceof HtmlResponse) {
       return;
     }
-    $response->setContent(CUNoReferrerFilter::filter($response->getContent(),$this->config->get('cu_noreferrer.settings'))->getProcessedText());
+    /**
+     * if either apply, apply it.
+     */
+    if($this->config->get('cu_noreferrer.settings')->get('noreferrer') || $this->config->get('cu_noreferrer.settings')->get('noopener'))
+      $response->setContent(NoReferrer::filter($response->getContent()
+                                                        ,$this->config)->getProcessedText());
   }
 
   /**
