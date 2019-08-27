@@ -113,8 +113,12 @@
     <div class="section side-nav-section">
       <div>
         <div class="row">
-          <div class="col-xs-12 col-md-2">
-            <nav class="side-nav">{{ side_nav }}</nav>
+          <div class="col-xs-12 col-lg-2">
+            <nav class="side-nav">
+              <input type="checkbox" id="side-nav-toggle">
+              <label for="side-nav-toggle"><span>Page Navigation</span></label>
+              {{ side_nav }}
+            </nav>
           </div>
         </div>
       </div>

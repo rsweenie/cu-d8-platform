@@ -9408,29 +9408,42 @@ nav.bc a:focus {
   text-decoration: underline;
 }
 
-/* line 22, src/sass/components/navigation/_interior.scss */
+/* line 7, src/sass/components/navigation/_interior.scss */
+
+.section.side-nav-section {
+  padding: 0;
+}
+
+/* line 23, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav {
   position: relative;
 }
 
-/* line 25, src/sass/components/navigation/_interior.scss */
+/* line 26, src/sass/components/navigation/_interior.scss */
 
+nav.side-nav label,
 nav.side-nav ul {
-  margin: 0;
+  font-size: 1.2rem;
   font-family: "Conduit";
-  font-size: 2.4rem;
   font-weight: 600;
 }
 
-/* line 42, src/sass/components/navigation/_interior.scss */
+/* line 33, src/sass/components/navigation/_interior.scss */
 
-nav.side-nav .menu-item {
-  margin: 0 0 1.4rem 0;
+nav.side-nav ul {
+  margin: 0;
   padding: 0;
 }
 
-/* line 47, src/sass/components/navigation/_interior.scss */
+/* line 56, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav .menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 65, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav a {
   color: #555555;
@@ -9442,6 +9455,86 @@ nav.side-nav a {
 nav.side-nav a:hover,
 nav.side-nav a:focus {
   text-decoration: underline;
+}
+
+/* line 79, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav label {
+  display: block;
+  position: relative;
+  text-align: right;
+  background: #ECF0F3;
+  padding: 1.3rem 4.65rem 1.3rem 0;
+  border-bottom: 1px solid #e1e7ec;
+}
+
+/* line 87, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav label:before,
+nav.side-nav label:after,
+nav.side-nav label span:after {
+  width: 1.4rem;
+  height: 0.2rem;
+  background: #555555;
+  position: absolute;
+  content: "";
+  right: 1.4rem;
+  top: 1.9rem;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 100, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav label:before {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+/* line 104, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav label:after {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+/* line 114, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox'] {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* line 118, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox']:checked ~ ul {
+  display: block;
+}
+
+/* line 123, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox']:checked ~ label:before {
+  -webkit-transform: rotate(45deg) translate(0);
+          transform: rotate(45deg) translate(0);
+}
+
+/* line 127, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox']:checked ~ label:after {
+  -webkit-transform: rotate(-45deg) translate(0);
+          transform: rotate(-45deg) translate(0);
+}
+
+/* line 131, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox']:checked ~ label span:after {
+  opacity: 0;
 }
 
 /* line 14, src/sass/components/navigation/_pagination.scss */
@@ -13622,28 +13715,47 @@ form.search .search button {
     font-size: 1.8rem;
   }
 
-  /* line 8, src/sass/components/navigation/_interior.scss */
+  /* line 7, src/sass/components/navigation/_interior.scss */
 
   .section.side-nav-section {
     width: 100%;
     position: absolute;
     z-index: 1;
-    padding: 0;
   }
 
-  /* line 14, src/sass/components/navigation/_interior.scss */
+  /* line 15, src/sass/components/navigation/_interior.scss */
 
   .section.side-nav-section + .field--name-field-interior-page-content {
     position: relative;
     z-index: 0;
   }
 
-  /* line 25, src/sass/components/navigation/_interior.scss */
+  /* line 33, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
+    font-size: 2.4rem;
     width: 100%;
     position: absolute;
     padding: 5rem 0;
+  }
+
+  /* line 56, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav .menu-item {
+    margin: 0 0 0.58333em 0;
+  }
+
+  /* line 79, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav label {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
   }
 
   /* line 6, src/sass/components/navigation/_jump.scss */
@@ -14003,7 +14115,7 @@ form.search .search button {
     width: 33.333%;
   }
 
-  /* line 25, src/sass/components/navigation/_interior.scss */
+  /* line 33, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     padding: 6.25rem 0;
@@ -14411,6 +14523,22 @@ form.search .search button {
 
   nav.bc li:nth-last-child(2):before {
     display: none;
+  }
+
+  /* line 33, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav ul {
+    display: none;
+    background: #e1e7ec;
+    padding: 2.5rem 4.65rem 2.5rem 2.5rem;
+    text-align: right;
+  }
+
+  /* line 65, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav a {
+    display: block;
+    padding: 0.7rem 0;
   }
 
   /* line 32, src/sass/components/forms/search/_form.scss */
