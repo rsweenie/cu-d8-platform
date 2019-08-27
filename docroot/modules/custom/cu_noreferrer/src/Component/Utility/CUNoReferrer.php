@@ -15,8 +15,8 @@ class CUNoReferrer {
    * static filter function applies the rel attributes.
    */
   public static function filter($text,$config){
-    $noopener = $config->get('cu_noreferrer.settings')->get('noreferrer');
-    $noreferrer = $config->get('cu_noreferrer.settings')->get('noopener');
+    $noopener = $config->get('cu_noreferrer.settings')->get('noopener');
+    $noreferrer = $config->get('cu_noreferrer.settings')->get('noreferrer');
     $result = new FilterProcessResult($text);
     $html_dom = SELF::load($text);
     $links = $html_dom->getElementsByTagName('a');

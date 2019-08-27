@@ -99,7 +99,7 @@ jQuery(document).ready(function() {
       }
     });
   }
-  // this has been messing with me all day! removed becasue it interferes with the noref and noopener fix. 
+// targets should be set in the template
   newWindow('ul.menu--transaction-menu li a');
   newWindow('ul.header_nav li a');
   newWindow('ul#schools_and_colleges_menu_body  li a');
