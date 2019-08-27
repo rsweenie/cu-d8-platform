@@ -3880,11 +3880,23 @@ blockquote.q-left {
 
 /* line 20, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
+blockquote.q-left a {
+  color: #fff;
+}
+
+/* line 23, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+blockquote.q-left a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 28, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
 blockquote.q-left p {
   margin-bottom: 1em;
 }
 
-/* line 33, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 41, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left > div {
   position: relative;
@@ -3897,7 +3909,7 @@ blockquote.q-left > div {
           flex-flow: row-reverse nowrap;
 }
 
-/* line 37, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left > div:before {
   width: 100%;
@@ -3909,7 +3921,7 @@ blockquote.q-left > div:before {
   background: #fff;
 }
 
-/* line 51, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 59, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left > div:after {
   width: 6.4rem;
@@ -3925,7 +3937,7 @@ blockquote.q-left > div:after {
   text-align: center;
 }
 
-/* line 81, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 89, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote {
   -webkit-box-flex: 1;
@@ -3934,13 +3946,13 @@ blockquote.q-left .quote {
   padding-left: 2rem;
 }
 
-/* line 89, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote:only-child {
   padding: 0;
 }
 
-/* line 94, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 102, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .field--name-field-quote-quote {
   font-size: 1.8rem;
@@ -3948,7 +3960,7 @@ blockquote.q-left .field--name-field-quote-quote {
   font-weight: 600;
 }
 
-/* line 115, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr {
   font-size: 1.4rem;
@@ -3956,14 +3968,14 @@ blockquote.q-left .attr {
   line-height: 1.2em;
 }
 
-/* line 124, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 132, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr small {
   font-size: 1em;
   font-weight: 500;
 }
 
-/* line 128, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 136, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr div {
   display: inline;
@@ -11023,7 +11035,7 @@ form.search .search button {
     height: 32rem;
   }
 
-  /* line 81, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 89, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .quote {
     padding-left: 4.6rem;
@@ -11903,13 +11915,13 @@ form.search .search button {
     padding: 13.1rem 8.1rem 7.2rem 8.1rem;
   }
 
-  /* line 37, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left > div:before {
     top: -5.5rem;
   }
 
-  /* line 51, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 59, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left > div:after {
     width: 8.4rem;
@@ -11933,7 +11945,7 @@ form.search .search button {
     pointer-events: none;
   }
 
-  /* line 115, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .attr {
     font-size: 1.6rem;
@@ -13690,7 +13702,7 @@ form.search .search button {
     transition: all 10s;
   }
 
-  /* line 94, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 102, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-quote {
     font-size: 3rem;
@@ -14834,7 +14846,7 @@ form.search .search button {
 }
 
 @media screen and (max-width: 575.9px) {
-  /* line 104, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 112, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image {
     -webkit-box-flex: 0;
@@ -14842,7 +14854,7 @@ form.search .search button {
             flex: 0 0 20%;
   }
 
-  /* line 108, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 116, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image img {
     width: 100%;

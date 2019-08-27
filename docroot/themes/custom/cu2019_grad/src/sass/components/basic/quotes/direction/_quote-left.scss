@@ -17,6 +17,14 @@
     // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
+    a {
+      color: $white;
+
+      &:hover {
+        color: rgba($white,.7);
+      }
+    }
+
     p {
       margin-bottom: 1em;
     }
