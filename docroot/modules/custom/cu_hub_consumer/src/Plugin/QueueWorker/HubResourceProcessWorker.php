@@ -27,7 +27,8 @@ class HubResourceProcessWorker extends QueueWorkerBase {
 
     try {
       $resource = $resource_type->fetchResource($data->hub_uuid);
-      $resource_data = $resource->getProcessedData();
+      //$resource_data = $resource->getProcessedData();
+      $resource_data = $resource->getJsonData();
     }
     catch (ResourceException $e) {
       watchdog_exception('cu_hub_consumer', $e);

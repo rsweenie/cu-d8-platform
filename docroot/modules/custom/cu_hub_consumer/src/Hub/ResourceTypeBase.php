@@ -31,27 +31,6 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   protected $label;
 
   /**
-   * The entity type manager service.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * The entity field manager service.
-   *
-   * @var \Drupal\Core\Entity\EntityFieldManagerInterface
-   */
-  protected $entityFieldManager;
-
-  /**
-   * The field type plugin manager service.
-   *
-   * @var \Drupal\Core\Field\FieldTypePluginManagerInterface
-   */
-  protected $fieldTypeManager;
-
-  /**
    * The config factory service.
    *
    * @var \Drupal\Core\Config\ConfigFactoryInterface
@@ -88,14 +67,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager service.
-   * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entity_field_manager
-   *   The entity field manager service.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory service.
-   * @param \Drupal\Core\Field\FieldTypePluginManagerInterface $field_type_manager
-   *   The field type plugin manager service.
    * @param \Psr\Log\LoggerInterface $logger
    *   The logger channel for cu_hub_consumer.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
@@ -103,11 +76,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * @param \GuzzleHttp\ClientInterface $http_client
    *   The HTTP client.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $entity_field_manager, ConfigFactoryInterface $config_factory, FieldTypePluginManagerInterface $field_type_manager, LoggerInterface $logger, MessengerInterface $messenger, ClientInterface $http_client) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $entity_type_manager, $entity_field_manager, $field_type_manager, $config_factory);
-    $this->entityTypeManager = $entity_type_manager;
-    $this->entityFieldManager = $entity_field_manager;
-    $this->fieldTypeManager = $field_type_manager;
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, LoggerInterface $logger, MessengerInterface $messenger, ClientInterface $http_client) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $config_factory);
     $this->configFactory = $config_factory;
     $this->logger = $logger;
     $this->messenger = $messenger;
@@ -125,10 +95,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity_type.manager'),
-      $container->get('entity_field.manager'),
       $container->get('config.factory'),
-      $container->get('plugin.manager.field.field_type'),
       $container->get('logger.factory')->get('cu_hub_consumer'),
       $container->get('messenger'),
       $container->get('http_client')

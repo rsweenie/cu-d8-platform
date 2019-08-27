@@ -48,126 +48,54 @@ class HubTestController extends ControllerBase {
     }
     */
 
-    //$reference_sources = \Drupal::service('plugin.manager.cu_hub_consumer.hub_reference_source');
-    //dsm($reference_sources->getDefinitions());
-    //$entity_type_manager = \Drupal::service('entity_type.manager');
-    //dsm($entity_type_manager->getDefinitions());
-    //dsm($entity_type_manager->getDefinition('hub_reference'));
+    $this->testResourceList('program');
 
-    /*
-    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('site');
-    $hub_ref_source = $hub_ref_type->getSource();
-    $resource_type = $hub_ref_source->getResourceType();
-    //dsm($hub_ref_resource_type);
-
-    //$bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference');
-    //dsm($bundles);
-
-    //$resource_types = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-    //dsm($resource_types->getDefinitions());
-
-    //$resource_type = $resource_types->createInstance('node:site');
-    //dsm($resource_type);
-
-    dsm($resource_type->getResourceListUrl());
-
-    try {
-      $resource_list = $resource_type->fetchResourceList();
-      //dsm($resource_list->jsonData);
-      dsm($resource_list->getProcessedData());
-    }
-    catch (ResourceException $e) {
-      dsm($e);
-    }
-
-    $resource_uuid = 'b3d19d1e-a72a-4dee-82e1-f2955087b22f';
-    //$resource_uuid = '9243a05e-396e-4aec-aed2-14f365b668aB';
-
-    dsm($resource_type->getResourceUrl($resource_uuid));
-
-    try {
-      $resource = $resource_type->fetchResource($resource_uuid);
-      dsm($resource->getJsonData());
-      dsm($resource->getProcessedData());
-    }
-    catch (ResourceException $e) {
-      dsm($e);
-    }
-    */
-
-
-
-
-    //$hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('program');
-    //$hub_ref_source = $hub_ref_type->getSource();
-    //$resource_type = $hub_ref_source->getResourceType();
-    //$resource_type = $hub_ref_type->getResourceType();
-
-    /*
-    dsm($resource_type->getResourceListUrl());
-
-    try {
-      $resource_list = $resource_type->fetchResourceList();
-      //dsm($resource_list->jsonData);
-      dsm($resource_list->getProcessedData());
-    }
-    catch (ResourceException $e) {
-      dsm($e);
-    }
-    */
-
-    /*
-    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('program');
-    $resource_type = $hub_ref_type->getResourceType();
-    $resource_uuid = '0d40a955-8399-42e9-8be8-c9544b84bb5e';
-
-    dsm($resource_type->getResourceUrl($resource_uuid));
-
-    try {
-      $resource = $resource_type->fetchResource($resource_uuid);
-      //dsm($resource->getJsonData());
-      $resource->getProcessedData();
-    }
-    catch (ResourceException $e) {
-      dsm($e);
-    }
-
-    if ($resource->getProcessedData()) {
-      dsm($resource->type);
-      dsm($resource->id);
-      dsm($resource->field_hub_program_title->getString());
-
-      //dsm($resource->getProcessedData());
-    }
-    */
-
-
-    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load('degree');
-    $resource_type = $hub_ref_type->getResourceType();
-    $resource_uuid = '9243a05e-396e-4aec-aed2-14f365b668ab';
-
-    dsm($resource_type->getResourceUrl($resource_uuid));
-
-    try {
-      $resource = $resource_type->fetchResource($resource_uuid);
-      //dsm($resource->getJsonData());
-      $resource->getProcessedData();
-    }
-    catch (ResourceException $e) {
-      dsm($e);
-    }
-
-    if ($resource->getProcessedData()) {
-      dsm($resource->type);
-      dsm($resource->id);
-      dsm($resource->field_hub_degree_title->getString());
-      //dsm($resource->field_hub_degree_availability->getString());
-      dsm($resource->field_hub_degree_availability);
-
-      //dsm($resource->getProcessedData());
-    }
+    $this->testResource('program', '0d40a955-8399-42e9-8be8-c9544b84bb5e');
+    $this->testResource('degree', '9243a05e-396e-4aec-aed2-14f365b668ab');
 
     return $build;
+  }
+
+  protected function testResourceList($resource_type) {
+    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($resource_type);
+    $resource_type = $hub_ref_type->getResourceType();
+    dsm($resource_type->getResourceListUrl());
+
+    try {
+      $resource_list = $resource_type->fetchResourceList();
+      //dsm($resource_list->jsonData);
+      dsm($resource_list->getProcessedData());
+    }
+    catch (ResourceException $e) {
+      dsm($e);
+    }
+  }
+
+  protected function testResource($resource_type, $resource_uuid) {
+    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($resource_type);
+    $resource_type = $hub_ref_type->getResourceType();
+    dsm($resource_type->getResourceUrl($resource_uuid));
+
+    try {
+      $resource = $resource_type->fetchResource($resource_uuid);
+      //dsm($resource->getJsonData());
+      $resource->getProcessedData();
+    }
+    catch (ResourceException $e) {
+      dsm($e);
+    }
+
+    if ($resource->getProcessedData()) {
+      dsm($resource->type);
+      dsm($resource->id);
+      //dsm($resource->field_hub_degree_title->getString());
+      //dsm($resource->field_hub_degree_availability->getString());
+      //dsm($resource->field_hub_degree_availability);
+
+      //dsm($resource->getProcessedData());
+
+      return $resource;
+    }
   }
 
 }
