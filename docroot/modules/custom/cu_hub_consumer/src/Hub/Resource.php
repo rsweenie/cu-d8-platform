@@ -87,6 +87,13 @@ class Resource implements ResourceInterface {
   /**
    * {@inheritdoc}
    */
+  public function getResourceTypeId() {
+    return $this->resourceType->getPluginId();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getResourceType() {
     return $this->resourceType;
   }
@@ -132,16 +139,16 @@ class Resource implements ResourceInterface {
     //$resource_field_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_field_type');
 
     // Handle case of multi-value attributes.
-    $singular = TRUE;
+    $multiple = FALSE;
     if ($attribute_type && preg_match('/(.*)\[\]$/', $attribute_type, $matches)) {
-      $singular = FALSE;
+      $multiple = TRUE;
       $attribute_type = $matches[1];
     }
 
-    //$item_list = $resource_field_type_manager->createFieldItemList($this, $attribute, $attribute_type, $singular);
-    $item_list = new ResourceFieldItemList($this, $attribute_name, $attribute_type, $singular);
+    //$item_list = $resource_field_type_manager->createFieldItemList($this, $attribute, $attribute_type, $multiple);
+    $item_list = new ResourceFieldItemList($this, $attribute_name, $attribute_type, $multiple);
 
-    if ($singular) {
+    if (!$multiple) {
       $attribute_data = [$attribute_data];
     }
     foreach ($attribute_data as $value) {

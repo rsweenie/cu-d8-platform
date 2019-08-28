@@ -11,6 +11,8 @@ interface ResourceFieldItemInterface {
 
   public function setParentList(ResourceFieldItemListInterface $list);
 
+  public function getParentResource();
+
   public function getValue();
 
   public function setValue($value);
@@ -18,5 +20,13 @@ interface ResourceFieldItemInterface {
   public function isEmpty();
 
   public function getString();
+
+  /**
+   * Builds a renderable array for a fully themed field item.
+   *
+   * @return array
+   *   A renderable array for a themed field item.
+   */
+  public function view();
 
 }

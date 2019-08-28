@@ -26,6 +26,13 @@ interface ResourceInterface {
   public static function createFromData(ResourceTypeInterface $resource_type, $data);
 
   /**
+   * Returns the id of the resource type that generated this object.
+   *
+   * @return string
+   */
+  public function getResourceTypeId();
+
+  /**
    * Returns the resource type that generated this object.
    *
    * @return \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface

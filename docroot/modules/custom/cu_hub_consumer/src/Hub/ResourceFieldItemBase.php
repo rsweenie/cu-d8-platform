@@ -14,9 +14,10 @@ use Drupal\Core\Plugin\PluginBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Psr\Log\LoggerInterface;
+use Drupal\Core\Render\Element;
 use \GuzzleHttp\ClientInterface;
 use \GuzzleHttp\Exception\RequestException;
-use Psr\Log\LoggerInterface;
 
 /**
  * Base implementation of hub resource field plugin.
@@ -81,12 +82,6 @@ abstract class ResourceFieldItemBase extends PluginBase implements ResourceField
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   Entity type manager service.
-   * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entity_field_manager
-   *   Entity field manager service.
-   * @param \Drupal\Core\Field\FieldTypePluginManagerInterface $field_type_manager
-   *   The field type plugin manager service.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory service.
    * @param \Psr\Log\LoggerInterface $logger
@@ -161,6 +156,15 @@ abstract class ResourceFieldItemBase extends PluginBase implements ResourceField
    */
   public function setParentList(ResourceFieldItemListInterface $list) {
     $this->parentList = $list;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getParentResource() {
+    if ($list = $this->getParentList()) {
+      return $list->getParentResource();
+    }
   }
 
   /**

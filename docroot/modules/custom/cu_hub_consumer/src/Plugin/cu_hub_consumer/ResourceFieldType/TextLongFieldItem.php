@@ -15,8 +15,32 @@ use Drupal\cu_hub_consumer\Hub\ResourceFieldItemBase;
  */
 class TextLongFieldItem extends ArrayFieldItemBase {
 
-  public function mainProperty() {
+  /**
+   * {@inheritdoc}
+   */
+  public function mainPropertyName() {
     return 'processed';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function view() {
+    $elements = [];
+
+    if (!$this->isEmpty()) {
+      // We output just the preprocessed version fo the text.
+      $elements = [
+        '#type' => 'inline_template',
+        '#template' => '{{ value|raw }}',
+        '#context' => [
+          // @TODO: Can we do some XSS checking here?
+          'value' => $this->processed,
+        ],
+      ];
+    }
+
+    return $elements;
   }
 
 }

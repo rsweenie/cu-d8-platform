@@ -20,7 +20,7 @@ class NodeDeriver extends DeriverBase {
         'description' => t('Site node resource type.'),
         'hub_type_id' => 'node--hub_site',
         'hub_path' => 'node/hub_site',
-        'attribute_types' => [
+        'attribute_types' => $base_plugin_definition['attribute_types'] + [
           'field_hub_site_base_uri' => 'link',
         ],
         'entity_keys' => [
@@ -34,7 +34,11 @@ class NodeDeriver extends DeriverBase {
         'description' => t('Academic Program node resource type.'),
         'hub_type_id' => 'node--hub_program',
         'hub_path' => 'node/hub_program',
-        'attribute_types' => [],
+        'attribute_types' => $base_plugin_definition['attribute_types'] + [
+          'field_hub_site' => 'resource',
+          'field_hub_program_title' => 'string',
+          'field_hub_program_description' => 'text_long',
+        ],
         'entity_keys' => [
           'label' => 'field_hub_program_title',
         ],
@@ -46,9 +50,19 @@ class NodeDeriver extends DeriverBase {
         'description' => t('Academic Degree node resource type.'),
         'hub_type_id' => 'node--hub_degree',
         'hub_path' => 'node/hub_degree',
-        'attribute_types' => [
+        'attribute_types' => $base_plugin_definition['attribute_types'] + [
+          'field_hub_site' => 'resource',
+          'field_hub_program' => 'string',
+          'field_hub_degree_title' => 'string',
+          'field_hub_degree_title_short' => 'string',
           'field_hub_degree_description' => 'text_long',
+          'field_hub_degree_details' => 'string',
           'field_hub_degree_requirements' => 'text_long',
+          'field_hub_degree_availability' => 'resource[]',
+          'field_hub_degree_hero_image' => 'string',
+          'field_hub_degree_interests' => 'string',
+          'field_hub_degree_related_degrees' => 'resource[]',
+          'field_hub_degree_type' => 'string',
           'field_hub_degree_other_programs' => 'link[]',
         ],
         'entity_keys' => [

@@ -1,37 +1,28 @@
 {#
 /**
  * @file
- * Default theme implementation to present a hub reference item.
+ * Default theme file to display a hub_reference item.
  *
  * Available variables:
- * - hub_reference: The hub_reference item, with limited access to object properties and
- *   methods. Only method names starting with "get", "has", or "is" and
- *   a few common methods such as "id", "label", and "bundle" are available.
- *   For example:
- *   - entity.getEntityTypeId() will return the entity type ID.
- *   - entity.hasField('field_example') returns TRUE if the entity includes
- *     field_example. (This does not indicate the presence of a value in this
- *     field.)
- *   Calling other methods, such as entity.delete(), will result in
- *   an exception.
- *   See \Drupal\Core\Entity\EntityInterface for a full list of methods.
- * - name: Name of the hub_reference item.
- * - content: hub_reference content.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the main title tag that appears in the template.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the main title tag that appears in the template.
- * - view_mode: View mode; for example, "teaser" or "full".
- * - attributes: HTML attributes for the containing element.
- * - title_attributes: Same as attributes, except applied to the main title
- *   tag that appears in the template.
+ * - title: Name of the hub reference.
+ * - content: hub reference content.
  *
  * @see template_preprocess_hub_reference()
  *
  * @ingroup themeable
  */
 #}
-<div{{ attributes }}>
+{%
+  set classes = [
+    'hub-reference',
+    'hub-reference--type-' ~ hub_reference.bundle()|clean_class,
+    not hub_reference.isPublished() ? 'hub-reference--unpublished',
+    view_mode ? 'hub-reference--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
-  {{ content }}
-</div>
+  {% if content %}
+    {{ content }}
+  {% endif %}
+</article>

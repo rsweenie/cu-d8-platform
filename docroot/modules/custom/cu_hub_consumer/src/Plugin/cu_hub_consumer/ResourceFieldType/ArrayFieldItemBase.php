@@ -11,7 +11,7 @@ abstract class ArrayFieldItemBase extends ResourceFieldItemBase {
    *
    * @return void
    */
-  public function mainProperty() {
+  public function mainPropertyName() {
     return 'value';
   }
 
@@ -19,7 +19,7 @@ abstract class ArrayFieldItemBase extends ResourceFieldItemBase {
    * {@inheritdoc}
    */
   public function isEmpty() {
-    return empty($this->{$this->mainProperty()});
+    return empty($this->{$this->mainPropertyName()});
   }
 
   /**
@@ -54,8 +54,8 @@ abstract class ArrayFieldItemBase extends ResourceFieldItemBase {
    * {@inheritdoc}
    */
   public function __toString() {
-    if (isset($this->{$this->mainProperty()})) {
-      return ScalarFieldItemBase::castToString($this->{$this->mainProperty()});
+    if (!$this->isEmpty()) {
+      return ScalarFieldItemBase::castToString($this->{$this->mainPropertyName()});
     }
   }
 

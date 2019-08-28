@@ -2,6 +2,8 @@
 
 namespace Drupal\cu_hub_consumer\Hub;
 
+use Drupal\Core\Render\Element;
+
 /**
  * Represents a resource field; that is, a list of field item objects.
  *
@@ -43,9 +45,9 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
   /**
    * Whether field is singular or multiple value.
    *
-   * @var [type]
+   * @var bool
    */
-  protected $singular;
+  protected $multiple;
 
   /**
    * Constructs a new ResourceFieldItemList.
@@ -55,17 +57,17 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
    * @param string $field_type
    * @param boolean $singular
    */
-  public function __construct(ResourceInterface $parent, $field_name, $field_type, $singular = TRUE) {
+  public function __construct(ResourceInterface $parent, $field_name, $field_type, $multiple = FALSE) {
     $this->parent = $parent;
     $this->fieldName = $field_name;
     $this->fieldType = $field_type;
-    $this->singular = $singular;
+    $this->multiple = $multiple;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getParent() {
+  public function getParentResource() {
     return $this->parent;
   }
 
@@ -86,8 +88,8 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
   /**
    * {@inheritdoc}
    */
-  public function isSingular() {
-    return $this->singular;
+  public function isMultiple() {
+    return $this->multiple;
   }
 
   /**
@@ -418,6 +420,46 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
     if ($value1 === $value2) {
       return TRUE;
     }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function view() {
+    $elements = $this->viewElements();
+
+    // If there are actual renderable children, use #theme => hub_resource_field, otherwise,
+    // let access cacheability metadata pass through for correct bubbling.
+    if (Element::children($elements)) {
+      $info = array(
+        '#theme' => 'hub_resource_field',
+        '#title' => '',
+        '#label_display' => 'hidden',
+        '#field_name' => $this->getFieldName(),
+        '#field_type' => $this->getFieldType(),
+        '#resource_type' => $this->getParentResource()->getResourceTypeId(),
+        '#resource' => $this->getParentResource(),
+        '#items' => $this->list,
+        '#is_multiple' => $this->isMultiple(),
+      );
+      
+      $elements = array_merge($info, $elements);
+    }
+    
+    return $elements;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function viewElements() {
+    $elements = [];
+
+    foreach ($this->list as $delta => $item) {
+      $elements[$delta] = $item->view();
+    }
+
+    return $elements;
   }
 
 }

@@ -248,8 +248,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * {@inheritdoc}
    */
   public function getAttributeType($attribute) {
-    $attribute_types = $this
-      ->getKeys();
+    $attribute_types = $this->getAttributeTypes();
     $attribute_type = isset($attribute_types[$attribute]) ? $attribute_types[$attribute] : FALSE;
 
     // Default to string if not specifically defined.

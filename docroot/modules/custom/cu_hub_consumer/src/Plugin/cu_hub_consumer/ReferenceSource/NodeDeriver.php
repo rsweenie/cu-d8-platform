@@ -55,6 +55,7 @@ class NodeDeriver extends DeriverBase {
           'field_hub_degree_interests' => $this->t('Interestes'),
           'field_hub_degree_related_degrees' => $this->t('Related degrees'),
           'field_hub_degree_type' => $this->t('Degree type'),
+          'field_hub_degree_other_programs' => $this->t('Other programs'),
         ],
       ] + $base_plugin_definition,
     ];

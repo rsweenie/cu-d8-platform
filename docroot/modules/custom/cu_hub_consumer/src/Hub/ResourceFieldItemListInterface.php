@@ -18,7 +18,7 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
    * @return \Drupal\cu_hub_consumer\Hub\ResourceInterface
    *   The resource object.
    */
-  public function getParent();
+  public function getParentResource();
 
   /**
    * Gets the field name on the parent resource.
@@ -39,7 +39,7 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
    *
    * @return boolean
    */
-  public function isSingular();
+  public function isMultiple();
 
   /**
    * Filters out empty field items and re-numbers the item deltas.
@@ -94,5 +94,22 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
    *   TRUE if the field item lists are equal, FALSE if not.
    */
   public function equals(ResourceFieldItemListInterface $list_to_compare);
+
+  /**
+   * Builds a renderable array for a fully themed field list.
+   *
+   * @return array
+   *   A renderable array for a themed field with its label and all its values.
+   */
+  public function view();
+
+  /**
+   * Builds a renderable array for a field value.
+   *
+   * @return array
+   *   A renderable array for $items, as an array of child elements keyed by
+   *   consecutive numeric indexes starting from 0.
+   */
+  public function viewElements();
 
 }
