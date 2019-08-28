@@ -1,10 +1,10 @@
 ---
 layout: default
-title:  "Changing Site Logo"
+title:  "Changing Site Name and Showing Title (or Not)"
 categories: [Content] 
 ---
 {% include home.html %}
-# Changing the site name and title
+# Changing the site name and showing title (or not)
 * Version: 1.0
 * Created: 09/28/2019 CMB
 * Last Updated: 09/28/2019 cmb
