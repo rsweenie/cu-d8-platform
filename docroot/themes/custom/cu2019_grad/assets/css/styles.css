@@ -3333,11 +3333,17 @@ aside .card.img-side + p {
 
 /* line 2, src/sass/components/basic/cards/_fwb.scss */
 
+.fwb {
+  border-bottom: 8px solid #6CACE4;
+}
+
+/* line 8, src/sass/components/basic/cards/_fwb.scss */
+
 .fwb .card .media {
   position: relative;
 }
 
-/* line 5, src/sass/components/basic/cards/_fwb.scss */
+/* line 11, src/sass/components/basic/cards/_fwb.scss */
 
 .fwb .card .media:after {
   width: calc(100% - 3rem);
@@ -11710,7 +11716,7 @@ form.search .search button {
     float: right;
   }
 
-  /* line 17, src/sass/components/basic/cards/_fwb.scss */
+  /* line 23, src/sass/components/basic/cards/_fwb.scss */
 
   .fwb .card > a {
     -webkit-box-flex: 1 1 33.3%;
@@ -11721,7 +11727,7 @@ form.search .search button {
             order: 0;
   }
 
-  /* line 21, src/sass/components/basic/cards/_fwb.scss */
+  /* line 27, src/sass/components/basic/cards/_fwb.scss */
 
   .fwb .card > div {
     -webkit-box-flex: 1 1 66.6%;
