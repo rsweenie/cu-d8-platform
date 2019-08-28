@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - noreferrer
     - responsivewrappers
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
@@ -29,12 +28,6 @@ filters:
     provider: filter
     status: true
     weight: 0
-    settings: {  }
-  noreferrer:
-    id: noreferrer
-    provider: noreferrer
-    status: true
-    weight: 10
     settings: {  }
   filter_bootstrap_responsive_wrapper:
     id: filter_bootstrap_responsive_wrapper
