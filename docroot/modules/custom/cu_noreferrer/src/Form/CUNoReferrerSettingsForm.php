@@ -108,7 +108,7 @@ class CUNoReferrerSettingsForm extends ConfigFormBase {
       $this->publish();
     }
     if ($url = $form_state->getValue('subscribe_url')) {
-      noreferrer_subscribe($url);
+      cu_noreferrer_subscribe($url);
     }
     parent::submitForm($form, $form_state);
   }
