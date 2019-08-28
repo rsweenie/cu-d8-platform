@@ -3873,7 +3873,6 @@ blockquote {
 
 blockquote.q-left {
   position: relative;
-  padding: 8.6rem 2.5rem 3.6rem 2.5rem;
   background: #0054A6;
   color: #fff;
 }
@@ -3881,16 +3880,18 @@ blockquote.q-left {
 /* line 20, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left a {
+  display: block;
   color: #fff;
+  text-decoration: none;
 }
 
-/* line 23, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 25, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* line 28, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 30, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left p {
   margin-bottom: 1em;
@@ -3898,7 +3899,7 @@ blockquote.q-left p {
 
 /* line 41, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left > div {
+blockquote.q-left .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3907,27 +3908,29 @@ blockquote.q-left > div {
   -webkit-box-direction: reverse;
       -ms-flex-flow: row-reverse nowrap;
           flex-flow: row-reverse nowrap;
+  padding: 8.6rem 2.5rem 3.6rem 2.5rem;
 }
 
-/* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 50, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left > div:before {
-  width: 100%;
+blockquote.q-left .quote-inner:before {
+  width: calc(100% - 5rem);
   height: 0.1rem;
   position: absolute;
-  top: -4.4rem;
-  left: 0;
+  top: 4.2rem;
+  left: 2.5rem;
   content: "";
   background: #fff;
+  opacity: .5;
 }
 
-/* line 59, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 67, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left > div:after {
+blockquote.q-left .quote-inner:after {
   width: 6.4rem;
   height: 4rem;
   position: absolute;
-  top: -7.6rem;
+  top: 1rem;
   left: calc(50% - 3.2rem);
   content: "“";
   background: #0054A6;
@@ -3937,7 +3940,7 @@ blockquote.q-left > div:after {
   text-align: center;
 }
 
-/* line 89, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote {
   -webkit-box-flex: 1;
@@ -3946,13 +3949,13 @@ blockquote.q-left .quote {
   padding-left: 2rem;
 }
 
-/* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 105, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote:only-child {
   padding: 0;
 }
 
-/* line 102, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .field--name-field-quote-quote {
   font-size: 1.8rem;
@@ -3960,7 +3963,7 @@ blockquote.q-left .field--name-field-quote-quote {
   font-weight: 600;
 }
 
-/* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 131, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr {
   font-size: 1.4rem;
@@ -3968,14 +3971,14 @@ blockquote.q-left .attr {
   line-height: 1.2em;
 }
 
-/* line 132, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 140, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr small {
   font-size: 1em;
   font-weight: 500;
 }
 
-/* line 136, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr div {
   display: inline;
@@ -11035,7 +11038,7 @@ form.search .search button {
     height: 32rem;
   }
 
-  /* line 89, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .quote {
     padding-left: 4.6rem;
@@ -11909,25 +11912,27 @@ form.search .search button {
     display: block;
   }
 
-  /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 41, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left {
+  blockquote.q-left .quote-inner {
     padding: 13.1rem 8.1rem 7.2rem 8.1rem;
   }
 
-  /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 50, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left > div:before {
-    top: -5.5rem;
+  blockquote.q-left .quote-inner:before {
+    width: calc(100% - 16.2rem);
+    top: 7.9rem;
+    left: 8.1rem;
   }
 
-  /* line 59, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 67, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left > div:after {
+  blockquote.q-left .quote-inner:after {
     width: 8.4rem;
     height: 8.4rem;
     left: calc(50% - 4.2rem);
-    top: -9.7rem;
+    top: 3.7rem;
     font-size: 16.2rem;
     line-height: 15.3rem;
   }
@@ -11945,7 +11950,7 @@ form.search .search button {
     pointer-events: none;
   }
 
-  /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 131, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .attr {
     font-size: 1.6rem;
@@ -13702,7 +13707,7 @@ form.search .search button {
     transition: all 10s;
   }
 
-  /* line 102, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-quote {
     font-size: 3rem;
@@ -14846,7 +14851,7 @@ form.search .search button {
 }
 
 @media screen and (max-width: 575.9px) {
-  /* line 112, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 120, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image {
     -webkit-box-flex: 0;
@@ -14854,7 +14859,7 @@ form.search .search button {
             flex: 0 0 20%;
   }
 
-  /* line 116, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 124, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image img {
     width: 100%;
