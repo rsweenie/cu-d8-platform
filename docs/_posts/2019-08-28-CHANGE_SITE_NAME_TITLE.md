@@ -17,8 +17,8 @@ The site name is changed in Configuration, but whether to show the site name is 
 ## Prerequisites
 
  1. Access to subdomain
- 2. Permissions to change configuration
- 3. Permissions to change block layout
+ 2. Permission to change configuration
+ 3. Permission to change block layout
 
 ## Procedure to change site name
 
