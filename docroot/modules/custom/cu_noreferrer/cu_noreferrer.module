@@ -29,7 +29,7 @@ function cu_noreferrer_is_whitelisted($url) {
  */
 function cu_noreferrer_cron() {
   if ($url = \Drupal::config('cu_noreferrer.settings')->get('subscribe_url')) {
-    noreferrer_subscribe($url);
+    cu_noreferrer_subscribe($url);
   }
 }
 
