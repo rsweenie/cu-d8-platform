@@ -1,0 +1,31 @@
+uuid: 7c8d11c4-70a2-4339-bcc3-c4827300d890
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hub_degree.field_hub_site
+    - node.type.hub_degree
+  module:
+    - private_content
+    - user
+id: node.hub_degree.teaser
+targetEntityType: node
+bundle: hub_degree
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  field_hub_site: true
+  search_api_excerpt: true
