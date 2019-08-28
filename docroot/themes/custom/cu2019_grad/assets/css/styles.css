@@ -14355,8 +14355,8 @@ form.search .search button {
 
   .main-header nav.mega li > div .sm_toggle .icon {
     padding: 0 1rem;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    -webkit-transform: rotate(180deg) translateY(6px);
+            transform: rotate(180deg) translateY(6px);
   }
 
   /* line 629, src/sass/structure/header/navs/_mega-menu.scss */
