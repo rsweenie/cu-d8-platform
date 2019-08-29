@@ -725,7 +725,7 @@ a:focus {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 191, src/sass/components/copy/_headings.scss */
+/* line 198, src/sass/components/copy/_headings.scss */
 
 h1,
 h4,
@@ -734,14 +734,14 @@ h6 {
   font-family: proxima-nova, sans-serif;
 }
 
-/* line 195, src/sass/components/copy/_headings.scss */
+/* line 202, src/sass/components/copy/_headings.scss */
 
 h2,
 h3 {
   font-family: "Conduit";
 }
 
-/* line 202, src/sass/components/copy/_headings.scss */
+/* line 209, src/sass/components/copy/_headings.scss */
 
 h1,
 .h1 {
@@ -753,7 +753,7 @@ h1,
   text-transform: uppercase;
 }
 
-/* line 206, src/sass/components/copy/_headings.scss */
+/* line 213, src/sass/components/copy/_headings.scss */
 
 h2,
 .h2 {
@@ -762,7 +762,7 @@ h2,
   font-size: 1.75em;
 }
 
-/* line 210, src/sass/components/copy/_headings.scss */
+/* line 217, src/sass/components/copy/_headings.scss */
 
 h3,
 .h3 {
@@ -791,7 +791,7 @@ aside .h3 ~ .h3 {
   border-top: 0.1rem solid #6CACE4;
 }
 
-/* line 214, src/sass/components/copy/_headings.scss */
+/* line 221, src/sass/components/copy/_headings.scss */
 
 h4,
 .h4 {
@@ -4167,6 +4167,139 @@ blockquote .tooltip-trigger {
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+}
+
+/* line 1, src/sass/components/basic/_mfs.scss */
+
+.mfsi {
+  position: relative;
+}
+
+/* line 8, src/sass/components/basic/_mfs.scss */
+
+.mfsi img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 13, src/sass/components/basic/_mfs.scss */
+
+.mfsi .tag {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #757575;
+  margin-top: -0.3rem;
+  margin-bottom: 1.13333em;
+}
+
+/* line 19, src/sass/components/basic/_mfs.scss */
+
+.mfsi .tag .icon {
+  display: inline-block;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  margin-right: 1rem;
+  color: #A5A6A8;
+  font-size: 2.1rem;
+}
+
+/* line 32, src/sass/components/basic/_mfs.scss */
+
+.mfsi a {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 1.2em;
+  font-weight: 600;
+  color: #555555;
+  text-decoration: none;
+}
+
+/* line 44, src/sass/components/basic/_mfs.scss */
+
+.mfsi a > div {
+  display: inline;
+}
+
+/* line 48, src/sass/components/basic/_mfs.scss */
+
+.mfsi a .icon {
+  display: inline-block;
+  color: #C5C7CA;
+  font-size: 1.3em;
+  line-height: 0;
+  margin-left: 0.4rem;
+  -webkit-transform: translateY(0.25em);
+          transform: translateY(0.25em);
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.mfsi a:hover,
+.mfsi a:focus {
+  text-decoration: underline;
+}
+
+/* line 61, src/sass/components/basic/_mfs.scss */
+
+.mfsi a:hover .icon,
+.mfsi a:focus .icon {
+  -webkit-transform: translate(5px, 0.25em);
+          transform: translate(5px, 0.25em);
+}
+
+/* line 67, src/sass/components/basic/_mfs.scss */
+
+.mfsi time {
+  display: block;
+  position: absolute;
+  top: -1.4rem;
+  right: -0.4rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.4rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  color: #fff;
+  font-family: "Conduit";
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 82, src/sass/components/basic/_mfs.scss */
+
+.mfsi time > div {
+  background: #0054A6;
+  padding: 2rem 1.6rem 1.2rem 1.6rem;
+}
+
+/* line 87, src/sass/components/basic/_mfs.scss */
+
+.mfsi time span {
+  display: block;
+}
+
+/* line 90, src/sass/components/basic/_mfs.scss */
+
+.mfsi time span:first-child {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+/* line 99, src/sass/components/basic/_mfs.scss */
+
+.mfsi time span:last-child {
+  font-size: 2.4rem;
+  margin-top: -0.29167em;
+}
+
+/* line 112, src/sass/components/basic/_mfs.scss */
+
+.mfs h3 {
+  text-align: center;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -11234,21 +11367,21 @@ form.search .search button {
          column-gap: 2.5rem;
   }
 
-  /* line 202, src/sass/components/copy/_headings.scss */
+  /* line 209, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
     font-size: 3.5rem;
   }
 
-  /* line 206, src/sass/components/copy/_headings.scss */
+  /* line 213, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 1.875em;
   }
 
-  /* line 214, src/sass/components/copy/_headings.scss */
+  /* line 221, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
@@ -12071,6 +12204,31 @@ form.search .search button {
     border-bottom: 2rem solid transparent;
   }
 
+  /* line 13, src/sass/components/basic/_mfs.scss */
+
+  .mfsi .tag {
+    font-size: 1.5rem;
+  }
+
+  /* line 19, src/sass/components/basic/_mfs.scss */
+
+  .mfsi .tag .icon {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+
+  /* line 32, src/sass/components/basic/_mfs.scss */
+
+  .mfsi a {
+    font-size: 2.4rem;
+  }
+
+  /* line 119, src/sass/components/basic/_mfs.scss */
+
+  .mfs .field--name-field-mfs-featured-items .field__item + .field__item {
+    border-left: 1px solid #ECF0F3;
+  }
+
   /* line 7, src/sass/components/interactive/tabs/_minimal.scss */
 
   .tabs.minimal > dt {
@@ -12406,7 +12564,7 @@ form.search .search button {
          column-count: 4;
   }
 
-  /* line 202, src/sass/components/copy/_headings.scss */
+  /* line 209, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
@@ -12414,21 +12572,21 @@ form.search .search button {
     letter-spacing: .04em;
   }
 
-  /* line 206, src/sass/components/copy/_headings.scss */
+  /* line 213, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 2em;
   }
 
-  /* line 210, src/sass/components/copy/_headings.scss */
+  /* line 217, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
     font-size: 4rem;
   }
 
-  /* line 214, src/sass/components/copy/_headings.scss */
+  /* line 221, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
@@ -13781,6 +13939,18 @@ form.search .search button {
     text-align: center;
   }
 
+  /* line 90, src/sass/components/basic/_mfs.scss */
+
+  .mfsi time span:first-child {
+    font-size: 1.8rem;
+  }
+
+  /* line 99, src/sass/components/basic/_mfs.scss */
+
+  .mfsi time span:last-child {
+    font-size: 3.2rem;
+  }
+
   /* line 6, src/sass/components/navigation/_landing.scss */
 
   nav.cp {
@@ -14872,6 +15042,18 @@ form.search .search button {
   blockquote.q-left {
     margin-left: -2.5rem;
     margin-right: -2.5rem;
+  }
+
+  /* line 1, src/sass/components/basic/_mfs.scss */
+
+  .mfsi {
+    margin-bottom: 6.2rem;
+  }
+
+  /* line 125, src/sass/components/basic/_mfs.scss */
+
+  .mfs .field--name-field-mfs-featured-items .field__item:last-child .mfsi {
+    margin-bottom: 0;
   }
 }
 
