@@ -6,7 +6,8 @@ jQuery(document).ready(function() {
       megaMenu = jQuery('#mega_menu')[0],
       headerNav = jQuery('#header_nav')[0];
       // mega menu
-    jQuery('#mega_menu_toggle').on('click', function() {
+    jQuery('#mega_menu_toggle').on('click', function(e) {
+     e.preventDefault();
       if (megaMenu.style.display === 'none' || megaMenu.style.display === '') {
         megaMenu.style.display = 'block';
         (headerNav, megaToggle).classList.add('open');
