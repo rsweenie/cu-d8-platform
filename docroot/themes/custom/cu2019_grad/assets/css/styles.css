@@ -2260,21 +2260,21 @@ section[class*="sbg-"]:after {
   /*------  USE THIS IF YOU DO NOT HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------*\ \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
 }
 
-/* line 51, src/sass/components/basic/buttons/colors/_secondary.scss */
+/* line 55, src/sass/components/basic/buttons/colors/_secondary.scss */
 
 .btn-secondary span {
   position: relative;
   z-index: 10;
 }
 
-/* line 55, src/sass/components/basic/buttons/colors/_secondary.scss */
+/* line 59, src/sass/components/basic/buttons/colors/_secondary.scss */
 
 .btn-secondary span:first-of-type {
   max-width: 320px;
   display: block;
 }
 
-/* line 61, src/sass/components/basic/buttons/colors/_secondary.scss */
+/* line 65, src/sass/components/basic/buttons/colors/_secondary.scss */
 
 .btn-secondary:before {
   width: 100%;
@@ -2935,7 +2935,13 @@ header.hp_hero {
           order: 1;
 }
 
-/* line 25, src/sass/components/basic/cards/_img-side.scss */
+/* line 24, src/sass/components/basic/cards/_img-side.scss */
+
+.card.img-side > a .contextual {
+  display: none;
+}
+
+/* line 29, src/sass/components/basic/cards/_img-side.scss */
 
 .card.img-side > div {
   -webkit-box-flex: 0 0 auto;
@@ -2946,13 +2952,13 @@ header.hp_hero {
           order: 0;
 }
 
-/* line 35, src/sass/components/basic/cards/_img-side.scss */
+/* line 39, src/sass/components/basic/cards/_img-side.scss */
 
 .card.img-side .body + [class*="btn-"] {
   margin-top: 1em;
 }
 
-/* line 40, src/sass/components/basic/cards/_img-side.scss */
+/* line 44, src/sass/components/basic/cards/_img-side.scss */
 
 .card.img-side.invert > a {
   -webkit-box-ordinal-group: 1;
@@ -2960,14 +2966,14 @@ header.hp_hero {
           order: 0;
 }
 
-/* line 45, src/sass/components/basic/cards/_img-side.scss */
+/* line 49, src/sass/components/basic/cards/_img-side.scss */
 
 .card.img-side h3 {
   position: relative;
   padding-bottom: 0.25455em;
 }
 
-/* line 49, src/sass/components/basic/cards/_img-side.scss */
+/* line 53, src/sass/components/basic/cards/_img-side.scss */
 
 .card.img-side h3:after {
   width: 5.5rem;
@@ -2979,7 +2985,7 @@ header.hp_hero {
   background: #6CACE4;
 }
 
-/* line 167, src/sass/components/basic/cards/_img-side.scss */
+/* line 171, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side {
   -webkit-box-orient: vertical;
@@ -2997,7 +3003,7 @@ aside .card.img-side {
   max-height: 12.5rem;
 }
 
-/* line 174, src/sass/components/basic/cards/_img-side.scss */
+/* line 178, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side:before {
   -webkit-box-ordinal-group: 3;
@@ -3008,7 +3014,7 @@ aside .card.img-side:before {
   content: "";
 }
 
-/* line 189, src/sass/components/basic/cards/_img-side.scss */
+/* line 193, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side > a {
   -webkit-box-ordinal-group: 1;
@@ -3017,7 +3023,7 @@ aside .card.img-side > a {
   width: 25%;
 }
 
-/* line 194, src/sass/components/basic/cards/_img-side.scss */
+/* line 198, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side > div,
 aside .card.img-side > p {
@@ -3028,14 +3034,14 @@ aside .card.img-side > p {
   padding: 0;
 }
 
-/* line 200, src/sass/components/basic/cards/_img-side.scss */
+/* line 204, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side h3,
 aside .card.img-side .h3 {
   font-size: 1.25em;
 }
 
-/* line 204, src/sass/components/basic/cards/_img-side.scss */
+/* line 208, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side + p {
   margin-top: 1em;
@@ -11506,7 +11512,7 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 49, src/sass/components/basic/cards/_img-side.scss */
+  /* line 53, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side h3:after {
     height: 0.8rem;
@@ -11531,7 +11537,7 @@ form.search .search button {
 \*  --------------------------------------------------------------------------  */
   }
 
-  /* line 81, src/sass/components/basic/cards/_img-side.scss */
+  /* line 85, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side > a {
     -webkit-box-ordinal-group: 1;
@@ -11540,13 +11546,13 @@ form.search .search button {
     width: 50%;
   }
 
-  /* line 92, src/sass/components/basic/cards/_img-side.scss */
+  /* line 96, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side > div {
     width: 50%;
   }
 
-  /* line 110, src/sass/components/basic/cards/_img-side.scss */
+  /* line 114, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.alt > a,
   .card.img-side:nth-child(even) > a {
@@ -11579,7 +11585,7 @@ form.search .search button {
     max-width: 1084px;
   }
 
-  /* line 123, src/sass/components/basic/cards/_img-side.scss */
+  /* line 127, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.bot {
     -webkit-box-align: end;
@@ -11587,7 +11593,7 @@ form.search .search button {
             align-items: flex-end;
   }
 
-  /* line 127, src/sass/components/basic/cards/_img-side.scss */
+  /* line 131, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.small {
     -webkit-box-pack: start;
@@ -11595,21 +11601,21 @@ form.search .search button {
             justify-content: flex-start;
   }
 
-  /* line 130, src/sass/components/basic/cards/_img-side.scss */
+  /* line 134, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.small > a {
     width: 12.5%;
     margin: 0 25% 17.5% 0;
   }
 
-  /* line 135, src/sass/components/basic/cards/_img-side.scss */
+  /* line 139, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t-lg .card.img-side.small {
     padding: 0;
     position: relative;
   }
 
-  /* line 139, src/sass/components/basic/cards/_img-side.scss */
+  /* line 143, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t-lg .card.img-side.small > a {
     position: absolute;
@@ -11622,20 +11628,20 @@ form.search .search button {
     margin: 0;
   }
 
-  /* line 145, src/sass/components/basic/cards/_img-side.scss */
+  /* line 149, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t-lg .card.img-side.small > div {
     width: 100%;
   }
 
-  /* line 150, src/sass/components/basic/cards/_img-side.scss */
+  /* line 154, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t .align-center .card.img-side.small {
     padding: 0;
     position: relative;
   }
 
-  /* line 154, src/sass/components/basic/cards/_img-side.scss */
+  /* line 158, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t .align-center .card.img-side.small > a {
     -webkit-transform: translate(-300%, -120%);
@@ -11644,19 +11650,19 @@ form.search .search button {
     width: 25%;
   }
 
-  /* line 160, src/sass/components/basic/cards/_img-side.scss */
+  /* line 164, src/sass/components/basic/cards/_img-side.scss */
 
   .off-t .align-center .card.img-side.small > div {
     width: 100%;
   }
 
-  /* line 167, src/sass/components/basic/cards/_img-side.scss */
+  /* line 171, src/sass/components/basic/cards/_img-side.scss */
 
   aside .card.img-side {
     max-height: 15rem;
   }
 
-  /* line 184, src/sass/components/basic/cards/_img-side.scss */
+  /* line 188, src/sass/components/basic/cards/_img-side.scss */
 
   aside .card.img-side:before {
     min-height: 12.5rem;
@@ -13513,6 +13519,12 @@ form.search .search button {
     display: none;
   }
 
+  /* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
+
+  .btn-secondary {
+    font-size: 1.9rem;
+  }
+
   /* line 1, src/sass/components/basic/buttons/colors/_search.scss */
 
   .btn-search {
@@ -14825,7 +14837,7 @@ form.search .search button {
     z-index: 3;
   }
 
-  /* line 65, src/sass/components/basic/cards/_img-side.scss */
+  /* line 69, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side > a {
     margin-bottom: 1em;
