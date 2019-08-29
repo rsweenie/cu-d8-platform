@@ -2250,7 +2250,7 @@ section[class*="sbg-"]:after {
   position: relative;
   min-width: 320px;
   max-width: 100%;
-  padding: 1rem 2.2rem;
+  padding: 1rem 5.4rem 1rem 2.2rem;
   background: #A5D2F9;
   border: 0;
   border-radius: 0.3rem;
@@ -2267,7 +2267,14 @@ section[class*="sbg-"]:after {
   z-index: 10;
 }
 
-/* line 56, src/sass/components/basic/buttons/colors/_secondary.scss */
+/* line 55, src/sass/components/basic/buttons/colors/_secondary.scss */
+
+.btn-secondary span:first-of-type {
+  max-width: 320px;
+  display: block;
+}
+
+/* line 61, src/sass/components/basic/buttons/colors/_secondary.scss */
 
 .btn-secondary:before {
   width: 100%;
