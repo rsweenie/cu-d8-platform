@@ -48,7 +48,7 @@
         "drupal/externalauth": "^1.1",
         "drupal/features": "^3.7.0",
         "drupal/field_formatter": "^1.2",
-        "drupal/field_group": "^1.0",
+        "drupal/field_group": "^3.0",
         "drupal/field_permissions": "^1.0@RC",
         "drupal/field_validation": "^1.0@alpha",
         "drupal/file_replace": "^1.1",
