@@ -20,17 +20,19 @@
         {% endif %}
         <div>
           {% if tag %}
-            <p class="type">{{ tag }}</p>
+            <div class="type">{{ tag }}</div>
           {% endif %}
           {% if icon %}
               <span class="{{ icon }}"></span>
           {% endif %}
+            <div class="title">
           {% if title %}
               <h3>{% if title_link %}<a href="{{ title_link }}">{% endif %}{{ title }}{% if title_link %}</a>{% endif %}</h3>
           {% endif %}
           {% if subtitle %}
               <div class="subtitle h4">{{ subtitle }}</div>
           {% endif %}
+            </div>
           {% if body %}
             <div class="body">
               {{ body }}
