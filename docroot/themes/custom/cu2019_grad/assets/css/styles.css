@@ -2753,17 +2753,12 @@ header.hp_hero {
     CARD - WITH IMAGE ON SIDE
 
 \*  --------------------------------------------------------------------------  */
+  /*  --------------------------------------------------------------------------  *\
+
+    CARD - STORY ELEMENTS
+
+\*  --------------------------------------------------------------------------  */
   /*---------------------*\ IMPORT STYLES FOR CARD ICON OPTIONS Comment out any alterations that will not be used on your site. This will reduce the file size by removing unused definitions. \*---------------------*/
-  /*  --------------------------------------------------------------------------  *\
-
-    CARD - WITH ICON TOP
-
-\*  --------------------------------------------------------------------------  */
-  /*  --------------------------------------------------------------------------  *\
-
-    CARD - WITH ICON LEFT
-
-\*  --------------------------------------------------------------------------  */
   /*---------------------*\ IMPORT STYLES FOR CARD CONTENT STYLING Comment out any alterations that will not be used on your site. This will reduce the file size by removing unused definitions. \*---------------------*/
   /*  --------------------------------------------------------------------------  *\
 
@@ -2773,11 +2768,6 @@ header.hp_hero {
   /*  --------------------------------------------------------------------------  *\
 
     CARD - ARTICLE ELEMENTS
-
-\*  --------------------------------------------------------------------------  */
-  /*  --------------------------------------------------------------------------  *\
-
-    CARD - STORY ELEMENTS
 
 \*  --------------------------------------------------------------------------  */
 }
@@ -3047,215 +3037,6 @@ aside .card.img-side + p {
   margin-top: 1em;
 }
 
-/* line 14, src/sass/components/basic/cards/_icon-left.scss */
-
-.card.ico-left > div {
-  position: relative;
-  padding: 2.5rem 2.5rem 2.5rem 5rem;
-}
-
-/* line 25, src/sass/components/basic/cards/_icon-left.scss */
-
-.card.ico-left .fas,
-.card.ico-left .fab,
-.card.ico-left .far {
-  position: absolute;
-  z-index: 100;
-  left: 2.5rem;
-  top: calc(2.5rem + .9375em);
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-}
-
-/* line 14, src/sass/components/basic/cards/_copy.scss */
-
-.card p:last-child {
-  margin-bottom: 0;
-}
-
-/* line 25, src/sass/components/basic/cards/_copy.scss */
-
-.card h2 {
-  font-size: 1.25em;
-}
-
-/* line 43, src/sass/components/basic/cards/_copy.scss */
-
-.card h3 {
-  font-size: 1.5em;
-}
-
-/* line 65, src/sass/components/basic/cards/_copy.scss */
-
-.card h4,
-.card .h4 {
-  font-size: 1.5em;
-}
-
-/* line 86, src/sass/components/basic/cards/_copy.scss */
-
-.card h4 small,
-.card .h4 small {
-  font-size: 1.6rem;
-}
-
-/* line 6, src/sass/components/basic/cards/_article.scss */
-
-.card h3.title {
-  font-size: 1.25em;
-  font-weight: normal;
-}
-
-/* line 16, src/sass/components/basic/cards/_article.scss */
-
-.card .type {
-  margin: 0 0 1.5rem;
-  font-size: .75em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* line 28, src/sass/components/basic/cards/_article.scss */
-
-.card .type .fas,
-.card .type .far,
-.card .type .fab {
-  margin: 0 .5rem 0 0;
-  font-size: 1.5em;
-  line-height: 1em;
-}
-
-/* line 41, src/sass/components/basic/cards/_article.scss */
-
-.card .by {
-  font-size: .8em;
-}
-
-/* line 51, src/sass/components/basic/cards/_article.scss */
-
-.card .tags {
-  margin: 5rem 0 0;
-  font-size: .8em;
-}
-
-/* line 1, src/sass/components/basic/cards/_shadow.scss */
-
-.card.shadow {
-  -webkit-box-shadow: 0 0 1.5rem rgba(33, 35, 34, 0.15);
-          box-shadow: 0 0 1.5rem rgba(33, 35, 34, 0.15);
-}
-
-/* line 1, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro {
-  text-align: center;
-  color: #fff;
-}
-
-/* line 5, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro > div {
-  width: 100%;
-}
-
-/* line 9, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro h3 {
-  position: relative;
-  z-index: 0;
-  padding: 0 0 0.3rem;
-}
-
-/* line 13, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro h3:after {
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  top: 100%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: 5rem;
-  height: .3rem;
-  background: #fff;
-  content: "";
-}
-
-/* line 22, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro .type {
-  position: absolute;
-  z-index: 0;
-  left: 2.5rem;
-  top: 2.5rem;
-  text-transform: none;
-  font-size: 1.6rem;
-}
-
-/* line 28, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro h3 {
-  font-size: 1.5em;
-}
-
-/* line 32, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* line 36, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro a.btn-primary {
-  color: #002E6D;
-}
-
-/* line 39, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro a.btn-primary:hover {
-  color: #fff;
-}
-
-/* line 45, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro .reveal {
-  display: none;
-}
-
-/* line 51, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro:hover .reveal {
-  display: block;
-}
-
-/* line 58, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro > a:focus + div .reveal {
-  display: block;
-}
-
-/* line 64, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro.inv {
-  color: #002E6D;
-}
-
-/* line 68, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro.inv h3:after {
-  background: #002E6D;
-  left: 0;
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
-/* line 75, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro.inv a {
-  color: #002E6D;
-}
-
 /* line 6, src/sass/components/basic/cards/_story.scss */
 
 .card.story {
@@ -3367,6 +3148,108 @@ aside .card.img-side + p {
   content: "";
   border: 0.1rem solid #fff;
   opacity: .3;
+}
+
+/* line 1, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa {
+  position: relative;
+}
+
+/* line 4, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+/* line 14, src/sass/components/basic/cards/_copy.scss */
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 25, src/sass/components/basic/cards/_copy.scss */
+
+.card h2 {
+  font-size: 1.25em;
+}
+
+/* line 43, src/sass/components/basic/cards/_copy.scss */
+
+.card h3 {
+  font-size: 1.5em;
+}
+
+/* line 65, src/sass/components/basic/cards/_copy.scss */
+
+.card h4,
+.card .h4 {
+  font-size: 1.5em;
+}
+
+/* line 86, src/sass/components/basic/cards/_copy.scss */
+
+.card h4 small,
+.card .h4 small {
+  font-size: 1.6rem;
+}
+
+/* line 6, src/sass/components/basic/cards/_article.scss */
+
+.card h3.title {
+  font-size: 1.25em;
+  font-weight: normal;
+}
+
+/* line 16, src/sass/components/basic/cards/_article.scss */
+
+.card .type {
+  margin: 0 0 1.5rem;
+  font-size: .75em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* line 28, src/sass/components/basic/cards/_article.scss */
+
+.card .type .fas,
+.card .type .far,
+.card .type .fab {
+  margin: 0 .5rem 0 0;
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+/* line 41, src/sass/components/basic/cards/_article.scss */
+
+.card .by {
+  font-size: .8em;
+}
+
+/* line 51, src/sass/components/basic/cards/_article.scss */
+
+.card .tags {
+  margin: 5rem 0 0;
+  font-size: .8em;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -11801,25 +11684,6 @@ form.search .search button {
     min-height: 12.5rem;
   }
 
-  /* line 25, src/sass/components/basic/cards/_copy.scss */
-
-  .card h2 {
-    font-size: 1.75em;
-  }
-
-  /* line 43, src/sass/components/basic/cards/_copy.scss */
-
-  .card h3 {
-    font-size: 1.667em;
-  }
-
-  /* line 65, src/sass/components/basic/cards/_copy.scss */
-
-  .card h4,
-  .card .h4 {
-    font-size: 1.5833em;
-  }
-
   /* line 6, src/sass/components/basic/cards/_story.scss */
 
   .card.story {
@@ -11883,6 +11747,25 @@ form.search .search button {
         -ms-flex-order: 0;
             order: 0;
     padding-left: 3.2rem;
+  }
+
+  /* line 25, src/sass/components/basic/cards/_copy.scss */
+
+  .card h2 {
+    font-size: 1.75em;
+  }
+
+  /* line 43, src/sass/components/basic/cards/_copy.scss */
+
+  .card h3 {
+    font-size: 1.667em;
+  }
+
+  /* line 65, src/sass/components/basic/cards/_copy.scss */
+
+  .card h4,
+  .card .h4 {
+    font-size: 1.5833em;
   }
 
   /* line 13, src/sass/components/basic/_facts.scss */
@@ -13823,6 +13706,19 @@ form.search .search button {
     width: 95%;
   }
 
+  /* line 30, src/sass/components/basic/cards/_story.scss */
+
+  .full-screen .card.story > div {
+    width: 41.667%;
+  }
+
+  /* line 6, src/sass/components/basic/cards/_fwp.scss */
+
+  .card.fw_photo.img-behind {
+    padding: 13.5rem 0 8rem;
+    margin-bottom: 1.5rem;
+  }
+
   /* line 25, src/sass/components/basic/cards/_copy.scss */
 
   .card h2 {
@@ -13840,19 +13736,6 @@ form.search .search button {
   .card h4,
   .card .h4 {
     font-size: 1.667em;
-  }
-
-  /* line 30, src/sass/components/basic/cards/_story.scss */
-
-  .full-screen .card.story > div {
-    width: 41.667%;
-  }
-
-  /* line 6, src/sass/components/basic/cards/_fwp.scss */
-
-  .card.fw_photo.img-behind {
-    padding: 13.5rem 0 8rem;
-    margin-bottom: 1.5rem;
   }
 
   /* line 43, src/sass/components/basic/_facts.scss */
@@ -14350,6 +14233,12 @@ form.search .search button {
     width: 90%;
   }
 
+  /* line 30, src/sass/components/basic/cards/_story.scss */
+
+  .full-screen .card.story > div {
+    width: 33.333%;
+  }
+
   /* line 43, src/sass/components/basic/cards/_copy.scss */
 
   .card h3 {
@@ -14361,12 +14250,6 @@ form.search .search button {
   .card h4,
   .card .h4 {
     font-size: 1.75em;
-  }
-
-  /* line 30, src/sass/components/basic/cards/_story.scss */
-
-  .full-screen .card.story > div {
-    width: 33.333%;
   }
 
   /* line 33, src/sass/components/navigation/_interior.scss */
