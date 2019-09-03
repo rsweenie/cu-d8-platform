@@ -1,0 +1,133 @@
+.mfsi {
+  position: relative;
+
+  @media #{$mediaMdMax} {
+    margin-bottom: 62px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .tag {
+    @include h6;
+    color: lighten($gray3,2);
+    margin-top: -3px;
+    margin-bottom: (17 / 15) * 1em;
+
+    .icon {
+      display: inline-block;
+      transform: translateY(6px);
+      margin-right: 10px;
+      color: #A5A6A8;
+      font-size: 21px;
+
+      @media #{$mediaMd} {
+        transform: translateY(5px);
+      }
+    }
+  }
+
+  a {
+    display: block;
+    font-size: 18px;
+    line-height: 1.2em;
+    font-weight: 600;
+    color: $gray2;
+    text-decoration: none;
+
+    @media #{$mediaMd} {
+      font-size: 24px;
+    }
+
+    > div {
+      display: inline;
+    }
+
+    .icon {
+      display: inline-block;
+      color: $gray7;
+      font-size: 1.3em;
+      line-height: 0;
+      margin-left: 4px;
+      transform: translateY(.25em);
+      transition: all .25s;
+    }
+
+    @include hover {
+      text-decoration: underline;
+
+      .icon {
+        transform: translate(5px, .25em);
+      }
+    }
+  }
+
+  time {
+    display: block;
+    position: absolute;
+    top: -14px;
+    right: -4px;
+
+    background: rgba($white, .6);
+    padding: 4px;
+    box-sizing: content-box;
+    color: $white;
+    font-family: $headingFF;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+
+    > div {
+      background: $secondary;
+      padding: 20px 16px 12px 16px;
+    }
+
+    span {
+      display: block;
+
+      &:first-child {
+        font-size: 14px;
+        @include letterSpacing(50);
+
+        @media #{$mediaLg} {
+          font-size: 18px;
+        }
+      }
+
+      &:last-child {
+        font-size: 24px;
+        margin-top: (7 / 24) * -1em;
+
+        @media #{$mediaLg} {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+.mfs {
+  h3 {
+    text-align: center;
+  }
+
+  .field--name-field-mfs-featured-items {
+    .field__item {
+      @media #{$mediaMd} {
+        + .field__item {
+          border-left: 1px solid $gray6;
+        }
+      }
+
+      &:last-child {
+        .mfsi {
+          @media #{$mediaMdMax} {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

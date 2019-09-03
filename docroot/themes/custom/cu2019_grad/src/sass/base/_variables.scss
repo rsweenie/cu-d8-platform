@@ -29,11 +29,13 @@ $gray3: #707070;
 $gray4: #EEEFF0;
 $gray5: #d4d4d4;
 $gray6: #ECF0F3;
+$gray7: #C5C7CA;
 
 $accent-2Lt: #99CFFF;
 $accent-2XLt: #A5D2F9;
 
 $thead: #266db3;
+$cardLink: #79b4e6;
 
 
 $success: #76bd22;
@@ -66,6 +68,7 @@ $mediaFullHeader: " screen and (min-width: 992px)"; // ALL PHONES DEVICES
 $darkMode: " screen and (prefers-color-scheme: dark)"; // LARGER MONITORS
 
 $mediaMdMax: " screen and (max-width: 767.9px)";
+$mediaLgMax: " screen and (max-width: 991.9px)";
 /*---=== GRID ===---*/
 $siteWList: 100%, 95%, 90%, 85%;
 $siteWQueryList: $mediaXs, $mediaLg, $mediaXl, $mediaXxl;

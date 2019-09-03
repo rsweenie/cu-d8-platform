@@ -1,0 +1,174 @@
+&.mfsfa {
+  position: relative;
+
+  > a {
+    position: relative;
+    z-index: 0;
+
+    &:after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background: linear-gradient(0deg, rgba($black, .8) 0%, rgba($black,0) 50%);
+    }
+  }
+
+  > div {
+    position: relative;
+    @include flex($jc:flex-end, $ff: column nowrap);
+
+    @media #{$mediaLg} {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 15px;
+    }
+
+    @media #{$mediaXl} {
+      padding: 25px 80px;
+    }
+
+    a {
+      font-size: 16px;
+      line-height: 1.6em;
+      padding: 0 15px;
+      color: $cardLink;
+      text-decoration: none;
+      font-weight: 600;
+
+      @media #{$mediaLg} {
+        padding: 0;
+        display: none;
+      }
+
+      @media #{$mediaXl} {
+        font-size: 19px;
+      }
+
+      span:first-child {
+        text-decoration: underline;
+      }
+
+      span:last-child {
+        display: inline-block;
+        transform: translateY(.2em);
+        font-size: 1.3em;
+
+        @media #{$mediaLgMax} {
+          color: $black;
+          opacity: .3;
+        }
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+    @media #{$mediaLgMax} {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      // @include flex(flex-end, center, center, column nowrap);
+    }
+  }
+
+  .type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba($primary,.5);
+    color: $white;
+    font-size: 13px;
+    text-transform: none;
+    margin: 0;
+    padding: 9px 7px;
+
+    @media #{$mediaLg} {
+      font-size: 18px;
+      padding: 12px;
+    }
+  }
+
+  h3 {
+    position: relative;
+    color: $white;
+    font-family: $copyFF;
+    font-size: 22px;
+    text-transform: none;
+    margin-bottom: (14 / 22) * 1em;
+
+    &:after {
+      width: 45px;
+      height: 4px;
+      position: absolute;
+      left: 50%;
+      bottom: -7px;
+      content: "";
+      background: $cardLink;
+      transform: translateX(-50%);
+
+      @media #{$mediaLg} {
+        width: 59px;
+        height: 5px;
+        bottom: -10px;
+      }
+    }
+
+    @media #{$mediaMd} {
+      font-size: 30px;
+    }
+  }
+
+  .subtitle {
+    color: $white;
+    font-size: 14px;
+    text-transform: none;
+
+    @media #{$mediaMd} {
+      font-size: 20px;
+    }
+  }
+
+  .body {
+    font-size: 14px;
+    line-height: 1.6em;
+    padding: 30px 15px;
+
+    @media #{$mediaLg} {
+      color: $white;
+      padding: 0;
+      display: none;
+    }
+
+    @media #{$mediaXl} {
+      font-size: 19px;
+    }
+  }
+
+  &:hover {
+    @media #{$mediaLg} {
+      > a {
+        &:after {
+          background: linear-gradient(0deg, rgba($black, .9) 0%, rgba($black,.5) 50%);
+        }
+      }
+
+      .body,
+      > div a {
+        display: block;
+      }
+
+      > div {
+        justify-content: center;
+      }
+    }
+  }
+}
