@@ -1,0 +1,58 @@
+uuid: 0ccf363f-b158-4117-a883-a1cc2a56edd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.manual_featured_event.field_mfse_date
+    - field.field.paragraph.manual_featured_event.field_mfse_image
+    - field.field.paragraph.manual_featured_event.field_mfse_link
+    - field.field.paragraph.manual_featured_event.field_mfse_short_text
+    - field.field.paragraph.manual_featured_event.field_mfse_source_type
+    - paragraphs.paragraphs_type.manual_featured_event
+  module:
+    - datetime
+    - link
+    - media_library
+id: paragraph.manual_featured_event.default
+targetEntityType: paragraph
+bundle: manual_featured_event
+mode: default
+content:
+  field_mfse_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_mfse_image:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_mfse_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_mfse_short_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_mfse_source_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
