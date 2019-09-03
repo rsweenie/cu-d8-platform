@@ -63,8 +63,8 @@ $mediaLg: " screen and (min-width: 992px)"; // TABLETS LANDSCAPE AND UP
 $mediaLgOnly: " screen and (min-width: 992px) and (max-width: 1209.9px)"; // TABLETS LANDSCAPE ONLY
 $mediaXl: " screen and (min-width: 1210px)"; // SMALL MONITORS
 $mediaXxl: " screen and (min-width: 1600px)"; // LARGER MONITORS
-$mediaToggleHeader: " screen and (max-width: 991.9px)"; // ALL PHONES DEVICES
-$mediaFullHeader: " screen and (min-width: 992px)"; // ALL PHONES DEVICES
+$mediaToggleHeader: " screen and (max-width: 1079.9px)"; // ALL PHONES DEVICES
+$mediaFullHeader: " screen and (min-width: 1080px)"; // ALL PHONES DEVICES
 $darkMode: " screen and (prefers-color-scheme: dark)"; // LARGER MONITORS
 
 $mediaMdMax: " screen and (max-width: 767.9px)";
