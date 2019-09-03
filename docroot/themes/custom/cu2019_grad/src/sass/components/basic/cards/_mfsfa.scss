@@ -16,7 +16,7 @@
     }
   }
 
-  > div {
+  .content {
     position: relative;
     @include flex($jc:flex-end, $ff: column nowrap);
 
@@ -90,6 +90,7 @@
     text-transform: none;
     margin: 0;
     padding: 9px 7px;
+    z-index: 20;
 
     @media #{$mediaLg} {
       font-size: 18px;
@@ -162,11 +163,11 @@
       }
 
       .body,
-      > div a {
+      .content a {
         display: block;
       }
 
-      > div {
+      .content {
         justify-content: center;
       }
     }
