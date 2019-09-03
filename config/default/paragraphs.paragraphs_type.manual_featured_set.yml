@@ -1,0 +1,9 @@
+uuid: ee289b42-7931-4ab1-8fd9-8f9e52b6f7e5
+langcode: en
+status: true
+dependencies: {  }
+id: manual_featured_set
+label: 'Manual Featured Set'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
