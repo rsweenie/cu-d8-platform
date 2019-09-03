@@ -3178,7 +3178,7 @@ aside .card.img-side + p {
 
 /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa > div {
+.card.mfsfa .content {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3194,7 +3194,7 @@ aside .card.img-side + p {
 
 /* line 37, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa > div a {
+.card.mfsfa .content a {
   font-size: 1.6rem;
   line-height: 1.6em;
   padding: 0 1.5rem;
@@ -3205,13 +3205,13 @@ aside .card.img-side + p {
 
 /* line 54, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa > div a span:first-child {
+.card.mfsfa .content a span:first-child {
   text-decoration: underline;
 }
 
 /* line 58, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa > div a span:last-child {
+.card.mfsfa .content a span:last-child {
   display: inline-block;
   -webkit-transform: translateY(0.2em);
           transform: translateY(0.2em);
@@ -3236,9 +3236,10 @@ aside .card.img-side + p {
   text-transform: none;
   margin: 0;
   padding: 0.9rem 0.7rem;
+  z-index: 20;
 }
 
-/* line 100, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 101, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa h3 {
   position: relative;
@@ -3249,7 +3250,7 @@ aside .card.img-side + p {
   margin-bottom: 0.63636em;
 }
 
-/* line 108, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 109, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa h3:after {
   width: 4.5rem;
@@ -3263,7 +3264,7 @@ aside .card.img-side + p {
           transform: translateX(-50%);
 }
 
-/* line 130, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 131, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .subtitle {
   color: #fff;
@@ -3271,7 +3272,7 @@ aside .card.img-side + p {
   text-transform: none;
 }
 
-/* line 140, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 141, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .body {
   font-size: 1.4rem;
@@ -11847,13 +11848,13 @@ form.search .search button {
     padding-left: 3.2rem;
   }
 
-  /* line 100, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 101, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3 {
     font-size: 3rem;
   }
 
-  /* line 130, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 131, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .subtitle {
     font-size: 2rem;
@@ -13831,7 +13832,7 @@ form.search .search button {
 
   /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa > div {
+  .card.mfsfa .content {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -13843,7 +13844,7 @@ form.search .search button {
 
   /* line 37, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa > div a {
+  .card.mfsfa .content a {
     padding: 0;
     display: none;
   }
@@ -13855,7 +13856,7 @@ form.search .search button {
     padding: 1.2rem;
   }
 
-  /* line 108, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 109, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3:after {
     width: 5.9rem;
@@ -13863,7 +13864,7 @@ form.search .search button {
     bottom: -1rem;
   }
 
-  /* line 140, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 141, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .body {
     color: #fff;
@@ -13871,23 +13872,23 @@ form.search .search button {
     display: none;
   }
 
-  /* line 159, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 160, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover > a:after {
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
     background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
   }
 
-  /* line 164, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 165, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover .body,
-  .card.mfsfa:hover > div a {
+  .card.mfsfa:hover .content a {
     display: block;
   }
 
-  /* line 169, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 170, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa:hover > div {
+  .card.mfsfa:hover .content {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -14415,17 +14416,17 @@ form.search .search button {
 
   /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa > div {
+  .card.mfsfa .content {
     padding: 2.5rem 8rem;
   }
 
   /* line 37, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa > div a {
+  .card.mfsfa .content a {
     font-size: 1.9rem;
   }
 
-  /* line 140, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 141, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .body {
     font-size: 1.9rem;
@@ -14820,7 +14821,7 @@ form.search .search button {
 
   /* line 58, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa > div a span:last-child {
+  .card.mfsfa .content a span:last-child {
     color: #212322;
     opacity: .3;
   }
