@@ -3383,12 +3383,9 @@ aside .card.img-side + p {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-/* line 43, src/sass/components/basic/_facts.scss */
+/* line 46, src/sass/components/basic/_facts.scss */
 
 .fact.stat_hl .field--name-field-stat-highlite-top-text {
   -webkit-box-ordinal-group: 2;
@@ -3397,12 +3394,12 @@ aside .card.img-side + p {
   font-size: 2.1rem;
   font-family: "Conduit";
   line-height: 1.05em;
-  margin: 1.2em 0 0.96667em 0;
+  margin: 0 0 0.96667em 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-/* line 58, src/sass/components/basic/_facts.scss */
+/* line 65, src/sass/components/basic/_facts.scss */
 
 .fact.stat_hl .field--name-field-stat-highlite-icon {
   -webkit-box-ordinal-group: 3;
@@ -3410,7 +3407,7 @@ aside .card.img-side + p {
           order: 2;
 }
 
-/* line 78, src/sass/components/basic/_facts.scss */
+/* line 85, src/sass/components/basic/_facts.scss */
 
 .fact.stat_hl .field--name-field-stat-highlite-statistic {
   -webkit-box-ordinal-group: 4;
@@ -3422,24 +3419,24 @@ aside .card.img-side + p {
   text-transform: uppercase;
 }
 
-/* line 90, src/sass/components/basic/_facts.scss */
+/* line 97, src/sass/components/basic/_facts.scss */
 
 .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
   font-size: 1.4rem;
-  margin: 0 0 1.8125em 0;
+  margin: 0;
   max-width: 420px;
 }
 
-/* line 323, src/sass/components/basic/_facts.scss */
+/* line 334, src/sass/components/basic/_facts.scss */
 
 .fact-offset-tr .fact {
   margin-top: -5rem;
 }
 
-/* line 327, src/sass/components/basic/_facts.scss */
+/* line 338, src/sass/components/basic/_facts.scss */
 
 .fact-offset-bc {
   margin-top: -5rem;
@@ -11936,20 +11933,40 @@ form.search .search button {
     background: rgba(255, 255, 255, 0.3);
   }
 
-  /* line 333, src/sass/components/basic/_facts.scss */
+  /* line 38, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl > div {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  /* line 46, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl .field--name-field-stat-highlite-top-text {
+    margin: 1.2em 0 0.96667em 0;
+  }
+
+  /* line 97, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
+    margin: 0 0 1.8125em 0;
+  }
+
+  /* line 344, src/sass/components/basic/_facts.scss */
 
   [class*="fact-offset-"] {
     z-index: 115;
   }
 
-  /* line 335, src/sass/components/basic/_facts.scss */
+  /* line 346, src/sass/components/basic/_facts.scss */
 
   [class*="fact-offset-"] > div {
     position: relative;
     z-index: 115;
   }
 
-  /* line 340, src/sass/components/basic/_facts.scss */
+  /* line 351, src/sass/components/basic/_facts.scss */
 
   .fact-offset-tr .fact {
     position: absolute;
@@ -11960,13 +11977,13 @@ form.search .search button {
             transform: translate(0, -33.333%);
   }
 
-  /* line 344, src/sass/components/basic/_facts.scss */
+  /* line 355, src/sass/components/basic/_facts.scss */
 
   .fact-offset-bc {
     margin-top: 0;
   }
 
-  /* line 347, src/sass/components/basic/_facts.scss */
+  /* line 358, src/sass/components/basic/_facts.scss */
 
   .fact-offset-bc .fact {
     position: absolute;
@@ -12864,20 +12881,20 @@ form.search .search button {
     font-size: 1.667em;
   }
 
-  /* line 43, src/sass/components/basic/_facts.scss */
+  /* line 46, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-top-text {
     font-size: 3rem;
     max-width: 420px;
   }
 
-  /* line 78, src/sass/components/basic/_facts.scss */
+  /* line 85, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-statistic {
     font-size: 7.2rem;
   }
 
-  /* line 90, src/sass/components/basic/_facts.scss */
+  /* line 97, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
     font-size: 1.6rem;
@@ -15149,28 +15166,28 @@ form.search .search button {
     margin-bottom: 1em;
   }
 
-  /* line 58, src/sass/components/basic/_facts.scss */
+  /* line 65, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-icon {
     width: 20%;
     position: absolute;
-    top: 2.7rem;
-    left: 2.5;
+    top: 3.3rem;
+    left: 2.5rem;
   }
 
-  /* line 67, src/sass/components/basic/_facts.scss */
+  /* line 74, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-icon img {
     width: 100%;
     height: auto;
   }
 
-  /* line 103, src/sass/components/basic/_facts.scss */
+  /* line 114, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-top-text,
   .fact.stat_hl .field--name-field-stat-highlite-statistic,
   .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
-    padding-left: calc(20% + 2.5rem);
+    padding-left: calc(20% + 5rem);
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
