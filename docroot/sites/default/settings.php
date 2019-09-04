@@ -800,9 +800,25 @@ $settings['entity_update_batch_size'] = 50;
 # }
 require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
 $settings['install_profile'] = 'creighton';
-#
+
 # IMPORTANT
 # Do not include additional settings here. Instead, add them to settings included
 # by `blt.settings.php`. See [BLT's documentation](http://blt.readthedocs.io)
 # for more detail.
-#
+
+# UPDATE Sep 19 - Our local.settings.php file is the last to be loaded at this point
+# and it is likely to have DB credentials. We want to change those credentials
+# in some cases, but we don't want to edit core BLT files, so we make those changes here.
+# See the settings load order in blt.settings.php for where to include most changes.
+
+$additional_settings_files = array();
+
+if ($_ENV['LANDO'] == 'ON' ) {
+  $additional_settings_files[] .= DRUPAL_ROOT . "/sites/$site_dir/settings/lando.settings.php";
+}
+
+foreach ($additional_settings_files as $settings_file) {
+  if (file_exists($settings_file)) {
+    require $settings_file;
+  }
+}

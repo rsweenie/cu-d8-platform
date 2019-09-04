@@ -1,10 +1,5 @@
 # Creighton Notes
 
-## This directory
-
-This directory is owned by the Acquia lightning distribution. This is 
-not a default Drupal location. 
-
 To understand how Drupal settings files are included, see:
 
   `vendor/acquia/blt/settings/blt.settings.php`
@@ -19,7 +14,7 @@ to Drupal settings.php configuration.
 
 ## Vagrant and Lando
 
-We are using includes.settings.php to add highly customized settings files for our
+We are using settings.php to add highly customized settings files for our
 dev environments. Currently, the only case here is for Lando. Lando requires a special
 set of database credentials and that's about it.
 
