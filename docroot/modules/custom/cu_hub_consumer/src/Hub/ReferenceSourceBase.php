@@ -164,7 +164,7 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
       $container->get('entity_field.manager'),
       $container->get('plugin.manager.field.field_type'),
       $container->get('config.factory'),
-      $container->get('logger.factory')->get('cu_hub_consumer'),
+      $container->get('logger.channel.cu_hub_consumer'),
       $container->get('messenger'),
       $container->get('http_client'),
       $container->get('plugin.manager.cu_hub_consumer.hub_resource_type')

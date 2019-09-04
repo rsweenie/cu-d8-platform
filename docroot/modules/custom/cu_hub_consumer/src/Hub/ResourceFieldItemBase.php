@@ -108,7 +108,7 @@ abstract class ResourceFieldItemBase extends PluginBase implements ResourceField
       $plugin_id,
       $plugin_definition,
       $container->get('config.factory'),
-      $container->get('logger.factory')->get('cu_hub_consumer'),
+      $container->get('logger.channel.cu_hub_consumer'),
       $container->get('messenger')
     );
   }

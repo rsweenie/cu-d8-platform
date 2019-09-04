@@ -14,7 +14,7 @@ use Drupal\Core\Plugin\PluginBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use \GuzzleHttp\ClientInterface;
+//use \GuzzleHttp\ClientInterface;
 use \GuzzleHttp\Exception\RequestException;
 use Psr\Log\LoggerInterface;
 
@@ -52,11 +52,11 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   protected $messenger;
 
   /**
-   * The HTTP client.
+   * The hub client.
    *
-   * @var \GuzzleHttp\Client
+   * @var \Drupal\cu_hub_consumer\Hub\Client
    */
-  protected $httpClient;
+  protected $hubClient;
 
   /**
    * Constructs a new hub resource type instance.
@@ -73,15 +73,15 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    *   The logger channel for cu_hub_consumer.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger service.
-   * @param \GuzzleHttp\ClientInterface $http_client
+   * @param \Drupal\cu_hub_consumer\Hub\ClientInterface $hub_client
    *   The HTTP client.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, LoggerInterface $logger, MessengerInterface $messenger, ClientInterface $http_client) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, LoggerInterface $logger, MessengerInterface $messenger, ClientInterface $hub_client) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $config_factory);
     $this->configFactory = $config_factory;
     $this->logger = $logger;
     $this->messenger = $messenger;
-    $this->httpClient = $http_client;
+    $this->hubClient = $hub_client;
 
     // Add the default configuration of the hub reference source to the plugin.
     $this->setConfiguration($configuration);
@@ -96,9 +96,9 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
       $plugin_id,
       $plugin_definition,
       $container->get('config.factory'),
-      $container->get('logger.factory')->get('cu_hub_consumer'),
+      $container->get('logger.channel.cu_hub_consumer'),
       $container->get('messenger'),
-      $container->get('http_client')
+      $container->get('cu_hub_consumer.hub_client')
     );
   }
 
@@ -135,25 +135,23 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
     return $this->configuration;
   }
 
-  public function getBaseUrl() {
-    if ($url = rtrim($this->configFactory->get('cu_hub_consumer.settings')->get('hub_base_url'), '/')) {
-      if ($this->pluginDefinition['hub_path']) {
-        $url .= '/' . ltrim($this->pluginDefinition['hub_path'], '/');
-        return rtrim($url, '/');
-      }
+  public function getHubTypeId() {
+    return $this->pluginDefinition['hub_type_id'];
+  }
+
+  public function getEndpoint() {
+    //return rtrim(ltrim($this->pluginDefinition['hub_path'], '/'), '/');
+    return $this->hubClient->getEndpoint($this->getHubTypeId());
+  }
+
+  public function getResourcePath($hub_uuid) {
+    if ($hub_uuid = $this->cleanUuid($hub_uuid)) {
+      return $this->getEndpoint() . '/' . $hub_uuid;
     }
   }
 
-  public function getResourceUrl($hub_uuid) {
-    if ($base_url = $this->getBaseUrl()) {
-      if ($hub_uuid = $this->cleanUuid($hub_uuid)) {
-        return $base_url . '/' . $hub_uuid;
-      }
-    }
-  }
-
-  public function getResourceListUrl() {
-    return $this->getBaseUrl();
+  public function getResourceListPath() {
+    return $this->getEndpoint();
   }
 
   protected function cleanUuid($uuid) {
@@ -167,17 +165,17 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * {@inheritdoc}
    */
   public function fetchResource($hub_uuid) {
-    if ($url = $this->getResourceUrl($hub_uuid)) {
+    if ($path = $this->getResourcePath($hub_uuid)) {
       try {
-        $response = $this->request('GET', $url);
+        $response = $this->hubClient->request('GET', $path);
       }
-      catch (RequestException $e) {
-        throw new ResourceException('Could not retrieve the hub resource.', $url, [], $e);
+      catch (ClientException $e) {
+        throw new ResourceException('Could not retrieve the hub resource.', $e->getUrl(), [], $e);
       }
       
       $resource = Resource::createFromHttpResponse($this, $response);
       if (!$resource) {
-        throw new ResourceException('Could not properly decode the hub resource.', $url);
+        throw new ResourceException('Could not properly decode the hub resource.', $path);
       }
 
       return $resource;
@@ -187,34 +185,34 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   /**
    * {@inheritdoc}
    */
-  public function fetchResourceList($url = NULL, $limit=0) {
-    $orig_url = $url;
+  public function fetchResourceList($path = NULL, $limit=0) {
+    $orig_path = $path;
 
-    // If we aren't passed a URL for the next page in the list, generate the URL.
-    if (!$url) {
-      $url = $this->getResourceListUrl();
+    // If we aren't passed a path for the next page in the list, generate the path.
+    if (!$path) {
+      $path = $this->getResourceListPath();
     }
 
-    if ($url) {
+    if ($path) {
       $query = [
         'fields[' . $this->pluginDefinition['hub_type_id'] . ']' => 'type,id',
       ];
 
       // If we didn't get passed in a URL, then we can set a limit.
-      if (!$orig_url && $limit) {
+      if (!$orig_path && $limit) {
         $query['page[limit]'] = $limit;
       }
 
       try {
-        $response = $this->request('GET', $url, $query);
+        $response = $this->hubClient->request('GET', $path, $query);
       }
       catch (RequestException $e) {
-        throw new ResourceException('Could not retrieve the hub resource list.', $url, [], $e);
+        throw new ResourceException('Could not retrieve the hub resource list.', $path, [], $e);
       }
       
       $resource = ResourceList::createFromHttpResponse($this, $response);
       if (!$resource) {
-        throw new ResourceException('Could not properly decode the hub resource list.', $url);
+        throw new ResourceException('Could not properly decode the hub resource list.', $path);
       }
 
       return $resource;
@@ -253,44 +251,6 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
 
     // Default to string if not specifically defined.
     return $attribute_type ? $attribute_type : 'string';
-  }
-
-  /**
-   * Make a request against hub.
-   *
-   * @param string $method
-   * @param string $url
-   * @param array $query
-   * @param string $body
-   * @return \Psr\Http\Message\ResponseInterface
-   */
-  public function request($method, $url, $query=[], $body='') {
-    return $this->httpClient->request(
-      $method,
-      $url,
-      $this->buildRequestOptions($query, $body)
-    );
-  }
-
-  /**
-   * Build options for the client
-   *
-   * @param array $query
-   * @param string $body
-   * @return array
-   */
-  protected function buildRequestOptions($query=[], $body='') {
-    $options = [];
-    //$options['auth'] = $this->auth();
-    if ($body) {
-      $options['body'] = $body;
-    }
-
-    if ($query) {
-      $options['query'] = $query;
-    }
-
-    return $options;
   }
 
 }
