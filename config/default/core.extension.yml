@@ -36,6 +36,7 @@ module:
   cu_data_transform: 0
   cu_entity_embed: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   diff: 0
   dropzonejs: 0

@@ -40,19 +40,27 @@
 #}
 {%
   set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    'mfsi'
-  ]
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'mfse'
+]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <a href="{{ content.field_mfsi_link[0]['#url'] }}">{{ content.field_mfsi_image }}</a>
+      <a href="{{ content.field_mfse_link[0]['#url'] }}">{{ content.field_mfse_image }}</a>
       <div class="tag"><span class="{{ mfs_icon }}"></span>{{ mfs_type }}</div>
-      <a href="{{ content.field_mfsi_link[0]['#url'] }}">{{ content.field_mfsi_short_text }}<span class="icon icon-right"></span></a>
+      <a href="{{ content.field_mfse_link[0]['#url'] }}">{{ content.field_mfse_short_text }}<span class="icon icon-right"></span></a>
+      {% if content.field_mfse_date %}
+        <time datetime="{{ content.field_mfse_date[0]['start_date']['#attributes']['datetime'] }}">
+          <div>
+            <span>{{ start_month }}</span>
+            <span>{{ start_day }}{% if multi_day %}+{% endif %}</span>
+          </div>
+        </time>
+      {% endif %}
     {% endblock %}
   </div>
 {% endblock paragraph %}
