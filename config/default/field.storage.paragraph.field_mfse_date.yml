@@ -1,0 +1,24 @@
+uuid: 7e5a12bf-e3a3-4c4d-9b7b-29f5a451b1a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_mfse_date
+field_name: field_mfse_date
+entity_type: paragraph
+type: daterange
+settings:
+  datetime_type: date
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

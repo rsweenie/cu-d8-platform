@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_mfs_featured_items
     - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
+    - paragraphs.paragraphs_type.manual_featured_event
     - paragraphs.paragraphs_type.manual_featured_set
     - paragraphs.paragraphs_type.manual_featured_set_item
   module:
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       manual_faculty_alumni_highlight: manual_faculty_alumni_highlight
       manual_featured_set_item: manual_featured_set_item
+      manual_featured_event: manual_featured_event
     target_bundles_drag_drop:
       accordion:
         weight: 16
@@ -66,6 +68,9 @@ settings:
       next_step:
         weight: 27
         enabled: false
+      manual_featured_event:
+        enabled: true
+        weight: 28
       next_steps_collection:
         weight: 28
         enabled: false
