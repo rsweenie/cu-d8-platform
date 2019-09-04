@@ -6,7 +6,7 @@
 
 $additional_settings_files = [];
 
-if ($_ENV['LANDO'] == 'ON') {
+if (isset($_ENV['LANDO']) && $_ENV['LANDO'] == 'ON') {
   $additional_settings_files[] .= DRUPAL_ROOT . "/sites/$site_dir/settings/lando.settings.php";
 }
 
