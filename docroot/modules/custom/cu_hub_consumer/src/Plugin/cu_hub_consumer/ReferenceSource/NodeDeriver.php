@@ -13,6 +13,7 @@ class NodeDeriver extends DeriverBase {
    * {@inheritdoc}
    */
   public function getDerivativeDefinitions($base_plugin_definition) {
+    /*
     $this->derivatives = [
       'site' => [
         'id' => 'site',
@@ -59,6 +60,34 @@ class NodeDeriver extends DeriverBase {
         ],
       ] + $base_plugin_definition,
     ];
+    */
+
+    $this->derivatives = [];
+
+    $hub_client = \Drupal::service('cu_hub_consumer.hub_client');
+    $hub_resource_inspector = \Drupal::service('cu_hub_consumer.hub_resource_inspector');
+
+    if ($endpoints = $hub_client->getEndpoints()) {
+      foreach ($endpoints as $resource_type_id => $endpoint_path) {
+        if (strpos($resource_type_id, 'node--') === 0) {
+          $name = substr($resource_type_id, strlen('node--'));
+          $this->derivatives[$name] = [
+            'id' => $name,
+            'label' => $name,
+            'description' => $name,
+            'hub_type_id' => $resource_type_id,
+            'metadata_attributes' => $base_plugin_definition['metadata_attributes'],
+          ];
+
+          $inspection_info = $hub_resource_inspector->inspect($resource_type_id);
+          foreach ($inspection_info as $attribute_name => $attribute_info) {
+            $this->derivatives[$name]['metadata_attributes'][$attribute_name] = $attribute_name;
+          }
+
+          $this->derivatives[$name] = $this->derivatives[$name] + $base_plugin_definition;
+        }
+      }
+    }
 
     return parent::getDerivativeDefinitions($base_plugin_definition);
   }

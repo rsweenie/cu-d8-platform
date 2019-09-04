@@ -139,11 +139,14 @@ class Resource implements ResourceInterface {
     //$resource_field_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_field_type');
 
     // Handle case of multi-value attributes.
+    /*
     $multiple = FALSE;
     if ($attribute_type && preg_match('/(.*)\[\]$/', $attribute_type, $matches)) {
       $multiple = TRUE;
       $attribute_type = $matches[1];
     }
+    */
+    $multiple = $this->getResourceType()->getAttributeMultiple($attribute_name);
 
     //$item_list = $resource_field_type_manager->createFieldItemList($this, $attribute, $attribute_type, $multiple);
     $item_list = new ResourceFieldItemList($this, $attribute_name, $attribute_type, $multiple);

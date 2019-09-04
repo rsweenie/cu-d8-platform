@@ -19,7 +19,7 @@ class MediaDeriver extends DeriverBase {
         'label' => t('Image media'),
         'description' => t('Image media resource type.'),
         'hub_type_id' => 'media--image',
-        'hub_path' => 'media/image',
+        //'hub_path' => 'media/image',
         'attribute_types' => [],
       ] + $base_plugin_definition,
 
@@ -28,7 +28,7 @@ class MediaDeriver extends DeriverBase {
         'label' => t('Video media'),
         'description' => t('Video media resource type.'),
         'hub_type_id' => 'media--video',
-        'hub_path' => 'media/video',
+        //'hub_path' => 'media/video',
         'attribute_types' => [],
       ] + $base_plugin_definition,
     ];

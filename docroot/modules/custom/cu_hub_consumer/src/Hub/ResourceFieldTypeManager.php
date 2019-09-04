@@ -5,12 +5,13 @@ namespace Drupal\cu_hub_consumer\Hub;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
+use Drupal\Component\Plugin\FallbackPluginManagerInterface;
 use Drupal\cu_hub_consumer\Annotation\HubResourceFieldType;
 
 /**
  * Manages hub resource plugins.
  */
-class ResourceFieldTypeManager extends DefaultPluginManager {
+class ResourceFieldTypeManager extends DefaultPluginManager implements FallbackPluginManagerInterface {
 
   /**
    * Constructs a new ResourceFieldManager.
@@ -46,5 +47,12 @@ class ResourceFieldTypeManager extends DefaultPluginManager {
     return new ResourceFieldItemList($resource, $field_name, $field_type, $singular);
   }
   */
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFallbackPluginId($plugin_id, array $configuration = array()) {
+    return 'unknown';
+  }
 
 }

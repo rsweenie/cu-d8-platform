@@ -59,6 +59,13 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   protected $hubClient;
 
   /**
+   * The hub resource inspector.
+   *
+   * @var \Drupal\cu_hub_consumer\Hub\ResourceInspector
+   */
+  protected $hubResourceInspector;
+
+  /**
    * Constructs a new hub resource type instance.
    *
    * @param array $configuration
@@ -75,13 +82,16 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    *   The messenger service.
    * @param \Drupal\cu_hub_consumer\Hub\ClientInterface $hub_client
    *   The HTTP client.
+   * @param \Drupal\cu_hub_consumer\Hub\ResourceInspector $hub_resource_inspector
+   *   The HTTP client.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, LoggerInterface $logger, MessengerInterface $messenger, ClientInterface $hub_client) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, LoggerInterface $logger, MessengerInterface $messenger, ClientInterface $hub_client, ResourceInspector $hub_resource_inspector) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $config_factory);
     $this->configFactory = $config_factory;
     $this->logger = $logger;
     $this->messenger = $messenger;
     $this->hubClient = $hub_client;
+    $this->hubResourceInspector = $hub_resource_inspector;
 
     // Add the default configuration of the hub reference source to the plugin.
     $this->setConfiguration($configuration);
@@ -98,7 +108,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
       $container->get('config.factory'),
       $container->get('logger.channel.cu_hub_consumer'),
       $container->get('messenger'),
-      $container->get('cu_hub_consumer.hub_client')
+      $container->get('cu_hub_consumer.hub_client'),
+      $container->get('cu_hub_consumer.hub_resource_inspector')
     );
   }
 
@@ -239,18 +250,38 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * {@inheritdoc}
    */
   public function getAttributeTypes() {
-    return $this->pluginDefinition['attribute_types'];
+    $attribute_types = [];
+
+    $inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    foreach ($inspection_info as $attribute_name => $attribute_info) {
+      $attribute_types[$attribute_name] = $attribute_info['type'];
+    }
+
+    return $attribute_types;
   }
 
   /**
    * {@inheritdoc}
    */
   public function getAttributeType($attribute) {
+    $inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    return isset($inspection_info[$attribute]['type']) ? $inspection_info[$attribute]['type'] : 'unknown';
+
+    /*
     $attribute_types = $this->getAttributeTypes();
     $attribute_type = isset($attribute_types[$attribute]) ? $attribute_types[$attribute] : FALSE;
 
     // Default to string if not specifically defined.
     return $attribute_type ? $attribute_type : 'string';
+    */
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getAttributeMultiple($attribute) {
+    $inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    return isset($inspection_info[$attribute]['multiple']) ? $inspection_info[$attribute]['multiple'] : 'FALSE';
   }
 
 }

@@ -5,15 +5,15 @@ namespace Drupal\cu_hub_consumer\Plugin\cu_hub_consumer\ResourceFieldType;
 use Drupal\cu_hub_consumer\Hub\ResourceFieldItemBase;
 
 /**
- * Generic string resource field.
+ * Text resource field.
  * 
  * @HubResourceFieldType(
- *   id = "text_long",
- *   label = @Translation("Text (long)"),
- *   description = @Translation("Text (long)."),
+ *   id = "text",
+ *   label = @Translation("Text"),
+ *   description = @Translation("Text."),
  * )
  */
-class TextLongFieldItem extends ArrayFieldItemBase {
+class TextFieldItem extends ArrayFieldItemBase {
 
   /**
    * {@inheritdoc}

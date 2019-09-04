@@ -110,7 +110,7 @@ class ResourceInspector {
       switch ($attribute_name) {
         case 'metatag_normalized':
           // Metatags are a special case.
-          $inspection_info['metatag_normalized'] = 'metatags';
+          $inspection_info['metatag_normalized']['type'] = 'metatags';
           break;
 
         default:
@@ -131,18 +131,18 @@ class ResourceInspector {
    */
   protected function detectAttributeType($value) {
     if (is_scalar($value)) {
-      // Is this a date?
+      // Is this a datetime?
       if (preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}[+-][0-9]{2}:[0-9]{2}$/i', $value)) {
         // Example value: 2019-08-13T03:38:57+00:00
-        return 'date';
+        return 'datetime';
       }
 
       // Is this a number?
       if (is_numeric($value)) {
         if (intval($value) == $value) {
-          return 'int';
+          return 'integer';
         }
-        return 'float';
+        return 'decimal';
       }
 
       return 'string';

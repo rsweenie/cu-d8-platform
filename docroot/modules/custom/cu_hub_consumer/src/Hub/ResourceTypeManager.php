@@ -5,12 +5,13 @@ namespace Drupal\cu_hub_consumer\Hub;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
+use Drupal\Component\Plugin\FallbackPluginManagerInterface;
 use Drupal\cu_hub_consumer\Annotation\HubResourceType;
 
 /**
  * Manages hub resource plugins.
  */
-class ResourceTypeManager extends DefaultPluginManager {
+class ResourceTypeManager extends DefaultPluginManager implements FallbackPluginManagerInterface {
 
   /**
    * Constructs a new ResourceTypeManager.
@@ -47,6 +48,13 @@ class ResourceTypeManager extends DefaultPluginManager {
     }
   }
   */
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFallbackPluginId($plugin_id, array $configuration = array()) {
+    return 'fallback';
+  }
 
   public function findPluginByHubTypeId($hub_type_id) {
     // Try to find a resource type plugin that matches.

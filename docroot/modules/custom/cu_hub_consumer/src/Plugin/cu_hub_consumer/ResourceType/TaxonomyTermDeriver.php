@@ -19,8 +19,8 @@ class TaxonomyTermDeriver extends DeriverBase {
         'label' => t('Program Availability'),
         'description' => t('Program availability term resource type.'),
         'hub_type_id' => 'taxonomy_term--program_availability',
-        'hub_path' => 'taxonomy_term/program_availability',
-        'attribute_types' => [],
+        //'hub_path' => 'taxonomy_term/program_availability',
+        //'attribute_types' => [],
         'entity_keys' => [
           'label' => 'name',
         ],

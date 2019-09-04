@@ -5,12 +5,13 @@ namespace Drupal\cu_hub_consumer\Hub;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
+use Drupal\Component\Plugin\FallbackPluginManagerInterface;
 use Drupal\cu_hub_consumer\Annotation\HubReferenceSource;
 
 /**
  * Manages hub reference source plugins.
  */
-class ReferenceSourceManager extends DefaultPluginManager {
+class ReferenceSourceManager extends DefaultPluginManager implements FallbackPluginManagerInterface {
 
   /**
    * Constructs a new HubReferenceSourceManager.
@@ -28,6 +29,13 @@ class ReferenceSourceManager extends DefaultPluginManager {
 
     $this->alterInfo('hub_reference_source_info');
     $this->setCacheBackend($cache_backend, 'hub_reference_source_plugins');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFallbackPluginId($plugin_id, array $configuration = array()) {
+    return 'fallback';
   }
 
 }

@@ -55,5 +55,13 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
    * @return string
    */
   public function getAttributeType($attribute);
+
+  /**
+   * Gets if a specific attribute is multi-value.
+   *
+   * @param string $key
+   * @return boolean
+   */
+  public function getAttributeMultiple($attribute);
   
 }

@@ -48,6 +48,13 @@ class HubTestController extends ControllerBase {
     }
     */
 
+    //$client = \Drupal::service('cu_hub_consumer.hub_client');
+    //dsm($client->getEndpoints());
+
+    $inspector = \Drupal::service('cu_hub_consumer.hub_resource_inspector');
+    //dsm($inspector->inspect('node--hub_program'));
+    //dsm($inspector->inspect('node--hub_degree'));
+
     $this->testResourceList('program');
 
     $this->testResource('program', '0d40a955-8399-42e9-8be8-c9544b84bb5e');
@@ -59,7 +66,7 @@ class HubTestController extends ControllerBase {
   protected function testResourceList($resource_type) {
     $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($resource_type);
     $resource_type = $hub_ref_type->getResourceType();
-    dsm($resource_type->getResourceListUrl());
+    dsm($resource_type->getResourceListPath());
 
     try {
       $resource_list = $resource_type->fetchResourceList();
@@ -74,7 +81,7 @@ class HubTestController extends ControllerBase {
   protected function testResource($resource_type, $resource_uuid) {
     $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($resource_type);
     $resource_type = $hub_ref_type->getResourceType();
-    dsm($resource_type->getResourceUrl($resource_uuid));
+    dsm($resource_type->getResourcePath($resource_uuid));
 
     try {
       $resource = $resource_type->fetchResource($resource_uuid);
