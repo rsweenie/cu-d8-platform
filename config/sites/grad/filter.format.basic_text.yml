@@ -97,7 +97,8 @@ filters:
     provider: responsive_tables_filter
     status: false
     weight: -40
-    settings: {  }
+    settings:
+      tablesaw_type: stack
   filter_bootstrap_responsive_wrapper:
     id: filter_bootstrap_responsive_wrapper
     provider: responsivewrappers

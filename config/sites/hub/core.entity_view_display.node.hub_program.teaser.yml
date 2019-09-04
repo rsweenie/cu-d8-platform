@@ -1,0 +1,31 @@
+uuid: e0e0ca46-6050-4f17-8f77-f45e444d1f82
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hub_program.field_hub_site
+    - node.type.hub_program
+  module:
+    - private_content
+    - user
+id: node.hub_program.teaser
+targetEntityType: node
+bundle: hub_program
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  field_hub_site: true
+  search_api_excerpt: true

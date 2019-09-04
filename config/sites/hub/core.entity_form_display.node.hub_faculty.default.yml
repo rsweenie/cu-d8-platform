@@ -1,0 +1,172 @@
+uuid: 434e368b-6ce2-403b-bf3c-d02aed342a8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_faculty.field_hub_faculty_degree
+    - field.field.node.hub_faculty.field_hub_faculty_department
+    - field.field.node.hub_faculty.field_hub_faculty_description
+    - field.field.node.hub_faculty.field_hub_faculty_email
+    - field.field.node.hub_faculty.field_hub_faculty_image
+    - field.field.node.hub_faculty.field_hub_faculty_name
+    - field.field.node.hub_faculty.field_hub_faculty_phone
+    - field.field.node.hub_faculty.field_hub_faculty_provost_id
+    - field.field.node.hub_faculty.field_hub_faculty_provost_url
+    - field.field.node.hub_faculty.field_hub_faculty_rel_degrees
+    - field.field.node.hub_faculty.field_hub_faculty_title
+    - field.field.node.hub_faculty.field_meta_tags
+    - node.type.hub_faculty
+  module:
+    - link
+    - media_library
+    - metatag
+    - name
+    - telephone
+    - text
+id: node.hub_faculty.default
+targetEntityType: node
+bundle: hub_faculty
+mode: default
+content:
+  field_hub_faculty_degree:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_faculty_department:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_faculty_description:
+    weight: 8
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_hub_faculty_email:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_hub_faculty_image:
+    type: media_library_widget
+    weight: 7
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_hub_faculty_name:
+    weight: 1
+    settings:
+      labels:
+        title: Title
+        given: Given
+        middle: 'Middle name(s)'
+        family: Family
+        generational: Generational
+        credentials: Credentials
+      size:
+        title: 6
+        given: 20
+        middle: 20
+        family: 20
+        generational: 5
+        credentials: 35
+      title_display:
+        title: description
+        given: description
+        middle: description
+        family: description
+        generational: description
+        credentials: description
+      widget_layout: stacked
+      show_component_required_marker: false
+      credentials_inline: false
+      override_field_settings: false
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_hub_faculty_phone:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_hub_faculty_provost_id:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_faculty_provost_url:
+    weight: 10
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_hub_faculty_rel_degrees:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_hub_faculty_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_meta_tags:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  private: true
+  promote: true
+  publish_on: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

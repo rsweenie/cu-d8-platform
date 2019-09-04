@@ -1,0 +1,19 @@
+uuid: 2e8f3c78-775a-4bfe-bea5-fab022b942ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_faculty_email
+    - node.type.hub_faculty
+id: node.hub_faculty.field_hub_faculty_email
+field_name: field_hub_faculty_email
+entity_type: node
+bundle: hub_faculty
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,19 @@
+uuid: 40c41be9-e9af-4732-87b6-db0a3141f594
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_faculty_degree
+    - node.type.hub_faculty
+id: node.hub_faculty.field_hub_faculty_degree
+field_name: field_hub_faculty_degree
+entity_type: node
+bundle: hub_faculty
+label: Degree
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

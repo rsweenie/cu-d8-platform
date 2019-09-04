@@ -418,5 +418,3 @@ drush/sites/.checksums
 
 # Deployment identifier
 deployment_identifier
-
-.lando.local.yml

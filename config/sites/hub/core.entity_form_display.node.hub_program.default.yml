@@ -1,0 +1,80 @@
+uuid: 591008e0-eccc-4e4d-a36f-7c8680f616dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_program.field_hub_path_alias
+    - field.field.node.hub_program.field_hub_program_description
+    - field.field.node.hub_program.field_hub_program_title
+    - field.field.node.hub_program.field_hub_site
+    - field.field.node.hub_program.field_meta_tags
+    - node.type.hub_program
+  module:
+    - cu_hub_api
+    - metatag
+    - text
+id: node.hub_program.default
+targetEntityType: node
+bundle: hub_program
+mode: default
+content:
+  field_hub_path_alias:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: hub_path_alias
+    region: content
+  field_hub_program_description:
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_hub_program_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_site:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_meta_tags:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  private: true
+  promote: true
+  publish_on: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true
