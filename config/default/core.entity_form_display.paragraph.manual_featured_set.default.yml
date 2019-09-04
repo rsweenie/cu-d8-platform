@@ -1,0 +1,44 @@
+uuid: abbfc116-6e0e-4027-913a-d5b2950843c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.manual_featured_set.field_mfs_featured_items
+    - field.field.paragraph.manual_featured_set.field_mfs_name
+    - paragraphs.paragraphs_type.manual_featured_set
+  module:
+    - paragraphs
+id: paragraph.manual_featured_set.default
+targetEntityType: paragraph
+bundle: manual_featured_set
+mode: default
+content:
+  field_mfs_featured_items:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  field_mfs_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,22 @@
+uuid: aee2ca96-1e34-46f0-b583-221c993cd6f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_hub_faculty_email
+field_name: field_hub_faculty_email
+entity_type: node
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

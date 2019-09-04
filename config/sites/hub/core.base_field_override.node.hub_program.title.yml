@@ -1,0 +1,18 @@
+uuid: 3bdc3c1f-5a22-486c-ab5b-19755ffb1aac
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_program
+id: node.hub_program.title
+field_name: title
+entity_type: node
+bundle: hub_program
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 78205a31-db13-455c-989a-ce5665def988
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.hub_faculty
+  module:
+    - metatag
+id: node.hub_faculty.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: hub_faculty
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

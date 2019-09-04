@@ -1,0 +1,36 @@
+uuid: b875a8d4-3f1b-40be-8abe-9eac72797e9e
+langcode: en
+status: false
+dependencies: {  }
+id: hub
+label: Hub
+description: ''
+folder: ../config/sites/hub
+module:
+  cu_hub_api: 0
+  jsonapi_defaults: 0
+  jsonapi_extras: 0
+theme: {  }
+blacklist:
+  - taxonomy.vocabulary.degree_type
+  - taxonomy.vocabulary.program_availability
+  - taxonomy.vocabulary.program_interests
+  - 'core.base_field_override.node.hub_*'
+  - 'core.entity_form_display.node.hub_*'
+  - 'core.entity_view_display.node.hub_*'
+  - 'field.field.node.hub_*'
+  - 'field.storage.node.field_hub_*'
+  - 'node.type.hub_*'
+  - 'cu_hub_api.*'
+graylist:
+  - 'auto_entitylabel.settings.*'
+  - 'block.block.*'
+  - 'filter.format.*'
+  - 'jsonapi.*'
+  - 'views.view.*'
+  - 'search_api.*'
+  - 'system.*'
+  - 'user.role.*'
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

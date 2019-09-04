@@ -5,7 +5,7 @@
 \*  --------------------------------------------------------------------------  */
 &.img-side {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    @include flex(space-between, stretch, stretch, column nowrap);
+    @include flex(space-between, stretch, stretch, column-reverse nowrap);
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
@@ -20,6 +20,10 @@
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        .contextual {
+            display: none;
+        }
     }
 
     > div {
@@ -31,13 +35,42 @@
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
-    
+
+    .body + [class*="btn-"] {
+      margin-top: 1em;
+    }
+
     &.invert {
         > a {
             order: 0;
         }
     }
-    
+
+    h3 {
+      position: relative;
+      padding-bottom: (14 / 55) * 1em;
+
+      &:after {
+        width: 55px;
+        height: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background: $tertiary;
+
+        @media #{$mediaMd} {
+          height: 8px;
+        }
+      }
+    }
+
+    @media #{$mediaMdMax} {
+      > a {
+        margin-bottom: 1em;
+      }
+    }
+
     @media #{$mediaMd} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         align-content: center;
@@ -88,53 +121,53 @@
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
             }
         }
-        
+
         @import "_full-screen";
-        
+
         &.bot {
             align-items: flex-end;
         }
-        
+
         &.small {
             justify-content: flex-start;
-            
+
             > a {
                 width: 12.5%;
                 margin: 0 25% 17.5% 0;
             }
-            
+
             .off-t-lg & {
                 padding: 0;
                 position: relative;
-                
+
                 > a {
                     @include position(absolute, 100, (left, top), (0, 0), translate(-460%, -220%));
                     width: 25%;
                     margin: 0;
                 }
-                
+
                 > div {
                     width: 100%;
                 }
             }
-            
+
             .off-t .align-center & {
                 padding: 0;
                 position: relative;
-                
+
                 > a {
                     @include transform(translate(-300%, -120%));
                     margin: 0;
                     width: 25%;
                 }
-                
+
                 > div {
                     width: 100%;
                 }
             }
         }
     }
-        
+
     aside & {
         flex-flow: column wrap;
         justify-content: center;
@@ -148,7 +181,7 @@
             min-height: 9.5rem;
             content: "";
         }
-        
+
         @media #{$mediaMd} {
             max-height: 15rem;
 
@@ -171,7 +204,7 @@
         h3, .h3 {
             font-size: 1.25em;
         }
-        
+
         + p {
             margin-top: 1em;
         }

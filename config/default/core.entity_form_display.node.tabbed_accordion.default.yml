@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.tabbed_accordion.field_tabbed_acc_content
     - node.type.tabbed_accordion
   module:
+    - content_moderation
     - paragraphs
     - private_content
     - scheduler
@@ -35,6 +36,12 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   private:
     weight: 1
     region: content

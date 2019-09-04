@@ -18,12 +18,25 @@ $accent-1: #F0F5FA;
 $accent-2: #8AC8FF;
 $accent-3: #FFCC4F;
 $accent-4: #FFB82A;
+$accent-5: #F5F5F5;
 
 $primaryLt: #019cdb;
+$primaryXLt: #e5f0f9;
 
 $gray1: #5D6468;
 $gray2: #555555;
 $gray3: #707070;
+$gray4: #EEEFF0;
+$gray5: #d4d4d4;
+$gray6: #ECF0F3;
+$gray7: #C5C7CA;
+
+$accent-2Lt: #99CFFF;
+$accent-2XLt: #A5D2F9;
+
+$thead: #266db3;
+$cardLink: #79b4e6;
+
 
 $success: #76bd22;
 $warning: #fce300;
@@ -35,7 +48,7 @@ $copyLH: 1.5;
 $copyC: $primary;
 $headingFF: 'Conduit'; // FONT FAMILY FOR HEADINGS (H1-H6)
 $headingC: $secondary;
-$linkC: $tertiary;
+$linkC: $secondary;
 $linkCHov: $primary;
 $linkCAct: $secondary;
 $iconFF: "Font Awesome 5 Free"; // FONT FAMILY FOR HEADINGS (H1-H6)
@@ -55,6 +68,7 @@ $mediaFullHeader: " screen and (min-width: 992px)"; // ALL PHONES DEVICES
 $darkMode: " screen and (prefers-color-scheme: dark)"; // LARGER MONITORS
 
 $mediaMdMax: " screen and (max-width: 767.9px)";
+$mediaLgMax: " screen and (max-width: 991.9px)";
 /*---=== GRID ===---*/
 $siteWList: 100%, 95%, 90%, 85%;
 $siteWQueryList: $mediaXs, $mediaLg, $mediaXl, $mediaXxl;

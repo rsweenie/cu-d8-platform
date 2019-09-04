@@ -52,3 +52,4 @@ hidden:
   body: true
   field_interior_page_side_nav: true
   private: true
+  search_api_excerpt: true
