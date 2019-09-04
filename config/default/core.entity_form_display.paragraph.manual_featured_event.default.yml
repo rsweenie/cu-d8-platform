@@ -10,7 +10,7 @@ dependencies:
     - field.field.paragraph.manual_featured_event.field_mfse_source_type
     - paragraphs.paragraphs_type.manual_featured_event
   module:
-    - datetime
+    - datetime_range
     - link
     - media_library
 id: paragraph.manual_featured_event.default
@@ -22,7 +22,7 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    type: datetime_default
+    type: daterange_default
     region: content
   field_mfse_image:
     type: media_library_widget

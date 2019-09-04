@@ -1,9 +1,9 @@
-uuid: 372f882e-6b7b-4a38-81e3-4150c1d09515
+uuid: 7e5a12bf-e3a3-4c4d-9b7b-29f5a451b1a5
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
+    - datetime_range
     - field_permissions
     - paragraphs
 third_party_settings:
@@ -12,10 +12,10 @@ third_party_settings:
 id: paragraph.field_mfse_date
 field_name: field_mfse_date
 entity_type: paragraph
-type: datetime
+type: daterange
 settings:
-  datetime_type: datetime
-module: datetime
+  datetime_type: date
+module: datetime_range
 locked: false
 cardinality: 1
 translatable: true

@@ -10,7 +10,7 @@ dependencies:
     - field.field.paragraph.manual_featured_event.field_mfse_source_type
     - paragraphs.paragraphs_type.manual_featured_event
   module:
-    - datetime
+    - datetime_range
     - link
     - options
 id: paragraph.manual_featured_event.default
@@ -24,8 +24,9 @@ content:
     settings:
       timezone_override: ''
       format_type: short_month_and_day
+      separator: '-'
     third_party_settings: {  }
-    type: datetime_default
+    type: daterange_default
     region: content
   field_mfse_image:
     type: entity_reference_entity_view
