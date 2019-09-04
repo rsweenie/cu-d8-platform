@@ -3071,7 +3071,7 @@ aside .card.img-side + p {
 
 /* line 1, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo {
+.fw_photo .card {
   color: #fff;
   border-top: 8px solid #6CACE4;
   border-bottom: 8px solid #6CACE4;
@@ -3079,13 +3079,13 @@ aside .card.img-side + p {
 
 /* line 6, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo.img-behind {
+.fw_photo .card.img-behind {
   padding: 4.5rem 0;
 }
 
 /* line 15, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo:before {
+.fw_photo .card:before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3098,13 +3098,13 @@ aside .card.img-side + p {
 
 /* line 29, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo.bg-grey:before {
+.fw_photo .card.bg-grey:before {
   background: rgba(33, 35, 34, 0.82);
 }
 
 /* line 34, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo h3 {
+.fw_photo .card h3 {
   font-size: 3rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -3114,14 +3114,14 @@ aside .card.img-side + p {
 
 /* line 46, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo p {
+.fw_photo .card p {
   font-size: 1.4rem;
   line-height: 1.4em;
 }
 
 /* line 56, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo [class*="btn-"] {
+.fw_photo .card [class*="btn-"] {
   margin-top: 2rem;
 }
 
@@ -11809,19 +11809,19 @@ form.search .search button {
 
   /* line 34, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo h3 {
+  .fw_photo .card h3 {
     font-size: 4rem;
   }
 
   /* line 46, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo p {
+  .fw_photo .card p {
     font-size: 1.9rem;
   }
 
   /* line 56, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo [class*="btn-"] {
+  .fw_photo .card [class*="btn-"] {
     float: right;
   }
 
@@ -12747,7 +12747,7 @@ form.search .search button {
 
   /* line 6, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo.img-behind {
+  .fw_photo .card.img-behind {
     padding: 13.5rem 0 8rem;
     margin-bottom: 1.5rem;
   }
