@@ -4153,20 +4153,23 @@ blockquote .tooltip-trigger {
 
 /* line 1, src/sass/components/basic/_mfs.scss */
 
-.mfsi {
+.mfsi,
+.mfse {
   position: relative;
 }
 
-/* line 8, src/sass/components/basic/_mfs.scss */
+/* line 9, src/sass/components/basic/_mfs.scss */
 
-.mfsi img {
+.mfsi img,
+.mfse img {
   width: 100%;
   height: auto;
 }
 
-/* line 13, src/sass/components/basic/_mfs.scss */
+/* line 14, src/sass/components/basic/_mfs.scss */
 
-.mfsi .tag {
+.mfsi .tag,
+.mfse .tag {
   font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -4176,9 +4179,10 @@ blockquote .tooltip-trigger {
   margin-bottom: 1.13333em;
 }
 
-/* line 19, src/sass/components/basic/_mfs.scss */
+/* line 20, src/sass/components/basic/_mfs.scss */
 
-.mfsi .tag .icon {
+.mfsi .tag .icon,
+.mfse .tag .icon {
   display: inline-block;
   -webkit-transform: translateY(6px);
           transform: translateY(6px);
@@ -4187,9 +4191,10 @@ blockquote .tooltip-trigger {
   font-size: 2.1rem;
 }
 
-/* line 32, src/sass/components/basic/_mfs.scss */
+/* line 33, src/sass/components/basic/_mfs.scss */
 
-.mfsi a {
+.mfsi a,
+.mfse a {
   display: block;
   font-size: 1.8rem;
   line-height: 1.2em;
@@ -4198,15 +4203,17 @@ blockquote .tooltip-trigger {
   text-decoration: none;
 }
 
-/* line 44, src/sass/components/basic/_mfs.scss */
+/* line 45, src/sass/components/basic/_mfs.scss */
 
-.mfsi a > div {
+.mfsi a > div,
+.mfse a > div {
   display: inline;
 }
 
-/* line 48, src/sass/components/basic/_mfs.scss */
+/* line 49, src/sass/components/basic/_mfs.scss */
 
-.mfsi a .icon {
+.mfsi a .icon,
+.mfse a .icon {
   display: inline-block;
   color: #C5C7CA;
   font-size: 1.3em;
@@ -4221,21 +4228,26 @@ blockquote .tooltip-trigger {
 /* line 59, src/sass/base/_mixins.scss */
 
 .mfsi a:hover,
-.mfsi a:focus {
+.mfsi a:focus,
+.mfse a:hover,
+.mfse a:focus {
   text-decoration: underline;
 }
 
-/* line 61, src/sass/components/basic/_mfs.scss */
+/* line 62, src/sass/components/basic/_mfs.scss */
 
 .mfsi a:hover .icon,
-.mfsi a:focus .icon {
+.mfsi a:focus .icon,
+.mfse a:hover .icon,
+.mfse a:focus .icon {
   -webkit-transform: translate(5px, 0.25em);
           transform: translate(5px, 0.25em);
 }
 
-/* line 67, src/sass/components/basic/_mfs.scss */
+/* line 68, src/sass/components/basic/_mfs.scss */
 
-.mfsi time {
+.mfsi time,
+.mfse time {
   display: block;
   position: absolute;
   top: -1.4rem;
@@ -4251,34 +4263,48 @@ blockquote .tooltip-trigger {
   text-transform: uppercase;
 }
 
-/* line 82, src/sass/components/basic/_mfs.scss */
+/* line 83, src/sass/components/basic/_mfs.scss */
 
-.mfsi time > div {
+.mfsi time > div,
+.mfse time > div {
   background: #0054A6;
   padding: 2rem 1.6rem 1.2rem 1.6rem;
 }
 
-/* line 87, src/sass/components/basic/_mfs.scss */
+/* line 88, src/sass/components/basic/_mfs.scss */
 
-.mfsi time span {
+.mfsi time span,
+.mfse time span {
   display: block;
 }
 
-/* line 90, src/sass/components/basic/_mfs.scss */
+/* line 91, src/sass/components/basic/_mfs.scss */
 
-.mfsi time span:first-child {
+.mfsi time span:first-child,
+.mfse time span:first-child {
   font-size: 1.4rem;
   letter-spacing: 0.05em;
 }
 
-/* line 99, src/sass/components/basic/_mfs.scss */
+/* line 100, src/sass/components/basic/_mfs.scss */
 
-.mfsi time span:last-child {
+.mfsi time span:last-child,
+.mfse time span:last-child {
   font-size: 2.4rem;
   margin-top: -0.29167em;
 }
 
-/* line 112, src/sass/components/basic/_mfs.scss */
+/* line 108, src/sass/components/basic/_mfs.scss */
+
+.mfsi time span:last-child > span,
+.mfse time span:last-child > span {
+  font-size: 1.8rem;
+  display: inline-block;
+  -webkit-transform: translateY(-0.16667em);
+          transform: translateY(-0.16667em);
+}
+
+/* line 123, src/sass/components/basic/_mfs.scss */
 
 .mfs h3 {
   text-align: center;
@@ -12198,26 +12224,29 @@ form.search .search button {
     border-bottom: 2rem solid transparent;
   }
 
-  /* line 13, src/sass/components/basic/_mfs.scss */
+  /* line 14, src/sass/components/basic/_mfs.scss */
 
-  .mfsi .tag {
+  .mfsi .tag,
+  .mfse .tag {
     font-size: 1.5rem;
   }
 
-  /* line 19, src/sass/components/basic/_mfs.scss */
+  /* line 20, src/sass/components/basic/_mfs.scss */
 
-  .mfsi .tag .icon {
+  .mfsi .tag .icon,
+  .mfse .tag .icon {
     -webkit-transform: translateY(5px);
             transform: translateY(5px);
   }
 
-  /* line 32, src/sass/components/basic/_mfs.scss */
+  /* line 33, src/sass/components/basic/_mfs.scss */
 
-  .mfsi a {
+  .mfsi a,
+  .mfse a {
     font-size: 2.4rem;
   }
 
-  /* line 119, src/sass/components/basic/_mfs.scss */
+  /* line 130, src/sass/components/basic/_mfs.scss */
 
   .mfs .field--name-field-mfs-featured-items .field__item + .field__item {
     border-left: 1px solid #ECF0F3;
@@ -12867,16 +12896,25 @@ form.search .search button {
     font-size: 4.2rem;
   }
 
-  /* line 90, src/sass/components/basic/_mfs.scss */
+  /* line 91, src/sass/components/basic/_mfs.scss */
 
-  .mfsi time span:first-child {
+  .mfsi time span:first-child,
+  .mfse time span:first-child {
     font-size: 1.8rem;
   }
 
-  /* line 99, src/sass/components/basic/_mfs.scss */
+  /* line 100, src/sass/components/basic/_mfs.scss */
 
-  .mfsi time span:last-child {
+  .mfsi time span:last-child,
+  .mfse time span:last-child {
     font-size: 3.2rem;
+  }
+
+  /* line 108, src/sass/components/basic/_mfs.scss */
+
+  .mfsi time span:last-child > span,
+  .mfse time span:last-child > span {
+    font-size: 2.4rem;
   }
 
   /* line 6, src/sass/components/navigation/_landing.scss */
@@ -15144,11 +15182,12 @@ form.search .search button {
 
   /* line 1, src/sass/components/basic/_mfs.scss */
 
-  .mfsi {
+  .mfsi,
+  .mfse {
     margin-bottom: 6.2rem;
   }
 
-  /* line 125, src/sass/components/basic/_mfs.scss */
+  /* line 136, src/sass/components/basic/_mfs.scss */
 
   .mfs .field--name-field-mfs-featured-items .field__item:last-child .mfsi {
     margin-bottom: 0;
