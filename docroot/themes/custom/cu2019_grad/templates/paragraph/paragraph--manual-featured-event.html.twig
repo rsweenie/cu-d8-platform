@@ -51,13 +51,13 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <a href="{{ content.field_mfse_link[0]['#url'] }}">{{ content.field_mfse_image }}</a>
-      <div class="tag"><span class="{{ mfs_icon }}"></span>{{ mfs_type }}</div>
+      <div class="tag"><span class="icon icon-event-calendar"></span>Event</div>
       <a href="{{ content.field_mfse_link[0]['#url'] }}">{{ content.field_mfse_short_text }}<span class="icon icon-right"></span></a>
       {% if content.field_mfse_date %}
         <time datetime="{{ content.field_mfse_date[0]['start_date']['#attributes']['datetime'] }}">
           <div>
             <span>{{ start_month }}</span>
-            <span>{{ start_day }}{% if multi_day %}+{% endif %}</span>
+            <span>{{ start_day }}{% if multi_day %}<span>+</span>{% endif %}</span>
           </div>
         </time>
       {% endif %}
