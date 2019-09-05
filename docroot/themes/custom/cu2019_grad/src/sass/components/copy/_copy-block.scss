@@ -42,3 +42,31 @@
     }
   }
 }
+
+.ct {
+  margin-bottom: 30px;
+}
+
+
+.paragraph-type-formatted_text,
+.paragraph-type-collapsible_text {
+  + .paragraph-type-formatted_text,
+  + .paragraph-type-collapsible_text  {
+    .section {
+      padding-top: 0;
+      margin-top: -#{$gutter}rem;
+
+      @media #{$mediaMd} {
+        margin-top: #{$gutter * -1.5}rem;
+      }
+
+      @media #{$mediaLg} {
+        margin-top: #{$gutter * -2}rem;
+      }
+
+      @media #{$mediaXl} {
+        margin-top: #{$gutter * -2.5}rem;
+      }
+    }
+  }
+}

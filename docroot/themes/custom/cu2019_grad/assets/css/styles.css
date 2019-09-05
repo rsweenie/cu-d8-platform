@@ -1096,6 +1096,22 @@ table tfoot td {
   display: none;
 }
 
+/* line 46, src/sass/components/copy/_copy-block.scss */
+
+.ct {
+  margin-bottom: 3rem;
+}
+
+/* line 55, src/sass/components/copy/_copy-block.scss */
+
+.paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
+.paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
+.paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
+.paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
+  padding-top: 0;
+  margin-top: -2.5rem;
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     NAVIGATION RESET
@@ -11518,6 +11534,15 @@ form.search .search button {
     height: 0.8rem;
   }
 
+  /* line 55, src/sass/components/copy/_copy-block.scss */
+
+  .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
+    margin-top: -3.75rem;
+  }
+
   /* line 45, src/sass/structure/_footer.scss */
 
   .main-footer:before {
@@ -12692,12 +12717,6 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 6, src/sass/components/copy/_body.scss */
-
-  body {
-    font-size: 1.9rem;
-  }
-
   /* line 20, src/sass/components/copy/_block-elements.scss */
 
   hr {
@@ -12755,6 +12774,15 @@ form.search .search button {
 
   table {
     display: table;
+  }
+
+  /* line 55, src/sass/components/copy/_copy-block.scss */
+
+  .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
+    margin-top: -5rem;
   }
 
   /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
@@ -12874,6 +12902,12 @@ form.search .search button {
 
   .btn-secondary {
     font-size: 1.9rem;
+  }
+
+  /* line 1, src/sass/components/basic/buttons/colors/_expand.scss */
+
+  .btn-expand {
+    font-size: 1.3rem;
   }
 
   /* line 64, src/sass/components/basic/_hero.scss */
@@ -13102,6 +13136,12 @@ form.search .search button {
   html {
     width: 100%;
     overflow-x: hidden;
+  }
+
+  /* line 6, src/sass/components/copy/_body.scss */
+
+  body {
+    font-size: 1.9rem;
   }
 
   /* line 10, src/sass/structure/_header.scss */
@@ -14079,12 +14119,6 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 1, src/sass/components/basic/buttons/colors/_expand.scss */
-
-  .btn-expand {
-    font-size: 1.3rem;
-  }
-
   /* line 51, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title,
@@ -14533,6 +14567,15 @@ form.search .search button {
 }
 
 @media screen and (min-width: 1210px) {
+  /* line 55, src/sass/components/copy/_copy-block.scss */
+
+  .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
+    margin-top: -6.25rem;
+  }
+
   /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header > div {
