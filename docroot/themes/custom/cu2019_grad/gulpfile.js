@@ -236,6 +236,7 @@ gulp.task('js:watch', ['js'], function() {
 gulp.task('watch', function() {
   gulp.watch(sass_build+'**/*.scss', function(){ runSequence('sass')});
   gulp.watch(icon_build+'*', function(){ runSequence('iconfont', 'sass')});
+  gulp.watch([js_build+'**/*.js'], ['js']);
 });
 
 gulp.task('stage', ['iconfont', 'sass']);

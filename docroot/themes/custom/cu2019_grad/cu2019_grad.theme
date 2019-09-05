@@ -30,6 +30,18 @@ function cu2019_grad_preprocess_node(&$variables) {
   }
 }
 
+function cu2019_grad_preprocess_field__field_interior_page_content(&$variables) {
+  $element = $variables['element'];
+
+  if ($paragraphs = $element['#items']->referencedEntities()) {
+    foreach ($variables['items'] as $key => &$item) {
+      if (isset($paragraphs[$key])) {
+        $item['attributes']->addClass('paragraph-type-' . $paragraphs[$key]->bundle());
+      }
+    }
+  }
+}
+
 function cu2019_grad_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $variables['par_id'] = $paragraph->id();

@@ -615,8 +615,8 @@ textarea {
 body {
   color: #555555;
   font-family: proxima-nova, sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  line-height: 1.6;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -663,14 +663,14 @@ hr {
 /* line 41, src/sass/components/copy/_block-elements.scss */
 
 .intro {
-  font-size: 2.4rem;
+  font-size: 2.85rem;
 }
 
 /* line 50, src/sass/components/copy/_block-elements.scss */
 
 .disclaimer {
   color: #6CACE4;
-  font-size: 1.2rem;
+  font-size: 1.425rem;
 }
 
 /* line 60, src/sass/components/copy/_block-elements.scss */
@@ -848,7 +848,7 @@ ol li:before {
   position: absolute;
   z-index: 0;
   left: 0;
-  top: 0.75em;
+  top: 0.8em;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
 }
@@ -1061,6 +1061,39 @@ table tfoot td {
   left: 0;
   content: "";
   background: #6CACE4;
+}
+
+/* line 23, src/sass/components/copy/_copy-block.scss */
+
+.ct-content {
+  position: relative;
+  max-height: 275px;
+  overflow: hidden;
+}
+
+/* line 28, src/sass/components/copy/_copy-block.scss */
+
+.ct-content:after {
+  width: 100%;
+  height: 7.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* line 38, src/sass/components/copy/_copy-block.scss */
+
+.ct-content.expanded {
+  max-height: none;
+}
+
+/* line 40, src/sass/components/copy/_copy-block.scss */
+
+.ct-content.expanded:after {
+  display: none;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -2348,6 +2381,84 @@ section[class*="sbg-"]:after {
   background: #8AC8FF;
   color: #fff;
   border-color: #0054A6;
+}
+
+/* line 1, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.btn-expand {
+  position: relative;
+  color: #266db3;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 4px solid #d4d4d4;
+  background-color: transparent;
+  -webkit-transition: border-color .25s, color .25s;
+  transition: border-color .25s, color .25s;
+}
+
+/* line 14, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.btn-expand:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  bottom: -1.5rem;
+  content: "";
+  border-style: solid;
+  border-width: 12px 11.5px 0 11.5px;
+  border-color: #d4d4d4 transparent transparent transparent;
+  -webkit-transform: translateX(-14px);
+          transform: translateX(-14px);
+  -webkit-transition: border-color .25s;
+  transition: border-color .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.btn-expand:hover,
+.btn-expand:focus {
+  color: #0054A6;
+  background-color: transparent;
+  border-bottom-color: #0054A6;
+}
+
+/* line 33, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.btn-expand:hover:after,
+.btn-expand:focus:after {
+  border-color: #0054A6 transparent transparent transparent;
+}
+
+/* line 38, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.expanded .btn-expand,
+.expanded + .btn-expand {
+  border-top: 4px solid #d4d4d4;
+  border-bottom: 0;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.expanded .btn-expand:hover,
+.expanded .btn-expand:focus,
+.expanded + .btn-expand:hover,
+.expanded + .btn-expand:focus {
+  border-top-color: #0054A6;
+}
+
+/* line 47, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.expanded .btn-expand:after,
+.expanded + .btn-expand:after {
+  -webkit-transform: translateX(-9px) rotate(180deg);
+          transform: translateX(-9px) rotate(180deg);
+  bottom: auto;
+  top: -1.5rem;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -11188,6 +11299,14 @@ form.search .search button {
     padding: 1.6rem 8rem 1.6rem 3rem;
   }
 
+  /* line 1, src/sass/components/basic/buttons/colors/_expand.scss */
+
+  .btn-expand {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
   /* line 115, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
@@ -12573,6 +12692,12 @@ form.search .search button {
     width: 100%;
   }
 
+  /* line 6, src/sass/components/copy/_body.scss */
+
+  body {
+    font-size: 1.9rem;
+  }
+
   /* line 20, src/sass/components/copy/_block-elements.scss */
 
   hr {
@@ -13952,6 +14077,12 @@ form.search .search button {
     padding: 0;
     background: #5D6468;
     border: 0.1rem solid #5D6468;
+  }
+
+  /* line 1, src/sass/components/basic/buttons/colors/_expand.scss */
+
+  .btn-expand {
+    font-size: 1.3rem;
   }
 
   /* line 51, src/sass/components/basic/_hero.scss */
