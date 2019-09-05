@@ -26,18 +26,6 @@ class HubResourceFormatter extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      /*
-      // We output just the preprocessed version fo the text.
-      $elements[$delta] = [
-        '#type' => 'inline_template',
-        '#template' => '{{ value|raw }}',
-        '#context' => [
-          // We use a very permissive XSS filter as we assume the source is pretty safe.
-          'value' => XSS::filterAdmin($item->hub_processed),
-        ],
-      ];
-      */
-      //dsm($item->value);
       $resource_obj = $item->value;
       $resource_type = $resource_obj->getResourceTypeId();
 

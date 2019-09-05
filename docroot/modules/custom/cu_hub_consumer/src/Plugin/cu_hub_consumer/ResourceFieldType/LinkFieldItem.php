@@ -65,7 +65,7 @@ class LinkFieldItem extends ArrayFieldItemBase {
       $elements = [
         '#type' => 'link',
         '#title' => $link_title,
-        '#options' => $url->getOptions(),
+        '#url' => $url,
       ];
     }
 

@@ -29,7 +29,19 @@ class MetatagsFieldItem extends ResourceFieldItemBase {
     if (is_array($value)) {
       foreach ($value as $item) {
         if (isset($item['tag']) && isset($item['attributes'])) {
-          $this->mapped_values[$item['tag']] = $item['attributes'];
+          switch ($item['tag']) {
+            case 'meta':
+              $this->mapped_values[$item['tag'] . '_' . $item['attributes']['name']] = $item['attributes']['content'];
+              break;
+
+            case 'link':
+              $this->mapped_values[$item['tag'] . '_' . $item['attributes']['rel']] = $item['attributes']['href'];
+              break;
+
+            default:
+              $this->mapped_values[$item['tag']] = $item['attributes'];
+              break;
+          }
         }
       }
     }

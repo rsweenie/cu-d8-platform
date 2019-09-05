@@ -7,12 +7,7 @@ use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Component\Utility\Xss;
 
 /**
- * Plugin implementation of the 'text_trimmed' formatter.
- *
- * Note: This class also contains the implementations used by the
- * 'text_summary_or_trimmed' formatter.
- *
- * @see \Drupal\text\Field\Formatter\TextSummaryOrTrimmedFormatter
+ * Plugin implementation of the 'hub_text_processed' formatter.
  *
  * @FieldFormatter(
  *   id = "hub_text_processed",
