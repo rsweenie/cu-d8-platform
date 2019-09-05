@@ -3,6 +3,7 @@
 namespace Drupal\cu_hub_consumer\Plugin\cu_hub_consumer\ResourceType;
 
 use Drupal\cu_hub_consumer\Hub\ResourceTypeBase;
+use Drupal\cu_hub_consumer\Hub\ResourceInterface;
 
 /**
  * Undocumented class
@@ -22,5 +23,20 @@ use Drupal\cu_hub_consumer\Hub\ResourceTypeBase;
  * )
  */
 class Node extends ResourceTypeBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function view(ResourceInterface $resource) {
+    $element = [];
+
+    if ($label = $resource->label()) {
+      $element = [
+        '#markup' => $label,
+      ];
+    }
+
+    return $element;
+  }
 
 }

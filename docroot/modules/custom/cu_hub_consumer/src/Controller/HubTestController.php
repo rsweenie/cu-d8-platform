@@ -54,6 +54,7 @@ class HubTestController extends ControllerBase {
     $inspector = \Drupal::service('cu_hub_consumer.hub_resource_inspector');
     dsm($inspector->inspect('node--hub_program', TRUE));
     dsm($inspector->inspect('node--hub_degree', TRUE));
+    dsm($inspector->inspect('taxonomy_term--program_interests', TRUE));
 
     $this->testResourceList('program');
 

@@ -431,6 +431,7 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
     // If there are actual renderable children, use #theme => hub_resource_field, otherwise,
     // let access cacheability metadata pass through for correct bubbling.
     if (Element::children($elements)) {
+      /*
       $info = array(
         '#theme' => 'hub_resource_field',
         '#title' => '',
@@ -442,8 +443,29 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
         '#items' => $this->list,
         '#is_multiple' => $this->isMultiple(),
       );
+      */
+      /*
+      $info = [
+        '#theme' => 'hub_resource_field',
+        '#title' => '',
+        '#label_display' => 'hidden',
+        '#field_list' => $this,
+        '#items' => $this->list,
+        '#is_multiple' => $this->isMultiple(),
+      ];
       
       $elements = array_merge($info, $elements);
+      */
+
+      $elements = [
+        '#theme' => 'hub_resource_field',
+        '#title' => '',
+        '#label_display' => 'hidden',
+        '#field_list' => $this,
+        '#field_items' => $this->list,
+        '#is_multiple' => $this->isMultiple(),
+        '#elements' => $elements,
+      ];
     }
     
     return $elements;
@@ -464,7 +486,6 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
 
   /**
    * {@inheritdoc}
-   * @todo Revisit the need when all entity types are converted to NG entities.
    */
   public function getFieldFriendlyValues() {
     $values = array();

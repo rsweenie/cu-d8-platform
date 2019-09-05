@@ -88,6 +88,10 @@ class ResourceInspector {
     $this->time = $time;
   }
 
+  public function getResourceTypes() {
+    return $this->hubClient->getEndpoints();
+  }
+
   /**
    * Inspect the hub API for field typing info.
    *

@@ -41,6 +41,8 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
    */
   public function isMultiple();
 
+  public function getString();
+
   /**
    * Filters out empty field items and re-numbers the item deltas.
    *
@@ -112,6 +114,11 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
    */
   public function viewElements();
 
+  /**
+   * Returns a values array friendly to Drupal fields.
+   *
+   * @return array
+   */
   public function getFieldFriendlyValues();
 
 }

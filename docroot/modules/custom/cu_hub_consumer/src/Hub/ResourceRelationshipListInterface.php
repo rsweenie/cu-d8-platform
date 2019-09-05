@@ -18,7 +18,7 @@ interface ResourceRelationshipListInterface extends \ArrayAccess, \IteratorAggre
    * @return \Drupal\cu_hub_consumer\Hub\ResourceInterface
    *   The resource object.
    */
-  public function getParent();
+  public function getParentResource();
 
   /**
    * Gets the field name on the parent resource.
@@ -34,6 +34,19 @@ interface ResourceRelationshipListInterface extends \ArrayAccess, \IteratorAggre
    */
   public function getResourceType();
 
+  /**
+   * Gets the field type stored in this list.
+   *
+   * @return void
+   */
+  public function getFieldType();
+
+  /**
+   * Gets whether this field is supposed to contain a single item or multiple.
+   *
+   * @return boolean
+   */
+  public function isMultiple();
 
   /**
    * Filters out empty field items and re-numbers the item deltas.
@@ -88,5 +101,29 @@ interface ResourceRelationshipListInterface extends \ArrayAccess, \IteratorAggre
    *   TRUE if the field item lists are equal, FALSE if not.
    */
   public function equals(ResourceRelationshipListInterface $list_to_compare);
+
+  /**
+   * Returns a values array friendly to Drupal fields.
+   *
+   * @return array
+   */
+  public function getFieldFriendlyValues();
+
+  /**
+   * Builds a renderable array for a fully themed field list.
+   *
+   * @return array
+   *   A renderable array for a themed field with its label and all its values.
+   */
+  public function view();
+
+  /**
+   * Builds a renderable array for a field value.
+   *
+   * @return array
+   *   A renderable array for $items, as an array of child elements keyed by
+   *   consecutive numeric indexes starting from 0.
+   */
+  public function viewElements();
 
 }

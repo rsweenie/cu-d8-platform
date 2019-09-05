@@ -12,6 +12,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\cu_hub_consumer\Hub\Resource;
 use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
+use Drupal\cu_hub_consumer\Hub\ResourceRelationshipListInterface;
 
 /**
  * The hub reference entity class.
@@ -156,6 +157,7 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         if ($hub_fields = $resource_type->getHubFields()) {
           $field_prefix = HubReferenceInterface::HUB_FIELD_PREFIX;
           foreach ($hub_fields as $field_name => $field_info) {
+            // Make sure the plugin actually exists.
             if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
             //if (!in_array($field_info['type'], ['metatags', 'hub_unknown', 'hub_resource'])) {
               //$field_defaults = $field_types->getDefaultFieldSettings($field_info['type']);
@@ -400,6 +402,9 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
             if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
               if ($field_list = $resource_object->{$field_name}) {
                 if ($field_list instanceof ResourceFieldItemListInterface) {
+                  $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
+                }
+                elseif ($field_list instanceof ResourceRelationshipListInterface) {
                   $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
                 }
               }

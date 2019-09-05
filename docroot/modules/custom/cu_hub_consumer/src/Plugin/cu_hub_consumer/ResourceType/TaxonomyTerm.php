@@ -3,6 +3,7 @@
 namespace Drupal\cu_hub_consumer\Plugin\cu_hub_consumer\ResourceType;
 
 use Drupal\cu_hub_consumer\Hub\ResourceTypeBase;
+use Drupal\cu_hub_consumer\Hub\ResourceInterface;
 
 /**
  * Undocumented class
@@ -15,5 +16,20 @@ use Drupal\cu_hub_consumer\Hub\ResourceTypeBase;
  * )
  */
 class TaxonomyTerm extends ResourceTypeBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function view(ResourceInterface $resource) {
+    $element = [];
+
+    if (isset($resource->name)) {
+      $element = [
+        '#markup' => $resource->name->getString(),
+      ];
+    }
+
+    return $element;
+  }
 
 }

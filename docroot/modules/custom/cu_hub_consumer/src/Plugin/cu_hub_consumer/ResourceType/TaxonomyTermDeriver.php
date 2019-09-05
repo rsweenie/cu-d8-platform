@@ -13,20 +13,25 @@ class TaxonomyTermDeriver extends DeriverBase {
    * {@inheritdoc}
    */
   public function getDerivativeDefinitions($base_plugin_definition) {
-    $this->derivatives = [
-      'program_availability' => [
-        'id' => 'program_availability',
-        'label' => t('Program Availability'),
-        'description' => t('Program availability term resource type.'),
-        'hub_type_id' => 'taxonomy_term--program_availability',
-        //'hub_path' => 'taxonomy_term/program_availability',
-        //'attribute_types' => [],
-        'entity_keys' => [
-          'label' => 'name',
-        ],
-      ] + $base_plugin_definition,
+    $this->derivatives = [];
 
-    ];
+    $inspector = \Drupal::service('cu_hub_consumer.hub_resource_inspector');
+    $resource_types = $inspector->getResourceTypes();
+
+    foreach ($resource_types as $resource_type => $resource_type_info) {
+      if (strpos($resource_type, 'taxonomy_term--') === 0) {
+        list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
+        $this->derivatives[$resource_sub_type] = [
+          'id' => $resource_sub_type,
+          'label' => $resource_sub_type,
+          'description' => $resource_sub_type,
+          'hub_type_id' => $resource_type,
+          'entity_keys' => [
+            'label' => 'name',
+          ],
+        ] + $base_plugin_definition;
+      }
+    }
 
     return parent::getDerivativeDefinitions($base_plugin_definition);
   }

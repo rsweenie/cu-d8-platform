@@ -288,4 +288,35 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
     return isset($inspection_info[$attribute]['multiple']) ? $inspection_info[$attribute]['multiple'] : 'FALSE';
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function view(ResourceInterface $resource) {
+    //return ['#markup' => print_r($resource->getJsonData(), TRUE)];
+    $elements = [];
+
+    //if ($label = $resource->label()) {
+    //  $elements = [
+    //    '#markup' => $label,
+    //  ];
+    //}
+
+    $values = $resource->getProcessedData();
+    if (is_array($values)) {
+      foreach ($values as $field => $field_list) {
+        if ($field_list instanceof ResourceFieldItemListInterface) {
+          $elements[$field] = $field_list->view();
+        }
+        elseif ($field_list instanceof ResourceRelationshipListInterface) {
+          $elements[$field] = $field_list->view();
+        }
+        elseif (is_scalar($field_list)) {
+          //$elements[$field] = ['#markup' => $field_list];
+        }
+      }
+    }
+
+    return $elements;
+  }
+
 }

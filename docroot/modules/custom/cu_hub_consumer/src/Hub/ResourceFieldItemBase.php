@@ -170,6 +170,13 @@ abstract class ResourceFieldItemBase extends PluginBase implements ResourceField
   /**
    * {@inheritdoc}
    */
+  public function getFieldName() {
+    return $this->getParentList()->getFieldName();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getValue() {
     return $this->value;
   }

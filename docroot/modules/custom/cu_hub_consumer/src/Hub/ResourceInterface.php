@@ -25,6 +25,8 @@ interface ResourceInterface {
    */
   public static function createFromData(ResourceTypeInterface $resource_type, $data);
 
+  public function label();
+
   /**
    * Returns the id of the resource type that generated this object.
    *
@@ -52,5 +54,20 @@ interface ResourceInterface {
    * @return array
    */
   public function getProcessedData();
+
+  /**
+   * Returns a values array friendly to Drupal fields.
+   *
+   * @return array
+   */
+  public function getFieldFriendlyValue();
+
+  /**
+   * Builds a renderable array for a fully themed field item.
+   *
+   * @return array
+   *   A renderable array for a themed field item.
+   */
+  public function view();
 
 }

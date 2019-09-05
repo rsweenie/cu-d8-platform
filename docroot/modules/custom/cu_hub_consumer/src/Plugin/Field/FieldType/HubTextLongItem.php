@@ -7,7 +7,7 @@ use Drupal\text\Plugin\Field\FieldType\TextItemBase;
 use Drupal\Core\TypedData\DataDefinition;
 
 /**
- * Plugin implementation of the 'text_long' field type.
+ * Plugin implementation of the 'hub_text_long' field type.
  *
  * @FieldType(
  *   id = "hub_text_long",

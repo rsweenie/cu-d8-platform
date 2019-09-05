@@ -70,5 +70,13 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
    * @return boolean
    */
   public function getAttributeMultiple($attribute);
+
+  /**
+   * Builds a renderable array for a fully themed field item.
+   *
+   * @return array
+   *   A renderable array for a themed field item.
+   */
+  public function view(ResourceInterface $resource);
   
 }

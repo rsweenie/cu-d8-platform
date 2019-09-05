@@ -57,6 +57,21 @@ function cu_hub_consumer_theme() {
     'hub_reference' => [
       'render element' => 'elements',
     ],
+    'hub_resource' => [
+      'variables' => [
+        'resource_obj' => NULL,
+      ],
+    ],
+    'hub_resource_field' => [
+      'variables' => [
+        'title' => '',
+        'label_display' => 'hidden',
+        'field_list' => NULL,
+        'field_items' => NULL,
+        'elements' => NULL,
+        'is_multiple' => FALSE,
+      ],
+    ],
   ];
 }
 
@@ -113,6 +128,83 @@ function template_preprocess_hub_reference(array &$variables) {
   // Helpful $content variable for templates.
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Prepares variables for hub_resource templates.
+ *
+ * Default template: hub_resource.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource(array &$variables) {
+  //$variables['resource_obj'] = $variables['elements']['#resource_obj'];
+
+  // Helpful $content variable for templates.
+  /*
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+  */
+
+  $resource_types = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
+  //if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
+  //dsm($resource_types->getDefinitions());
+
+  $resource_obj = $variables['resource_obj'];
+  $resource_type = $resource_obj->getResourceTypeId();
+
+  // Replace any characters that aren't allowed.
+  $resource_type = preg_replace('/[^a-z0-9-]/i', '-', $resource_type);
+
+  $variables['resource_type'] = $resource_type;
+  $variables['attributes'] = new Attribute();
+
+  $variables['content'] = $variables['resource_obj']->view();
+  //dsm($variables['resource_obj']->getResourceTypeId());
+}
+
+/**
+ * Prepares variables for hub_resource_field templates.
+ *
+ * Default template: hub_resource_field.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource_field(array &$variables) {
+  $field_list = $variables['field_list'];
+  $field_items = $variables['field_items'];
+
+  /*
+  if ($first_item = reset($items)) {
+    $variables['field_name'] = $first_item->getFieldName();
+    $variables['resource_obj'] = $first_item->getParentResource();
+  }
+  */
+
+  $field_type = $field_list->getFieldType();
+
+  // Replace any characters that aren't allowed.
+  $field_type = preg_replace('/[^a-z0-9-]/i', '-', $field_type);
+
+  $variables['field_name'] = $field_list->getFieldName();
+  $variables['field_type'] = $field_type;
+  $variables['resource_obj'] = $field_list->getParentResource();
+
+  $variables['label_hidden'] = $variables['label_display'] == 'hidden';
+
+  static $default_attributes;
+  if (!isset($default_attributes)) {
+    $default_attributes = new Attribute();
+  }
+  $variables['attributes'] = clone $default_attributes;
+
+  // Helpful $content variable for templates.
+  $variables['items'] = [];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['items'][$key]['content'] = $variables['elements'][$key];
+    $variables['items'][$key]['attributes'] = !empty($variables['field_items'][$key]->_attributes) ? new Attribute($variables['field_items'][$key]->_attributes) : clone $default_attributes;
   }
 }
 

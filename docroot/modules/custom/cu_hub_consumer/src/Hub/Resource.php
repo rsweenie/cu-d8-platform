@@ -87,6 +87,16 @@ class Resource implements ResourceInterface {
   /**
    * {@inheritdoc}
    */
+  public function label() {
+    $resource_type = $this->getResourceType();
+    if ($resource_type->getKey('label') && isset($this->{$resource_type->getKey('label')})) {
+      return $this->{$resource_type->getKey('label')}->getString();
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getResourceTypeId() {
     return $this->resourceType->getPluginId();
   }
@@ -138,6 +148,12 @@ class Resource implements ResourceInterface {
     $attribute_type = $this->getResourceType()->getAttributeType($attribute_name);
     //$resource_field_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_field_type');
 
+    // If the field type plugin doesn't exist, try to find more a general one.
+    //$resource_field_types = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_field_type');
+    //if (!$resource_field_types->getDefinition($attribute_type, FALSE)) {
+    //  list($attribute_type, $attribute_sub_type) = explode('--', $attribute_type, 2);
+    //}
+
     // Handle case of multi-value attributes.
     /*
     $multiple = FALSE;
@@ -151,7 +167,7 @@ class Resource implements ResourceInterface {
     //$item_list = $resource_field_type_manager->createFieldItemList($this, $attribute, $attribute_type, $multiple);
     $item_list = new ResourceFieldItemList($this, $attribute_name, $attribute_type, $multiple);
 
-    if (!$multiple) {
+    if (!is_array($attribute_data) || !$multiple) {
       $attribute_data = [$attribute_data];
     }
     foreach ($attribute_data as $value) {
@@ -184,8 +200,10 @@ class Resource implements ResourceInterface {
           $relationship_resource_type = $first['type'];
         }
       }
+
+      $multiple = $this->getResourceType()->getAttributeMultiple($relationship_name);
       
-      $relationship_list = new ResourceRelationshipList($this, $relationship_name, $relationship_resource_type);
+      $relationship_list = new ResourceRelationshipList($this, $relationship_name, $relationship_resource_type, $multiple);
 
       // Try to pull in full data from the included section.
       if (!empty($this->jsonData['included']) && is_array($this->jsonData['included'])) {
@@ -226,4 +244,17 @@ class Resource implements ResourceInterface {
     return isset($this->getProcessedData()[$property_name]);
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getFieldFriendlyValue() {
+    return ['value' => $this];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function view() {
+    return $this->getResourceType()->view($this);
+  }
 }

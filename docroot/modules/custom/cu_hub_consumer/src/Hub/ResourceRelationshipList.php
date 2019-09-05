@@ -2,6 +2,8 @@
 
 namespace Drupal\cu_hub_consumer\Hub;
 
+use Drupal\Core\Render\Element;
+
 /**
  * Represents a resource field; that is, a list of field item objects.
  *
@@ -41,6 +43,13 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
   protected $resourceType;
 
   /**
+   * Whether field is singular or multiple value.
+   *
+   * @var bool
+   */
+  protected $multiple;
+
+  /**
    * Constructs a new ResourceFieldItemList.
    *
    * @param ResourceInterface $parent
@@ -48,16 +57,17 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
    * @param string $resource_type
    * @param boolean $singular
    */
-  public function __construct(ResourceInterface $parent, $field_name, $resource_type) {
+  public function __construct(ResourceInterface $parent, $field_name, $resource_type, $multiple = FALSE) {
     $this->parent = $parent;
     $this->fieldName = $field_name;
     $this->resourceType = $resource_type;
+    $this->multiple = $multiple;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getParent() {
+  public function getParentResource() {
     return $this->parent;
   }
 
@@ -73,6 +83,20 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
    */
   public function getResourceType() {
     return $this->resourceType;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFieldType() {
+    return $this->getResourceType();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isMultiple() {
+    return $this->multiple;
   }
 
   /**
@@ -394,4 +418,80 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
       return TRUE;
     }
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFieldFriendlyValues() {
+    $values = array();
+    foreach ($this->list as $delta => $item) {
+      $values[$delta] = $item
+        ->getFieldFriendlyValue();
+    }
+    return $values;
+  }
+
+
+
+  /**
+   * {@inheritdoc}
+   */
+  public function view() {
+    $elements = $this->viewElements();
+
+    // If there are actual renderable children, use #theme => hub_resource_field, otherwise,
+    // let access cacheability metadata pass through for correct bubbling.
+    if (Element::children($elements)) {
+      /*
+      $info = array(
+        '#theme' => 'hub_resource_field',
+        '#title' => '',
+        '#label_display' => 'hidden',
+        '#field_name' => $this->getFieldName(),
+        '#field_type' => $this->getFieldType(),
+        '#resource_type' => $this->getParentResource()->getResourceTypeId(),
+        '#resource' => $this->getParentResource(),
+        '#items' => $this->list,
+        '#is_multiple' => $this->isMultiple(),
+      );
+      */
+      /*
+      $info = [
+        '#theme' => 'hub_resource_field',
+        '#title' => '',
+        '#label_display' => 'hidden',
+        '#field_list' => $this,
+        '#items' => $this->list,
+        '#is_multiple' => $this->isMultiple(),
+      ];
+      
+      $elements = array_merge($info, $elements);
+      */
+      $elements = [
+        '#theme' => 'hub_resource_field',
+        '#title' => '',
+        '#label_display' => 'hidden',
+        '#field_list' => $this,
+        '#field_items' => $this->list,
+        '#is_multiple' => $this->isMultiple(),
+        '#elements' => $elements,
+      ];
+    }
+    
+    return $elements;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function viewElements() {
+    $elements = [];
+
+    foreach ($this->list as $delta => $item) {
+      $elements[$delta] = $item->view();
+    }
+
+    return $elements;
+  }
+
 }

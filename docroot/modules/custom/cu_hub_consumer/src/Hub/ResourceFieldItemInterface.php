@@ -13,6 +13,13 @@ interface ResourceFieldItemInterface {
 
   public function getParentResource();
 
+  /**
+   * Gets the field name on the parent resource.
+   *
+   * @return void
+   */
+  public function getFieldName();
+
   public function getValue();
 
   public function setValue($value);
