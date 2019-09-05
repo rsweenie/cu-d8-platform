@@ -1,5 +1,10 @@
 # If you want to make private changes to the lando config, copy this file to
 # projectroot/.lando.local.yml and make changes here. 
+
+# Enable xdebug 
+#config:
+#  xdebug: true
+
 # You can set a static mysql port to connect to from your host if you use a desktop mysql client
 #services:
 #  database:
