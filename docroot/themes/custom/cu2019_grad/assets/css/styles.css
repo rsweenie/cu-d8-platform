@@ -615,8 +615,8 @@ textarea {
 body {
   color: #555555;
   font-family: proxima-nova, sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  line-height: 1.6;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -663,14 +663,14 @@ hr {
 /* line 41, src/sass/components/copy/_block-elements.scss */
 
 .intro {
-  font-size: 2.4rem;
+  font-size: 2.85rem;
 }
 
 /* line 50, src/sass/components/copy/_block-elements.scss */
 
 .disclaimer {
   color: #6CACE4;
-  font-size: 1.2rem;
+  font-size: 1.425rem;
 }
 
 /* line 60, src/sass/components/copy/_block-elements.scss */
@@ -848,7 +848,7 @@ ol li:before {
   position: absolute;
   z-index: 0;
   left: 0;
-  top: 0.75em;
+  top: 0.8em;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
 }
@@ -2396,9 +2396,11 @@ section[class*="sbg-"]:after {
   border-right: 0;
   border-bottom: 4px solid #d4d4d4;
   background-color: transparent;
+  -webkit-transition: border-color .25s, color .25s;
+  transition: border-color .25s, color .25s;
 }
 
-/* line 13, src/sass/components/basic/buttons/colors/_expand.scss */
+/* line 14, src/sass/components/basic/buttons/colors/_expand.scss */
 
 .btn-expand:after {
   width: 0;
@@ -2425,14 +2427,14 @@ section[class*="sbg-"]:after {
   border-bottom-color: #0054A6;
 }
 
-/* line 32, src/sass/components/basic/buttons/colors/_expand.scss */
+/* line 33, src/sass/components/basic/buttons/colors/_expand.scss */
 
 .btn-expand:hover:after,
 .btn-expand:focus:after {
   border-color: #0054A6 transparent transparent transparent;
 }
 
-/* line 37, src/sass/components/basic/buttons/colors/_expand.scss */
+/* line 38, src/sass/components/basic/buttons/colors/_expand.scss */
 
 .expanded .btn-expand,
 .expanded + .btn-expand {
@@ -2449,7 +2451,7 @@ section[class*="sbg-"]:after {
   border-top-color: #0054A6;
 }
 
-/* line 46, src/sass/components/basic/buttons/colors/_expand.scss */
+/* line 47, src/sass/components/basic/buttons/colors/_expand.scss */
 
 .expanded .btn-expand:after,
 .expanded + .btn-expand:after {
@@ -12649,6 +12651,12 @@ form.search .search button {
 
   .col-lg-12 {
     width: 100%;
+  }
+
+  /* line 6, src/sass/components/copy/_body.scss */
+
+  body {
+    font-size: 1.9rem;
   }
 
   /* line 20, src/sass/components/copy/_block-elements.scss */

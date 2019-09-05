@@ -9,6 +9,7 @@
   border-right: 0;
   border-bottom: 4px solid $gray5;
   background-color: transparent;
+  transition: border-color .25s, color .25s;
 
   &:after {
     width: 0;
