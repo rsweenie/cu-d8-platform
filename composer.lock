@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f2387155ca197e6db02824708e10237",
+    "content-hash": "ff640ba9d4ecf242e97ce0ad0114d274",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -141,6 +141,9 @@
                     "vendor/drupal/core": [
                         "type:drupal-core"
                     ]
+                },
+                "patches_applied": {
+                    "lando blt tests:behat:run patch": "patches/blt-10-no-sandbox.patch"
                 }
             },
             "autoload": {
@@ -6713,6 +6716,10 @@
                     "homepage": "https://www.drupal.org/user/2828287"
                 },
                 {
+                    "name": "oknate",
+                    "homepage": "https://www.drupal.org/user/471638"
+                },
+                {
                     "name": "phenaproxima",
                     "homepage": "https://www.drupal.org/user/205645"
                 },
@@ -7212,7 +7219,7 @@
             "description": "Provides the field_group module.",
             "homepage": "https://www.drupal.org/project/field_group",
             "support": {
-                "source": "http://cgit.drupalcode.org/field_group"
+                "source": "https://git.drupalcode.org/project/field_group"
             }
         },
         {

@@ -172,6 +172,9 @@
             },
             "drupal/metatag": {
                 "Support JSON API, REST, GraphQL and custom normalizations | https://www.drupal.org/project/metatag/issues/2945817": "https://www.drupal.org/files/issues/2019-04-23/2945817-73.patch"
+            },
+            "acquia/blt": {
+                "lando blt tests:behat:run patch":"patches/blt-10-no-sandbox.patch"
             }
         },
         "installer-types": [
