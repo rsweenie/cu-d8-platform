@@ -84,6 +84,7 @@ display:
               header_alert: default
               hub_degree: default
               hub_faculty: default
+              hub_pd_course_date: default
               hub_program: default
               hub_site: default
               news_spotlight: default
