@@ -50,6 +50,7 @@
   ]
 %}
 {% block paragraph %}
+{{ attach_library('cu2019_grad/ct') }}
   <section{{ attributes.addClass(classes) }}>
     <div>
       <div>
@@ -57,7 +58,7 @@
         <div class="ct-content">
           {{ content }}
         </div>
-        <button class="btn-expand">Read More</button>
+        <button class="btn-expand" data-toggletext='{"collapsed":"Read More","expanded":"Show Less"}'>Read More</button>
       {% endblock %}
       </div>
     </div>

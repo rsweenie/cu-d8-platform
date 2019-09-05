@@ -20,15 +20,33 @@
     border-style: solid;
     border-width: 12px 11.5px 0 11.5px;
     border-color: $gray5 transparent transparent transparent;
-    transform: translateX(-11px);
+    transform: translateX(-14px);
     transition: border-color .25s;
   }
 
   @include hover {
+    color: $secondary;
+    background-color: transparent;
     border-bottom-color: $secondary;
 
     &:after {
       border-color: $secondary transparent transparent transparent;
+    }
+  }
+
+  .expanded &,
+  .expanded + & {
+    border-top: 4px solid $gray5;
+    border-bottom: 0;
+
+    @include hover {
+      border-top-color: $secondary;
+    }
+
+    &:after {
+      transform: translateX(-9px) rotate(180deg);
+      bottom: auto;
+      top: -15px;
     }
   }
 

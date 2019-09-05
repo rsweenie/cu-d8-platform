@@ -34,4 +34,11 @@
     content: "";
     background: linear-gradient(0deg, $white 0%, rgba($white,0) 100%);
   }
+
+  &.expanded {
+    max-height: none;
+    &:after {
+      display: none;
+    }
+  }
 }

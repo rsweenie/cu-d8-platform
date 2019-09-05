@@ -52,12 +52,29 @@
   ]
 %}
 
+{% if label_hidden %}
+  {% if multiple %}
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
-      {#
-        {{ kint(item) }}
-        <h1>Type: {{ item.content['type'] }}</h1>
-      #}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+        {{ item.content }}
       {% endfor %}
     </div>
+  {% else %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% if multiple %}
+      <div class="field__items">
+    {% endif %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
