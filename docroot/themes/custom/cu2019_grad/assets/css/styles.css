@@ -1067,15 +1067,15 @@ table tfoot td {
 
 .ct-content {
   position: relative;
-  max-height: 275px;
+  max-height: 244px;
   overflow: hidden;
 }
 
-/* line 28, src/sass/components/copy/_copy-block.scss */
+/* line 29, src/sass/components/copy/_copy-block.scss */
 
 .ct-content:after {
   width: 100%;
-  height: 7.2rem;
+  height: 7.4rem;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1084,25 +1084,25 @@ table tfoot td {
   background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* line 38, src/sass/components/copy/_copy-block.scss */
+/* line 47, src/sass/components/copy/_copy-block.scss */
 
 .ct-content.expanded {
   max-height: none;
 }
 
-/* line 40, src/sass/components/copy/_copy-block.scss */
+/* line 49, src/sass/components/copy/_copy-block.scss */
 
 .ct-content.expanded:after {
   display: none;
 }
 
-/* line 46, src/sass/components/copy/_copy-block.scss */
+/* line 55, src/sass/components/copy/_copy-block.scss */
 
 .ct {
   margin-bottom: 3rem;
 }
 
-/* line 55, src/sass/components/copy/_copy-block.scss */
+/* line 64, src/sass/components/copy/_copy-block.scss */
 
 .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
 .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
@@ -11511,7 +11511,19 @@ form.search .search button {
     height: 0.8rem;
   }
 
-  /* line 55, src/sass/components/copy/_copy-block.scss */
+  /* line 23, src/sass/components/copy/_copy-block.scss */
+
+  .ct-content {
+    max-height: 320px;
+  }
+
+  /* line 42, src/sass/components/copy/_copy-block.scss */
+
+  .ct-content:after {
+    height: 9rem;
+  }
+
+  /* line 64, src/sass/components/copy/_copy-block.scss */
 
   .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
   .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
@@ -12743,7 +12755,7 @@ form.search .search button {
     display: table;
   }
 
-  /* line 55, src/sass/components/copy/_copy-block.scss */
+  /* line 64, src/sass/components/copy/_copy-block.scss */
 
   .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
   .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
@@ -14510,7 +14522,7 @@ form.search .search button {
 }
 
 @media screen and (min-width: 1210px) {
-  /* line 55, src/sass/components/copy/_copy-block.scss */
+  /* line 64, src/sass/components/copy/_copy-block.scss */
 
   .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
   .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
