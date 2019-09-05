@@ -65,6 +65,7 @@
       
       return {
         makeHeaderSticky: function () {
+          console.log('resize is firing');
           var toolBar = $(this.elements.toolBar);
           var desktopHeight = this.getDesktopHeight();
           var mobileHeight = this.getMobileHeight();
