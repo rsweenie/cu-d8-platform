@@ -223,6 +223,14 @@ nav.mega {
                   font-weight: bold;
                   color: $secondary;
 
+
+                  @include hover {
+                    text-decoration: none;
+                    span {
+                      text-decoration: underline;
+                    }
+                  }
+
                   i {
                     transition: transform 0.25s;
                     transform: translateX(10px);

@@ -30,7 +30,7 @@
       <aside>
         <p>{{ content.field_mainmenu_feat_content }}</p>
         {% if not menu_link_content.field_mainmenu_feat_link.isEmpty() %}
-          <p><a href="{{ menu_link_content.field_mainmenu_feat_link.0.url }}">Optional Tertiary Link <i class="icon icon-right"></i></a></p>
+          <p><a href="{{ menu_link_content.field_mainmenu_feat_link.0.url }}"><span>{{ menu_link_content.field_mainmenu_feat_link.0.title }}</span> <i class="icon icon-right"></i></a></p>
         {% endif %}
       </aside>
     </div>

@@ -1360,7 +1360,7 @@ nav a {
   padding-top: 0;
 }
 
-/* line 494, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 502, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"] {
   position: absolute;
@@ -1373,34 +1373,34 @@ nav a {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 513, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 521, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle:after {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
 }
 
-/* line 517, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 525, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle .bar {
   background: #fff;
 }
 
-/* line 526, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 534, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle .bar:nth-child(1) {
   -webkit-transform: scale(0);
   transform: scale(0);
 }
 
-/* line 536, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 544, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle .bar:nth-child(2) {
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-/* line 546, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 554, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle .bar:nth-child(3) {
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
@@ -13389,7 +13389,21 @@ form.search .search button {
     color: #0054A6;
   }
 
-  /* line 226, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 59, src/sass/base/_mixins.scss */
+
+  .main-header nav.mega > ul .mega_content a:hover,
+  .main-header nav.mega > ul .mega_content a:focus {
+    text-decoration: none;
+  }
+
+  /* line 229, src/sass/structure/header/navs/_mega-menu.scss */
+
+  .main-header nav.mega > ul .mega_content a:hover span,
+  .main-header nav.mega > ul .mega_content a:focus span {
+    text-decoration: underline;
+  }
+
+  /* line 234, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content a i {
     -webkit-transition: -webkit-transform 0.25s;
@@ -13400,13 +13414,13 @@ form.search .search button {
             transform: translateX(10px);
   }
 
-  /* line 229, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 237, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content a i:before {
     vertical-align: middle;
   }
 
-  /* line 235, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 243, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content a:hover i {
     -webkit-transform: translateX(15px);
@@ -13414,13 +13428,13 @@ form.search .search button {
     text-decoration: none;
   }
 
-  /* line 242, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 250, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content ~ ul {
     width: 64%;
   }
 
-  /* line 246, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 254, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content ~ ul li {
     -webkit-box-flex: 1;
@@ -13428,7 +13442,7 @@ form.search .search button {
             flex: 1 1 50%;
   }
 
-  /* line 252, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 260, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul label {
     display: none;
@@ -13448,19 +13462,19 @@ form.search .search button {
     white-space: nowrap;
   }
 
-  /* line 286, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 294, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul input[type="checkbox"]:focus + label {
     display: block;
   }
 
-  /* line 305, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 313, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul input[type="checkbox"]:checked + label {
     display: none;
   }
 
-  /* line 328, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 336, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega a {
     display: block;
@@ -13473,26 +13487,26 @@ form.search .search button {
     text-decoration: underline;
   }
 
-  /* line 348, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 356, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li {
     position: relative;
     z-index: 0;
   }
 
-  /* line 366, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 374, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li li {
     margin: 0;
   }
 
-  /* line 375, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 383, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li li + li {
     margin: 0;
   }
 
-  /* line 409, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 417, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li:hover > div {
     display: -webkit-box;
@@ -13512,14 +13526,14 @@ form.search .search button {
             flex-flow: row nowrap;
   }
 
-  /* line 422, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 430, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li > a {
     position: relative;
     color: #0054A6;
   }
 
-  /* line 426, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 434, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li > a:before {
     width: 100%;
@@ -13533,25 +13547,25 @@ form.search .search button {
     transition: all 0.25s;
   }
 
-  /* line 439, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 447, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li:hover > a {
     text-decoration: none;
   }
 
-  /* line 441, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 449, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li:hover > a:before {
     height: 0.5rem;
   }
 
-  /* line 447, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 455, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li:last-of-type > a {
     padding-right: 3rem;
   }
 
-  /* line 453, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 461, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-1 > .menu-item {
     margin-bottom: 1.2rem;
@@ -14795,21 +14809,21 @@ form.search .search button {
     transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
   }
 
-  /* line 559, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 567, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header input[type="checkbox"]:checked ~ nav {
     -webkit-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
   }
 
-  /* line 577, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 585, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega {
     background: #0054A6;
     font-size: 1.8rem;
   }
 
-  /* line 581, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 589, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li {
     display: -webkit-box;
@@ -14818,7 +14832,7 @@ form.search .search button {
     padding: 0 1.3rem;
   }
 
-  /* line 585, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 593, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li a {
     color: #fff;
@@ -14828,14 +14842,14 @@ form.search .search button {
             flex-grow: 1;
   }
 
-  /* line 592, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 600, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li ~ li a,
   .main-header nav.mega li ~ li label {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  /* line 598, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 606, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li > div {
     position: absolute;
@@ -14851,7 +14865,7 @@ form.search .search button {
     transition: transform 0.25s, -webkit-transform 0.25s;
   }
 
-  /* line 611, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 619, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li > div .sm_toggle {
     width: auto;
@@ -14865,7 +14879,7 @@ form.search .search button {
     font-weight: bold;
   }
 
-  /* line 620, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 628, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li > div .sm_toggle .icon {
     padding: 0 1rem;
@@ -14873,7 +14887,7 @@ form.search .search button {
             transform: rotate(180deg) translateY(6px);
   }
 
-  /* line 629, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 637, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header .sm_toggle {
     color: #8AC8FF;
@@ -14889,19 +14903,19 @@ form.search .search button {
     width: 5.2rem;
   }
 
-  /* line 637, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 645, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header .mega_content {
     display: none;
   }
 
-  /* line 650, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 658, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header input[type="checkbox"]:focus + label {
     text-decoration: underline;
   }
 
-  /* line 669, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 677, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header input[type="checkbox"]:checked ~ div,
   .main-header input[type="checkbox"]:checked ~ ul {
