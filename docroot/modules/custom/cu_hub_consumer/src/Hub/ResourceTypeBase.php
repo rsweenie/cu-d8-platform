@@ -246,6 +246,10 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
     return isset($keys[$key]) ? $keys[$key] : FALSE;
   }
 
+  public function getHubFields() {
+    return $this->hubResourceInspector->inspect($this->getHubTypeId());
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -265,7 +269,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    */
   public function getAttributeType($attribute) {
     $inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
-    return isset($inspection_info[$attribute]['type']) ? $inspection_info[$attribute]['type'] : 'unknown';
+    return isset($inspection_info[$attribute]['type']) ? $inspection_info[$attribute]['type'] : 'hub_unknown';
 
     /*
     $attribute_types = $this->getAttributeTypes();

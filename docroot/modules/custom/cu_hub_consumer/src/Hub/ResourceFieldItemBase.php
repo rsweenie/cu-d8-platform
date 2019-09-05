@@ -195,4 +195,8 @@ abstract class ResourceFieldItemBase extends PluginBase implements ResourceField
     return (string) $this;
   }
 
+  public function getFieldFriendlyValue() {
+    return [];
+  }
+
 }

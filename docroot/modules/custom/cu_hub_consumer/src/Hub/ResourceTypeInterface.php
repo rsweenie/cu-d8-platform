@@ -42,6 +42,13 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
   public function getKey($key);
 
   /**
+   * Gets a list of the fields returned by hub.
+   *
+   * @return array
+   */
+  public function getHubFields();
+
+  /**
    * Gets an array of attribute type mapping.
    *
    * @return array

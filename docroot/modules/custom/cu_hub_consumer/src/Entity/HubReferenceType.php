@@ -3,6 +3,7 @@
 namespace Drupal\cu_hub_consumer\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityWithPluginCollectionInterface;
 use Drupal\Core\Plugin\DefaultSingleLazyPluginCollection;
 use Drupal\cu_hub_consumer\Hub\ResourceTypeInterface;
@@ -180,5 +181,60 @@ class HubReferenceType extends ConfigEntityBundleBase implements HubReferenceTyp
    */
   public function setFieldMap(array $map) {
     return $this->set('field_map', $map);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    parent::postSave($storage, $update);
+
+    // Clear the entity type definitions cache so changes flow through to the
+    // related entity types.
+    $this->entityTypeManager()->clearCachedDefinitions();
+
+    // Clear the router cache to prevent RouteNotFoundException errors caused
+    // by the Field UI module.
+    \Drupal::service('router.builder')->rebuild();
+
+    // Rebuild local actions so that the 'Add field' action on the 'Manage
+    // fields' tab appears.
+    \Drupal::service('plugin.manager.menu.local_action')->clearCachedDefinitions();
+
+    // Clear the static and persistent cache.
+    $storage->resetCache();
+
+    $edit_link = $this->link(t('Edit entity type'));
+
+    if ($update) {
+      $this->logger($this->id())->notice(
+        'Entity type %label has been updated.',
+        ['%label' => $this->label(), 'link' => $edit_link]
+      );
+    }
+    else {
+      // Notify storage to create the database schema.
+      $entity_type = $this->entityTypeManager()->getDefinition($this->id());
+      \Drupal::service('entity_type.listener')
+        ->onEntityTypeCreate($entity_type);
+
+      $this->logger($this->id())->notice(
+        'Entity type %label has been added.',
+        ['%label' => $this->label(), 'link' => $edit_link]
+      );
+    }
+  }
+
+  /**
+   * Gets the logger for a specific channel.
+   *
+   * @param string $channel
+   *   The name of the channel.
+   *
+   * @return \Psr\Log\LoggerInterface
+   *   The logger for this channel.
+   */
+  protected function logger($channel) {
+    return \Drupal::getContainer()->get('logger.factory')->get($channel);
   }
 }

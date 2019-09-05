@@ -112,4 +112,6 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
    */
   public function viewElements();
 
+  public function getFieldFriendlyValues();
+
 }

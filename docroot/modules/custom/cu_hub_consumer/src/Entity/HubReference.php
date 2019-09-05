@@ -11,6 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\cu_hub_consumer\Hub\Resource;
+use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
 
 /**
  * The hub reference entity class.
@@ -117,6 +118,65 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))
       ->setDescription(t('The time the hub reference item was last updated.'));
+
+    return $fields;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+    $fields = parent::bundleFieldDefinitions($entity_type, $bundle, $base_field_definitions);
+
+    if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
+      if ($reference_source = $hub_ref_type->getSource()) {
+        $resource_type = $reference_source->getResourceType();
+
+        /*
+        if ($exposed_fields = $reference_source->getMetadataAttributes()) {
+          foreach ($exposed_fields as $exposed_field => $label) {
+            $attribute_type = $resource_type->getAttributeType($exposed_field);
+            if (!in_array($attribute_type, ['metatags', 'hub_unknown', 'hub_resource'])) {
+              $field_prefix = 'external_'; //ExternalEntityInterface::ANNOTATION_FIELD_PREFIX;
+              //foreach ($inherited_fields as $field) {
+              $field_definition = BaseFieldDefinition::create($attribute_type) //BaseFieldDefinition::createFromFieldStorageDefinition($field->getFieldStorageDefinition())
+                ->setName($field_prefix . $exposed_field)
+                ->setReadOnly(TRUE)
+                ->setComputed(TRUE)
+                ->setLabel('Hub: ' . $exposed_field)
+                ->setDisplayConfigurable('view', TRUE);
+              $fields[$field_prefix . $exposed_field] = $field_definition;
+            }
+          }
+        }
+        */
+
+        $field_types = \Drupal::service('plugin.manager.field.field_type');
+
+        if ($hub_fields = $resource_type->getHubFields()) {
+          $field_prefix = HubReferenceInterface::HUB_FIELD_PREFIX;
+          foreach ($hub_fields as $field_name => $field_info) {
+            if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
+            //if (!in_array($field_info['type'], ['metatags', 'hub_unknown', 'hub_resource'])) {
+              //$field_defaults = $field_types->getDefaultFieldSettings($field_info['type']);
+              //print_r($field_def);
+
+              $field_definition = BaseFieldDefinition::create($field_info['type']) //BaseFieldDefinition::createFromFieldStorageDefinition($field->getFieldStorageDefinition())
+                ->setName($field_prefix . $field_name)
+                ->setReadOnly(TRUE)
+                ->setComputed(TRUE)
+                ->setLabel('Hub: ' . $field_name)
+                ->setDisplayConfigurable('view', TRUE)
+                ->setDisplayOptions('view', [
+                  'region' => 'hidden',
+                  'type' => $field_def['default_formatter']
+                ]);
+              $fields[$field_prefix . $field_name] = $field_definition;
+            }
+          }
+        }
+      }
+    }
 
     return $fields;
   }
@@ -319,6 +379,37 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
    */
   public static function getRequestTime() {
     return \Drupal::time()->getRequestTime();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function mapHubFields() {
+    $field_types = \Drupal::service('plugin.manager.field.field_type');
+
+    if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($this->bundle())) {
+      if ($reference_source = $hub_ref_type->getSource()) {
+        $resource_type = $reference_source->getResourceType();
+
+        if ($hub_fields = $resource_type->getHubFields()) {
+          $field_prefix = HubReferenceInterface::HUB_FIELD_PREFIX;
+          $resource_object = $this->getResourceObj();
+
+          foreach ($hub_fields as $field_name => $field_info) {
+            // Make sure the field plugin actually exists.
+            if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
+              if ($field_list = $resource_object->{$field_name}) {
+                if ($field_list instanceof ResourceFieldItemListInterface) {
+                  $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    return $this;
   }
 
 }

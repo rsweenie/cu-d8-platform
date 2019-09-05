@@ -14,78 +14,38 @@ use Drupal\cu_hub_consumer\Entity\HubReferenceInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
+use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
 
 /**
- * Implements hook_entity_extra_field_info().
+ * Implements hook_field_formatter_info_alter().
  */
-function cu_hub_consumer_entity_extra_field_info() {
-  $display_fields = [];
-
-  // Go through each bundle, find the exposed source metadata fields, and make them displayable.
-  if ($bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference')) {
-    foreach ($bundles as $bundle => $bundle_info) {
-      if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
-        if ($reference_source = $hub_ref_type->getSource()) {
-          if ($exposed_fields = $reference_source->getMetadataAttributes()) {
-            foreach ($exposed_fields as $exposed_field => $label) {
-              $display_fields['hub_reference'][$bundle]['display']['hub_resource_' . $exposed_field] = [
-                'label' => t('Hub Resource Field: ' . $label),
-                'description' => t('Shows data from ' . $label),
-                'weight' => 100,
-                'visible' => TRUE,
-              ];
-            }
-          }
-        }
-      }
-    }
+function cu_hub_consumer_field_formatter_info_alter(array &$info) {
+  if (!empty($info['text_default'])) {
+    $info['text_default']['field_types'][] = 'hub_text_long';
   }
- 
-  return $display_fields;
-}
-
-/**
- * Implements hook_ENTIIY_TYPE_view().
- */
-function cu_hub_consumer_hub_reference_view(array &$build, HubReferenceInterface $entity, EntityViewDisplayInterface $display) {
-  // Try to build any exposed resource fields.
-  $bundle = $entity->bundle();
-  if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
-    if ($reference_source = $hub_ref_type->getSource()) {
-      if ($exposed_fields = $reference_source->getMetadataAttributes()) {
-        foreach ($exposed_fields as $exposed_field => $label) {
-          if ($display->getComponent('hub_resource_' . $exposed_field)) {
-            $build['hub_resource_' . $exposed_field] = _cu_hub_consumer_build_resource_field($entity, $exposed_field);
-          }
-        }
-      }
-    }
+  if (!empty($info['text_trimmed'])) {
+    $info['text_trimmed']['field_types'][] = 'hub_text_long';
   }
 }
 
 /**
- * Tries to get the build array for the resource field.
- *
- * @param array $build
- * @param EntityInterface $entity
- * @return void
+ * Implements hook_entity_base_field_info().
  */
-function _cu_hub_consumer_build_resource_field(HubReferenceInterface $hub_reference, $field_name) {
-  if ($resource_object = $hub_reference->getResourceObj()) {
-    //dsm($resource_object->getProcessedData());
+function cu_hub_consumer_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'hub_reference') {
+    $fields = [];
 
-    if ($field_list = $resource_object->{$field_name}) {
-      if ($field_list instanceof ResourceFieldItemListInterface) {
-        return $field_list->view();
-      }
-      elseif (is_object($field_list)) {
-        // We shouldn't be here.
-        // @TODO: How should we handle this?
-      }
-      else {
-        return ['#markup' => $field_list];
-      }
-    }
+    $fields['path'] = BaseFieldDefinition::create('path')
+      ->setLabel(t('URL alias'))
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('form', array(
+        'type' => 'path',
+        'weight' => 30,
+      ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setComputed(TRUE);
+
+    return $fields;
   }
 }
 
@@ -97,10 +57,6 @@ function cu_hub_consumer_theme() {
     'hub_reference' => [
       'render element' => 'elements',
     ],
-    'hub_resource_field' => [
-      //'variables' => ['hub_reference' => NULL, 'field_name' => ''],
-      'render element' => 'element',
-    ]
   ];
 }
 
@@ -158,96 +114,6 @@ function template_preprocess_hub_reference(array &$variables) {
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
-}
-
-/**
- * Implements hook_theme_suggestions_HOOK().
- */
-function cu_hub_consumer_theme_suggestions_hub_resource_field(array $variables) {
-  $suggestions = [];
-
-  $filter = [
-    '.',
-    ':',
-    '/',
-    '[',
-    ']',
-  ];
-
-  $element = $variables['element'];
-
-  $resource = $element['#resource'];
-  $field_name = $element['#field_name'];
-  $field_type = $element['#field_type'];
-
-  //$sanitized_field_name = strtr($field_name, '.', '_');
-  $sanitized_field_name = str_replace($filter, '_', $field_name);
-  //$sanitized_resource_type = strtr($resource->getResourceTypeId(), '.', '_');
-  $sanitized_resource_type = str_replace($filter, '_', $resource->getResourceTypeId());
-
-  $suggestions[] = 'hub_resource_field__' . $field_type;
-  $suggestions[] = 'hub_resource_field__' . $sanitized_field_name;
-
-  $suggestions[] = 'hub_resource_field__resource_' . $sanitized_resource_type;
-  $suggestions[] = 'hub_resource_field__resource_' . $sanitized_resource_type . '__' . $field_type;
-  $suggestions[] = 'hub_resource_field__resource_' . $sanitized_resource_type . '__' . $sanitized_field_name;
-
-  return $suggestions;
-}
-
-/**
- * Prepares variables for hub_resource_field templates.
- *
- * Default template: hub_resource_field.html.twig.
- *
- * @param array $variables
- *   An associative array containing:
- *   - hub_reference: The hub_reference item.
- *   - field_name: The label for the hub_reference item.
- */
-function template_preprocess_hub_resource_field(array &$variables) {
-  $element = $variables['element'];
-
-  // Creating variables for the template.
-  $variables['field_name'] = $element['#field_name'];
-  $variables['field_type'] = $element['#field_type'];
-  $variables['label_display'] = $element['#label_display'];
-  $variables['label_hidden'] = $element['#label_display'] == 'hidden';
-
-  // Always set the field label - allow themes to decide whether to display it.
-  // In addition the label should be rendered but hidden to support screen
-  // readers.
-  $variables['label'] = $element['#title'];
-  $variables['multiple'] = $element['#is_multiple'];
-  static $default_attributes;
-  if (!isset($default_attributes)) {
-    $default_attributes = new Attribute();
-  }
-
-  // Merge attributes when a single-value field has a hidden label.
-  if ($element['#label_display'] == 'hidden' && !$variables['multiple'] && !empty($element['#items'][0]->_attributes)) {
-    $variables['attributes'] = NestedArray::mergeDeep($variables['attributes'], (array) $element['#items'][0]->_attributes);
-  }
-
-  // We want other preprocess functions and the theme implementation to have
-  // fast access to the field item render arrays. The item render array keys
-  // (deltas) should always be numerically indexed starting from 0, and looping
-  // on those keys is faster than calling Element::children() or looping on all
-  // keys within $element, since that requires traversal of all element
-  // properties.
-  $variables['items'] = [];
-  //dsm($element);
-  
-  $delta = 0;
-  while (!empty($element[$delta])) {
-    $variables['items'][$delta]['content'] = $element[$delta];
-
-    // Modules can add field item attributes (to
-    // $item->_attributes) within hook_entity_prepare_view().
-    $variables['items'][$delta]['attributes'] = !empty($element['#items'][$delta]->_attributes) ? new Attribute($element['#items'][$delta]->_attributes) : clone $default_attributes;
-    $delta++;
-  }
-  
 }
 
 /**

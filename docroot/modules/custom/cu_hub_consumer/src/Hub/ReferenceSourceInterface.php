@@ -178,7 +178,7 @@ interface ReferenceSourceInterface extends PluginInspectionInterface, Configurab
   public function getResourceType();
 
   /**
-   * REturns a list of resource fields that should be exposed as computed fields.
+   * Returns a list of resource fields that should be exposed as computed fields.
    *
    * @return void
    */

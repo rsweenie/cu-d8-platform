@@ -9,7 +9,7 @@ use Drupal\Component\Serialization\Json;
  * Unknown resource field.
  * 
  * @HubResourceFieldType(
- *   id = "unknown",
+ *   id = "hub_unknown",
  *   label = @Translation("Unknown"),
  *   description = @Translation("Unknown."),
  * )

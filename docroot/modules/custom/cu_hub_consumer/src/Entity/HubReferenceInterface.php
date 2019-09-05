@@ -16,6 +16,11 @@ use Drupal\Core\Entity\EntityPublishedInterface;
 interface HubReferenceInterface extends ContentEntityInterface, EntityChangedInterface, EntityPublishedInterface {
 
   /**
+   * Defines the prefix of hub fields inherited by the hub reference entity.
+   */
+  const HUB_FIELD_PREFIX = 'hub_';
+
+  /**
    * Gets the hub reference item title.
    *
    * @return string

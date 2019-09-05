@@ -45,4 +45,11 @@ abstract class ScalarFieldItemBase extends ResourceFieldItemBase {
     return $elements;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getFieldFriendlyValue() {
+    return ['value' => $this->value];
+  }
+
 }

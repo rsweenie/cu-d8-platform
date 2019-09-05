@@ -5,6 +5,7 @@ namespace Drupal\cu_hub_consumer;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
 
+
 /**
  * Defines the storage handler class for hub references.
  *
@@ -12,6 +13,20 @@ use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
  * database transaction.
  */
 class HubReferenceStorage extends SqlContentEntityStorage {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function doLoadMultiple(array $ids = NULL) {
+    $entities = parent::doLoadMultiple($ids);
+
+    // Map hub field data onto entity fields.
+    foreach ($entities as $entity) {
+      $entity->mapHubFields();
+    }
+
+    return $entities;
+  }
 
   /**
    * {@inheritdoc}

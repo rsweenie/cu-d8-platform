@@ -7,6 +7,9 @@ use Psr\Log\LoggerInterface;
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use \GuzzleHttp\Exception\RequestException;
 use Drupal\Component\Serialization\Json;
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Component\Datetime\TimeInterface;
 
 /**
  * Hub resource inspector.
@@ -34,6 +37,27 @@ class ResourceInspector {
    */
   protected $hubClient;
 
+  /**
+   * Cache backend.
+   *
+   * @var \Drupal\Core\Cache\CacheBackendInterface
+   */
+  protected $cacheBackend;
+
+  /**
+   * Cache backend.
+   *
+   * @var \Drupal\Core\Cache\MemoryCache\MemoryCacheInterface
+   */
+  protected $memCacheBackend;
+
+  /**
+   * The time service.
+   *
+   * @var \Drupal\Component\Datetime\TimeInterface
+   */
+  protected $time;
+
   protected $inspectionInfo;
 
   /**
@@ -43,13 +67,25 @@ class ResourceInspector {
    *   The config factory service.
    * @param \Psr\Log\LoggerInterface $logger
    *   The logger channel for cu_hub_consumer.
-   * @param \GuzzleHttp\ClientInterface $http_client
-   *   The HTTP client.
+   * @param \Drupal\cu_hub_consumer\Hub\Client $hub_client
+   *   The hub client.
+   * @param \Drupal\Core\Cache\CacheBackendInterface $cache
+   *   The cache backend to be used.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   The time service.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, LoggerInterface $logger, ClientInterface $hub_client) {
+  public function __construct(
+    ConfigFactoryInterface $config_factory, 
+    LoggerInterface $logger, 
+    ClientInterface $hub_client,
+    CacheBackendInterface $cache,
+    TimeInterface $time
+  ) {
     $this->configFactory = $config_factory;
     $this->logger = $logger;
     $this->hubClient = $hub_client;
+    $this->cacheBackend = $cache;
+    $this->time = $time;
   }
 
   /**
@@ -58,20 +94,12 @@ class ResourceInspector {
    * @param string $resource_type_id
    * @return array
    */
-  public function inspect($resource_type_id) {
-    $cid = 'cu_hub_consumer:hub_resource_inspection';
-
-    if (!isset($this->inspectionInfo)) {
-      if ($cache = \Drupal::cache()->get($cid)) {
-        $this->inspectionInfo = $cache->data;
-      }
-      else {
-        $this->inspectionInfo = [];
-      }
+  public function inspect($resource_type_id, $skip_cache=FALSE) {
+    if (!$skip_cache && $cache = $this->cacheBackend->get($this->buildCacheId($resource_type_id))) {
+      $inspection_info = $cache->data;
     }
-
-    if (!isset($this->inspectionInfo[$resource_type_id])) {
-      $this->inspectionInfo[$resource_type_id] = [];
+    else {
+      $inspection_info = [];
 
       if ($endpoint = $this->hubClient->getEndpoint($resource_type_id)) {
         $response = $this->hubClient->get($endpoint);
@@ -79,17 +107,33 @@ class ResourceInspector {
           if (!empty($json['data']) && is_array($json['data'])) {
             foreach ($json['data'] as $resource) {
               if (!empty($resource['attributes']) && is_array($resource['attributes'])) {
-                $this->inspectAttributes($resource['attributes'], $this->inspectionInfo[$resource_type_id]);
+                $this->inspectAttributes($resource['attributes'], $inspection_info);
+              }
+              if (!empty($resource['relationships']) && is_array($resource['relationships'])) {
+                $this->inspectRelationships($resource['relationships'], $inspection_info);
               }
             }
           }
         }
       }
 
-      \Drupal::cache()->set($cid, $this->inspectionInfo);
+      $cache_tags = [
+        //$this->entityTypeId . '_values',
+        'entity_field_info',
+      ];
+  
+      $max_age = Cache::PERMANENT; //60; //$this->getExternalEntityType()->getPersistentCacheMaxAge();
+      $expire = $max_age === Cache::PERMANENT
+        ? Cache::PERMANENT
+        : $this->time->getRequestTime() + $max_age;
+      $this->cacheBackend->set($this->buildCacheId($resource_type_id), $inspection_info, $expire, $cache_tags);
     }
 
-    return $this->inspectionInfo[$resource_type_id];
+    return $inspection_info;
+  }
+
+  protected function buildCacheId($id) {
+    return 'cu_hub_consumer:hub_resource_inspection:' . $id;
   }
 
   /**
@@ -103,7 +147,7 @@ class ResourceInspector {
     foreach ($attributes as $attribute_name => $attribute_value) {
       if (!isset($inspection_info[$attribute_name]['type'])) {
         $inspection_info[$attribute_name] = [
-          'type' => 'unknown',
+          'type' => 'hub_unknown',
           'multiple' => FALSE,
         ];
       }
@@ -119,6 +163,34 @@ class ResourceInspector {
             'multiple' => $this->isMultiple($attribute_value),
           ];
           break;
+      }
+    }
+  }
+
+  /**
+   * Inspect the relationships.
+   *
+   * @param array $attributes
+   * @param array $inspection_info
+   * @return void
+   */
+  protected function inspectRelationships($relationships, &$inspection_info) {
+    foreach ($relationships as $relationship_name => $relationship_info) {
+      if (!empty($relationship_info['data']) && is_array($relationship_info['data'])) {
+        if ($this->isMultiple($relationship_info['data'])) {
+          $inspection_info[$relationship_name] = [
+            'type' => 'hub_resource',
+            'hub_type' => $relationship_info['data'][0]['type'],
+            'multiple' => TRUE,
+          ];
+        }
+        else {
+          $inspection_info[$relationship_name] = [
+            'type' => 'hub_resource',
+            'hub_type' => $relationship_info['data']['type'],
+            'multiple' => FALSE,
+          ];
+        }
       }
     }
   }
@@ -145,15 +217,20 @@ class ResourceInspector {
         return 'decimal';
       }
 
-      return 'string';
+      return 'string_long';
     }
 
     if (is_array($value)) {
       // Is this array associative?
       if ($this->arrayIsAssociative($value)) {
+        // Is this a preprocessed text field?
+        if (isset($value['value']) && isset($value['format']) && isset($value['processed'])) {
+          return 'hub_text_long';
+        }
+
         // Is this a text field?
         if (isset($value['value']) && isset($value['format'])) {
-          return 'text';
+          return 'text_long';
         }
 
         // Is this a link field?
@@ -164,7 +241,7 @@ class ResourceInspector {
       // Else, if array is not associative then it's likely a multi-value attribute.
       else {
         // Let's run through all values and try to find most specific typing.
-        $type = 'unknown';
+        $type = 'hub_unknown';
         foreach ($value as $sub_value) {
           $type = $this->getBetterType($type, $this->detectAttributeType($sub_value));
         }
@@ -172,7 +249,7 @@ class ResourceInspector {
       }
     }
 
-    return 'unknown';
+    return 'hub_unknown';
   }
 
   /**
@@ -184,20 +261,25 @@ class ResourceInspector {
    */
   protected function getBetterType($type1, $type2) {
     $specificity = [
-      'text' => 6,
-      'link' => 5,
-      'date' => 4,
-      'int'=> 3,
-      'float' => 2,
+      'hub_resource' => 10,
+      'hub_text_long' => 9,
+      'text_long' => 9,
+      'text' => 8,
+      'link' => 7,
+      'datetime' => 6,
+      'date' => 5,
+      'integer'=> 4,
+      'decimal' => 3,
+      'string_long' => 2,
       'string' => 1,
-      'unknown' => 0,
+      'hub_unknown' => 0,
     ];
 
     $type1_specificity = isset($specificity[$type1]) ? $specificity[$type1] : -1;
     $type2_specificity = isset($specificity[$type2]) ? $specificity[$type2] : -1;
 
     if (!$type1_specificity && !$type2_specificity) {
-      return 'unknown';
+      return 'hub_unknown';
     }
 
     if ($type1_specificity > $type2_specificity) {

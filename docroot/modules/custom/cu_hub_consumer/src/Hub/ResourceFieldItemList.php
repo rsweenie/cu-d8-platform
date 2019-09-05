@@ -462,4 +462,17 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
     return $elements;
   }
 
+  /**
+   * {@inheritdoc}
+   * @todo Revisit the need when all entity types are converted to NG entities.
+   */
+  public function getFieldFriendlyValues() {
+    $values = array();
+    foreach ($this->list as $delta => $item) {
+      $values[$delta] = $item
+        ->getFieldFriendlyValue();
+    }
+    return $values;
+  }
+
 }

@@ -339,7 +339,10 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    * {@inheritdoc}
    */
   public function getExposedFields() {
-    return $this->pluginDefinition['exposed_fields'];
+    //return $this->pluginDefinition['exposed_fields'];
+    $resource_type = $this->getResourceType();
+    $hub_fields = $resource_type->getHubFields();
+    return is_array($hub_fields) ? array_keys($hub_fields) : [];
   }
 
   /**

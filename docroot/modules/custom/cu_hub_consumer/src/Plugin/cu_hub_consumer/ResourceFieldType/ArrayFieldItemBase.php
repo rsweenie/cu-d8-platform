@@ -59,4 +59,11 @@ abstract class ArrayFieldItemBase extends ResourceFieldItemBase {
     }
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getFieldFriendlyValue() {
+    return $this->value;
+  }
+
 }

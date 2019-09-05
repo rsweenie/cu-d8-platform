@@ -144,4 +144,14 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
     return $elements;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getFieldFriendlyValue() {
+    //return ['value' => $this->value];
+    //return ['date' => $this->getDateTime()->format(\DateTime::ISO8601)];
+    //return ['value' => $this->getDateTime()->getTimestamp()];
+    return ['value' => $this->getDateTime()->format('Y-m-d\TH:i:s')];
+  }
+
 }

@@ -29,4 +29,6 @@ interface ResourceFieldItemInterface {
    */
   public function view();
 
+  public function getFieldFriendlyValue();
+
 }
