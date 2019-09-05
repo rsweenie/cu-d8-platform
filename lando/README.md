@@ -11,22 +11,18 @@ and work within that environment, which *will* work.
 
 ## Basic useage
 
-To ensure that proper configuration takes place when using lando, include this 
-at the end of your local config: `docroot/sites/default/settings/local.settings.php`
-
-<pre>
-// Include this last in your local.settings.php file
-require DRUPAL_ROOT . "/sites/default/settings/creighton_dev.settings.php";
-</pre>
-
-If you have the need, you can copy the file projectdir/lando/example.lando.local.yml to
+Optionally, you can copy the file projectdir/lando/example.lando.local.yml to
 projectroot/.lando.local.yml and add any customizations for you particular use
 case. This is not required, however.
 
-If everything is working properly, simply run `lando start`. The first time this
-is run, it will set up your environment and may take five to ten minutes. Once
-you're environment is built, use the standard lando commands (to see them,
-run `lando` with no arguments).
+If everything is working properly, simply run:
+ 
+ * `lando composer install`
+ * `lando start`. 
+ 
+The first time this is run, it will set up your environment and may take five to 
+ten minutes. Onceyou're environment is built, use the standard lando commands (to 
+see them, run `lando` with no arguments).
 
 # Lando Commands
 
