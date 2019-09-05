@@ -1,0 +1,21 @@
+uuid: 6d8aa345-95b9-4cc8-a97f-c80e987d1bb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pd_course_date_date
+    - node.type.hub_pd_course_date
+  module:
+    - datetime
+id: node.hub_pd_course_date.field_pd_course_date_date
+field_name: field_pd_course_date_date
+entity_type: node
+bundle: hub_pd_course_date
+label: Date
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
