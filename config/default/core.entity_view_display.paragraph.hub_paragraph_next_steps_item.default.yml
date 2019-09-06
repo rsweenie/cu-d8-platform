@@ -1,0 +1,38 @@
+uuid: 0d5cabb3-7144-4ba5-81e0-6c8edc12d651
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hub_paragraph_next_steps_item.field_hub_next_steps_item_icon
+    - field.field.paragraph.hub_paragraph_next_steps_item.field_hub_next_steps_item_link
+    - paragraphs.paragraphs_type.hub_paragraph_next_steps_item
+  module:
+    - link
+id: paragraph.hub_paragraph_next_steps_item.default
+targetEntityType: paragraph
+bundle: hub_paragraph_next_steps_item
+mode: default
+content:
+  field_hub_next_steps_item_icon:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_hub_next_steps_item_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  search_api_excerpt: true

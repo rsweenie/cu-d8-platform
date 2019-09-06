@@ -1,0 +1,9 @@
+uuid: ee4b1807-24a8-4157-99b7-39cadb5ad9a5
+langcode: en
+status: true
+dependencies: {  }
+id: hub_paragraph_next_steps_item
+label: 'Next Steps Item'
+icon_uuid: null
+description: 'Individual tiles that represent Next Steps content items.'
+behavior_plugins: {  }
