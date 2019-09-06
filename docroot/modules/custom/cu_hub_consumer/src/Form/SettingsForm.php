@@ -48,7 +48,7 @@ class SettingsForm extends ConfigFormBase {
     $form['hub_base_url'] = [
       '#type' => 'url',
       '#title' => $this->t('Base URL'),
-      '#description' => $this->t('Example: %hub_base_url', ['%hub_base_url' => 'https://hub.creighton.com/jsonapi']),
+      '#description' => $this->t('Example: %hub_base_url. Do not include /jsonapi in the URL.', ['%hub_base_url' => 'https://hub.creighton.com']),
       '#default_value' => $config->get('hub_base_url'),
     ];
 

@@ -31,7 +31,10 @@ class UriFieldItem extends ArrayFieldItemBase {
    */
   public function getUrl() {
     // @TODO: make absolute URL using hub base URL.
-    $url = 'http://creighton-d8-hub.lndo.site' . $this->url;
+    $base_url = $this->configFactory
+      ->get('cu_hub_consumer.settings')
+      ->get('hub_base_url');
+    $url = $base_url . $this->url;
     return Url::fromUri($url, (array) $this->options);
   }
 

@@ -121,6 +121,7 @@ function cu_hub_consumer_theme_suggestions_hub_reference(array $variables) {
  *   - view_mode: View mode; e.g., 'full', 'teaser', etc.
  */
 function template_preprocess_hub_reference(array &$variables) {
+  $variables['hub_base_url'] = \Drupal::config('cu_hub_consumer.settings')->get('hub_base_url');
   $variables['hub_reference'] = $variables['elements']['#hub_reference'];
   $variables['view_mode'] = $variables['elements']['#view_mode'];
   $variables['title'] = $variables['hub_reference']->label();
@@ -139,19 +140,9 @@ function template_preprocess_hub_reference(array &$variables) {
  * @param array $variables
  */
 function template_preprocess_hub_resource(array &$variables) {
-  //$variables['resource_obj'] = $variables['elements']['#resource_obj'];
-
-  // Helpful $content variable for templates.
-  /*
-  foreach (Element::children($variables['elements']) as $key) {
-    $variables['content'][$key] = $variables['elements'][$key];
-  }
-  */
+  $variables['hub_base_url'] = \Drupal::config('cu_hub_consumer.settings')->get('hub_base_url');
 
   $resource_types = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-  //if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
-  //dsm($resource_types->getDefinitions());
-
   $resource_obj = $variables['resource_obj'];
   $resource_type = $resource_obj->getResourceTypeId();
 
@@ -162,7 +153,6 @@ function template_preprocess_hub_resource(array &$variables) {
   $variables['attributes'] = new Attribute();
 
   $variables['content'] = $variables['resource_obj']->view();
-  //dsm($variables['resource_obj']->getResourceTypeId());
 }
 
 /**
@@ -215,6 +205,8 @@ function cu_hub_consumer_theme_suggestions_hub_resource(array $variables) {
  * @param array $variables
  */
 function template_preprocess_hub_resource_field(array &$variables) {
+  $variables['hub_base_url'] = \Drupal::config('cu_hub_consumer.settings')->get('hub_base_url');
+  
   $field_list = $variables['field_list'];
   $field_items = $variables['field_items'];
 

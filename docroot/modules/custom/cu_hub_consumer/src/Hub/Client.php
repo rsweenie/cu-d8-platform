@@ -74,7 +74,7 @@ class Client implements ClientInterface {
         ->get('hub_base_url');
       
       if ($this->baseUrl) {
-        $this->baseUrl = rtrim($this->baseUrl, '/') . '/';
+        $this->baseUrl = rtrim($this->baseUrl, '/') . '/jsonapi/';
       }
     }
 
