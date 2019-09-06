@@ -222,7 +222,8 @@ class Resource implements ResourceInterface {
 
       // Now we can actually append the resources to the list.
       foreach ($relationship_data['data'] as $relationship_data_item) {
-        $relationship_list->appendItem($relationship_data_item, $this->jsonData['included']);
+        $included = isset($this->jsonData['included']) ? $this->jsonData['included'] : [];
+        $relationship_list->appendItem($relationship_data_item, $included);
       }
 
     }

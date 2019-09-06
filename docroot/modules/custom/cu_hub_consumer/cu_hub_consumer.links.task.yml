@@ -1,3 +1,6 @@
+cu_hub_consumer.tasks:
+  deriver: 'Drupal\cu_hub_consumer\Plugin\Derivative\DynamicLocalTasks'
+
 cu_hub_consumer.settings_tab:
   route_name: cu_hub_consumer.settings
   title: Settings

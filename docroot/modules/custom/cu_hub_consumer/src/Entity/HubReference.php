@@ -63,7 +63,6 @@ use Drupal\pathauto\PathautoState;
  *     "canonical" = "/hub-reference/{hub_reference}",
  *     "edit-form" = "/hub-reference/{hub_reference}/edit",
  *     "delete-form" = "/hub-reference/{hub_reference}/delete",
- *     "delete-multiple-form" = "/admin/config/services/cu_hub_consumer/references/delete",
  *     "add-page" = "/admin/config/services/cu_hub_consumer/references/add",
  *     "add-form" = "/admin/config/services/cu_hub_consumer/references/add/{hub_reference_type}",
  *     "collection" = "/admin/config/services/cu_hub_consumer/references",
