@@ -99,41 +99,46 @@ class ResourceInspector {
    * @return array
    */
   public function inspect($resource_type_id, $skip_cache=FALSE) {
-    if (!$skip_cache && $cache = $this->cacheBackend->get($this->buildCacheId($resource_type_id))) {
-      $inspection_info = $cache->data;
-    }
-    else {
-      $inspection_info = [];
+    $inspection_info = &drupal_static(__FUNCTION__);
 
-      if ($endpoint = $this->hubClient->getEndpoint($resource_type_id)) {
-        $response = $this->hubClient->get($endpoint);
-        if ($json = Json::decode($response->getBody())) {
-          if (!empty($json['data']) && is_array($json['data'])) {
-            foreach ($json['data'] as $resource) {
-              if (!empty($resource['attributes']) && is_array($resource['attributes'])) {
-                $this->inspectAttributes($resource['attributes'], $inspection_info);
-              }
-              if (!empty($resource['relationships']) && is_array($resource['relationships'])) {
-                $this->inspectRelationships($resource['relationships'], $inspection_info);
+    // We use a static cache to avoid recursion.
+    if (!isset($inspection_info[$resource_type_id])) {
+      if (!$skip_cache && $cache = $this->cacheBackend->get($this->buildCacheId($resource_type_id))) {
+        $inspection_info[$resource_type_id] = $cache->data;
+      }
+      else {
+        $inspection_info[$resource_type_id] = [];
+
+        if ($endpoint = $this->hubClient->getEndpoint($resource_type_id)) {
+          $response = $this->hubClient->get($endpoint);
+          if ($json = Json::decode($response->getBody())) {
+            if (!empty($json['data']) && is_array($json['data'])) {
+              foreach ($json['data'] as $resource) {
+                if (!empty($resource['attributes']) && is_array($resource['attributes'])) {
+                  $this->inspectAttributes($resource['attributes'], $inspection_info[$resource_type_id]);
+                }
+                if (!empty($resource['relationships']) && is_array($resource['relationships'])) {
+                  $this->inspectRelationships($resource['relationships'], $inspection_info[$resource_type_id], $skip_cache);
+                }
               }
             }
           }
         }
-      }
 
-      $cache_tags = [
-        //$this->entityTypeId . '_values',
-        'entity_field_info',
-      ];
-  
-      $max_age = Cache::PERMANENT; //60; //$this->getExternalEntityType()->getPersistentCacheMaxAge();
-      $expire = $max_age === Cache::PERMANENT
-        ? Cache::PERMANENT
-        : $this->time->getRequestTime() + $max_age;
-      $this->cacheBackend->set($this->buildCacheId($resource_type_id), $inspection_info, $expire, $cache_tags);
+        $cache_tags = [
+          //$this->entityTypeId . '_values',
+          'entity_field_info',
+        ];
+    
+        $max_age = Cache::PERMANENT; //60; //$this->getExternalEntityType()->getPersistentCacheMaxAge();
+        $expire = $max_age === Cache::PERMANENT
+          ? Cache::PERMANENT
+          : $this->time->getRequestTime() + $max_age;
+        $this->cacheBackend->set($this->buildCacheId($resource_type_id), $inspection_info[$resource_type_id], $expire, $cache_tags);
+      }
     }
 
-    return $inspection_info;
+    return $inspection_info[$resource_type_id];
   }
 
   protected function buildCacheId($id) {
@@ -176,9 +181,10 @@ class ResourceInspector {
    *
    * @param array $attributes
    * @param array $inspection_info
+   * @param boolean $skip_cache
    * @return void
    */
-  protected function inspectRelationships($relationships, &$inspection_info) {
+  protected function inspectRelationships($relationships, &$inspection_info, $skip_cache=FALSE) {
     foreach ($relationships as $relationship_name => $relationship_info) {
       if (!empty($relationship_info['data']) && is_array($relationship_info['data'])) {
         if ($this->isMultiple($relationship_info['data'])) {
@@ -187,6 +193,8 @@ class ResourceInspector {
             'hub_type' => $relationship_info['data'][0]['type'],
             'multiple' => TRUE,
           ];
+
+          $this->inspect($relationship_info['data'][0]['type'], $skip_cache);
         }
         else {
           $inspection_info[$relationship_name] = [
@@ -194,6 +202,8 @@ class ResourceInspector {
             'hub_type' => $relationship_info['data']['type'],
             'multiple' => FALSE,
           ];
+
+          $this->inspect($relationship_info['data']['type'], $skip_cache);
         }
       }
     }
