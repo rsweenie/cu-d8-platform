@@ -1,0 +1,33 @@
+uuid: e7cba48e-abd1-41bb-8f19-7ff32492d648
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - private_content
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  private_content:
+    private: 0
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'PD Course'
+type: hub_pd_course
+description: 'Course detail page that can be linked to from a program or degree page.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
