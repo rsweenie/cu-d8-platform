@@ -1,0 +1,21 @@
+uuid: 1ab811d0-b5ae-4330-b96b-25cf9d93b85d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hub_fac_spotlight_type
+    - paragraphs.paragraphs_type.hub_faculty_alumni_spotlight
+  module:
+    - options
+id: paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_type
+field_name: field_hub_fac_spotlight_type
+entity_type: paragraph
+bundle: hub_faculty_alumni_spotlight
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

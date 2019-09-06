@@ -1,0 +1,92 @@
+uuid: 90c62ea0-6cbd-4ab6-847d-b7cfb57b1e42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_creds
+    - field.field.paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_cta
+    - field.field.paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_desc
+    - field.field.paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_image
+    - field.field.paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_name
+    - field.field.paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_type
+    - paragraphs.paragraphs_type.hub_faculty_alumni_spotlight
+  module:
+    - link
+    - media_library
+    - name
+id: paragraph.hub_faculty_alumni_spotlight.default
+targetEntityType: paragraph
+bundle: hub_faculty_alumni_spotlight
+mode: default
+content:
+  field_hub_fac_spotlight_creds:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_fac_spotlight_cta:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_hub_fac_spotlight_desc:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_hub_fac_spotlight_image:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_hub_fac_spotlight_name:
+    weight: 1
+    settings:
+      labels:
+        title: Title
+        given: Given
+        middle: 'Middle name(s)'
+        family: Family
+        generational: Generational
+        credentials: Credentials
+      size:
+        title: 6
+        given: 20
+        middle: 20
+        family: 20
+        generational: 5
+        credentials: 35
+      title_display:
+        title: description
+        given: description
+        middle: description
+        family: description
+        generational: description
+        credentials: description
+      widget_layout: stacked
+      show_component_required_marker: false
+      credentials_inline: false
+      override_field_settings: false
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_hub_fac_spotlight_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
