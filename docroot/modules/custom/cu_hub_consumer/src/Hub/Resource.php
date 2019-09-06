@@ -70,7 +70,7 @@ class Resource implements ResourceInterface {
   /**
    * {@inheritdoc}
    */
-  public static function createFromData(ResourceTypeInterface $resource_type, $data) {
+  public static function createFromData(ResourceTypeInterface $resource_type, $data, $included=[]) {
     if (!is_array($data)) {
       return NULL;
     }
@@ -78,7 +78,11 @@ class Resource implements ResourceInterface {
     $resource = new static($resource_type);
 
     $resource->jsonData = ['data' => $data];
-    //$resource->jsonData = $data;
+
+    if (!empty($included)) {
+      $resource->jsonData['included'] = $included;
+    }
+
     $resource->getProcessedData();
 
     return $resource;
@@ -218,7 +222,7 @@ class Resource implements ResourceInterface {
 
       // Now we can actually append the resources to the list.
       foreach ($relationship_data['data'] as $relationship_data_item) {
-        $relationship_list->appendItem($relationship_data_item);
+        $relationship_list->appendItem($relationship_data_item, $this->jsonData['included']);
       }
 
     }

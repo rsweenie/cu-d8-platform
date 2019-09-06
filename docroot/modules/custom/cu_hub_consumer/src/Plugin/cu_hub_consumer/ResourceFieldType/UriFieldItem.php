@@ -6,21 +6,21 @@ use Drupal\cu_hub_consumer\Hub\ResourceFieldItemBase;
 use Drupal\Core\Url;
 
 /**
- * Generic link resource field.
+ * Generic URI resource field.
  * 
  * @HubResourceFieldType(
- *   id = "link",
+ *   id = "uri",
  *   label = @Translation("Link"),
  *   description = @Translation("Link."),
  * )
  */
-class LinkFieldItem extends ArrayFieldItemBase {
+class UriFieldItem extends ArrayFieldItemBase {
 
   /**
    * {@inheritdoc}
    */
   public function mainPropertyName() {
-    return 'uri';
+    return 'url';
   }
 
   /**
@@ -30,7 +30,9 @@ class LinkFieldItem extends ArrayFieldItemBase {
    *   Returns a Url object.
    */
   public function getUrl() {
-    return Url::fromUri($this->uri, (array) $this->options);
+    // @TODO: make absolute URL using hub base URL.
+    $url = 'http://creighton-d8-hub.lndo.site' . $this->url;
+    return Url::fromUri($url, (array) $this->options);
   }
 
   /**

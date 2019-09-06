@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "051c7fc44927488e47ece828baaa95e6",
+    "content-hash": "9d7f6fe541fedeea3bb07540304295a3",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -1005,7 +1005,7 @@
             "version": "v4.2.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/desandro/masonry.git",
+                "url": "git@github.com:desandro/masonry.git",
                 "reference": "3b0883cf4a4a046896719b9cf282ea74be7ffecd"
             },
             "dist": {
@@ -4492,7 +4492,7 @@
             "version": "8.3.5",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "35277fc8675b6a2cbb194f8880145a9c85c845c4"
             },
             "require": {
@@ -7732,6 +7732,57 @@
                 "source": "https://www.drupal.org/project/image_widget_crop",
                 "issues": "https://www.drupal.org/project/issues/image_widget_crop",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/imagecache_external",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/imagecache_external.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/imagecache_external-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "092a390745262f19d122269cf98e27270e7f82f4"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1566404301",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "BarisW",
+                    "homepage": "https://www.drupal.org/user/107229"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                }
+            ],
+            "description": "Allows you to fetch external images and use image styles on them.",
+            "homepage": "https://www.drupal.org/project/imagecache_external",
+            "support": {
+                "source": "https://git.drupalcode.org/project/imagecache_external"
             }
         },
         {

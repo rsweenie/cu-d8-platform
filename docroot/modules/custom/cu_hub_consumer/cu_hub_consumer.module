@@ -166,6 +166,48 @@ function template_preprocess_hub_resource(array &$variables) {
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function cu_hub_consumer_theme_suggestions_hub_resource(array $variables) {
+  $suggestions = [];
+
+  $resource_obj = $variables['resource_obj'];
+  $resource_type = $resource_obj->getResourceTypeId();
+
+  $sanitized_resource_type = preg_replace('/[^a-z0-9-]/i', '-', $resource_type);//strtr($resource_type, '.', '_');
+
+  //$suggestions[] = 'hub_reference__' . $sanitized_resource_type;
+
+  /*
+  // @var \Drupal\cu_hub_consumer\Entity\HubReferenceInterface $hub_reference
+  $hub_reference = $variables['elements']['#hub_reference'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'hub_reference__' . $sanitized_view_mode;
+  $suggestions[] = 'hub_reference__' . $hub_reference->bundle();
+  $suggestions[] = 'hub_reference__' . $hub_reference->bundle() . '__' . $sanitized_view_mode;
+
+  // Add suggestions based on the source plugin ID.
+  $source = $hub_reference->getSource();
+  if ($source instanceof DerivativeInspectionInterface) {
+    $source_id = $source->getBaseId();
+    $suggestions[] = 'hub_reference__source_' . $source_id;
+
+    if ($derivative_id = $source->getDerivativeId()) {
+      $source_id .= '_' . $derivative_id;
+      $suggestions[] = 'hub_reference__source_' . $source_id;
+    }
+  }
+  else {
+    $source_id = $source->getPluginId();
+    $suggestions[] = 'hub_reference__source_' . $source_id;
+  }
+  */
+
+  return $suggestions;
+}
+
+/**
  * Prepares variables for hub_resource_field templates.
  *
  * Default template: hub_resource_field.html.twig.
@@ -187,6 +229,7 @@ function template_preprocess_hub_resource_field(array &$variables) {
 
   // Replace any characters that aren't allowed.
   $field_type = preg_replace('/[^a-z0-9-]/i', '-', $field_type);
+  $field_type = preg_replace('/--+/i', '-', $field_type);
 
   $variables['field_name'] = $field_list->getFieldName();
   $variables['field_type'] = $field_type;
@@ -206,6 +249,25 @@ function template_preprocess_hub_resource_field(array &$variables) {
     $variables['items'][$key]['content'] = $variables['elements'][$key];
     $variables['items'][$key]['attributes'] = !empty($variables['field_items'][$key]->_attributes) ? new Attribute($variables['field_items'][$key]->_attributes) : clone $default_attributes;
   }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function cu_hub_consumer_theme_suggestions_hub_resource_field(array $variables) {
+  $suggestions = [];
+
+  $field_list = $variables['field_list'];
+  $field_items = $variables['field_items'];
+  $field_type = $field_list->getFieldType();
+
+  // Replace any characters that aren't allowed.
+  $sanitized_field_type = preg_replace('/[^a-z0-9-]/i', '_', $field_type);
+  $sanitized_field_type = preg_replace('/__+/i', '_', $sanitized_field_type);
+
+  $suggestions[] = 'hub_resource_field__' . $sanitized_field_type;
+
+  return $suggestions;
 }
 
 /**

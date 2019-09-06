@@ -248,6 +248,11 @@ class ResourceInspector {
         }
 
         // Is this a link field?
+        if (isset($value['value']) && isset($value['url'])) {
+          return 'uri';
+        }
+
+        // Is this a link field?
         if (isset($value['uri'])) {
           return 'link';
         }
@@ -275,10 +280,11 @@ class ResourceInspector {
    */
   protected function getBetterType($type1, $type2) {
     $specificity = [
-      'hub_resource' => 10,
-      'hub_text_long' => 9,
-      'text_long' => 9,
-      'text' => 8,
+      'hub_resource' => 12,
+      'hub_text_long' => 11,
+      'text_long' => 10,
+      'text' => 9,
+      'uri' => 8,
       'link' => 7,
       'datetime' => 6,
       'date' => 5,

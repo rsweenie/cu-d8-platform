@@ -457,8 +457,14 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
       $elements = array_merge($info, $elements);
       */
 
+      $field_type = $this->getFieldType();
+
+      // Replace any characters that aren't allowed.
+      $field_type = preg_replace('/:/i', '__', $field_type);
+      $field_type = preg_replace('/[^a-z0-9_-]/i', '_', $field_type);
+
       $elements = [
-        '#theme' => 'hub_resource_field',
+        '#theme' => 'hub_resource_field__type_' . $field_type,
         '#title' => '',
         '#label_display' => 'hidden',
         '#field_list' => $this,

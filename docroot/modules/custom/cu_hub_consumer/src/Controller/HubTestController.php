@@ -52,14 +52,18 @@ class HubTestController extends ControllerBase {
     //dsm($client->getEndpoints());
 
     $inspector = \Drupal::service('cu_hub_consumer.hub_resource_inspector');
-    dsm($inspector->inspect('node--hub_program', TRUE));
-    dsm($inspector->inspect('node--hub_degree', TRUE));
-    dsm($inspector->inspect('taxonomy_term--program_interests', TRUE));
+    //dsm($inspector->inspect('node--hub_program', TRUE));
+    //dsm($inspector->inspect('node--hub_degree', TRUE));
+    //dsm($inspector->inspect('taxonomy_term--program_interests', TRUE));
+    //dsm($inspector->inspect('media--image', TRUE));
+    //dsm($inspector->inspect('file--file', TRUE));
 
     $this->testResourceList('program');
 
     $this->testResource('program', '0d40a955-8399-42e9-8be8-c9544b84bb5e');
-    $this->testResource('degree', '9243a05e-396e-4aec-aed2-14f365b668ab');
+
+    $degree = $this->testResource('degree', '9243a05e-396e-4aec-aed2-14f365b668ab');
+    dsm($degree->field_hub_degree_hero_image[0]->image[0]->uri[0]);
 
     return $build;
   }

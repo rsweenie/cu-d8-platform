@@ -314,6 +314,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
           //$elements[$field] = ['#markup' => $field_list];
         }
       }
+      $elements = array_filter($elements);
     }
 
     return $elements;
