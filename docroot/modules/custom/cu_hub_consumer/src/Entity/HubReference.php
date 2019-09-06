@@ -13,6 +13,7 @@ use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\cu_hub_consumer\Hub\Resource;
 use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
 use Drupal\cu_hub_consumer\Hub\ResourceRelationshipListInterface;
+use Drupal\pathauto\PathautoState;
 
 /**
  * The hub reference entity class.
@@ -347,6 +348,13 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         // Try to set a default name for this hub reference item if no name is provided.
         if ($translation->get('title')->isEmpty()) {
           $translation->setTitle($translation->getTitle());
+        }
+
+        if ($path = $hub_reference_source->getMetadata($translation, 'path')) {
+          $translation->set('path', [
+            'alias' => $path,
+            'pathauto' => PathautoState::SKIP,
+          ]);
         }
       }
     }

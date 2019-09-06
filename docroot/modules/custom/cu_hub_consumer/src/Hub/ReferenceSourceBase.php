@@ -252,15 +252,15 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    * {@inheritdoc}
    */
   public function getMetadata(HubReferenceInterface $hub_reference, $attribute_name) {
-    $resource_data = &drupal_static(__FUNCTION__);
+    $resources = &drupal_static(__FUNCTION__);
     
     $hub_uuid = $this->getSourceFieldValue($hub_reference);
     $resource_type = $this->getResourceType();
 
-    if (!isset($resource_data[$hub_reference->id()])) {
+    if (!isset($resources[$hub_reference->id()])) {
       try {
-        $resource = $resource_type->fetchResource($hub_uuid);
-        $resource_data[$hub_reference->id()] = $resource->getProcessedData();
+        $resources[$hub_reference->id()] = $resource_type->fetchResource($hub_uuid);
+        //$resource_data[$hub_reference->id()] = $resource->getProcessedData();
       }
       catch (ResourceException $e) {
         $this->messenger->addError($e->getMessage());
@@ -279,24 +279,24 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         return 'hub_reference:' . $hub_reference->bundle() . ':' . $hub_reference->uuid();
 
       case 'type':
-        return $resource_data[$hub_reference->id()]['type'];
+        //return $resource_data[$hub_reference->id()]['type'];
+        return (string) $resources[$hub_reference->id()]->type;
       
       case 'uuid':
-        return $resource_data[$hub_reference->id()]['id'];
+        //return $resource_data[$hub_reference->id()]['id'];
+        return (string) $resources[$hub_reference->id()]->id;
 
       case 'title':
-        /*
-        if (!empty($this->pluginDefinition['entity_keys']['label'])) {
-          $resource_field = $this->pluginDefinition['entity_keys']['label'];
-          if (!empty($resource_data[$hub_reference->id()][$resource_field])) {
-            return $resource_data[$hub_reference->id()][$resource_field];
+        if ($key = $resource_type->getKey('label')) {
+          if (!empty($resources[$hub_reference->id()]->{$key})) {
+            return $resources[$hub_reference->id()]->{$key}->getString();
           }
         }
-        */
-        if ($key = $resource_type->getKey('label')) {
-          if (!empty($resource_data[$hub_reference->id()][$key])) {
-            return $resource_data[$hub_reference->id()][$key];
-          }
+        return NULL;
+
+      case 'path':
+        if (!empty($resources[$hub_reference->id()]->field_hub_path_alias)) {
+          return $resources[$hub_reference->id()]->field_hub_path_alias->getString();
         }
         return NULL;
 
