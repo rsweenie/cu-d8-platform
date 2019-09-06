@@ -64,14 +64,14 @@ $mediaLgOnly: " screen and (min-width: 992px) and (max-width: 1209.9px)"; // TAB
 $mediaXl: " screen and (min-width: 1210px)"; // SMALL MONITORS
 $mediaXxl: " screen and (min-width: 1600px)"; // LARGER MONITORS
 $mediaToggleHeader: " screen and (max-width: 1079.9px)"; // ALL PHONES DEVICES
-$mediaFullHeader: " screen and (min-width: 1080px)"; // ALL PHONES DEVICES
+$mediaFullHeader: " screen and (min-width: 1090px)"; // ALL PHONES DEVICES
 $darkMode: " screen and (prefers-color-scheme: dark)"; // LARGER MONITORS
 
 $mediaMdMax: " screen and (max-width: 767.9px)";
 $mediaLgMax: " screen and (max-width: 991.9px)";
 /*---=== GRID ===---*/
 $siteWList: 100%, 95%, 90%, 85%;
-$siteWQueryList: $mediaXs, $mediaLg, $mediaXl, $mediaXxl;
+$siteWQueryList: $mediaXs, $mediaLg, $mediaFullHeader, $mediaXxl;
 $siteWMx: 1350px; // SITES CONTENT MAX WIDTH
 $gridMediaList: "XS", "SM", "MD", "LG"; // MEDIA QUERY LIST USED TO GENERATE GRID ELEMENTS
 $gridMediaQueryList: $mediaXs, $mediaSm, $mediaMd, $mediaLg; // MEDIA QUERIES USED IN COMBINATION WITH GRID MEDIA LIST
