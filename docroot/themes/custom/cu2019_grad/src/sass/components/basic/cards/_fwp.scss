@@ -1,4 +1,4 @@
-.fw_photo & {
+&.fw_photo {
   color: $white;
   border-top: 8px solid $tertiary;
   border-bottom: 8px solid $tertiary;
@@ -37,6 +37,7 @@
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 0;
+    color: $white;
 
     @media #{$mediaMd} {
       font-size: 40px;

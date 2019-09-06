@@ -3198,7 +3198,7 @@ aside .card.img-side + p {
 
 /* line 1, src/sass/components/basic/cards/_fwp.scss */
 
-.fw_photo .card {
+.card.fw_photo {
   color: #fff;
   border-top: 8px solid #6CACE4;
   border-bottom: 8px solid #6CACE4;
@@ -3206,13 +3206,13 @@ aside .card.img-side + p {
 
 /* line 6, src/sass/components/basic/cards/_fwp.scss */
 
-.fw_photo .card.img-behind {
+.card.fw_photo.img-behind {
   padding: 4.5rem 0;
 }
 
 /* line 15, src/sass/components/basic/cards/_fwp.scss */
 
-.fw_photo .card:before {
+.card.fw_photo:before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3225,30 +3225,31 @@ aside .card.img-side + p {
 
 /* line 29, src/sass/components/basic/cards/_fwp.scss */
 
-.fw_photo .card.bg-grey:before {
+.card.fw_photo.bg-grey:before {
   background: rgba(33, 35, 34, 0.82);
 }
 
 /* line 34, src/sass/components/basic/cards/_fwp.scss */
 
-.fw_photo .card h3 {
+.card.fw_photo h3 {
   font-size: 3rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 0;
+  color: #fff;
 }
 
-/* line 46, src/sass/components/basic/cards/_fwp.scss */
+/* line 47, src/sass/components/basic/cards/_fwp.scss */
 
-.fw_photo .card p {
+.card.fw_photo p {
   font-size: 1.4rem;
   line-height: 1.4em;
 }
 
-/* line 56, src/sass/components/basic/cards/_fwp.scss */
+/* line 57, src/sass/components/basic/cards/_fwp.scss */
 
-.fw_photo .card [class*="btn-"] {
+.card.fw_photo [class*="btn-"] {
   margin-top: 2rem;
 }
 
@@ -4192,7 +4193,7 @@ blockquote .tooltip-trigger {
 
 /* line 1, src/sass/components/basic/_ns.scss */
 
-.ns {
+.section.ns {
   background: -webkit-gradient(linear, left bottom, left top, from(#00204c), to(#002E6D));
   background: linear-gradient(0deg, #00204c 0%, #002E6D 100%);
   color: #fff;
@@ -4201,7 +4202,7 @@ blockquote .tooltip-trigger {
 
 /* line 10, src/sass/components/basic/_ns.scss */
 
-.ns .icon {
+.section.ns .icon {
   width: 6.4rem;
   height: 6.4rem;
   display: -webkit-box;
@@ -4223,26 +4224,26 @@ blockquote .tooltip-trigger {
 
 /* line 31, src/sass/components/basic/_ns.scss */
 
-.ns a {
+.section.ns a {
   color: #fff;
   text-decoration: none;
 }
 
 /* line 36, src/sass/components/basic/_ns.scss */
 
-.ns a:hover span:last-child {
+.section.ns a:hover span:last-child {
   text-decoration: underline;
 }
 
 /* line 39, src/sass/components/basic/_ns.scss */
 
-.ns a:hover .icon {
+.section.ns a:hover .icon {
   background: #019cdb;
 }
 
 /* line 56, src/sass/components/basic/_ns.scss */
 
-.ns h2 {
+.section.ns h2 {
   font-size: 3.2rem;
   line-height: 1em;
   text-align: center;
@@ -4251,14 +4252,14 @@ blockquote .tooltip-trigger {
 
 /* line 75, src/sass/components/basic/_ns.scss */
 
-.ns ul li {
+.section.ns ul li {
   padding: 0;
   font-size: 1.8rem;
 }
 
 /* line 78, src/sass/components/basic/_ns.scss */
 
-.ns ul li:before {
+.section.ns ul li:before {
   display: none;
 }
 
@@ -11988,19 +11989,19 @@ form.search .search button {
 
   /* line 34, src/sass/components/basic/cards/_fwp.scss */
 
-  .fw_photo .card h3 {
+  .card.fw_photo h3 {
     font-size: 4rem;
   }
 
-  /* line 46, src/sass/components/basic/cards/_fwp.scss */
+  /* line 47, src/sass/components/basic/cards/_fwp.scss */
 
-  .fw_photo .card p {
+  .card.fw_photo p {
     font-size: 1.9rem;
   }
 
-  /* line 56, src/sass/components/basic/cards/_fwp.scss */
+  /* line 57, src/sass/components/basic/cards/_fwp.scss */
 
-  .fw_photo .card [class*="btn-"] {
+  .card.fw_photo [class*="btn-"] {
     float: right;
   }
 
@@ -12964,7 +12965,7 @@ form.search .search button {
 
   /* line 6, src/sass/components/basic/cards/_fwp.scss */
 
-  .fw_photo .card.img-behind {
+  .card.fw_photo.img-behind {
     padding: 13.5rem 0 8rem;
     margin-bottom: 1.5rem;
   }
@@ -13080,7 +13081,7 @@ form.search .search button {
 
   /* line 56, src/sass/components/basic/_ns.scss */
 
-  .ns h2 {
+  .section.ns h2 {
     font-size: 4.2rem;
   }
 
@@ -14258,13 +14259,13 @@ form.search .search button {
 
   /* line 1, src/sass/components/basic/_ns.scss */
 
-  .ns {
+  .section.ns {
     padding: 7.5rem 0;
   }
 
   /* line 10, src/sass/components/basic/_ns.scss */
 
-  .ns .icon {
+  .section.ns .icon {
     width: 13.6rem;
     height: 13.6rem;
     font-size: 6rem;
@@ -14273,7 +14274,7 @@ form.search .search button {
 
   /* line 67, src/sass/components/basic/_ns.scss */
 
-  .ns ul {
+  .section.ns ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -14286,7 +14287,7 @@ form.search .search button {
 
   /* line 75, src/sass/components/basic/_ns.scss */
 
-  .ns ul li {
+  .section.ns ul li {
     width: 20%;
     margin: 0 3.5rem;
     font-size: 2.1rem;
@@ -15085,7 +15086,7 @@ form.search .search button {
 
   /* line 31, src/sass/components/basic/_ns.scss */
 
-  .ns a {
+  .section.ns a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -15096,7 +15097,7 @@ form.search .search button {
 
   /* line 48, src/sass/components/basic/_ns.scss */
 
-  .ns a .icon + span {
+  .section.ns a .icon + span {
     display: block;
     margin: 0 -2rem;
   }
