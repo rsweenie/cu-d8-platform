@@ -1,6 +1,10 @@
 <?php
 
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\TypedData\Plugin\DataType\DateTimeIso8601;
+use Drupal\datetime\DateTimeComputed;
+use Drupal\datetime_range\Plugin\Field\FieldType\DateRangeFieldItemList;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Component\Utility\Html as HtmlUtility;
 use Drupal\Core\Render\Markup;
@@ -21,6 +25,18 @@ function cu2019_grad_preprocess_node(&$variables) {
           // @TODO do we need to make adjustments to the cache tags?
           $variables['side_nav'] = _cu2019_grad_get_menu_sibling_tree();
           break;
+      }
+    }
+  }
+}
+
+function cu2019_grad_preprocess_field__field_interior_page_content(&$variables) {
+  $element = $variables['element'];
+
+  if ($paragraphs = $element['#items']->referencedEntities()) {
+    foreach ($variables['items'] as $key => &$item) {
+      if (isset($paragraphs[$key])) {
+        $item['attributes']->addClass('paragraph-type-' . $paragraphs[$key]->bundle());
       }
     }
   }
@@ -79,7 +95,17 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
         break;
     }
   }
-  
+
+  if ($paragraph->hasField('field_mfse_date')) {
+    /** @var DateRangeFieldItemList $field */
+    $dateRange = $paragraph->get('field_mfse_date')->first();
+    $start_date = $dateRange->get('value')->getValue();
+    $end_date = $dateRange->get('end_value')->getValue();
+
+    $variables['multi_day'] = ($start_date != $end_date)? TRUE : FALSE;
+    list($variables['start_month'], $variables['start_day']) = explode(' ', $dateRange->get('start_date')->getValue()->format('M j'));
+  }
+
 }
 
 // Returns a render array with the sub-tree of the current active link.

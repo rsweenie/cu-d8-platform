@@ -18,3 +18,64 @@
     }
   }
 }
+
+
+.ct-content {
+  position: relative;
+  max-height: 244px;
+  overflow: hidden;
+  //border: 1px solid #AAA;
+
+  &:after {
+    width: 100%;
+    height: 74px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background: linear-gradient(0deg, $white 0%, rgba($white,0) 100%);
+  }
+
+  @media #{$mediaMd} {
+    max-height: 320px;
+
+    &:after {
+      height: 90px;
+    }
+  }
+
+  &.expanded {
+    max-height: none;
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.ct {
+  margin-bottom: 30px;
+}
+
+
+.paragraph-type-formatted_text,
+.paragraph-type-collapsible_text {
+  + .paragraph-type-formatted_text,
+  + .paragraph-type-collapsible_text  {
+    .section {
+      padding-top: 0;
+      margin-top: -#{$gutter}rem;
+
+      @media #{$mediaMd} {
+        margin-top: #{$gutter * -1.5}rem;
+      }
+
+      @media #{$mediaLg} {
+        margin-top: #{$gutter * -2}rem;
+      }
+
+      @media #{$mediaXl} {
+        margin-top: #{$gutter * -2.5}rem;
+      }
+    }
+  }
+}

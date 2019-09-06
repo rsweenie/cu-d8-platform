@@ -44,15 +44,23 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'mfsi'
+    'copy-block',
+    'section',
+    'ct'
   ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      <a href="{{ content.field_mfsi_link[0]['#url'] }}">{{ content.field_mfsi_image }}</a>
-      <div class="tag"><span class="{{ mfs_icon }}"></span>{{ mfs_type }}</div>
-      <a href="{{ content.field_mfsi_link[0]['#url'] }}">{{ content.field_mfsi_short_text }}<span class="icon icon-right"></span></a>
-    {% endblock %}
-  </div>
+{{ attach_library('cu2019_grad/ct') }}
+  <section{{ attributes.addClass(classes) }}>
+    <div>
+      <div>
+      {% block content %}
+        <div class="ct-content">
+          {{ content }}
+        </div>
+        <button class="btn-expand" data-toggletext='{"collapsed":"Read More","expanded":"Show Less"}'>Read More</button>
+      {% endblock %}
+      </div>
+    </div>
+  </section>
 {% endblock paragraph %}
