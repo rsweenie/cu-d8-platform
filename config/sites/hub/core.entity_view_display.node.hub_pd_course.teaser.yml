@@ -1,0 +1,39 @@
+uuid: 9db1a75e-36f2-4239-8c0c-7df5c69dd259
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hub_pd_course.body
+    - node.type.hub_pd_course
+  module:
+    - private_content
+    - text
+    - user
+id: node.hub_pd_course.teaser
+targetEntityType: node
+bundle: hub_pd_course
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  search_api_excerpt: true
