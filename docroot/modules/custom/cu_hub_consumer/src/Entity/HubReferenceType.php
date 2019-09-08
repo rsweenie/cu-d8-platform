@@ -13,13 +13,13 @@ use Drupal\cu_hub_consumer\Hub\ResourceTypeInterface;
  *
  * @ConfigEntityType(
  *   id = "hub_reference_type",
- *   label = @Translation("Hub reference type"),
- *   label_collection = @Translation("Hub reference types"),
- *   label_singular = @Translation("hub reference type"),
- *   label_plural = @Translation("hub reference types"),
+ *   label = @Translation("Hub Reference type"),
+ *   label_collection = @Translation("Hub Reference types"),
+ *   label_singular = @Translation("Hub Reference type"),
+ *   label_plural = @Translation("Hub Reference types"),
  *   label_count = @PluralTranslation(
- *     singular = "@count hub reference type",
- *     plural = "@count hub reference types"
+ *     singular = "@countHub Reference type",
+ *     plural = "@count Hub Reference types"
  *   ),
  *   handlers = {
  *     "access" = "Drupal\cu_hub_consumer\HubReferenceTypeAccessControlHandler",

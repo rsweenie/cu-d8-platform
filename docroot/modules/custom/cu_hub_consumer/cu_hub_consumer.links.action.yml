@@ -1,19 +1,6 @@
 
 cu_hub_consumer.hub_reference_type_add:
-  # Which route will be called by the link
   route_name: entity.hub_reference_type.add_form
   title: 'Add hub reference type'
-
-  # Where will the link appear, defined by route name.
   appears_on:
     - entity.hub_reference_type.collection
-
-
-cu_hub_consumer.hub_reference_add:
-  # Which route will be called by the link
-  route_name: entity.hub_reference.add_page
-  title: 'Add hub reference'
-
-  # Where will the link appear, defined by route name.
-  appears_on:
-    - entity.hub_reference.collection

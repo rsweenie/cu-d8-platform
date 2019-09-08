@@ -15,9 +15,3 @@ entity.hub_reference_type.collection:
   title: Hub References Types
   route_name: entity.hub_reference_type.collection
   base_route: cu_hub_consumer.settings
-
-entity.hub_reference.collection:
-  title: Hub References
-  route_name: entity.hub_reference.collection
-  base_route: cu_hub_consumer.settings
-  weight: 10

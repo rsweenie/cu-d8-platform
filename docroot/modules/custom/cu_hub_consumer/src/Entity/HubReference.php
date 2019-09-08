@@ -22,14 +22,14 @@ use Drupal\pathauto\PathautoState;
  *
  * @ContentEntityType(
  *   id = "hub_reference",
- *   label = @Translation("Hub Reference Entity"),
- *   label_singular = @Translation("hub reference item"),
- *   label_plural = @Translation("hub reference items"),
+ *   label = @Translation("Hub Reference"),
+ *   label_singular = @Translation("Hub Reference item"),
+ *   label_plural = @Translation("Hub Reference items"),
  *   label_count = @PluralTranslation(
- *     singular = "@count hub reference item",
- *     plural = "@count hub reference items"
+ *     singular = "@count Hub Reference item",
+ *     plural = "@count Hub Reference items"
  *   ),
- *   bundle_label = @Translation("Hub reference type"),
+ *   bundle_label = @Translation("Hub Reference type"),
  *   bundle_entity_type = "hub_reference_type",
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
@@ -61,11 +61,7 @@ use Drupal\pathauto\PathautoState;
  *   },
  *   links = {
  *     "canonical" = "/hub-reference/{hub_reference}",
- *     "edit-form" = "/hub-reference/{hub_reference}/edit",
  *     "delete-form" = "/hub-reference/{hub_reference}/delete",
- *     "add-page" = "/admin/config/services/cu_hub_consumer/references/add",
- *     "add-form" = "/admin/config/services/cu_hub_consumer/references/add/{hub_reference_type}",
- *     "collection" = "/admin/config/services/cu_hub_consumer/references",
  *   },
  * )
  */

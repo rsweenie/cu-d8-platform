@@ -9,9 +9,3 @@ entity.hub_reference_type.collection:
   route_name: entity.hub_reference_type.collection
   description: 'Reference types to Creighton Hub content.'
   parent: cu_hub_consumer.settings
-
-entity.hub_reference.collection:
-  title: 'Hub references'
-  route_name: entity.hub_reference.collection
-  description: 'References to Creighton Hub content.'
-  parent: cu_hub_consumer.settings

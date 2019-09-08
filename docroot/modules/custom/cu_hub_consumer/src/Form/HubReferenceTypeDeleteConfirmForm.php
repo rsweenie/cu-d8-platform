@@ -45,7 +45,7 @@ class HubReferenceTypeDeleteConfirmForm extends EntityDeleteForm {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $num_entities = $this->entityTypeManager->getStorage('hub_reference')->getQuery()
-      ->condition('bundle', $this->entity->id())
+      ->condition('type', $this->entity->id())
       ->count()
       ->execute();
     if ($num_entities) {

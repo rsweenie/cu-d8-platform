@@ -50,6 +50,21 @@ function cu_hub_consumer_entity_base_field_info(EntityTypeInterface $entity_type
 }
 
 /**
+ * Implements hook_entity_operation().
+ */
+function cu_hub_consumer_entity_operation(EntityInterface $entity) {
+  $operations = [];
+
+  $operations['refresh'] = [
+    'title' => t('Refresh data'),
+    'url' => \Drupal\Core\Url::fromRoute('entity.hub_reference.refresh_form', ['hub_reference' => $entity->id()]),
+    'weight' => 0,
+  ];
+
+  return $operations;
+}
+
+/**
  * Implements hook_theme().
  */
 function cu_hub_consumer_theme() {
@@ -206,7 +221,7 @@ function cu_hub_consumer_theme_suggestions_hub_resource(array $variables) {
  */
 function template_preprocess_hub_resource_field(array &$variables) {
   $variables['hub_base_url'] = \Drupal::config('cu_hub_consumer.settings')->get('hub_base_url');
-  
+
   $field_list = $variables['field_list'];
   $field_items = $variables['field_items'];
 
