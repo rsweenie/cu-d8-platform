@@ -1,11 +1,10 @@
-uuid: de06dbfb-f198-4868-a07c-ed9acc7080b3
 langcode: en
 status: true
 dependencies: {  }
 id: program
 label: 'Academic Program'
 description: ''
-source: 'node:program'
+source: 'node:hub_program'
 source_configuration:
   source_field: hub_uuid
 field_map: {  }
