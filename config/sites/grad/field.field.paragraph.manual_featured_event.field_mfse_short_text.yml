@@ -1,0 +1,19 @@
+uuid: c6f4ae9f-a2be-4e3a-9423-01eea27da0b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfse_short_text
+    - paragraphs.paragraphs_type.manual_featured_event
+id: paragraph.manual_featured_event.field_mfse_short_text
+field_name: field_mfse_short_text
+entity_type: paragraph
+bundle: manual_featured_event
+label: 'Short Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
