@@ -9,7 +9,7 @@
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     min-width: 320px;
     max-width: 100%;
-    padding: 10px 22px;
+    padding: 10px 54px 10px 22px;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     background: $accent-2XLt;
     border: 0;
@@ -33,7 +33,7 @@
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
         }
     }
-
+    
     @include hover {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -47,10 +47,19 @@
 
     /*------  USE THIS IF YOU DO NOT HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------*\
     \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
+    
+    @media #{$mediaLg} {
+      font-size: 19px;
+    }
 
     span {
       position: relative;
       z-index: 10;
+
+      &:first-of-type {
+        max-width: 320px;
+        display: block;
+      }
     }
 
     &:before {
