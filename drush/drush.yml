@@ -2,7 +2,6 @@
 # for the entire application. For site-specific settings, like URI, use
 # ../docroot/sites/[site]/drush.yml
 drush:
-options:
   paths:
     # Load a drush.yml configuration file from the current working directory.
     config:
