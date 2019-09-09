@@ -212,6 +212,7 @@ nav.mega {
                 background: $accent-5;
                 font-size: 2em;
                 order: 2;
+                font-family: $copyFF;
                 font-size: 21px;
                 line-height: (29.4 / 21) * 1em;
                 padding: 38px 30px;
@@ -222,6 +223,14 @@ nav.mega {
                   font-size: 20px;
                   font-weight: bold;
                   color: $secondary;
+
+
+                  @include hover {
+                    text-decoration: none;
+                    span {
+                      text-decoration: underline;
+                    }
+                  }
 
                   i {
                     transition: transform 0.25s;
@@ -619,7 +628,7 @@ input[type="checkbox"] {
 
             .icon {
               padding: 0 10px;
-              transform: rotate(180deg);
+              transform: rotate(180deg) translateY(6px);
             }
           }
         }

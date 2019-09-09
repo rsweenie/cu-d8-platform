@@ -1,0 +1,28 @@
+uuid: fdd2d26a-9d21-4f74-82dd-20bb75f59701
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfse_image
+    - media.type.image
+    - paragraphs.paragraphs_type.manual_featured_event
+id: paragraph.manual_featured_event.field_mfse_image
+field_name: field_mfse_image
+entity_type: paragraph
+bundle: manual_featured_event
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
