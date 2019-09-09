@@ -1,0 +1,23 @@
+uuid: 974db650-3c2b-438d-ba56-007adf036e41
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - text
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_hub_degree_requirements
+field_name: field_hub_degree_requirements
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

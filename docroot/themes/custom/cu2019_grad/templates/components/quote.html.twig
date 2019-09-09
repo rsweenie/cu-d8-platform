@@ -1,12 +1,13 @@
 <blockquote {% if class %}class="{{ class }}"{% endif %}>
-  <div>
+  {% if link %}<a href="{{ link }}">{% endif %}
+  <div class="quote-inner">
     <div class="quote">
       {% if quote %}
         {{ quote }}
       {% endif %}
       <div class="attr">
         {% if name %}
-            {{ name }}
+          {{ name }}
         {% endif %}
         {% if title %}
             <span>, </span>{{ title }}
@@ -21,4 +22,5 @@
         {{ img }}
     {% endif %}
   </div>
+  {% if link %}</a>{% endif %}
 </blockquote>

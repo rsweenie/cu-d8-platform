@@ -1,0 +1,29 @@
+uuid: 1d0a176a-458a-420e-945d-9a0b55452816
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_description
+    - node.type.hub_degree
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: node.hub_degree.field_hub_degree_description
+field_name: field_hub_degree_description
+entity_type: node
+bundle: hub_degree
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary
