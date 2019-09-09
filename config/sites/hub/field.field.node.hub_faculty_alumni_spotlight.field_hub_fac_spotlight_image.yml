@@ -1,14 +1,14 @@
-uuid: aaa9df94-88d7-41dd-adb2-843504808329
+uuid: 9f23b852-c8c3-4350-aaac-afbccfb53c29
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_hub_fac_spotlight_image
+    - field.storage.node.field_hub_fac_spotlight_image
     - media.type.image
-    - paragraphs.paragraphs_type.hub_faculty_alumni_spotlight
-id: paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_image
+    - node.type.hub_faculty_alumni_spotlight
+id: node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_image
 field_name: field_hub_fac_spotlight_image
-entity_type: paragraph
+entity_type: node
 bundle: hub_faculty_alumni_spotlight
 label: Image
 description: ''

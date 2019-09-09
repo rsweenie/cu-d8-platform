@@ -1,15 +1,15 @@
-uuid: 2d05f04f-41d1-4147-9d38-a80d63a80405
+uuid: a5efe951-8c85-441f-b82f-ec5061c8fe75
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_hub_fac_spotlight_cta
-    - paragraphs.paragraphs_type.hub_faculty_alumni_spotlight
+    - field.storage.node.field_hub_fac_spotlight_cta
+    - node.type.hub_faculty_alumni_spotlight
   module:
     - link
-id: paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_cta
+id: node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_cta
 field_name: field_hub_fac_spotlight_cta
-entity_type: paragraph
+entity_type: node
 bundle: hub_faculty_alumni_spotlight
 label: 'CTA Link'
 description: ''

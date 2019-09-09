@@ -1,0 +1,23 @@
+uuid: 207d9866-2d3d-4063-8525-420679b9b2db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_fac_spotlight_type
+    - node.type.hub_faculty_alumni_spotlight
+  module:
+    - options
+id: node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_type
+field_name: field_hub_fac_spotlight_type
+entity_type: node
+bundle: hub_faculty_alumni_spotlight
+label: Type
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: fac
+default_value_callback: ''
+settings: {  }
+field_type: list_string

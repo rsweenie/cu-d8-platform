@@ -1,0 +1,74 @@
+uuid: e3eb0a4d-06d9-415d-aaad-4815855e3928
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_cta
+    - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_desc
+    - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_image
+    - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_title
+    - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_type
+    - node.type.hub_faculty_alumni_spotlight
+  module:
+    - link
+    - options
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.hub_faculty_alumni_spotlight.default
+targetEntityType: node
+bundle: hub_faculty_alumni_spotlight
+mode: default
+content:
+  field_hub_fac_spotlight_cta:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hub_fac_spotlight_desc:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hub_fac_spotlight_image:
+    type: entity_reference_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_hub_fac_spotlight_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hub_fac_spotlight_type:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  links: true
+  private: true
+  search_api_excerpt: true
