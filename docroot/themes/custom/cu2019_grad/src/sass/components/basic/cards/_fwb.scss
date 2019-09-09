@@ -1,3 +1,9 @@
+@at-root {
+  .fwb {
+    border-bottom: 8px solid $tertiary;
+  }
+}
+
 .fwb & {
   .media {
     position: relative;
