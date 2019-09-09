@@ -3,7 +3,6 @@
 # ../docroot/sites/[site]/drush.yml
 drush:
 options:
-  uri: 'http://local.creighton.com'
   paths:
     # Load a drush.yml configuration file from the current working directory.
     config:
