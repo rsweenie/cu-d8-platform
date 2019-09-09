@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_hub_next_step_items
     - paragraphs.paragraphs_type.hub_paragraph_next_steps
-    - paragraphs.paragraphs_type.hub_paragraph_next_steps_item
   module:
     - entity_reference_revisions
 id: paragraph.hub_paragraph_next_steps.field_hub_next_step_items
@@ -22,8 +21,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles:
-      hub_paragraph_next_steps_item: hub_paragraph_next_steps_item
+    target_bundles: {  }
     target_bundles_drag_drop:
       accordion:
         weight: 6
