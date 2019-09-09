@@ -1,20 +1,21 @@
-uuid: 89d23182-8545-4e4f-b15a-f86519b88aa9
+uuid: bc3035d0-86d7-46e3-af88-60361419b498
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
-    - link
-    - paragraphs
+    - media
+    - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_hub_fac_spotlight_cta
-field_name: field_hub_fac_spotlight_cta
-entity_type: paragraph
-type: link
-settings: {  }
-module: link
+id: node.field_hub_fac_spotlight_image
+field_name: field_hub_fac_spotlight_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -1,25 +1,25 @@
-uuid: 37b44eae-9eb9-4108-b655-58ec65a9d8c6
+uuid: 5bf568ef-24bb-4021-8662-91324f149dbe
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
+    - node
     - options
-    - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_hub_fac_spotlight_type
+id: node.field_hub_fac_spotlight_type
 field_name: field_hub_fac_spotlight_type
-entity_type: paragraph
+entity_type: node
 type: list_string
 settings:
   allowed_values:
     -
-      value: faculty
+      value: fac
       label: Faculty
     -
-      value: alumni
+      value: alum
       label: Alumni
   allowed_values_function: ''
 module: options

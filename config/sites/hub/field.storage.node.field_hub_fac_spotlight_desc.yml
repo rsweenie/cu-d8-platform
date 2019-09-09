@@ -1,20 +1,20 @@
-uuid: 29ae89e2-4eb8-4d67-8cab-c96c57b15e53
+uuid: 8aead3cd-6bae-428a-a15e-42ef5c9f20d7
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
-    - name
-    - paragraphs
+    - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_hub_fac_spotlight_name
-field_name: field_hub_fac_spotlight_name
-entity_type: paragraph
-type: name
-settings: {  }
-module: name
+id: node.field_hub_fac_spotlight_desc
+field_name: field_hub_fac_spotlight_desc
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

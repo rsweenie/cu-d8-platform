@@ -1,13 +1,13 @@
-uuid: 236c154b-e0ff-4aaa-a6ac-c8453056768f
+uuid: 63af5ed7-1bc7-4f6e-a8f8-818f5411d084
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_hub_fac_spotlight_desc
-    - paragraphs.paragraphs_type.hub_faculty_alumni_spotlight
-id: paragraph.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_desc
+    - field.storage.node.field_hub_fac_spotlight_desc
+    - node.type.hub_faculty_alumni_spotlight
+id: node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_desc
 field_name: field_hub_fac_spotlight_desc
-entity_type: paragraph
+entity_type: node
 bundle: hub_faculty_alumni_spotlight
 label: 'Short Description'
 description: ''
