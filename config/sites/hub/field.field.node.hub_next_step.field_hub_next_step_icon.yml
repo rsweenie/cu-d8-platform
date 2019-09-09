@@ -1,15 +1,15 @@
-uuid: de35cd59-495d-49d9-8a84-669cec1362bc
+uuid: a7bf077f-b147-40e3-b8ee-49b560e9812b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_hub_next_steps_item_icon
+    - field.storage.node.field_hub_next_step_icon
     - media.type.image
-    - paragraphs.paragraphs_type.hub_paragraph_next_steps_item
-id: paragraph.hub_paragraph_next_steps_item.field_hub_next_steps_item_icon
-field_name: field_hub_next_steps_item_icon
-entity_type: paragraph
-bundle: hub_paragraph_next_steps_item
+    - node.type.hub_next_step
+id: node.hub_next_step.field_hub_next_step_icon
+field_name: field_hub_next_step_icon
+entity_type: node
+bundle: hub_next_step
 label: Icon
 description: ''
 required: false
