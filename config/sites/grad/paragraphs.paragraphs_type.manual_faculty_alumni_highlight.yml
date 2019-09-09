@@ -1,0 +1,9 @@
+uuid: 2b547484-6869-4c5f-9a20-0fe85118b6ad
+langcode: en
+status: true
+dependencies: {  }
+id: manual_faculty_alumni_highlight
+label: 'Manual Faculty/Alumni Highlight'
+icon_uuid: null
+description: 'Faculty or Alumni Highlight card used with Manual Feature Set.'
+behavior_plugins: {  }
