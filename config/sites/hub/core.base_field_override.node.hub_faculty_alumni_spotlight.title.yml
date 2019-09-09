@@ -1,0 +1,18 @@
+uuid: bf941168-1790-4deb-89fe-986b6acb69d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_faculty_alumni_spotlight
+id: node.hub_faculty_alumni_spotlight.title
+field_name: title
+entity_type: node
+bundle: hub_faculty_alumni_spotlight
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

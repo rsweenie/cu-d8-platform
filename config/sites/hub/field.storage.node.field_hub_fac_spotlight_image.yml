@@ -1,17 +1,17 @@
-uuid: debf6d2e-2318-4258-9fe6-0dcfbcbc5f46
+uuid: bc3035d0-86d7-46e3-af88-60361419b498
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
     - media
-    - paragraphs
+    - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_hub_next_steps_item_icon
-field_name: field_hub_next_steps_item_icon
-entity_type: paragraph
+id: node.field_hub_fac_spotlight_image
+field_name: field_hub_fac_spotlight_image
+entity_type: node
 type: entity_reference
 settings:
   target_type: media
