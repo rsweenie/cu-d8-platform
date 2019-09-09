@@ -1,21 +1,21 @@
-uuid: 356cf0ae-486c-48ce-bfc7-eef44099ff09
+uuid: e0907ea8-7a79-424a-84ad-4de8d2f5d9a7
 langcode: en
 status: true
 dependencies:
   module:
-    - entity_reference_revisions
     - field_permissions
+    - node
     - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_hub_next_step_items
-field_name: field_hub_next_step_items
+id: paragraph.field_hub_next_steps
+field_name: field_hub_next_steps
 entity_type: paragraph
-type: entity_reference_revisions
+type: entity_reference
 settings:
-  target_type: paragraph
-module: entity_reference_revisions
+  target_type: node
+module: core
 locked: false
 cardinality: 5
 translatable: true
