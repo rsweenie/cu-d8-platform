@@ -88,7 +88,9 @@ class HubReferenceRefreshConfirmForm extends ConfirmFormBase {
       }
 
       $this->hubReference->set('hub_data', $json_data);
-      $this->hubReference->set('changed', \Drupal::time()->getRequestTime());
+      $this->hubReference->setChangedTime(\Drupal::time()->getRequestTime());
+      $this->hubReference->setPublished(TRUE);
+
       $this->hubReference->save();
 
       drupal_set_message($this->t('The hub resource data has been refreshed.'));

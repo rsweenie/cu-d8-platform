@@ -20,14 +20,24 @@ class HubResourceListFetchWorker extends QueueWorkerBase {
    * {@inheritdoc}
    */
   public function processItem($data) {
+    // Make sure this action is allowed.
+    if (!\Drupal::config('cu_hub_consumer.settings')->get('enabled')) {
+      throw new SuspendQueueException('Hub operations are currently disabled.');
+    }
+    if (!\Drupal::config('cu_hub_consumer.settings')->get('queue.enabled')) {
+      throw new SuspendQueueException('Queue operations are currently disabled.');
+    }
+
     $queue_factory = \Drupal::service('queue');
     $list_fetch_queue = $queue_factory->get('hub_resource_list_fetch_worker');
     $resource_process_queue = $queue_factory->get('hub_resource_process_worker');
 
-    //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($data, TRUE));
-
     // @TODO: make this configurable.
-    $limit = 20;
+    $limit = \Drupal::config('cu_hub_consumer.settings')->get('cron.refresh_fetch_limit');
+    if (!$limit) {
+      // Sanity check.
+      $limit = 1;
+    }
 
     $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($data->bundle);
     $resource_type = $hub_ref_type->getSource()->getResourceType();

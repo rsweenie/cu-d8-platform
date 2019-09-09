@@ -1,12 +1,39 @@
 cu_hub_consumer.settings:
   type: config_object
+  label: 'CU Hub Consumer settings'
   mapping:
     enabled:
       type: boolean
-      label: 'Enabled'
+      label: 'Enable hub consumer operations'
     hub_base_url:
       type: uri
-      label: 'Hub Base URI'
+      label: 'Hub base URI'
+    cron:
+      type: mapping
+      label: 'Cron settings'
+      mapping:
+        enabled:
+          type: boolean
+          label: 'Enable cron processing'
+        refresh_freq:
+          type: integer
+          label: 'Full data refresh frequency'
+        refresh_fetch_limit:
+          type: integer
+          label: 'Full data refresh fetch size'
+        unpublish_age:
+          type: integer
+          label: 'Max age of a non-updated hub reference before it is unpublished.'
+        delete_age:
+          type: integer
+          label: 'Max age of a non-updated hub reference before it is deleted.'
+    queue:
+      type: mapping
+      label: 'Cron settings'
+      mapping:
+        enabled:
+          type: boolean
+          label: 'Enable queue processing'
 
 cu_hub_consumer.hub_reference_type.*:
   type: config_entity

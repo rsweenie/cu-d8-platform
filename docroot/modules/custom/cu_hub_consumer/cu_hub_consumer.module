@@ -55,11 +55,13 @@ function cu_hub_consumer_entity_base_field_info(EntityTypeInterface $entity_type
 function cu_hub_consumer_entity_operation(EntityInterface $entity) {
   $operations = [];
 
-  $operations['refresh'] = [
-    'title' => t('Refresh data'),
-    'url' => \Drupal\Core\Url::fromRoute('entity.hub_reference.refresh_form', ['hub_reference' => $entity->id()]),
-    'weight' => 0,
-  ];
+  if ($entity->getEntityTypeId() == 'hub_reference') {
+    $operations['refresh'] = [
+      'title' => t('Refresh data'),
+      'url' => \Drupal\Core\Url::fromRoute('entity.hub_reference.refresh_form', ['hub_reference' => $entity->id()]),
+      'weight' => 0,
+    ];
+  }
 
   return $operations;
 }
@@ -293,24 +295,77 @@ function cu_hub_consumer_entity_access(EntityInterface $entity, $operation, Acco
  * Implements hook_cron().
  */
 function cu_hub_consumer_cron() {
-  $lock = \Drupal::lock();
+  $settings = \Drupal::config('cu_hub_consumer.settings');
 
-  if ($lock->acquire('cu_hub_consumer.cron')) {
-    $queue_factory = \Drupal::service('queue');
-    $list_fetch_queue = $queue_factory->get('hub_resource_list_fetch_worker');
+  if ($settings->get('enabled') && $settings->get('cron.enabled')) {
+    $lock = \Drupal::lock();
+    $state = \Drupal::state();
+    $request_time = \Drupal::time()->getRequestTime();
 
-    $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference');
-    foreach ($bundles as $bundle => $bundle_info) {
-      // Create new queue item
-      $item = new \stdClass();
-      $item->bundle = $bundle;
-      $item->url = '';
-      $list_fetch_queue->createItem($item);
+    // Check to see if it's time for a full refresh.
+    if ($refresh_freq = $settings->get('cron.refresh_freq')) {
+      $last_refresh = $state->get('cu_hub_consumer.cron.last_refresh', 0);
+
+      if ($request_time > ($last_refresh + ($refresh_freq*60))) {
+        // We want to try and get a lock before we mess with the queues.
+        if ($lock->acquire('cu_hub_consumer.cron')) {
+          $queue_factory = \Drupal::service('queue');
+          $list_fetch_queue = $queue_factory->get('hub_resource_list_fetch_worker');
+          $resource_process_queue = $queue_factory->get('hub_resource_process_worker');
+
+          // Delete existing queues to prevent them from filling up if things are processing too slowly.
+          $list_fetch_queue->deleteQueue();
+          $resource_process_queue->deleteQueue();
+
+          $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference');
+          foreach ($bundles as $bundle => $bundle_info) {
+            // Create new queue item
+            $item = new \stdClass();
+            $item->bundle = $bundle;
+            $item->url = '';
+            $list_fetch_queue->createItem($item);
+          }
+
+          $lock->release('cu_hub_consumer.cron');
+          $state->set('cu_hub_consumer.cron.last_refresh', $request_time);
+        }
+        else {
+          \Drupal::logger('cu_hub_consumer')->notice(t('Cron did not run because it is locked.'));
+        }
+      }
     }
 
-    $lock->release('cu_hub_consumer.cron');
-  }
-  else {
-    \Drupal::logger('cu_hub_consumer')->warning(t('Cron did not run because it is locked.'));
+    // Check to see if there are any hub references that need to be unpublished.
+    if ($unpublish_age = $settings->get('cron.unpublish_age')) {
+      $query = \Drupal::entityQuery('hub_reference')
+        ->condition('changed', ($request_time - ($unpublish_age * 60)), '<')
+        ->condition('status', 1)
+        ->range(0, 10);
+      $ref_ids = $query->execute();
+
+      if ($ref_ids) {
+        $hub_reference_storage = \Drupal::entityTypeManager()->getStorage('hub_reference');
+        $hub_references = $hub_reference_storage->loadMultiple($ref_ids);
+        foreach ($hub_references as $hub_reference) {
+          $hub_reference->setPublished(FALSE);
+          $hub_reference->save();
+        }
+      }
+    }
+
+    // Check to see if there are any hub references that need to be unpublished.
+    if ($delete_age = $settings->get('cron.delete_age')) {
+      $query = \Drupal::entityQuery('hub_reference')
+        ->condition('status', 0)
+        ->condition('changed', ($request_time - ($delete_age * 60)), '<')
+        ->range(0, 10);
+      $ref_ids = $query->execute();
+
+      if ($ref_ids) {
+        $hub_reference_storage = \Drupal::entityTypeManager()->getStorage('hub_reference');
+        $hub_references = $hub_reference_storage->loadMultiple($ref_ids);
+        $hub_reference_storage->delete($hub_references);
+      }
+    }
   }
 }

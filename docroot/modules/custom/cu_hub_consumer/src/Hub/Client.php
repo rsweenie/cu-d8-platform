@@ -115,6 +115,9 @@ class Client implements ClientInterface {
    */
   protected function buildRequestUrl($endpoint = '') {
     if ($base_url = $this->getBaseUrl()) {
+      if (!is_scalar($endpoint)) {
+        $this->logger->warning(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': Endpoint is not a scalar value - ' . print_r($endpoint, TRUE));
+      }
       return $base_url . trim($endpoint, " \t\n\r\0\x0B\/");
     }
   }

@@ -20,7 +20,13 @@ class HubResourceProcessWorker extends QueueWorkerBase {
    * {@inheritdoc}
    */
   public function processItem($data) {
-    //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($data, TRUE));
+    // Make sure this action is allowed.
+    if (!\Drupal::config('cu_hub_consumer.settings')->get('enabled')) {
+      throw new SuspendQueueException('Hub operations are currently disabled.');
+    }
+    if (!\Drupal::config('cu_hub_consumer.settings')->get('queue.enabled')) {
+      throw new SuspendQueueException('Queue operations are currently disabled.');
+    }
 
     $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($data->bundle);
     $resource_type = $hub_ref_type->getResourceType();
@@ -34,8 +40,6 @@ class HubResourceProcessWorker extends QueueWorkerBase {
     }
 
     if ($json_data = $resource->getJsonData()) {
-      //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($resource_data, TRUE))
-
       $query = \Drupal::entityQuery('hub_reference')
         ->condition('type', $data->bundle)
         ->condition('hub_uuid', $data->hub_uuid);
@@ -47,14 +51,15 @@ class HubResourceProcessWorker extends QueueWorkerBase {
         foreach ($hub_references as $hub_reference) {
           // Try to update the hub_reference title.
           if ($key = $resource_type->getKey('label')) {
-            //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($key, TRUE));
             if (!empty($resource->{$key})) {
               $hub_reference->set('title', $resource->{$key}->getString());
             }
           }
 
           $hub_reference->set('hub_data', $json_data);
-          $hub_reference->set('changed', \Drupal::time()->getRequestTime());
+          //$hub_reference->set('changed', \Drupal::time()->getRequestTime());
+          $hub_reference->setChangedTime(\Drupal::time()->getRequestTime());
+          $hub_reference->setPublished(TRUE);
           $hub_reference->save();
         }
       }
@@ -64,12 +69,9 @@ class HubResourceProcessWorker extends QueueWorkerBase {
           'hub_uuid' => $data->hub_uuid,
           'hub_data' => $json_data,
         ];
-        //\Drupal::logger('cu_hub_consumer')->notice(str_replace(__NAMESPACE__ . '\\', '', __CLASS__) . ':' . __LINE__ .': ' . print_r($entity_data, TRUE));
-
-        // @TODO: We want to update if a reference with the UUID already exists.
-        // We should have a constraint on souce+uuid to keep it unique.
 
         $hub_reference = HubReference::create($entity_data);
+        $hub_reference->setPublished(TRUE);
         $hub_reference->save();
       }
     }
