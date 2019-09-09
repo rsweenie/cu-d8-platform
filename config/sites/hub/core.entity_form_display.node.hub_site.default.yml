@@ -1,0 +1,56 @@
+uuid: 8b4016b1-8e10-416e-be75-7939eb3a8137
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_site.field_hub_site_base_uri
+    - field.field.node.hub_site.field_hub_site_title
+    - node.type.hub_site
+  module:
+    - link
+id: node.hub_site.default
+targetEntityType: node
+bundle: hub_site
+mode: default
+content:
+  field_hub_site_base_uri:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_hub_site_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  private: true
+  promote: true
+  publish_on: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

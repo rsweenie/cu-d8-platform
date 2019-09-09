@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.news_spotlight.field_content_page_headline
     - field.field.node.news_spotlight.field_content_page_image
     - field.field.node.news_spotlight.field_content_page_sidebar_items
-    - field.field.node.news_spotlight.field_content_taxonomy
     - field.field.node.news_spotlight.field_display_publish_on_date
     - field.field.node.news_spotlight.field_display_type
     - field.field.node.news_spotlight.field_news_spotlight_p_link

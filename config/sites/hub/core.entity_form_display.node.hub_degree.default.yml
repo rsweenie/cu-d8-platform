@@ -1,0 +1,179 @@
+uuid: 578116ef-1dcc-478b-b00d-88955b179caa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_degree.field_hub_degree_availability
+    - field.field.node.hub_degree.field_hub_degree_description
+    - field.field.node.hub_degree.field_hub_degree_details
+    - field.field.node.hub_degree.field_hub_degree_hero_image
+    - field.field.node.hub_degree.field_hub_degree_interests
+    - field.field.node.hub_degree.field_hub_degree_intro
+    - field.field.node.hub_degree.field_hub_degree_other_programs
+    - field.field.node.hub_degree.field_hub_degree_related_degrees
+    - field.field.node.hub_degree.field_hub_degree_requirements
+    - field.field.node.hub_degree.field_hub_degree_title
+    - field.field.node.hub_degree.field_hub_degree_title_short
+    - field.field.node.hub_degree.field_hub_degree_type
+    - field.field.node.hub_degree.field_hub_path_alias
+    - field.field.node.hub_degree.field_hub_program
+    - field.field.node.hub_degree.field_hub_site
+    - field.field.node.hub_degree.field_meta_tags
+    - node.type.hub_degree
+  module:
+    - cu_hub_api
+    - link
+    - media_library
+    - metatag
+    - text
+id: node.hub_degree.default
+targetEntityType: node
+bundle: hub_degree
+mode: default
+content:
+  field_hub_degree_availability:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_hub_degree_description:
+    weight: 9
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_hub_degree_details:
+    weight: 10
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_hub_degree_hero_image:
+    type: media_library_widget
+    weight: 12
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_hub_degree_interests:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_hub_degree_intro:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_hub_degree_other_programs:
+    weight: 14
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_hub_degree_related_degrees:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_hub_degree_requirements:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_hub_degree_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_degree_title_short:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_degree_type:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hub_path_alias:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: hub_path_alias
+    region: content
+  field_hub_program:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_hub_site:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_meta_tags:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  private: true
+  promote: true
+  publish_on: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

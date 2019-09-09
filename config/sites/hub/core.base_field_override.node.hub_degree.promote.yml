@@ -1,0 +1,22 @@
+uuid: 43612e7b-029c-433f-a855-04fa23ee154c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_degree
+id: node.hub_degree.promote
+field_name: promote
+entity_type: node
+bundle: hub_degree
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

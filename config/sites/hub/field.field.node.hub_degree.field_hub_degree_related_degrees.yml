@@ -1,0 +1,27 @@
+uuid: a7328aa7-6e38-423e-8864-ac003b3cb362
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_related_degrees
+    - node.type.hub_degree
+id: node.hub_degree.field_hub_degree_related_degrees
+field_name: field_hub_degree_related_degrees
+entity_type: node
+bundle: hub_degree
+label: 'Related Degrees'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_degree: hub_degree
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

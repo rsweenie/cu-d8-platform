@@ -1,0 +1,23 @@
+uuid: 050884f5-2132-45c3-93cc-7c2118798792
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_site_base_uri
+    - node.type.hub_site
+  module:
+    - link
+id: node.hub_site.field_hub_site_base_uri
+field_name: field_hub_site_base_uri
+entity_type: node
+bundle: hub_site
+label: 'Base URI'
+description: 'The base URI for the site. Example: <em>https://grad.creighton.com</em>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link
