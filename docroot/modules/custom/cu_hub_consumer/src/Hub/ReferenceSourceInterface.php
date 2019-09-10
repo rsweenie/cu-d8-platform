@@ -171,6 +171,13 @@ interface ReferenceSourceInterface extends PluginInspectionInterface, Configurab
   public function getSourceFieldValue(HubReferenceInterface $hub_reference);
 
   /**
+   * Returns the matching ResourceType ID.
+   *
+   * @return string
+   */
+  public function getResourceTypeId();
+
+  /**
    * Returns the matching ResourceType object.
    *
    * @return \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface

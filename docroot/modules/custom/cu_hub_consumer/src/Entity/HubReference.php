@@ -352,8 +352,6 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         ->loadUnchanged($id);
     }
 
-    \Drupal::logger('cu_hub_consumer')->notice(print_r($this->bundle(), TRUE));
-
     $hub_reference_source = $this->getSource();
     foreach ($this->translations as $langcode => $data) {
       if ($this->hasTranslation($langcode)) {
@@ -379,8 +377,6 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         }
       }
     }
-
-    \Drupal::logger('cu_hub_consumer')->notice(print_r($this->bundle(), TRUE));
   }
 
   /**

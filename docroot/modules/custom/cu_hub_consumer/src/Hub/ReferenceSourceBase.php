@@ -95,7 +95,7 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    *
    * @var string
    */
-  protected $resource_type;
+  protected $resourceTypeId;
 
   /**
    * Lazy collection for the hub resource type.
@@ -109,7 +109,14 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    *
    * @var array
    */
-  protected $resource_type_configuration = [];
+  protected $resourceTypeConfiguration = [];
+
+  /**
+   * Cached resource objects.
+   *
+   * @var array
+   */
+  protected $resources;
 
   /**
    * Constructs a new class instance.
@@ -176,15 +183,22 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    */
   public function getPluginCollections() {
     return [
-      'resource_type_configuration' => $this->resourceTypePluginCollection(),
+      'resourceTypeConfiguration' => $this->resourceTypePluginCollection(),
     ];
   }
 
   /**
    * {@inheritdoc}
    */
+  public function getResourceTypeId() {
+    return $this->resourceTypePluginCollection()->get($this->resourceTypeId)->getPluginId();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getResourceType() {
-    return $this->resourceTypePluginCollection()->get($this->resource_type);
+    return $this->resourceTypePluginCollection()->get($this->resourceTypeId);
   }
 
   /**
@@ -196,18 +210,18 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
   protected function resourceTypePluginCollection() {
     // Try to find a resource type plugin to use.
     /*
-    $this->resource_type = 'fallback';
+    $this->resourceTypeId = 'fallback';
     $plugins = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type')->getDefinitions();
     foreach ($plugins as $plugin_id => $definition) {
       if ($this->pluginDefinition['hub_type_id'] == $definition['hub_type_id']) {
-        $this->resource_type = $plugin_id;
+        $this->resourceTypeId = $plugin_id;
       }
     }
     */
-    $this->resource_type = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type')->findPluginByHubTypeId($this->pluginDefinition['hub_type_id']);
+    $this->resourceTypeId = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type')->findPluginByHubTypeId($this->pluginDefinition['hub_type_id']);
 
-    if (!$this->resourceTypePluginCollection && $this->resource_type) {
-      $this->resourceTypePluginCollection = new DefaultSingleLazyPluginCollection($this->resourceTypes, $this->resource_type, $this->resource_type_configuration);
+    if (!$this->resourceTypePluginCollection && $this->resourceTypeId) {
+      $this->resourceTypePluginCollection = new DefaultSingleLazyPluginCollection($this->resourceTypes, $this->resourceTypeId, $this->resourceTypeConfiguration);
     }
     return $this->resourceTypePluginCollection;
   }
@@ -252,21 +266,25 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
    * {@inheritdoc}
    */
   public function getMetadata(HubReferenceInterface $hub_reference, $attribute_name) {
-    $resources = &drupal_static(__FUNCTION__);
+    if (isset($this->resources)) {
+      $this->resources = [];
+    }
     
     $hub_uuid = $this->getSourceFieldValue($hub_reference);
     $resource_type = $this->getResourceType();
 
-    if (!isset($resources[$hub_reference->id()])) {
+    if (!isset($this->resources[$hub_reference->id()])) {
       try {
-        $resources[$hub_reference->id()] = $resource_type->fetchResource($hub_uuid);
-        //$resource_data[$hub_reference->id()] = $resource->getProcessedData();
+        // @TODO: do we need to do a fetch here? Can't we use the cached data?
+        $this->resources[$hub_reference->id()] = $resource_type->fetchResource($hub_uuid);
       }
       catch (ResourceException $e) {
         $this->messenger->addError($e->getMessage());
+        $this->logger->error($e->getMessage());
         return NULL;
       }
     }
+    $resource = $this->resources[$hub_reference->id()];
 
     switch ($attribute_name) {
       case 'default_name':
@@ -279,24 +297,22 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         return 'hub_reference:' . $hub_reference->bundle() . ':' . $hub_reference->uuid();
 
       case 'type':
-        //return $resource_data[$hub_reference->id()]['type'];
-        return (string) $resources[$hub_reference->id()]->type;
+        return (string) $resource->type;
       
       case 'uuid':
-        //return $resource_data[$hub_reference->id()]['id'];
-        return (string) $resources[$hub_reference->id()]->id;
+        return (string) $resource->id;
 
       case 'title':
         if ($key = $resource_type->getKey('label')) {
-          if (!empty($resources[$hub_reference->id()]->{$key})) {
-            return $resources[$hub_reference->id()]->{$key}->getString();
+          if (!empty($resource->{$key})) {
+            return $resource->{$key}->getString();
           }
         }
         return NULL;
 
       case 'path':
-        if (!empty($resources[$hub_reference->id()]->field_hub_path_alias)) {
-          return $resources[$hub_reference->id()]->field_hub_path_alias->getString();
+        if (!empty($resource->field_hub_path_alias)) {
+          return $resource->field_hub_path_alias->getString();
         }
         return NULL;
 
