@@ -10,9 +10,9 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    rich_text: '0'
-    full_html: '0'
-    raw_html: '0'
+    rich_text: rich_text
+    full_html: full_html
+    raw_html: raw_html
     plain_text: '0'
 id: paragraph.copy_box.field_body
 field_name: field_body
