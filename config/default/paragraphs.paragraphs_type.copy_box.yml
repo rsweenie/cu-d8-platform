@@ -1,0 +1,9 @@
+uuid: 1beaf3c6-d6c4-44e4-87f2-0e48a73065fd
+langcode: en
+status: true
+dependencies: {  }
+id: copy_box
+label: 'Copy Box'
+icon_uuid: null
+description: 'A basic text block that may have pre-defined styles applied to it.'
+behavior_plugins: {  }

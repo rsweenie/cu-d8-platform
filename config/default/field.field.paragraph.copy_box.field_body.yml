@@ -1,0 +1,29 @@
+uuid: b3d20416-57a3-4774-9b05-1eb19a03b793
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.copy_box
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: '0'
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: paragraph.copy_box.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: copy_box
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

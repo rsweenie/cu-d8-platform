@@ -1,0 +1,33 @@
+uuid: 803b1e5a-6633-4245-aafc-144c606669a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.copy_box.field_body
+    - field.field.paragraph.copy_box.field_copy_box_display_type
+    - paragraphs.paragraphs_type.copy_box
+  module:
+    - text
+id: paragraph.copy_box.default
+targetEntityType: paragraph
+bundle: copy_box
+mode: default
+content:
+  field_body:
+    weight: 0
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_copy_box_display_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

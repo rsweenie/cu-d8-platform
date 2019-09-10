@@ -1,0 +1,21 @@
+uuid: b0deac99-36a5-44eb-9626-76ec749f978d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_box_display_type
+    - paragraphs.paragraphs_type.copy_box
+  module:
+    - options
+id: paragraph.copy_box.field_copy_box_display_type
+field_name: field_copy_box_display_type
+entity_type: paragraph
+bundle: copy_box
+label: 'Display Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
