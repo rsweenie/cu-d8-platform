@@ -9,7 +9,7 @@
 regex='^([^\/]*)/([^\/]*)/([^\/]*)$'
 
 ## Default to our baseline 'CCP' site
-DEFAULT_ALIAS = 'demo';
+DEFAULT_ALIAS='demo';
 
 # We cannot reliably set ENV vars in the tugboat environment, so our scripts
 # will each call this script directly.
