@@ -37,7 +37,10 @@
 
     > div {
       @include flex($jc: center, $ff: column nowrap);
-      align-items: center;
+
+      @media #{$mediaMd} {
+        align-items: center;
+      }
     }
 
     .field--name-field-stat-highlite-top-text {
@@ -45,9 +48,13 @@
       font-size: 21px;
       font-family: $headingFF;
       line-height: 1.05em;
-      margin: (36 / 30) * 1em 0 (29 / 30) * 1em 0;
+      margin: 0 0 (29 / 30) * 1em 0;
       text-transform: uppercase;
       @include letterSpacing(50);
+
+      @media #{$mediaMd} {
+        margin: (36 / 30) * 1em 0 (29 / 30) * 1em 0;
+      }
 
       @media #{$mediaLg} {
         font-size: 30px;
@@ -61,8 +68,8 @@
       @media #{$mediaMdMax} {
         width: 20%;
         position: absolute;
-        top: 27px;
-        left: $gutter;
+        top: 33px;
+        left: #{$gutter}rem;
 
         img {
           width: 100%;
@@ -90,8 +97,12 @@
     .field--name-field-stat-highlite-bottom-text {
       order: 4;
       font-size: 14px;
-      margin: 0 0 (29 / 16) * 1em 0;
+      margin: 0;
       max-width: 420px;
+
+      @media #{$mediaMd} {
+        margin: 0 0 (29 / 16) * 1em 0;
+      }
 
       @media #{$mediaLg} {
         font-size: 16px;
@@ -103,7 +114,7 @@
       .field--name-field-stat-highlite-top-text,
       .field--name-field-stat-highlite-statistic,
       .field--name-field-stat-highlite-bottom-text {
-        padding-left: calc(20% + #{$gutter}rem);
+        padding-left: calc(20% + #{$gutter * 2}rem);
       }
     }
   }
