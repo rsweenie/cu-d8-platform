@@ -1,0 +1,23 @@
+uuid: 55d2cc3d-cbef-40b1-85b2-ffd12b2f3111
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfsfa_cta
+    - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
+  module:
+    - link
+id: paragraph.manual_faculty_alumni_highlight.field_mfsfa_cta
+field_name: field_mfsfa_cta
+entity_type: paragraph
+bundle: manual_faculty_alumni_highlight
+label: CTA
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

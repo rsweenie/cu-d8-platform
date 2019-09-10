@@ -12,6 +12,14 @@ global-scripts:
     - core/jquery.once
     - core/drupal
 
+ct:
+  js:
+    assets/js/ct.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
 search-autocomplete:
   js:
     //search.creighton.edu/s/resources/creighton-search/js/handlebars.js: {type: external}
