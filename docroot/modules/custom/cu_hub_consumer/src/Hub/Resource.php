@@ -17,7 +17,14 @@ class Resource implements ResourceInterface {
   protected $resourceType;
 
   /**
-   * Decoded JSON data.
+   * Raw JSON data.
+   *
+   * @var [type]
+   */
+  protected $jsonDataRaw;
+
+  /**
+   * Unserialized JSON data.
    *
    * @var [type]
    */
@@ -43,8 +50,9 @@ class Resource implements ResourceInterface {
   public static function createFromHttpResponse(ResourceTypeInterface $resource_type, \Psr\Http\Message\ResponseInterface $response) {
     $resource = new static($resource_type);
 
-    $resource->jsonData = Json::decode($response->getBody());
-    //$resource->jsonData = json_decode($response->getBody());
+    $resource->jsonDataRaw = $response->getBody();
+    $resource->jsonData = Json::decode($resource->jsonDataRaw);
+
     $resource->getProcessedData();
 
     return $resource;
@@ -61,7 +69,8 @@ class Resource implements ResourceInterface {
     $resource = new static($resource_type);
 
     $resource->jsonData = $data;
-    //$resource->jsonData = $data;
+    $resource->jsonDataRaw = Json::encode($resource->jsonData);
+    
     $resource->getProcessedData();
 
     return $resource;
@@ -110,6 +119,13 @@ class Resource implements ResourceInterface {
    */
   public function getResourceType() {
     return $this->resourceType;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getRawJsonData() {
+    return $this->jsonDataRaw;
   }
 
   /**

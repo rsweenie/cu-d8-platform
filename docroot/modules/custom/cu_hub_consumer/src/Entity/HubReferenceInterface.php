@@ -47,7 +47,14 @@ interface HubReferenceInterface extends ContentEntityInterface, EntityChangedInt
   public function getSource();
 
   /**
-   * Returns the stored JSON data from the hub API.
+   * Returns the raw JSON data from the hub API.
+   *
+   * @return mixed
+   */
+  public function getHubJson();
+
+  /**
+   * Returns the unserialized JSON data from the hub API.
    *
    * @return mixed
    */

@@ -214,9 +214,9 @@ class HubReferenceType extends ConfigEntityBundleBase implements HubReferenceTyp
     }
     else {
       // Notify storage to create the database schema.
-      $entity_type = $this->entityTypeManager()->getDefinition($this->id());
-      \Drupal::service('entity_type.listener')
-        ->onEntityTypeCreate($entity_type);
+      //$entity_type = $this->entityTypeManager()->getDefinition($this->id());
+      //\Drupal::service('entity_type.listener')
+      //  ->onEntityTypeCreate($entity_type);
 
       $this->logger($this->id())->notice(
         'Entity type %label has been added.',

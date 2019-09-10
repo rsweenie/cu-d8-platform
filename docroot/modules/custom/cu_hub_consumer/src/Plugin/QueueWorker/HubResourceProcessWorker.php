@@ -39,7 +39,7 @@ class HubResourceProcessWorker extends QueueWorkerBase {
       throw new SuspendQueueException('Could not properly fetch the hub resource data.');
     }
 
-    if ($json_data = $resource->getJsonData()) {
+    if ($raw_json_data = $resource->getRawJsonData()) {
       $query = \Drupal::entityQuery('hub_reference')
         ->condition('type', $data->bundle)
         ->condition('hub_uuid', $data->hub_uuid);
@@ -56,7 +56,7 @@ class HubResourceProcessWorker extends QueueWorkerBase {
             }
           }
 
-          $hub_reference->set('hub_data', $json_data);
+          $hub_reference->set('hub_data', $raw_json_data);
           //$hub_reference->set('changed', \Drupal::time()->getRequestTime());
           $hub_reference->setChangedTime(\Drupal::time()->getRequestTime());
           $hub_reference->setPublished(TRUE);
@@ -67,7 +67,7 @@ class HubResourceProcessWorker extends QueueWorkerBase {
         $entity_data = [
           'type' => $data->bundle,
           'hub_uuid' => $data->hub_uuid,
-          'hub_data' => $json_data,
+          'hub_data' => $raw_json_data,
         ];
 
         $hub_reference = HubReference::create($entity_data);

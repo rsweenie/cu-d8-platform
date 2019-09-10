@@ -79,7 +79,7 @@ class HubReferenceRefreshConfirmForm extends ConfirmFormBase {
       drupal_set_message($this->t('Could not properly fetch the hub resource data.'), 'error');
     }
 
-    if ($resource && $json_data = $resource->getJsonData()) {
+    if ($resource && $raw_json_data = $resource->getRawJsonData()) {
       // Try to update the hub_reference title.
       if ($key = $resource_type->getKey('label')) {;
         if (!empty($resource->{$key})) {
@@ -87,7 +87,7 @@ class HubReferenceRefreshConfirmForm extends ConfirmFormBase {
         }
       }
 
-      $this->hubReference->set('hub_data', $json_data);
+      $this->hubReference->set('hub_data', $raw_json_data);
       $this->hubReference->setChangedTime(\Drupal::time()->getRequestTime());
       $this->hubReference->setPublished(TRUE);
 

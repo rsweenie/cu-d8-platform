@@ -42,7 +42,14 @@ interface ResourceInterface {
   public function getResourceType();
 
   /**
-   * Returns the parsed JSON data.
+   * Returns the raw JSON data.
+   *
+   * @return array
+   */
+  public function getRawJsonData();
+
+  /**
+   * Returns the decoded JSON data.
    *
    * @return array
    */

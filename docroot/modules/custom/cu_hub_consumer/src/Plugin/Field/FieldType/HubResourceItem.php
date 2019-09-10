@@ -27,9 +27,9 @@ class HubResourceItem extends FieldItemBase implements FieldItemInterface {
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     //$properties = parent::propertyDefinitions($field_definition);
 
-    $properties['value'] = DataDefinition::create('map')
-      ->setLabel(t('Hub: Resource data'))
-      ->setDescription(t('The resource data provided by hub.'));
+    $properties['value'] = DataDefinition::create('string')
+      ->setLabel(t('Hub: Resource JSON data'))
+      ->setDescription(t('The raw resource JSON data provided by hub.'));
 
     return $properties;
   }

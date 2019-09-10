@@ -3,6 +3,7 @@
 namespace Drupal\cu_hub_consumer\Entity;
 
 use Drupal\Component\Utility\Crypt;
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -14,6 +15,7 @@ use Drupal\cu_hub_consumer\Hub\Resource;
 use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
 use Drupal\cu_hub_consumer\Hub\ResourceRelationshipListInterface;
 use Drupal\pathauto\PathautoState;
+
 
 /**
  * The hub reference entity class.
@@ -71,6 +73,20 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
   use EntityPublishedTrait; // Implements methods defined by EntityPublishedInterface.
 
   /**
+   * An unserialized version of the JSON data from hub.
+   *
+   * @var array
+   */
+  protected $unserializedHubJson;
+
+  /**
+   * The hub data loaded into a resource object.
+   *
+   * @var \Drupal\cu_hub_consumer\Hub\Resource
+   */
+  protected $resourceObject;
+
+  /**
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
@@ -85,14 +101,15 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
 
     $fields['hub_uuid'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Hub UUID'))
+      ->setDescription(t('The entity UUID on hub.'))
       ->setSetting('max_length', 128)
       ->setSetting('is_ascii', TRUE)
-      ->setSetting('case_sensitive', false)
-      ->setDescription(t('The entity UUID on hub.'));
+      ->setSetting('case_sensitive', FALSE);
 
-    $fields['hub_data'] = BaseFieldDefinition::create('map')
+    $fields['hub_data'] = BaseFieldDefinition::create('string_long')
       ->setLabel(t('Hub Data'))
-      ->setDescription(t('The data that was last pulled from hub.'));
+      ->setDescription(t('The JSON data that was last pulled from hub.'))
+      ->setSetting('case_sensitive', TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
@@ -266,24 +283,33 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
   /**
    * {@inheritdoc}
    */
+  public function getHubJson() {
+    return $this->get('hub_data')->first()->getString();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getHubData() {
-    return $this->get('hub_data')->first()->getValue();
+    if (!isset($this->unserializedHubJson)) {
+      $this->unserializedHubJson = Json::decode($this->getHubJSON());
+    }
+    return $this->unserializedHubJson;
   }
 
   /**
    * {@inheritdoc}
    */
   public function getResourceObj() {
-    if ($hub_data = $this->getHubData()) {
-      //$resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-      //$resource_type_id = $resource_type_manager->findPluginByHubTypeId($this->getSource()->getResourceType());
-
-      //if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
-      if ($resource_type = $this->getSource()->getResourceType()) {
-        $resource = Resource::createFromJson($resource_type, $hub_data);
-        return $resource;
+    if (!isset($this->resourceObject)) {
+      $this->resourceObject = NULL;
+      if ($hub_data = $this->getHubData()) {
+        if ($resource_type = $this->getSource()->getResourceType()) {
+          $this->resourceObject = Resource::createFromJson($resource_type, $hub_data);
+        }
       }
     }
+    return $this->resourceObject;
   }
 
   /**
