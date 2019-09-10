@@ -38,5 +38,4 @@ Feature: Featured Content Group
     And I visit the edit form
     And I visit the "#edit-delete" link
     And I visit the "#edit-submit" link
-    And I am on "/admin/content"
     Then I should see "Testing Featured Content Group has been deleted"
