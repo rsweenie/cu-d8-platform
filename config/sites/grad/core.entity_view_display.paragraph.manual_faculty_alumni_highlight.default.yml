@@ -1,0 +1,73 @@
+uuid: 1138cb23-dcb7-4509-8a47-2acf031f0f7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_cta
+    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_description
+    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_image
+    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_name
+    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_title
+    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_type
+    - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
+  module:
+    - link
+    - options
+id: paragraph.manual_faculty_alumni_highlight.default
+targetEntityType: paragraph
+bundle: manual_faculty_alumni_highlight
+mode: default
+content:
+  field_mfsfa_cta:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_mfsfa_description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_mfsfa_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_mfsfa_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_mfsfa_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_mfsfa_type:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  search_api_excerpt: true

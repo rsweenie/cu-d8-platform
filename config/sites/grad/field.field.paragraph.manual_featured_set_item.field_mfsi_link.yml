@@ -1,0 +1,23 @@
+uuid: e7ceb9e2-75d0-4d6f-8ce3-801dd0d4bbf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfsi_link
+    - paragraphs.paragraphs_type.manual_featured_set_item
+  module:
+    - link
+id: paragraph.manual_featured_set_item.field_mfsi_link
+field_name: field_mfsi_link
+entity_type: paragraph
+bundle: manual_featured_set_item
+label: Link
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link
