@@ -20,6 +20,21 @@ services:
     type: 'mailhog'
     hogfrom:
       - 'appserver'
+  behat:
+    type: compose
+    services:
+      image: docksal/behat
+      ports:
+        - 8000:8000
+      command: "php -S 0.0.0.0:8000"
+      volumes:
+        - ./tests/behat:/src
+  browser:
+    type: compose
+    services:
+      # Pick/uncomment one
+      image: selenium/standalone-chrome
+      #image: selenium/standalone-firefox
 tooling:
   blt:
     service: appserver
