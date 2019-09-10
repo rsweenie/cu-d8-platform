@@ -1,0 +1,55 @@
+uuid: 5e1f9680-6898-46b9-82b2-5222976372db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.manual_featured_set_item.field_mfsi_image
+    - field.field.paragraph.manual_featured_set_item.field_mfsi_link
+    - field.field.paragraph.manual_featured_set_item.field_mfsi_short_text
+    - field.field.paragraph.manual_featured_set_item.field_mfsi_source_type
+    - paragraphs.paragraphs_type.manual_featured_set_item
+  module:
+    - link
+    - options
+id: paragraph.manual_featured_set_item.default
+targetEntityType: paragraph
+bundle: manual_featured_set_item
+mode: default
+content:
+  field_mfsi_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_mfsi_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_mfsi_short_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_mfsi_source_type:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  search_api_excerpt: true

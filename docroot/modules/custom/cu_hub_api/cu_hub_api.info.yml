@@ -1,0 +1,8 @@
+name: 'CU Hub API'
+description: Provides the hub API.
+type: module
+core: 8.x
+version: 8.x-1.0
+dependencies:
+  - jsonapi:jsonapi
+package: Creighton

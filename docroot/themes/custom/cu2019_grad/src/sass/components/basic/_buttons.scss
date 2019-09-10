@@ -21,7 +21,7 @@
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     color: $primary;
     font-family: $copyFF;
-    @include fontSize(1.6, 1.25);
+    @include fontSize(1.6, 1.2);
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     text-decoration: none;
     text-align: center;
@@ -34,7 +34,7 @@
     }
 
     @media #{$mediaLg} {
-      font-size: 20px;
+      font-size: 19px;
     }
 
     .arrow:last-child {
@@ -100,6 +100,9 @@
 // IMPORT BUTTON COLORS
 @import 'buttons/colors/_primary';
 @import 'buttons/colors/_secondary';
+@import 'buttons/colors/_hero';
+@import 'buttons/colors/_search';
+@import 'buttons/colors/_expand';
 //@import 'buttons/colors/_tertiary';
 @import 'buttons/colors/_text';
 //@import 'buttons/colors/_success';

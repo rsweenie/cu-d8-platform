@@ -9,15 +9,15 @@ body {
     //padding: 8.2rem 0 0;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    color: $primary;
+    color: $gray2;
     font-family: $copyFF;
-    font-size: $copyFS;
+    font-size: 15px;
     line-height: $copyLH;
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
     @media #{$mediaFullHeader} {
-        //padding: 11.4rem 0 0;
+      font-size: $copyFS;
     }
 
     @media #{$mediaXl} {

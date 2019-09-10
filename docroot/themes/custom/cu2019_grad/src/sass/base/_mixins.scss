@@ -458,3 +458,16 @@
       }
   }
 }
+
+@mixin innerBorder {
+  &:after {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    content: "";
+    border: 2px solid rgba($white,.3);
+    pointer-events: none;
+  }
+}

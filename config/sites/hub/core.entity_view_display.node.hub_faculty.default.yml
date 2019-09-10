@@ -1,0 +1,150 @@
+uuid: c8ea1b03-dd16-4862-8819-7073f05dd1d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_faculty.field_hub_faculty_degree
+    - field.field.node.hub_faculty.field_hub_faculty_department
+    - field.field.node.hub_faculty.field_hub_faculty_description
+    - field.field.node.hub_faculty.field_hub_faculty_email
+    - field.field.node.hub_faculty.field_hub_faculty_image
+    - field.field.node.hub_faculty.field_hub_faculty_name
+    - field.field.node.hub_faculty.field_hub_faculty_phone
+    - field.field.node.hub_faculty.field_hub_faculty_provost_id
+    - field.field.node.hub_faculty.field_hub_faculty_provost_url
+    - field.field.node.hub_faculty.field_hub_faculty_rel_degrees
+    - field.field.node.hub_faculty.field_hub_faculty_title
+    - field.field.node.hub_faculty.field_meta_tags
+    - node.type.hub_faculty
+  module:
+    - link
+    - metatag
+    - name
+    - panelizer
+    - telephone
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.hub_faculty.default
+targetEntityType: node
+bundle: hub_faculty
+mode: default
+content:
+  field_hub_faculty_degree:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hub_faculty_department:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hub_faculty_description:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hub_faculty_email:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hub_faculty_image:
+    type: entity_reference_entity_view
+    weight: 7
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_hub_faculty_name:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_hub_faculty_phone:
+    weight: 6
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_hub_faculty_provost_id:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hub_faculty_provost_url:
+    weight: 10
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hub_faculty_rel_degrees:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hub_faculty_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_meta_tags:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  private: true
+  search_api_excerpt: true

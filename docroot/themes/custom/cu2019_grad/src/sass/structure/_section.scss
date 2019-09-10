@@ -6,7 +6,7 @@
     other places as well and style it differently
 
 \*  --------------------------------------------------------------------------  */
-section {
+.section {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     @include position(relative, 110);
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -15,26 +15,26 @@ section {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     @media #{$mediaMd} {
         background: $white;
         padding: #{$gutter * 1.5}rem 0;
     }
-    
+
     @media #{$mediaLg} {
         padding: #{$gutter * 2}rem 0;
     }
-    
+
     @media #{$mediaXl} {
         padding: #{$gutter * 2.5}rem 0;
     }
-    
+
     > div {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         max-width: $siteWMx;
         margin: 0 auto;
-        
+
         @media #{$mediaMd} {
             padding: 0 #{$gutter}rem;
         }
@@ -42,11 +42,11 @@ section {
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
+
         // ADJUST THE WIDTH FOR $siteWList IN EACH MEDIA QUERY USING $siteWQueryList
         @each $q in $siteWQueryList {
             $i: index($siteWQueryList, $q);
-                
+
             @if $i == 1 {
                 // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -68,19 +68,28 @@ section {
             }
         }
     }
-    
+
     &.npt {
         padding-top: 0;
     }
-    
+
     &.np {
         padding: 0;
     }
-    
+
     &.static {
         position: static;
     }
-    
+
+    &.copy-block {
+      > div > div {
+        @media #{$mediaFullHeader} {
+          width: 58.33%;
+        }
+        margin: auto;
+      }
+    }
+
     @media #{$mediaToggleHeader} {
         &.ptb {
             padding: #{$gutter * 2}rem 0;
@@ -91,7 +100,7 @@ section {
             padding: #{$gutter * 3}rem 0;
         }
     }
-    
+
     @media #{$mediaLg} {
         &.ptb-lgt {
             z-index: 0;

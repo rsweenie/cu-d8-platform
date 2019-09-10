@@ -1,0 +1,49 @@
+uuid: 9a5656df-b256-4f1b-a768-75783de00c3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hub_faculty.field_hub_faculty_degree
+    - field.field.node.hub_faculty.field_hub_faculty_department
+    - field.field.node.hub_faculty.field_hub_faculty_email
+    - field.field.node.hub_faculty.field_hub_faculty_image
+    - field.field.node.hub_faculty.field_hub_faculty_name
+    - field.field.node.hub_faculty.field_hub_faculty_phone
+    - field.field.node.hub_faculty.field_hub_faculty_provost_id
+    - field.field.node.hub_faculty.field_hub_faculty_provost_url
+    - field.field.node.hub_faculty.field_hub_faculty_rel_degrees
+    - field.field.node.hub_faculty.field_hub_faculty_title
+    - node.type.hub_faculty
+  module:
+    - private_content
+    - user
+id: node.hub_faculty.teaser
+targetEntityType: node
+bundle: hub_faculty
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  field_hub_faculty_degree: true
+  field_hub_faculty_department: true
+  field_hub_faculty_email: true
+  field_hub_faculty_image: true
+  field_hub_faculty_name: true
+  field_hub_faculty_phone: true
+  field_hub_faculty_provost_id: true
+  field_hub_faculty_provost_url: true
+  field_hub_faculty_rel_degrees: true
+  field_hub_faculty_title: true
+  search_api_excerpt: true

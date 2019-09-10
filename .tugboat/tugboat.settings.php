@@ -14,7 +14,7 @@ $databases['default']['default'] = array (
 
 
 // Site specific Drupal settings
-system($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh > /dev/null', $cu_site_name);
+$cu_site_name = exec($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh');
 
 switch ($cu_site_name) {
   case 'alliance':
@@ -22,6 +22,9 @@ switch ($cu_site_name) {
   case 'grad-site':
   case 'grad':
     $config['config_split.config_split.grad']['status'] = 1;
+    break;
+  case 'hub':
+    $config['config_split.config_split.hub']['status'] = 1;
     break;
   default:
     break;

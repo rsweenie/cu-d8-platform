@@ -1,4 +1,4 @@
-.ns {
+.section.ns {
   background: linear-gradient(0deg, darken($primary, 6.5) 0%, $primary 100%);
   color: $white;
   padding: 48px 0;
@@ -44,7 +44,13 @@
     @media #{$mediaToggleHeader} {
       display: flex;
       align-items: center;
+
+      .icon + span {
+        display: block;
+        margin: 0 -2rem;
+      }
     }
+
   }
 
   h2 {
