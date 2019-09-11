@@ -17,7 +17,7 @@ $domain = $_SERVER['HTTP_HOST'];
 $domain_fragments = explode('.', $domain);
 $site_name = array_shift($domain_fragments);
 
-exec("/mnt/www/html/$site.$env/vendor/acquia/blt/bin/blt drupal:update --environment=$env --site=$site_name --define drush.uri=$domain --verbose -y");
+exec("/mnt/www/html/$site.$env/vendor/acquia/blt/bin/blt drupal:update --environment=$env --site=$site_name --define drush.uri=$domain --verbose --no-interaction");
 echo "SITE: $site ";
 echo "DOMAIN: $domain ";
 echo "ENVIRONMENT: $env ";
