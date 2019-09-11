@@ -217,6 +217,10 @@ class CUDataTransformation {
   static function getTransformations(){
     return array_filter(get_class_methods(new static),__CLASS__ .'::isTransformation'); 
   }
+  //fixes missing sp_entity_id for sso config
+  static function sso_config_transformation(){
+    return include DRUPAL_ROOT . '/../factory-hooks/post-install/cu-sso-config.php';
+  }
 
 
 }
