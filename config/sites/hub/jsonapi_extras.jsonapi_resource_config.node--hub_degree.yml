@@ -11,7 +11,12 @@ third_party_settings:
     default_include:
       - field_hub_site
       - field_hub_program
-      - field_hub_degree_hero_image
+      - field_hub_degree_hero_image.image
+      - field_hub_degree_details
+      - field_hub_degree_availability
+      - field_hub_degree_interests
+      - field_hub_degree_related_degrees
+      - field_hub_degree_type
 id: node--hub_degree
 disabled: false
 path: node/hub_degree
