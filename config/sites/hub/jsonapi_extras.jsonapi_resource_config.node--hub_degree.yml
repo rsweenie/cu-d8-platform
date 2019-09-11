@@ -12,7 +12,6 @@ third_party_settings:
       - field_hub_site
       - field_hub_program
       - field_hub_degree_hero_image.image
-      - field_hub_degree_details
       - field_hub_degree_availability
       - field_hub_degree_interests
       - field_hub_degree_related_degrees
@@ -217,6 +216,12 @@ resourceFields:
   field_hub_degree_intro:
     fieldName: field_hub_degree_intro
     publicName: field_hub_degree_intro
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_next_steps:
+    fieldName: field_hub_degree_next_steps
+    publicName: field_hub_degree_next_steps
     enhancer:
       id: ''
     disabled: false
