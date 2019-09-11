@@ -7,6 +7,7 @@ dependencies:
   module:
     - ctools_block
     - layout_builder
+    - layout_builder_restrictions
     - system
   theme:
     - cu2019_grad
@@ -72,6 +73,22 @@ third_party_settings:
             additional: {  }
             weight: 0
         third_party_settings: {  }
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks:
+        Accessibility: {  }
+        Devel: {  }
+        Embed: {  }
+        Help: {  }
+        'Lists (Views)': {  }
+        User: {  }
+        'User fields': {  }
+        Webform: {  }
+      allowed_layouts:
+        - generic_hero
+        - generic_content
+        - program_detail_2col
+        - program_detail_feat_tiles
 id: hub_reference.program.default
 targetEntityType: hub_reference
 bundle: program
@@ -83,6 +100,7 @@ hidden:
   hub_drupal_internal__nid: true
   hub_drupal_internal__vid: true
   hub_field_hub_path_alias: true
+  hub_field_hub_program_description: true
   hub_field_hub_program_title: true
   hub_field_hub_site: true
   hub_langcode: true

@@ -9,6 +9,7 @@ dependencies:
     - cu_hub_consumer
     - datetime
     - layout_builder
+    - layout_builder_restrictions
     - link
     - system
   theme:
@@ -189,6 +190,22 @@ third_party_settings:
             additional: {  }
             weight: 0
         third_party_settings: {  }
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks:
+        Accessibility: {  }
+        Devel: {  }
+        Embed: {  }
+        Help: {  }
+        'Lists (Views)': {  }
+        User: {  }
+        'User fields': {  }
+        Webform: {  }
+      allowed_layouts:
+        - generic_hero
+        - generic_content
+        - program_detail_2col
+        - program_detail_feat_tiles
 id: hub_reference.degree.default
 targetEntityType: hub_reference
 bundle: degree
