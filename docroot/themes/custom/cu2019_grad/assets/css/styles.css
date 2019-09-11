@@ -9793,14 +9793,22 @@ nav.side-nav a {
   text-decoration: none;
 }
 
+/* line 69, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav a.is-active {
+  color: #555555;
+  text-decoration: underline;
+}
+
 /* line 59, src/sass/base/_mixins.scss */
 
 nav.side-nav a:hover,
 nav.side-nav a:focus {
+  color: #0054A6;
   text-decoration: underline;
 }
 
-/* line 79, src/sass/components/navigation/_interior.scss */
+/* line 85, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label {
   display: block;
@@ -9811,7 +9819,7 @@ nav.side-nav label {
   border-bottom: 1px solid #e1e7ec;
 }
 
-/* line 87, src/sass/components/navigation/_interior.scss */
+/* line 93, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:before,
 nav.side-nav label:after,
@@ -9827,21 +9835,21 @@ nav.side-nav label span:after {
   transition: all .25s;
 }
 
-/* line 100, src/sass/components/navigation/_interior.scss */
+/* line 106, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:before {
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
 }
 
-/* line 104, src/sass/components/navigation/_interior.scss */
+/* line 110, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:after {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }
 
-/* line 114, src/sass/components/navigation/_interior.scss */
+/* line 120, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox'] {
   position: absolute;
@@ -9854,27 +9862,27 @@ nav.side-nav input[type='checkbox'] {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 118, src/sass/components/navigation/_interior.scss */
+/* line 124, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ ul {
   display: block;
 }
 
-/* line 123, src/sass/components/navigation/_interior.scss */
+/* line 129, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label:before {
   -webkit-transform: rotate(45deg) translate(0);
           transform: rotate(45deg) translate(0);
 }
 
-/* line 127, src/sass/components/navigation/_interior.scss */
+/* line 133, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label:after {
   -webkit-transform: rotate(-45deg) translate(0);
           transform: rotate(-45deg) translate(0);
 }
 
-/* line 131, src/sass/components/navigation/_interior.scss */
+/* line 137, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label span:after {
   opacity: 0;
@@ -14405,7 +14413,7 @@ form.search .search button {
     margin: 0 0 0.58333em 0;
   }
 
-  /* line 79, src/sass/components/navigation/_interior.scss */
+  /* line 85, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav label {
     position: absolute;
