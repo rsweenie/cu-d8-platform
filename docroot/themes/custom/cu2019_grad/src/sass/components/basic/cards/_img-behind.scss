@@ -104,32 +104,7 @@
             position: relative;
             left: auto;
             bottom: auto;
-            max-width: $siteWMx;
             margin: 0 auto;
-
-            @each $q in $siteWQueryList {
-                $i: index($siteWQueryList, $q);
-
-                @if $i == 1 {
-                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                    width: nth($siteWList, $i);
-                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                } @else {
-                    @media #{$q} {
-                        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                        width: nth($siteWList, $i);
-                        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                    }
-                }
-            }
         }
     }
 }

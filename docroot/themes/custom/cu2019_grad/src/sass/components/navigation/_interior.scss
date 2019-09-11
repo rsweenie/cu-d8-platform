@@ -17,6 +17,13 @@
         z-index: 0;
       }
     }
+
+    @media #{$mediaToggleHeader} {
+      > div {
+        padding: 0;
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -66,7 +73,13 @@
     color: $gray2;
     text-decoration: none;
 
+    &.is-active {
+      color: $gray2;
+      text-decoration: underline;
+    }
+
     @include hover {
+      color: $secondary;
       text-decoration: underline;
     }
 

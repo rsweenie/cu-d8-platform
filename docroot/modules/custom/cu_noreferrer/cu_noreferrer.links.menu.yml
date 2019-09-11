@@ -1,0 +1,5 @@
+cu_noreferrer.settings:
+  title: CU Link No Referrer
+  description: 'Configure the <code>rel="noopener"</code> and <code>rel="noreferrer"</code> link attributes.'
+  route_name: cu_noreferrer.settings
+  parent: system.admin_config_content

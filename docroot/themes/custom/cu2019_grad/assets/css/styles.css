@@ -406,7 +406,7 @@ textarea {
 
 /*---=== BASE STUFF ===---*/
 
-/* line 3, src/sass/structure/_grid.scss */
+/* line 13, src/sass/structure/_grid.scss */
 
 [class*="col-"] {
   padding: 0 2.5rem;
@@ -419,7 +419,7 @@ textarea {
           order: 0;
 }
 
-/* line 12, src/sass/structure/_grid.scss */
+/* line 17, src/sass/structure/_grid.scss */
 
 .row + * {
   margin-top: 5rem;
@@ -447,7 +447,7 @@ textarea {
   width: calc(100% + (-2.5rem * -2));
 }
 
-/* line 34, src/sass/structure/_grid.scss */
+/* line 39, src/sass/structure/_grid.scss */
 
 .row.align-center {
   -webkit-box-pack: center;
@@ -458,7 +458,7 @@ textarea {
           align-items: center;
 }
 
-/* line 38, src/sass/structure/_grid.scss */
+/* line 43, src/sass/structure/_grid.scss */
 
 .row.align-left {
   -webkit-box-pack: start;
@@ -466,7 +466,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 41, src/sass/structure/_grid.scss */
+/* line 46, src/sass/structure/_grid.scss */
 
 .row.align-right {
   -webkit-box-pack: end;
@@ -474,7 +474,7 @@ textarea {
           justify-content: flex-end;
 }
 
-/* line 44, src/sass/structure/_grid.scss */
+/* line 49, src/sass/structure/_grid.scss */
 
 .row.va-center {
   -webkit-box-align: center;
@@ -482,7 +482,7 @@ textarea {
           align-items: center;
 }
 
-/* line 47, src/sass/structure/_grid.scss */
+/* line 52, src/sass/structure/_grid.scss */
 
 .row.va-top {
   -webkit-box-align: start;
@@ -490,7 +490,7 @@ textarea {
           align-items: flex-start;
 }
 
-/* line 50, src/sass/structure/_grid.scss */
+/* line 55, src/sass/structure/_grid.scss */
 
 .row.va-bottom {
   -webkit-box-align: end;
@@ -498,7 +498,7 @@ textarea {
           align-items: flex-end;
 }
 
-/* line 53, src/sass/structure/_grid.scss */
+/* line 58, src/sass/structure/_grid.scss */
 
 .row.ha-center {
   -webkit-box-pack: center;
@@ -506,7 +506,7 @@ textarea {
           justify-content: center;
 }
 
-/* line 56, src/sass/structure/_grid.scss */
+/* line 61, src/sass/structure/_grid.scss */
 
 .row.ha-top {
   -webkit-box-pack: start;
@@ -514,7 +514,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 59, src/sass/structure/_grid.scss */
+/* line 64, src/sass/structure/_grid.scss */
 
 .row.ha-right {
   -webkit-box-pack: end;
@@ -1240,7 +1240,6 @@ nav a {
           flex-flow: row wrap;
   max-width: 1350px;
   margin: 0 auto;
-  width: 100%;
 }
 
 /* line 6, src/sass/structure/header/logo/_svg.scss */
@@ -3016,9 +3015,7 @@ header.hp_hero {
   position: relative;
   left: auto;
   bottom: auto;
-  max-width: 1350px;
   margin: 0 auto;
-  width: 100%;
 }
 
 /* line 6, src/sass/components/basic/cards/_img-side.scss */
@@ -3251,6 +3248,31 @@ aside .card.img-side + p {
 
 .card.fw_photo [class*="btn-"] {
   margin-top: 2rem;
+}
+
+/* line 65, src/sass/components/basic/cards/_fwp.scss */
+
+.card.fw_photo .content {
+  max-width: 1350px;
+  width: 100%;
+}
+
+/* line 90, src/sass/components/basic/cards/_fwp.scss */
+
+.card.fw_photo .content > div {
+  margin: auto;
+  padding: 0 2.5rem;
+}
+
+/* line 27, src/sass/base/_mixins.scss */
+
+.card.fw_photo .content > div:before,
+.card.fw_photo .content > div:after {
+  display: block;
+  height: 0;
+  width: 100%;
+  content: "";
+  clear: both;
 }
 
 /* line 2, src/sass/components/basic/cards/_fwb.scss */
@@ -9734,13 +9756,13 @@ nav.bc a:focus {
   padding: 0;
 }
 
-/* line 23, src/sass/components/navigation/_interior.scss */
+/* line 30, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav {
   position: relative;
 }
 
-/* line 26, src/sass/components/navigation/_interior.scss */
+/* line 33, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label,
 nav.side-nav ul {
@@ -9749,35 +9771,43 @@ nav.side-nav ul {
   font-weight: 600;
 }
 
-/* line 33, src/sass/components/navigation/_interior.scss */
+/* line 40, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 56, src/sass/components/navigation/_interior.scss */
+/* line 63, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav .menu-item {
   margin: 0;
   padding: 0;
 }
 
-/* line 65, src/sass/components/navigation/_interior.scss */
+/* line 72, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav a {
   color: #555555;
   text-decoration: none;
 }
 
+/* line 76, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav a.is-active {
+  color: #555555;
+  text-decoration: underline;
+}
+
 /* line 59, src/sass/base/_mixins.scss */
 
 nav.side-nav a:hover,
 nav.side-nav a:focus {
+  color: #0054A6;
   text-decoration: underline;
 }
 
-/* line 79, src/sass/components/navigation/_interior.scss */
+/* line 92, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label {
   display: block;
@@ -9788,7 +9818,7 @@ nav.side-nav label {
   border-bottom: 1px solid #e1e7ec;
 }
 
-/* line 87, src/sass/components/navigation/_interior.scss */
+/* line 100, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:before,
 nav.side-nav label:after,
@@ -9804,21 +9834,21 @@ nav.side-nav label span:after {
   transition: all .25s;
 }
 
-/* line 100, src/sass/components/navigation/_interior.scss */
+/* line 113, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:before {
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
 }
 
-/* line 104, src/sass/components/navigation/_interior.scss */
+/* line 117, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:after {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }
 
-/* line 114, src/sass/components/navigation/_interior.scss */
+/* line 127, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox'] {
   position: absolute;
@@ -9831,27 +9861,27 @@ nav.side-nav input[type='checkbox'] {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 118, src/sass/components/navigation/_interior.scss */
+/* line 131, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ ul {
   display: block;
 }
 
-/* line 123, src/sass/components/navigation/_interior.scss */
+/* line 136, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label:before {
   -webkit-transform: rotate(45deg) translate(0);
           transform: rotate(45deg) translate(0);
 }
 
-/* line 127, src/sass/components/navigation/_interior.scss */
+/* line 140, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label:after {
   -webkit-transform: rotate(-45deg) translate(0);
           transform: rotate(-45deg) translate(0);
 }
 
-/* line 131, src/sass/components/navigation/_interior.scss */
+/* line 144, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label span:after {
   opacity: 0;
@@ -11377,7 +11407,7 @@ form.search .search button {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 3, src/sass/structure/_grid.scss */
+  /* line 13, src/sass/structure/_grid.scss */
 
   [class*="col-"] {
     -webkit-box-ordinal-group: 2;
@@ -11385,7 +11415,7 @@ form.search .search button {
             order: 1;
   }
 
-  /* line 17, src/sass/structure/_grid.scss */
+  /* line 22, src/sass/structure/_grid.scss */
 
   .pull-left {
     -webkit-box-ordinal-group: 1;
@@ -11393,7 +11423,7 @@ form.search .search button {
             order: 0;
   }
 
-  /* line 20, src/sass/structure/_grid.scss */
+  /* line 25, src/sass/structure/_grid.scss */
 
   .push-right {
     -webkit-box-ordinal-group: 3;
@@ -11401,14 +11431,14 @@ form.search .search button {
             order: 2;
   }
 
-  /* line 23, src/sass/structure/_grid.scss */
+  /* line 28, src/sass/structure/_grid.scss */
 
   .float-left {
     margin: 0 2.5rem 2.5rem 0;
     float: left;
   }
 
-  /* line 27, src/sass/structure/_grid.scss */
+  /* line 32, src/sass/structure/_grid.scss */
 
   .float-right {
     margin: 0 0 2.5rem 2.5rem;
@@ -12798,12 +12828,6 @@ form.search .search button {
     margin-top: -5rem;
   }
 
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
-
-  .main-header > div {
-    width: 95%;
-  }
-
   /* line 121, src/sass/structure/_footer.scss */
 
   .main-footer > div {
@@ -12951,12 +12975,6 @@ form.search .search button {
     width: 95%;
   }
 
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
-
-  .full-screen .card.img-behind > div {
-    width: 95%;
-  }
-
   /* line 30, src/sass/components/basic/cards/_story.scss */
 
   .full-screen .card.story > div {
@@ -12968,6 +12986,18 @@ form.search .search button {
   .card.fw_photo.img-behind {
     padding: 13.5rem 0 8rem;
     margin-bottom: 1.5rem;
+  }
+
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
+
+  .card.fw_photo .content {
+    width: 95%;
+  }
+
+  /* line 90, src/sass/components/basic/cards/_fwp.scss */
+
+  .card.fw_photo .content > div {
+    width: 83.33333%;
   }
 
   /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
@@ -13223,12 +13253,6 @@ form.search .search button {
     position: relative;
     z-index: 0;
     padding: 0 3.6rem;
-  }
-
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
-
-  .main-header > div {
-    width: 90%;
   }
 
   /* line 6, src/sass/structure/header/logo/_svg.scss */
@@ -14282,9 +14306,9 @@ form.search .search button {
     font-size: 3.6rem;
   }
 
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .full-screen .card.img-behind > div {
+  .card.fw_photo .content {
     width: 90%;
   }
 
@@ -14361,7 +14385,7 @@ form.search .search button {
     z-index: 0;
   }
 
-  /* line 33, src/sass/components/navigation/_interior.scss */
+  /* line 40, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     font-size: 2.4rem;
@@ -14370,13 +14394,13 @@ form.search .search button {
     padding: 5rem 0;
   }
 
-  /* line 56, src/sass/components/navigation/_interior.scss */
+  /* line 63, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav .menu-item {
     margin: 0 0 0.58333em 0;
   }
 
-  /* line 79, src/sass/components/navigation/_interior.scss */
+  /* line 92, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav label {
     position: absolute;
@@ -14704,7 +14728,7 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 33, src/sass/components/navigation/_interior.scss */
+  /* line 40, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     padding: 6.25rem 0;
@@ -14730,12 +14754,6 @@ form.search .search button {
 }
 
 @media screen and (min-width: 1600px) {
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
-
-  .main-header > div {
-    width: 85%;
-  }
-
   /* line 121, src/sass/structure/_footer.scss */
 
   .main-footer > div {
@@ -14769,14 +14787,14 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .full-screen .card.img-behind > div {
+  .card.fw_photo .content {
     width: 85%;
   }
 }
 
-@media screen and (max-width: 1079.9px) {
+@media screen and (max-width: 1089.9px) {
   /* line 29, src/sass/base/_resets.scss */
 
   html,
@@ -15121,7 +15139,14 @@ form.search .search button {
     display: none;
   }
 
-  /* line 33, src/sass/components/navigation/_interior.scss */
+  /* line 22, src/sass/components/navigation/_interior.scss */
+
+  .section.side-nav-section > div {
+    padding: 0;
+    width: 100%;
+  }
+
+  /* line 40, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     display: none;
@@ -15130,7 +15155,7 @@ form.search .search button {
     text-align: right;
   }
 
-  /* line 65, src/sass/components/navigation/_interior.scss */
+  /* line 72, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav a {
     display: block;
