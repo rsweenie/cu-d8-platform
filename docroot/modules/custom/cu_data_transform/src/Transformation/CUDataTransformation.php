@@ -219,7 +219,10 @@ class CUDataTransformation {
   }
   //fixes missing sp_entity_id for sso config
   static function sso_config_transformation(){
-    return include DRUPAL_ROOT . '/../factory-hooks/post-install/cu-sso-config.php';
+    $out = include DRUPAL_ROOT . '/../factory-hooks/post-install/cu-sso-config.php';
+    if($out)
+      return 'Sso fixed!';
+    return 'Somthing went wrong'.$out;
   }
 
 
