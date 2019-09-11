@@ -1,5 +1,5 @@
 enabled: true
-hub_base_url: 'https://hub.creighton.com'
+hub_base_url: 'http://hub.creighton.acsitefactory.com'
 _core:
   default_config_hash: f6mEeQ7XTwh17ZPHWuZROFoiay5nRA-j_wx72GXBF3s
 cron:

@@ -1,5 +1,5 @@
 enabled: true
-hub_base_url: 'https://hub.creighton.com'
+hub_base_url: 'http://hub.creighton.acsitefactory.com'
 cron:
   enabled: true
   refresh_freq: 1440
