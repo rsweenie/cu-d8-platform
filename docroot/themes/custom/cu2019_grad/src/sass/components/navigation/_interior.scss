@@ -17,6 +17,13 @@
         z-index: 0;
       }
     }
+
+    @media #{$mediaToggleHeader} {
+      > div {
+        padding: 0;
+        width: 100%;
+      }
+    }
   }
 }
 
