@@ -1,14 +1,19 @@
 /*---===<<< GRID >>>===---*/
 /*---=== BASE STUFF ===---*/
-[class*="col-"] {
-    padding: 0 #{$gutter}rem;
-    margin: 0;
-    @include flexItem(0, 0, auto, 0);
-    
-    @media #{$mediaMd} {
-        order: 1;
-    }
+@mixin col {
+  padding: 0 #{$gutter}rem;
+  margin: 0;
+  @include flexItem(0, 0, auto, 0);
+
+  @media #{$mediaMd} {
+      order: 1;
+  }
 }
+
+[class*="col-"] {
+  @include col;
+}
+
 .row + * {
     margin-top: #{$gutter * 2}rem;
 }
