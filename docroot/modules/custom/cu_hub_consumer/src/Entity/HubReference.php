@@ -64,6 +64,7 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *   links = {
  *     "canonical" = "/hub-reference/{hub_reference}",
  *     "delete-form" = "/hub-reference/{hub_reference}/delete",
+ *     "edit-form" = "/hub-reference/{hub_reference}"
  *   },
  * )
  */
