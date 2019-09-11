@@ -146,6 +146,7 @@ class Resource implements ResourceInterface {
       if (!empty($this->jsonData['data']['id'])) {
         $this->processedData['type'] = $this->jsonData['data']['type'];
         $this->processedData['id'] = $this->jsonData['data']['id'];
+        $this->processedData['meta'] = isset($this->jsonData['data']['meta']) ? $this->jsonData['data']['meta'] : [];
 
         $this->processAttributes();
         $this->processRelationships();
@@ -230,7 +231,12 @@ class Resource implements ResourceInterface {
         foreach ($this->jsonData['included'] as $included) {
           foreach ($relationship_data['data'] as &$relationship_data_item) {
             if ($included['type'] == $relationship_data_item['type'] && $included['id'] == $relationship_data_item['id']) {
+              $meta = isset($relationship_data_item['meta']) ? $relationship_data_item['meta'] : NULL;
               $relationship_data_item = $included;
+
+              if ($meta) {
+                $relationship_data_item['meta'] = $meta;
+              }
             }
           }
         }

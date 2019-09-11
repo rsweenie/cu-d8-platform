@@ -108,23 +108,6 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
 
 }
 
-function cu2019_grad_preprocess_hub_resource(array &$variables) {
-  $resource_obj = $variables['resource_obj'];
-  $resource_type = $resource_obj->getResourceTypeId();
-
-  if ($resource_type == 'media:image') {
-    if (isset($resource_obj->image[0]->uri[0])) {
-      $url = $resource_obj->image[0]->uri[0]->getUrl();
-      $variables['image'] = [
-        '#theme' => 'imagecache_external',
-        '#uri' => $url->toString(),
-        '#style_name' => 'rectangle_horizontal_header_2400x600_',
-        '#alt' => '',
-      ];
-    }
-  }
-}
-
 // Returns a render array with the sub-tree of the current active link.
 function _cu2019_grad_get_menu_sub_tree($menu_name = 'main') {
   $menu_tree = \Drupal::menuTree();
