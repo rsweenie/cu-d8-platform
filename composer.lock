@@ -7808,6 +7808,57 @@
             }
         },
         {
+            "name": "drupal/imagecache_external",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/imagecache_external.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/imagecache_external-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "092a390745262f19d122269cf98e27270e7f82f4"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1566404301",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "BarisW",
+                    "homepage": "https://www.drupal.org/user/107229"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                }
+            ],
+            "description": "Allows you to fetch external images and use image styles on them.",
+            "homepage": "https://www.drupal.org/project/imagecache_external",
+            "support": {
+                "source": "https://git.drupalcode.org/project/imagecache_external"
+            }
+        },
+        {
             "name": "drupal/imagemagick",
             "version": "2.5.0",
             "source": {

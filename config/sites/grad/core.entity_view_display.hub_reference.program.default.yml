@@ -1,0 +1,91 @@
+uuid: 9ab3fd57-27af-4956-a1ea-825ca2ee9f93
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.program
+  module:
+    - ctools_block
+    - layout_builder
+    - system
+  theme:
+    - cu2019_grad
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: generic_hero
+        layout_settings: {  }
+        components:
+          b4f56349-d39b-485f-9fe0-86f42b3b59ba:
+            uuid: b4f56349-d39b-485f-9fe0-86f42b3b59ba
+            region: main
+            configuration:
+              id: 'entity_field:hub_reference:title'
+              label: Title
+              provider: ctools_block
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                weight: 0
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          d3e7ce20-4069-42f7-9b2a-6bbeb21ad84a:
+            uuid: d3e7ce20-4069-42f7-9b2a-6bbeb21ad84a
+            region: main
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: generic_content
+        layout_settings: {  }
+        components:
+          12da3199-0db5-4103-b0fd-20a8f23f11ff:
+            uuid: 12da3199-0db5-4103-b0fd-20a8f23f11ff
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:program:hub_field_hub_program_title'
+              label: 'Hub: field_hub_program_title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+id: hub_reference.program.default
+targetEntityType: hub_reference
+bundle: program
+mode: default
+content: {  }
+hidden:
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_program_title: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_node_type: true
+  hub_revision_timestamp: true
+  search_api_excerpt: true

@@ -123,6 +123,7 @@ graylist:
   - 'search_api.*'
   - 'system.*'
   - 'user.role.*'
+  - 'core.entity_view_display.hub_reference.*'
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
