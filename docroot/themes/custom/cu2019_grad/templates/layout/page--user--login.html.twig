@@ -73,7 +73,15 @@
   <main role="main">
     {{ page.mobile_cta }}
     <a id="content" tabindex="-1"></a>{# link is in html.html.twig #}
-    {{ page.content }}
+    <section class="section">
+      <div>
+        <div class="row ha-center">
+          <div class="col-xs12 col-md-8 col-lg-6">
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="main-footer" role="contentinfo">
