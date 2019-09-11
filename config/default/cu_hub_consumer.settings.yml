@@ -1,0 +1,12 @@
+enabled: true
+hub_base_url: 'https://hub.creighton.com'
+_core:
+  default_config_hash: f6mEeQ7XTwh17ZPHWuZROFoiay5nRA-j_wx72GXBF3s
+cron:
+  enabled: true
+  refresh_freq: 1440
+  refresh_fetch_limit: 20
+  unpublish_age: 2880
+  delete_age: 0
+queue:
+  enabled: true
