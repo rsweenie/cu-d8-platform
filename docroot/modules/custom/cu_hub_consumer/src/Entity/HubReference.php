@@ -15,7 +15,7 @@ use Drupal\cu_hub_consumer\Hub\Resource;
 use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
 use Drupal\cu_hub_consumer\Hub\ResourceRelationshipListInterface;
 use Drupal\pathauto\PathautoState;
-
+use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
 
 /**
  * The hub reference entity class.
@@ -139,31 +139,13 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
   /**
    * {@inheritdoc}
    */
+  /*
   public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
     $fields = parent::bundleFieldDefinitions($entity_type, $bundle, $base_field_definitions);
 
     if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
       if ($reference_source = $hub_ref_type->getSource()) {
         $resource_type = $reference_source->getResourceType();
-
-        /*
-        if ($exposed_fields = $reference_source->getMetadataAttributes()) {
-          foreach ($exposed_fields as $exposed_field => $label) {
-            $attribute_type = $resource_type->getAttributeType($exposed_field);
-            if (!in_array($attribute_type, ['metatags', 'hub_unknown', 'hub_resource'])) {
-              $field_prefix = 'external_'; //ExternalEntityInterface::ANNOTATION_FIELD_PREFIX;
-              //foreach ($inherited_fields as $field) {
-              $field_definition = BaseFieldDefinition::create($attribute_type) //BaseFieldDefinition::createFromFieldStorageDefinition($field->getFieldStorageDefinition())
-                ->setName($field_prefix . $exposed_field)
-                ->setReadOnly(TRUE)
-                ->setComputed(TRUE)
-                ->setLabel('Hub: ' . $exposed_field)
-                ->setDisplayConfigurable('view', TRUE);
-              $fields[$field_prefix . $exposed_field] = $field_definition;
-            }
-          }
-        }
-        */
 
         $field_types = \Drupal::service('plugin.manager.field.field_type');
 
@@ -176,7 +158,7 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
               //$field_defaults = $field_types->getDefaultFieldSettings($field_info['type']);
               //print_r($field_def);
 
-              $field_definition = BaseFieldDefinition::create($field_info['type']) //BaseFieldDefinition::createFromFieldStorageDefinition($field->getFieldStorageDefinition())
+              $field_definition = HubFieldStorageDefinition::create($field_info['type']) //BaseFieldDefinition::createFromFieldStorageDefinition($field->getFieldStorageDefinition())
                 ->setName($field_prefix . $field_name)
                 ->setReadOnly(TRUE)
                 ->setComputed(TRUE)
@@ -193,8 +175,12 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
       }
     }
 
+    // Clear the list of blocks when a new bundle is created.
+    //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+
     return $fields;
   }
+  */
 
   /**
    * {@inheritdoc}
