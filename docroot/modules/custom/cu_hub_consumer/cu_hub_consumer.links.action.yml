@@ -1,0 +1,6 @@
+
+cu_hub_consumer.hub_reference_type_add:
+  route_name: entity.hub_reference_type.add_form
+  title: 'Add hub reference type'
+  appears_on:
+    - entity.hub_reference_type.collection

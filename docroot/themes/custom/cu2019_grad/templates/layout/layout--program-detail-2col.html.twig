@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Displays the 2 column program detail layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <div {{ attributes.addClass('layout--program-detail-2col') }}>
+    <div class="row">
+      <div class="col-sm-12 col-md-8">
+        {% if content.main %}
+          <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
+            {{ content.main }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        {% if content.right %}
+          <div {{ region_attributes.right.addClass('layout__region', 'layout__region--right') }}>
+            {{ content.right }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

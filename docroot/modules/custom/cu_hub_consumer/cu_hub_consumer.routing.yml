@@ -1,0 +1,40 @@
+
+cu_hub_consumer.settings:
+  path: '/admin/config/services/cu_hub_consumer'
+  defaults:
+    _form: '\Drupal\cu_hub_consumer\Form\SettingsForm'
+    _title: 'CU Hub Consumer Settings'
+  requirements:
+    _permission: 'administer cu hub consumer'
+  options:
+    _admin_route: TRUE
+
+cu_hub_consumer.hub.test:
+  path: '/admin/config/services/cu_hub_consumer/test'
+  defaults:
+    _controller: '\Drupal\cu_hub_consumer\Controller\HubTestController::showOverview'
+    _title: 'Hub API test'
+  requirements:
+    _permission: 'administer cu hub consumer'
+  options:
+    _admin_route: TRUE
+
+cu_hub_consumer.hub.import:
+  path: '/admin/config/services/cu_hub_consumer/import'
+  defaults:
+    _form: '\Drupal\cu_hub_consumer\Form\HubReferenceImportForm'
+    _title: 'Hub Import'
+  requirements:
+    _permission: 'administer cu hub consumer'
+  options:
+    _admin_route: TRUE
+
+entity.hub_reference.refresh_form:
+  path: '/hub-reference/{hub_reference}/refresh'
+  defaults:
+    _form: '\Drupal\cu_hub_consumer\Form\HubReferenceRefreshConfirmForm'
+    _title: 'Refresh Data'
+  requirements:
+    _entity_access: 'hub_reference.update'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,7 @@
+administer cu hub consumer:
+  title: 'Administer CU hub references'
+  description: 'Allows managing of CU hub references.<br/><em>Warning: Give to trusted roles only; this permission has security implications.</em>'
+view cu hub references:
+  title: 'View hub reference entity'
+delete cu hub references:
+  title: 'Delete hub reference entity'
