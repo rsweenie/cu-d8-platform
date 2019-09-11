@@ -1,38 +1,32 @@
-uuid: a2884cef-7001-4137-8fe8-6f9adff7faaf
+uuid: 8d093832-5194-457a-9367-a4e03f0acca1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.hub_paragraph_next_steps.field_hub_next_step_items
+    - field.field.paragraph.hub_paragraph_next_steps.field_hub_next_steps
     - field.field.paragraph.hub_paragraph_next_steps.field_hub_next_steps_title
     - paragraphs.paragraphs_type.hub_paragraph_next_steps
-  module:
-    - paragraphs
 id: paragraph.hub_paragraph_next_steps.default
 targetEntityType: paragraph
 bundle: hub_paragraph_next_steps
 mode: default
 content:
-  field_hub_next_step_items:
-    type: entity_reference_paragraphs
+  field_hub_next_steps:
     weight: 2
+    label: hidden
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      link: true
+      view_mode: default
     third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_hub_next_steps_title:
     weight: 1
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: string_textfield
+    type: string
     region: content
 hidden:
-  created: true
-  status: true
+  search_api_excerpt: true

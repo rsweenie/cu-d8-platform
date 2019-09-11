@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.hub_degree.field_hub_degree_hero_image
     - field.field.node.hub_degree.field_hub_degree_interests
     - field.field.node.hub_degree.field_hub_degree_intro
+    - field.field.node.hub_degree.field_hub_degree_next_steps
     - field.field.node.hub_degree.field_hub_degree_other_programs
     - field.field.node.hub_degree.field_hub_degree_related_degrees
     - field.field.node.hub_degree.field_hub_degree_requirements
@@ -25,6 +26,7 @@ dependencies:
     - link
     - media_library
     - metatag
+    - paragraphs
     - text
 id: node.hub_degree.default
 targetEntityType: node
@@ -77,6 +79,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_hub_degree_next_steps:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_hub_degree_other_programs:
     weight: 14
