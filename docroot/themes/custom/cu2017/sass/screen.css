@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-/* line 6, ../sass/screen.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,36 +24,32 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-/* line 27, ../sass/screen.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 31, ../sass/screen.scss */
 body {
   line-height: 1;
 }
 
-/* line 34, ../sass/screen.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 37, ../sass/screen.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 40, ../sass/screen.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
-/* line 45, ../sass/screen.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22screen.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EAaC;EACA;EACA;EACA;EACA;EACA;;;AAED;AACA;AAAA;EAEC;;;AAED;EACC;;;AAED;EACC;;;AAED;EACC;;;AAED;AAAA;EAEC;EACA;;;AAED;EACC;EACA%22,%22file%22:%22screen.css%22%7D */

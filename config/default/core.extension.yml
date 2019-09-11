@@ -35,6 +35,7 @@ module:
   cu_breadcrumbs: 0
   cu_data_transform: 0
   cu_entity_embed: 0
+  cu_noreferrer: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
