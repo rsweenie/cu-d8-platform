@@ -11,6 +11,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Drupal\cu_hub_consumer\Hub\ResourceInterface;
 
 /**
  * Plugin implementation of the 'hub_resource_media_image' formatter.
@@ -167,62 +168,64 @@ class HubResourceMediaImageFormatter extends FormatterBase implements ContainerF
 
     foreach ($items as $delta => $item) {
       $resource_obj = $item->value;
-      $resource_type = $resource_obj->getResourceTypeId();
+      if ($resource_obj instanceof ResourceInterface) {
+        $resource_type = $resource_obj->getResourceTypeId();
 
-      // Replace any characters that aren't allowed.
-      $resource_type = preg_replace('/:/i', '__', $resource_type);
-      $resource_type = preg_replace('/[^a-z0-9_-]/i', '_', $resource_type);
+        // Replace any characters that aren't allowed.
+        $resource_type = preg_replace('/:/i', '__', $resource_type);
+        $resource_type = preg_replace('/[^a-z0-9_-]/i', '_', $resource_type);
 
-      // Sanity check.
-      if (isset($resource_obj->image[0]->uri[0])) {
-        $url = $resource_obj->image[0]->uri[0]->getUrl();
+        // Sanity check.
+        if (isset($resource_obj->image[0]->uri[0])) {
+          $url = $resource_obj->image[0]->uri[0]->getUrl();
 
-        $image_path = $url->toString();
-        $image_alt = isset($resource_obj->image[0]->meta['alt']) ? $resource_obj->image[0]->meta['alt'] : '';
-        $image_title = isset($resource_obj->image[0]->meta['title']) ? $resource_obj->image[0]->meta['title'] : '';
+          $image_path = $url->toString();
+          $image_alt = isset($resource_obj->image[0]->meta['alt']) ? $resource_obj->image[0]->meta['alt'] : '';
+          $image_title = isset($resource_obj->image[0]->meta['title']) ? $resource_obj->image[0]->meta['title'] : '';
 
-        if ($this->moduleHandler->moduleExists('imagecache_external')) {
-          $image_path = imagecache_external_generate_path($url->toString());
-        }
+          if ($this->moduleHandler->moduleExists('imagecache_external')) {
+            $image_path = imagecache_external_generate_path($url->toString());
+          }
 
-        // Skip rendering this item if there is no image_path.
-        if (!$image_path) {
-          continue;
-        }
+          // Skip rendering this item if there is no image_path.
+          if (!$image_path) {
+            continue;
+          }
 
-        if ($link_file) {
-          $link_url = Url::fromUri(file_create_url($image_path));
-        }
+          if ($link_file) {
+            $link_url = Url::fromUri(file_create_url($image_path));
+          }
 
-        $image = $this->imageFactory->get($image_path);
-        $style_name = $this->getSetting('style_name');
-  
-        $image_build_base = [
-          '#width' => $image->getWidth(),
-          '#height' => $image->getHeight(),
-          '#uri' => $image_path,
-          '#alt' => $image_alt,
-          '#title' => $image_title,
-        ];
-  
-        if (empty($style_name)) {
-          $image_build = [
-            '#theme' => 'image',
-          ] + $image_build_base;
-        }
-        else {
-          $image_build = [
-            '#theme' => 'image_style',
-            '#style_name' => $style_name,
-          ] + $image_build_base;
-        }
-  
-        if ($link_url) {
-          $rendered_image = render($image_build);
-          $elements[$delta] = Link::fromTextAndUrl($rendered_image, $url)->toRenderable();
-        }
-        else {
-          $elements[$delta] = $image_build;
+          $image = $this->imageFactory->get($image_path);
+          $style_name = $this->getSetting('style_name');
+    
+          $image_build_base = [
+            '#width' => $image->getWidth(),
+            '#height' => $image->getHeight(),
+            '#uri' => $image_path,
+            '#alt' => $image_alt,
+            '#title' => $image_title,
+          ];
+    
+          if (empty($style_name)) {
+            $image_build = [
+              '#theme' => 'image',
+            ] + $image_build_base;
+          }
+          else {
+            $image_build = [
+              '#theme' => 'image_style',
+              '#style_name' => $style_name,
+            ] + $image_build_base;
+          }
+    
+          if ($link_url) {
+            $rendered_image = render($image_build);
+            $elements[$delta] = Link::fromTextAndUrl($rendered_image, $url)->toRenderable();
+          }
+          else {
+            $elements[$delta] = $image_build;
+          }
         }
       }
     }
