@@ -22,4 +22,4 @@ echo "SITE: $site ";
 echo "DOMAIN: $domain ";
 echo "ENVIRONMENT: $env ";
 // Run sso-config.sh to set sp_entity_id in config when a new site is created.
-exec("bash " . DRUPAL_ROOT . "/../cu_scripts/sso-config.sh $site_name $env");
+exec("bash ".DRUPAL_ROOT."/cu_scripts/sso-config.sh $site_name $env");
