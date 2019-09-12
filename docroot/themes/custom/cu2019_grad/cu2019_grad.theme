@@ -77,6 +77,18 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
     }
   }
 
+  if ($paragraph->hasField('field_mfsfa_type') && !$paragraph->field_mfsfa_type->isEmpty()) {
+    $variables['mfsfa_type'] = $paragraph->get('field_mfsfa_type')->getString();
+    switch ($variables['mfsfa_type']) {
+      case 'optionFaculty':
+        $variables['highlite_tag'] = 'Faculty Spotlight';
+        break;
+      case 'optionAlumni':
+        $variables['highlite_tag'] = 'Alumni Spotlight';
+        break;
+    }
+  }
+
   if ($paragraph->hasField('field_next_step_icon') && !$paragraph->field_next_step_icon->isEmpty()) {
     $variables['icon'] = $paragraph->get('field_next_step_icon')->getString();
   }
