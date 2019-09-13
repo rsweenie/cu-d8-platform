@@ -4278,7 +4278,7 @@ blockquote .tooltip-trigger {
   background: #019cdb;
 }
 
-/* line 56, src/sass/components/basic/_ns.scss */
+/* line 59, src/sass/components/basic/_ns.scss */
 
 .section.ns h2 {
   font-size: 3.2rem;
@@ -4287,20 +4287,20 @@ blockquote .tooltip-trigger {
   text-transform: uppercase;
 }
 
-/* line 75, src/sass/components/basic/_ns.scss */
+/* line 78, src/sass/components/basic/_ns.scss */
 
 .section.ns ul li {
   padding: 0;
   font-size: 1.8rem;
 }
 
-/* line 78, src/sass/components/basic/_ns.scss */
+/* line 81, src/sass/components/basic/_ns.scss */
 
 .section.ns ul li:before {
   display: none;
 }
 
-/* line 93, src/sass/components/basic/_ns.scss */
+/* line 96, src/sass/components/basic/_ns.scss */
 
 .field--name-field-next-steps-heading .field__label {
   position: absolute;
@@ -13128,7 +13128,7 @@ form.search .search button {
     font-size: 3rem;
   }
 
-  /* line 56, src/sass/components/basic/_ns.scss */
+  /* line 59, src/sass/components/basic/_ns.scss */
 
   .section.ns h2 {
     font-size: 4.2rem;
@@ -14366,7 +14366,15 @@ form.search .search button {
     margin: 0 auto 2rem auto;
   }
 
-  /* line 67, src/sass/components/basic/_ns.scss */
+  /* line 50, src/sass/components/basic/_ns.scss */
+
+  .section.ns a .icon + span {
+    display: block;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
+
+  /* line 70, src/sass/components/basic/_ns.scss */
 
   .section.ns ul {
     display: -webkit-box;
@@ -14379,7 +14387,7 @@ form.search .search button {
     max-width: 1084px;
   }
 
-  /* line 75, src/sass/components/basic/_ns.scss */
+  /* line 78, src/sass/components/basic/_ns.scss */
 
   .section.ns ul li {
     width: 20%;
@@ -15138,13 +15146,6 @@ form.search .search button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-
-  /* line 48, src/sass/components/basic/_ns.scss */
-
-  .section.ns a .icon + span {
-    display: block;
-    margin: 0 -2rem;
   }
 
   /* line 31, src/sass/components/navigation/_breadcrumb.scss */
