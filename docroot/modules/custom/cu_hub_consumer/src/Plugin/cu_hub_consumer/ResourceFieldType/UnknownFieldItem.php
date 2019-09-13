@@ -19,6 +19,13 @@ class UnknownFieldItem extends ResourceFieldItemBase {
   /**
    * {@inheritdoc}
    */
+  public function __toString() {
+    return '';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function view() {
     return [];
   }
