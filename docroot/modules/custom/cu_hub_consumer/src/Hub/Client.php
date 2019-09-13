@@ -5,7 +5,8 @@ namespace Drupal\cu_hub_consumer\Hub;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Psr\Log\LoggerInterface;
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
-use \GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+use GuzzleHttp\Exception\ClientException as GuzzleClientException;
 use Drupal\Component\Serialization\Json;
 
 /**
@@ -93,7 +94,10 @@ class Client implements ClientInterface {
           $this->buildRequestOptions($query, $body)
         );
       }
-      catch (RequestException $e) {
+      catch (GuzzleClientException $e) {
+        throw new ClientException($e->getMessage(), $url, $e);
+      }
+      catch (GuzzleRequestException $e) {
         throw new ClientException($e->getMessage(), $url, $e);
       }
     }
