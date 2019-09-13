@@ -46,7 +46,8 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *     "storage" = "Drupal\cu_hub_consumer\HubReferenceStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
- *     }
+ *     },
+ *     "access" = "Drupal\cu_hub_consumer\HubReferenceAccessControlHandler",
  *   },
  *   base_table = "hub_reference",
  *   data_table = "hub_reference_field_data",
