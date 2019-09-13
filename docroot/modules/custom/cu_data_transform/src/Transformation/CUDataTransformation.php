@@ -241,7 +241,7 @@ class CUDataTransformation {
       $uri_prefix = str_replace($env_prefix,"",$uri_prefix);
 
     //get acquias internal site id
-    preg_match("/(?<=indaly)(.*)(?=$uri_prefix)/",\Drupal::service('settings')->get('file_public_path'),$matches,PREG_UNMATCHED_AS_NULL);
+    preg_match("/(?<=indaly)(.*)(?=\/files)/",\Drupal::service('settings')->get('file_public_path'),$matches,PREG_UNMATCHED_AS_NULL);
     //if there are no matches then something went wrong
     if(empty($matches)){
       $message = "Something Went Wrong: No Site ID found.";
@@ -249,7 +249,7 @@ class CUDataTransformation {
     }
 
     //get the acquia site id
-    $site_id = $matches[0];
+    $site_id = str_replace($uri_prefix,"",$matches[0]);
 
     $sp_entity_id = "urn:acquia:acsf:saml:sp:creighton:$env:$site_id";
     $idp_entity_id = "https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/metadata.php";
