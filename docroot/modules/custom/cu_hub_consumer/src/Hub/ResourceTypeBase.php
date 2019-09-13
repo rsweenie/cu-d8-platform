@@ -15,7 +15,8 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 //use \GuzzleHttp\ClientInterface;
-use \GuzzleHttp\Exception\RequestException;
+//use GuzzleHttp\Exception\RequestException;
+//use GuzzleHttp\Exception\ClientException;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -192,7 +193,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
         $response = $this->hubClient->request('GET', $path);
       }
       catch (ClientException $e) {
-        throw new ResourceException('Could not retrieve the hub resource.', $e->getUrl(), [], $e);
+        throw new ResourceException('Could not retrieve the hub resource: ' . $e->getMessage(), $e->getUrl(), [], $e);
       }
       
       $resource = Resource::createFromHttpResponse($this, $response);
@@ -228,8 +229,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
       try {
         $response = $this->hubClient->request('GET', $path, $query);
       }
-      catch (RequestException $e) {
-        throw new ResourceException('Could not retrieve the hub resource list.', $path, [], $e);
+      catch (ClientException $e) {
+        throw new ResourceException('Could not retrieve the hub resource list: ' . $e->getMessage(), $path, [], $e);
       }
       
       $resource = ResourceList::createFromHttpResponse($this, $response);

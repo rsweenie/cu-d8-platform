@@ -76,9 +76,9 @@ class HubReferenceRefreshConfirmForm extends ConfirmFormBase {
       $resource = $resource_type->fetchResource($this->hubReference->hub_uuid->value);
     }
     catch (ResourceException $e) {
-      // @TODO: detect a difference between a 404, parse error, etc.
       watchdog_exception('cu_hub_consumer', $e);
-      drupal_set_message($this->t('Could not properly fetch the hub resource data.'), 'error');
+      drupal_set_message($e->getMessage(), 'error');
+      return;
     }
 
     if ($resource && $raw_json_data = $resource->getRawJsonData()) {
