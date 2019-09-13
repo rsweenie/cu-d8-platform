@@ -94,6 +94,23 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
+          75b24ff1-d4de-4c3a-98fc-4be37bf8b132:
+            uuid: 75b24ff1-d4de-4c3a-98fc-4be37bf8b132
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:degree:hub_field_hub_degree_details'
+              label: 'Hub: field_hub_degree_details'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
           d408d1cf-5276-4e90-aaa4-f59eda95a4bc:
             uuid: d408d1cf-5276-4e90-aaa4-f59eda95a4bc
             region: right
@@ -128,40 +145,6 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
-          7524de1a-596c-4a70-adc7-a1076cb39964:
-            uuid: 7524de1a-596c-4a70-adc7-a1076cb39964
-            region: main
-            configuration:
-              id: 'field_block:hub_reference:degree:hub_field_hub_degree_description'
-              label: 'Hub: field_hub_degree_description'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: hub_text_processed
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 1
-          e4e58abd-883c-40ba-83a7-59721933e78d:
-            uuid: e4e58abd-883c-40ba-83a7-59721933e78d
-            region: right
-            configuration:
-              id: 'field_block:hub_reference:degree:hub_field_hub_degree_details'
-              label: 'Hub: field_hub_degree_details'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: hub_text_processed
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 2
         third_party_settings: {  }
       -
         layout_id: program_detail_feat_tiles
@@ -206,11 +189,6 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
-        third_party_settings: {  }
-      -
-        layout_id: generic_content
-        layout_settings: {  }
-        components: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     entity_view_mode_restriction:
@@ -373,7 +351,6 @@ content:
 hidden:
   hub_drupal_internal__nid: true
   hub_drupal_internal__vid: true
-  hub_field_hub_degree_next_steps: true
   hub_langcode: true
   hub_revision_timestamp: true
   search_api_excerpt: true

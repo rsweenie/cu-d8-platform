@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.quote_box.field_quote_p_link
     - node.type.quote_box
   module:
-    - content_moderation
     - entity_browser
     - name
     - paragraphs
@@ -80,12 +79,6 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  moderation_state:
-    type: moderation_state_default
-    weight: 10
-    settings: {  }
-    region: content
-    third_party_settings: {  }
   private:
     weight: 3
     region: content

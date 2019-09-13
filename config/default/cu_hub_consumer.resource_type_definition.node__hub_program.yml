@@ -30,7 +30,7 @@ fields:
     type: string_long
     multiple: false
   field_hub_program_description:
-    type: hub_text_long
+    type: hub_unknown
     multiple: false
   field_hub_program_title:
     type: string_long

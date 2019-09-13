@@ -41,7 +41,6 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Advanced Options'
-      region: content
 _core:
   default_config_hash: aSi4Te5DP5YH-gJhEe-SvY0ADpxIHnfxzGCeLZ5222A
 id: node.news_spotlight.default
@@ -157,12 +156,6 @@ content:
         entity_browser_id: creighton_tabbed_accordion
     type: inline_entity_form_complex
     region: content
-  moderation_state:
-    type: moderation_state_default
-    weight: 14
-    settings: {  }
-    region: content
-    third_party_settings: {  }
   path:
     type: path
     weight: 11
