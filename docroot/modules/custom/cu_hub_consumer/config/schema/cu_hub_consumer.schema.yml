@@ -73,3 +73,50 @@ cu_hub_consumer.hub_reference_source.field_aware:
     source_field:
       type: string
       label: 'Source field'
+
+cu_hub_consumer.hub_reference_type.*:
+  type: config_entity
+  label: 'Hub reference type'
+  mapping:
+    id:
+      type: string
+      label: 'Machine name'
+    label:
+      type: label
+      label: 'Name'
+    description:
+      type: text
+      label: 'Description'
+    source:
+      type: string
+      label: 'Source'
+    source_configuration:
+      type: cu_hub_consumer.hub_reference_source.[%parent.source]
+    field_map:
+      type: sequence
+      label: 'Field map'
+      sequence:
+        type: string
+
+cu_hub_consumer.resource_type_definition.*:
+  type: config_entity
+  label: 'Hub resource type definition'
+  mapping:
+    id:
+      type: string
+      label: 'Machine name'
+    type_id:
+      type: string
+      label: 'Hub type ID'
+    fields:
+      type: sequence
+      label: 'Fields'
+      sequence:
+        type: mapping
+        mapping:
+          field_type: 
+            type: string
+          hub_type: 
+            type: string
+          multiple: 
+            type: boolean

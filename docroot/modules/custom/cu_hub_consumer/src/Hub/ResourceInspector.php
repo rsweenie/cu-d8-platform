@@ -93,8 +93,26 @@ class ResourceInspector {
     $this->time = $time;
   }
 
-  public function getResourceTypes() {
-    return $this->hubClient->getEndpoints();
+  /**
+   * Returns a list of API endpoints, keyed by resource type ID.
+   *
+   * @param boolean $safe
+   *   If TRUE it will capture and log client exceptions rather than emitting an exception.
+   * @return void
+   */
+  public function getResourceTypes($safe = TRUE) {
+    return $this->hubClient->getEndpoints($safe);
+  }
+
+  /**
+   * Returns a machine name version of a hub resource type ID.
+   *
+   * @param string $resource_type_id
+   * @return string
+   */
+  public function getResourceTypeMachineId($resource_type_id) {
+    $resource_type_id = preg_replace('/[^a-z0-9_]/i', '_', $resource_type_id);
+    return $resource_type_id;
   }
 
   /**
@@ -103,7 +121,7 @@ class ResourceInspector {
    * @param string $resource_type_id
    * @return array
    */
-  public function inspect($resource_type_id, $skip_cache=FALSE) {
+  public function inspect($resource_type_id, $skip_cache=TRUE) {
     if (!isset($this->inspectionInfo)) {
       $this->inspectionInfo = [];
     }
@@ -137,7 +155,8 @@ class ResourceInspector {
           'entity_field_info',
         ];
     
-        $max_age = Cache::PERMANENT; //60; //$this->getExternalEntityType()->getPersistentCacheMaxAge();
+        // $max_age = Cache::PERMANENT;
+        $max_age = 10;
         $expire = $max_age === Cache::PERMANENT
           ? Cache::PERMANENT
           : $this->time->getRequestTime() + $max_age;

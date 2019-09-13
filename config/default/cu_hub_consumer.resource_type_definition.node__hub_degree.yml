@@ -1,0 +1,84 @@
+uuid: 1870d060-69d3-4260-a444-bd14e2494fb6
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_degree
+type_id: node--hub_degree
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag_normalized:
+    type: metatags
+    multiple: false
+  field_hub_degree_description:
+    type: hub_text_long
+    multiple: false
+  field_hub_degree_details:
+    type: hub_unknown
+    multiple: false
+  field_hub_degree_intro:
+    type: string_long
+    multiple: false
+  field_hub_degree_other_programs:
+    type: link
+    multiple: true
+  field_hub_degree_requirements:
+    type: hub_text_long
+    multiple: false
+  field_hub_degree_title:
+    type: string_long
+    multiple: false
+  field_hub_degree_title_short:
+    type: string_long
+    multiple: false
+  field_hub_path_alias:
+    type: string_long
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type--node_type
+    multiple: false
+  field_hub_degree_availability:
+    type: hub_resource
+    hub_type: taxonomy_term--program_availability
+    multiple: true
+  field_hub_degree_interests:
+    type: hub_resource
+    hub_type: taxonomy_term--program_interests
+    multiple: false
+  field_hub_degree_type:
+    type: hub_resource
+    hub_type: taxonomy_term--degree_type
+    multiple: false
+  field_hub_program:
+    type: hub_resource
+    hub_type: node--hub_program
+    multiple: false
+  field_hub_site:
+    type: hub_resource
+    hub_type: node--hub_site
+    multiple: false
+  field_hub_degree_hero_image:
+    type: hub_resource
+    hub_type: media--image
+    multiple: false
+  field_hub_degree_related_degrees:
+    type: hub_resource
+    hub_type: node--hub_degree
+    multiple: true

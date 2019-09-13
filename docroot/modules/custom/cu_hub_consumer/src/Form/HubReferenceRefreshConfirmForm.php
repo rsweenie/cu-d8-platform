@@ -68,7 +68,7 @@ class HubReferenceRefreshConfirmForm extends ConfirmFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($this->hubReference->bundle());
+    $hub_ref_type = $this->entityTypeManager->getStorage('hub_reference_type')->load($this->hubReference->bundle());
     $resource_type = $hub_ref_type->getResourceType();
 
     try {

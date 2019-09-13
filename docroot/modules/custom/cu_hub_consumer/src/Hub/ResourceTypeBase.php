@@ -38,6 +38,13 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   protected $configFactory;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * The logger channel for cu_hub_consumer.
    *
    * @var \Psr\Log\LoggerInterface
@@ -76,6 +83,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    *   The plugin implementation definition.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    * @param \Psr\Log\LoggerInterface $logger
    *   The logger channel for cu_hub_consumer.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
@@ -85,9 +94,10 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * @param \Drupal\cu_hub_consumer\Hub\ResourceInspector $hub_resource_inspector
    *   The HTTP client.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, LoggerInterface $logger, MessengerInterface $messenger, ClientInterface $hub_client, ResourceInspector $hub_resource_inspector) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, MessengerInterface $messenger, ClientInterface $hub_client, ResourceInspector $hub_resource_inspector) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $config_factory);
     $this->configFactory = $config_factory;
+    $this->entityTypeManager = $entity_type_manager;
     $this->logger = $logger;
     $this->messenger = $messenger;
     $this->hubClient = $hub_client;
@@ -106,6 +116,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
       $plugin_id,
       $plugin_definition,
       $container->get('config.factory'),
+      $container->get('entity_type.manager'),
       $container->get('logger.channel.cu_hub_consumer'),
       $container->get('messenger'),
       $container->get('cu_hub_consumer.hub_client'),
@@ -247,7 +258,13 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   }
 
   public function getHubFields() {
-    return $this->hubResourceInspector->inspect($this->getHubTypeId());
+    //return $this->hubResourceInspector->inspect($this->getHubTypeId());
+    $def_storage = $this->entityTypeManager->getStorage('hub_resource_type_definition');
+    $type_defs = $def_storage->loadByProperties(['type_id' => $this->getHubTypeId()]);
+    if ($type_def = reset($type_defs)) {
+      return $type_def->get('fields');
+    }
+    return [];
   }
 
   /**
@@ -256,7 +273,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   public function getAttributeTypes() {
     $attribute_types = [];
 
-    $inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    //$inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    $inspection_info = $this->getHubFields();
     foreach ($inspection_info as $attribute_name => $attribute_info) {
       $attribute_types[$attribute_name] = $attribute_info['type'];
     }
@@ -268,7 +286,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * {@inheritdoc}
    */
   public function getAttributeType($attribute) {
-    $inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    //$inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    $inspection_info = $this->getHubFields();
     return isset($inspection_info[$attribute]['type']) ? $inspection_info[$attribute]['type'] : 'hub_unknown';
 
     /*
@@ -284,7 +303,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * {@inheritdoc}
    */
   public function getAttributeMultiple($attribute) {
-    $inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    //$inspection_info = $this->hubResourceInspector->inspect($this->getHubTypeId());
+    $inspection_info = $this->getHubFields();
     return isset($inspection_info[$attribute]['multiple']) ? $inspection_info[$attribute]['multiple'] : 'FALSE';
   }
 

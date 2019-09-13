@@ -3,6 +3,7 @@
 namespace Drupal\cu_hub_consumer\Plugin\cu_hub_consumer\ResourceType;
 
 use Drupal\Component\Plugin\Derivative\DeriverBase;
+use Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinition;
 
 /**
  * Derives hub resource type plugin definitions for supported media types.
@@ -37,10 +38,9 @@ class MediaDeriver extends DeriverBase {
 
     $this->derivatives = [];
 
-    $inspector = \Drupal::service('cu_hub_consumer.hub_resource_inspector');
-    $resource_types = $inspector->getResourceTypes();
-
-    foreach ($resource_types as $resource_type => $resource_type_info) {
+    $resource_type_defs = HubResourceTypeDefinition::loadMultiple();
+    foreach ($resource_type_defs as $resource_type_def) {
+      $resource_type = $resource_type_def->get('type_id');
       if (strpos($resource_type, 'media--') === 0) {
         list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
         $this->derivatives[$resource_sub_type] = [
@@ -49,7 +49,7 @@ class MediaDeriver extends DeriverBase {
           'description' => $resource_sub_type,
           'hub_type_id' => $resource_type,
           'entity_keys' => [
-            //'label' => 'parent_field_name',
+            'label' => 'name',
           ],
         ] + $base_plugin_definition;
       }
