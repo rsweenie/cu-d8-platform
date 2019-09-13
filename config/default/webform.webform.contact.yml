@@ -1,12 +1,9 @@
-uuid: df8faf75-a2b9-4387-896f-9d4119b6e340
 langcode: en
 status: open
 dependencies:
   enforced:
     module:
       - webform
-_core:
-  default_config_hash: 54q-eZLQ0xY3g9yFexLIn97Y8F_sByRhO4ima2pMmn4
 open: null
 close: null
 weight: 0
@@ -251,3 +248,6 @@ handlers:
       sender_name: ''
       theme_name: ''
       exclude_empty_checkbox: false
+uuid: df8faf75-a2b9-4387-896f-9d4119b6e340
+_core:
+  default_config_hash: 54q-eZLQ0xY3g9yFexLIn97Y8F_sByRhO4ima2pMmn4

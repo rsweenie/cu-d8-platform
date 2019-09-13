@@ -82,7 +82,10 @@ display:
               documentation: default
               featured_links: default
               header_alert: default
+              interior_page: default
+              landing_page: default
               news_spotlight: default
+              next_steps: default
               profile: default
               promo_box: default
               quote_box: default

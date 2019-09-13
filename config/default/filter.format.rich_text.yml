@@ -102,8 +102,7 @@ filters:
     provider: responsive_tables_filter
     status: true
     weight: -45
-    settings:
-      tablesaw_type: stack
+    settings: {  }
   video_embed_wysiwyg:
     id: video_embed_wysiwyg
     provider: video_embed_wysiwyg

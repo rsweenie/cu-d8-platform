@@ -8,7 +8,7 @@ dependencies:
     - lightning_media
     - views
 _core:
-  default_config_hash: JJHmBj7aN_8TKrNPmRURDz3ACyY2Wh7nyotuARHCLgM
+  default_config_hash: hHFm2oMux7utCi2RojXFHygvcyFxBTQcRwB3wUrujxM
 name: creighton_image_browser
 label: 'Creighton Image Browser'
 display: iframe

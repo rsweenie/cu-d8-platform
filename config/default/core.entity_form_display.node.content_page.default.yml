@@ -17,7 +17,6 @@ dependencies:
     - field.field.node.content_page.panelizer
     - node.type.content_page
   module:
-    - content_moderation
     - entity_browser
     - entity_browser_entity_form
     - inline_entity_form
@@ -155,12 +154,6 @@ content:
         entity_browser_id: creighton_tabbed_accordion
     type: inline_entity_form_complex
     region: content
-  moderation_state:
-    type: moderation_state_default
-    weight: 15
-    settings: {  }
-    region: content
-    third_party_settings: {  }
   path:
     type: path
     weight: 12
