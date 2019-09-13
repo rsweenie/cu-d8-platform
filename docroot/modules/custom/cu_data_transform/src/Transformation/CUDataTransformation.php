@@ -243,41 +243,40 @@ class CUDataTransformation {
     //get acquias internal site id
     preg_match("/(?<=indaly)(.*)(?=$uri_prefix)/",\Drupal::service('settings')->get('file_public_path'),$matches,PREG_UNMATCHED_AS_NULL);
     //if there are no matches then something went wrong
-    if(empty($matches))
-      $message = "Something Went Wrong: No Site ID found";
+    if(empty($matches)){
+      $message = "Something Went Wrong: No Site ID found.";
+      return $message;
+    }
+
     //get the acquia site id
     $site_id = $matches[0];
-    //set the drush directory, local drush is installed globally
-    //on acquia it is not
-    $drush_dir = '';
-    if($env != '01local')
-      $drush_dir = "/mnt/www/html/creighton$env/vendor/bin/";
 
-    //create the drush command
-    $command = $drush_dir."drush @self cset";
+    $sp_entity_id = "urn:acquia:acsf:saml:sp:creighton:$env:$site_id";
+    $idp_entity_id = "https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/metadata.php";
+    $idp_single_sign_on_service = "https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/SSOService.php";
+    $idp_single_log_out_service = "https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/SingleLogoutService.php";
+
+    //get the config factory
+    $config = \Drupal::service('config.factory')->getEditable('samlauth.authentication');
     # Sets sp_entity_id, idp_entity_id, idp_single_sign_on_service, and idp_single_log_out_service for ACSF SSO into the selected site
-    $sp_entity_id_result = (int)exec("$command samlauth.authentication sp_entity_id urn:acquia:acsf:saml:sp:creighton:$env:$site_id -y --uri=$site_name.{$uri_prefix}-creighton.acsitefactory.com --no-interaction -v --ansi");
-    $idp_entity_id_result = (int)exec("$command samlauth.authentication idp_entity_id https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/metadata.php -y --uri=$site_name.{$uri_prefix}-creighton.acsitefactory.com --no-interaction -v --ansi");
-    $idp_single_sign_on_service_result = (int)exec("$command samlauth.authentication idp_single_sign_on_service https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/SSOService.php -y --uri=$site_name.{$uri_prefix}-creighton.acsitefactory.com --no-interaction -v --ansi");
-    $idp_single_log_out_service_result = (int)exec("$command samlauth.authentication idp_single_log_out_service https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/SingleLogoutService.php -y --uri=$site_name.{$uri_prefix}-creighton.acsitefactory.com --no-interaction -v --ansi");
-    //did something fail?
-    if($sp_entity_id_result || $idp_entity_id_result || $idp_single_sign_on_service_result || $idp_single_log_out_service_result)
-      $message = "Something Went Wrong: Drush command failed, check recent logs";
+    $config->set("sp_entity_id",$sp_entity_id)->save();
+    $config->set("idp_entity_id",$idp_entity_id)->save();
+    $config->set("idp_single_sign_on_service",$idp_single_sign_on_service)->save();
+    $config->set("idp_single_log_out_service",$idp_single_log_out_service)->save();
+
     //log it
     \Drupal::logger('sso_config_transformation')->info("$message
-                    SITE ID: $site_id ENV: $env SITE: $site  URI: $site_name.{$uri_prefix}-creighton.acsitefactory.com
-                    COMMAND: $command
-                    sp_entity_id urn:acquia:acsf:saml:sp:creighton:$env:$site_id Result: $sp_entity_id_result
-                    idp_entity_id https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/metadata.php Result: $idp_entity_id_result
-                    idp_single_sign_on_service https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/SSOService.php Result: $idp_single_sign_on_service_result
-                    idp_single_log_out_service https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/SingleLogoutService.php Result: $idp_single_log_out_service_result");
+    sp_entity_id $sp_entity_id
+    idp_entity_id $idp_entity_id
+    idp_single_sign_on_service $idp_single_sign_on_service
+    idp_single_log_out_service $idp_single_log_out_service");
+
     //return a message
     return "$message
-            <br>SITE ID: $site_id ENV: $env SITE: $site  URI: $site_name.{$uri_prefix}-creighton.acsitefactory.com
-            <br>sp_entity_id urn:acquia:acsf:saml:sp:creighton:$env:$site_id
-            <br>idp_entity_id https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/metadata.php
-            <br>idp_single_sign_on_service https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/SSOService.php
-            <br>idp_single_log_out_service https://www.{$uri_prefix}-creighton.acsitefactory.com/sso/saml2/idp/SingleLogoutService.php";
+    <br>sp_entity_id $sp_entity_id
+    <br>idp_entity_id $idp_entity_id
+    <br>idp_single_sign_on_service $idp_single_sign_on_service
+    <br>idp_single_log_out_service $idp_single_log_out_service";
   }
 
 
