@@ -7,6 +7,7 @@ use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\cu_hub_consumer\Entity\HubReference;
+use Drupal\cu_hub_consumer\Hub\ResourceException;
 
 /**
  * Provides a form for hub reference refresh.
@@ -75,6 +76,7 @@ class HubReferenceRefreshConfirmForm extends ConfirmFormBase {
       $resource = $resource_type->fetchResource($this->hubReference->hub_uuid->value);
     }
     catch (ResourceException $e) {
+      // @TODO: detect a difference between a 404, parse error, etc.
       watchdog_exception('cu_hub_consumer', $e);
       drupal_set_message($this->t('Could not properly fetch the hub resource data.'), 'error');
     }

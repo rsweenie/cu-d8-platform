@@ -4,6 +4,7 @@ namespace Drupal\cu_hub_consumer\Plugin\QueueWorker;
  
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\cu_hub_consumer\Entity\HubReference;
+use Drupal\cu_hub_consumer\Hub\ResourceException;
  
 /**
  * Fetches resource list data from hub.
