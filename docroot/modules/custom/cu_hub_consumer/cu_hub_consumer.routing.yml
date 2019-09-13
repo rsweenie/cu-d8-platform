@@ -29,6 +29,16 @@ cu_hub_consumer.hub.import:
   options:
     _admin_route: TRUE
 
+cu_hub_consumer.hub.definition_update:
+  path: '/admin/config/services/cu_hub_consumer/definition-update'
+  defaults:
+    _form: '\Drupal\cu_hub_consumer\Form\HubResourceTypeDefinitionUpdateForm'
+    _title: 'Hub Resource Definitions'
+  requirements:
+    _permission: 'administer cu hub consumer'
+  options:
+    _admin_route: TRUE
+
 entity.hub_reference.refresh_form:
   path: '/hub-reference/{hub_reference}/refresh'
   defaults:

@@ -176,7 +176,7 @@ class Client implements ClientInterface {
   /**
    * {@inheritdoc}
    */
-  public function getEndpoints() {
+  public function getEndpoints($safe = TRUE) {
     if (!isset($this->endpoints)) {
       $this->endpoints = [];
 
@@ -190,6 +190,9 @@ class Client implements ClientInterface {
         }
         catch (ClientException $e) {
           $this->logger->error('Error fetching endpoints. Msg: %msg URL: %url', ['%msg' => $e->getMessage(), '%url' => $e->getUrl()]);
+          if (!$safe) {
+            throw $e;
+          }
         }
 
         \Drupal::cache()->set($cid, $this->endpoints);

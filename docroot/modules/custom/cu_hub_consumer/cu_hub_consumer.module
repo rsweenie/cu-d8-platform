@@ -85,10 +85,9 @@ function cu_hub_consumer_entity_bundle_field_info(EntityTypeInterface $entity_ty
         }
       }
     }
-  }
 
-  // Clear the list of blocks when a new bundle is created.
-  //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+    //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+  }
 
   return $fields;
 }
@@ -96,6 +95,7 @@ function cu_hub_consumer_entity_bundle_field_info(EntityTypeInterface $entity_ty
 /**
  * Implements hook_block_alter().
  */
+/*
 function cu_hub_consumer_block_alter(array &$blocks) {
   // If Layout Builder is installed it assumes that bundle fields will be known ahead of time and will
   // choke if it can't derive the field blocks. We need to fill in the blanks.
@@ -154,8 +154,11 @@ function cu_hub_consumer_block_alter(array &$blocks) {
         }
       }
     }
+
+    //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
   }
 }
+*/
 
 /**
  * Implements hook_entity_operation().
@@ -289,35 +292,9 @@ function cu_hub_consumer_theme_suggestions_hub_resource(array $variables) {
   $resource_obj = $variables['resource_obj'];
   $resource_type = $resource_obj->getResourceTypeId();
 
-  $sanitized_resource_type = preg_replace('/[^a-z0-9-]/i', '-', $resource_type);//strtr($resource_type, '.', '_');
+  $sanitized_resource_type = preg_replace('/[^a-z0-9-]/i', '-', $resource_type);
 
   //$suggestions[] = 'hub_reference__' . $sanitized_resource_type;
-
-  /*
-  // @var \Drupal\cu_hub_consumer\Entity\HubReferenceInterface $hub_reference
-  $hub_reference = $variables['elements']['#hub_reference'];
-  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
-
-  $suggestions[] = 'hub_reference__' . $sanitized_view_mode;
-  $suggestions[] = 'hub_reference__' . $hub_reference->bundle();
-  $suggestions[] = 'hub_reference__' . $hub_reference->bundle() . '__' . $sanitized_view_mode;
-
-  // Add suggestions based on the source plugin ID.
-  $source = $hub_reference->getSource();
-  if ($source instanceof DerivativeInspectionInterface) {
-    $source_id = $source->getBaseId();
-    $suggestions[] = 'hub_reference__source_' . $source_id;
-
-    if ($derivative_id = $source->getDerivativeId()) {
-      $source_id .= '_' . $derivative_id;
-      $suggestions[] = 'hub_reference__source_' . $source_id;
-    }
-  }
-  else {
-    $source_id = $source->getPluginId();
-    $suggestions[] = 'hub_reference__source_' . $source_id;
-  }
-  */
 
   return $suggestions;
 }
@@ -334,13 +311,6 @@ function template_preprocess_hub_resource_field(array &$variables) {
 
   $field_list = $variables['field_list'];
   $field_items = $variables['field_items'];
-
-  /*
-  if ($first_item = reset($items)) {
-    $variables['field_name'] = $first_item->getFieldName();
-    $variables['resource_obj'] = $first_item->getParentResource();
-  }
-  */
 
   $field_type = $field_list->getFieldType();
 

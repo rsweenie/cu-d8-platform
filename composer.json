@@ -166,7 +166,8 @@
             "drupal/core": {
                 "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
                 "Santize file names on upload": "https://www.drupal.org/files/issues/2019-05-04/2492171-285.patch",
-                "Call to a member function transformDimensions() on null in template_preprocess | https://www.drupal.org/project/drupal/issues/2957368": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch"
+                "Call to a member function transformDimensions() on null in template_preprocess | https://www.drupal.org/project/drupal/issues/2957368": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch",
+                "Layout builder doesn't support bundle computed field | https://www.drupal.org/project/drupal/issues/3034979": "https://www.drupal.org/files/issues/2019-02-22/layoutbuilder-bundlecomputedfieldsfix-3034979-1-8.7x.patch"
             },
             "drupal/panels": {
                 "bootstrap Warning: array_search() expects parameter": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"

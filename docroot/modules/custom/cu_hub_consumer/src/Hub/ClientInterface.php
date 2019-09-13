@@ -15,8 +15,10 @@ interface ClientInterface {
 
   /**
    * Gets a list of endpoints.
-   *
+   * 
+   * @param boolean $safe
+   *   If TRUE it will capture and log client exceptions rather than emitting an exception.
    * @return string[]
    */
-  public function getEndpoints();
+  public function getEndpoints($safe = TRUE);
 }
