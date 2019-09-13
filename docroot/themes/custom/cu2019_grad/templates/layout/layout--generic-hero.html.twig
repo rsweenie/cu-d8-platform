@@ -11,15 +11,11 @@
  */
 #}
 {% if content %}
-  <div {{ attributes.addClass('layout--generic-hero') }}>
-    <div class="row">
-      <div class="col-sm-12">
-        {% if content.main %}
-          <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
-            {{ content.main }}
-          </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+  <header {{ attributes.addClass('layout--generic-hero','interior_page') }}>
+    {% if content.main %}
+    <!-- <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}> -->
+        {{ content.main }}
+    <!--  </div> -->
+    {% endif %}
+  </header>
 {% endif %}
