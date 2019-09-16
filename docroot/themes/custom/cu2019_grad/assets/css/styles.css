@@ -625,7 +625,7 @@ body {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 24, src/sass/components/copy/_block-elements.scss */
+/* line 25, src/sass/components/copy/_block-elements.scss */
 
 p,
 ul,
@@ -638,7 +638,7 @@ figure {
   margin: 0 0 1.5em;
 }
 
-/* line 34, src/sass/components/copy/_block-elements.scss */
+/* line 35, src/sass/components/copy/_block-elements.scss */
 
 aside p,
 aside ul,
@@ -650,7 +650,7 @@ aside figure {
   margin: 0 0 1rem;
 }
 
-/* line 38, src/sass/components/copy/_block-elements.scss */
+/* line 39, src/sass/components/copy/_block-elements.scss */
 
 hr {
   margin: 2.5rem auto;
@@ -660,7 +660,7 @@ hr {
   border: none;
 }
 
-/* line 59, src/sass/components/copy/_block-elements.scss */
+/* line 60, src/sass/components/copy/_block-elements.scss */
 
 .intro {
   font-size: 1.6rem;
@@ -668,28 +668,29 @@ hr {
   line-height: 1.3em;
   font-weight: 600;
   color: #002E6D;
+  margin-bottom: 1em;
 }
 
-/* line 63, src/sass/components/copy/_block-elements.scss */
+/* line 64, src/sass/components/copy/_block-elements.scss */
 
 .disclaimer {
   color: #6CACE4;
   font-size: 1.425rem;
 }
 
-/* line 73, src/sass/components/copy/_block-elements.scss */
+/* line 74, src/sass/components/copy/_block-elements.scss */
 
 .ta-left {
   text-align: left !important;
 }
 
-/* line 82, src/sass/components/copy/_block-elements.scss */
+/* line 83, src/sass/components/copy/_block-elements.scss */
 
 .ta-center {
   text-align: center !important;
 }
 
-/* line 91, src/sass/components/copy/_block-elements.scss */
+/* line 92, src/sass/components/copy/_block-elements.scss */
 
 .ta-right {
   text-align: right !important;
@@ -10561,6 +10562,7 @@ nav.jn li + li {
   line-height: 1.3em;
   font-weight: 600;
   color: #002E6D;
+  margin-bottom: 1em;
 }
 
 /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
@@ -11618,13 +11620,13 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 38, src/sass/components/copy/_block-elements.scss */
+  /* line 39, src/sass/components/copy/_block-elements.scss */
 
   hr {
     margin: 3.75rem auto;
   }
 
-  /* line 59, src/sass/components/copy/_block-elements.scss */
+  /* line 60, src/sass/components/copy/_block-elements.scss */
 
   .intro {
     font-size: 3rem;
@@ -12891,7 +12893,7 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 38, src/sass/components/copy/_block-elements.scss */
+  /* line 39, src/sass/components/copy/_block-elements.scss */
 
   hr {
     margin: 5rem auto;
