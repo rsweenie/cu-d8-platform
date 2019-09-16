@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_browser
     - field.field.paragraph.manual_featured_event.field_mfse_date
     - field.field.paragraph.manual_featured_event.field_mfse_image
     - field.field.paragraph.manual_featured_event.field_mfse_link
@@ -11,8 +12,8 @@ dependencies:
     - paragraphs.paragraphs_type.manual_featured_event
   module:
     - datetime_range
+    - entity_browser
     - link
-    - media_library
 id: paragraph.manual_featured_event.default
 targetEntityType: paragraph
 bundle: manual_featured_event
@@ -25,10 +26,18 @@ content:
     type: daterange_default
     region: content
   field_mfse_image:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 0
     settings:
-      media_types: {  }
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
+      open: false
     third_party_settings: {  }
     region: content
   field_mfse_link:
