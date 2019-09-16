@@ -217,69 +217,6 @@ class CUDataTransformation {
   static function getTransformations(){
     return array_filter(get_class_methods(new static),__CLASS__ .'::isTransformation'); 
   }
-  //fixes missing sp_entity_id for sso config
-  static function sso_config_transformation(){
-    $message = "SSO Config Fix SUCCESS";
-    //get site and env variables all set up
-    $site = getenv('AH_SITE_GROUP');
-    $env = getenv('AH_SITE_ENVIRONMENT');
-    $domain = $_SERVER['HTTP_HOST'];
-    $domain_fragments = explode('.', $domain);
-    $site_name = array_shift($domain_fragments);
-
-    //testing on local
-    if(empty($site))
-      $site = 'creighton';
-    if(empty($env))
-      $env = '01dev';
-
-    //get acquias internal site id
-    preg_match("/(?<=indaly)(.*)(?=\/files)/",\Drupal::service('settings')->get('file_public_path'),$matches,PREG_UNMATCHED_AS_NULL);
-    //if there are no matches then something went wrong
-    if(empty($matches)){
-      $message = "Something Went Wrong: No Site ID found.";
-      return $message;
-    }
-
-    $env_prefix = '01';
-    //remove 01 from env, set uri_prefix
-    $uri_prefix = str_replace($env_prefix,"",$env);
-    //get the acquia site id, remove the prefix
-    $site_id = str_replace($uri_prefix,"",$matches[0]);
-    //the dash ain't silent(add a dash to the end of uri_prefix)
-    $uri_prefix .= "-";
-    //live has no prefix
-    if($env == '01live')
-      $uri_prefix = "";
-    //makes some config variable strings
-    $sp_entity_id = "urn:acquia:acsf:saml:sp:creighton:$env:$site_id";
-    $idp_entity_id = "https://www.{$uri_prefix}creighton.acsitefactory.com/sso/saml2/idp/metadata.php";
-    $idp_single_sign_on_service = "https://www.{$uri_prefix}creighton.acsitefactory.com/sso/saml2/idp/SSOService.php";
-    $idp_single_log_out_service = "https://www.{$uri_prefix}creighton.acsitefactory.com/sso/saml2/idp/SingleLogoutService.php";
-
-    //get the config factory
-    $config = \Drupal::service('config.factory')->getEditable('samlauth.authentication');
-    # Sets sp_entity_id, idp_entity_id, idp_single_sign_on_service, and idp_single_log_out_service for ACSF SSO into the selected site
-    //put those configs string in to config and save
-    $config->set("sp_entity_id",$sp_entity_id)->save();
-    $config->set("idp_entity_id",$idp_entity_id)->save();
-    $config->set("idp_single_sign_on_service",$idp_single_sign_on_service)->save();
-    $config->set("idp_single_log_out_service",$idp_single_log_out_service)->save();
-
-    //log it
-    \Drupal::logger('sso_config_transformation')->info("$message
-    sp_entity_id $sp_entity_id
-    idp_entity_id $idp_entity_id
-    idp_single_sign_on_service $idp_single_sign_on_service
-    idp_single_log_out_service $idp_single_log_out_service");
-
-    //return a message
-    return "$message
-    <br>sp_entity_id $sp_entity_id
-    <br>idp_entity_id $idp_entity_id
-    <br>idp_single_sign_on_service $idp_single_sign_on_service
-    <br>idp_single_log_out_service $idp_single_log_out_service";
-  }
 
 
 }
