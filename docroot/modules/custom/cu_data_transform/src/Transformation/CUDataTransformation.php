@@ -232,13 +232,6 @@ class CUDataTransformation {
       $site = 'creighton';
     if(empty($env))
       $env = '01dev';
-    
-    $uri_prefix = $env;
-    $env_prefix = '01';
-
-    //if uri_prefix contains env_prefix, remove it
-    if((strpos($env, $env_prefix) !== false))
-      $uri_prefix = str_replace($env_prefix,"",$uri_prefix);
 
     //get acquias internal site id
     preg_match("/(?<=indaly)(.*)(?=\/files)/",\Drupal::service('settings')->get('file_public_path'),$matches,PREG_UNMATCHED_AS_NULL);
@@ -248,14 +241,17 @@ class CUDataTransformation {
       return $message;
     }
 
+    $env_prefix = '01';
+    //remove 01 from env, set uri_prefix
+    $uri_prefix = str_replace($env_prefix,"",$env);
     //get the acquia site id, remove the prefix
     $site_id = str_replace($uri_prefix,"",$matches[0]);
-    //the dash ain't silent
+    //the dash ain't silent(add a dash to the end of uri_prefix)
     $uri_prefix .= "-";
     //live has no prefix
     if($env == '01live')
       $uri_prefix = "";
-
+    //makes some config variable strings
     $sp_entity_id = "urn:acquia:acsf:saml:sp:creighton:$env:$site_id";
     $idp_entity_id = "https://www.{$uri_prefix}creighton.acsitefactory.com/sso/saml2/idp/metadata.php";
     $idp_single_sign_on_service = "https://www.{$uri_prefix}creighton.acsitefactory.com/sso/saml2/idp/SSOService.php";
@@ -264,6 +260,7 @@ class CUDataTransformation {
     //get the config factory
     $config = \Drupal::service('config.factory')->getEditable('samlauth.authentication');
     # Sets sp_entity_id, idp_entity_id, idp_single_sign_on_service, and idp_single_log_out_service for ACSF SSO into the selected site
+    //put those configs string in to config and save
     $config->set("sp_entity_id",$sp_entity_id)->save();
     $config->set("idp_entity_id",$idp_entity_id)->save();
     $config->set("idp_single_sign_on_service",$idp_single_sign_on_service)->save();
