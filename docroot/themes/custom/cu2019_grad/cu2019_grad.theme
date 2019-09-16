@@ -118,6 +118,25 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
     list($variables['start_month'], $variables['start_day']) = explode(' ', $dateRange->get('start_date')->getValue()->format('M j'));
   }
 
+  if ($paragraph->getType() == 'image_video') {
+    if ($paragraph->hasField('field_image_video_media') && !$paragraph->field_image_video_media->isEmpty()) {
+      if ($media = $paragraph->field_image_video_media->referencedEntities()) {
+        $media = reset($media);
+        $variables['media_type'] = $media->bundle();
+
+        // If this is a video, try to fetch the required render array.
+        if ($media->bundle() == 'video') {
+          $provider_manager = \Drupal::service('video_embed_field.provider_manager');
+          $provider = $provider_manager->loadProviderFromInput($media->field_media_video_embed_field->value);
+          if ($provider) {
+            $video =  $provider->renderEmbedCode(560, 315, FALSE);
+            $variables['video'] = $video;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 // Returns a render array with the sub-tree of the current active link.
