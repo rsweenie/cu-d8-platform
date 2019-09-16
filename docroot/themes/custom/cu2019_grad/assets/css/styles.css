@@ -625,7 +625,7 @@ body {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 6, src/sass/components/copy/_block-elements.scss */
+/* line 24, src/sass/components/copy/_block-elements.scss */
 
 p,
 ul,
@@ -638,7 +638,7 @@ figure {
   margin: 0 0 1.5em;
 }
 
-/* line 16, src/sass/components/copy/_block-elements.scss */
+/* line 34, src/sass/components/copy/_block-elements.scss */
 
 aside p,
 aside ul,
@@ -650,7 +650,7 @@ aside figure {
   margin: 0 0 1rem;
 }
 
-/* line 20, src/sass/components/copy/_block-elements.scss */
+/* line 38, src/sass/components/copy/_block-elements.scss */
 
 hr {
   margin: 2.5rem auto;
@@ -660,32 +660,36 @@ hr {
   border: none;
 }
 
-/* line 41, src/sass/components/copy/_block-elements.scss */
+/* line 59, src/sass/components/copy/_block-elements.scss */
 
 .intro {
-  font-size: 2.85rem;
+  font-size: 1.6rem;
+  font-family: "Conduit";
+  line-height: 1.3em;
+  font-weight: 600;
+  color: #002E6D;
 }
 
-/* line 50, src/sass/components/copy/_block-elements.scss */
+/* line 63, src/sass/components/copy/_block-elements.scss */
 
 .disclaimer {
   color: #6CACE4;
   font-size: 1.425rem;
 }
 
-/* line 60, src/sass/components/copy/_block-elements.scss */
+/* line 73, src/sass/components/copy/_block-elements.scss */
 
 .ta-left {
   text-align: left !important;
 }
 
-/* line 69, src/sass/components/copy/_block-elements.scss */
+/* line 82, src/sass/components/copy/_block-elements.scss */
 
 .ta-center {
   text-align: center !important;
 }
 
-/* line 78, src/sass/components/copy/_block-elements.scss */
+/* line 91, src/sass/components/copy/_block-elements.scss */
 
 .ta-right {
   text-align: right !important;
@@ -2540,9 +2544,10 @@ aside .btn-text:hover {
 header.hp_hero {
   position: relative;
   overflow: hidden;
+  z-index: 120;
 }
 
-/* line 24, src/sass/components/basic/_hero.scss */
+/* line 25, src/sass/components/basic/_hero.scss */
 
 .node__content > header:after,
 .hub-reference > header:after,
@@ -2561,7 +2566,7 @@ header.hp_hero:after {
   z-index: 90;
 }
 
-/* line 41, src/sass/components/basic/_hero.scss */
+/* line 42, src/sass/components/basic/_hero.scss */
 
 .node__content > header .field--name-field-interior-page-hero-img,
 .hub-reference > header .field--name-field-interior-page-hero-img,
@@ -2570,7 +2575,7 @@ header.hp_hero .field--name-field-interior-page-hero-img {
   z-index: 0;
 }
 
-/* line 46, src/sass/components/basic/_hero.scss */
+/* line 47, src/sass/components/basic/_hero.scss */
 
 .node__content > header img,
 .hub-reference > header img,
@@ -2580,7 +2585,7 @@ header.hp_hero img {
   height: auto;
 }
 
-/* line 52, src/sass/components/basic/_hero.scss */
+/* line 53, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title,
 .hub-reference > header .hero_title,
@@ -2594,7 +2599,7 @@ header.hp_hero .hero_title {
   z-index: 200;
 }
 
-/* line 65, src/sass/components/basic/_hero.scss */
+/* line 66, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title h1,
 .hub-reference > header .hero_title h1,
@@ -2603,7 +2608,7 @@ header.hp_hero .hero_title h1 {
   color: #fff;
 }
 
-/* line 75, src/sass/components/basic/_hero.scss */
+/* line 76, src/sass/components/basic/_hero.scss */
 
 .node__content > header .breadcrumb,
 .hub-reference > header .breadcrumb,
@@ -2622,7 +2627,7 @@ header.hp_hero .breadcrumb {
 }
 
 @supports (mix-blend-mode: lighten) {
-  /* line 75, src/sass/components/basic/_hero.scss */
+  /* line 76, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
   .hub-reference > header .breadcrumb,
@@ -2632,7 +2637,7 @@ header.hp_hero .breadcrumb {
   }
 }
 
-/* line 96, src/sass/components/basic/_hero.scss */
+/* line 97, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title > div,
 .node__content > header .breadcrumb > div,
@@ -2646,7 +2651,7 @@ header.hp_hero .breadcrumb > div {
   width: 100%;
 }
 
-/* line 116, src/sass/components/basic/_hero.scss */
+/* line 117, src/sass/components/basic/_hero.scss */
 
 .node__content > header.interior_page > .field,
 .hub-reference > header.interior_page > .field,
@@ -2655,7 +2660,7 @@ header.hp_hero.interior_page > .field {
   overflow: hidden;
 }
 
-/* line 130, src/sass/components/basic/_hero.scss */
+/* line 131, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background,
 .hub-reference > header .js-background,
@@ -2664,7 +2669,7 @@ header.hp_hero .js-background {
   background-position: top center;
 }
 
-/* line 134, src/sass/components/basic/_hero.scss */
+/* line 135, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background img,
 .hub-reference > header .js-background img,
@@ -2679,7 +2684,7 @@ header.hp_hero .js-background img {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 139, src/sass/components/basic/_hero.scss */
+/* line 140, src/sass/components/basic/_hero.scss */
 
 .node__content > header:before,
 .hub-reference > header:before,
@@ -2699,7 +2704,7 @@ header.hp_hero:before {
   pointer-events: none;
 }
 
-/* line 154, src/sass/components/basic/_hero.scss */
+/* line 155, src/sass/components/basic/_hero.scss */
 
 .menuhover .node__content > header:before,
 .menuhover .hub-reference > header:before,
@@ -2707,14 +2712,14 @@ header.hp_hero:before {
   opacity: 1;
 }
 
-/* line 160, src/sass/components/basic/_hero.scss */
+/* line 161, src/sass/components/basic/_hero.scss */
 
 header.hp_hero {
   position: relative;
   margin-bottom: 12.8rem;
 }
 
-/* line 171, src/sass/components/basic/_hero.scss */
+/* line 172, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag {
   position: relative;
@@ -2725,7 +2730,7 @@ header.hp_hero {
           order: 2;
 }
 
-/* line 184, src/sass/components/basic/_hero.scss */
+/* line 185, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div {
   max-width: 1350px;
@@ -2733,7 +2738,7 @@ header.hp_hero {
   width: 100%;
 }
 
-/* line 187, src/sass/components/basic/_hero.scss */
+/* line 188, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div > div {
   padding: 2.5rem 1.6rem 1.6rem 1.6rem;
@@ -2741,14 +2746,14 @@ header.hp_hero {
   color: #fff;
 }
 
-/* line 199, src/sass/components/basic/_hero.scss */
+/* line 200, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
   margin: 0;
   font-size: 3.4rem;
 }
 
-/* line 208, src/sass/components/basic/_hero.scss */
+/* line 209, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
   font-family: "Conduit";
@@ -2760,7 +2765,7 @@ header.hp_hero {
   letter-spacing: 0.05em;
 }
 
-/* line 224, src/sass/components/basic/_hero.scss */
+/* line 225, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg {
   position: relative;
@@ -2771,7 +2776,7 @@ header.hp_hero {
   max-height: 680px;
 }
 
-/* line 232, src/sass/components/basic/_hero.scss */
+/* line 233, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image {
   position: relative;
@@ -2779,7 +2784,7 @@ header.hp_hero {
   padding-bottom: 50%;
 }
 
-/* line 241, src/sass/components/basic/_hero.scss */
+/* line 242, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image img {
   width: auto;
@@ -2793,7 +2798,7 @@ header.hp_hero {
           transform: translate(-50%, -50%);
 }
 
-/* line 262, src/sass/components/basic/_hero.scss */
+/* line 263, src/sass/components/basic/_hero.scss */
 
 .bg_caption {
   position: absolute;
@@ -2806,13 +2811,13 @@ header.hp_hero {
   z-index: 95;
 }
 
-/* line 276, src/sass/components/basic/_hero.scss */
+/* line 277, src/sass/components/basic/_hero.scss */
 
 .bg_caption a {
   color: #fff;
 }
 
-/* line 282, src/sass/components/basic/_hero.scss */
+/* line 283, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header {
   position: relative;
@@ -2822,7 +2827,7 @@ header.hp_hero {
           order: 3;
 }
 
-/* line 308, src/sass/components/basic/_hero.scss */
+/* line 309, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header > div {
   max-width: 1350px;
@@ -2830,7 +2835,7 @@ header.hp_hero {
   width: 100%;
 }
 
-/* line 313, src/sass/components/basic/_hero.scss */
+/* line 314, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner {
   position: relative;
@@ -2841,7 +2846,7 @@ header.hp_hero {
   z-index: 200;
 }
 
-/* line 321, src/sass/components/basic/_hero.scss */
+/* line 322, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner:after {
   width: 0;
@@ -2855,7 +2860,7 @@ header.hp_hero {
   border-color: #002E6D transparent transparent transparent;
 }
 
-/* line 333, src/sass/components/basic/_hero.scss */
+/* line 334, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner div:last-child {
   font-family: "Conduit";
@@ -10541,6 +10546,86 @@ nav.jn li + li {
   margin: 0;
 }
 
+/* line 1, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.layout__region--right,
+.program_rail {
+  height: 100%;
+}
+
+/* line 6, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.field--name-hub-field-hub-degree-intro {
+  font-size: 1.6rem;
+  font-family: "Conduit";
+  line-height: 1.3em;
+  font-weight: 600;
+  color: #002E6D;
+}
+
+/* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 14, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail h3 {
+  color: #266db3;
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+/* line 152, src/sass/components/copy/_headings.scss */
+
+aside .program_rail h3 {
+  font-size: 1em;
+}
+
+/* line 155, src/sass/components/copy/_headings.scss */
+
+aside .program_rail h3 ~ h4,
+aside .program_rail h3 ~ .h4 {
+  margin-top: 0.5rem;
+}
+
+/* line 26, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail:after {
+  width: 100vw;
+  height: calc(100% + 6.2rem);
+  position: absolute;
+  top: -6.2rem;
+  left: 0;
+  z-index: 0;
+  content: "";
+  background: rgba(165, 210, 249, 0.2);
+}
+
+/* line 37, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail > div {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 42, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail ul {
+  margin-left: 0;
+}
+
+/* line 46, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail .field--name-hub-field-hub-degree-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
 
 .dropdown-bar {
@@ -11369,7 +11454,7 @@ form.search .search button {
     text-align: center;
   }
 
-  /* line 116, src/sass/components/basic/_hero.scss */
+  /* line 117, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
   .hub-reference > header.interior_page > .field,
@@ -11533,10 +11618,16 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 20, src/sass/components/copy/_block-elements.scss */
+  /* line 38, src/sass/components/copy/_block-elements.scss */
 
   hr {
     margin: 3.75rem auto;
+  }
+
+  /* line 59, src/sass/components/copy/_block-elements.scss */
+
+  .intro {
+    font-size: 3rem;
   }
 
   /* line 7, src/sass/components/copy/_multi-column.scss */
@@ -12682,6 +12773,30 @@ form.search .search button {
     width: calc(50% - 2.5rem);
   }
 
+  /* line 6, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .field--name-hub-field-hub-degree-intro {
+    font-size: 3rem;
+  }
+
+  /* line 14, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail h3 {
+    font-size: 1.375em;
+  }
+
+  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail {
+    padding-left: 2.5rem;
+  }
+
+  /* line 46, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail .field--name-hub-field-hub-degree-title {
+    font-size: 1.5rem;
+  }
+
   /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
 
   .dropdown-bar {
@@ -12776,7 +12891,7 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 20, src/sass/components/copy/_block-elements.scss */
+  /* line 38, src/sass/components/copy/_block-elements.scss */
 
   hr {
     margin: 5rem auto;
@@ -12963,7 +13078,7 @@ form.search .search button {
     font-size: 1.3rem;
   }
 
-  /* line 65, src/sass/components/basic/_hero.scss */
+  /* line 66, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title h1,
   .hub-reference > header .hero_title h1,
@@ -12971,7 +13086,7 @@ form.search .search button {
     width: 67%;
   }
 
-  /* line 96, src/sass/components/basic/_hero.scss */
+  /* line 97, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
@@ -12982,13 +13097,13 @@ form.search .search button {
     width: 95%;
   }
 
-  /* line 184, src/sass/components/basic/_hero.scss */
+  /* line 185, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 95%;
   }
 
-  /* line 308, src/sass/components/basic/_hero.scss */
+  /* line 309, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 95%;
@@ -13189,6 +13304,18 @@ form.search .search button {
 
   .f-feat-faculty > article {
     width: calc(33.333% - 2.5rem);
+  }
+
+  /* line 14, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail h3 {
+    font-size: 1.5em;
+  }
+
+  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail {
+    padding-left: 5rem;
   }
 }
 
@@ -14208,7 +14335,7 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 52, src/sass/components/basic/_hero.scss */
+  /* line 53, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title,
   .hub-reference > header .hero_title,
@@ -14216,7 +14343,7 @@ form.search .search button {
     bottom: 7.2rem;
   }
 
-  /* line 75, src/sass/components/basic/_hero.scss */
+  /* line 76, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
   .hub-reference > header .breadcrumb,
@@ -14224,7 +14351,7 @@ form.search .search button {
     height: 7.2rem;
   }
 
-  /* line 96, src/sass/components/basic/_hero.scss */
+  /* line 97, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
@@ -14235,7 +14362,7 @@ form.search .search button {
     width: 90%;
   }
 
-  /* line 116, src/sass/components/basic/_hero.scss */
+  /* line 117, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
   .hub-reference > header.interior_page > .field,
@@ -14243,7 +14370,7 @@ form.search .search button {
     height: 51.5rem;
   }
 
-  /* line 171, src/sass/components/basic/_hero.scss */
+  /* line 172, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag {
     position: absolute;
@@ -14252,13 +14379,13 @@ form.search .search button {
     z-index: 10;
   }
 
-  /* line 184, src/sass/components/basic/_hero.scss */
+  /* line 185, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 90%;
   }
 
-  /* line 187, src/sass/components/basic/_hero.scss */
+  /* line 188, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div > div {
     max-width: 545px;
@@ -14266,25 +14393,25 @@ form.search .search button {
     padding: 5rem;
   }
 
-  /* line 199, src/sass/components/basic/_hero.scss */
+  /* line 200, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div h1 {
     font-size: 5rem;
   }
 
-  /* line 208, src/sass/components/basic/_hero.scss */
+  /* line 209, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
     font-size: 3.6rem;
   }
 
-  /* line 232, src/sass/components/basic/_hero.scss */
+  /* line 233, src/sass/components/basic/_hero.scss */
 
   .hp_hero_bg .field--name-image {
     padding-bottom: 42%;
   }
 
-  /* line 288, src/sass/components/basic/_hero.scss */
+  /* line 289, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:before {
     width: 100vw;
@@ -14297,34 +14424,34 @@ form.search .search button {
   }
 
 @supports (mix-blend-mode: screen) {
-    /* line 282, src/sass/components/basic/_hero.scss */
+    /* line 283, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header {
       z-index: 300;
       mix-blend-mode: screen;
     }
 
-    /* line 302, src/sass/components/basic/_hero.scss */
+    /* line 303, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header:before {
       background: #002E6D;
     }
 }
 
-  /* line 308, src/sass/components/basic/_hero.scss */
+  /* line 309, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 90%;
   }
 
-  /* line 313, src/sass/components/basic/_hero.scss */
+  /* line 314, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     font-size: 4.5rem;
     padding: 5rem 2.5rem;
   }
 
-  /* line 344, src/sass/components/basic/_hero.scss */
+  /* line 345, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner div:last-child {
     font-size: 3.6rem;
@@ -14790,7 +14917,7 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 96, src/sass/components/basic/_hero.scss */
+  /* line 97, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
@@ -14801,13 +14928,13 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 184, src/sass/components/basic/_hero.scss */
+  /* line 185, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 85%;
   }
 
-  /* line 308, src/sass/components/basic/_hero.scss */
+  /* line 309, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 85%;
@@ -15103,7 +15230,7 @@ form.search .search button {
     margin-top: -7.5rem;
   }
 
-  /* line 160, src/sass/components/basic/_hero.scss */
+  /* line 161, src/sass/components/basic/_hero.scss */
 
   header.hp_hero {
     width: 100%;
@@ -15116,7 +15243,7 @@ form.search .search button {
             flex-direction: column;
   }
 
-  /* line 262, src/sass/components/basic/_hero.scss */
+  /* line 263, src/sass/components/basic/_hero.scss */
 
   .bg_caption {
     display: none;

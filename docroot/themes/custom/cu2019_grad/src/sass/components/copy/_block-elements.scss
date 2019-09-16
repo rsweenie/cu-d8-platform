@@ -3,6 +3,24 @@
     COPY - BLOCK ELEMENTS
 
 \*  --------------------------------------------------------------------------  */
+@mixin intro {
+  // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+  // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+  // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+  // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+  font-size: 16px;
+  font-family: $headingFF;
+  line-height: 1.3em;
+  font-weight: 600;
+  color: $primary;
+  // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+  // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+  @media #{$mediaMd} {
+    font-size: 30px;
+  }
+}
+
 p, ul, ol, dl, table, blockquote, figure {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -12,7 +30,7 @@ p, ul, ol, dl, table, blockquote, figure {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     aside & {
         margin: 0 0 #{$gutter * .4}rem;
     }
@@ -29,24 +47,19 @@ hr {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     @media #{$mediaMd} {
         margin: #{$gutter * 1.5}rem auto;
     }
-    
+
     @media #{$mediaLg} {
         margin: #{$gutter * 2}rem auto;
     }
 }
 .intro {
-    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    font-size: $copyFS * 1.5;
-    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+  @include intro;
 }
+
 .disclaimer {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)

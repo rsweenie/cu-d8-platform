@@ -11,9 +11,9 @@
  */
 #}
 {% if content %}
-  <div {{ attributes.addClass('layout--program-detail-2col') }}>
+  <div {{ attributes.addClass('layout--program-detail-2col','section') }}>
     <div class="row">
-      <div class="col-sm-12 col-md-8">
+      <div class="col-xs-12 col-md-7 col-lg-8">
         {% if content.main %}
           <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
             {{ content.main }}
@@ -21,10 +21,14 @@
         {% endif %}
       </div>
 
-      <div class="col-sm-12 col-md-4">
+      <div class="col-xs-12 col-md-5 col-lg-4">
         {% if content.right %}
           <div {{ region_attributes.right.addClass('layout__region', 'layout__region--right') }}>
-            {{ content.right }}
+            <div class="program_rail">
+              <div>
+                {{ content.right }}
+              </div>
+            </div>
           </div>
         {% endif %}
       </div>
