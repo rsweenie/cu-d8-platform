@@ -38,7 +38,7 @@ case $CU_SITE_ALIAS in
   ;;
   
   *)
-    echo "ERROR: Could not determine site alias"
+    echo "Could not determine site alias. Please check Tugboat scripts!"
     exit 1
   ;;
 esac

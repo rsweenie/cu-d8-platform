@@ -6,10 +6,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
+        "php": ">=7.1",
         "acquia/acsf-tools": "dev-9.x-dev",
         "acquia/blt": "^10.0.0",
         "acquia/drupal-spec-tool": "^2.0.0",
-        "acquia/lightning": "^3.2",
+        "acquia/lightning": "~4.0",
         "bower-asset/masonry": "^4.2",
         "bower-asset/slick-carousel": "^1.8",
         "drupal/acquia_connector": "^1.5.0",
@@ -43,11 +44,11 @@
         "drupal/entity_embed": "1.0.0-beta2",
         "drupal/entity_embed_link": "^1.0",
         "drupal/entity_embed_linkit": "^1.0@beta",
-        "drupal/eva": "^1.3",
+        "drupal/eva": "^2.0",
         "drupal/externalauth": "^1.1",
         "drupal/features": "^3.7.0",
         "drupal/field_formatter": "^1.2",
-        "drupal/field_group": "^1.0",
+        "drupal/field_group": "^3.0",
         "drupal/field_permissions": "^1.0@RC",
         "drupal/field_validation": "^1.0@alpha",
         "drupal/file_replace": "^1.1",
@@ -57,11 +58,14 @@
         "drupal/honeypot": "^1.27",
         "drupal/image_enhanced": "^1.0",
         "drupal/image_style_quality": "^1.3",
+        "drupal/imagecache_external": "^1.1",
         "drupal/imagemagick": "^2.3",
         "drupal/inline_entity_form": "^1.0",
         "drupal/jsonapi_extras": "^3.8",
+        "drupal/layout_builder_restrictions": "^2.2",
         "drupal/libraries": "^3.0@alpha",
         "drupal/lightning_core": "^4.0",
+        "drupal/lightning_layout": "^2.1",
         "drupal/link_attributes": "^1.9",
         "drupal/mailsystem": "^4.1",
         "drupal/memcache": "2.0-alpha7",
@@ -114,8 +118,7 @@
         "drupal/views_slideshow": "^4.6",
         "drupal/webform": "^5.0@RC",
         "drupal/xmlsitemap": "^1.0@alpha",
-        "onelogin/php-saml": "dev-remove_mcrypt as 2.11.0",
-        "php": ">=7.1"
+        "onelogin/php-saml": "dev-remove_mcrypt as 2.11.0"
     },
     "require-dev": {
         "acquia/blt-require-dev": "^10.0.0-alpha1",
@@ -162,7 +165,9 @@
             },
             "drupal/core": {
                 "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
-                "Santize file names on upload": "https://www.drupal.org/files/issues/2019-05-04/2492171-285.patch"
+                "Santize file names on upload": "https://www.drupal.org/files/issues/2019-05-04/2492171-285.patch",
+                "Call to a member function transformDimensions() on null in template_preprocess | https://www.drupal.org/project/drupal/issues/2957368": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch",
+                "Layout builder doesn't support bundle computed field | https://www.drupal.org/project/drupal/issues/3034979": "https://www.drupal.org/files/issues/2019-02-22/layoutbuilder-bundlecomputedfieldsfix-3034979-1-8.7x.patch"
             },
             "drupal/panels": {
                 "bootstrap Warning: array_search() expects parameter": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
@@ -172,7 +177,11 @@
             },
             "drupal/metatag": {
                 "Support JSON API, REST, GraphQL and custom normalizations | https://www.drupal.org/project/metatag/issues/2945817": "https://www.drupal.org/files/issues/2019-04-23/2945817-73.patch"
+            },
+            "drupal/menu_block": {
+                "Surpress regular system menu in Layout Builder | https://www.drupal.org/project/menu_block/issues/3062278": "https://www.drupal.org/files/issues/2019-06-17/3062278-hide-system-menus.patch"
             }
+
         },
         "installer-types": [
             "bower-asset",

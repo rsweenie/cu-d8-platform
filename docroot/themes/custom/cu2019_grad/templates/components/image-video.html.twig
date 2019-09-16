@@ -5,14 +5,14 @@
       <div class="col-xs-12 col-md-8">
   {% endif %}
         <figure class="img_vid {{ media_type }}">
-          {% if video_id %}
-          <div class="video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+          {% if media_type == 'video' %}
+            <div class="video">
+              {{ video }}
+            </div>
           {% else %}
-          <div class="img">
-            {{ image }}
-          </div>
+            <div class="img">
+              {{ image }}
+            </div>
           {% endif %}
           {% if caption != "" %}
           <figcaption>{{ caption }}</figcaption>

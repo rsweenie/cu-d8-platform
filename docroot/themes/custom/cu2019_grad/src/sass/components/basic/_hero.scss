@@ -8,6 +8,7 @@
 
 \*  --------------------------------------------------------------------------  */
 .node__content > header,
+.hub-reference > header,
 header.hp_hero {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
 
@@ -19,6 +20,7 @@ header.hp_hero {
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     position: relative;
     overflow: hidden;
+    z-index: 120;
 
     &:after {
       width: 200vh;

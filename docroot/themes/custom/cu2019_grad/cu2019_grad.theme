@@ -77,6 +77,18 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
     }
   }
 
+  if ($paragraph->hasField('field_mfsfa_type') && !$paragraph->field_mfsfa_type->isEmpty()) {
+    $variables['mfsfa_type'] = $paragraph->get('field_mfsfa_type')->getString();
+    switch ($variables['mfsfa_type']) {
+      case 'optionFaculty':
+        $variables['highlite_tag'] = 'Faculty Spotlight';
+        break;
+      case 'optionAlumni':
+        $variables['highlite_tag'] = 'Alumni Spotlight';
+        break;
+    }
+  }
+
   if ($paragraph->hasField('field_next_step_icon') && !$paragraph->field_next_step_icon->isEmpty()) {
     $variables['icon'] = $paragraph->get('field_next_step_icon')->getString();
   }
@@ -104,6 +116,25 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
 
     $variables['multi_day'] = ($start_date != $end_date)? TRUE : FALSE;
     list($variables['start_month'], $variables['start_day']) = explode(' ', $dateRange->get('start_date')->getValue()->format('M j'));
+  }
+
+  if ($paragraph->getType() == 'image_video') {
+    if ($paragraph->hasField('field_image_video_media') && !$paragraph->field_image_video_media->isEmpty()) {
+      if ($media = $paragraph->field_image_video_media->referencedEntities()) {
+        $media = reset($media);
+        $variables['media_type'] = $media->bundle();
+
+        // If this is a video, try to fetch the required render array.
+        if ($media->bundle() == 'video') {
+          $provider_manager = \Drupal::service('video_embed_field.provider_manager');
+          $provider = $provider_manager->loadProviderFromInput($media->field_media_video_embed_field->value);
+          if ($provider) {
+            $video =  $provider->renderEmbedCode(560, 315, FALSE);
+            $variables['video'] = $video;
+          }
+        }
+      }
+    }
   }
 
 }

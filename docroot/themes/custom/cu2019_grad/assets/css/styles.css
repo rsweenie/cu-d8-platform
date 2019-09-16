@@ -406,7 +406,7 @@ textarea {
 
 /*---=== BASE STUFF ===---*/
 
-/* line 3, src/sass/structure/_grid.scss */
+/* line 13, src/sass/structure/_grid.scss */
 
 [class*="col-"] {
   padding: 0 2.5rem;
@@ -419,7 +419,7 @@ textarea {
           order: 0;
 }
 
-/* line 12, src/sass/structure/_grid.scss */
+/* line 17, src/sass/structure/_grid.scss */
 
 .row + * {
   margin-top: 5rem;
@@ -447,7 +447,7 @@ textarea {
   width: calc(100% + (-2.5rem * -2));
 }
 
-/* line 34, src/sass/structure/_grid.scss */
+/* line 39, src/sass/structure/_grid.scss */
 
 .row.align-center {
   -webkit-box-pack: center;
@@ -458,7 +458,7 @@ textarea {
           align-items: center;
 }
 
-/* line 38, src/sass/structure/_grid.scss */
+/* line 43, src/sass/structure/_grid.scss */
 
 .row.align-left {
   -webkit-box-pack: start;
@@ -466,7 +466,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 41, src/sass/structure/_grid.scss */
+/* line 46, src/sass/structure/_grid.scss */
 
 .row.align-right {
   -webkit-box-pack: end;
@@ -474,7 +474,7 @@ textarea {
           justify-content: flex-end;
 }
 
-/* line 44, src/sass/structure/_grid.scss */
+/* line 49, src/sass/structure/_grid.scss */
 
 .row.va-center {
   -webkit-box-align: center;
@@ -482,7 +482,7 @@ textarea {
           align-items: center;
 }
 
-/* line 47, src/sass/structure/_grid.scss */
+/* line 52, src/sass/structure/_grid.scss */
 
 .row.va-top {
   -webkit-box-align: start;
@@ -490,7 +490,7 @@ textarea {
           align-items: flex-start;
 }
 
-/* line 50, src/sass/structure/_grid.scss */
+/* line 55, src/sass/structure/_grid.scss */
 
 .row.va-bottom {
   -webkit-box-align: end;
@@ -498,7 +498,7 @@ textarea {
           align-items: flex-end;
 }
 
-/* line 53, src/sass/structure/_grid.scss */
+/* line 58, src/sass/structure/_grid.scss */
 
 .row.ha-center {
   -webkit-box-pack: center;
@@ -506,7 +506,7 @@ textarea {
           justify-content: center;
 }
 
-/* line 56, src/sass/structure/_grid.scss */
+/* line 61, src/sass/structure/_grid.scss */
 
 .row.ha-top {
   -webkit-box-pack: start;
@@ -514,7 +514,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 59, src/sass/structure/_grid.scss */
+/* line 64, src/sass/structure/_grid.scss */
 
 .row.ha-right {
   -webkit-box-pack: end;
@@ -625,7 +625,7 @@ body {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 6, src/sass/components/copy/_block-elements.scss */
+/* line 25, src/sass/components/copy/_block-elements.scss */
 
 p,
 ul,
@@ -638,7 +638,7 @@ figure {
   margin: 0 0 1.5em;
 }
 
-/* line 16, src/sass/components/copy/_block-elements.scss */
+/* line 35, src/sass/components/copy/_block-elements.scss */
 
 aside p,
 aside ul,
@@ -650,7 +650,7 @@ aside figure {
   margin: 0 0 1rem;
 }
 
-/* line 20, src/sass/components/copy/_block-elements.scss */
+/* line 39, src/sass/components/copy/_block-elements.scss */
 
 hr {
   margin: 2.5rem auto;
@@ -660,32 +660,37 @@ hr {
   border: none;
 }
 
-/* line 41, src/sass/components/copy/_block-elements.scss */
+/* line 60, src/sass/components/copy/_block-elements.scss */
 
 .intro {
-  font-size: 2.85rem;
+  font-size: 1.6rem;
+  font-family: "Conduit";
+  line-height: 1.3em;
+  font-weight: 600;
+  color: #002E6D;
+  margin-bottom: 1em;
 }
 
-/* line 50, src/sass/components/copy/_block-elements.scss */
+/* line 64, src/sass/components/copy/_block-elements.scss */
 
 .disclaimer {
   color: #6CACE4;
   font-size: 1.425rem;
 }
 
-/* line 60, src/sass/components/copy/_block-elements.scss */
+/* line 74, src/sass/components/copy/_block-elements.scss */
 
 .ta-left {
   text-align: left !important;
 }
 
-/* line 69, src/sass/components/copy/_block-elements.scss */
+/* line 83, src/sass/components/copy/_block-elements.scss */
 
 .ta-center {
   text-align: center !important;
 }
 
-/* line 78, src/sass/components/copy/_block-elements.scss */
+/* line 92, src/sass/components/copy/_block-elements.scss */
 
 .ta-right {
   text-align: right !important;
@@ -1240,7 +1245,6 @@ nav a {
           flex-flow: row wrap;
   max-width: 1350px;
   margin: 0 auto;
-  width: 100%;
 }
 
 /* line 6, src/sass/structure/header/logo/_svg.scss */
@@ -2537,14 +2541,17 @@ aside .btn-text:hover {
 /* line 10, src/sass/components/basic/_hero.scss */
 
 .node__content > header,
+.hub-reference > header,
 header.hp_hero {
   position: relative;
   overflow: hidden;
+  z-index: 120;
 }
 
-/* line 23, src/sass/components/basic/_hero.scss */
+/* line 25, src/sass/components/basic/_hero.scss */
 
 .node__content > header:after,
+.hub-reference > header:after,
 header.hp_hero:after {
   width: 200vh;
   height: 200vh;
@@ -2560,26 +2567,29 @@ header.hp_hero:after {
   z-index: 90;
 }
 
-/* line 40, src/sass/components/basic/_hero.scss */
+/* line 42, src/sass/components/basic/_hero.scss */
 
 .node__content > header .field--name-field-interior-page-hero-img,
+.hub-reference > header .field--name-field-interior-page-hero-img,
 header.hp_hero .field--name-field-interior-page-hero-img {
   position: relative;
   z-index: 0;
 }
 
-/* line 45, src/sass/components/basic/_hero.scss */
+/* line 47, src/sass/components/basic/_hero.scss */
 
 .node__content > header img,
+.hub-reference > header img,
 header.hp_hero img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* line 51, src/sass/components/basic/_hero.scss */
+/* line 53, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title,
+.hub-reference > header .hero_title,
 header.hp_hero .hero_title {
   width: 100%;
   position: absolute;
@@ -2590,17 +2600,19 @@ header.hp_hero .hero_title {
   z-index: 200;
 }
 
-/* line 64, src/sass/components/basic/_hero.scss */
+/* line 66, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title h1,
+.hub-reference > header .hero_title h1,
 header.hp_hero .hero_title h1 {
   margin: 0;
   color: #fff;
 }
 
-/* line 74, src/sass/components/basic/_hero.scss */
+/* line 76, src/sass/components/basic/_hero.scss */
 
 .node__content > header .breadcrumb,
+.hub-reference > header .breadcrumb,
 header.hp_hero .breadcrumb {
   height: 4.2rem;
   position: relative;
@@ -2616,19 +2628,22 @@ header.hp_hero .breadcrumb {
 }
 
 @supports (mix-blend-mode: lighten) {
-  /* line 74, src/sass/components/basic/_hero.scss */
+  /* line 76, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
+  .hub-reference > header .breadcrumb,
   header.hp_hero .breadcrumb {
     z-index: 200;
     mix-blend-mode: lighten;
   }
 }
 
-/* line 95, src/sass/components/basic/_hero.scss */
+/* line 97, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title > div,
 .node__content > header .breadcrumb > div,
+.hub-reference > header .hero_title > div,
+.hub-reference > header .breadcrumb > div,
 header.hp_hero .hero_title > div,
 header.hp_hero .breadcrumb > div {
   max-width: 1350px;
@@ -2637,25 +2652,28 @@ header.hp_hero .breadcrumb > div {
   width: 100%;
 }
 
-/* line 115, src/sass/components/basic/_hero.scss */
+/* line 117, src/sass/components/basic/_hero.scss */
 
 .node__content > header.interior_page > .field,
+.hub-reference > header.interior_page > .field,
 header.hp_hero.interior_page > .field {
   height: 16.4rem;
   overflow: hidden;
 }
 
-/* line 129, src/sass/components/basic/_hero.scss */
+/* line 131, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background,
+.hub-reference > header .js-background,
 header.hp_hero .js-background {
   background-size: cover;
   background-position: top center;
 }
 
-/* line 133, src/sass/components/basic/_hero.scss */
+/* line 135, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background img,
+.hub-reference > header .js-background img,
 header.hp_hero .js-background img {
   position: absolute;
   width: 0.1rem;
@@ -2667,9 +2685,10 @@ header.hp_hero .js-background img {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 138, src/sass/components/basic/_hero.scss */
+/* line 140, src/sass/components/basic/_hero.scss */
 
 .node__content > header:before,
+.hub-reference > header:before,
 header.hp_hero:before {
   width: 100%;
   height: 100%;
@@ -2686,21 +2705,22 @@ header.hp_hero:before {
   pointer-events: none;
 }
 
-/* line 153, src/sass/components/basic/_hero.scss */
+/* line 155, src/sass/components/basic/_hero.scss */
 
 .menuhover .node__content > header:before,
+.menuhover .hub-reference > header:before,
 .menuhover header.hp_hero:before {
   opacity: 1;
 }
 
-/* line 159, src/sass/components/basic/_hero.scss */
+/* line 161, src/sass/components/basic/_hero.scss */
 
 header.hp_hero {
   position: relative;
   margin-bottom: 12.8rem;
 }
 
-/* line 170, src/sass/components/basic/_hero.scss */
+/* line 172, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag {
   position: relative;
@@ -2711,7 +2731,7 @@ header.hp_hero {
           order: 2;
 }
 
-/* line 183, src/sass/components/basic/_hero.scss */
+/* line 185, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div {
   max-width: 1350px;
@@ -2719,7 +2739,7 @@ header.hp_hero {
   width: 100%;
 }
 
-/* line 186, src/sass/components/basic/_hero.scss */
+/* line 188, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div > div {
   padding: 2.5rem 1.6rem 1.6rem 1.6rem;
@@ -2727,14 +2747,14 @@ header.hp_hero {
   color: #fff;
 }
 
-/* line 198, src/sass/components/basic/_hero.scss */
+/* line 200, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
   margin: 0;
   font-size: 3.4rem;
 }
 
-/* line 207, src/sass/components/basic/_hero.scss */
+/* line 209, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
   font-family: "Conduit";
@@ -2746,7 +2766,7 @@ header.hp_hero {
   letter-spacing: 0.05em;
 }
 
-/* line 223, src/sass/components/basic/_hero.scss */
+/* line 225, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg {
   position: relative;
@@ -2757,7 +2777,7 @@ header.hp_hero {
   max-height: 680px;
 }
 
-/* line 231, src/sass/components/basic/_hero.scss */
+/* line 233, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image {
   position: relative;
@@ -2765,7 +2785,7 @@ header.hp_hero {
   padding-bottom: 50%;
 }
 
-/* line 240, src/sass/components/basic/_hero.scss */
+/* line 242, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image img {
   width: auto;
@@ -2779,7 +2799,7 @@ header.hp_hero {
           transform: translate(-50%, -50%);
 }
 
-/* line 261, src/sass/components/basic/_hero.scss */
+/* line 263, src/sass/components/basic/_hero.scss */
 
 .bg_caption {
   position: absolute;
@@ -2792,13 +2812,13 @@ header.hp_hero {
   z-index: 95;
 }
 
-/* line 275, src/sass/components/basic/_hero.scss */
+/* line 277, src/sass/components/basic/_hero.scss */
 
 .bg_caption a {
   color: #fff;
 }
 
-/* line 281, src/sass/components/basic/_hero.scss */
+/* line 283, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header {
   position: relative;
@@ -2808,7 +2828,7 @@ header.hp_hero {
           order: 3;
 }
 
-/* line 307, src/sass/components/basic/_hero.scss */
+/* line 309, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header > div {
   max-width: 1350px;
@@ -2816,7 +2836,7 @@ header.hp_hero {
   width: 100%;
 }
 
-/* line 312, src/sass/components/basic/_hero.scss */
+/* line 314, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner {
   position: relative;
@@ -2827,7 +2847,7 @@ header.hp_hero {
   z-index: 200;
 }
 
-/* line 320, src/sass/components/basic/_hero.scss */
+/* line 322, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner:after {
   width: 0;
@@ -2841,7 +2861,7 @@ header.hp_hero {
   border-color: #002E6D transparent transparent transparent;
 }
 
-/* line 332, src/sass/components/basic/_hero.scss */
+/* line 334, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner div:last-child {
   font-family: "Conduit";
@@ -3016,9 +3036,7 @@ header.hp_hero {
   position: relative;
   left: auto;
   bottom: auto;
-  max-width: 1350px;
   margin: 0 auto;
-  width: 100%;
 }
 
 /* line 6, src/sass/components/basic/cards/_img-side.scss */
@@ -3251,6 +3269,31 @@ aside .card.img-side + p {
 
 .card.fw_photo [class*="btn-"] {
   margin-top: 2rem;
+}
+
+/* line 65, src/sass/components/basic/cards/_fwp.scss */
+
+.card.fw_photo .content {
+  max-width: 1350px;
+  width: 100%;
+}
+
+/* line 90, src/sass/components/basic/cards/_fwp.scss */
+
+.card.fw_photo .content > div {
+  margin: auto;
+  padding: 0 2.5rem;
+}
+
+/* line 27, src/sass/base/_mixins.scss */
+
+.card.fw_photo .content > div:before,
+.card.fw_photo .content > div:after {
+  display: block;
+  height: 0;
+  width: 100%;
+  content: "";
+  clear: both;
 }
 
 /* line 2, src/sass/components/basic/cards/_fwb.scss */
@@ -4241,7 +4284,7 @@ blockquote .tooltip-trigger {
   background: #019cdb;
 }
 
-/* line 56, src/sass/components/basic/_ns.scss */
+/* line 59, src/sass/components/basic/_ns.scss */
 
 .section.ns h2 {
   font-size: 3.2rem;
@@ -4250,20 +4293,20 @@ blockquote .tooltip-trigger {
   text-transform: uppercase;
 }
 
-/* line 75, src/sass/components/basic/_ns.scss */
+/* line 78, src/sass/components/basic/_ns.scss */
 
 .section.ns ul li {
   padding: 0;
   font-size: 1.8rem;
 }
 
-/* line 78, src/sass/components/basic/_ns.scss */
+/* line 81, src/sass/components/basic/_ns.scss */
 
 .section.ns ul li:before {
   display: none;
 }
 
-/* line 93, src/sass/components/basic/_ns.scss */
+/* line 96, src/sass/components/basic/_ns.scss */
 
 .field--name-field-next-steps-heading .field__label {
   position: absolute;
@@ -9734,13 +9777,13 @@ nav.bc a:focus {
   padding: 0;
 }
 
-/* line 23, src/sass/components/navigation/_interior.scss */
+/* line 30, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav {
   position: relative;
 }
 
-/* line 26, src/sass/components/navigation/_interior.scss */
+/* line 33, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label,
 nav.side-nav ul {
@@ -9749,35 +9792,43 @@ nav.side-nav ul {
   font-weight: 600;
 }
 
-/* line 33, src/sass/components/navigation/_interior.scss */
+/* line 40, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 56, src/sass/components/navigation/_interior.scss */
+/* line 63, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav .menu-item {
   margin: 0;
   padding: 0;
 }
 
-/* line 65, src/sass/components/navigation/_interior.scss */
+/* line 72, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav a {
   color: #555555;
   text-decoration: none;
 }
 
+/* line 76, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav a.is-active {
+  color: #555555;
+  text-decoration: underline;
+}
+
 /* line 59, src/sass/base/_mixins.scss */
 
 nav.side-nav a:hover,
 nav.side-nav a:focus {
+  color: #0054A6;
   text-decoration: underline;
 }
 
-/* line 79, src/sass/components/navigation/_interior.scss */
+/* line 92, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label {
   display: block;
@@ -9788,7 +9839,7 @@ nav.side-nav label {
   border-bottom: 1px solid #e1e7ec;
 }
 
-/* line 87, src/sass/components/navigation/_interior.scss */
+/* line 100, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:before,
 nav.side-nav label:after,
@@ -9804,21 +9855,21 @@ nav.side-nav label span:after {
   transition: all .25s;
 }
 
-/* line 100, src/sass/components/navigation/_interior.scss */
+/* line 113, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:before {
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
 }
 
-/* line 104, src/sass/components/navigation/_interior.scss */
+/* line 117, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:after {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }
 
-/* line 114, src/sass/components/navigation/_interior.scss */
+/* line 127, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox'] {
   position: absolute;
@@ -9831,27 +9882,27 @@ nav.side-nav input[type='checkbox'] {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 118, src/sass/components/navigation/_interior.scss */
+/* line 131, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ ul {
   display: block;
 }
 
-/* line 123, src/sass/components/navigation/_interior.scss */
+/* line 136, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label:before {
   -webkit-transform: rotate(45deg) translate(0);
           transform: rotate(45deg) translate(0);
 }
 
-/* line 127, src/sass/components/navigation/_interior.scss */
+/* line 140, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label:after {
   -webkit-transform: rotate(-45deg) translate(0);
           transform: rotate(-45deg) translate(0);
 }
 
-/* line 131, src/sass/components/navigation/_interior.scss */
+/* line 144, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label span:after {
   opacity: 0;
@@ -10494,6 +10545,87 @@ nav.jn li + li {
 
 .f-feat-faculty p {
   margin: 0;
+}
+
+/* line 1, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.layout__region--right,
+.program_rail {
+  height: 100%;
+}
+
+/* line 6, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.field--name-hub-field-hub-degree-intro {
+  font-size: 1.6rem;
+  font-family: "Conduit";
+  line-height: 1.3em;
+  font-weight: 600;
+  color: #002E6D;
+  margin-bottom: 1em;
+}
+
+/* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 14, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail h3 {
+  color: #266db3;
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+/* line 152, src/sass/components/copy/_headings.scss */
+
+aside .program_rail h3 {
+  font-size: 1em;
+}
+
+/* line 155, src/sass/components/copy/_headings.scss */
+
+aside .program_rail h3 ~ h4,
+aside .program_rail h3 ~ .h4 {
+  margin-top: 0.5rem;
+}
+
+/* line 26, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail:after {
+  width: 100vw;
+  height: calc(100% + 6.2rem);
+  position: absolute;
+  top: -6.2rem;
+  left: 0;
+  z-index: 0;
+  content: "";
+  background: rgba(165, 210, 249, 0.2);
+}
+
+/* line 37, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail > div {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 42, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail ul {
+  margin-left: 0;
+}
+
+/* line 46, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail .field--name-hub-field-hub-degree-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
@@ -11324,9 +11456,10 @@ form.search .search button {
     text-align: center;
   }
 
-  /* line 115, src/sass/components/basic/_hero.scss */
+  /* line 117, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
+  .hub-reference > header.interior_page > .field,
   header.hp_hero.interior_page > .field {
     height: 32rem;
   }
@@ -11377,7 +11510,7 @@ form.search .search button {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 3, src/sass/structure/_grid.scss */
+  /* line 13, src/sass/structure/_grid.scss */
 
   [class*="col-"] {
     -webkit-box-ordinal-group: 2;
@@ -11385,7 +11518,7 @@ form.search .search button {
             order: 1;
   }
 
-  /* line 17, src/sass/structure/_grid.scss */
+  /* line 22, src/sass/structure/_grid.scss */
 
   .pull-left {
     -webkit-box-ordinal-group: 1;
@@ -11393,7 +11526,7 @@ form.search .search button {
             order: 0;
   }
 
-  /* line 20, src/sass/structure/_grid.scss */
+  /* line 25, src/sass/structure/_grid.scss */
 
   .push-right {
     -webkit-box-ordinal-group: 3;
@@ -11401,14 +11534,14 @@ form.search .search button {
             order: 2;
   }
 
-  /* line 23, src/sass/structure/_grid.scss */
+  /* line 28, src/sass/structure/_grid.scss */
 
   .float-left {
     margin: 0 2.5rem 2.5rem 0;
     float: left;
   }
 
-  /* line 27, src/sass/structure/_grid.scss */
+  /* line 32, src/sass/structure/_grid.scss */
 
   .float-right {
     margin: 0 0 2.5rem 2.5rem;
@@ -11487,10 +11620,16 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 20, src/sass/components/copy/_block-elements.scss */
+  /* line 39, src/sass/components/copy/_block-elements.scss */
 
   hr {
     margin: 3.75rem auto;
+  }
+
+  /* line 60, src/sass/components/copy/_block-elements.scss */
+
+  .intro {
+    font-size: 3rem;
   }
 
   /* line 7, src/sass/components/copy/_multi-column.scss */
@@ -12636,6 +12775,30 @@ form.search .search button {
     width: calc(50% - 2.5rem);
   }
 
+  /* line 6, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .field--name-hub-field-hub-degree-intro {
+    font-size: 3rem;
+  }
+
+  /* line 14, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail h3 {
+    font-size: 1.375em;
+  }
+
+  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail {
+    padding-left: 2.5rem;
+  }
+
+  /* line 46, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail .field--name-hub-field-hub-degree-title {
+    font-size: 1.5rem;
+  }
+
   /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
 
   .dropdown-bar {
@@ -12730,7 +12893,7 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 20, src/sass/components/copy/_block-elements.scss */
+  /* line 39, src/sass/components/copy/_block-elements.scss */
 
   hr {
     margin: 5rem auto;
@@ -12796,12 +12959,6 @@ form.search .search button {
   .paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
   .paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
     margin-top: -5rem;
-  }
-
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
-
-  .main-header > div {
-    width: 95%;
   }
 
   /* line 121, src/sass/structure/_footer.scss */
@@ -12923,37 +13080,34 @@ form.search .search button {
     font-size: 1.3rem;
   }
 
-  /* line 64, src/sass/components/basic/_hero.scss */
+  /* line 66, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title h1,
+  .hub-reference > header .hero_title h1,
   header.hp_hero .hero_title h1 {
     width: 67%;
   }
 
-  /* line 95, src/sass/components/basic/_hero.scss */
+  /* line 97, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
+  .hub-reference > header .hero_title > div,
+  .hub-reference > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
   header.hp_hero .breadcrumb > div {
     width: 95%;
   }
 
-  /* line 183, src/sass/components/basic/_hero.scss */
+  /* line 185, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 95%;
   }
 
-  /* line 307, src/sass/components/basic/_hero.scss */
+  /* line 309, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
-    width: 95%;
-  }
-
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
-
-  .full-screen .card.img-behind > div {
     width: 95%;
   }
 
@@ -12968,6 +13122,18 @@ form.search .search button {
   .card.fw_photo.img-behind {
     padding: 13.5rem 0 8rem;
     margin-bottom: 1.5rem;
+  }
+
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
+
+  .card.fw_photo .content {
+    width: 95%;
+  }
+
+  /* line 90, src/sass/components/basic/cards/_fwp.scss */
+
+  .card.fw_photo .content > div {
+    width: 83.33333%;
   }
 
   /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
@@ -13079,7 +13245,7 @@ form.search .search button {
     font-size: 3rem;
   }
 
-  /* line 56, src/sass/components/basic/_ns.scss */
+  /* line 59, src/sass/components/basic/_ns.scss */
 
   .section.ns h2 {
     font-size: 4.2rem;
@@ -13140,6 +13306,18 @@ form.search .search button {
 
   .f-feat-faculty > article {
     width: calc(33.333% - 2.5rem);
+  }
+
+  /* line 14, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail h3 {
+    font-size: 1.5em;
+  }
+
+  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail {
+    padding-left: 5rem;
   }
 }
 
@@ -13223,12 +13401,6 @@ form.search .search button {
     position: relative;
     z-index: 0;
     padding: 0 3.6rem;
-  }
-
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
-
-  .main-header > div {
-    width: 90%;
   }
 
   /* line 6, src/sass/structure/header/logo/_svg.scss */
@@ -14165,37 +14337,42 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 51, src/sass/components/basic/_hero.scss */
+  /* line 53, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title,
+  .hub-reference > header .hero_title,
   header.hp_hero .hero_title {
     bottom: 7.2rem;
   }
 
-  /* line 74, src/sass/components/basic/_hero.scss */
+  /* line 76, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
+  .hub-reference > header .breadcrumb,
   header.hp_hero .breadcrumb {
     height: 7.2rem;
   }
 
-  /* line 95, src/sass/components/basic/_hero.scss */
+  /* line 97, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
+  .hub-reference > header .hero_title > div,
+  .hub-reference > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
   header.hp_hero .breadcrumb > div {
     width: 90%;
   }
 
-  /* line 115, src/sass/components/basic/_hero.scss */
+  /* line 117, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
+  .hub-reference > header.interior_page > .field,
   header.hp_hero.interior_page > .field {
     height: 51.5rem;
   }
 
-  /* line 170, src/sass/components/basic/_hero.scss */
+  /* line 172, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag {
     position: absolute;
@@ -14204,13 +14381,13 @@ form.search .search button {
     z-index: 10;
   }
 
-  /* line 183, src/sass/components/basic/_hero.scss */
+  /* line 185, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 90%;
   }
 
-  /* line 186, src/sass/components/basic/_hero.scss */
+  /* line 188, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div > div {
     max-width: 545px;
@@ -14218,25 +14395,25 @@ form.search .search button {
     padding: 5rem;
   }
 
-  /* line 198, src/sass/components/basic/_hero.scss */
+  /* line 200, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div h1 {
     font-size: 5rem;
   }
 
-  /* line 207, src/sass/components/basic/_hero.scss */
+  /* line 209, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
     font-size: 3.6rem;
   }
 
-  /* line 231, src/sass/components/basic/_hero.scss */
+  /* line 233, src/sass/components/basic/_hero.scss */
 
   .hp_hero_bg .field--name-image {
     padding-bottom: 42%;
   }
 
-  /* line 287, src/sass/components/basic/_hero.scss */
+  /* line 289, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:before {
     width: 100vw;
@@ -14249,42 +14426,42 @@ form.search .search button {
   }
 
 @supports (mix-blend-mode: screen) {
-    /* line 281, src/sass/components/basic/_hero.scss */
+    /* line 283, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header {
       z-index: 300;
       mix-blend-mode: screen;
     }
 
-    /* line 301, src/sass/components/basic/_hero.scss */
+    /* line 303, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header:before {
       background: #002E6D;
     }
 }
 
-  /* line 307, src/sass/components/basic/_hero.scss */
+  /* line 309, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 90%;
   }
 
-  /* line 312, src/sass/components/basic/_hero.scss */
+  /* line 314, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     font-size: 4.5rem;
     padding: 5rem 2.5rem;
   }
 
-  /* line 343, src/sass/components/basic/_hero.scss */
+  /* line 345, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner div:last-child {
     font-size: 3.6rem;
   }
 
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .full-screen .card.img-behind > div {
+  .card.fw_photo .content {
     width: 90%;
   }
 
@@ -14318,7 +14495,15 @@ form.search .search button {
     margin: 0 auto 2rem auto;
   }
 
-  /* line 67, src/sass/components/basic/_ns.scss */
+  /* line 50, src/sass/components/basic/_ns.scss */
+
+  .section.ns a .icon + span {
+    display: block;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
+
+  /* line 70, src/sass/components/basic/_ns.scss */
 
   .section.ns ul {
     display: -webkit-box;
@@ -14331,7 +14516,7 @@ form.search .search button {
     max-width: 1084px;
   }
 
-  /* line 75, src/sass/components/basic/_ns.scss */
+  /* line 78, src/sass/components/basic/_ns.scss */
 
   .section.ns ul li {
     width: 20%;
@@ -14361,7 +14546,7 @@ form.search .search button {
     z-index: 0;
   }
 
-  /* line 33, src/sass/components/navigation/_interior.scss */
+  /* line 40, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     font-size: 2.4rem;
@@ -14370,13 +14555,13 @@ form.search .search button {
     padding: 5rem 0;
   }
 
-  /* line 56, src/sass/components/navigation/_interior.scss */
+  /* line 63, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav .menu-item {
     margin: 0 0 0.58333em 0;
   }
 
-  /* line 79, src/sass/components/navigation/_interior.scss */
+  /* line 92, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav label {
     position: absolute;
@@ -14704,7 +14889,7 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 33, src/sass/components/navigation/_interior.scss */
+  /* line 40, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     padding: 6.25rem 0;
@@ -14730,12 +14915,6 @@ form.search .search button {
 }
 
 @media screen and (min-width: 1600px) {
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
-
-  .main-header > div {
-    width: 85%;
-  }
-
   /* line 121, src/sass/structure/_footer.scss */
 
   .main-footer > div {
@@ -14748,35 +14927,37 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 95, src/sass/components/basic/_hero.scss */
+  /* line 97, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
+  .hub-reference > header .hero_title > div,
+  .hub-reference > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
   header.hp_hero .breadcrumb > div {
     width: 85%;
   }
 
-  /* line 183, src/sass/components/basic/_hero.scss */
+  /* line 185, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div {
     width: 85%;
   }
 
-  /* line 307, src/sass/components/basic/_hero.scss */
+  /* line 309, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 85%;
   }
 
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .full-screen .card.img-behind > div {
+  .card.fw_photo .content {
     width: 85%;
   }
 }
 
-@media screen and (max-width: 1079.9px) {
+@media screen and (max-width: 1089.9px) {
   /* line 29, src/sass/base/_resets.scss */
 
   html,
@@ -15059,7 +15240,7 @@ form.search .search button {
     margin-top: -7.5rem;
   }
 
-  /* line 159, src/sass/components/basic/_hero.scss */
+  /* line 161, src/sass/components/basic/_hero.scss */
 
   header.hp_hero {
     width: 100%;
@@ -15072,7 +15253,7 @@ form.search .search button {
             flex-direction: column;
   }
 
-  /* line 261, src/sass/components/basic/_hero.scss */
+  /* line 263, src/sass/components/basic/_hero.scss */
 
   .bg_caption {
     display: none;
@@ -15096,13 +15277,6 @@ form.search .search button {
             align-items: center;
   }
 
-  /* line 48, src/sass/components/basic/_ns.scss */
-
-  .section.ns a .icon + span {
-    display: block;
-    margin: 0 -2rem;
-  }
-
   /* line 31, src/sass/components/navigation/_breadcrumb.scss */
 
   nav.bc li {
@@ -15121,7 +15295,14 @@ form.search .search button {
     display: none;
   }
 
-  /* line 33, src/sass/components/navigation/_interior.scss */
+  /* line 22, src/sass/components/navigation/_interior.scss */
+
+  .section.side-nav-section > div {
+    padding: 0;
+    width: 100%;
+  }
+
+  /* line 40, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     display: none;
@@ -15130,7 +15311,7 @@ form.search .search button {
     text-align: right;
   }
 
-  /* line 65, src/sass/components/navigation/_interior.scss */
+  /* line 72, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav a {
     display: block;
