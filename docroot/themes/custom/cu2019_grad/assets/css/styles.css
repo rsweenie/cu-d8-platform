@@ -2939,43 +2939,28 @@ header.hp_hero {
   position: relative;
   z-index: 0;
   margin: 0 auto;
-  background-position: center;
-  background-size: cover;
 }
 
-/* line 20, src/sass/components/basic/cards/_img-behind.scss */
-
-.card.img-behind.js-background > a img {
-  position: absolute;
-  width: 0.1rem;
-  height: 0.1rem;
-  padding: 0;
-  margin: -0.1rem;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-
-/* line 25, src/sass/components/basic/cards/_img-behind.scss */
+/* line 17, src/sass/components/basic/cards/_img-behind.scss */
 
 .grid .card.img-behind {
   width: 100%;
 }
 
-/* line 28, src/sass/components/basic/cards/_img-behind.scss */
+/* line 20, src/sass/components/basic/cards/_img-behind.scss */
 
 .grid .card.img-behind.wide {
   grid-column-end: span 2;
   text-align: left;
 }
 
-/* line 32, src/sass/components/basic/cards/_img-behind.scss */
+/* line 24, src/sass/components/basic/cards/_img-behind.scss */
 
 .grid .card.img-behind.wide > div {
   width: 50%;
 }
 
-/* line 38, src/sass/components/basic/cards/_img-behind.scss */
+/* line 30, src/sass/components/basic/cards/_img-behind.scss */
 
 .card.img-behind > div {
   position: absolute;
@@ -2985,13 +2970,13 @@ header.hp_hero {
   padding: 0 2.5rem;
 }
 
-/* line 53, src/sass/components/basic/cards/_img-behind.scss */
+/* line 45, src/sass/components/basic/cards/_img-behind.scss */
 
 .card.img-behind.hov-eff {
   overflow: hidden;
 }
 
-/* line 62, src/sass/components/basic/cards/_img-behind.scss */
+/* line 54, src/sass/components/basic/cards/_img-behind.scss */
 
 .card.img-behind.hov-eff > div {
   -webkit-transform: translate(0, 100%);
@@ -3002,7 +2987,7 @@ header.hp_hero {
   transition: transform 0.5s 0.15s, -webkit-transform 0.5s 0.15s;
 }
 
-/* line 81, src/sass/components/basic/cards/_img-behind.scss */
+/* line 73, src/sass/components/basic/cards/_img-behind.scss */
 
 .card.img-behind.hov-eff:hover > div,
 .card.img-behind.hov-eff:focus > div {
@@ -3010,27 +2995,57 @@ header.hp_hero {
   transform: translate(0, 0);
 }
 
-/* line 93, src/sass/components/basic/cards/_img-behind.scss */
+/* line 85, src/sass/components/basic/cards/_img-behind.scss */
 
 .full-screen .card.img-behind {
   padding: 10rem 0;
   overflow: hidden;
 }
 
-/* line 97, src/sass/components/basic/cards/_img-behind.scss */
+/* line 89, src/sass/components/basic/cards/_img-behind.scss */
 
-.full-screen .card.img-behind > a {
+.full-screen .card.img-behind > a,
+.full-screen .card.img-behind > span {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* line 96, src/sass/components/basic/cards/_img-behind.scss */
+
+.full-screen .card.img-behind > a img,
+.full-screen .card.img-behind > span img {
   position: absolute;
   z-index: 0;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 100%;
-  z-index: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 }
 
-/* line 103, src/sass/components/basic/cards/_img-behind.scss */
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  /* line 96, src/sass/components/basic/cards/_img-behind.scss */
+
+  .full-screen .card.img-behind > a img,
+  .full-screen .card.img-behind > span img {
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+/* line 113, src/sass/components/basic/cards/_img-behind.scss */
 
 .full-screen .card.img-behind > div {
   position: relative;
