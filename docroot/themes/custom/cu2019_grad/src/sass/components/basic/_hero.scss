@@ -183,7 +183,8 @@ header.hp_hero {
   }
 
   > div {
-    @include contentConstrain;
+    max-width: $siteWMx;
+    margin: 0 auto;
 
     > div {
       padding: 25px 16px 16px 16px;
@@ -193,7 +194,7 @@ header.hp_hero {
       @media #{$mediaFullHeader} {
         max-width: 545px;
         margin: 0 25px;
-        padding: 50px;
+        padding: 50px 40px 50px 50px;
       }
     }
 
