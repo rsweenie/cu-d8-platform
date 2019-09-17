@@ -11956,6 +11956,7 @@ form.search .search button {
 
   .btn-primary {
     max-width: 320px;
+    min-width: 220px;
   }
 
   /* line 6, src/sass/components/basic/cards/_img-behind.scss */
