@@ -118,7 +118,6 @@ graylist:
   - system.theme.global
   - views.view.search
   - 'block.block.*'
-  - 'filter.format.*'
   - 'views.view.*'
   - 'search_api.*'
   - 'system.*'
