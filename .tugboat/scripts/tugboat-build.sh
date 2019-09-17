@@ -10,7 +10,7 @@ CU_SITE_ALIAS=$(`dirname "$0"`/get_site_alias.sh)
 echo "Doing Tugboat build steps for $CU_SITE_ALIAS"
 
 case $CU_SITE_ALIAS in
-  demo|hrnew|alliance)
+  demo|hrnew|alliance|grad|hub)
     echo "Syncing DB and assets for $CU_SITE_ALIAS"
     # DB sync MUST come before filesync always
     drush -r "${DOCROOT}" sql:drop -y
@@ -36,8 +36,9 @@ case $CU_SITE_ALIAS in
   none)
     echo "Nothing to do for generic install"
   ;;
+  
   *)
-    echo "ERROR: Could not determine site alias"
+    echo "Could not determine site alias. Please check Tugboat scripts!"
     exit 1
   ;;
 esac

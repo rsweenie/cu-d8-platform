@@ -1,0 +1,38 @@
+uuid: 43ce6c69-a839-49f9-99d1-1b5259af8fa1
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_site
+type_id: node--hub_site
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag_normalized:
+    type: metatags
+    multiple: false
+  field_hub_site_base_uri:
+    type: link
+    multiple: false
+  field_hub_site_title:
+    type: string_long
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type--node_type
+    multiple: false
