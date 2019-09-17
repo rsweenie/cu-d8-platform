@@ -4035,7 +4035,8 @@ blockquote {
 
 /* line 28, src/sass/components/basic/_quotes.scss */
 
-.copy-block blockquote {
+.copy-block blockquote,
+.cke_editable blockquote {
   margin-left: 4.2rem;
   color: #002E6D;
   position: relative;
@@ -4043,7 +4044,8 @@ blockquote {
 
 /* line 37, src/sass/components/basic/_quotes.scss */
 
-.copy-block blockquote:before {
+.copy-block blockquote:before,
+.cke_editable blockquote:before {
   height: 100%;
   width: 1.2rem;
   position: absolute;
@@ -14482,13 +14484,15 @@ form.search .search button {
 
   /* line 28, src/sass/components/basic/_quotes.scss */
 
-  .copy-block blockquote {
+  .copy-block blockquote,
+  .cke_editable blockquote {
     margin-left: 9.6rem;
   }
 
   /* line 37, src/sass/components/basic/_quotes.scss */
 
-  .copy-block blockquote:before {
+  .copy-block blockquote:before,
+  .cke_editable blockquote:before {
     width: 1.9rem;
     left: -5.4rem;
     -webkit-transition: all 10s;
