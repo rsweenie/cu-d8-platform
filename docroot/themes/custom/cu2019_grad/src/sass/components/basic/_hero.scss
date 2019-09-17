@@ -183,7 +183,8 @@ header.hp_hero {
   }
 
   > div {
-    @include contentConstrain;
+    max-width: $siteWMx;
+    margin: 0 auto;
 
     > div {
       padding: 25px 16px 16px 16px;
