@@ -1,0 +1,14 @@
+uuid: 0a6f2e20-85a7-454d-9306-770c2707e9d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - paragraphs
+third_party_settings:
+  lightning_core:
+    description: 'Used when embedding in featured_element forms.'
+id: paragraph.featured_element
+label: 'Featured Element'
+targetEntityType: paragraph
+cache: true
