@@ -10,17 +10,9 @@
     //width: calc(90vw - (#{$gutter * 2}rem));
     margin: 0 auto;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    background-position: center;
-    background-size: cover;
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-    &.js-background {
-      > a img {
-        @include srOnly;
-      }
-    }
 
     .grid & {
         width: 100%;
@@ -94,10 +86,28 @@
         padding: #{$gutter * 4}rem 0;
         overflow: hidden;
 
-        > a {
-            @include position(absolute, 0, (left, top), (50%, 50%), translate(-50%, -50%));
+        > a,
+        > span {
+            @include position(absolute, 0, (left, top), (0, 0));
             width: 100%;
+            height: 100%;
             z-index: 0;
+
+            img {
+              @include position(absolute, 0, (left, top), (50%, 50%), translate(-50%, -50%));
+              min-width: 100%;
+              min-height: 100%;
+              width: auto;
+              height: auto;
+
+              @supports(object-fit: cover) {
+                min-width: 0;
+                min-height: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
         }
 
         > div {
