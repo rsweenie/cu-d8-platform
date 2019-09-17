@@ -14407,7 +14407,7 @@ form.search .search button {
   .hp_hero_tag > div > div {
     max-width: 545px;
     margin: 0 2.5rem;
-    padding: 5rem;
+    padding: 5rem 4rem 5rem 5rem;
   }
 
   /* line 200, src/sass/components/basic/_hero.scss */
