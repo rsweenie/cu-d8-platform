@@ -30,6 +30,7 @@ settings:
           name: Format
           items:
             - Format
+            - Styles
         -
           name: Media
           items:
@@ -70,7 +71,7 @@ settings:
             - Markdown
   plugins:
     stylescombo:
-      styles: ''
+      styles: "a.btn-primary|Primary\r\na.btn-secondary|Secondary"
     language:
       language_list: un
     linkit:
