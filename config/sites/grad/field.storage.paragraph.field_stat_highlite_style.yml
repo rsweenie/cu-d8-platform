@@ -1,4 +1,4 @@
-uuid: 322417fe-fb3e-4899-ad59-84c62f7f4779
+uuid: d4798c9f-1a32-48a0-8c9e-4a446ec2e61a
 langcode: en
 status: true
 dependencies:
@@ -9,21 +9,21 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_stat_highlite_background
-field_name: field_stat_highlite_background
+id: paragraph.field_stat_highlite_style
+field_name: field_stat_highlite_style
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
       value: color1
-      label: 'Medium Blue'
+      label: 'Medium blue background'
     -
       value: color2
-      label: 'Dark Blue'
+      label: 'Dark blue background'
     -
       value: color3
-      label: Gray
+      label: 'Grey background'
   allowed_values_function: ''
 module: options
 locked: false
