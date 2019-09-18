@@ -6,11 +6,11 @@ dependencies:
     - core.entity_view_mode.media.quote_image
     - field.field.media.image.field_media_in_library
     - field.field.media.image.image
-    - image.style.srcset_500px_wide
     - media.type.image
+    - responsive_image.styles.quote
   module:
-    - image
     - layout_builder
+    - responsive_image
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -23,11 +23,11 @@ bundle: image
 mode: quote_image
 content:
   image:
-    type: image
+    type: responsive_image
     weight: 0
     label: hidden
     settings:
-      image_style: srcset_500px_wide
+      responsive_image_style: quote
       image_link: ''
     third_party_settings: {  }
     region: content
