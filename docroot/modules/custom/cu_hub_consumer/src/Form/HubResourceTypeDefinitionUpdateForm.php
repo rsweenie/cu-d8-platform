@@ -200,7 +200,11 @@ class HubResourceTypeDefinitionUpdateForm extends FormBase {
       }
     }
 
-    if (!$has_changed) {
+    if ($has_changed) {
+      $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
+      $resource_type_manager->clearCachedDefinitions();
+    }
+    else {
       $this->messenger->addStatus($this->t('No definition changes made.'));
     }
   }
