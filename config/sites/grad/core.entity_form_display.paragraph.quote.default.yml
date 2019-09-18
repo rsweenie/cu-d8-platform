@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.quote.field_quote_full_name
     - field.field.paragraph.quote.field_quote_image
     - field.field.paragraph.quote.field_quote_quote
+    - field.field.paragraph.quote.field_quote_style
     - field.field.paragraph.quote.field_quote_title
     - paragraphs.paragraphs_type.quote
   module:
@@ -90,6 +91,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_quote_style:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_quote_title:
     weight: 2
