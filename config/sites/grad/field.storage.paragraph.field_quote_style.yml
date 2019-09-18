@@ -16,13 +16,13 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: med-blue-bg
+      value: color1
       label: 'Medium blue background'
     -
-      value: dark-blue-bg
+      value: color2
       label: 'Dark blue background'
     -
-      value: grey-bg
+      value: color3
       label: Grey
   allowed_values_function: ''
 module: options
