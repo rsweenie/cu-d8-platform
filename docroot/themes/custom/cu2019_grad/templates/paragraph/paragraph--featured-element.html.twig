@@ -45,12 +45,12 @@
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
     'section',
-    not paragraph.field_fe_style.isEmpty() ? 'style-' ~ paragraph.field_fe_style[0].value|clean_class,
+    not paragraph.field_fel_style.isEmpty() ? 'style-' ~ paragraph.field_fel_style[0].value|clean_class,
   ]
 %}
 {% set link_url = '' %}
-{% if not paragraph.field_fe_link.isEmpty() %}
-  {% set link_url = paragraph.field_fe_link[0].getUrl().toString() %}
+{% if not paragraph.field_fel_link.isEmpty() %}
+  {% set link_url = paragraph.field_fel_link[0].getUrl().toString() %}
 {% endif %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
@@ -59,14 +59,14 @@
         <a href="{{ link_url }}">
       {% endif %}
       <div class="info">
-        {% if paragraph.field_fe_link[0].title %}
-          {{ content|without('field_fe_content') }}
+        {% if paragraph.field_fel_link[0].title %}
+          {{ content|without('field_fel_content') }}
         {% else %}
-          {{ content|without('field_fe_content', 'field_fe_link') }}
+          {{ content|without('field_fel_content', 'field_fel_link') }}
         {% endif %}
       </div>
       <div class="element">
-        {{ content.field_fe_content }}
+        {{ content.field_fel_content }}
       </div>
       {% if link_url %}
         </a>
