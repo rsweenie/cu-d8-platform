@@ -1,0 +1,45 @@
+uuid: 93ca9486-73ef-40ed-aea6-756fd7121a16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_faculty_components
+    - node.type.hub_faculty
+    - paragraphs.paragraphs_type.copy
+    - paragraphs.paragraphs_type.featured_content_item
+  module:
+    - entity_reference_revisions
+id: node.hub_faculty.field_hub_faculty_components
+field_name: field_hub_faculty_components
+entity_type: node
+bundle: hub_faculty
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      copy: copy
+      featured_content_item: featured_content_item
+    target_bundles_drag_drop:
+      accordion:
+        weight: 6
+        enabled: false
+      copy:
+        enabled: true
+        weight: 7
+      featured_content_item:
+        enabled: true
+        weight: 8
+      hub_paragraph_next_steps:
+        weight: 9
+        enabled: false
+      ief_link:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions
