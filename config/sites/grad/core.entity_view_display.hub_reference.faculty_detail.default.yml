@@ -1,0 +1,39 @@
+uuid: 43b5e1af-bb2b-42fa-8da5-f83ebf9eca78
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.faculty_detail
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+id: hub_reference.faculty_detail.default
+targetEntityType: hub_reference
+bundle: faculty_detail
+mode: default
+content: {  }
+hidden:
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_faculty_components: true
+  hub_field_hub_faculty_degree: true
+  hub_field_hub_faculty_department: true
+  hub_field_hub_faculty_description: true
+  hub_field_hub_faculty_email: true
+  hub_field_hub_faculty_image: true
+  hub_field_hub_faculty_name: true
+  hub_field_hub_faculty_phone: true
+  hub_field_hub_faculty_provost_id: true
+  hub_field_hub_faculty_provost_url: true
+  hub_field_hub_faculty_rel_degrees: true
+  hub_field_hub_faculty_title: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_node_type: true
+  hub_revision_timestamp: true
+  search_api_excerpt: true
