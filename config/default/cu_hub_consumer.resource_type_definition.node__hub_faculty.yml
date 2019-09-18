@@ -1,9 +1,9 @@
-uuid: 1870d060-69d3-4260-a444-bd14e2494fb6
+uuid: f6a204d1-96c2-403a-8262-3f11262c3621
 langcode: en
 status: true
 dependencies: {  }
-id: node__hub_degree
-type_id: node--hub_degree
+id: node__hub_faculty
+type_id: node--hub_faculty
 fields:
   drupal_internal__nid:
     type: integer
@@ -26,63 +26,50 @@ fields:
   metatag_normalized:
     type: metatags
     multiple: false
-  field_hub_degree_description:
-    type: hub_text_long
-    multiple: false
-  field_hub_degree_details:
-    type: hub_text_long
-    multiple: false
-  field_hub_degree_intro:
-    type: string_long
-    multiple: false
-  field_hub_degree_other_programs:
+  field_hub_faculty_degree:
     type: hub_unknown
-    multiple: true
-  field_hub_degree_requirements:
+    multiple: false
+  field_hub_faculty_department:
+    type: string_long
+    multiple: false
+  field_hub_faculty_description:
     type: hub_text_long
     multiple: false
-  field_hub_degree_title:
+  field_hub_faculty_email:
     type: string_long
     multiple: false
-  field_hub_degree_title_short:
+  field_hub_faculty_name:
+    type: hub_unknown
+    multiple: false
+  field_hub_faculty_phone:
     type: string_long
     multiple: false
-  field_hub_path_alias:
+  field_hub_faculty_provost_id:
+    type: integer
+    multiple: false
+  field_hub_faculty_provost_url:
+    type: link
+    multiple: false
+  field_hub_faculty_title:
     type: string_long
     multiple: false
   node_type:
     type: hub_resource
     hub_type: node_type--node_type
     multiple: false
-  field_hub_degree_availability:
+  field_hub_faculty_components:
     type: hub_resource
-    hub_type: taxonomy_term--program_availability
+    hub_type: paragraph--copy
     multiple: true
-  field_hub_degree_interests:
-    type: hub_resource
-    hub_type: taxonomy_term--program_interests
-    multiple: false
-  field_hub_degree_related_degrees:
-    type: hub_resource
-    hub_type: node--hub_degree
-    multiple: true
-  field_hub_degree_type:
-    type: hub_resource
-    hub_type: taxonomy_term--degree_type
-    multiple: false
-  field_hub_program:
-    type: hub_resource
-    hub_type: node--hub_program
-    multiple: false
-  field_hub_site:
-    type: hub_resource
-    hub_type: node--hub_site
-    multiple: false
-  field_hub_degree_hero_image:
+  field_hub_faculty_image:
     type: hub_resource
     hub_type: media--image
     multiple: false
-  field_hub_degree_next_steps:
+  field_hub_faculty_rel_degrees:
     type: hub_resource
-    hub_type: paragraph--hub_paragraph_next_steps
+    hub_type: node--hub_degree
+    multiple: true
+  field_hub_site:
+    type: hub_resource
+    hub_type: node--hub_site
     multiple: false
