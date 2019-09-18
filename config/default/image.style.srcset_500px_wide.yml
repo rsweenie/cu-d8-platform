@@ -4,4 +4,12 @@ status: true
 dependencies: {  }
 name: srcset_500px_wide
 label: 'SrcSet (500px wide)'
-effects: {  }
+effects:
+  6bbbb872-dc45-4788-b600-aabbb6a1de70:
+    uuid: 6bbbb872-dc45-4788-b600-aabbb6a1de70
+    id: image_scale
+    weight: 1
+    data:
+      width: 500
+      height: null
+      upscale: false

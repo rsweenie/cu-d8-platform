@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
     - field.field.paragraph.quote.field_quote_background_area
     - field.field.paragraph.quote.field_quote_faculty_link
     - field.field.paragraph.quote.field_quote_full_name
@@ -22,7 +22,7 @@ bundle: quote
 mode: default
 content:
   field_quote_background_area:
-    weight: 5
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -39,24 +39,50 @@ content:
     region: content
   field_quote_full_name:
     weight: 1
-    settings: {  }
+    settings:
+      labels:
+        title: Title
+        given: Given
+        middle: 'Middle name(s)'
+        family: Family
+        generational: Generational
+        credentials: Credentials
+      size:
+        title: 6
+        given: 20
+        middle: 20
+        family: 20
+        generational: 5
+        credentials: 35
+      title_display:
+        title: description
+        given: description
+        middle: description
+        family: description
+        generational: description
+        credentials: description
+      widget_layout: stacked
+      show_component_required_marker: false
+      credentials_inline: false
+      override_field_settings: false
     third_party_settings: {  }
     type: name_default
     region: content
   field_quote_image:
-    type: entity_browser_file
-    weight: 4
+    type: entity_browser_entity_reference
+    weight: 5
     settings:
-      entity_browser: image_browser
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
       open: true
-      field_widget_replace: false
       selection_mode: selection_append
-    region: content
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
     third_party_settings: {  }
+    region: content
   field_quote_quote:
     weight: 0
     settings:
