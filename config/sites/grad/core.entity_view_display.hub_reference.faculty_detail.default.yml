@@ -104,7 +104,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 1
+            weight: 2
           c4612ce3-b248-4201-9718-e11459d09b0e:
             uuid: c4612ce3-b248-4201-9718-e11459d09b0e
             region: second
@@ -121,7 +121,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 2
+            weight: 3
           bf322293-e8f4-4f6a-9b7b-3f960ba20b9d:
             uuid: bf322293-e8f4-4f6a-9b7b-3f960ba20b9d
             region: third
@@ -139,6 +139,23 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
+          131d65aa-2b4f-45a0-8024-180a1bedccb1:
+            uuid: 131d65aa-2b4f-45a0-8024-180a1bedccb1
+            region: second
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_department'
+              label: 'Hub: field_hub_faculty_department'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
       -
         layout_id: layout_onecol
