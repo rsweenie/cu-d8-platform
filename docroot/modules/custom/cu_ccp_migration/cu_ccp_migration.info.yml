@@ -1,0 +1,14 @@
+type: module
+name: Creighton CCP Migration
+description: "Provides different platform migrations into creighton's CCP platform"
+package: migrate
+# core: 8.x
+dependencies:
+  - drupal:migrate
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+
+# Information added by Drupal.org packaging script on 2019-04-19
+version: '8.x-1.0'
+core: '8.x'
+project: 'Creighton'
