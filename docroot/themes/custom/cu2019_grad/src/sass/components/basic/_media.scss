@@ -43,6 +43,13 @@ figure {
 
         content: "";
         border: 2px solid rgba($white,.3);
+
+        .faculty-image & {
+          width: calc(100% - 24px);
+          height: calc(100% - 24px);
+          top: 12px;
+          left: 12px;
+        }
       }
     }
 

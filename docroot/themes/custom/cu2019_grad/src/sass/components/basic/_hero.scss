@@ -55,15 +55,15 @@ header.hp_hero {
 
     .hero_title {
       width: 100%;
-      position: absolute;
+      //position: absolute;
       left: 0;
       bottom: 42px;
-      background-color: rgba($secondary,.85);
-      padding: 25px 0;
+      background-color: $primary;
+      padding: 62px 0 25px 0;
       z-index: 200;
 
       @media #{$mediaFullHeader} {
-        bottom: 72px;
+        padding: 147px 0 25px 0;
       }
 
       h1 {
@@ -159,6 +159,24 @@ header.hp_hero {
         opacity: 1;
       }
     }
+}
+
+header {
+  > .field,
+  > .block {
+    + .hero_title {
+      position: absolute;
+      left: 0;
+      bottom: 42px;
+      background-color: rgba($secondary,.85);
+      padding: 25px 0;
+
+      @media #{$mediaFullHeader} {
+        bottom: 72px;
+        padding: 25px 0;
+      }
+    }
+  }
 }
 
 header.hp_hero {

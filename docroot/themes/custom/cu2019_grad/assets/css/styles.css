@@ -1985,6 +1985,44 @@ Delete everything below including comment
   padding: 2.5rem;
 }
 
+/* line 1, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col {
+  background: #E5F0F9;
+}
+
+/* line 4, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .layout__region {
+  height: 100%;
+}
+
+/* line 8, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail {
+  height: 100%;
+  position: relative;
+}
+
+/* line 12, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail > div {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 17, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail:before {
+  width: 100vw;
+  height: calc(100% + 5rem);
+  position: absolute;
+  left: -5rem;
+  top: -2.5rem;
+  content: "";
+  background: #CEE2F3;
+}
+
 /* CSS Document */
 
 /*  --------------------------------------------------------------------------  *\
@@ -2594,11 +2632,10 @@ header.hp_hero img {
 .hub-reference > header .hero_title,
 header.hp_hero .hero_title {
   width: 100%;
-  position: absolute;
   left: 0;
   bottom: 4.2rem;
-  background-color: rgba(0, 84, 166, 0.85);
-  padding: 2.5rem 0;
+  background-color: #002E6D;
+  padding: 6.2rem 0 2.5rem 0;
   z-index: 200;
 }
 
@@ -2715,20 +2752,31 @@ header.hp_hero:before {
   opacity: 1;
 }
 
-/* line 164, src/sass/components/basic/_hero.scss */
+/* line 167, src/sass/components/basic/_hero.scss */
+
+header > .field + .hero_title,
+header > .block + .hero_title {
+  position: absolute;
+  left: 0;
+  bottom: 4.2rem;
+  background-color: rgba(0, 84, 166, 0.85);
+  padding: 2.5rem 0;
+}
+
+/* line 182, src/sass/components/basic/_hero.scss */
 
 header.hp_hero {
   position: relative;
   margin-bottom: 9.8rem;
 }
 
-/* line 174, src/sass/components/basic/_hero.scss */
+/* line 192, src/sass/components/basic/_hero.scss */
 
 header.hp_hero:after {
   height: calc(100% - 3rem);
 }
 
-/* line 184, src/sass/components/basic/_hero.scss */
+/* line 202, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag {
   position: relative;
@@ -2739,14 +2787,14 @@ header.hp_hero:after {
           order: 2;
 }
 
-/* line 198, src/sass/components/basic/_hero.scss */
+/* line 216, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div {
   max-width: 1350px;
   margin: 0 auto;
 }
 
-/* line 202, src/sass/components/basic/_hero.scss */
+/* line 220, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div > div {
   padding: 2.5rem 1.6rem 1.6rem 1.6rem;
@@ -2754,7 +2802,7 @@ header.hp_hero:after {
   color: #fff;
 }
 
-/* line 214, src/sass/components/basic/_hero.scss */
+/* line 232, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
   margin: 0;
@@ -2762,7 +2810,7 @@ header.hp_hero:after {
   line-height: 1.2em;
 }
 
-/* line 224, src/sass/components/basic/_hero.scss */
+/* line 242, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
   font-family: "Conduit";
@@ -2774,7 +2822,7 @@ header.hp_hero:after {
   letter-spacing: 0.05em;
 }
 
-/* line 240, src/sass/components/basic/_hero.scss */
+/* line 258, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg {
   position: relative;
@@ -2785,7 +2833,7 @@ header.hp_hero:after {
   max-height: 680px;
 }
 
-/* line 248, src/sass/components/basic/_hero.scss */
+/* line 266, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image {
   position: relative;
@@ -2793,7 +2841,7 @@ header.hp_hero:after {
   padding-bottom: 50%;
 }
 
-/* line 257, src/sass/components/basic/_hero.scss */
+/* line 275, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image img {
   width: auto;
@@ -2807,7 +2855,7 @@ header.hp_hero:after {
           transform: translate(-50%, -50%);
 }
 
-/* line 278, src/sass/components/basic/_hero.scss */
+/* line 296, src/sass/components/basic/_hero.scss */
 
 .bg_caption {
   position: absolute;
@@ -2821,7 +2869,7 @@ header.hp_hero:after {
   text-align: right;
 }
 
-/* line 293, src/sass/components/basic/_hero.scss */
+/* line 311, src/sass/components/basic/_hero.scss */
 
 .bg_caption a {
   color: #fff;
@@ -2834,7 +2882,7 @@ header.hp_hero:after {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* line 303, src/sass/components/basic/_hero.scss */
+/* line 321, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header {
   position: relative;
@@ -2844,7 +2892,7 @@ header.hp_hero:after {
           order: 3;
 }
 
-/* line 350, src/sass/components/basic/_hero.scss */
+/* line 368, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header > div {
   max-width: 1350px;
@@ -2852,7 +2900,7 @@ header.hp_hero:after {
   width: 100%;
 }
 
-/* line 355, src/sass/components/basic/_hero.scss */
+/* line 373, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner {
   position: relative;
@@ -2863,7 +2911,7 @@ header.hp_hero:after {
   z-index: 200;
 }
 
-/* line 363, src/sass/components/basic/_hero.scss */
+/* line 381, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner:after {
   width: 0;
@@ -2879,7 +2927,7 @@ header.hp_hero:after {
   border-color: #002E6D transparent transparent transparent;
 }
 
-/* line 383, src/sass/components/basic/_hero.scss */
+/* line 401, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner div:last-child {
   font-family: "Conduit";
@@ -3745,7 +3793,16 @@ figure .img:after {
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
 }
 
-/* line 49, src/sass/components/basic/_media.scss */
+/* line 47, src/sass/components/basic/_media.scss */
+
+.faculty-image figure .img:after {
+  width: calc(100% - 2.4rem);
+  height: calc(100% - 2.4rem);
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
+/* line 56, src/sass/components/basic/_media.scss */
 
 figure > figcaption {
   display: block;
@@ -3757,13 +3814,13 @@ figure > figcaption {
   line-height: 1.4em;
 }
 
-/* line 70, src/sass/components/basic/_media.scss */
+/* line 77, src/sass/components/basic/_media.scss */
 
 figure > figcaption :last-child {
   margin-bottom: 0;
 }
 
-/* line 75, src/sass/components/basic/_media.scss */
+/* line 82, src/sass/components/basic/_media.scss */
 
 figure .video {
   width: 100%;
@@ -3772,7 +3829,7 @@ figure .video {
   background: #212322;
 }
 
-/* line 81, src/sass/components/basic/_media.scss */
+/* line 88, src/sass/components/basic/_media.scss */
 
 figure .video iframe {
   width: 100%;
@@ -3782,7 +3839,7 @@ figure .video iframe {
   left: 0;
 }
 
-/* line 90, src/sass/components/basic/_media.scss */
+/* line 97, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] {
   display: -webkit-box;
@@ -3803,7 +3860,7 @@ figure[class*="img-"] {
   width: 100%;
 }
 
-/* line 100, src/sass/components/basic/_media.scss */
+/* line 107, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] > video,
 figure[class*="img-"] > img,
@@ -3819,7 +3876,7 @@ figure[class*="img-"] > picture {
   max-width: 40rem;
 }
 
-/* line 113, src/sass/components/basic/_media.scss */
+/* line 120, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] > figcaption {
   -webkit-box-flex: 1 1 auto;
@@ -3831,7 +3888,7 @@ figure[class*="img-"] > figcaption {
   width: 33.333%;
 }
 
-/* line 126, src/sass/components/basic/_media.scss */
+/* line 133, src/sass/components/basic/_media.scss */
 
 figure.img-right video,
 figure.img-right img,
@@ -4014,7 +4071,7 @@ figure.zoom:focus > video {
   transform: scale(1.4);
 }
 
-/* line 144, src/sass/components/basic/_media.scss */
+/* line 151, src/sass/components/basic/_media.scss */
 
 figure.float-left,
 figure.float-right {
@@ -4022,7 +4079,7 @@ figure.float-right {
   margin-bottom: 2.5rem;
 }
 
-/* line 148, src/sass/components/basic/_media.scss */
+/* line 155, src/sass/components/basic/_media.scss */
 
 figure.float-left > figcaption,
 figure.float-right > figcaption {
@@ -11934,6 +11991,13 @@ form.search .search button {
     top: 16rem;
   }
 
+  /* line 17, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 7.5rem);
+    top: -3.75rem;
+  }
+
   /* line 5, src/sass/structure/section-layouts/_grid.scss */
 
   .grid {
@@ -12326,7 +12390,7 @@ form.search .search button {
             transform: translate(-50%, 50%);
   }
 
-  /* line 49, src/sass/components/basic/_media.scss */
+  /* line 56, src/sass/components/basic/_media.scss */
 
   figure > figcaption {
     font-size: 1.6rem;
@@ -13099,6 +13163,13 @@ form.search .search button {
     width: 58.333%;
   }
 
+  /* line 17, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 10rem);
+    top: -5rem;
+  }
+
   /* line 11, src/sass/components/basic/_buttons.scss */
 
   [class*="btn-"] {
@@ -13136,7 +13207,7 @@ form.search .search button {
     width: 95%;
   }
 
-  /* line 350, src/sass/components/basic/_hero.scss */
+  /* line 368, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 95%;
@@ -14381,7 +14452,7 @@ form.search .search button {
   .node__content > header .hero_title,
   .hub-reference > header .hero_title,
   header.hp_hero .hero_title {
-    bottom: 7.2rem;
+    padding: 14.7rem 0 2.5rem 0;
   }
 
   /* line 79, src/sass/components/basic/_hero.scss */
@@ -14411,7 +14482,15 @@ form.search .search button {
     height: 51.5rem;
   }
 
-  /* line 184, src/sass/components/basic/_hero.scss */
+  /* line 167, src/sass/components/basic/_hero.scss */
+
+  header > .field + .hero_title,
+  header > .block + .hero_title {
+    bottom: 7.2rem;
+    padding: 2.5rem 0;
+  }
+
+  /* line 202, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag {
     position: absolute;
@@ -14420,7 +14499,7 @@ form.search .search button {
     z-index: 10;
   }
 
-  /* line 202, src/sass/components/basic/_hero.scss */
+  /* line 220, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div > div {
     max-width: 545px;
@@ -14428,31 +14507,31 @@ form.search .search button {
     padding: 5rem 4rem 5rem 5rem;
   }
 
-  /* line 214, src/sass/components/basic/_hero.scss */
+  /* line 232, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div h1 {
     font-size: 5rem;
   }
 
-  /* line 224, src/sass/components/basic/_hero.scss */
+  /* line 242, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
     font-size: 3.6rem;
   }
 
-  /* line 248, src/sass/components/basic/_hero.scss */
+  /* line 266, src/sass/components/basic/_hero.scss */
 
   .hp_hero_bg .field--name-image {
     padding-bottom: 42%;
   }
 
-  /* line 303, src/sass/components/basic/_hero.scss */
+  /* line 321, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header {
     margin-bottom: 3rem;
   }
 
-  /* line 317, src/sass/components/basic/_hero.scss */
+  /* line 335, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:before {
     width: 100vw;
@@ -14464,7 +14543,7 @@ form.search .search button {
     background: rgba(0, 46, 109, 0.85);
   }
 
-  /* line 327, src/sass/components/basic/_hero.scss */
+  /* line 345, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:after {
     width: 100vw;
@@ -14477,7 +14556,7 @@ form.search .search button {
   }
 
 @supports (mix-blend-mode: screen) {
-    /* line 327, src/sass/components/basic/_hero.scss */
+    /* line 345, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header:after {
       mix-blend-mode: screen;
@@ -14485,20 +14564,20 @@ form.search .search button {
 }
 
 @supports (mix-blend-mode: screen) {
-    /* line 303, src/sass/components/basic/_hero.scss */
+    /* line 321, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header {
       z-index: 300;
     }
 }
 
-  /* line 350, src/sass/components/basic/_hero.scss */
+  /* line 368, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 90%;
   }
 
-  /* line 363, src/sass/components/basic/_hero.scss */
+  /* line 381, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner:after {
     border-width: 30px 30px 0 30px;
@@ -14508,14 +14587,14 @@ form.search .search button {
             transform: translateX(0);
   }
 
-  /* line 355, src/sass/components/basic/_hero.scss */
+  /* line 373, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     font-size: 4.5rem;
     padding: 5rem 2.5rem 5rem 7.5rem;
   }
 
-  /* line 394, src/sass/components/basic/_hero.scss */
+  /* line 412, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner div:last-child {
     font-size: 3.6rem;
@@ -14922,6 +15001,13 @@ form.search .search button {
     padding: 6.25rem 0;
   }
 
+  /* line 17, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 12.5rem);
+    top: -6.25rem;
+  }
+
   /* line 30, src/sass/components/basic/cards/_story.scss */
 
   .full-screen .card.story > div {
@@ -15008,7 +15094,7 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 350, src/sass/components/basic/_hero.scss */
+  /* line 368, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 85%;
@@ -15304,7 +15390,7 @@ form.search .search button {
     margin-top: -7.5rem;
   }
 
-  /* line 164, src/sass/components/basic/_hero.scss */
+  /* line 182, src/sass/components/basic/_hero.scss */
 
   header.hp_hero {
     width: 100%;
@@ -15317,20 +15403,20 @@ form.search .search button {
             flex-direction: column;
   }
 
-  /* line 174, src/sass/components/basic/_hero.scss */
+  /* line 192, src/sass/components/basic/_hero.scss */
 
   header.hp_hero:after {
     top: 3.3rem;
     height: calc(100% - 4.9rem);
   }
 
-  /* line 278, src/sass/components/basic/_hero.scss */
+  /* line 296, src/sass/components/basic/_hero.scss */
 
   .bg_caption {
     display: none;
   }
 
-  /* line 303, src/sass/components/basic/_hero.scss */
+  /* line 321, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header {
     background: #002E6D;

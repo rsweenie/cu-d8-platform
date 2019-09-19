@@ -9,18 +9,20 @@ dependencies:
     - layout_builder_restrictions
     - layout_discovery
     - system
+  theme:
+    - cu2019_grad
 third_party_settings:
   layout_builder:
     allow_custom: false
     enabled: true
     sections:
       -
-        layout_id: layout_onecol
+        layout_id: generic_hero
         layout_settings: {  }
         components:
           fc8e2665-2181-4a37-8163-404fc5284f9d:
             uuid: fc8e2665-2181-4a37-8163-404fc5284f9d
-            region: content
+            region: main
             configuration:
               id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_name'
               label: 'Hub: field_hub_faculty_name'
@@ -37,7 +39,7 @@ third_party_settings:
             weight: 0
           8d25aa2c-ecf6-4d33-a4c9-56e18bdfa139:
             uuid: 8d25aa2c-ecf6-4d33-a4c9-56e18bdfa139
-            region: content
+            region: main
             configuration:
               id: system_breadcrumb_block
               label: Breadcrumbs
@@ -48,13 +50,29 @@ third_party_settings:
             weight: 1
         third_party_settings: {  }
       -
-        layout_id: layout_threecol_section
-        layout_settings:
-          column_widths: 33-34-33
+        layout_id: faculty_detail_3col
+        layout_settings: {  }
         components:
-          7c7b3a85-a72d-4be0-9582-7fe10c027e35:
-            uuid: 7c7b3a85-a72d-4be0-9582-7fe10c027e35
-            region: first
+          bf322293-e8f4-4f6a-9b7b-3f960ba20b9d:
+            uuid: bf322293-e8f4-4f6a-9b7b-3f960ba20b9d
+            region: right
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_rel_degrees'
+              label: 'Associated Programs'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: hub_resource_link
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 6
+          1c1e3a20-3e0f-4bc2-9abf-b863556a4c3e:
+            uuid: 1c1e3a20-3e0f-4bc2-9abf-b863556a4c3e
+            region: left
             configuration:
               id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_image'
               label: 'Hub: field_hub_faculty_image'
@@ -71,26 +89,9 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
-          e5b9016c-5f1a-41fa-ae9e-f1d9010ca3f2:
-            uuid: e5b9016c-5f1a-41fa-ae9e-f1d9010ca3f2
-            region: second
-            configuration:
-              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_title'
-              label: 'Hub: field_hub_faculty_title'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: basic_string
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 0
           67dcda95-9c40-4650-8c5b-b3a100a4b5f5:
             uuid: 67dcda95-9c40-4650-8c5b-b3a100a4b5f5
-            region: second
+            region: middle
             configuration:
               id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_email'
               label: 'Hub: field_hub_faculty_email'
@@ -104,13 +105,13 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 2
-          c4612ce3-b248-4201-9718-e11459d09b0e:
-            uuid: c4612ce3-b248-4201-9718-e11459d09b0e
-            region: second
+            weight: -8
+          e5b9016c-5f1a-41fa-ae9e-f1d9010ca3f2:
+            uuid: e5b9016c-5f1a-41fa-ae9e-f1d9010ca3f2
+            region: middle
             configuration:
-              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_phone'
-              label: 'Hub: field_hub_faculty_phone'
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_title'
+              label: 'Hub: field_hub_faculty_title'
               provider: layout_builder
               label_display: '0'
               formatter:
@@ -121,27 +122,10 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 3
-          bf322293-e8f4-4f6a-9b7b-3f960ba20b9d:
-            uuid: bf322293-e8f4-4f6a-9b7b-3f960ba20b9d
-            region: third
-            configuration:
-              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_rel_degrees'
-              label: 'Associated Programs'
-              provider: layout_builder
-              label_display: visible
-              formatter:
-                label: hidden
-                type: hub_resource
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 0
+            weight: -10
           131d65aa-2b4f-45a0-8024-180a1bedccb1:
             uuid: 131d65aa-2b4f-45a0-8024-180a1bedccb1
-            region: second
+            region: middle
             configuration:
               id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_department'
               label: 'Hub: field_hub_faculty_department'
@@ -155,7 +139,24 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 1
+            weight: -9
+          c4612ce3-b248-4201-9718-e11459d09b0e:
+            uuid: c4612ce3-b248-4201-9718-e11459d09b0e
+            region: middle
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_phone'
+              label: 'Hub: field_hub_faculty_phone'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 4
         third_party_settings: {  }
       -
         layout_id: layout_onecol
