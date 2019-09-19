@@ -204,7 +204,7 @@ header.hp_hero {
     }
 
     h1 {
-      margin: 0;
+      margin: 0 0 (9 / 50) * 1em 0;
       font-size: 34px;
 
       @media #{$mediaFullHeader} {
@@ -298,7 +298,7 @@ header.hp_hero {
 
   @media #{$mediaFullHeader} {
     padding-left: 50px;
-    
+
     &:before {
       width: 100vw;
       height: 58px;
