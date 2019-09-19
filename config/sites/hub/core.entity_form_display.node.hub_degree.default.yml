@@ -70,13 +70,22 @@ content:
     type: options_buttons
     region: content
   field_hub_degree_description:
+    type: paragraphs
     weight: 10
     settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
-    type: text_textarea_with_summary
     region: content
   field_hub_degree_details:
     type: paragraphs
