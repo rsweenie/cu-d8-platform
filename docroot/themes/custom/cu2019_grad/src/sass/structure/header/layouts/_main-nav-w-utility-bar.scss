@@ -59,6 +59,7 @@
   @media #{$mediaFullHeader} {
     width: 100%;
     @include position(absolute, 1, (left, top), (0, 131px));
+    padding-right: 3.6rem;
 
     &:before {
       position: absolute;

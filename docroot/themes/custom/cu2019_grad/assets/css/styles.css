@@ -1225,7 +1225,7 @@ nav a {
   /* ------------------ *\ Search Dialog - does not require a css file to be imported \* ------------------ */
 }
 
-/* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+/* line 114, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
 .main-header > div {
   display: -webkit-box;
@@ -9818,7 +9818,7 @@ nav.side-nav {
   position: relative;
 }
 
-/* line 33, src/sass/components/navigation/_interior.scss */
+/* line 37, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label,
 nav.side-nav ul {
@@ -9827,28 +9827,29 @@ nav.side-nav ul {
   font-weight: 600;
 }
 
-/* line 40, src/sass/components/navigation/_interior.scss */
+/* line 44, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav ul {
   margin: 0;
   padding: 0;
+  line-height: 1.2em;
 }
 
-/* line 63, src/sass/components/navigation/_interior.scss */
+/* line 68, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav .menu-item {
   margin: 0;
   padding: 0;
 }
 
-/* line 72, src/sass/components/navigation/_interior.scss */
+/* line 77, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav a {
   color: #555555;
   text-decoration: none;
 }
 
-/* line 76, src/sass/components/navigation/_interior.scss */
+/* line 81, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav a.is-active {
   color: #555555;
@@ -9863,7 +9864,7 @@ nav.side-nav a:focus {
   text-decoration: underline;
 }
 
-/* line 92, src/sass/components/navigation/_interior.scss */
+/* line 97, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label {
   display: block;
@@ -9874,7 +9875,7 @@ nav.side-nav label {
   border-bottom: 1px solid #e1e7ec;
 }
 
-/* line 100, src/sass/components/navigation/_interior.scss */
+/* line 105, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:before,
 nav.side-nav label:after,
@@ -9890,21 +9891,21 @@ nav.side-nav label span:after {
   transition: all .25s;
 }
 
-/* line 113, src/sass/components/navigation/_interior.scss */
+/* line 118, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:before {
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
 }
 
-/* line 117, src/sass/components/navigation/_interior.scss */
+/* line 122, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav label:after {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }
 
-/* line 127, src/sass/components/navigation/_interior.scss */
+/* line 132, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox'] {
   position: absolute;
@@ -9917,27 +9918,27 @@ nav.side-nav input[type='checkbox'] {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 131, src/sass/components/navigation/_interior.scss */
+/* line 136, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ ul {
   display: block;
 }
 
-/* line 136, src/sass/components/navigation/_interior.scss */
+/* line 141, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label:before {
   -webkit-transform: rotate(45deg) translate(0);
           transform: rotate(45deg) translate(0);
 }
 
-/* line 140, src/sass/components/navigation/_interior.scss */
+/* line 145, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label:after {
   -webkit-transform: rotate(-45deg) translate(0);
           transform: rotate(-45deg) translate(0);
 }
 
-/* line 144, src/sass/components/navigation/_interior.scss */
+/* line 149, src/sass/components/navigation/_interior.scss */
 
 nav.side-nav input[type='checkbox']:checked ~ label span:after {
   opacity: 0;
@@ -13379,9 +13380,10 @@ form.search .search button {
     z-index: 1;
     left: 0;
     top: 13.1rem;
+    padding-right: 3.6rem;
   }
 
-  /* line 63, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 64, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header .region-primary-menu:before {
     position: absolute;
@@ -13396,7 +13398,7 @@ form.search .search button {
     content: "";
   }
 
-  /* line 75, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 76, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header .region-primary-menu:after {
     position: absolute;
@@ -13411,7 +13413,7 @@ form.search .search button {
     content: "";
   }
 
-  /* line 87, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 88, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header .region-primary-menu > div {
     display: -webkit-box;
@@ -13425,7 +13427,7 @@ form.search .search button {
             align-items: stretch;
   }
 
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 114, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header > div {
     position: relative;
@@ -14608,7 +14610,13 @@ form.search .search button {
     z-index: 0;
   }
 
-  /* line 40, src/sass/components/navigation/_interior.scss */
+  /* line 30, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav {
+    width: 18%;
+  }
+
+  /* line 44, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     font-size: 2.4rem;
@@ -14617,13 +14625,13 @@ form.search .search button {
     padding: 5rem 0;
   }
 
-  /* line 63, src/sass/components/navigation/_interior.scss */
+  /* line 68, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav .menu-item {
     margin: 0 0 0.58333em 0;
   }
 
-  /* line 92, src/sass/components/navigation/_interior.scss */
+  /* line 97, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav label {
     position: absolute;
@@ -14951,7 +14959,7 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 40, src/sass/components/navigation/_interior.scss */
+  /* line 44, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     padding: 6.25rem 0;
@@ -15030,7 +15038,7 @@ form.search .search button {
     text-align: center;
   }
 
-  /* line 95, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 96, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header .nav-wrapper {
     position: absolute;
@@ -15373,7 +15381,7 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 40, src/sass/components/navigation/_interior.scss */
+  /* line 44, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav ul {
     display: none;
@@ -15382,7 +15390,7 @@ form.search .search button {
     text-align: right;
   }
 
-  /* line 72, src/sass/components/navigation/_interior.scss */
+  /* line 77, src/sass/components/navigation/_interior.scss */
 
   nav.side-nav a {
     display: block;
