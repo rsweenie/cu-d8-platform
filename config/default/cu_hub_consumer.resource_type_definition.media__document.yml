@@ -58,13 +58,13 @@ fields:
     multiple: false
   bundle:
     type: hub_resource
-    hub_type: media_type--media_type
+    hub_type: media_type
     multiple: false
   thumbnail:
     type: hub_resource
-    hub_type: file--file
+    hub_type: file
     multiple: false
   field_document:
     type: hub_resource
-    hub_type: file--file
+    hub_type: file
     multiple: false

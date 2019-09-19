@@ -1,0 +1,48 @@
+uuid: 40b179c3-d428-45af-9adb-b8ea6fe79ce2
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_admissions_rep
+type_id: node--hub_admissions_rep
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag_normalized:
+    type: metatags
+    multiple: false
+  field_hub_adm_rep_email:
+    type: string_long
+    multiple: false
+  field_hub_adm_rep_honorific:
+    type: string_long
+    multiple: false
+  field_hub_adm_rep_name:
+    type: name
+    multiple: false
+  field_hub_adm_rep_phone:
+    type: integer
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type
+    multiple: false
+  field_hub_adm_rep_image:
+    type: hub_resource
+    hub_type: media
+    multiple: false

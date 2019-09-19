@@ -25,7 +25,6 @@ blacklist:
 graylist:
   - 'auto_entitylabel.settings.*'
   - 'block.block.*'
-  - 'filter.format.*'
   - 'jsonapi.*'
   - 'views.view.*'
   - 'search_api.*'
