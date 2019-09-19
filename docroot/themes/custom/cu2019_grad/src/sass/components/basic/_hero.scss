@@ -7,7 +7,9 @@
     using a <header> in the <main id="content"> tag.
 
 \*  --------------------------------------------------------------------------  */
-$triangleAdjust: 30px;
+$triangle: 30px;
+$triangleM: 16px;
+
 .node__content > header,
 .hub-reference > header,
 header.hp_hero {
@@ -161,7 +163,7 @@ header.hp_hero {
 
 header.hp_hero {
   position: relative;
-  margin-bottom: 128px - $triangleAdjust;
+  margin-bottom: 128px - $triangle;
 
   @media #{$mediaToggleHeader} {
     width: 100%;
@@ -170,7 +172,12 @@ header.hp_hero {
   }
 
   &:after {
-    height: calc(100% - #{$triangleAdjust});
+    height: calc(100% - #{$triangle});
+
+    @media #{$mediaToggleHeader} {
+      top: 33px;
+      height: calc(100% - #{$triangleM + 33px});
+    }
   }
 }
 
@@ -293,15 +300,18 @@ header.hp_hero {
 
 .hp_hero_header {
   position: relative;
-  margin-bottom: $triangleAdjust;
+  margin-bottom: $triangleM;
   order: 3;
 
   @media #{$mediaToggleHeader} {
     background: $primary;
+    z-index: 100;
+    text-align: center;
   }
 
   @media #{$mediaFullHeader} {
     padding-left: 50px;
+    margin-bottom: $triangle;
 
     &:before {
       width: 100vw;
@@ -344,21 +354,33 @@ header.hp_hero {
 .hp_hero_header_inner {
   position: relative;
   margin: 0;
-  padding: 50px 16px;
+  padding: 26px 16px;
   font-size: 34px;
   color: $white;
   z-index: 200;
+
+  @media #{$mediaFullHeader} {
+    padding: 50px 16px;
+  }
 
   &:after {
     width: 0;
     height: 0;
     position: absolute;
-    bottom: -30px;
-    left: 115px;
+    bottom: -#{$triangleM};
+    left: 50%;
+    transform: translateX(-50%);
     content: "";
     border-style: solid;
-    border-width: 30px 31px 0 31px;
+    border-width: $triangleM $triangleM 0 $triangleM;
     border-color: $primary transparent transparent transparent;
+
+    @media #{$mediaFullHeader} {
+      border-width: $triangle $triangle 0 $triangle;
+      bottom: -#{$triangle};
+      left: 115px;
+      transform: translateX(0);
+    }
   }
 
   div:last-child {
