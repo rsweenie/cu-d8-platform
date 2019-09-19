@@ -464,7 +464,7 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
       $field_type = preg_replace('/[^a-z0-9_-]/i', '_', $field_type);
 
       $elements = [
-        '#theme' => 'hub_resource_field__type_' . $field_type,
+        '#theme' => 'hub_resource_field__' . $field_type,
         '#title' => '',
         '#label_display' => 'hidden',
         '#field_list' => $this,

@@ -1,9 +1,9 @@
-uuid: a2f2c750-7e9d-4708-894e-7f8e332cc6e5
+uuid: 79acfc42-a0ca-4bb6-b4de-5a939239e53a
 langcode: en
 status: true
 dependencies: {  }
-id: paragraph__copy
-type_id: paragraph--copy
+id: paragraph__video
+type_id: paragraph--video
 fields:
   drupal_internal__id:
     type: integer
@@ -38,10 +38,11 @@ fields:
   revision_translation_affected:
     type: string_long
     multiple: false
-  field_copy_body:
-    type: hub_text_long
-    multiple: false
   paragraph_type:
     type: hub_resource
     hub_type: paragraphs_type
+    multiple: false
+  field_video_media:
+    type: hub_resource
+    hub_type: media
     multiple: false

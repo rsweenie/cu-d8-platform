@@ -3,6 +3,7 @@
 namespace Drupal\cu_hub_consumer\Hub;
 
 use Drupal\Core\Render\Element;
+use Drupal\cu_hub_consumer\Hub\ResourceInterface;
 
 /**
  * Represents a resource field; that is, a list of field item objects.
@@ -239,8 +240,10 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
   public function appendItem($data = NULL, $included = []) {
     $offset = count($this->list);
     $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-    $resource_type_id = $resource_type_manager->findPluginByHubTypeId($this->resourceType);
-    if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
+    //$resource_type_id = $resource_type_manager->findPluginByHubTypeId($this->resourceType);
+    $resource_type_plugin_id = $resource_type_manager->findPluginByHubTypeId($data['type']);
+
+    if ($resource_type = $resource_type_manager->createInstance($resource_type_plugin_id, [])) {
       $resource = Resource::createFromData($resource_type, $data, $included);
       $this->list[$offset] = $resource;
       return $resource;
@@ -468,7 +471,7 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
       $elements = array_merge($info, $elements);
       */
       $elements = [
-        '#theme' => 'hub_resource_field',
+        '#theme' => 'hub_resource_field__hub_resource',
         '#title' => '',
         '#label_display' => 'hidden',
         '#field_list' => $this,
@@ -488,7 +491,20 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
     $elements = [];
 
     foreach ($this->list as $delta => $item) {
-      $elements[$delta] = $item->view();
+      //$elements[$delta] = $item->view();
+      $resource_obj = $item;
+      if ($resource_obj instanceof ResourceInterface) {
+        $resource_type = $resource_obj->getResourceTypeId();
+
+        // Replace any characters that aren't allowed.
+        $resource_type = preg_replace('/:/i', '__', $resource_type);
+        $resource_type = preg_replace('/[^a-z0-9_-]/i', '_', $resource_type);
+
+        $elements[$delta] = [
+          '#theme' => 'hub_resource__' . $resource_type,
+          '#resource_obj' => $resource_obj,
+        ];
+      }
     }
 
     return $elements;
