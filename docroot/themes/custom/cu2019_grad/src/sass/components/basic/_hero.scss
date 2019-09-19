@@ -7,6 +7,7 @@
     using a <header> in the <main id="content"> tag.
 
 \*  --------------------------------------------------------------------------  */
+$triangleAdjust: 30px;
 .node__content > header,
 .hub-reference > header,
 header.hp_hero {
@@ -23,15 +24,15 @@ header.hp_hero {
     z-index: 120;
 
     &:after {
-      width: 200vh;
-      height: 200vh;
+      width: 100%;
+      height: 100%;
       position: absolute;
       top: 0;
-      right: 0;
+      left: 100%;
       content: "";
       background: rgba($secondary,.65);
       transform-origin: top right;
-      transform: rotate(-45deg);
+      transform: skew(-45deg);
       z-index: 90;
     }
 
@@ -160,12 +161,16 @@ header.hp_hero {
 
 header.hp_hero {
   position: relative;
-  margin-bottom: 128px;
+  margin-bottom: 128px - $triangleAdjust;
 
   @media #{$mediaToggleHeader} {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  &:after {
+    height: calc(100% - #{$triangleAdjust});
   }
 }
 
@@ -188,7 +193,7 @@ header.hp_hero {
 
     > div {
       padding: 25px 16px 16px 16px;
-      background: rgba($secondary,.83);
+      background: rgba($secondary,.87);
       color: $white;
 
       @media #{$mediaFullHeader} {
@@ -283,7 +288,8 @@ header.hp_hero {
 
 .hp_hero_header {
   position: relative;
-  background: $primary;
+  //background: $primary;
+  margin-bottom: $triangleAdjust;
   order: 3;
 
   @media #{$mediaFullHeader} {
@@ -297,12 +303,25 @@ header.hp_hero {
       background: rgba($primary,.85);
     }
 
+    &:after {
+      width: 100vw;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background: $primary;
+      @supports (mix-blend-mode: screen) {
+        mix-blend-mode: screen;
+      }
+    }
+
     @supports (mix-blend-mode: screen) {
       z-index: 300;
-      mix-blend-mode: screen;
+      //mix-blend-mode: screen;
 
       &:before {
-        background: $primary;
+        //background: $primary;
       }
     }
   }
