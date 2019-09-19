@@ -33,6 +33,7 @@ destination:
 # process (basically map the fields)
 # custom processes can be created to help fit different shaped
 # pegs in what ever shape hole you have
+# destination:source
 process:
   field_fwb_body: field_header_alert_markup
   field_fwb_cta: field_header_alert_activate
