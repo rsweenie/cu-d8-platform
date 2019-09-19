@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_hub_degree_details
     - node.type.hub_degree
     - paragraphs.paragraphs_type.copy
+    - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
 id: node.hub_degree.field_hub_degree_details
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       copy: copy
+      video: video
     target_bundles_drag_drop:
       accordion:
         weight: 6
@@ -40,4 +42,7 @@ settings:
       ief_link:
         weight: 10
         enabled: false
+      video:
+        enabled: true
+        weight: 14
 field_type: entity_reference_revisions
