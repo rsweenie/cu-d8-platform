@@ -1,0 +1,42 @@
+&.fac-3col {
+  background: $facDetailBg;
+
+  .layout__region {
+    height: 100%;
+  }
+
+  .fac_rail {
+    height: 100%;
+    position: relative;
+
+    > div {
+      position: relative;
+      z-index: 10;
+    }
+
+    &:before {
+      width: 100vw;
+      height: calc(100% + #{$gutter * 2}rem);
+      position: absolute;
+      left: -#{$gutter * 2}rem;
+      top: -#{$gutter}rem;
+      content: "";
+      background: $facDetailBgRt;
+
+      @media #{$mediaMd} {
+        height: calc(100% + #{$gutter * 3}rem);
+        top: -#{$gutter * 1.5}rem;
+      }
+
+      @media #{$mediaLg} {
+        height: calc(100% + #{$gutter * 4}rem);
+        top: -#{$gutter * 2}rem;
+      }
+
+      @media #{$mediaXl} {
+        height: calc(100% + #{$gutter * 5}rem);
+        top: -#{$gutter * 2.5}rem;
+      }
+    }
+  }
+}

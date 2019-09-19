@@ -1985,6 +1985,44 @@ Delete everything below including comment
   padding: 2.5rem;
 }
 
+/* line 1, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col {
+  background: #E5F0F9;
+}
+
+/* line 4, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .layout__region {
+  height: 100%;
+}
+
+/* line 8, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail {
+  height: 100%;
+  position: relative;
+}
+
+/* line 12, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail > div {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 17, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail:before {
+  width: 100vw;
+  height: calc(100% + 5rem);
+  position: absolute;
+  left: -5rem;
+  top: -2.5rem;
+  content: "";
+  background: #CEE2F3;
+}
+
 /* CSS Document */
 
 /*  --------------------------------------------------------------------------  *\
@@ -3755,7 +3793,16 @@ figure .img:after {
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
 }
 
-/* line 49, src/sass/components/basic/_media.scss */
+/* line 47, src/sass/components/basic/_media.scss */
+
+.faculty-image figure .img:after {
+  width: calc(100% - 2.4rem);
+  height: calc(100% - 2.4rem);
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
+/* line 56, src/sass/components/basic/_media.scss */
 
 figure > figcaption {
   display: block;
@@ -3767,13 +3814,13 @@ figure > figcaption {
   line-height: 1.4em;
 }
 
-/* line 70, src/sass/components/basic/_media.scss */
+/* line 77, src/sass/components/basic/_media.scss */
 
 figure > figcaption :last-child {
   margin-bottom: 0;
 }
 
-/* line 75, src/sass/components/basic/_media.scss */
+/* line 82, src/sass/components/basic/_media.scss */
 
 figure .video {
   width: 100%;
@@ -3782,7 +3829,7 @@ figure .video {
   background: #212322;
 }
 
-/* line 81, src/sass/components/basic/_media.scss */
+/* line 88, src/sass/components/basic/_media.scss */
 
 figure .video iframe {
   width: 100%;
@@ -3792,7 +3839,7 @@ figure .video iframe {
   left: 0;
 }
 
-/* line 90, src/sass/components/basic/_media.scss */
+/* line 97, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] {
   display: -webkit-box;
@@ -3813,7 +3860,7 @@ figure[class*="img-"] {
   width: 100%;
 }
 
-/* line 100, src/sass/components/basic/_media.scss */
+/* line 107, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] > video,
 figure[class*="img-"] > img,
@@ -3829,7 +3876,7 @@ figure[class*="img-"] > picture {
   max-width: 40rem;
 }
 
-/* line 113, src/sass/components/basic/_media.scss */
+/* line 120, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] > figcaption {
   -webkit-box-flex: 1 1 auto;
@@ -3841,7 +3888,7 @@ figure[class*="img-"] > figcaption {
   width: 33.333%;
 }
 
-/* line 126, src/sass/components/basic/_media.scss */
+/* line 133, src/sass/components/basic/_media.scss */
 
 figure.img-right video,
 figure.img-right img,
@@ -4024,7 +4071,7 @@ figure.zoom:focus > video {
   transform: scale(1.4);
 }
 
-/* line 144, src/sass/components/basic/_media.scss */
+/* line 151, src/sass/components/basic/_media.scss */
 
 figure.float-left,
 figure.float-right {
@@ -4032,7 +4079,7 @@ figure.float-right {
   margin-bottom: 2.5rem;
 }
 
-/* line 148, src/sass/components/basic/_media.scss */
+/* line 155, src/sass/components/basic/_media.scss */
 
 figure.float-left > figcaption,
 figure.float-right > figcaption {
@@ -11944,6 +11991,13 @@ form.search .search button {
     top: 16rem;
   }
 
+  /* line 17, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 7.5rem);
+    top: -3.75rem;
+  }
+
   /* line 5, src/sass/structure/section-layouts/_grid.scss */
 
   .grid {
@@ -12336,7 +12390,7 @@ form.search .search button {
             transform: translate(-50%, 50%);
   }
 
-  /* line 49, src/sass/components/basic/_media.scss */
+  /* line 56, src/sass/components/basic/_media.scss */
 
   figure > figcaption {
     font-size: 1.6rem;
@@ -13107,6 +13161,13 @@ form.search .search button {
 
   .section.prg-layout > div > article {
     width: 58.333%;
+  }
+
+  /* line 17, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 10rem);
+    top: -5rem;
   }
 
   /* line 11, src/sass/components/basic/_buttons.scss */
@@ -14938,6 +14999,13 @@ form.search .search button {
 
   .section {
     padding: 6.25rem 0;
+  }
+
+  /* line 17, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 12.5rem);
+    top: -6.25rem;
   }
 
   /* line 30, src/sass/components/basic/cards/_story.scss */

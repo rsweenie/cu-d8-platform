@@ -11,9 +11,9 @@
  */
 #}
 {% if content %}
-  <section {{ attributes.addClass('layout--faculty-detail-2col','section') }}>
+  <section {{ attributes.addClass('layout--faculty-detail-3col','fac-3col','section') }}>
     <div class="row">
-      <div class="col-xs-12 col-md-4">
+      <div class="col-xs-12 col-md-3">
         {% if content.left %}
           <div {{ region_attributes.main.addClass('layout__region', 'layout__region--facleft') }}>
             {{ content.left }}
@@ -21,7 +21,7 @@
         {% endif %}
       </div>
 
-      <div class="col-xs-12 col-md-4">
+      <div class="col-xs-12 col-md-5">
         {% if content.middle %}
           <div {{ region_attributes.right.addClass('layout__region', 'layout__region--facmiddle') }}>
             {{ content.middle }}
@@ -31,7 +31,9 @@
       <div class="col-xs-12 col-md-4">
         {% if content.right %}
           <div {{ region_attributes.right.addClass('layout__region', 'layout__region--facright') }}>
-            {{ content.right }}
+            <div class="fac_rail">
+              {{ content.right }}
+            </div>
           </div>
         {% endif %}
       </div>
