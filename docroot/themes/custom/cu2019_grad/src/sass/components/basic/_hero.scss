@@ -24,7 +24,7 @@ header.hp_hero {
     z-index: 120;
 
     &:after {
-      width: 100%;
+      width: 150%;
       height: 100%;
       position: absolute;
       top: 0;
@@ -289,11 +289,16 @@ header.hp_hero {
 
 .hp_hero_header {
   position: relative;
-  //background: $primary;
   margin-bottom: $triangleAdjust;
   order: 3;
 
+  @media #{$mediaToggleHeader} {
+    background: $primary;
+  }
+
   @media #{$mediaFullHeader} {
+    padding-left: 50px;
+    
     &:before {
       width: 100vw;
       height: 58px;
