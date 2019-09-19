@@ -275,6 +275,7 @@ header.hp_hero {
   font-family: $headingFF;
   line-height: 1.2em;
   z-index: 95;
+  text-align: right;
 
   @media #{$mediaToggleHeader} {
     display: none;
