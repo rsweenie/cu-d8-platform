@@ -26,4 +26,9 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
+  field_hub_adm_rep_email: true
+  field_hub_adm_rep_honorific: true
+  field_hub_adm_rep_image: true
+  field_hub_adm_rep_name: true
+  field_hub_adm_rep_phone: true
   search_api_excerpt: true

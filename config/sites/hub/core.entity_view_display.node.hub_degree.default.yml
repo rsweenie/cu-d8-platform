@@ -79,11 +79,13 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_description:
+    type: entity_reference_revisions_entity_view
     weight: 9
     label: above
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: text_default
     region: content
   field_hub_degree_details:
     type: entity_reference_revisions_entity_view

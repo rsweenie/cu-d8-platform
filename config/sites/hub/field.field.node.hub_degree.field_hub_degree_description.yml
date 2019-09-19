@@ -1,19 +1,13 @@
-uuid: 1d0a176a-458a-420e-945d-9a0b55452816
+uuid: 5b6385d8-0a74-4ca3-97e4-197c7e9d9088
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_hub_degree_description
     - node.type.hub_degree
+    - paragraphs.paragraphs_type.copy
   module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    rich_text: rich_text
-    full_html: '0'
-    raw_html: '0'
-    plain_text: '0'
+    - entity_reference_revisions
 id: node.hub_degree.field_hub_degree_description
 field_name: field_hub_degree_description
 entity_type: node
@@ -25,5 +19,28 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: false
-field_type: text_with_summary
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      copy: copy
+    target_bundles_drag_drop:
+      accordion:
+        weight: 7
+        enabled: false
+      copy:
+        enabled: true
+        weight: 8
+      featured_content_item:
+        weight: 9
+        enabled: false
+      hub_paragraph_next_steps:
+        weight: 10
+        enabled: false
+      ief_link:
+        weight: 11
+        enabled: false
+      quote_ref:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

@@ -14,8 +14,13 @@ third_party_settings:
       - field_hub_degree_hero_image.image
       - field_hub_degree_availability
       - field_hub_degree_interests
+      - field_hub_degree_adm_rep
+      - field_hub_degree_description
       - field_hub_degree_related_degrees
       - field_hub_degree_type
+      - field_hub_degree_details
+      - field_hub_degree_featured_info
+      - field_hub_degree_next_steps
 id: node--hub_degree
 disabled: false
 path: node/hub_degree
@@ -183,6 +188,24 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
+  field_hub_degree_adm_rep:
+    fieldName: field_hub_degree_adm_rep
+    publicName: field_hub_degree_adm_rep
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_app_deadlines:
+    fieldName: field_hub_degree_app_deadlines
+    publicName: field_hub_degree_app_deadlines
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_app_link:
+    fieldName: field_hub_degree_app_link
+    publicName: field_hub_degree_app_link
+    enhancer:
+      id: ''
+    disabled: false
   field_hub_degree_availability:
     fieldName: field_hub_degree_availability
     publicName: field_hub_degree_availability
@@ -198,6 +221,12 @@ resourceFields:
   field_hub_degree_details:
     fieldName: field_hub_degree_details
     publicName: field_hub_degree_details
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_featured_info:
+    fieldName: field_hub_degree_featured_info
+    publicName: field_hub_degree_featured_info
     enhancer:
       id: ''
     disabled: false
