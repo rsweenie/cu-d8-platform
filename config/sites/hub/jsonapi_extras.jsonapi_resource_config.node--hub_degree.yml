@@ -18,7 +18,9 @@ third_party_settings:
       - field_hub_degree_description
       - field_hub_degree_related_degrees
       - field_hub_degree_type
+      - field_hub_degree_adm_rep.field_hub_adm_rep_image.image
       - field_hub_degree_details
+      - field_hub_degree_details.field_video_media
       - field_hub_degree_featured_info
       - field_hub_degree_next_steps
 id: node--hub_degree

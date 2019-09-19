@@ -6,6 +6,7 @@ dependencies:
     - editor
     - entity_embed
     - noreferrer
+    - pathologic
     - responsive_tables_filter
     - responsivewrappers
     - video_embed_wysiwyg
@@ -84,7 +85,8 @@ filters:
     provider: responsive_tables_filter
     status: true
     weight: -43
-    settings: {  }
+    settings:
+      tablesaw_type: stack
   filter_bootstrap_responsive_wrapper:
     id: filter_bootstrap_responsive_wrapper
     provider: responsivewrappers
@@ -107,3 +109,13 @@ filters:
     status: true
     weight: 10
     settings: {  }
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: true
+    weight: 50
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''

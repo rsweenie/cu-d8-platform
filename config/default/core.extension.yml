@@ -119,6 +119,7 @@ module:
   panels: 0
   panels_ipe: 0
   path: 0
+  pathologic: 0
   plupload: 0
   private_content: 0
   quickedit: 0
