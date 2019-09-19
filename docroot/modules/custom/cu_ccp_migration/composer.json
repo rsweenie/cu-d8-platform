@@ -1,0 +1,17 @@
+{
+  "name": "drupal/cu_ccp_migration",
+  "type": "drupal-module",
+  "description": "Migrations into CCP for Creighton's various web platforms",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/cu_ccp_migration",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/cu_ccp_migration",
+    "source": "http://cgit.drupalcode.org/cu_ccp_migration"
+  },
+  "require": { 
+    "drupal/migrate_plus": "^4 || ^5",
+    "drupal/migrate_tools": "^4"
+  }
+}

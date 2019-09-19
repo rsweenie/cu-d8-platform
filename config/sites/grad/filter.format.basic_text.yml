@@ -5,7 +5,6 @@ dependencies:
   module:
     - editor
     - entity_embed
-    - noreferrer
     - responsive_table_filter
     - responsive_tables_filter
     - responsivewrappers
@@ -77,12 +76,6 @@ filters:
     provider: filter
     status: false
     weight: -50
-    settings: {  }
-  noreferrer:
-    id: noreferrer
-    provider: noreferrer
-    status: false
-    weight: -36
     settings: {  }
   filter_responsive_table:
     id: filter_responsive_table

@@ -1,0 +1,49 @@
+#--------------------------------------------------------------
+# THIS IS A PRACTICE MIGRATION DEFINITLY NOT THE REAL MIGRATION
+#--------------------------------------------------------------
+
+# A "migration" is, in technical terms, a plugin whose configuration describes
+# how to read source data, process it (generally by mapping source fields to
+# destination fields), and write it to Drupal.
+
+# The machine name for a migration, used to uniquely identify it.
+id: header_alert
+
+# A human-friendly description of the migration.
+label: migrate copy box to collapsible text
+
+# The machine name of the group containing this migration (which contains shared
+# configuration to be merged with our own configuration here).
+migration_group: creighton_d8
+
+# The category or tag for the migration.
+migration_tags:
+  - header_alert
+
+# source
+source:
+  plugin: content_entity:node
+  bundle: header_alert
+
+# destination
+destination:
+  plugin: entity:paragraph
+  default_bundle: full_width_banner
+
+# process (basically map the fields)
+# custom processes can be created to help fit different shaped
+# pegs in what ever shape hole you have
+process:
+  field_fwb_body: field_header_alert_markup
+  field_fwb_cta: field_header_alert_activate
+  field_fwb_title: field_emergency_headline
+  field_fwb_title2:
+    plugin: add_ham
+    source: field_header_alertemergency_type
+
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - cu_ccp_migration

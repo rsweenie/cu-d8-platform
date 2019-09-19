@@ -1,3 +1,7 @@
+#--------------------------------------------------------------
+# THIS IS A PRACTICE MIGRATION DEFINITLY NOT THE REAL MIGRATION
+#--------------------------------------------------------------
+
 # A "migration" is, in technical terms, a plugin whose configuration describes
 # how to read source data, process it (generally by mapping source fields to
 # destination fields), and write it to Drupal.
@@ -71,7 +75,7 @@ process:
     # migration. This works best when we're sure the parents are imported
     # before the children, and in this case our source plugin is guaranteeing
     # that.
-    # migration: beer_term
+    # migration: copy_box
     # 'style_parent' is the parent reference field from the source data. The
     # result of this plugin is that the destination 'parent' field is populated
     # with the Drupal term ID of the referenced style (or NULL if style_parent
