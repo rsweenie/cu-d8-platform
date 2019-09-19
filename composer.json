@@ -6,11 +6,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.1",
         "acquia/acsf-tools": "dev-9.x-dev",
         "acquia/blt": "^10.0.0",
         "acquia/drupal-spec-tool": "^2.0.0",
         "acquia/lightning": "~4.0",
+        "acquia/memcache-settings": "*",
         "bower-asset/masonry": "^4.2",
         "bower-asset/slick-carousel": "^1.8",
         "drupal/acquia_connector": "^1.5.0",
@@ -68,7 +68,6 @@
         "drupal/lightning_layout": "^2.1",
         "drupal/link_attributes": "^1.9",
         "drupal/mailsystem": "^4.1",
-        "drupal/memcache": "2.0-alpha7",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
         "drupal/menu_breadcrumb": "^1.5",
@@ -118,7 +117,8 @@
         "drupal/views_slideshow": "^4.6",
         "drupal/webform": "^5.0@RC",
         "drupal/xmlsitemap": "^1.0@alpha",
-        "onelogin/php-saml": "dev-remove_mcrypt as 2.11.0"
+        "onelogin/php-saml": "dev-remove_mcrypt as 2.11.0",
+        "php": ">=7.1"
     },
     "require-dev": {
         "acquia/blt-require-dev": "^10.0.0-alpha1",
@@ -173,7 +173,7 @@
                 "bootstrap Warning: array_search() expects parameter": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
             },
             "drupal/linkit": {
-                "linkit popup open in new window not saving changes":"patches/linkit_target_value_zero_3.patch"
+                "linkit popup open in new window not saving changes": "patches/linkit_target_value_zero_3.patch"
             },
             "drupal/metatag": {
                 "Support JSON API, REST, GraphQL and custom normalizations | https://www.drupal.org/project/metatag/issues/2945817": "https://www.drupal.org/files/issues/2019-04-23/2945817-73.patch"
@@ -181,7 +181,6 @@
             "drupal/menu_block": {
                 "Surpress regular system menu in Layout Builder | https://www.drupal.org/project/menu_block/issues/3062278": "https://www.drupal.org/files/issues/2019-06-17/3062278-hide-system-menus.patch"
             }
-
         },
         "installer-types": [
             "bower-asset",

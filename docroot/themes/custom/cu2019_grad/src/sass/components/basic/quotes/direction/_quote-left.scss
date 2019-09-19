@@ -92,6 +92,14 @@
           line-height: 153px;
         }
       }
+
+      img {
+        width: auto;
+        height: auto;
+        max-width: 160px;
+        max-height: 160px;
+
+      }
     }
 
     @media #{$mediaMd} {

@@ -53,14 +53,21 @@
   {% set link_url = paragraph.field_fel_link[0].getUrl().toString() %}
 {% endif %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <section{{ attributes.addClass(classes) }}>
+    <div>
     {% block content %}
       {% if link_url %}
-        <a href="{{ link_url }}">
+        <a href="{{ link_url }}" class="card img-side">
+      {% else %}
+        <div class="card img-side">
       {% endif %}
       <div class="info">
         {% if paragraph.field_fel_link[0].title %}
-          {{ content|without('field_fel_content') }}
+          {{ content|without('field_fel_content', 'field_fel_link') }}
+          <div class="field field--name-field-fel-link field--type-link field--label-hidden btn-primary field__item">
+            <span>{{ paragraph.field_fel_link[0].title }}</span>
+            <span class="icon arrow icon-forward"></span>
+          </div>
         {% else %}
           {{ content|without('field_fel_content', 'field_fel_link') }}
         {% endif %}
@@ -70,7 +77,10 @@
       </div>
       {% if link_url %}
         </a>
+      {% else %}
+        </div>
       {% endif %}
     {% endblock %}
-  </div>
+    </div>
+  </section>
 {% endblock paragraph %}
