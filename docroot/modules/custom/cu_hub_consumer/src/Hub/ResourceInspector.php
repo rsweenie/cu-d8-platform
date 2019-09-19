@@ -80,8 +80,8 @@ class ResourceInspector {
    *   The time service.
    */
   public function __construct(
-    ConfigFactoryInterface $config_factory, 
-    LoggerInterface $logger, 
+    ConfigFactoryInterface $config_factory,
+    LoggerInterface $logger,
     ClientInterface $hub_client,
     CacheBackendInterface $cache,
     TimeInterface $time
@@ -154,7 +154,7 @@ class ResourceInspector {
           //$this->entityTypeId . '_values',
           'entity_field_info',
         ];
-    
+
         // $max_age = Cache::PERMANENT;
         $max_age = 10;
         $expire = $max_age === Cache::PERMANENT
@@ -282,6 +282,12 @@ class ResourceInspector {
         if (isset($value['uri'])) {
           return 'link';
         }
+
+        // Is this a name field?
+        // keys { title, given, middle, family, generational, credentials }
+        if (array_key_exists('given', $value) && array_key_exists('middle', $value) && array_key_exists('family', $value)) {
+          return 'name';
+        }
       }
       // Else, if array is not associative then it's likely a multi-value attribute.
       else {
@@ -306,6 +312,7 @@ class ResourceInspector {
    */
   protected function getBetterType($type1, $type2) {
     $specificity = [
+      'name' => 13,
       'hub_resource' => 12,
       'hub_text_long' => 11,
       'text_long' => 10,

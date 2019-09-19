@@ -26,20 +26,14 @@ fields:
   metatag_normalized:
     type: metatags
     multiple: false
-  field_hub_faculty_degree:
-    type: hub_unknown
-    multiple: false
   field_hub_faculty_department:
     type: string_long
-    multiple: false
-  field_hub_faculty_description:
-    type: hub_text_long
     multiple: false
   field_hub_faculty_email:
     type: string_long
     multiple: false
   field_hub_faculty_name:
-    type: hub_unknown
+    type: name
     multiple: false
   field_hub_faculty_phone:
     type: string_long
