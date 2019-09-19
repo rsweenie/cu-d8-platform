@@ -6,10 +6,166 @@ dependencies:
     - cu_hub_consumer.hub_reference_type.faculty_detail
   module:
     - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - system
 third_party_settings:
   layout_builder:
     allow_custom: false
     enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          fc8e2665-2181-4a37-8163-404fc5284f9d:
+            uuid: fc8e2665-2181-4a37-8163-404fc5284f9d
+            region: content
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_name'
+              label: 'Hub: field_hub_faculty_name'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_unknown
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          8d25aa2c-ecf6-4d33-a4c9-56e18bdfa139:
+            uuid: 8d25aa2c-ecf6-4d33-a4c9-56e18bdfa139
+            region: content
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: layout_threecol_section
+        layout_settings:
+          column_widths: 33-34-33
+        components:
+          7c7b3a85-a72d-4be0-9582-7fe10c027e35:
+            uuid: 7c7b3a85-a72d-4be0-9582-7fe10c027e35
+            region: first
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_image'
+              label: 'Hub: field_hub_faculty_image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource_media_image
+                settings:
+                  style_name: square_medium_large_395_x_395_
+                  link_type: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          e5b9016c-5f1a-41fa-ae9e-f1d9010ca3f2:
+            uuid: e5b9016c-5f1a-41fa-ae9e-f1d9010ca3f2
+            region: second
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_title'
+              label: 'Hub: field_hub_faculty_title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          67dcda95-9c40-4650-8c5b-b3a100a4b5f5:
+            uuid: 67dcda95-9c40-4650-8c5b-b3a100a4b5f5
+            region: second
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_email'
+              label: 'Hub: field_hub_faculty_email'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          c4612ce3-b248-4201-9718-e11459d09b0e:
+            uuid: c4612ce3-b248-4201-9718-e11459d09b0e
+            region: second
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_phone'
+              label: 'Hub: field_hub_faculty_phone'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 2
+          bf322293-e8f4-4f6a-9b7b-3f960ba20b9d:
+            uuid: bf322293-e8f4-4f6a-9b7b-3f960ba20b9d
+            region: third
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_rel_degrees'
+              label: 'Associated Programs'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          32ade59c-69eb-46f7-9498-eeddf0407dd2:
+            uuid: 32ade59c-69eb-46f7-9498-eeddf0407dd2
+            region: content
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_components'
+              label: 'Hub: field_hub_faculty_components'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks: {  }
+      allowed_layouts: {  }
 id: hub_reference.faculty_detail.default
 targetEntityType: hub_reference
 bundle: faculty_detail

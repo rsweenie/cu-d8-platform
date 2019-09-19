@@ -1,0 +1,47 @@
+uuid: b2261ea4-939a-4431-a68f-a7259bbce8ac
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph__copy
+type_id: paragraph--copy
+fields:
+  drupal_internal__id:
+    type: integer
+    multiple: false
+  drupal_internal__revision_id:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  status:
+    type: string_long
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  parent_id:
+    type: integer
+    multiple: false
+  parent_type:
+    type: string_long
+    multiple: false
+  parent_field_name:
+    type: string_long
+    multiple: false
+  behavior_settings:
+    type: hub_unknown
+    multiple: true
+  default_langcode:
+    type: string_long
+    multiple: false
+  revision_translation_affected:
+    type: hub_unknown
+    multiple: false
+  field_copy_body:
+    type: hub_text_long
+    multiple: false
+  paragraph_type:
+    type: hub_resource
+    hub_type: paragraphs_type--paragraphs_type
+    multiple: false
