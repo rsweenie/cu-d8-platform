@@ -4,9 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.hub_faculty.field_hub_faculty_components
-    - field.field.node.hub_faculty.field_hub_faculty_degree
     - field.field.node.hub_faculty.field_hub_faculty_department
-    - field.field.node.hub_faculty.field_hub_faculty_description
     - field.field.node.hub_faculty.field_hub_faculty_email
     - field.field.node.hub_faculty.field_hub_faculty_image
     - field.field.node.hub_faculty.field_hub_faculty_name
@@ -25,7 +23,6 @@ dependencies:
     - name
     - paragraphs
     - telephone
-    - text
 id: node.hub_faculty.default
 targetEntityType: node
 bundle: hub_faculty
@@ -49,30 +46,13 @@ content:
         collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
     region: content
-  field_hub_faculty_degree:
+  field_hub_faculty_department:
     weight: 5
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_hub_faculty_department:
-    weight: 4
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_hub_faculty_description:
-    weight: 9
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea_with_summary
     region: content
   field_hub_faculty_email:
     weight: 6
@@ -90,7 +70,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_faculty_name:
-    weight: 2
+    weight: 3
     settings:
       labels:
         title: Title
@@ -153,7 +133,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_faculty_title:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''

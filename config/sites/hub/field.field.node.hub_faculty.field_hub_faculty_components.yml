@@ -13,7 +13,7 @@ id: node.hub_faculty.field_hub_faculty_components
 field_name: field_hub_faculty_components
 entity_type: node
 bundle: hub_faculty
-label: Components
+label: 'Description / Biography'
 description: ''
 required: false
 translatable: false
