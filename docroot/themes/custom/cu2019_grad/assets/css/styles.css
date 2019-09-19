@@ -2739,14 +2739,14 @@ header.hp_hero:after {
           order: 2;
 }
 
-/* line 197, src/sass/components/basic/_hero.scss */
+/* line 198, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div {
   max-width: 1350px;
   margin: 0 auto;
 }
 
-/* line 201, src/sass/components/basic/_hero.scss */
+/* line 202, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div > div {
   padding: 2.5rem 1.6rem 1.6rem 1.6rem;
@@ -2754,14 +2754,15 @@ header.hp_hero:after {
   color: #fff;
 }
 
-/* line 213, src/sass/components/basic/_hero.scss */
+/* line 214, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
-  margin: 0 0 0.18em 0;
+  margin: 0;
   font-size: 3.4rem;
+  line-height: 1.2em;
 }
 
-/* line 222, src/sass/components/basic/_hero.scss */
+/* line 224, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
   font-family: "Conduit";
@@ -2773,7 +2774,7 @@ header.hp_hero:after {
   letter-spacing: 0.05em;
 }
 
-/* line 238, src/sass/components/basic/_hero.scss */
+/* line 240, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg {
   position: relative;
@@ -2784,7 +2785,7 @@ header.hp_hero:after {
   max-height: 680px;
 }
 
-/* line 246, src/sass/components/basic/_hero.scss */
+/* line 248, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image {
   position: relative;
@@ -2792,7 +2793,7 @@ header.hp_hero:after {
   padding-bottom: 50%;
 }
 
-/* line 255, src/sass/components/basic/_hero.scss */
+/* line 257, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image img {
   width: auto;
@@ -2806,7 +2807,7 @@ header.hp_hero:after {
           transform: translate(-50%, -50%);
 }
 
-/* line 276, src/sass/components/basic/_hero.scss */
+/* line 278, src/sass/components/basic/_hero.scss */
 
 .bg_caption {
   position: absolute;
@@ -2820,7 +2821,7 @@ header.hp_hero:after {
   text-align: right;
 }
 
-/* line 291, src/sass/components/basic/_hero.scss */
+/* line 293, src/sass/components/basic/_hero.scss */
 
 .bg_caption a {
   color: #fff;
@@ -2833,7 +2834,7 @@ header.hp_hero:after {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* line 301, src/sass/components/basic/_hero.scss */
+/* line 303, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header {
   position: relative;
@@ -2843,7 +2844,7 @@ header.hp_hero:after {
           order: 3;
 }
 
-/* line 349, src/sass/components/basic/_hero.scss */
+/* line 351, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header > div {
   max-width: 1350px;
@@ -2851,7 +2852,7 @@ header.hp_hero:after {
   width: 100%;
 }
 
-/* line 354, src/sass/components/basic/_hero.scss */
+/* line 356, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner {
   position: relative;
@@ -2862,7 +2863,7 @@ header.hp_hero:after {
   z-index: 200;
 }
 
-/* line 366, src/sass/components/basic/_hero.scss */
+/* line 368, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner:after {
   width: 0;
@@ -2878,7 +2879,7 @@ header.hp_hero:after {
   border-color: #002E6D transparent transparent transparent;
 }
 
-/* line 386, src/sass/components/basic/_hero.scss */
+/* line 388, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner div:last-child {
   font-family: "Conduit";
@@ -13134,7 +13135,7 @@ form.search .search button {
     width: 95%;
   }
 
-  /* line 349, src/sass/components/basic/_hero.scss */
+  /* line 351, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 95%;
@@ -14417,7 +14418,7 @@ form.search .search button {
     z-index: 10;
   }
 
-  /* line 201, src/sass/components/basic/_hero.scss */
+  /* line 202, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div > div {
     max-width: 545px;
@@ -14425,32 +14426,32 @@ form.search .search button {
     padding: 5rem 4rem 5rem 5rem;
   }
 
-  /* line 213, src/sass/components/basic/_hero.scss */
+  /* line 214, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div h1 {
     font-size: 5rem;
   }
 
-  /* line 222, src/sass/components/basic/_hero.scss */
+  /* line 224, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
     font-size: 3.6rem;
   }
 
-  /* line 246, src/sass/components/basic/_hero.scss */
+  /* line 248, src/sass/components/basic/_hero.scss */
 
   .hp_hero_bg .field--name-image {
     padding-bottom: 42%;
   }
 
-  /* line 301, src/sass/components/basic/_hero.scss */
+  /* line 303, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header {
     padding-left: 5rem;
     margin-bottom: 3rem;
   }
 
-  /* line 316, src/sass/components/basic/_hero.scss */
+  /* line 318, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:before {
     width: 100vw;
@@ -14462,7 +14463,7 @@ form.search .search button {
     background: rgba(0, 46, 109, 0.85);
   }
 
-  /* line 326, src/sass/components/basic/_hero.scss */
+  /* line 328, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:after {
     width: 100vw;
@@ -14475,7 +14476,7 @@ form.search .search button {
   }
 
 @supports (mix-blend-mode: screen) {
-    /* line 326, src/sass/components/basic/_hero.scss */
+    /* line 328, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header:after {
       mix-blend-mode: screen;
@@ -14483,26 +14484,26 @@ form.search .search button {
 }
 
 @supports (mix-blend-mode: screen) {
-    /* line 301, src/sass/components/basic/_hero.scss */
+    /* line 303, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header {
       z-index: 300;
     }
 }
 
-  /* line 349, src/sass/components/basic/_hero.scss */
+  /* line 351, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 90%;
   }
 
-  /* line 354, src/sass/components/basic/_hero.scss */
+  /* line 356, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     padding: 5rem 1.6rem;
   }
 
-  /* line 366, src/sass/components/basic/_hero.scss */
+  /* line 368, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner:after {
     border-width: 30px 30px 0 30px;
@@ -14512,14 +14513,14 @@ form.search .search button {
             transform: translateX(0);
   }
 
-  /* line 354, src/sass/components/basic/_hero.scss */
+  /* line 356, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     font-size: 4.5rem;
     padding: 5rem 2.5rem;
   }
 
-  /* line 397, src/sass/components/basic/_hero.scss */
+  /* line 399, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner div:last-child {
     font-size: 3.6rem;
@@ -15006,7 +15007,7 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 349, src/sass/components/basic/_hero.scss */
+  /* line 351, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 85%;
@@ -15322,13 +15323,13 @@ form.search .search button {
     height: calc(100% - 4.9rem);
   }
 
-  /* line 276, src/sass/components/basic/_hero.scss */
+  /* line 278, src/sass/components/basic/_hero.scss */
 
   .bg_caption {
     display: none;
   }
 
-  /* line 301, src/sass/components/basic/_hero.scss */
+  /* line 303, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header {
     background: #002E6D;

@@ -187,6 +187,7 @@ header.hp_hero {
   width: 100%;
   order: 2;
 
+
   @media #{$mediaFullHeader} {
     position: absolute;
     top: 0;
@@ -211,8 +212,9 @@ header.hp_hero {
     }
 
     h1 {
-      margin: 0 0 (9 / 50) * 1em 0;
+      margin: 0;
       font-size: 34px;
+      line-height: 1.2em;
 
       @media #{$mediaFullHeader} {
         font-size: 50px;
