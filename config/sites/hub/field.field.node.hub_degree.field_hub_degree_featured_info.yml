@@ -1,18 +1,18 @@
-uuid: e36d24f2-511c-4b22-926f-4d5df4dfc7bd
+uuid: e2ca708d-7d53-4a40-a156-7d0b7e10aa52
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hub_degree_details
+    - field.storage.node.field_hub_degree_featured_info
     - node.type.hub_degree
-    - paragraphs.paragraphs_type.copy
+    - paragraphs.paragraphs_type.quote_ref
   module:
     - entity_reference_revisions
-id: node.hub_degree.field_hub_degree_details
-field_name: field_hub_degree_details
+id: node.hub_degree.field_hub_degree_featured_info
+field_name: field_hub_degree_featured_info
 entity_type: node
 bundle: hub_degree
-label: Details
+label: 'Featured Information'
 description: ''
 required: false
 translatable: false
@@ -23,14 +23,14 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      copy: copy
+      quote_ref: quote_ref
     target_bundles_drag_drop:
       accordion:
         weight: 6
         enabled: false
       copy:
-        enabled: true
         weight: 7
+        enabled: false
       featured_content_item:
         weight: 8
         enabled: false
@@ -40,4 +40,7 @@ settings:
       ief_link:
         weight: 10
         enabled: false
+      quote_ref:
+        enabled: true
+        weight: 12
 field_type: entity_reference_revisions

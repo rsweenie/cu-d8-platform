@@ -1,4 +1,4 @@
-uuid: 83b4bc56-2fb8-4082-8e25-e8eb0d715deb
+uuid: 424f50b3-cbbc-49af-a2a1-92f045cd123b
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
   private_content:
-    private: 0
+    private: 1
   scheduler:
     expand_fieldset: when_required
     fields_display_mode: vertical_tab
@@ -23,8 +23,8 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Hub: Academic Program'
-type: hub_program
+name: 'Hub: Admissions Representative'
+type: hub_admissions_rep
 description: ''
 help: ''
 new_revision: true
