@@ -283,6 +283,10 @@ header.hp_hero {
 
   a {
     color: $white;
+
+    @include hover {
+      color: rgba($white,.7);
+    }
   }
 }
 
