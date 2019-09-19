@@ -1,0 +1,35 @@
+uuid: 96b433b2-2420-451b-a36b-753833ad91b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.srcset_1000px_wide
+    - image.style.srcset_1200px_wide
+    - image.style.srcset_1600px_wide
+    - image.style.srcset_200px_wide
+    - image.style.srcset_300px_wide
+    - image.style.srcset_400px_wide
+    - image.style.srcset_500px_wide
+    - image.style.srcset_750px_wide
+  theme:
+    - cu2019_grad
+id: full_width_banner
+label: 'Full Width Banner'
+image_style_mappings:
+  -
+    breakpoint_id: cu_2019_grad.srcset.single
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - srcset_1000px_wide
+        - srcset_1200px_wide
+        - srcset_1600px_wide
+        - srcset_200px_wide
+        - srcset_300px_wide
+        - srcset_400px_wide
+        - srcset_500px_wide
+        - srcset_750px_wide
+breakpoint_group: cu_2019_grad.srcset
+fallback_image_style: srcset_500px_wide

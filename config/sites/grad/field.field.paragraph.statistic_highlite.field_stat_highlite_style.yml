@@ -1,23 +1,23 @@
-uuid: d8deb5cd-644c-48be-865c-afd91d9ff0e6
+uuid: e6e5835a-cf18-4199-a0ce-cea5fbdd4677
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_stat_highlite_background
+    - field.storage.paragraph.field_stat_highlite_style
     - paragraphs.paragraphs_type.statistic_highlite
   module:
     - options
-id: paragraph.statistic_highlite.field_stat_highlite_background
-field_name: field_stat_highlite_background
+id: paragraph.statistic_highlite.field_stat_highlite_style
+field_name: field_stat_highlite_style
 entity_type: paragraph
 bundle: statistic_highlite
-label: Background
+label: Style
 description: ''
-required: false
+required: true
 translatable: false
 default_value:
   -
-    value: 'Medium Blue'
+    value: color1
 default_value_callback: ''
 settings: {  }
 field_type: list_string

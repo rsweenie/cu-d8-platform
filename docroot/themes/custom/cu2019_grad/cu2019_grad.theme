@@ -53,26 +53,27 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
   if ($paragraph->hasField('field_fwp_color') && !$paragraph->field_fwp_color->isEmpty()) {
     $variables['bg_style'] = $paragraph->get('field_fwp_color')->getString();
     switch ($variables['bg_style']) {
-      default:
-        $variables['overlay'] = 'bg-blue';
-        break;
       case 'grey':
         $variables['overlay'] = 'bg-grey';
+        break;
+      default:
+        $variables['overlay'] = 'bg-blue';
         break;
     }
   }
 
-  if ($paragraph->hasField('field_stat_highlite_background') && !$paragraph->field_stat_highlite_background->isEmpty()) {
-    $variables['bg_option'] = $paragraph->get('field_stat_highlite_background')->getString();
-    switch ($variables['bg_option']) {
-      default:
-        $variables['bg'] = 'bg-secondary';
-        break;
+  $variables['bg_class'] = 'bg-secondary';
+  if ($paragraph->hasField('field_stat_highlite_style') && !$paragraph->field_stat_highlite_style->isEmpty()) {
+    $variables['bg_style'] = $paragraph->get('field_stat_highlite_style')->getString();
+    switch ($variables['bg_style']) {
       case 'color2':
-        $variables['bg'] = 'bg-primary';
+        $variables['bg_class'] = 'bg-primary';
         break;
       case 'color3':
-        $variables['bg'] = 'bg-gray2';
+        $variables['bg_class'] = 'bg-gray2';
+        break;
+      default:
+        $variables['bg_class'] = 'bg-secondary';
         break;
     }
   }
