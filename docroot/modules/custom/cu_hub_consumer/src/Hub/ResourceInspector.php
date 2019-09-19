@@ -98,10 +98,12 @@ class ResourceInspector {
    *
    * @param boolean $safe
    *   If TRUE it will capture and log client exceptions rather than emitting an exception.
+   * @param boolean $skip_cache
+   *   If TRUE it will skip the cached version of the resource types.
    * @return void
    */
-  public function getResourceTypes($safe = TRUE) {
-    return $this->hubClient->getEndpoints($safe);
+  public function getResourceTypes($safe=TRUE, $skip_cache=FALSE) {
+    return $this->hubClient->getEndpoints($safe, $skip_cache);
   }
 
   /**
@@ -134,7 +136,7 @@ class ResourceInspector {
       else {
         $this->inspectionInfo[$resource_type_id] = [];
 
-        if ($endpoint = $this->hubClient->getEndpoint($resource_type_id)) {
+        if ($endpoint = $this->hubClient->getEndpoint($resource_type_id, FALSE, $skip_cache)) {
           $response = $this->hubClient->get($endpoint);
           if ($json = Json::decode($response->getBody())) {
             if (!empty($json['data']) && is_array($json['data'])) {
@@ -263,6 +265,11 @@ class ResourceInspector {
     if (is_array($value)) {
       // Is this array associative?
       if ($this->arrayIsAssociative($value)) {
+        // Is this a name field?
+        if (isset($value['given']) && isset($value['family'])) {
+          return 'name';
+        }
+
         // Is this a preprocessed text field?
         if (isset($value['value']) && isset($value['format']) && isset($value['processed'])) {
           return 'hub_text_long';
@@ -273,7 +280,7 @@ class ResourceInspector {
           return 'text_long';
         }
 
-        // Is this a link field?
+        // Is this a uri field?
         if (isset($value['value']) && isset($value['url'])) {
           return 'uri';
         }
@@ -306,8 +313,9 @@ class ResourceInspector {
    */
   protected function getBetterType($type1, $type2) {
     $specificity = [
-      'hub_resource' => 12,
-      'hub_text_long' => 11,
+      'hub_resource' => 13,
+      'hub_text_long' => 12,
+      'name' => 11,
       'text_long' => 10,
       'text' => 9,
       'uri' => 8,

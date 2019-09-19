@@ -79,7 +79,7 @@ class HubResourceTypeDefinitionUpdateForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
 
     try {
-      $resource_types = $this->resourceInspector->getResourceTypes(FALSE);
+      $resource_types = $this->resourceInspector->getResourceTypes(FALSE, TRUE);
     }
     catch (ClientException $e) {
       $this->messenger->addError($e->getMessage());
@@ -200,11 +200,11 @@ class HubResourceTypeDefinitionUpdateForm extends FormBase {
       }
     }
 
-    if ($has_changed) {
-      $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-      $resource_type_manager->clearCachedDefinitions();
-    }
-    else {
+    \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type')->clearCachedDefinitions();
+    \Drupal::service('entity_field.manager')->clearCachedFieldDefinitions();
+    \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+
+    if (!$has_changed) {
       $this->messenger->addStatus($this->t('No definition changes made.'));
     }
   }
