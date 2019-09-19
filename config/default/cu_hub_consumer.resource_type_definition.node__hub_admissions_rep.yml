@@ -40,9 +40,9 @@ fields:
     multiple: false
   node_type:
     type: hub_resource
-    hub_type: node_type--node_type
+    hub_type: node_type
     multiple: false
   field_hub_adm_rep_image:
     type: hub_resource
-    hub_type: media--image
+    hub_type: media
     multiple: false

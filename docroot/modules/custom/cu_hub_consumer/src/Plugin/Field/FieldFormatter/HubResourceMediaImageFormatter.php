@@ -176,7 +176,7 @@ class HubResourceMediaImageFormatter extends FormatterBase implements ContainerF
         $resource_type = preg_replace('/[^a-z0-9_-]/i', '_', $resource_type);
 
         // Sanity check.
-        if (isset($resource_obj->image[0]->uri[0])) {
+        if (isset($resource_obj->image[0]->uri[0]) && method_exists($resource_obj->image[0]->uri[0], 'getUrl')) {
           $url = $resource_obj->image[0]->uri[0]->getUrl();
 
           $image_path = $url->toString();

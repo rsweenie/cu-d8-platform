@@ -7,6 +7,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\field\FieldConfigInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Render\Element;
+use Drupal\Component\Utility\Html;
 use Drupal\Component\Plugin\DerivativeInspectionInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\cu_hub_consumer\Entity\HubReferenceTypeInterface;
@@ -195,6 +196,11 @@ function cu_hub_consumer_theme() {
         'resource_obj' => NULL,
       ],
     ],
+    'hub_resource__media__video' => [
+      'variables' => [
+        'resource_obj' => NULL,
+      ],
+    ],
     'hub_resource_field' => [
       'variables' => [
         'title' => '',
@@ -340,6 +346,50 @@ function template_preprocess_hub_resource__media__image(array &$variables) {
       }
 
       $variables['image'] = $image_build;
+    }
+  }
+}
+
+/**
+ * Prepares variables for hub_resource__media__image templates.
+ *
+ * Default template: hub_resource__media__image.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource__media__video(array &$variables) {
+  template_preprocess_hub_resource($variables);
+
+  $resource_obj = $variables['resource_obj'];
+
+  if (isset($resource_obj->field_media_video_embed_field[0])) {
+    $variables['video_url'] = $resource_obj->field_media_video_embed_field[0]->getString();
+
+    $module_handler = \Drupal::service('module_handler');
+    if ($module_handler->moduleExists('video_embed_field')) {
+      $provider_manager = \Drupal::service('video_embed_field.provider_manager');
+      $provider = $provider_manager->loadProviderFromInput($variables['video_url']);
+
+      if (!$provider) {
+        $variables['video'] = ['#theme' => 'video_embed_field_missing_provider'];
+      }
+      else {
+        $autoplay = FALSE;
+        $variables['video'] = $provider->renderEmbedCode(854, 480, $autoplay);
+        $variables['video']['#cache']['contexts'][] = 'user.permissions';
+
+        $variables['video'] = [
+          '#type' => 'container',
+          '#attributes' => ['class' => [Html::cleanCssIdentifier(sprintf('video-embed-field-provider-%s', $provider->getPluginId()))]],
+          'children' => $variables['video'],
+        ];
+
+        // For responsive videos, wrap each field item in it's own container.
+        //if ($this->getSetting('responsive')) {
+          $variables['video']['#attached']['library'][] = 'video_embed_field/responsive-video';
+          $variables['video']['#attributes']['class'][] = 'video-embed-field-responsive-video';
+        //}
+      }
     }
   }
 }

@@ -240,8 +240,10 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
   public function appendItem($data = NULL, $included = []) {
     $offset = count($this->list);
     $resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
-    $resource_type_id = $resource_type_manager->findPluginByHubTypeId($this->resourceType);
-    if ($resource_type = $resource_type_manager->createInstance($resource_type_id, [])) {
+    //$resource_type_id = $resource_type_manager->findPluginByHubTypeId($this->resourceType);
+    $resource_type_plugin_id = $resource_type_manager->findPluginByHubTypeId($data['type']);
+
+    if ($resource_type = $resource_type_manager->createInstance($resource_type_plugin_id, [])) {
       $resource = Resource::createFromData($resource_type, $data, $included);
       $this->list[$offset] = $resource;
       return $resource;
