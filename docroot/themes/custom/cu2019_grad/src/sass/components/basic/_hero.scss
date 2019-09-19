@@ -312,7 +312,6 @@ header.hp_hero {
   }
 
   @media #{$mediaFullHeader} {
-    padding-left: 50px;
     margin-bottom: $triangle;
 
     &:before {
@@ -361,10 +360,6 @@ header.hp_hero {
   color: $white;
   z-index: 200;
 
-  @media #{$mediaFullHeader} {
-    padding: 50px 16px;
-  }
-
   &:after {
     width: 0;
     height: 0;
@@ -394,7 +389,7 @@ header.hp_hero {
 
   @media #{$mediaFullHeader} {
     font-size: 45px;
-    padding: 50px 25px;
+    padding: 50px 25px 50px 75px;
 
     div:last-child {
       font-size: 36px;
