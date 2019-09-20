@@ -32,9 +32,6 @@ fields:
   field_hub_degree_app_link:
     type: link
     multiple: false
-  field_hub_degree_description:
-    type: hub_text_long
-    multiple: false
   field_hub_degree_intro:
     type: string_long
     multiple: false
@@ -57,9 +54,13 @@ fields:
     type: hub_resource
     hub_type: node_type
     multiple: false
-  field_hub_degree_next_steps:
+  field_hub_degree_availability:
     type: hub_resource
-    hub_type: paragraph
+    hub_type: taxonomy_term
+    multiple: true
+  field_hub_degree_interests:
+    type: hub_resource
+    hub_type: taxonomy_term
     multiple: false
   field_hub_degree_type:
     type: hub_resource
@@ -73,21 +74,21 @@ fields:
     type: hub_resource
     hub_type: node
     multiple: false
-  field_hub_degree_availability:
-    type: hub_resource
-    hub_type: taxonomy_term
-    multiple: true
   field_hub_degree_hero_image:
     type: hub_resource
     hub_type: media
     multiple: false
-  field_hub_degree_interests:
+  field_hub_degree_next_steps:
     type: hub_resource
-    hub_type: taxonomy_term
+    hub_type: paragraph
     multiple: false
   field_hub_degree_related_degrees:
     type: hub_resource
     hub_type: node
+    multiple: true
+  field_hub_degree_description:
+    type: hub_resource
+    hub_type: paragraph
     multiple: true
   field_hub_degree_adm_rep:
     type: hub_resource
