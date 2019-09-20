@@ -82,9 +82,9 @@ fields:
     multiple: false
   node_type:
     type: hub_resource
-    hub_type: node_type--node_type
+    hub_type: node_type
     multiple: false
   field_quote_p_link:
     type: hub_resource
-    hub_type: paragraph--ief_link
+    hub_type: paragraph
     multiple: false

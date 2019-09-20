@@ -52,49 +52,49 @@ fields:
     multiple: false
   node_type:
     type: hub_resource
-    hub_type: node_type--node_type
+    hub_type: node_type
     multiple: false
   field_hub_degree_availability:
     type: hub_resource
-    hub_type: taxonomy_term--program_availability
+    hub_type: taxonomy_term
     multiple: true
   field_hub_degree_interests:
     type: hub_resource
-    hub_type: taxonomy_term--program_interests
+    hub_type: taxonomy_term
     multiple: false
   field_hub_degree_type:
     type: hub_resource
-    hub_type: taxonomy_term--degree_type
+    hub_type: taxonomy_term
     multiple: false
   field_hub_program:
     type: hub_resource
-    hub_type: node--hub_program
+    hub_type: node
     multiple: false
   field_hub_site:
     type: hub_resource
-    hub_type: node--hub_site
+    hub_type: node
     multiple: false
   field_hub_degree_hero_image:
     type: hub_resource
-    hub_type: media--image
+    hub_type: media
     multiple: false
   field_hub_degree_next_steps:
     type: hub_resource
-    hub_type: paragraph--hub_paragraph_next_steps
+    hub_type: paragraph
     multiple: false
   field_hub_degree_related_degrees:
     type: hub_resource
-    hub_type: node--hub_degree
+    hub_type: node
     multiple: true
   field_hub_degree_description:
     type: hub_resource
-    hub_type: paragraph--copy
+    hub_type: paragraph
     multiple: true
   field_hub_degree_details:
     type: hub_resource
-    hub_type: paragraph--copy
+    hub_type: paragraph
     multiple: true
   field_hub_degree_featured_info:
     type: hub_resource
-    hub_type: paragraph--quote_ref
+    hub_type: paragraph
     multiple: true
