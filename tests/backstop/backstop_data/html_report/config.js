@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/prod_test___0_document_0_phone.png",
-        "test": "../bitmaps_test/20190920-112812/prod_test___0_document_0_phone.png",
+        "test": "../bitmaps_test/20190920-134323/prod_test___0_document_0_phone.png",
         "selector": "document",
         "fileName": "prod_test___0_document_0_phone.png",
         "label": "/",
@@ -20,16 +20,16 @@ report({
             "height": 25
           },
           "misMatchPercentage": "44.07",
-          "analysisTime": 146
+          "analysisTime": 180
         },
-        "diffImage": "../bitmaps_test/20190920-112812/failed_diff_prod_test___0_document_0_phone.png"
+        "diffImage": "../bitmaps_test/20190920-134323/failed_diff_prod_test___0_document_0_phone.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../bitmaps_reference/prod_test___0_document_1_tablet.png",
-        "test": "../bitmaps_test/20190920-112812/prod_test___0_document_1_tablet.png",
+        "test": "../bitmaps_test/20190920-134323/prod_test___0_document_1_tablet.png",
         "selector": "document",
         "fileName": "prod_test___0_document_1_tablet.png",
         "label": "/",
@@ -45,16 +45,16 @@ report({
             "height": -35
           },
           "misMatchPercentage": "38.75",
-          "analysisTime": 155
+          "analysisTime": 197
         },
-        "diffImage": "../bitmaps_test/20190920-112812/failed_diff_prod_test___0_document_1_tablet.png"
+        "diffImage": "../bitmaps_test/20190920-134323/failed_diff_prod_test___0_document_1_tablet.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../bitmaps_reference/prod_test___0_document_2_desktop_display.png",
-        "test": "../bitmaps_test/20190920-112812/prod_test___0_document_2_desktop_display.png",
+        "test": "../bitmaps_test/20190920-134323/prod_test___0_document_2_desktop_display.png",
         "selector": "document",
         "fileName": "prod_test___0_document_2_desktop_display.png",
         "label": "/",
@@ -70,9 +70,9 @@ report({
             "height": 16
           },
           "misMatchPercentage": "42.39",
-          "analysisTime": 226
+          "analysisTime": 285
         },
-        "diffImage": "../bitmaps_test/20190920-112812/failed_diff_prod_test___0_document_2_desktop_display.png"
+        "diffImage": "../bitmaps_test/20190920-134323/failed_diff_prod_test___0_document_2_desktop_display.png"
       },
       "status": "fail"
     }
