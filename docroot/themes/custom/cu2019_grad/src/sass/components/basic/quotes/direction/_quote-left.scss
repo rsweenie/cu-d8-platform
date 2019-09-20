@@ -94,11 +94,12 @@
       }
 
       img {
-        width: auto;
-        height: auto;
-        max-width: 160px;
-        max-height: 160px;
-
+        .card & {
+          width: auto;
+          height: auto;
+          max-width: 160px;
+          max-height: 160px;
+        }
       }
     }
 

@@ -1,6 +1,10 @@
 .info {
     order: 0;
 
+    @media #{$mediaMdm} {
+		padding-bottom: 2rem;
+	}
+
     @media #{$mediaMd} {
 		padding: 3rem 4rem 0 3rem;
 
@@ -31,6 +35,7 @@
 		line-height: 1.2;
 		position: relative;
 		padding-bottom: 1.4rem;
+		transition: color .3s ease-out;
 
 		@media #{$mediaLg} {
 			font-size: 6.2rem;
@@ -72,11 +77,45 @@
     order: 1;
 	
 	.fact.stat_hl {
-		margin: 0;
+		@media #{$mediaMd} {
+			margin: 0;
+		}
 	}
 
     @media #{$mediaLg} {
 		flex-basis: 58%;
 		width: 58%;
+	}
+
+	.img_vid {
+		overflow: hidden;
+		@media #{$mediaMdm} {
+			margin: 0 -2.5rem 2.5rem;
+		}
+
+		.img img {
+			transition: transform .3s ease-out;
+		}
+	}
+
+	blockquote {
+		.quote {
+			flex-basis: 75%;
+		}
+
+		.field--name-field-quote-image {
+			flex-basis: 25%;
+
+			img {
+				width: 100%;
+				display: block;
+			}
+		}
+
+		&.q-left .attr {
+			.field--name-field-quote-title, small {
+				font-weight: 400;
+			}
+		}
 	}
 }
