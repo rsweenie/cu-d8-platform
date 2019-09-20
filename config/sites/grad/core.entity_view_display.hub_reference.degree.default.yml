@@ -166,7 +166,24 @@ third_party_settings:
       -
         layout_id: program_detail_feat_tiles
         layout_settings: {  }
-        components: {  }
+        components:
+          dac76643-422c-47f8-879b-d0e2efe1c176:
+            uuid: dac76643-422c-47f8-879b-d0e2efe1c176
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:degree:hub_field_hub_degree_featured_info'
+              label: 'Hub: field_hub_degree_featured_info'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: program_detail_2col
@@ -390,6 +407,9 @@ content:
 hidden:
   hub_drupal_internal__nid: true
   hub_drupal_internal__vid: true
+  hub_field_hub_degree_app_deadlines: true
+  hub_field_hub_degree_app_link: true
+  hub_field_hub_degree_featured_info: true
   hub_field_hub_degree_next_steps: true
   hub_langcode: true
   hub_revision_timestamp: true
