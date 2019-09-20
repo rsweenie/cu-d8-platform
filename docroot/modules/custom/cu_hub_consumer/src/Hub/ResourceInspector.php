@@ -216,23 +216,23 @@ class ResourceInspector {
     foreach ($relationships as $relationship_name => $relationship_info) {
       if (!empty($relationship_info['data']) && is_array($relationship_info['data'])) {
         if ($this->isMultiple($relationship_info['data'])) {
-          $inspection_info[$relationship_name] = [
-            'type' => 'hub_resource',
-            'hub_type' => $relationship_info['data'][0]['type'],
-            'multiple' => TRUE,
-          ];
-
-          $this->inspect($relationship_info['data'][0]['type'], $skip_cache);
+          $resource_data = $relationship_info['data'][0];
+          $multiple = TRUE;
         }
         else {
-          $inspection_info[$relationship_name] = [
-            'type' => 'hub_resource',
-            'hub_type' => $relationship_info['data']['type'],
-            'multiple' => FALSE,
-          ];
-
-          $this->inspect($relationship_info['data']['type'], $skip_cache);
+          $resource_data = $relationship_info['data'];
+          $multiple = FALSE;
         }
+
+        $resource_type = $resource_data['type'];
+        list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
+        $inspection_info[$relationship_name] = [
+          'type' => 'hub_resource',
+          'hub_type' => $resource_main_type,
+          'multiple' => $multiple,
+        ];
+
+        $this->inspect($resource_type, $skip_cache);
       }
     }
   }
