@@ -1,0 +1,33 @@
+<?php
+
+use \Drupal\Component\Utility\Html;
+use \Drupal\Core\Url;
+
+/**
+ * Implements hook_theme().
+ */
+function cu_slate_forms_theme() {
+  return array(
+    'slate_form' => array(
+      'variables' => array('form_domain' => NULL, 'form_id' => NULL, 'form_redirect' => NULL),
+      'template' => 'slate-form',
+    ),
+  );
+}
+
+function template_preprocess_slate_form(&$variables) {
+  $variables['div_id'] = Html::getId('form_' . $variables['form_id']);
+
+  $uri = rtrim($variables['form_domain'], '/') . '/register/';
+  $query = [
+    'id' => $variables['form_id'],
+    'output' => 'embed',
+    'div' => $variables['div_id'],
+  ];
+
+  if (!empty($variables['form_redirect'])) {
+    $query['redirect'] = $variables['form_redirect'];
+  }
+
+  $variables['remote_url'] = Url::fromUri($uri, ['query' => $query]);
+}

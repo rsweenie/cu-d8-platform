@@ -150,7 +150,7 @@ class Client implements ClientInterface {
   /**
    * Fetch endpoint list from JSON API.
    *
-   * @return void
+   * @return array
    */
   protected function fetchEndpoints() {
     $response = $this->get('');
@@ -180,12 +180,12 @@ class Client implements ClientInterface {
   /**
    * {@inheritdoc}
    */
-  public function getEndpoints($safe = TRUE) {
+  public function getEndpoints($safe=TRUE, $skip_cache=FALSE) {
     if (!isset($this->endpoints)) {
       $this->endpoints = [];
 
       $cid = 'cu_hub_consumer:hub_endpoints';
-      if ($cache = \Drupal::cache()->get($cid)) {
+      if (!$skip_cache && $cache = \Drupal::cache()->get($cid)) {
         $this->endpoints = $cache->data;
       }
       else {
@@ -205,7 +205,10 @@ class Client implements ClientInterface {
     return $this->endpoints;
   }
 
-  public function getEndpoint($resource_type_id) {
+  /**
+   * {@inheritdoc}
+   */
+  public function getEndpoint($resource_type_id, $safe=TRUE, $skip_cache=FALSE) {
     if ($endpoints = $this->getEndpoints()) {
       if (isset($endpoints[$resource_type_id])) {
         return $endpoints[$resource_type_id];
@@ -213,6 +216,9 @@ class Client implements ClientInterface {
     }
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function stripBaseUrl($url) {
     if (strpos($url, $this->getBaseUrl()) === 0) {
       $url = substr($url, strlen($this->getBaseUrl()));

@@ -27,6 +27,7 @@ class Node extends ResourceTypeBase {
   /**
    * {@inheritdoc}
    */
+  /*
   public function view(ResourceInterface $resource) {
     $element = [];
 
@@ -38,5 +39,6 @@ class Node extends ResourceTypeBase {
 
     return $element;
   }
+  */
 
 }
