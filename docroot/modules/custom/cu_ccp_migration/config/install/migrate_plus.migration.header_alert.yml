@@ -38,6 +38,7 @@ process:
   field_fwb_body: field_header_alert_markup
   field_fwb_cta: field_header_alert_activate
   field_fwb_title: field_emergency_headline
+  # this is how you would use a custom plugin process on a field
   field_fwb_title2:
     plugin: add_ham
     source: field_header_alertemergency_type
