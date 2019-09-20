@@ -10,8 +10,14 @@
   backstop reference --configPath=backstop.js --paths=/,/contact
        backstop test --configPath=backstop.js --paths=/,/contact
 
-  backstop reference --configPath=backstop.js --pathfile=paths --refhost=https://alliance.creighton.edu
-       backstop test --configPath=backstop.js --pathfile=paths --testhost=http://local.creighton.com/
+  backstop reference --configPath=backstop.js --pathfile=paths/alliance --refhost=https://alliance.creighton.edu
+       backstop test --configPath=backstop.js --pathfile=paths/alliance --testhost=http://local.creighton.com/
+
+  backstop reference --configPath=backstop.js --pathfile=paths/hrnew --refhost=http://hrnew.creighton.acsitefactory.com/
+       backstop test --configPath=backstop.js --pathfile=paths/hrnew --testhost=http://local.creighton.com/
+
+  backstop reference --configPath=backstop.js --pathfile=paths/demo --refhost==http://demo.creighton.acsitefactory.com/
+       backstop test --configPath=backstop.js --pathfile=paths/demo --testhost=http://local.creighton.com/
 
  */
 
@@ -72,29 +78,19 @@ module.exports =
   "id": "prod_test",
   "viewports": [
     {
-      "name": "small",
-      "width": 320,
+      "label": "phone",
+      "width": 480,
       "height": 480
     },
     {
-      "name": "mediumish",
-      "width": 568,
-      "height": 760
-    },
-    {
-      "name": "medium",
+      "label": "tablet",
       "width": 768,
-      "height": 1024
-    },
-    {
-      "name": "large",
-      "width": 1024,
       "height": 768
     },
     {
-      "name": "xlarge",
-      "width": 1440,
-      "height": 900
+      "label": "desktop display",
+      "width": 1920,
+      "height": 1080
     }
   ],
   "scenarios":
