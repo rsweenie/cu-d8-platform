@@ -26,11 +26,11 @@ fields:
   metatag_normalized:
     type: metatags
     multiple: false
-  field_hub_degree_description:
+  field_hub_degree_app_deadlines:
     type: hub_text_long
     multiple: false
-  field_hub_degree_details:
-    type: hub_text_long
+  field_hub_degree_app_link:
+    type: link
     multiple: false
   field_hub_degree_intro:
     type: string_long
@@ -54,9 +54,13 @@ fields:
     type: hub_resource
     hub_type: node_type--node_type
     multiple: false
-  field_hub_degree_next_steps:
+  field_hub_degree_availability:
     type: hub_resource
-    hub_type: paragraph--hub_paragraph_next_steps
+    hub_type: taxonomy_term--program_availability
+    multiple: true
+  field_hub_degree_interests:
+    type: hub_resource
+    hub_type: taxonomy_term--program_interests
     multiple: false
   field_hub_degree_type:
     type: hub_resource
@@ -70,19 +74,27 @@ fields:
     type: hub_resource
     hub_type: node--hub_site
     multiple: false
-  field_hub_degree_availability:
-    type: hub_resource
-    hub_type: taxonomy_term--program_availability
-    multiple: true
   field_hub_degree_hero_image:
     type: hub_resource
     hub_type: media--image
     multiple: false
-  field_hub_degree_interests:
+  field_hub_degree_next_steps:
     type: hub_resource
-    hub_type: taxonomy_term--program_interests
+    hub_type: paragraph--hub_paragraph_next_steps
     multiple: false
   field_hub_degree_related_degrees:
     type: hub_resource
     hub_type: node--hub_degree
+    multiple: true
+  field_hub_degree_description:
+    type: hub_resource
+    hub_type: paragraph--copy
+    multiple: true
+  field_hub_degree_details:
+    type: hub_resource
+    hub_type: paragraph--copy
+    multiple: true
+  field_hub_degree_featured_info:
+    type: hub_resource
+    hub_type: paragraph--quote_ref
     multiple: true
