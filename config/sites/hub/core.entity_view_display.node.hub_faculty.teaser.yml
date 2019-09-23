@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.hub_faculty.field_hub_faculty_degree
+    - field.field.node.hub_faculty.field_hub_faculty_components
     - field.field.node.hub_faculty.field_hub_faculty_department
     - field.field.node.hub_faculty.field_hub_faculty_email
     - field.field.node.hub_faculty.field_hub_faculty_image
@@ -14,6 +14,8 @@ dependencies:
     - field.field.node.hub_faculty.field_hub_faculty_provost_url
     - field.field.node.hub_faculty.field_hub_faculty_rel_degrees
     - field.field.node.hub_faculty.field_hub_faculty_title
+    - field.field.node.hub_faculty.field_hub_site
+    - field.field.node.hub_faculty.field_meta_tags
     - node.type.hub_faculty
   module:
     - private_content
@@ -36,7 +38,7 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
-  field_hub_faculty_degree: true
+  field_hub_faculty_components: true
   field_hub_faculty_department: true
   field_hub_faculty_email: true
   field_hub_faculty_image: true
@@ -46,4 +48,6 @@ hidden:
   field_hub_faculty_provost_url: true
   field_hub_faculty_rel_degrees: true
   field_hub_faculty_title: true
+  field_hub_site: true
+  field_meta_tags: true
   search_api_excerpt: true
