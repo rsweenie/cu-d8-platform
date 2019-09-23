@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_hub_degree_description
     - node.type.hub_degree
     - paragraphs.paragraphs_type.copy
+    - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
 id: node.hub_degree.field_hub_degree_description
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       copy: copy
+      video: video
     target_bundles_drag_drop:
       accordion:
         weight: 7
@@ -37,10 +39,16 @@ settings:
       hub_paragraph_next_steps:
         weight: 10
         enabled: false
+      faculty_alumni_spotlight:
+        weight: 11
+        enabled: false
       ief_link:
         weight: 11
         enabled: false
       quote_ref:
         weight: 12
         enabled: false
+      video:
+        enabled: true
+        weight: 16
 field_type: entity_reference_revisions
