@@ -46,15 +46,18 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+{% if parent == 'field_landing_page_content' %}
+{% set wrapper = 'section' %}
+{% endif %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {# { content } #}
       {% include '@cu2019_grad/components/image-video.html.twig' with {
-        'wrapper': 'section',
-        'media_type': content.field_image_video_type['#items'].getString(),
-        'image': content.field_image_video_file,
-        'video_id': content.field_image_video_vid_id.0,
+        'wrapper': wrapper,
+        'media_type': media_type,
+        'image': content.field_image_video_media,
+        'video': video,
         'caption': content.field_image_video_caption.0
       } %}
     {% endblock %}

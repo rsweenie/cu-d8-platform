@@ -1,0 +1,16 @@
+.field--name-field-landing-page-content {
+	@media #{$mediaMd} {
+		background-image: url(../../img/feature_slash_bg.png);
+		background-repeat: repeat-y;
+		background-size: 100%;
+		background-position: 0 790px;
+	}
+
+	@media #{$mediaXl} {
+		background-position: 0 1000px;
+	}
+
+	.section {
+		background: transparent;
+	}
+}

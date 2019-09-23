@@ -51,7 +51,7 @@ filters:
     status: true
     weight: -42
     settings:
-      allowed_html: '<a href hreflang name target> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption class* width* height* alt* title* typeof*> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <br> <h1> <pre> <drupal-entity data-* title alt> <iframe src* width* height* alt* frameborder* allowfullscreen* class*> <article class*><div class*> <figure role* class*> <figcaption>'
+      allowed_html: '<a href hreflang name target class> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption class* width* height* alt* title* typeof*> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <br> <pre> <drupal-entity data-* title alt> <iframe src* width* height* alt* frameborder* allowfullscreen* class*> <article class*><div class*> <figure role* class*> <figcaption>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
