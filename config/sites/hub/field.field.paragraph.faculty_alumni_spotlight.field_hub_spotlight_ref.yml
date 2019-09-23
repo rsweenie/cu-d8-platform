@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: faculty_alumni_spotlight
 label: Spotlight
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
