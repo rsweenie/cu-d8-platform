@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.node.field_hub_degree_featured_info
     - node.type.hub_degree
+    - paragraphs.paragraphs_type.faculty_alumni_spotlight
+    - paragraphs.paragraphs_type.featured_content_item
     - paragraphs.paragraphs_type.quote_ref
   module:
     - entity_reference_revisions
@@ -23,6 +25,8 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      featured_content_item: featured_content_item
+      faculty_alumni_spotlight: faculty_alumni_spotlight
       quote_ref: quote_ref
     target_bundles_drag_drop:
       accordion:
@@ -32,15 +36,21 @@ settings:
         weight: 7
         enabled: false
       featured_content_item:
+        enabled: true
         weight: 8
-        enabled: false
       hub_paragraph_next_steps:
         weight: 9
         enabled: false
       ief_link:
         weight: 10
         enabled: false
+      faculty_alumni_spotlight:
+        enabled: true
+        weight: 11
       quote_ref:
         enabled: true
         weight: 12
+      video:
+        weight: 14
+        enabled: false
 field_type: entity_reference_revisions
