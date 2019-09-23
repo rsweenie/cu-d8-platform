@@ -1,9 +1,9 @@
-uuid: 79acfc42-a0ca-4bb6-b4de-5a939239e53a
+uuid: 8ee59d1c-104e-470e-bbd7-cca751da22ae
 langcode: en
 status: true
 dependencies: {  }
-id: paragraph__video
-type_id: paragraph--video
+id: paragraph__featured_content_item
+type_id: paragraph--featured_content_item
 fields:
   drupal_internal__id:
     type: integer
@@ -36,16 +36,24 @@ fields:
     type: string_long
     multiple: false
   revision_translation_affected:
-    type: string_long
+    type: hub_unknown
     multiple: false
-  field_video_caption:
+  field_body:
     type: hub_text_long
     multiple: false
   paragraph_type:
     type: hub_resource
     hub_type: paragraphs_type
     multiple: false
-  field_video_media:
+  field_fc_p_link:
+    type: hub_resource
+    hub_type: paragraph
+    multiple: false
+  field_fc_supporting_p_links:
+    type: hub_resource
+    hub_type: paragraph
+    multiple: true
+  field_featured_content_image:
     type: hub_resource
     hub_type: media
     multiple: false

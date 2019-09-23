@@ -1,0 +1,6 @@
+name: CU Slate Forms
+description: "Provide slate form integration."
+type: module
+package: Creighton
+hidden: false
+core: 8.x

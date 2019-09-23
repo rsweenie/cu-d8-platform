@@ -46,12 +46,15 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+{% if parent == 'field_landing_page_content' %}
+{% set wrapper = 'section' %}
+{% endif %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {# { content } #}
       {% include '@cu2019_grad/components/image-video.html.twig' with {
-        'wrapper': 'section',
+        'wrapper': wrapper,
         'media_type': media_type,
         'image': content.field_image_video_media,
         'video': video,

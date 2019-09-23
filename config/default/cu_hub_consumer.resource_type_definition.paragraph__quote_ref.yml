@@ -1,9 +1,9 @@
-uuid: 79acfc42-a0ca-4bb6-b4de-5a939239e53a
+uuid: ff0323c9-8180-4ff5-a677-f8628df720de
 langcode: en
 status: true
 dependencies: {  }
-id: paragraph__video
-type_id: paragraph--video
+id: paragraph__quote_ref
+type_id: paragraph--quote_ref
 fields:
   drupal_internal__id:
     type: integer
@@ -36,16 +36,13 @@ fields:
     type: string_long
     multiple: false
   revision_translation_affected:
-    type: string_long
-    multiple: false
-  field_video_caption:
-    type: hub_text_long
+    type: hub_unknown
     multiple: false
   paragraph_type:
     type: hub_resource
     hub_type: paragraphs_type
     multiple: false
-  field_video_media:
+  field_quote_ref_item:
     type: hub_resource
-    hub_type: media
+    hub_type: node
     multiple: false

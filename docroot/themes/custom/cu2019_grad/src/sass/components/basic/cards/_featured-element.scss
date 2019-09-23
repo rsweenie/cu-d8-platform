@@ -1,0 +1,121 @@
+.info {
+    order: 0;
+
+    @media #{$mediaMdm} {
+		padding-bottom: 2rem;
+	}
+
+    @media #{$mediaMd} {
+		padding: 3rem 4rem 0 3rem;
+
+		.style-left & {
+			padding: 3rem 3rem 0 4rem;			
+		}
+    }
+
+	@media #{$mediaLg} {
+		flex-basis: 42%;
+		width: 42%;
+	}
+
+	@media #{$mediaXl} {
+		padding: 4rem 7rem 0 6rem;
+
+		.style-left & {
+			padding: 4rem 6rem 0 7rem;
+		}
+	}
+
+    h2 {
+		font-size: 3.6rem;
+		font-family: $copyFF;
+		color: $primary;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1.2;
+		position: relative;
+		padding-bottom: 1.4rem;
+		transition: color .3s ease-out;
+
+		@media #{$mediaLg} {
+			font-size: 6.2rem;
+			padding-bottom: 2.6rem;
+		}
+
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background-color: $tertiary;
+			width: 30px;
+			height: 5px;
+			content: '';
+
+			@media #{$mediaLg} {
+				width: 55px;
+				height: 9px;
+			}
+		}
+    }
+
+    p {
+		font-size: 1.6rem;
+		font-family: $copyFF;
+		color: $gray2;
+		line-height: 1.5;
+		margin-bottom: 1.4rem;
+
+		@media #{$mediaLg} {
+			font-size: 1.9rem;
+			line-height: 1.2;
+			margin-bottom: 3.6rem;
+		}
+    }
+}
+
+.element {
+    order: 1;
+	
+	.fact.stat_hl {
+		@media #{$mediaMd} {
+			margin: 0;
+		}
+	}
+
+    @media #{$mediaLg} {
+		flex-basis: 58%;
+		width: 58%;
+	}
+
+	.img_vid {
+		overflow: hidden;
+		@media #{$mediaMdm} {
+			margin: 0 -2.5rem 2.5rem;
+		}
+
+		.img img {
+			transition: transform .3s ease-out;
+		}
+	}
+
+	blockquote {
+		.quote {
+			flex-basis: 75%;
+		}
+
+		.field--name-field-quote-image {
+			flex-basis: 25%;
+
+			img {
+				width: 100%;
+				display: block;
+			}
+		}
+
+		&.q-left .attr {
+			.field--name-field-quote-title, small {
+				font-weight: 400;
+			}
+		}
+	}
+}

@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_video
     - paragraphs.paragraphs_type.manual_featured_set
     - paragraphs.paragraphs_type.next_steps_collection
+    - paragraphs.paragraphs_type.slate_form
   module:
     - entity_reference_revisions
 _core:
@@ -40,6 +41,7 @@ settings:
       manual_featured_set: manual_featured_set
       next_steps_collection: next_steps_collection
       hp_hero: hp_hero
+      slate_form: slate_form
     target_bundles_drag_drop:
       accordion:
         weight: -39
@@ -98,4 +100,7 @@ settings:
       statistic_highlite:
         weight: -21
         enabled: false
+      slate_form:
+        enabled: true
+        weight: 39
 field_type: entity_reference_revisions
