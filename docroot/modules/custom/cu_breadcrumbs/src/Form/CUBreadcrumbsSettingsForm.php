@@ -9,7 +9,11 @@ use Drupal\node\Entity\NodeType;
  * Configure example settings for this site.
  */
 class CUBreadcrumbsSettingsForm extends ConfigFormBase {
-    /** @var string Config settings */
+
+  /** @var string Global config settings */
+  const GLOBAL_SETTINGS = 'cu_breadcrumbs.global_settings';
+
+  /** @var string Config settings */
   const SETTINGS = 'cu_breadcrumbs.settings';
 
   /** 
@@ -24,6 +28,7 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
+      static::GLOBAL_SETTINGS,
       static::SETTINGS,
     ];
   }
@@ -32,23 +37,47 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $global_config = $this->config(static::GLOBAL_SETTINGS);
     $config = $this->config(static::SETTINGS);
-    //add a title to the form
-    $form[$this->getFormId()]['title'] = [
-      '#type' => 'item',
-      '#title' => t('Enable/Disable CU Breadcrumbs'),
+
+    $breadcrumb_builder = $global_config->get('builder');
+    $breadcrumb_builder = !empty($breadcrumb_builder) ? $breadcrumb_builder : 'menu';
+
+    $breadcrumb_builder_options = [
+      'menu' => $this->t('Menu-based'),
+    ];
+    if (\Drupal::service('module_handler')->moduleExists('easy_breadcrumb')) {
+      $breadcrumb_builder_options['path'] = $this->t('Path-based (extends easy_breadcrumb)');
+    }
+
+    $form['builder'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Breadcrumb type'),
+      '#options' => $breadcrumb_builder_options,
+      '#default_value'=> $breadcrumb_builder,
     ];
 
-    //build the form inputs for all content types
+    // add a title to the form
+    $form['node_types'] = [
+      '#type' => 'fieldset',
+      '#title' => t('Enable/Disable CU Breadcrumbs by node type'),
+      '#tree' => TRUE,
+    ];
+
+    // build the form inputs for all content types
     foreach (NodeType::loadMultiple() as $machine_name => $content_type) {
+      $content_type_config = $config->get($machine_name);
+
       // Add a checkbox to content type form w/default_value set to db value
-      $form[$this->getFormId()][$machine_name] = [
+      $form['node_types'][$machine_name] = [
         '#type' => 'checkbox',
         '#title' => t($content_type->get('name')),
-        //get breadcrumb config apply by content type uuid
-        '#default_value'=> $config->get($machine_name)['apply'],
+        '#return_value' => 1,
+        // get breadcrumb config apply by content type uuid
+        '#default_value'=> !empty($content_type_config['apply']),
       ];
     }
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -57,34 +86,24 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
    * 
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    //get the breadcrumbs editable configs
+    // get the breadcrumbs editable configs
+    $global_config = $this->configFactory->getEditable(static::GLOBAL_SETTINGS);
     $config = $this->configFactory->getEditable(static::SETTINGS);
 
-    //iterate over machine names
-    foreach ($this->getCheckboxChanged($form,$form_state) as $machine_name){
-      //set new value in config obj
-      $config->set($machine_name,['uuid'=>NodeType::load($machine_name)->get('uuid'),'apply'=>$form_state->getValue($machine_name)]);
+    $global_config->set('builder', $form_state->getValue('builder'));
+
+    // iterate over machine names
+    foreach ($form_state->getValue('node_types') as $machine_name => $values) {
+      $config->set($machine_name, [
+        'uuid' => NodeType::load($machine_name)->get('uuid'),
+        'apply' => $form_state->getValue(['node_types', $machine_name]),
+      ]);
     }
-    //save them
+
+    // save them
+    $global_config->save();
     $config->save();
     parent::submitForm($form, $form_state);
-  }
-
-  /**
-   * return machine names who's checkbox changed
-   * used to stop unnecessary db calls for settings that didn't change
-   */
-  private function getCheckboxChanged(array &$form, FormStateInterface $form_state){
-    $changed = [];
-    foreach($form[$this->getFormId()] as $machine_name => $attributes){
-      //is a checkbox
-      if(isset($attributes['#type']) && $attributes['#type'] === 'checkbox'){
-        //check if changed
-        if($attributes['#default_value'] !== $form_state->getValue($machine_name))
-          array_push($changed,$machine_name);
-      }
-    }
-    return $changed;
   }
 
 }
