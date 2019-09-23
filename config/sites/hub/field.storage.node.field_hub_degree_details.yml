@@ -1,22 +1,24 @@
-uuid: 5e84592a-2453-496d-a8bd-155d2c2fa5a4
+uuid: aef065a7-04f7-4915-87ae-80950193fe41
 langcode: en
 status: true
 dependencies:
   module:
+    - entity_reference_revisions
     - field_permissions
     - node
-    - text
+    - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
 id: node.field_hub_degree_details
 field_name: field_hub_degree_details
 entity_type: node
-type: text_long
-settings: {  }
-module: text
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
