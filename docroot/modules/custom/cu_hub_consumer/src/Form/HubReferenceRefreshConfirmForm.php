@@ -7,6 +7,7 @@ use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\cu_hub_consumer\Entity\HubReference;
+use Drupal\cu_hub_consumer\Hub\ResourceException;
 
 /**
  * Provides a form for hub reference refresh.
@@ -68,7 +69,7 @@ class HubReferenceRefreshConfirmForm extends ConfirmFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($this->hubReference->bundle());
+    $hub_ref_type = $this->entityTypeManager->getStorage('hub_reference_type')->load($this->hubReference->bundle());
     $resource_type = $hub_ref_type->getResourceType();
 
     try {
@@ -76,7 +77,8 @@ class HubReferenceRefreshConfirmForm extends ConfirmFormBase {
     }
     catch (ResourceException $e) {
       watchdog_exception('cu_hub_consumer', $e);
-      drupal_set_message($this->t('Could not properly fetch the hub resource data.'), 'error');
+      drupal_set_message($e->getMessage(), 'error');
+      return;
     }
 
     if ($resource && $raw_json_data = $resource->getRawJsonData()) {

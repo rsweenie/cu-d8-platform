@@ -7,6 +7,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\field\FieldConfigInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Render\Element;
+use Drupal\Component\Utility\Html;
 use Drupal\Component\Plugin\DerivativeInspectionInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\cu_hub_consumer\Entity\HubReferenceTypeInterface;
@@ -85,10 +86,9 @@ function cu_hub_consumer_entity_bundle_field_info(EntityTypeInterface $entity_ty
         }
       }
     }
-  }
 
-  // Clear the list of blocks when a new bundle is created.
-  //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+    //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+  }
 
   return $fields;
 }
@@ -96,6 +96,7 @@ function cu_hub_consumer_entity_bundle_field_info(EntityTypeInterface $entity_ty
 /**
  * Implements hook_block_alter().
  */
+/*
 function cu_hub_consumer_block_alter(array &$blocks) {
   // If Layout Builder is installed it assumes that bundle fields will be known ahead of time and will
   // choke if it can't derive the field blocks. We need to fill in the blanks.
@@ -154,8 +155,11 @@ function cu_hub_consumer_block_alter(array &$blocks) {
         }
       }
     }
+
+    //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
   }
 }
+*/
 
 /**
  * Implements hook_entity_operation().
@@ -183,6 +187,16 @@ function cu_hub_consumer_theme() {
       'render element' => 'elements',
     ],
     'hub_resource' => [
+      'variables' => [
+        'resource_obj' => NULL,
+      ],
+    ],
+    'hub_resource__media__image' => [
+      'variables' => [
+        'resource_obj' => NULL,
+      ],
+    ],
+    'hub_resource__media__video' => [
       'variables' => [
         'resource_obj' => NULL,
       ],
@@ -281,6 +295,106 @@ function template_preprocess_hub_resource(array &$variables) {
 }
 
 /**
+ * Prepares variables for hub_resource__media__image templates.
+ *
+ * Default template: hub_resource__media__image.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource__media__image(array &$variables) {
+  template_preprocess_hub_resource($variables);
+
+  $resource_obj = $variables['resource_obj'];
+
+  // Sanity check.
+  if (isset($resource_obj->image[0]->uri[0])) {
+    $url = $resource_obj->image[0]->uri[0]->getUrl();
+
+    $image_path = $url->toString();
+    $image_alt = isset($resource_obj->image[0]->meta['alt']) ? $resource_obj->image[0]->meta['alt'] : '';
+    $image_title = isset($resource_obj->image[0]->meta['title']) ? $resource_obj->image[0]->meta['title'] : '';
+
+    $module_handler = \Drupal::service('module_handler');
+    if ($module_handler->moduleExists('imagecache_external')) {
+      $image_path = imagecache_external_generate_path($url->toString());
+    }
+
+    // Skip rendering this item if there is no image_path.
+    if ($image_path) {
+      $image_factory = \Drupal::service('image.factory');
+      $image = $image_factory->get($image_path);
+      $style_name = isset($variables['style_name']) ? $variables['style_name'] : NULL;
+
+      $image_build_base = [
+        '#width' => $image->getWidth(),
+        '#height' => $image->getHeight(),
+        '#uri' => $image_path,
+        '#alt' => $image_alt,
+        '#title' => $image_title,
+      ];
+
+      if (empty($style_name)) {
+        $image_build = [
+          '#theme' => 'image',
+        ] + $image_build_base;
+      }
+      else {
+        $image_build = [
+          '#theme' => 'image_style',
+          '#style_name' => $style_name,
+        ] + $image_build_base;
+      }
+
+      $variables['image'] = $image_build;
+    }
+  }
+}
+
+/**
+ * Prepares variables for hub_resource__media__image templates.
+ *
+ * Default template: hub_resource__media__image.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource__media__video(array &$variables) {
+  template_preprocess_hub_resource($variables);
+
+  $resource_obj = $variables['resource_obj'];
+
+  if (isset($resource_obj->field_media_video_embed_field[0])) {
+    $variables['video_url'] = $resource_obj->field_media_video_embed_field[0]->getString();
+
+    $module_handler = \Drupal::service('module_handler');
+    if ($module_handler->moduleExists('video_embed_field')) {
+      $provider_manager = \Drupal::service('video_embed_field.provider_manager');
+      $provider = $provider_manager->loadProviderFromInput($variables['video_url']);
+
+      if (!$provider) {
+        $variables['video'] = ['#theme' => 'video_embed_field_missing_provider'];
+      }
+      else {
+        $autoplay = FALSE;
+        $variables['video'] = $provider->renderEmbedCode(854, 480, $autoplay);
+        $variables['video']['#cache']['contexts'][] = 'user.permissions';
+
+        $variables['video'] = [
+          '#type' => 'container',
+          '#attributes' => ['class' => [Html::cleanCssIdentifier(sprintf('video-embed-field-provider-%s', $provider->getPluginId()))]],
+          'children' => $variables['video'],
+        ];
+
+        // For responsive videos, wrap each field item in it's own container.
+        //if ($this->getSetting('responsive')) {
+          $variables['video']['#attached']['library'][] = 'video_embed_field/responsive-video';
+          $variables['video']['#attributes']['class'][] = 'video-embed-field-responsive-video';
+        //}
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK().
  */
 function cu_hub_consumer_theme_suggestions_hub_resource(array $variables) {
@@ -289,35 +403,9 @@ function cu_hub_consumer_theme_suggestions_hub_resource(array $variables) {
   $resource_obj = $variables['resource_obj'];
   $resource_type = $resource_obj->getResourceTypeId();
 
-  $sanitized_resource_type = preg_replace('/[^a-z0-9-]/i', '-', $resource_type);//strtr($resource_type, '.', '_');
+  $sanitized_resource_type = preg_replace('/[^a-z0-9-]/i', '-', $resource_type);
 
   //$suggestions[] = 'hub_reference__' . $sanitized_resource_type;
-
-  /*
-  // @var \Drupal\cu_hub_consumer\Entity\HubReferenceInterface $hub_reference
-  $hub_reference = $variables['elements']['#hub_reference'];
-  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
-
-  $suggestions[] = 'hub_reference__' . $sanitized_view_mode;
-  $suggestions[] = 'hub_reference__' . $hub_reference->bundle();
-  $suggestions[] = 'hub_reference__' . $hub_reference->bundle() . '__' . $sanitized_view_mode;
-
-  // Add suggestions based on the source plugin ID.
-  $source = $hub_reference->getSource();
-  if ($source instanceof DerivativeInspectionInterface) {
-    $source_id = $source->getBaseId();
-    $suggestions[] = 'hub_reference__source_' . $source_id;
-
-    if ($derivative_id = $source->getDerivativeId()) {
-      $source_id .= '_' . $derivative_id;
-      $suggestions[] = 'hub_reference__source_' . $source_id;
-    }
-  }
-  else {
-    $source_id = $source->getPluginId();
-    $suggestions[] = 'hub_reference__source_' . $source_id;
-  }
-  */
 
   return $suggestions;
 }
@@ -335,13 +423,6 @@ function template_preprocess_hub_resource_field(array &$variables) {
   $field_list = $variables['field_list'];
   $field_items = $variables['field_items'];
 
-  /*
-  if ($first_item = reset($items)) {
-    $variables['field_name'] = $first_item->getFieldName();
-    $variables['resource_obj'] = $first_item->getParentResource();
-  }
-  */
-
   $field_type = $field_list->getFieldType();
 
   // Replace any characters that aren't allowed.
@@ -351,6 +432,7 @@ function template_preprocess_hub_resource_field(array &$variables) {
   $variables['field_name'] = $field_list->getFieldName();
   $variables['field_type'] = $field_type;
   $variables['resource_obj'] = $field_list->getParentResource();
+  $variables['resource_type'] = $variables['resource_obj']->getResourceTypeId();
 
   $variables['label_hidden'] = $variables['label_display'] == 'hidden';
 
@@ -377,12 +459,28 @@ function cu_hub_consumer_theme_suggestions_hub_resource_field(array $variables) 
   $field_list = $variables['field_list'];
   $field_items = $variables['field_items'];
   $field_type = $field_list->getFieldType();
+  $field_name = $field_list->getFieldName();
+
+  $resource_obj = $field_list->getParentResource();
+  $resource_type = $resource_obj->getResourceTypeId();
 
   // Replace any characters that aren't allowed.
-  $sanitized_field_type = preg_replace('/[^a-z0-9-]/i', '_', $field_type);
+  $sanitized_field_type = preg_replace('/[^a-z0-9_]/i', '_', $field_type);
   $sanitized_field_type = preg_replace('/__+/i', '_', $sanitized_field_type);
 
+  // Replace any characters that aren't allowed.
+  $sanitized_field_name = preg_replace('/[^a-z0-9_]/i', '_', $field_name);
+  $sanitized_field_name = preg_replace('/__+/i', '_', $sanitized_field_name);
+
+  // Replace any characters that aren't allowed.
+  $sanitized_resource_type = preg_replace('/[^a-z0-9_]/i', '_', $resource_type);
+  $sanitized_resource_type = preg_replace('/__+/i', '_', $sanitized_resource_type);
+
   $suggestions[] = 'hub_resource_field__' . $sanitized_field_type;
+  $suggestions[] = 'hub_resource_field__' . $sanitized_resource_type;
+  $suggestions[] = 'hub_resource_field__' . $sanitized_field_name;
+  $suggestions[] = 'hub_resource_field__' . $sanitized_resource_type . '__' . $sanitized_field_type;
+  $suggestions[] = 'hub_resource_field__' . $sanitized_resource_type . '__' . $sanitized_field_name;
 
   return $suggestions;
 }

@@ -37,6 +37,7 @@ module:
   cu_entity_embed: 0
   cu_hub_consumer: 0
   cu_noreferrer: 0
+  cu_slate_forms: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
@@ -82,6 +83,8 @@ module:
   inline_entity_form: 0
   jsonapi: 0
   layout_builder: 0
+  layout_builder_restrictions: 0
+  layout_builder_st: 0
   layout_discovery: 0
   libraries: 0
   lightning_api: 0
@@ -112,7 +115,6 @@ module:
   module_filter: 0
   name: 0
   node: 0
-  noreferrer: 0
   openapi: 0
   openapi_ui: 0
   openapi_ui_redoc: 0

@@ -12,11 +12,8 @@ case $CU_SITE_ALIAS in
   demo|hrnew|alliance|grad|hub)
     echo "Nothing to do for ${CU_SITE_ALIAS}"
   ;;
-  none)
-    echo "Nothing to do for generic install"
-  ;;
   *)
-    echo "ERROR: Could not determine site alias"
+    echo "Could not determine site alias. Please check Tugboat scripts!"
     exit 1
   ;;
 esac

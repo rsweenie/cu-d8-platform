@@ -40,3 +40,17 @@ program_detail_feat_tiles:
       label: 'Main content'
   icon_map:
     - [main]
+
+faculty_detail_3col:
+  label: 'Faculty Detail - 3 Column'
+  category: 'CU 2019'
+  template: templates/layout/layout--faculty-detail-3col
+  regions:
+    left:
+      label: 'Left'
+    middle:
+      label: 'Middle'
+    right:
+      label: 'Right'
+  icon_map:
+    - [main, main, right]

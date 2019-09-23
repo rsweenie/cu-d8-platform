@@ -6,12 +6,22 @@ cu_hub_consumer.settings_tab:
   title: Settings
   base_route: cu_hub_consumer.settings
 
+cu_hub_consumer.definition_update_tab:
+  title: Resource Definitions
+  route_name: cu_hub_consumer.hub.definition_update
+  base_route: cu_hub_consumer.settings
+
+entity.hub_reference_type.collection:
+  title: Reference Types
+  route_name: entity.hub_reference_type.collection
+  base_route: cu_hub_consumer.settings
+
+cu_hub_consumer.import_tab:
+  title: Import References
+  route_name: cu_hub_consumer.hub.import
+  base_route: cu_hub_consumer.settings
+
 entity.hub_reference_type.edit_form:
   title: Edit
   route_name: entity.hub_reference_type.edit_form
   base_route: entity.hub_reference_type.edit_form
-
-entity.hub_reference_type.collection:
-  title: Hub References Types
-  route_name: entity.hub_reference_type.collection
-  base_route: cu_hub_consumer.settings

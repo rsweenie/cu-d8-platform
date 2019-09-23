@@ -5,7 +5,8 @@ namespace Drupal\cu_hub_consumer\Hub;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Psr\Log\LoggerInterface;
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
-use \GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+use GuzzleHttp\Exception\ClientException as GuzzleClientException;
 use Drupal\Component\Serialization\Json;
 
 /**
@@ -93,7 +94,10 @@ class Client implements ClientInterface {
           $this->buildRequestOptions($query, $body)
         );
       }
-      catch (RequestException $e) {
+      catch (GuzzleClientException $e) {
+        throw new ClientException($e->getMessage(), $url, $e);
+      }
+      catch (GuzzleRequestException $e) {
         throw new ClientException($e->getMessage(), $url, $e);
       }
     }
@@ -146,7 +150,7 @@ class Client implements ClientInterface {
   /**
    * Fetch endpoint list from JSON API.
    *
-   * @return void
+   * @return array
    */
   protected function fetchEndpoints() {
     $response = $this->get('');
@@ -176,12 +180,12 @@ class Client implements ClientInterface {
   /**
    * {@inheritdoc}
    */
-  public function getEndpoints() {
+  public function getEndpoints($safe=TRUE, $skip_cache=FALSE) {
     if (!isset($this->endpoints)) {
       $this->endpoints = [];
 
       $cid = 'cu_hub_consumer:hub_endpoints';
-      if ($cache = \Drupal::cache()->get($cid)) {
+      if (!$skip_cache && $cache = \Drupal::cache()->get($cid)) {
         $this->endpoints = $cache->data;
       }
       else {
@@ -190,6 +194,9 @@ class Client implements ClientInterface {
         }
         catch (ClientException $e) {
           $this->logger->error('Error fetching endpoints. Msg: %msg URL: %url', ['%msg' => $e->getMessage(), '%url' => $e->getUrl()]);
+          if (!$safe) {
+            throw $e;
+          }
         }
 
         \Drupal::cache()->set($cid, $this->endpoints);
@@ -198,7 +205,10 @@ class Client implements ClientInterface {
     return $this->endpoints;
   }
 
-  public function getEndpoint($resource_type_id) {
+  /**
+   * {@inheritdoc}
+   */
+  public function getEndpoint($resource_type_id, $safe=TRUE, $skip_cache=FALSE) {
     if ($endpoints = $this->getEndpoints()) {
       if (isset($endpoints[$resource_type_id])) {
         return $endpoints[$resource_type_id];
@@ -206,6 +216,9 @@ class Client implements ClientInterface {
     }
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function stripBaseUrl($url) {
     if (strpos($url, $this->getBaseUrl()) === 0) {
       $url = substr($url, strlen($this->getBaseUrl()));

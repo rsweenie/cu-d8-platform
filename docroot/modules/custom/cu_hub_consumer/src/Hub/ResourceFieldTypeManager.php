@@ -52,7 +52,7 @@ class ResourceFieldTypeManager extends DefaultPluginManager implements FallbackP
    * {@inheritdoc}
    */
   public function getFallbackPluginId($plugin_id, array $configuration = array()) {
-    return 'unknown';
+    return 'hub_unknown';
   }
 
 }

@@ -46,7 +46,8 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *     "storage" = "Drupal\cu_hub_consumer\HubReferenceStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
- *     }
+ *     },
+ *     "access" = "Drupal\cu_hub_consumer\HubReferenceAccessControlHandler",
  *   },
  *   base_table = "hub_reference",
  *   data_table = "hub_reference_field_data",
@@ -64,6 +65,7 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *   links = {
  *     "canonical" = "/hub-reference/{hub_reference}",
  *     "delete-form" = "/hub-reference/{hub_reference}/delete",
+ *     "edit-form" = "/hub-reference/{hub_reference}"
  *   },
  * )
  */
