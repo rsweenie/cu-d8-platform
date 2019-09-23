@@ -4,9 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_landing_page_content
+    - field.field.node.landing_page.layout_builder__layout
+    - field.field.node.landing_page.layout_builder__translation
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
     - panelizer
     - user
 third_party_settings:
@@ -15,6 +20,57 @@ third_party_settings:
     custom: false
     allow: false
     default: default
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          0e716e35-c5bb-42e3-8e25-aeac73f80849:
+            uuid: 0e716e35-c5bb-42e3-8e25-aeac73f80849
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:landing_page:field_landing_page_content'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          296ed564-669f-4c13-a431-465002248cf1:
+            uuid: 296ed564-669f-4c13-a431-465002248cf1
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:landing_page:links'
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks:
+        Devel: {  }
+        Embed: {  }
+        Help: {  }
+        'Lists (Views)': {  }
+        User: {  }
+        'User fields': {  }
+      allowed_layouts:
+        - layout_onecol
+        - generic_hero
+        - generic_content
+        - program_detail_2col
+        - program_detail_feat_tiles
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
@@ -35,5 +91,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  layout_builder__layout: true
+  layout_builder__translation: true
   private: true
   search_api_excerpt: true

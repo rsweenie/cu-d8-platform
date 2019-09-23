@@ -1,0 +1,122 @@
+cu_hub_consumer.settings:
+  type: config_object
+  label: 'CU Hub Consumer settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enable hub consumer operations'
+    hub_base_url:
+      type: uri
+      label: 'Hub base URI'
+    cron:
+      type: mapping
+      label: 'Cron settings'
+      mapping:
+        enabled:
+          type: boolean
+          label: 'Enable cron processing'
+        refresh_freq:
+          type: integer
+          label: 'Full data refresh frequency'
+        refresh_fetch_limit:
+          type: integer
+          label: 'Full data refresh fetch size'
+        unpublish_age:
+          type: integer
+          label: 'Max age of a non-updated hub reference before it is unpublished.'
+        delete_age:
+          type: integer
+          label: 'Max age of a non-updated hub reference before it is deleted.'
+    queue:
+      type: mapping
+      label: 'Cron settings'
+      mapping:
+        enabled:
+          type: boolean
+          label: 'Enable queue processing'
+
+cu_hub_consumer.hub_reference_type.*:
+  type: config_entity
+  label: 'Hub reference type'
+  mapping:
+    id:
+      type: string
+      label: 'Machine name'
+    label:
+      type: label
+      label: 'Name'
+    description:
+      type: text
+      label: 'Description'
+    source:
+      type: string
+      label: 'Source'
+    source_configuration:
+      type: cu_hub_consumer.hub_reference_source.[%parent.source]
+    field_map:
+      type: sequence
+      label: 'Field map'
+      sequence:
+        type: string
+
+cu_hub_consumer.hub_reference_source.*:
+  type: mapping
+  label: 'Hub reference source settings'
+
+cu_hub_consumer.hub_reference_source.node:*:
+  type: hub_reference.source.field_aware
+  label: 'Node hub reference source configuration'
+
+cu_hub_consumer.hub_reference_source.field_aware:
+  type: mapping
+  mapping:
+    source_field:
+      type: string
+      label: 'Source field'
+
+cu_hub_consumer.hub_reference_type.*:
+  type: config_entity
+  label: 'Hub reference type'
+  mapping:
+    id:
+      type: string
+      label: 'Machine name'
+    label:
+      type: label
+      label: 'Name'
+    description:
+      type: text
+      label: 'Description'
+    source:
+      type: string
+      label: 'Source'
+    source_configuration:
+      type: cu_hub_consumer.hub_reference_source.[%parent.source]
+    field_map:
+      type: sequence
+      label: 'Field map'
+      sequence:
+        type: string
+
+cu_hub_consumer.resource_type_definition.*:
+  type: config_entity
+  label: 'Hub resource type definition'
+  mapping:
+    id:
+      type: string
+      label: 'Machine name'
+    type_id:
+      type: string
+      label: 'Hub type ID'
+    fields:
+      type: sequence
+      label: 'Fields'
+      sequence:
+        type: mapping
+        mapping:
+          field_type: 
+            type: string
+          hub_type: 
+            type: string
+          multiple: 
+            type: boolean

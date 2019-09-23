@@ -1,0 +1,19 @@
+services:
+  logger.channel.cu_hub_consumer:
+    parent: logger.channel_base
+    arguments: ['cu_hub_consumer']
+  cu_hub_consumer.hub_client:
+    class: Drupal\cu_hub_consumer\Hub\Client
+    arguments: ['@config.factory', '@logger.channel.cu_hub_consumer', '@http_client']
+  cu_hub_consumer.hub_resource_inspector:
+    class: Drupal\cu_hub_consumer\Hub\ResourceInspector
+    arguments: ['@config.factory', '@logger.channel.cu_hub_consumer', '@cu_hub_consumer.hub_client', '@cache.entity', '@datetime.time']
+  plugin.manager.cu_hub_consumer.hub_reference_source:
+    class: Drupal\cu_hub_consumer\Hub\ReferenceSourceManager
+    parent: default_plugin_manager
+  plugin.manager.cu_hub_consumer.hub_resource_type:
+    class: Drupal\cu_hub_consumer\Hub\ResourceTypeManager
+    parent: default_plugin_manager
+  plugin.manager.cu_hub_consumer.hub_resource_field_type:
+    class: Drupal\cu_hub_consumer\Hub\ResourceFieldTypeManager
+    parent: default_plugin_manager

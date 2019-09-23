@@ -1,0 +1,15 @@
+uuid: 24768c60-1b7e-4383-9948-245816237350
+langcode: en
+status: true
+dependencies: {  }
+name: srcset_1000px_wide
+label: 'SrcSet (1000px wide)'
+effects:
+  724d6ea9-2973-4fb2-b767-c6513c4a9304:
+    uuid: 724d6ea9-2973-4fb2-b767-c6513c4a9304
+    id: image_scale
+    weight: 1
+    data:
+      width: 1000
+      height: null
+      upscale: false
