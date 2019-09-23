@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - noreferrer
     - pathologic
     - responsivewrappers
 name: 'Raw HTML'
@@ -29,12 +28,6 @@ filters:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
       filter_html_help: true
       filter_html_nofollow: false
-  noreferrer:
-    id: noreferrer
-    provider: noreferrer
-    status: true
-    weight: 10
-    settings: {  }
   filter_pathologic:
     id: filter_pathologic
     provider: pathologic
