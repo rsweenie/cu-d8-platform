@@ -1,19 +1,19 @@
-uuid: 40f81a7f-daca-4223-85c3-b903856a3606
+uuid: 35f7acd9-eb77-4836-8749-2dd3bfbee083
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hub_pd_course_site
+    - field.storage.node.field_hub_site
     - node.type.hub_pd_course
     - node.type.hub_site
-id: node.hub_pd_course.field_hub_pd_course_site
-field_name: field_hub_pd_course_site
+id: node.hub_pd_course.field_hub_site
+field_name: field_hub_site
 entity_type: node
 bundle: hub_pd_course
-label: 'Web Property / Site'
+label: Website
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
