@@ -38,7 +38,7 @@ class CUBreadcrumbsBreadcrumbBuilder extends CUBreadcrumbsBreadcrumbBuilderBase 
 
       // If not set to use default, then use whatever the builder gives us.
       if ($node_builder != 'default') {
-        if ($builder = $this->getBuilder($default_builder)) {
+        if ($builder = $this->getBuilder($node_builder)) {
           return $this->getBuilder($node_builder)->applies($attributes);
         }
         return FALSE;
@@ -62,7 +62,8 @@ class CUBreadcrumbsBreadcrumbBuilder extends CUBreadcrumbsBreadcrumbBuilderBase 
 
     // Try and find settings based on node type.
     // Sometimes param node is actually the nid (usually just revisions)
-    if ($node = $this->getNodeObject($route_match->getParameter('node'))) {
+    $node = $this->getNodeObject($route_match->getParameter('node'));
+    if (!empty($node)) {
       $node_builder = $this->getSettings()->get($node->type->entity->get('type'))['builder'];
 
       if ($builder = $this->getBuilder($node_builder)) {
@@ -85,7 +86,7 @@ class CUBreadcrumbsBreadcrumbBuilder extends CUBreadcrumbsBreadcrumbBuilderBase 
     if (!isset($this->builders[$builder_name])) {
       switch ($builder_name) {
         case 'empty':
-        $this->builders[$builder_name] = new CUBreadcrumbsBreadcrumbBuilderEmpty();
+          $this->builders[$builder_name] = new CUBreadcrumbsBreadcrumbBuilderEmpty();
           break;
 
         case 'path':
