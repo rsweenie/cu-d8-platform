@@ -25,8 +25,6 @@ module:
   contact_storage: 0
   content_browser: 0
   content_moderation: 0
-  context: 0
-  context_ui: 0
   contextual: 0
   crop: 0
   csv_serialization: 0
