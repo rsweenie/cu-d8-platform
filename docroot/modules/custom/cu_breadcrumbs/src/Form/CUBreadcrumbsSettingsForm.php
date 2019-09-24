@@ -41,9 +41,11 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
     $config = $this->config(static::SETTINGS);
 
     $breadcrumb_builder = $global_config->get('builder');
-    $breadcrumb_builder = !empty($breadcrumb_builder) ? $breadcrumb_builder : 'menu';
+    $breadcrumb_builder = !empty($breadcrumb_builder) ? $breadcrumb_builder : 'system';
 
     $breadcrumb_builder_options = [
+      'system' => $this->t('- System Default -'),
+      'empty' => $this->t('Empty breadcrumbs'),
       'menu' => $this->t('Menu-based'),
     ];
     if (\Drupal::service('module_handler')->moduleExists('easy_breadcrumb')) {
@@ -52,12 +54,11 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
 
     $form['builder'] = [
       '#type' => 'select',
-      '#title' => $this->t('Breadcrumb type'),
+      '#title' => $this->t('Default breadcrumb builder'),
       '#options' => $breadcrumb_builder_options,
       '#default_value'=> $breadcrumb_builder,
     ];
 
-    // add a title to the form
     $form['node_types'] = [
       '#type' => 'fieldset',
       '#title' => t('Enable/Disable CU Breadcrumbs by node type'),
@@ -68,13 +69,20 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
     foreach (NodeType::loadMultiple() as $machine_name => $content_type) {
       $content_type_config = $config->get($machine_name);
 
-      // Add a checkbox to content type form w/default_value set to db value
       $form['node_types'][$machine_name] = [
-        '#type' => 'checkbox',
-        '#title' => t($content_type->get('name')),
-        '#return_value' => 1,
-        // get breadcrumb config apply by content type uuid
-        '#default_value'=> !empty($content_type_config['apply']),
+        '#type' => 'fieldset',
+        '#title' => $this->t($content_type->get('name')),
+        '#tree' => TRUE,
+      ];
+
+      $breadcrumb_builder = $content_type_config['builder'];
+      $breadcrumb_builder = !empty($breadcrumb_builder) ? $breadcrumb_builder : 'default';
+
+      $form['node_types'][$machine_name]['builder'] = [
+        '#type' => 'select',
+        '#title' => $this->t('Breadcrumb builder'),
+        '#options' => ['default' => $this->t('- Global Default -')] + $breadcrumb_builder_options,
+        '#default_value'=> $breadcrumb_builder,
       ];
     }
 
@@ -96,7 +104,7 @@ class CUBreadcrumbsSettingsForm extends ConfigFormBase {
     foreach ($form_state->getValue('node_types') as $machine_name => $values) {
       $config->set($machine_name, [
         'uuid' => NodeType::load($machine_name)->get('uuid'),
-        'apply' => $form_state->getValue(['node_types', $machine_name]),
+        'builder' => $form_state->getValue(['node_types', $machine_name, 'builder']),
       ]);
     }
 

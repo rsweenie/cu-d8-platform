@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\cu_breadcrumbs\Breadcrumb;
+namespace Drupal\cu_breadcrumbs;
 
 use Drupal\node\Entity\Node;
 use Drupal\Core\Breadcrumb\Breadcrumb;
@@ -11,7 +11,7 @@ use Drupal\Core\Link;
 use Drupal\Component\Utility\UrlHelper;
 
 /**
- * Creates breadcrumbs for content pages and news/spotlight content types.
+ * A base class for our breadcumb builders.
  */
 abstract class CUBreadcrumbsBreadcrumbBuilderBase implements BreadcrumbBuilderInterface {
 
@@ -28,16 +28,6 @@ abstract class CUBreadcrumbsBreadcrumbBuilderBase implements BreadcrumbBuilderIn
    * {@inheritdoc}
    */
   public function applies(RouteMatchInterface $attributes) {
-    // Check content type of current node to determine if it gets a breadcrumb.
-    // sometimes param node is actually the nid (usually just revisions)
-    $node = $this->getNodeObject($attributes->getParameter('node'));
-
-    // If there's a node, do the code.
-    if (!empty($node)) {
-      // return the apply value(1 or 0, true or false)
-      return \Drupal::config(static::SETTINGS)
-                      ->get($node->type->entity->get('type'))['apply'];
-    }
   }
 
   /**
@@ -57,11 +47,19 @@ abstract class CUBreadcrumbsBreadcrumbBuilderBase implements BreadcrumbBuilderIn
     }
 
     // Expire cache contexts for settings and breadcrumb menu changes.
-    $breadcrumb->addCacheableDependency(\Drupal::config(static::GLOBAL_SETTINGS));
-    $breadcrumb->addCacheableDependency(\Drupal::config(static::SETTINGS));
+    $breadcrumb->addCacheableDependency($this->getGlobalSettings());
+    $breadcrumb->addCacheableDependency($this->getSettings());
     // @TODO: add cacheability info for the breadcrumb menu.
 
     return $breadcrumb;
+  }
+
+  protected function getGlobalSettings() {
+    return \Drupal::config(static::GLOBAL_SETTINGS);
+  }
+
+  protected function getSettings() {
+    return \Drupal::config(static::SETTINGS);
   }
 
   /**
@@ -69,7 +67,7 @@ abstract class CUBreadcrumbsBreadcrumbBuilderBase implements BreadcrumbBuilderIn
    *
    * @return mixed
    */
-  private function createMenu(){
+  protected function createMenu(){
     $menu_name = static::MENU_NAME;
     $menu_tree = \Drupal::menuTree();
     $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);

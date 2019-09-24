@@ -13,6 +13,6 @@ cu_breadcrumbs.settings.*:
     uuid:
       type: string
       label: 'UUID'
-    apply:
-      type: boolean
-      label: 'Apply'
+    builder:
+      type: string
+      label: 'Breadcrumb builder mode'

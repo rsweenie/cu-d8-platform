@@ -10,6 +10,7 @@ use Drupal\Core\Url;
 use Drupal\Core\Link;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\easy_breadcrumb\EasyBreadcrumbBuilder;
+use Drupal\cu_breadcrumbs\CUBreadcrumbsBreadcrumbBuilderBase;
 
 /**
  * Creates breadcrumbs for content pages using a path based approach.
@@ -27,11 +28,7 @@ class CUBreadcrumbsBreadcrumbBuilderPathBased extends CUBreadcrumbsBreadcrumbBui
    * {@inheritdoc}
    */
   public function applies(RouteMatchInterface $attributes) {
-    $res = parent::applies($attributes);
-    if (!$res) {
-      $res = $this->getEasyBreadcrumbBuilder()->applies($attributes);
-    }
-    return $res;
+    return $this->getEasyBreadcrumbBuilder()->applies($attributes);
   }
 
   /**

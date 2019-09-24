@@ -9,11 +9,19 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
 use Drupal\Component\Utility\UrlHelper;
+use Drupal\cu_breadcrumbs\CUBreadcrumbsBreadcrumbBuilderBase;
 
 /**
  * Creates breadcrumbs for content pages using a menu based approach.
  */
 class CUBreadcrumbsBreadcrumbBuilderMenuBased extends CUBreadcrumbsBreadcrumbBuilderBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function applies(RouteMatchInterface $attributes) {
+    return TRUE;
+  }
 
   /**
    * {@inheritdoc}
