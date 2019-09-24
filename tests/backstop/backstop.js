@@ -105,6 +105,22 @@ module.exports =
   },
   "casperFlags": [],
   "engine": "puppeteer",
-  "report": ["browser"],
-  "debug": true
+  "engineOptions": {
+    "args": ["--no-sandbox",
+              "--ignore-certificate-errors",
+              "--ignore-certificate-errors-spki-list"
+            ]
+  },
+  "resembleOutputOptions": {
+    "errorColor": {
+      "red": 0,
+      "green": 255,
+      "blue": 255
+    }
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false,  
+  "report": ["browser"]
 };

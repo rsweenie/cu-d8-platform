@@ -7,8 +7,5 @@ pathConfig.array = [
     '/myhr',
     '/myhr/performance-management',
     '/new-hire-information',
-    
-
-
 ]
 module.exports = pathConfig;
