@@ -10968,18 +10968,33 @@ aside .program_rail h3 ~ .h4 {
 
 /* line 37, src/sass/components/feeds-detail/programs/_programs.scss */
 
+.program_rail:before {
+  position: absolute;
+  width: calc(100vw - 33%);
+  height: calc(100% + 6.2rem);
+  top: -6.2rem;
+  right: 100%;
+  background-image: url(../../img/feature_slash_bg.png);
+  background-repeat: repeat-y;
+  background-size: 75%;
+  background-position: 98rem;
+  content: "";
+}
+
+/* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
+
 .program_rail > div {
   position: relative;
   z-index: 10;
 }
 
-/* line 42, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 55, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail ul {
   margin-left: 0;
 }
 
-/* line 46, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 59, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail .field--name-hub-field-hub-degree-title {
   font-size: 1.2rem;
@@ -13245,7 +13260,7 @@ form.search .search button {
     padding-left: 2.5rem;
   }
 
-  /* line 46, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 59, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail .field--name-hub-field-hub-degree-title {
     font-size: 1.5rem;
