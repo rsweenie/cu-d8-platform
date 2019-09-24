@@ -60,6 +60,7 @@
         "drupal/libraries": "^3.0@alpha",
         "drupal/lightning_core": "^4.0",
         "drupal/link_attributes": "^1.9",
+        "drupal/linkit": "^4.3",
         "drupal/mailsystem": "^4.1",
         "drupal/memcache": "2.0-alpha7",
         "drupal/menu_admin_per_menu": "^1.0",
