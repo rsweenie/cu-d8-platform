@@ -1,8 +1,14 @@
 content_page:
-  apply: 1
+  builder: 'menu'
+
+interior_page:
+  builder: 'path'
+
+landing_page:
+  builder: 'path'
 
 news_spotlight:
-  apply: 1
+  builder: 'menu'
 
 profile:
-  apply: 1
+  builder: 'menu'
