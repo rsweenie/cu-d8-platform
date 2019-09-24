@@ -11227,18 +11227,51 @@ form textarea,
 form select {
   padding: 1rem;
   width: 100%;
-  border: 0.2rem solid #FFCC4F;
+  border: 0.1rem solid #949494;
   font-family: proxima-nova, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   line-height: 1.25;
+  background-color: #f7f7f7;
+  color: #555555;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: color .3s ease-out, background-color .3s ease-out, border-color .3s ease-out;
+  transition: color .3s ease-out, background-color .3s ease-out, border-color .3s ease-out;
 }
 
-/* line 22, src/sass/components/forms/_fields.scss */
+/* line 26, src/sass/components/forms/_fields.scss */
 
 form input:not([type="checkbox"]):not([type="radio"]):focus,
 form textarea:focus,
 form select:focus {
   border-color: #6CACE4;
+  background-color: #e5f0f9;
+  color: #002E6D;
+  border-width: .1rem .1rem .4rem;
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+}
+
+/* line 34, src/sass/components/forms/_fields.scss */
+
+form input:not([type="checkbox"]):not([type="radio"]):hover,
+form textarea:hover,
+form select:hover {
+  border-color: #555555;
+  border-width: .1rem;
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+}
+
+/* line 39, src/sass/components/forms/_fields.scss */
+
+form input:not([type="checkbox"]):not([type="radio"]):hover:focus,
+form textarea:hover:focus,
+form select:hover:focus {
+  border-color: #6CACE4;
+  background-color: #e5f0f9;
+  color: #002E6D;
+  border-width: .1rem .1rem .4rem;
 }
 
 /* line 9, src/sass/components/forms/_check-radio.scss */

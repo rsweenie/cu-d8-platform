@@ -12,14 +12,35 @@ input:not([type="checkbox"]):not([type="radio"]), textarea, select {
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     width: 100%;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    border: .2rem solid $accent-3;
+    border: .1rem solid $gray8;
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     font-family: $copyFF;
-    @include fontSize(1.6, 1.25);
+    @include fontSize(1.9, 1.25);
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+    background-color: $off-white;
+    color: $gray2;
+    box-sizing: border-box;
+    transition: color .3s ease-out, background-color .3s ease-out, border-color .3s ease-out;
+
     &:focus {
         border-color: $tertiary;
+        background-color: $primaryXLt;
+        color: $primary;
+        border-width: .1rem .1rem .4rem;
+        transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+    }
+
+    &:hover {
+        border-color: $gray2;
+        border-width: .1rem;
+        transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+
+        &:focus {
+            border-color: $tertiary;
+            background-color: $primaryXLt;
+            color: $primary;
+            border-width: .1rem .1rem .4rem;
+        }
     }
 }
