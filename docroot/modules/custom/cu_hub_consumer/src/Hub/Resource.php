@@ -215,35 +215,38 @@ class Resource implements ResourceInterface {
       }
 
       // Try to get the resource type of the first item.
-      $relationship_resource_type = 'fallback';
+      $resource_type = 'fallback';
       if ($first = reset($relationship_data['data'])) {
         if (!empty($first['type'])) {
-          $relationship_resource_type = $first['type'];
+          $resource_type = $first['type'];
+          list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
         }
       }
 
       $multiple = $this->getResourceType()->getAttributeMultiple($relationship_name);
       
-      $relationship_list = new ResourceRelationshipList($this, $relationship_name, $relationship_resource_type, $multiple);
+      $relationship_list = new ResourceRelationshipList($this, $relationship_name, $resource_main_type, $multiple);
 
       // Try to pull in full data from the included section.
       if (!empty($this->jsonData['included']) && is_array($this->jsonData['included'])) {
-        foreach ($this->jsonData['included'] as $included) {
-          foreach ($relationship_data['data'] as &$relationship_data_item) {
-            if ($included['type'] == $relationship_data_item['type'] && $included['id'] == $relationship_data_item['id']) {
+        foreach ($relationship_data['data'] as &$relationship_data_item) {
+          foreach ($this->jsonData['included'] as $included) {
+            if (($included['type'] == $relationship_data_item['type']) && ($included['id'] == $relationship_data_item['id'])) {
               $meta = isset($relationship_data_item['meta']) ? $relationship_data_item['meta'] : NULL;
               $relationship_data_item = $included;
 
               if ($meta) {
                 $relationship_data_item['meta'] = $meta;
               }
+
+              break;
             }
           }
         }
       }
 
       // Now we can actually append the resources to the list.
-      foreach ($relationship_data['data'] as $relationship_data_item) {
+      foreach ($relationship_data['data'] as &$relationship_data_item) {
         $included = isset($this->jsonData['included']) ? $this->jsonData['included'] : [];
         $relationship_list->appendItem($relationship_data_item, $included);
       }

@@ -34,6 +34,19 @@
     background: rgba($accent-2XLt,.2);
   }
 
+  &:before {
+    position: absolute;
+    width: calc(100vw - 33%);
+    height: calc(100% + 62px);
+    top: -62px;
+    right: 100%;
+    background-image: url(../../img/feature_slash_bg.png);
+    background-repeat: repeat-y;
+    background-size: 75%;
+    background-position: 98rem;
+    content: "";
+  }
+
   > div {
     position: relative;
     z-index: 10;

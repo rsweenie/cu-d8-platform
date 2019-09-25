@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+<article {{ attributes.addClass(classes) }}>
+  {% if content %}
+    {{ content.field_quote_box_quote_text }}
+    {{ content.field_quote_box_affiliation }}
+    {{ content.field_name_person }}
+    {{ content.field_quote_p_link }}
+    {{ content.field_quote_box_photo }}
+    {{ content.field_quote_box_quotes }}
+  {% endif %}
+</article>

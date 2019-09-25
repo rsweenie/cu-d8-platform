@@ -7,7 +7,7 @@ libraries:
   - cu2019_grad/global-styling
   - cu2019_grad/global-scripts
 ckeditor_stylesheets:
-  - assets/css/styles.css
+  - assets/css/ckeditor-styles.css
 regions:
   header: 'Header'
   primary_menu: 'Primary Menu'
