@@ -29,6 +29,8 @@ third_party_settings:
       - field_hub_degree_featured_info.field_fc_supporting_p_links
       - field_hub_degree_featured_info.field_hub_spotlight_ref
       - field_hub_degree_featured_info.field_hub_spotlight_ref.field_hub_fac_spotlight_image.image
+      - field_hub_degree_featured_info.field_hub_stat_highlight_ref
+      - field_hub_degree_featured_info.field_hub_stat_highlight_ref.field_hub_stat_highlight_image.image
       - field_hub_degree_next_steps
 id: node--hub_degree
 disabled: false

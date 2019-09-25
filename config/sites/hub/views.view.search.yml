@@ -90,6 +90,7 @@ display:
               hub_pd_course_date: default
               hub_program: default
               hub_site: default
+              hub_statistic_highlight: default
               news_spotlight: default
               profile: default
               promo_box: default
