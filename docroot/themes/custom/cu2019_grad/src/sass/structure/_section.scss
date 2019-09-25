@@ -115,3 +115,10 @@
     @import 'section-layouts/_faculty';
 }
 @import 'section-layouts/_grid';
+
+.layout--onecol {
+  background-image: url(../../img/feature_slash_bg.png);
+  background-repeat: repeat-y;
+  background-size: 75%;
+  background-position: 98rem;
+}
