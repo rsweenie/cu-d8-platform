@@ -24,7 +24,9 @@
       <div class="col-xs-12 col-md-5">
         {% if content.middle %}
           <div {{ region_attributes.right.addClass('layout__region', 'layout__region--facmiddle') }}>
-            {{ content.middle }}
+            <div class="copy-block">
+              {{ content.middle }}
+            </div>
           </div>
         {% endif %}
       </div>
