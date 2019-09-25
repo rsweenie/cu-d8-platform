@@ -1,12 +1,12 @@
-<?php
+<?php 
 
 namespace Drupal\cu_hub_consumer\Plugin\cu_hub_consumer\ResourceFieldType;
 
-use Drupal\cu_hub_consumer\Annotation\HubResourceFieldType;
+use Drupal\cu_hub_consumer\Hub\ResourceFieldItemBase;
 
 /**
- * Generic URI resource field.
- *
+ * Name resource field.
+ * 
  * @HubResourceFieldType(
  *   id = "name",
  *   label = @Translation("Name"),
@@ -19,13 +19,28 @@ class NameFieldItem extends ArrayFieldItemBase {
    * {@inheritdoc}
    */
   public function mainPropertyName() {
-    return 'name';
+    return 'given';
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function view() {
-    return [];
+    $elements = [];
+
+    if (!$this->isEmpty()) {
+      // We output just the preprocessed version fo the text.
+      $elements = [
+        '#type' => 'inline_template',
+        '#template' => '{{ value|raw }}',
+        '#context' => [
+          // @TODO: Can we do some XSS checking here?
+          'value' => $this->given . ' ' . $this->family,
+        ],
+      ];
+    }
+
+    return $elements;
   }
+
 }

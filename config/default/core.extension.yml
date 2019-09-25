@@ -37,11 +37,13 @@ module:
   cu_entity_embed: 0
   cu_hub_consumer: 0
   cu_noreferrer: 0
+  cu_slate_forms: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
   diff: 0
   dropzonejs: 0
+  easy_breadcrumb: 0
   easy_install: 0
   editor: 0
   editor_advanced_link: 0

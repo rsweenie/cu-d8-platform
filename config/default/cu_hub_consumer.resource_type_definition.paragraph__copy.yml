@@ -43,5 +43,5 @@ fields:
     multiple: false
   paragraph_type:
     type: hub_resource
-    hub_type: paragraphs_type--paragraphs_type
+    hub_type: paragraphs_type
     multiple: false

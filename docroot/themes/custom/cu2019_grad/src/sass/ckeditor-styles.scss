@@ -1,0 +1,9 @@
+
+// Import the regular style sheet.
+@import 'styles';
+
+.cke_widget_drupalentity .embedded-entity {
+  outline: lightgray 1px dashed;
+  margin: 10px;
+  padding: 10px;
+}

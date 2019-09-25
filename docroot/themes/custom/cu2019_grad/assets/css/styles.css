@@ -2145,6 +2145,12 @@ section[class*="sbg-"]:after {
   min-height: 75vh;
 }
 
+/* line 13, src/sass/structure/_home.scss */
+
+.field--name-field-landing-page-content .section {
+  background: transparent;
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     Buttons
@@ -2185,9 +2191,10 @@ section[class*="sbg-"]:after {
 [class*="btn-"] span:not(.sr-only) {
   position: relative;
   z-index: 1;
+  text-align: left;
 }
 
-/* line 40, src/sass/components/basic/_buttons.scss */
+/* line 41, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"] .arrow:last-child {
   position: absolute;
@@ -2211,7 +2218,7 @@ section[class*="sbg-"]:after {
   color: #F0F5FA;
 }
 
-/* line 63, src/sass/components/basic/_buttons.scss */
+/* line 64, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"]:hover .arrow:last-child,
 [class*="btn-"]:focus .arrow:last-child {
@@ -2243,7 +2250,7 @@ section[class*="sbg-"]:after {
   transform: translate(1rem, 0);
 }
 
-/* line 80, src/sass/components/basic/_buttons.scss */
+/* line 81, src/sass/components/basic/_buttons.scss */
 
 .skip-section {
   position: fixed;
@@ -2260,7 +2267,7 @@ section[class*="sbg-"]:after {
   text-decoration: none;
 }
 
-/* line 91, src/sass/components/basic/_buttons.scss */
+/* line 92, src/sass/components/basic/_buttons.scss */
 
 .skip-section span {
   display: block;
@@ -2949,7 +2956,9 @@ header.hp_hero:after {
 
 /* line 11, src/sass/components/basic/_cards.scss */
 
-.card {
+.card,
+a.card {
+  text-decoration: none;
   /*---------------------*\ IMPORT STYLES FOR CARD LAYOUT OPTIONS Comment out any alterations that will not be used on your site. This will reduce the file size by removing unused definitions. \*---------------------*/
   /*  --------------------------------------------------------------------------  *\
 
@@ -2987,13 +2996,15 @@ header.hp_hero:after {
 
 /* line 14, src/sass/components/basic/cards/_img-above.scss */
 
-.card > a {
+.card > a,
+a.card > a {
   display: block;
 }
 
 /* line 23, src/sass/components/basic/cards/_img-above.scss */
 
-.card > a img {
+.card > a img,
+a.card > a img {
   display: block;
   width: 100%;
   height: auto;
@@ -3001,7 +3012,8 @@ header.hp_hero:after {
 
 /* line 6, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind {
+.card.img-behind,
+a.card.img-behind {
   position: relative;
   z-index: 0;
   margin: 0 auto;
@@ -3009,26 +3021,30 @@ header.hp_hero:after {
 
 /* line 17, src/sass/components/basic/cards/_img-behind.scss */
 
-.grid .card.img-behind {
+.grid .card.img-behind,
+.grid a.card.img-behind {
   width: 100%;
 }
 
 /* line 20, src/sass/components/basic/cards/_img-behind.scss */
 
-.grid .card.img-behind.wide {
+.grid .card.img-behind.wide,
+.grid a.card.img-behind.wide {
   grid-column-end: span 2;
   text-align: left;
 }
 
 /* line 24, src/sass/components/basic/cards/_img-behind.scss */
 
-.grid .card.img-behind.wide > div {
+.grid .card.img-behind.wide > div,
+.grid a.card.img-behind.wide > div {
   width: 50%;
 }
 
 /* line 30, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind > div {
+.card.img-behind > div,
+a.card.img-behind > div {
   position: absolute;
   z-index: 100;
   left: 0;
@@ -3038,13 +3054,15 @@ header.hp_hero:after {
 
 /* line 45, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind.hov-eff {
+.card.img-behind.hov-eff,
+a.card.img-behind.hov-eff {
   overflow: hidden;
 }
 
 /* line 54, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind.hov-eff > div {
+.card.img-behind.hov-eff > div,
+a.card.img-behind.hov-eff > div {
   -webkit-transform: translate(0, 100%);
   transform: translate(0, 100%);
   -webkit-transition: -webkit-transform 0.5s 0.15s;
@@ -3056,14 +3074,17 @@ header.hp_hero:after {
 /* line 73, src/sass/components/basic/cards/_img-behind.scss */
 
 .card.img-behind.hov-eff:hover > div,
-.card.img-behind.hov-eff:focus > div {
+.card.img-behind.hov-eff:focus > div,
+a.card.img-behind.hov-eff:hover > div,
+a.card.img-behind.hov-eff:focus > div {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 
 /* line 85, src/sass/components/basic/cards/_img-behind.scss */
 
-.full-screen .card.img-behind {
+.full-screen .card.img-behind,
+.full-screen a.card.img-behind {
   padding: 10rem 0;
   overflow: hidden;
 }
@@ -3071,7 +3092,9 @@ header.hp_hero:after {
 /* line 89, src/sass/components/basic/cards/_img-behind.scss */
 
 .full-screen .card.img-behind > a,
-.full-screen .card.img-behind > span {
+.full-screen .card.img-behind > span,
+.full-screen a.card.img-behind > a,
+.full-screen a.card.img-behind > span {
   position: absolute;
   z-index: 0;
   left: 0;
@@ -3084,7 +3107,9 @@ header.hp_hero:after {
 /* line 96, src/sass/components/basic/cards/_img-behind.scss */
 
 .full-screen .card.img-behind > a img,
-.full-screen .card.img-behind > span img {
+.full-screen .card.img-behind > span img,
+.full-screen a.card.img-behind > a img,
+.full-screen a.card.img-behind > span img {
   position: absolute;
   z-index: 0;
   left: 50%;
@@ -3101,7 +3126,9 @@ header.hp_hero:after {
   /* line 96, src/sass/components/basic/cards/_img-behind.scss */
 
   .full-screen .card.img-behind > a img,
-  .full-screen .card.img-behind > span img {
+  .full-screen .card.img-behind > span img,
+  .full-screen a.card.img-behind > a img,
+  .full-screen a.card.img-behind > span img {
     min-width: 0;
     min-height: 0;
     width: 100%;
@@ -3113,7 +3140,8 @@ header.hp_hero:after {
 
 /* line 113, src/sass/components/basic/cards/_img-behind.scss */
 
-.full-screen .card.img-behind > div {
+.full-screen .card.img-behind > div,
+.full-screen a.card.img-behind > div {
   position: relative;
   left: auto;
   bottom: auto;
@@ -3122,7 +3150,8 @@ header.hp_hero:after {
 
 /* line 6, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side {
+.card.img-side,
+a.card.img-side {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3135,14 +3164,15 @@ header.hp_hero:after {
   -ms-flex-line-pack: stretch;
       align-content: stretch;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-flow: column-reverse nowrap;
-          flex-flow: column-reverse nowrap;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 /* line 15, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side > a {
+.card.img-side > a,
+a.card.img-side > a {
   -webkit-box-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3153,13 +3183,15 @@ header.hp_hero:after {
 
 /* line 24, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side > a .contextual {
+.card.img-side > a .contextual,
+a.card.img-side > a .contextual {
   display: none;
 }
 
 /* line 29, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side > div {
+.card.img-side > div,
+a.card.img-side > div {
   -webkit-box-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3170,13 +3202,15 @@ header.hp_hero:after {
 
 /* line 39, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side .body + [class*="btn-"] {
+.card.img-side .body + [class*="btn-"],
+a.card.img-side .body + [class*="btn-"] {
   margin-top: 1em;
 }
 
 /* line 44, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side.invert > a {
+.card.img-side.invert > a,
+a.card.img-side.invert > a {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
@@ -3184,14 +3218,16 @@ header.hp_hero:after {
 
 /* line 49, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side h3 {
+.card.img-side h3,
+a.card.img-side h3 {
   position: relative;
   padding-bottom: 0.25455em;
 }
 
 /* line 53, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side h3:after {
+.card.img-side h3:after,
+a.card.img-side h3:after {
   width: 5.5rem;
   height: 0.5rem;
   position: absolute;
@@ -3201,9 +3237,10 @@ header.hp_hero:after {
   background: #6CACE4;
 }
 
-/* line 171, src/sass/components/basic/cards/_img-side.scss */
+/* line 175, src/sass/components/basic/cards/_img-side.scss */
 
-aside .card.img-side {
+aside .card.img-side,
+aside a.card.img-side {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
@@ -3219,9 +3256,10 @@ aside .card.img-side {
   max-height: 12.5rem;
 }
 
-/* line 178, src/sass/components/basic/cards/_img-side.scss */
+/* line 182, src/sass/components/basic/cards/_img-side.scss */
 
-aside .card.img-side:before {
+aside .card.img-side:before,
+aside a.card.img-side:before {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -3230,19 +3268,22 @@ aside .card.img-side:before {
   content: "";
 }
 
-/* line 193, src/sass/components/basic/cards/_img-side.scss */
+/* line 197, src/sass/components/basic/cards/_img-side.scss */
 
-aside .card.img-side > a {
+aside .card.img-side > a,
+aside a.card.img-side > a {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
   width: 25%;
 }
 
-/* line 198, src/sass/components/basic/cards/_img-side.scss */
+/* line 202, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side > div,
-aside .card.img-side > p {
+aside .card.img-side > p,
+aside a.card.img-side > div,
+aside a.card.img-side > p {
   width: calc(75% - 2.5rem);
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
@@ -3250,28 +3291,141 @@ aside .card.img-side > p {
   padding: 0;
 }
 
-/* line 204, src/sass/components/basic/cards/_img-side.scss */
+/* line 208, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side h3,
-aside .card.img-side .h3 {
+aside .card.img-side .h3,
+aside a.card.img-side h3,
+aside a.card.img-side .h3 {
   font-size: 1.25em;
 }
 
-/* line 208, src/sass/components/basic/cards/_img-side.scss */
+/* line 212, src/sass/components/basic/cards/_img-side.scss */
 
-aside .card.img-side + p {
+aside .card.img-side + p,
+aside a.card.img-side + p {
   margin-top: 1em;
+}
+
+/* line 1, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .info,
+a.card.img-side .info {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+}
+
+/* line 29, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .info h2,
+a.card.img-side .info h2 {
+  font-size: 3.6rem;
+  font-family: proxima-nova, sans-serif;
+  color: #002E6D;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+  position: relative;
+  padding-bottom: 1.4rem;
+  -webkit-transition: color .3s ease-out;
+  transition: color .3s ease-out;
+}
+
+/* line 45, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .info h2:after,
+a.card.img-side .info h2:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #6CACE4;
+  width: 3rem;
+  height: 0.5rem;
+  content: '';
+}
+
+/* line 61, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .info p,
+a.card.img-side .info p {
+  font-size: 1.6rem;
+  font-family: proxima-nova, sans-serif;
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+
+/* line 76, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element,
+a.card.img-side .element {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+/* line 90, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element .img_vid,
+a.card.img-side .element .img_vid {
+  overflow: hidden;
+}
+
+/* line 96, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element .img_vid .img img,
+a.card.img-side .element .img_vid .img img {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+/* line 102, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element blockquote .quote,
+a.card.img-side .element blockquote .quote {
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+}
+
+/* line 106, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element blockquote .field--name-field-quote-image,
+a.card.img-side .element blockquote .field--name-field-quote-image {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+/* line 109, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element blockquote .field--name-field-quote-image img,
+a.card.img-side .element blockquote .field--name-field-quote-image img {
+  width: 100%;
+  display: block;
+}
+
+/* line 116, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element blockquote.q-left .attr .field--name-field-quote-title,
+.card.img-side .element blockquote.q-left .attr small,
+a.card.img-side .element blockquote.q-left .attr .field--name-field-quote-title,
+a.card.img-side .element blockquote.q-left .attr small {
+  font-weight: 400;
 }
 
 /* line 6, src/sass/components/basic/cards/_story.scss */
 
-.card.story {
+.card.story,
+a.card.story {
   padding: 2.5rem;
 }
 
 /* line 14, src/sass/components/basic/cards/_story.scss */
 
-.full-screen .card.story {
+.full-screen .card.story,
+.full-screen a.card.story {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -3279,7 +3433,8 @@ aside .card.img-side + p {
 
 /* line 17, src/sass/components/basic/cards/_story.scss */
 
-.full-screen .card.story > img {
+.full-screen .card.story > img,
+.full-screen a.card.story > img {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
@@ -3290,14 +3445,16 @@ aside .card.img-side + p {
 
 /* line 30, src/sass/components/basic/cards/_story.scss */
 
-.full-screen .card.story > div {
+.full-screen .card.story > div,
+.full-screen a.card.story > div {
   padding: 0;
   text-align: left;
 }
 
 /* line 1, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo {
+.card.fw_photo,
+a.card.fw_photo {
   color: #fff;
   border-top: 8px solid #6CACE4;
   border-bottom: 8px solid #6CACE4;
@@ -3305,13 +3462,15 @@ aside .card.img-side + p {
 
 /* line 6, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo.img-behind {
+.card.fw_photo.img-behind,
+a.card.fw_photo.img-behind {
   padding: 4.5rem 0;
 }
 
 /* line 15, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo:before {
+.card.fw_photo:before,
+a.card.fw_photo:before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3324,13 +3483,15 @@ aside .card.img-side + p {
 
 /* line 29, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo.bg-grey:before {
+.card.fw_photo.bg-grey:before,
+a.card.fw_photo.bg-grey:before {
   background: rgba(33, 35, 34, 0.82);
 }
 
 /* line 34, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo h3 {
+.card.fw_photo h3,
+a.card.fw_photo h3 {
   font-size: 3rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -3341,27 +3502,31 @@ aside .card.img-side + p {
 
 /* line 47, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo p {
+.card.fw_photo p,
+a.card.fw_photo p {
   font-size: 1.4rem;
   line-height: 1.4em;
 }
 
 /* line 57, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo [class*="btn-"] {
+.card.fw_photo [class*="btn-"],
+a.card.fw_photo [class*="btn-"] {
   margin-top: 2rem;
 }
 
 /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo .content {
+.card.fw_photo .content,
+a.card.fw_photo .content {
   max-width: 1350px;
   width: 100%;
 }
 
 /* line 90, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo .content > div {
+.card.fw_photo .content > div,
+a.card.fw_photo .content > div {
   margin: auto;
   padding: 0 2.5rem;
 }
@@ -3369,7 +3534,9 @@ aside .card.img-side + p {
 /* line 27, src/sass/base/_mixins.scss */
 
 .card.fw_photo .content > div:before,
-.card.fw_photo .content > div:after {
+.card.fw_photo .content > div:after,
+a.card.fw_photo .content > div:before,
+a.card.fw_photo .content > div:after {
   display: block;
   height: 0;
   width: 100%;
@@ -3385,13 +3552,15 @@ aside .card.img-side + p {
 
 /* line 8, src/sass/components/basic/cards/_fwb.scss */
 
-.fwb .card .media {
+.fwb .card .media,
+.fwb a.card .media {
   position: relative;
 }
 
 /* line 11, src/sass/components/basic/cards/_fwb.scss */
 
-.fwb .card .media:after {
+.fwb .card .media:after,
+.fwb a.card .media:after {
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
   position: absolute;
@@ -3404,20 +3573,23 @@ aside .card.img-side + p {
 
 /* line 1, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa {
+.card.mfsfa,
+a.card.mfsfa {
   position: relative;
 }
 
 /* line 4, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa > a {
+.card.mfsfa > a,
+a.card.mfsfa > a {
   position: relative;
   z-index: 0;
 }
 
 /* line 8, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa > a:after {
+.card.mfsfa > a:after,
+a.card.mfsfa > a:after {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3430,7 +3602,8 @@ aside .card.img-side + p {
 
 /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa .content {
+.card.mfsfa .content,
+a.card.mfsfa .content {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3446,7 +3619,8 @@ aside .card.img-side + p {
 
 /* line 37, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa .content a {
+.card.mfsfa .content a,
+a.card.mfsfa .content a {
   font-size: 1.6rem;
   line-height: 1.6em;
   padding: 0 1.5rem;
@@ -3457,13 +3631,15 @@ aside .card.img-side + p {
 
 /* line 54, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa .content a span:first-child {
+.card.mfsfa .content a span:first-child,
+a.card.mfsfa .content a span:first-child {
   text-decoration: underline;
 }
 
 /* line 58, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa .content a span:last-child {
+.card.mfsfa .content a span:last-child,
+a.card.mfsfa .content a span:last-child {
   display: inline-block;
   -webkit-transform: translateY(0.2em);
           transform: translateY(0.2em);
@@ -3472,13 +3648,15 @@ aside .card.img-side + p {
 
 /* line 71, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa .title {
+.card.mfsfa .title,
+a.card.mfsfa .title {
   text-align: center;
 }
 
 /* line 83, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa .type {
+.card.mfsfa .type,
+a.card.mfsfa .type {
   position: absolute;
   top: 0;
   left: 0;
@@ -3493,7 +3671,8 @@ aside .card.img-side + p {
 
 /* line 101, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa h3 {
+.card.mfsfa h3,
+a.card.mfsfa h3 {
   position: relative;
   color: #fff;
   font-family: proxima-nova, sans-serif;
@@ -3504,7 +3683,8 @@ aside .card.img-side + p {
 
 /* line 109, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa h3:after {
+.card.mfsfa h3:after,
+a.card.mfsfa h3:after {
   width: 4.5rem;
   height: 0.4rem;
   position: absolute;
@@ -3518,7 +3698,8 @@ aside .card.img-side + p {
 
 /* line 131, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa .subtitle {
+.card.mfsfa .subtitle,
+a.card.mfsfa .subtitle {
   color: #fff;
   font-size: 1.4rem;
   text-transform: none;
@@ -3526,54 +3707,57 @@ aside .card.img-side + p {
 
 /* line 141, src/sass/components/basic/cards/_mfsfa.scss */
 
-.card.mfsfa .body {
+.card.mfsfa .body,
+a.card.mfsfa .body {
   font-size: 1.4rem;
   line-height: 1.6em;
   padding: 3rem 1.5rem;
 }
 
-/* line 14, src/sass/components/basic/cards/_copy.scss */
-
-.card p:last-child {
-  margin-bottom: 0;
-}
-
 /* line 25, src/sass/components/basic/cards/_copy.scss */
 
-.card h2 {
+.card h2,
+a.card h2 {
   font-size: 1.25em;
 }
 
 /* line 43, src/sass/components/basic/cards/_copy.scss */
 
-.card h3 {
+.card h3,
+a.card h3 {
   font-size: 1.5em;
 }
 
 /* line 65, src/sass/components/basic/cards/_copy.scss */
 
 .card h4,
-.card .h4 {
+.card .h4,
+a.card h4,
+a.card .h4 {
   font-size: 1.5em;
 }
 
 /* line 86, src/sass/components/basic/cards/_copy.scss */
 
 .card h4 small,
-.card .h4 small {
+.card .h4 small,
+a.card h4 small,
+a.card .h4 small {
   font-size: 1.6rem;
 }
 
 /* line 6, src/sass/components/basic/cards/_article.scss */
 
-.card h3.title {
+.card h3.title,
+a.card h3.title {
   font-size: 1.25em;
   font-weight: normal;
 }
 
 /* line 16, src/sass/components/basic/cards/_article.scss */
 
-.card .type {
+.card .type,
+a.card .type {
   margin: 0 0 1.5rem;
   font-size: .75em;
   font-weight: bold;
@@ -3584,7 +3768,10 @@ aside .card.img-side + p {
 
 .card .type .fas,
 .card .type .far,
-.card .type .fab {
+.card .type .fab,
+a.card .type .fas,
+a.card .type .far,
+a.card .type .fab {
   margin: 0 .5rem 0 0;
   font-size: 1.5em;
   line-height: 1em;
@@ -3592,15 +3779,62 @@ aside .card.img-side + p {
 
 /* line 41, src/sass/components/basic/cards/_article.scss */
 
-.card .by {
+.card .by,
+a.card .by {
   font-size: .8em;
 }
 
 /* line 51, src/sass/components/basic/cards/_article.scss */
 
-.card .tags {
+.card .tags,
+a.card .tags {
   margin: 5rem 0 0;
   font-size: .8em;
+}
+
+/* line 71, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .element .img_vid .img img,
+a.card.img-side:focus .element .img_vid .img img {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+/* line 76, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .btn-primary,
+a.card.img-side:focus .btn-primary {
+  background: -webkit-gradient(linear, left bottom, left top, from(#ffde8c), to(#ffdf91));
+  background: linear-gradient(0deg, #ffde8c 0%, #ffdf91 100%);
+  color: #002E6D;
+}
+
+/* line 83, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .btn-primary:before,
+a.card.img-side:focus .btn-primary:before {
+  background: linear-gradient(-45deg, #ffd072 50%, rgba(255, 208, 114, 0) 50%);
+}
+
+/* line 87, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .btn-primary .arrow:last-child,
+a.card.img-side:focus .btn-primary .arrow:last-child {
+  -webkit-transform: translate(3px, -46%);
+          transform: translate(3px, -46%);
+}
+
+/* line 93, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .info h2,
+a.card.img-side:focus .info h2 {
+  color: #019cdb;
+  -webkit-transition: color .2s ease-out;
+  transition: color .2s ease-out;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -4086,6 +4320,30 @@ figure.float-right > figcaption {
   padding: 1rem 0;
 }
 
+/* line 1, src/sass/components/basic/media/_embed.scss */
+
+iframe {
+  max-width: 100%;
+}
+
+/* line 5, src/sass/components/basic/media/_embed.scss */
+
+.embed-responsive-16by9 {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* line 12, src/sass/components/basic/media/_embed.scss */
+
+.embed-responsive-16by9 iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     TESTIMONIALS/QUOTES
@@ -4201,7 +4459,16 @@ blockquote.q-left .quote-inner:after {
   text-align: center;
 }
 
-/* line 101, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+.card blockquote.q-left .quote-inner img {
+  width: auto;
+  height: auto;
+  max-width: 160px;
+  max-height: 160px;
+}
+
+/* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote {
   -webkit-box-flex: 1;
@@ -4210,13 +4477,13 @@ blockquote.q-left .quote {
   padding-left: 2rem;
 }
 
-/* line 109, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 118, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote:only-child {
   padding: 0;
 }
 
-/* line 114, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .field--name-field-quote-quote {
   font-size: 1.8rem;
@@ -4224,7 +4491,7 @@ blockquote.q-left .field--name-field-quote-quote {
   font-weight: 600;
 }
 
-/* line 135, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr {
   font-size: 1.4rem;
@@ -4232,14 +4499,14 @@ blockquote.q-left .attr {
   line-height: 1.2em;
 }
 
-/* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 153, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr small {
   font-size: 1em;
   font-weight: 500;
 }
 
-/* line 148, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr div {
   display: inline;
@@ -11557,7 +11824,7 @@ form.search .search button {
     height: 32rem;
   }
 
-  /* line 101, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .quote {
     padding-left: 4.6rem;
@@ -12040,6 +12307,15 @@ form.search .search button {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  /* line 1, src/sass/structure/_home.scss */
+
+  .field--name-field-landing-page-content {
+    background-image: url(../../img/feature_slash_bg.png);
+    background-repeat: repeat-y;
+    background-size: 100%;
+    background-position: 0 790px;
+  }
+
   /* line 6, src/sass/components/basic/buttons/colors/_primary.scss */
 
   .btn-primary {
@@ -12049,24 +12325,27 @@ form.search .search button {
 
   /* line 6, src/sass/components/basic/cards/_img-behind.scss */
 
-  .card.img-behind {
+  .card.img-behind,
+  a.card.img-behind {
     width: 100%;
   }
 
   /* line 53, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side h3:after {
+  .card.img-side h3:after,
+  a.card.img-side h3:after {
     height: 0.8rem;
   }
 
   /* line 6, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side {
+  .card.img-side,
+  a.card.img-side {
     -ms-flex-line-pack: center;
         align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
@@ -12080,23 +12359,37 @@ form.search .search button {
 
   /* line 85, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side > a {
+  .style-left .card.img-side,
+  .style-left a.card.img-side {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse nowrap;
+            flex-flow: row-reverse nowrap;
+  }
+
+  /* line 89, src/sass/components/basic/cards/_img-side.scss */
+
+  .card.img-side > a,
+  a.card.img-side > a {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
     width: 50%;
   }
 
-  /* line 96, src/sass/components/basic/cards/_img-side.scss */
+  /* line 100, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side > div {
+  .card.img-side > div,
+  a.card.img-side > div {
     width: 50%;
   }
 
-  /* line 114, src/sass/components/basic/cards/_img-side.scss */
+  /* line 118, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.alt > a,
-  .card.img-side:nth-child(even) > a {
+  .card.img-side:nth-child(even) > a,
+  a.card.img-side.alt > a,
+  a.card.img-side:nth-child(even) > a {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -12104,7 +12397,8 @@ form.search .search button {
 
   /* line 6, src/sass/components/basic/cards/_full-screen.scss */
 
-  .full-screen .card.img-side {
+  .full-screen .card.img-side,
+  .full-screen a.card.img-side {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
@@ -12113,7 +12407,9 @@ form.search .search button {
   /* line 15, src/sass/components/basic/cards/_full-screen.scss */
 
   .full-screen .card.img-side.alt,
-  .full-screen .card.img-side:nth-child(even) {
+  .full-screen .card.img-side:nth-child(even),
+  .full-screen a.card.img-side.alt,
+  .full-screen a.card.img-side:nth-child(even) {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -12121,44 +12417,50 @@ form.search .search button {
 
   /* line 25, src/sass/components/basic/cards/_full-screen.scss */
 
-  .full-screen .card.img-side > div {
+  .full-screen .card.img-side > div,
+  .full-screen a.card.img-side > div {
     padding: 5rem;
     max-width: 1084px;
   }
 
-  /* line 127, src/sass/components/basic/cards/_img-side.scss */
+  /* line 131, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side.bot {
+  .card.img-side.bot,
+  a.card.img-side.bot {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
   }
 
-  /* line 131, src/sass/components/basic/cards/_img-side.scss */
+  /* line 135, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side.small {
+  .card.img-side.small,
+  a.card.img-side.small {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
 
-  /* line 134, src/sass/components/basic/cards/_img-side.scss */
+  /* line 138, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side.small > a {
+  .card.img-side.small > a,
+  a.card.img-side.small > a {
     width: 12.5%;
     margin: 0 25% 17.5% 0;
   }
 
-  /* line 139, src/sass/components/basic/cards/_img-side.scss */
+  /* line 143, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t-lg .card.img-side.small {
+  .off-t-lg .card.img-side.small,
+  .off-t-lg a.card.img-side.small {
     padding: 0;
     position: relative;
   }
 
-  /* line 143, src/sass/components/basic/cards/_img-side.scss */
+  /* line 147, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t-lg .card.img-side.small > a {
+  .off-t-lg .card.img-side.small > a,
+  .off-t-lg a.card.img-side.small > a {
     position: absolute;
     z-index: 100;
     left: 0;
@@ -12169,55 +12471,84 @@ form.search .search button {
     margin: 0;
   }
 
-  /* line 149, src/sass/components/basic/cards/_img-side.scss */
+  /* line 153, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t-lg .card.img-side.small > div {
+  .off-t-lg .card.img-side.small > div,
+  .off-t-lg a.card.img-side.small > div {
     width: 100%;
-  }
-
-  /* line 154, src/sass/components/basic/cards/_img-side.scss */
-
-  .off-t .align-center .card.img-side.small {
-    padding: 0;
-    position: relative;
   }
 
   /* line 158, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t .align-center .card.img-side.small > a {
+  .off-t .align-center .card.img-side.small,
+  .off-t .align-center a.card.img-side.small {
+    padding: 0;
+    position: relative;
+  }
+
+  /* line 162, src/sass/components/basic/cards/_img-side.scss */
+
+  .off-t .align-center .card.img-side.small > a,
+  .off-t .align-center a.card.img-side.small > a {
     -webkit-transform: translate(-300%, -120%);
     transform: translate(-300%, -120%);
     margin: 0;
     width: 25%;
   }
 
-  /* line 164, src/sass/components/basic/cards/_img-side.scss */
+  /* line 168, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t .align-center .card.img-side.small > div {
+  .off-t .align-center .card.img-side.small > div,
+  .off-t .align-center a.card.img-side.small > div {
     width: 100%;
   }
 
-  /* line 171, src/sass/components/basic/cards/_img-side.scss */
+  /* line 175, src/sass/components/basic/cards/_img-side.scss */
 
-  aside .card.img-side {
+  aside .card.img-side,
+  aside a.card.img-side {
     max-height: 15rem;
   }
 
-  /* line 188, src/sass/components/basic/cards/_img-side.scss */
+  /* line 192, src/sass/components/basic/cards/_img-side.scss */
 
-  aside .card.img-side:before {
+  aside .card.img-side:before,
+  aside a.card.img-side:before {
     min-height: 12.5rem;
+  }
+
+  /* line 1, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info,
+  a.card.img-side .info {
+    padding: 3rem 4rem 0 3rem;
+  }
+
+  /* line 11, src/sass/components/basic/cards/_featured-element.scss */
+
+  .style-left .card.img-side .info,
+  .style-left a.card.img-side .info {
+    padding: 3rem 3rem 0 4rem;
+  }
+
+  /* line 79, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .element .fact.stat_hl,
+  a.card.img-side .element .fact.stat_hl {
+    margin: 0;
   }
 
   /* line 6, src/sass/components/basic/cards/_story.scss */
 
-  .card.story {
+  .card.story,
+  a.card.story {
     padding: 0 2.5rem;
   }
 
   /* line 17, src/sass/components/basic/cards/_story.scss */
 
-  .full-screen .card.story > img {
+  .full-screen .card.story > img,
+  .full-screen a.card.story > img {
     width: calc(50% - 2.5rem);
     margin: 0;
     -webkit-box-ordinal-group: 3;
@@ -12227,7 +12558,8 @@ form.search .search button {
 
   /* line 30, src/sass/components/basic/cards/_story.scss */
 
-  .full-screen .card.story > div {
+  .full-screen .card.story > div,
+  .full-screen a.card.story > div {
     padding: 2.5rem;
     width: calc(50% - 2.5rem);
     background: #fff;
@@ -12235,25 +12567,29 @@ form.search .search button {
 
   /* line 34, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo h3 {
+  .card.fw_photo h3,
+  a.card.fw_photo h3 {
     font-size: 4rem;
   }
 
   /* line 47, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo p {
+  .card.fw_photo p,
+  a.card.fw_photo p {
     font-size: 1.9rem;
   }
 
   /* line 57, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo [class*="btn-"] {
+  .card.fw_photo [class*="btn-"],
+  a.card.fw_photo [class*="btn-"] {
     float: right;
   }
 
   /* line 23, src/sass/components/basic/cards/_fwb.scss */
 
-  .fwb .card > a {
+  .fwb .card > a,
+  .fwb a.card > a {
     -webkit-box-flex: 1 1 33.3%;
     -ms-flex: 1 1 33.3%;
     flex: 1 1 33.3%;
@@ -12264,7 +12600,8 @@ form.search .search button {
 
   /* line 27, src/sass/components/basic/cards/_fwb.scss */
 
-  .fwb .card > div {
+  .fwb .card > div,
+  .fwb a.card > div {
     -webkit-box-flex: 1 1 66.6%;
     -ms-flex: 1 1 66.6%;
     flex: 1 1 66.6%;
@@ -12276,32 +12613,38 @@ form.search .search button {
 
   /* line 101, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa h3 {
+  .card.mfsfa h3,
+  a.card.mfsfa h3 {
     font-size: 3rem;
   }
 
   /* line 131, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .subtitle {
+  .card.mfsfa .subtitle,
+  a.card.mfsfa .subtitle {
     font-size: 2rem;
   }
 
   /* line 25, src/sass/components/basic/cards/_copy.scss */
 
-  .card h2 {
+  .card h2,
+  a.card h2 {
     font-size: 1.75em;
   }
 
   /* line 43, src/sass/components/basic/cards/_copy.scss */
 
-  .card h3 {
+  .card h3,
+  a.card h3 {
     font-size: 1.667em;
   }
 
   /* line 65, src/sass/components/basic/cards/_copy.scss */
 
   .card h4,
-  .card .h4 {
+  .card .h4,
+  a.card h4,
+  a.card .h4 {
     font-size: 1.5833em;
   }
 
@@ -12542,7 +12885,7 @@ form.search .search button {
     pointer-events: none;
   }
 
-  /* line 135, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .attr {
     font-size: 1.6rem;
@@ -13219,34 +13562,82 @@ form.search .search button {
     width: 95%;
   }
 
+  /* line 1, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info,
+  a.card.img-side .info {
+    -ms-flex-preferred-size: 42%;
+        flex-basis: 42%;
+    width: 42%;
+  }
+
+  /* line 29, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info h2,
+  a.card.img-side .info h2 {
+    font-size: 6.2rem;
+    padding-bottom: 2.6rem;
+  }
+
+  /* line 45, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info h2:after,
+  a.card.img-side .info h2:after {
+    width: 5.5rem;
+    height: 0.9rem;
+  }
+
+  /* line 61, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info p,
+  a.card.img-side .info p {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-bottom: 3.6rem;
+  }
+
+  /* line 76, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .element,
+  a.card.img-side .element {
+    -ms-flex-preferred-size: 58%;
+        flex-basis: 58%;
+    width: 58%;
+  }
+
   /* line 30, src/sass/components/basic/cards/_story.scss */
 
-  .full-screen .card.story > div {
+  .full-screen .card.story > div,
+  .full-screen a.card.story > div {
     width: 41.667%;
   }
 
   /* line 6, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo.img-behind {
+  .card.fw_photo.img-behind,
+  a.card.fw_photo.img-behind {
     padding: 13.5rem 0 8rem;
     margin-bottom: 1.5rem;
   }
 
   /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo .content {
+  .card.fw_photo .content,
+  a.card.fw_photo .content {
     width: 95%;
   }
 
   /* line 90, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo .content > div {
+  .card.fw_photo .content > div,
+  a.card.fw_photo .content > div {
     width: 83.33333%;
   }
 
   /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .content {
+  .card.mfsfa .content,
+  a.card.mfsfa .content {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -13258,21 +13649,24 @@ form.search .search button {
 
   /* line 37, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .content a {
+  .card.mfsfa .content a,
+  a.card.mfsfa .content a {
     padding: 0;
     display: none;
   }
 
   /* line 83, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .type {
+  .card.mfsfa .type,
+  a.card.mfsfa .type {
     font-size: 1.8rem;
     padding: 1.2rem;
   }
 
   /* line 109, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa h3:after {
+  .card.mfsfa h3:after,
+  a.card.mfsfa h3:after {
     width: 5.9rem;
     height: 0.5rem;
     bottom: -1rem;
@@ -13280,7 +13674,8 @@ form.search .search button {
 
   /* line 141, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .body {
+  .card.mfsfa .body,
+  a.card.mfsfa .body {
     color: #fff;
     padding: 0;
     display: none;
@@ -13288,7 +13683,8 @@ form.search .search button {
 
   /* line 160, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa:hover > a:after {
+  .card.mfsfa:hover > a:after,
+  a.card.mfsfa:hover > a:after {
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
     background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
   }
@@ -13296,13 +13692,16 @@ form.search .search button {
   /* line 165, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover .body,
-  .card.mfsfa:hover .content a {
+  .card.mfsfa:hover .content a,
+  a.card.mfsfa:hover .body,
+  a.card.mfsfa:hover .content a {
     display: block;
   }
 
   /* line 170, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa:hover .content {
+  .card.mfsfa:hover .content,
+  a.card.mfsfa:hover .content {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -13310,20 +13709,24 @@ form.search .search button {
 
   /* line 25, src/sass/components/basic/cards/_copy.scss */
 
-  .card h2 {
+  .card h2,
+  a.card h2 {
     font-size: 2em;
   }
 
   /* line 43, src/sass/components/basic/cards/_copy.scss */
 
-  .card h3 {
+  .card h3,
+  a.card h3 {
     font-size: 2.25em;
   }
 
   /* line 65, src/sass/components/basic/cards/_copy.scss */
 
   .card h4,
-  .card .h4 {
+  .card .h4,
+  a.card h4,
+  a.card .h4 {
     font-size: 1.667em;
   }
 
@@ -13347,7 +13750,7 @@ form.search .search button {
     margin-top: -1.3125em;
   }
 
-  /* line 114, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-quote {
     font-size: 3rem;
@@ -14430,7 +14833,7 @@ form.search .search button {
     transform: translate(0, -50%);
   }
 
-  /* line 80, src/sass/components/basic/_buttons.scss */
+  /* line 81, src/sass/components/basic/_buttons.scss */
 
   .skip-section {
     display: none;
@@ -14608,7 +15011,8 @@ form.search .search button {
 
   /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo .content {
+  .card.fw_photo .content,
+  a.card.fw_photo .content {
     width: 90%;
   }
 
@@ -15014,40 +15418,67 @@ form.search .search button {
     top: -6.25rem;
   }
 
+  /* line 1, src/sass/structure/_home.scss */
+
+  .field--name-field-landing-page-content {
+    background-position: 0 1000px;
+  }
+
+  /* line 1, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info,
+  a.card.img-side .info {
+    padding: 4rem 7rem 0 6rem;
+  }
+
+  /* line 24, src/sass/components/basic/cards/_featured-element.scss */
+
+  .style-left .card.img-side .info,
+  .style-left a.card.img-side .info {
+    padding: 4rem 6rem 0 7rem;
+  }
+
   /* line 30, src/sass/components/basic/cards/_story.scss */
 
-  .full-screen .card.story > div {
+  .full-screen .card.story > div,
+  .full-screen a.card.story > div {
     width: 33.333%;
   }
 
   /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .content {
+  .card.mfsfa .content,
+  a.card.mfsfa .content {
     padding: 2.5rem 8rem;
   }
 
   /* line 37, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .content a {
+  .card.mfsfa .content a,
+  a.card.mfsfa .content a {
     font-size: 1.9rem;
   }
 
   /* line 141, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .body {
+  .card.mfsfa .body,
+  a.card.mfsfa .body {
     font-size: 1.9rem;
   }
 
   /* line 43, src/sass/components/basic/cards/_copy.scss */
 
-  .card h3 {
+  .card h3,
+  a.card h3 {
     font-size: 3em;
   }
 
   /* line 65, src/sass/components/basic/cards/_copy.scss */
 
   .card h4,
-  .card .h4 {
+  .card .h4,
+  a.card h4,
+  a.card .h4 {
     font-size: 1.75em;
   }
 
@@ -15108,7 +15539,8 @@ form.search .search button {
 
   /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo .content {
+  .card.fw_photo .content,
+  a.card.fw_photo .content {
     width: 85%;
   }
 }
@@ -15673,14 +16105,16 @@ form.search .search button {
 @media screen and (max-width: 991.9px) {
   /* line 58, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .content a span:last-child {
+  .card.mfsfa .content a span:last-child,
+  a.card.mfsfa .content a span:last-child {
     color: #212322;
     opacity: .3;
   }
 
   /* line 71, src/sass/components/basic/cards/_mfsfa.scss */
 
-  .card.mfsfa .title {
+  .card.mfsfa .title,
+  a.card.mfsfa .title {
     width: 100%;
     position: absolute;
     top: 0;
@@ -15716,8 +16150,23 @@ form.search .search button {
 
   /* line 69, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side > a {
+  .card.img-side > a,
+  a.card.img-side > a {
     margin-bottom: 1em;
+  }
+
+  /* line 1, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info,
+  a.card.img-side .info {
+    padding-bottom: 2rem;
+  }
+
+  /* line 90, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .element .img_vid,
+  a.card.img-side .element .img_vid {
+    margin: 0 -2.5rem 2.5rem;
   }
 
   /* line 65, src/sass/components/basic/_facts.scss */
@@ -15766,7 +16215,7 @@ form.search .search button {
 }
 
 @media screen and (max-width: 575.9px) {
-  /* line 124, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 133, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image {
     -webkit-box-flex: 0;
@@ -15774,7 +16223,7 @@ form.search .search button {
             flex: 0 0 20%;
   }
 
-  /* line 128, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 137, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image img {
     width: 100%;

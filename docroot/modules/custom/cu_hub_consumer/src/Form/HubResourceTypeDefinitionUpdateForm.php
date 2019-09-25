@@ -10,6 +10,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Component\Utility\DiffArray;
 use Drupal\cu_hub_consumer\Hub\ResourceInspector;
 use Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinition;
+use Drupal\cu_hub_consumer\Hub\ClientException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -100,10 +101,15 @@ class HubResourceTypeDefinitionUpdateForm extends FormBase {
         // We grab the latest inspection info, update the data in the def object, but then we
         // don't actually save it. We are just using it to detect differences. Saving of changes
         // will happen on form submit.
-        $inspection_info = $this->resourceInspector->inspect($tracked_type->get('type_id'));
-        $tracked_type->set('fields', $inspection_info);
-        if ($tracked_type->hasChanged()) {
-          $changed_tracked_type_fields[$tracked_type->get('type_id')] = $tracked_type->getChanges();
+        try {
+          $inspection_info = $this->resourceInspector->inspect($tracked_type->get('type_id'));
+          $tracked_type->set('fields', $inspection_info);
+          if ($tracked_type->hasChanged()) {
+            $changed_tracked_type_fields[$tracked_type->get('type_id')] = $tracked_type->getChanges();
+          }
+        }
+        catch (ClientException $e) {
+          $this->messenger->addError($e->getMessage());
         }
       }
 

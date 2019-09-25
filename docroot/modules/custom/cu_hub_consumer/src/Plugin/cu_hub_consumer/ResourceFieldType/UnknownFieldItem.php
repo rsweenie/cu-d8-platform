@@ -19,6 +19,13 @@ class UnknownFieldItem extends ResourceFieldItemBase {
   /**
    * {@inheritdoc}
    */
+  public function __isset($property_name) {
+    return FALSE;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function __toString() {
     return '';
   }
