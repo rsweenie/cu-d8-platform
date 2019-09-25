@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hp_hero_bg
+    - paragraphs.paragraphs_type.hp_hero
+    - paragraphs.paragraphs_type.hp_hero_bg
+  module:
+    - entity_reference_revisions
+id: paragraph.hp_hero.field_hp_hero_bg
+field_name: field_hp_hero_bg
+entity_type: paragraph
+bundle: hp_hero
+label: Backgrounds
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hp_hero_bg: hp_hero_bg
+    target_bundles_drag_drop:
+      accordion:
+        weight: 9
+        enabled: false
+      featured_content_item:
+        weight: 10
+        enabled: false
+      full_width_photo:
+        weight: 11
+        enabled: false
+      hp_hero:
+        weight: 12
+        enabled: false
+      hp_hero_bg:
+        enabled: true
+        weight: 13
+      ief_link:
+        weight: 14
+        enabled: false
+      image_video:
+        weight: 15
+        enabled: false
+      next_step:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.next_steps.field_next_steps_heading
+    - field.field.node.next_steps.field_next_steps_items
+    - node.type.next_steps
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.next_steps.teaser
+targetEntityType: node
+bundle: next_steps
+mode: teaser
+content:
+  field_next_steps_heading:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_next_steps_items: true
+  links: true
+  private: true

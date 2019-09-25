@@ -6,7 +6,6 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.node.slide.field_slide_caption
     - field.field.node.slide.field_slide_image
-    - field.field.node.slide.field_slide_link
     - field.field.node.slide.field_slide_p_link
     - node.type.slide
   module:
@@ -29,6 +28,7 @@ third_party_settings:
         open: false
         required_fields: true
       label: Links
+      region: content
 _core:
   default_config_hash: eWY4KprDzt4kLr9BEBdPxRmfjrhQRB0oYyS0sqhDenc
 id: node.slide.default
@@ -99,7 +99,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_slide_link: true
   moderation_state: true
   path: true
   promote: true

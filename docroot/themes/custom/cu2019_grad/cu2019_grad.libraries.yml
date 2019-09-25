@@ -1,0 +1,30 @@
+global-styling:
+  css:
+    theme:
+      assets/css/styles.css: {}
+
+global-scripts:
+  version: 1.x
+  js:
+    assets/js/site.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+ct:
+  js:
+    assets/js/ct.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+search-autocomplete:
+  js:
+    //search.creighton.edu/s/resources/creighton-search/js/handlebars.js: {type: external}
+    //search.creighton.edu/s/resources/creighton-search/js/typeahead.bundle.js: {type: external}
+    //search.creighton.edu/s/resources/creighton-search/js/typeahead.fb.js: {type: external}
+  css:
+    theme:
+      //search.creighton.edu/s/resources/creighton-search/css/customer-typeahead.css: {type: external}

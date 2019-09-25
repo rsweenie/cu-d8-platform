@@ -1,0 +1,14 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FORM L-OVER > FIELDS
+
+\*  --------------------------------------------------------------------------  */
+input:not([type="checkbox"]):not([type="radio"]), textarea, select {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    padding: #{$gutter}rem #{$gutter * .8}rem #{$gutter * .4}rem;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+}

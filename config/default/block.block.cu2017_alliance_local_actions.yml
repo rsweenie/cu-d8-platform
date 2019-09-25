@@ -2,8 +2,14 @@ uuid: 15972204-8a4c-4449-9e12-3e95ad165748
 langcode: en
 status: true
 dependencies:
+  module:
+    - block_aria_landmark_roles
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'Primary admin actions'
 _core:
   default_config_hash: 4BxFtaxDotN4Rpp-FjRBEFoPMExV8N-yGUvpZ5ZKIjE
 id: cu2017_alliance_local_actions

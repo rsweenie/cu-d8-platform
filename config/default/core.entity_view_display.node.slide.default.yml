@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.slide.field_slide_caption
     - field.field.node.slide.field_slide_image
-    - field.field.node.slide.field_slide_link
     - field.field.node.slide.field_slide_p_link
     - image.style.rectangle_horizontal_front_slider_1440x480_
     - node.type.slide
@@ -44,15 +43,6 @@ content:
     third_party_settings: {  }
     type: media_thumbnail
     region: content
-  field_slide_link:
-    weight: 3
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   field_slide_p_link:
     type: entity_reference_revisions_entity_view
     weight: 4
@@ -66,3 +56,4 @@ hidden:
   links: true
   private: true
   scheduled_publication: true
+  search_api_excerpt: true

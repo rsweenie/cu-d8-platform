@@ -7,8 +7,6 @@ dependencies:
     - field.field.paragraph.featured_content_item.field_fc_p_link
     - field.field.paragraph.featured_content_item.field_fc_supporting_p_links
     - field.field.paragraph.featured_content_item.field_featured_content_image
-    - field.field.paragraph.featured_content_item.field_link
-    - field.field.paragraph.featured_content_item.field_supporting_links
     - image.style.square_medium_large_395_x_395_
     - paragraphs.paragraphs_type.featured_content_item
   module:
@@ -54,22 +52,5 @@ content:
       image_style: square_medium_large_395_x_395_
       image_link: ''
     third_party_settings: {  }
-  field_link:
-    type: entity_reference_entity_view
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-  field_supporting_links:
-    type: entity_reference_entity_view
-    weight: 3
-    region: content
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,4 @@
+  <dt role="heading" aria-level="3"><button id="tab-{{ tab_id }}-toggle" aria-expanded="{% if i == 0 and showFirst %}true{% else %}false{% endif %}" aria-controls="tab-{{ tab_id }}" type="button" {% if i == 0 and showFirst %}aria-disabled="true"{% endif %}>{{ title}}</button></dt>
+  <dd id="tab-{{ tab_id }}" aria-labelledby="tab-{{ tab_id }}-toggle" {% if showFirst %}{% if i > 0 %}hidden{% endif %}{% else %}hidden{% endif %}>
+    {{ body }}
+  </dd>

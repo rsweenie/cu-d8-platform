@@ -1,0 +1,29 @@
+uuid: eea54450-5a6f-4de6-8473-4c58ef565d03
+langcode: en
+status: false
+dependencies:
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: o2bUWt_UvMXmSRQjojfb5KgEJAfOs6tULI202cR7Shk
+id: cu2019_grad_tabbedcontent
+theme: cu2019_grad
+region: dump
+weight: -8
+provider: null
+plugin: 'entity_field:node:field_profile_tabbed_content'
+settings:
+  id: 'entity_field:node:field_profile_tabbed_content'
+  label: 'Tabbed Content'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }

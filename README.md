@@ -50,120 +50,6 @@ This project is based on BLT, an open-source project template and tool that enab
 
 BLT requires a local environment that implements a LAMP stack. While out of the box templates are provided for Drupal VM, if you prefer you can use another tool such as Docker, Docksal, Lando, (other) Vagrant, or your own custom LAMP stack. BLT works with any local environment, however support is limited for these solutions.
 
-* Open the project directory in your preferred text editor/IDE
-
-* Create a `composer.required.json` in the blt directory and paste in the following:
-
-* ***Alternatively you can paste the JSON below directly in terminal on MacOS:***
-
-```shell
-project_root$ pbpaste >> blt/composer.required.json
-```
-
-```json
-{
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  },
-  "require": {
-    "drupal/core": "^8.5.0",
-    "drupal/config_split": "^1.0.0"
-  },
-  "require-dev": {
-    "behat/behat": ">=3.1 <3.4",
-    "behat/mink": "~1.7",
-    "behat/mink-selenium2-driver": "^1.3.1",
-    "bex/behat-screenshot": "^1.2",
-    "drupal/drupal-extension": "~3.2",
-    "drupal-composer/drupal-scaffold": "^2.1.0",
-    "jarnaiz/behat-junit-formatter": "^1.3.2",
-    "se/selenium-server-standalone": "^2.53",
-    "jakoch/phantomjs-installer":   "2.1.1-p07",
-    "dmore/behat-chrome-extension": "^1.0.0",
-    "mikey179/vfsStream": "~1.2",
-    "sensiolabs-de/deprecation-detector": "dev-master"
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Drupal\\Tests\\PHPUnit\\": "tests/phpunit/src/"
-    }
-  },
-  "autoload": {
-    "psr-4": {
-      "Acquia\\Blt\\Custom\\": "src/"
-    }
-  },
-  "extra": {
-    "composer-exit-on-patch-failure": true,
-    "drupal-scaffold": {
-      "initial": {
-        "sites/default/default.services.yml": "sites/default/services.yml",
-        "sites/default/default.settings.php": "sites/default/settings.php"
-      }
-    },
-    "enable-patching": true,
-    "patches": {
-      "drupal/core": {
-        "Clear Twig caches on deploys": "https://www.drupal.org/files/issues/2752961-130.patch"
-      }
-    }
-  },
-  "scripts": {
-    "blt-alias": "blt blt:init:shell-alias -y --ansi",
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "nuke": [
-      "rm -rf vendor composer.lock docroot/core docroot/modules/contrib docroot/profiles/contrib docroot/themes/contrib",
-      "@composer clearcache --ansi",
-      "@composer install --ansi"
-    ],
-    "install-phantomjs": [
-      "rm -rf vendor/bin/phantomjs",
-      "PhantomInstaller\\Installer::installPhantomJS"
-    ]
-  }
-}
-
-```
-
-* Create a `composer.suggested.json` in the blt directory and paste in the following:
-* ***Alternatively you can paste the JSON below directly in terminal on MacOS:***
-
-```shell
-project_root$ pbpaste >> blt/composer.suggested.json
-```
-
-```json
-{
-  "repositories": {
-    "asset-packagist": {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  },
-  "require": {
-    "acquia/lightning": "^3.1.0",
-    "drupal/acquia_connector": "^1.5.0",
-    "drupal/acquia_purge": "^1.0-beta3",
-    "drupal/cog": "^1.0.0",
-    "drupal/devel": "^1.0.0",
-    "drupal/qa_accounts": "^1.0.0-alpha1",
-    "drupal/memcache": "^2.0-alpha5",
-    "drupal/seckit": "^1.0.0-alpha2",
-    "drupal/security_review": "*",
-    "drupal/shield": "^1.0.0",
-    "drupal/features": "^3.7.0"
-  },
-  "extra": {
-    "patches": {
-    }
-  }
-}
-
-```
-
 * Install Composer Dependencies (warning: this can take some time based on internet speeds)
 
 ```shell
@@ -247,6 +133,20 @@ BLT uses a number of configuration (.yml or .json) files to define and customize
 * `box/config.yml` - Drupal VM configuration
 * `drush/sites` - contains Drush aliases for this project
 * `composer.json` - includes required components, including Drupal Modules, for this project
+
+## XDebug and VSCode
+
+[VSCode XDebug Extension provided by Felix Becker](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug) allows local XDebug capabilities. To leverage remote debugging there are a few steps involved:
+
+* `<project root>/box/config.yml` settings are set automatically to configure XDebug in your Vagrant box after running ```vendor/bin/blt vm```
+* Install PHP Debug VSCode Extension by Felix Becker
+* Also see https://www.drupal.org/docs/develop/development-tools/configuring-visual-studio-code under section Configuring XDebug
+* See `<project root>/vscode-launch.json.md` file for an example of additional pathMappings in your VSCode configuration in `.vscode/launch.json` i.e.
+```json
+"pathMappings": {
+  "/var/www/creighton": "${workspaceRoot}"
+}
+```
 
 ## Resources
 

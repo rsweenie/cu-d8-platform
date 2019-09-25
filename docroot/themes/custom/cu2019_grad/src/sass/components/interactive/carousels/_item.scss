@@ -1,0 +1,42 @@
+/*  --------------------------------------------------------------------------  *\
+
+    OWL CAROUSEL - ITEM
+
+    This styles the globally used owl-item wrapping element.
+
+\*  --------------------------------------------------------------------------  */
+.owl-item {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include flex(null, null, null, null); // DO NOT TOUCH THIS
+    @include flexItem(1, 1, auto); // DO NOT TOUCH THIS
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    -webkit-backface-visibility: hidden; // DO NOT TOUCH THIS
+    -webkit-tap-highlight-color: transparent; // DO NOT TOUCH THIS
+    -webkit-touch-callout: none; // DO NOT TOUCH THIS
+}
+
+.item {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include flexItem(1, 1, auto); // DO NOT TOUCH THIS
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    width: 100%;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    text-align: center;
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    
+    :last-child {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        margin-bottom: 0;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    }
+}

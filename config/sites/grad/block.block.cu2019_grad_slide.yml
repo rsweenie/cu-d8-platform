@@ -1,0 +1,37 @@
+uuid: fc0a7567-09fd-424c-a00e-e974a994faca
+langcode: en
+status: false
+dependencies:
+  module:
+    - ctools_block
+    - system
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: Ifug_a7aP4eMTePmZ7m7z0t9irdGhtXrNY7xvzF70ZI
+id: cu2019_grad_slide
+theme: cu2019_grad
+region: dump
+weight: -9
+provider: null
+plugin: 'entity_field:node:field_slide'
+settings:
+  id: 'entity_field:node:field_slide'
+  label: Slide
+  provider: ctools_block
+  label_display: visible
+  formatter:
+    label: hidden
+    type: entity_reference_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,10 @@
+name: 'CU Entity Embed'
+type: module
+description: 'Module to replace individual CKEDITOR icons images with custom icons. And fix rendering issues'
+core: 8.x
+package: 'Creighton'
+dependencies:
+  - lightning_media
+  - drupal:ckeditor
+  - drupal:toolbar
+  - admin_toolbar

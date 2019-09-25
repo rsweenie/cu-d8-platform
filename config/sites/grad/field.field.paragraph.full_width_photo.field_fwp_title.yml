@@ -1,0 +1,19 @@
+uuid: 9ddccb6f-1946-4da8-a10d-508e0d8d95f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fwp_title
+    - paragraphs.paragraphs_type.full_width_photo
+id: paragraph.full_width_photo.field_fwp_title
+field_name: field_fwp_title
+entity_type: paragraph
+bundle: full_width_photo
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_aria_landmark_roles
     - help
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: complementary
+    label: Help
 _core:
   default_config_hash: ALLWbzUCWn2Wtfuil6gjcQeFX70rihFx6DzSNc8aGvs
 id: cu2017_alliance_help

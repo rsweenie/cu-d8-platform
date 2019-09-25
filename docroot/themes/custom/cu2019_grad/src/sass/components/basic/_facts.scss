@@ -1,0 +1,362 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FACTS
+
+    These elements are used to display content, most likely in a sidebar, column
+    in the body of the page, or as a slide in a carousel.
+
+    They can include images, icons, and text.
+
+\*  --------------------------------------------------------------------------  */
+.fact {
+
+  &.stat_hl {
+    position: relative;
+    padding: 30px;
+    color: $white;
+
+    @media #{$mediaToggleHeader} {
+      padding: 30px 16px;
+      margin: 0 #{$gutter * -1}rem;
+    }
+
+    @media #{$mediaMd} {
+      @include innerBorder;
+      text-align: center;
+
+      &:before {
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        content: "";
+        background: rgba($white,.3);
+      }
+    }
+
+    > div {
+      @include flex($jc: center, $ff: column nowrap);
+
+      @media #{$mediaMd} {
+        align-items: center;
+      }
+    }
+
+    .field--name-field-stat-highlite-top-text {
+      order: 1;
+      font-size: 21px;
+      font-family: $headingFF;
+      line-height: 1.05em;
+      margin: 0 0 (29 / 30) * 1em 0;
+      text-transform: uppercase;
+      @include letterSpacing(50);
+
+      @media #{$mediaMd} {
+        margin: (36 / 30) * 1em 0 (29 / 30) * 1em 0;
+      }
+
+      @media #{$mediaLg} {
+        font-size: 30px;
+        max-width: 420px;
+      }
+    }
+
+    .field--name-field-stat-highlite-icon {
+      order: 2;
+
+      @media #{$mediaMdMax} {
+        width: 20%;
+        position: absolute;
+        top: 33px;
+        left: #{$gutter}rem;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      // @media #{$mediaLgMax} {
+      //
+      // }
+    }
+
+    .field--name-field-stat-highlite-statistic {
+      order: 3;
+      color: $tertiary;
+      font-size: 46px;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      @media #{$mediaLg} {
+        font-size: 72px;
+      }
+    }
+
+    .field--name-field-stat-highlite-bottom-text {
+      order: 4;
+      font-size: 14px;
+      margin: 0;
+      max-width: 420px;
+
+      @media #{$mediaMd} {
+        margin: 0 0 (29 / 16) * 1em 0;
+      }
+
+      @media #{$mediaLg} {
+        font-size: 16px;
+        margin-top: (-21 / 16) * 1em;
+      }
+    }
+
+    @media #{$mediaMdMax} {
+      .field--name-field-stat-highlite-top-text,
+      .field--name-field-stat-highlite-statistic,
+      .field--name-field-stat-highlite-bottom-text {
+        padding-left: calc(20% + #{$gutter * 2}rem);
+      }
+    }
+  }
+    // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // background: $tertiary;
+    // width: calc(90vw - (#{$gutter * 2}rem));
+    // padding: #{$gutter}rem;
+    // margin: 0 auto #{$gutter}rem;
+    // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // color: $white;
+    // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // text-align: center;
+    // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //
+    // .grid & {
+    //     margin-bottom: 0;
+    //     width: 100%;
+    // }
+    //
+    // @media #{$mediaMd} {
+    //     width: 33.333%;
+    //     max-width: 50rem;
+    //     margin: 0;
+    //     padding: #{$gutter * 2}rem;
+    //
+    //     [class*="col-"] + .fact {
+    //         order: 1;
+    //
+    //         &.pull-left {
+    //             order: 0;
+    //         }
+    //         &.push-right {
+    //             order: 2;
+    //         }
+    //     }
+    // }
+    //
+    // > img, > span {
+    //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //     display: none;
+    //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //     width: 30%;
+    //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //     color: $accent-3;
+    //     font-size: 8em;
+    //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //     text-align: center;
+    //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    // }
+    //
+    // > div {
+    //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    // }
+    //
+    // h3 {
+    //     font-size: 1.5em;
+    //
+    //     > img {
+    //         margin: .333em #{$gutter * -1}rem;
+    //         width: 100%;
+    //         height: auto;
+    //     }
+    // }
+    //
+    // strong {
+    //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //     display: block;
+    //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //     margin: .333em #{$gutter * -1}rem;
+    //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //     font-size: 1.5em;
+    //     line-height: 1.25em;
+    //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    // }
+    //
+    // em {
+    //     display: block;
+    //     font-size: .5em;
+    //     line-height: 1.5em;
+    //     font-weight: normal;
+    // }
+    //
+    // &.bg-none {
+    //     background: none;
+    //     color: $primary;
+    // }
+    //
+    // &.bg-accent-1 {
+    //     background: $accent-1;
+    //     color: $tertiary;
+    // }
+    //
+    // &.bg-accent-2 {
+    //     background: $accent-2;
+    //     color: $tertiary;
+    // }
+    //
+    // &.bg-accent-3 {
+    //     background: $accent-3;
+    //     color: $tertiary;
+    // }
+    //
+    // &.lg {
+    //     padding: #{$gutter}rem 0;
+    //
+    //    @media #{$mediaMd} {
+    //         width: 100%;
+    //         max-width: none;
+    //         margin: 0 auto;
+    //
+    //         &.float-left {
+    //             margin: 0 #{$gutter}rem #{$gutter}rem 0;
+    //             width: 50%;
+    //         }
+    //
+    //         &.float-right {
+    //             margin: 0 0 #{$gutter}rem #{$gutter}rem;
+    //             width: 50%;
+    //         }
+    //     }
+    // }
+    //
+    // .grid & {
+    //     &.lg {
+    //         padding: #{$gutter}rem;
+    //     }
+    // }
+    //
+    // @media #{$mediaMd} {
+    //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //     @include flex(space-between, center, center, row nowrap);
+    //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //     padding: #{$gutter * 2}rem;
+    //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //
+    //     > img, > span {
+    //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //         display: block;
+    //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //     }
+    //
+    //     > div {
+    //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //         width: 60%;
+    //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //
+    //         &:only-child {
+    //             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //             width: 100%;
+    //             margin: 0 auto;
+    //             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //         }
+    //     }
+    //
+    //     strong {
+    //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //         font-size: 2em;
+    //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //     }
+    // }
+    //
+    // @media #{$mediaLg} {
+    //     strong {
+    //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //         font-size: 2.5em;
+    //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //     }
+    // }
+    //
+    // @media #{$mediaXl} {
+    //     strong {
+    //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    //         font-size: 3em;
+    //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //     }
+    // }
+}
+// CUSTOM STYLES FOR CREIGHTON
+.fact-offset-tr {
+    .fact {
+        margin-top: #{$gutter * -2}rem;
+    }
+}
+.fact-offset-bc {
+    margin-top: #{$gutter * -2}rem;
+    z-index: 5;
+}
+
+@media #{$mediaMd} {
+    [class*="fact-offset-"] {
+        z-index: 115;
+        > div {
+            @include position(relative, 115);
+        }
+    }
+    .fact-offset-tr {
+        .fact {
+            @include position(absolute, 100, (top, right), (0, (#{$gutter}rem)), translate(0, -33.333%));
+        }
+    }
+    .fact-offset-bc {
+        margin-top: 0;
+
+        .fact {
+            @include position(absolute, null, (bottom, left), (0, 50%), translate(-50%, 50%));
+        }
+    }
+}

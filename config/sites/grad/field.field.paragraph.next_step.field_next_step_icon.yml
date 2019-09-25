@@ -1,0 +1,23 @@
+uuid: f4126a04-67b5-4c2f-8c0e-7a5552763a64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_next_step_icon
+    - paragraphs.paragraphs_type.next_step
+  module:
+    - options
+_core:
+  default_config_hash: oDQQ0whE6CyGzlnyo4IhAARS3n46v09IiH1A5-lDi_0
+id: paragraph.next_step.field_next_step_icon
+field_name: field_next_step_icon
+entity_type: paragraph
+bundle: next_step
+label: Icon
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

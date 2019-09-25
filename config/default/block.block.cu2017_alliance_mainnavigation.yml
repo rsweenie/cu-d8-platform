@@ -5,9 +5,14 @@ dependencies:
   config:
     - system.menu.main
   module:
+    - block_aria_landmark_roles
     - menu_block
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'Main navigation'
 _core:
   default_config_hash: m10mmgR1N5bvYHFWC9IiTZXSojvs4CbShPWre2j3ysw
 id: cu2017_alliance_mainnavigation

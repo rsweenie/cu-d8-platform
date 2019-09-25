@@ -1,0 +1,43 @@
+uuid: 78ea9bf5-2c0f-468e-8293-4d3125836119
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.interior_page.body
+    - field.field.node.interior_page.field_interior_page_content
+    - field.field.node.interior_page.field_interior_page_hero_img
+    - field.field.node.interior_page.field_interior_page_side_nav
+    - node.type.interior_page
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: F6GZMuD_7ieC8KsgCIgMEk9MYw7wniI_6pbXrevxAZI
+id: node.interior_page.teaser
+targetEntityType: node
+bundle: interior_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_interior_page_content: true
+  field_interior_page_hero_img: true
+  field_interior_page_side_nav: true
+  links: true
+  private: true
+  search_api_excerpt: true

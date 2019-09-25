@@ -1,0 +1,19 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > FADE OUT UP BIG
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(fadeOutUpBig) {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        @include transform(translate3d(0, -2000px, 0));
+    }
+}
+
+&.fade-out-up-big {
+    @include animationName(fadeOutUpBig);
+}

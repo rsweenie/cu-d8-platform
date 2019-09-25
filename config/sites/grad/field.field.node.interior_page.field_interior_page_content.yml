@@ -1,0 +1,96 @@
+uuid: ca4af91b-f130-45f7-9ca4-f1a89c5183c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_interior_page_content
+    - node.type.interior_page
+    - paragraphs.paragraphs_type.collapsible_text
+    - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.full_width_banner
+    - paragraphs.paragraphs_type.full_width_photo
+    - paragraphs.paragraphs_type.image_video
+    - paragraphs.paragraphs_type.manual_featured_set
+    - paragraphs.paragraphs_type.next_steps_collection
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: _WPmm3QDVXGdERxZYIP4W-1slsgQvR8CLaQ6gbMa2gU
+id: node.interior_page.field_interior_page_content
+field_name: field_interior_page_content
+entity_type: node
+bundle: interior_page
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      formatted_text: formatted_text
+      full_width_photo: full_width_photo
+      full_width_banner: full_width_banner
+      image_video: image_video
+      next_steps_collection: next_steps_collection
+      collapsible_text: collapsible_text
+      manual_featured_set: manual_featured_set
+    target_bundles_drag_drop:
+      accordion:
+        weight: -25
+        enabled: false
+      featured_content_item:
+        weight: -24
+        enabled: false
+      formatted_text:
+        enabled: true
+        weight: -23
+      full_width_photo:
+        enabled: true
+        weight: -22
+      full_width_banner:
+        enabled: true
+        weight: -21
+      ief_link:
+        weight: -20
+        enabled: false
+      image_video:
+        enabled: true
+        weight: -19
+      next_step:
+        weight: -18
+        enabled: false
+      hp_hero:
+        weight: -17
+        enabled: false
+      hp_hero_bg:
+        weight: -16
+        enabled: false
+      next_steps_collection:
+        enabled: true
+        weight: -15
+      quote:
+        weight: -14
+        enabled: false
+      collapsible_text:
+        enabled: true
+        weight: 20
+      manual_featured_set:
+        enabled: true
+        weight: 25
+      manual_featured_set_item:
+        weight: 26
+        enabled: false
+      manual_faculty_alumni_highlight:
+        weight: 29
+        enabled: false
+      manual_featured_event:
+        weight: 30
+        enabled: false
+      statistic_highlite:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

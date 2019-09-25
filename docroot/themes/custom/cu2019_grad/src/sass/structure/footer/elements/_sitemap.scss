@@ -1,0 +1,68 @@
+/* -------------------------- *\
+
+    SITEMAP
+
+\* -------------------------- */
+nav.menu--footer {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    ul {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+
+        font-size: 16px;
+        @media #{$mediaLg} {
+          @include flex(flex-start, center, center, row wrap);
+        }
+
+        @media #{$mediaXl} {
+          font-size: 17px;
+        }
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    }
+
+    li {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //width: calc(50% - #{$gutter * 1.2}rem);
+
+        text-align: left;
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        + li {
+          margin-top: 14px;
+        }
+
+
+        @media #{$mediaLg} {
+            @include flexItem(0, 1, auto);
+            width: auto;
+            margin: 0 10px;
+            //text-align: center;
+
+            + li {
+              margin-top: 0;
+            }
+
+            &:nth-child(n + 3) {
+                margin-top: 0;
+            }
+        }
+
+        @media #{$mediaXl} {
+          margin: 0 15px;
+        }
+    }
+}

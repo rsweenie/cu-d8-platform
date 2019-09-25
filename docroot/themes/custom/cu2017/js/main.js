@@ -1,11 +1,13 @@
 jQuery(document).ready(function() {
+
   // added function to clean up Mega Menu functionality -Abe
   function menuLoader() {
     var megaToggle = jQuery('#mega_menu_toggle')[0],
       megaMenu = jQuery('#mega_menu')[0],
       headerNav = jQuery('#header_nav')[0];
       // mega menu
-    jQuery('#mega_menu_toggle').on('click', function() {
+    jQuery('#mega_menu_toggle').on('click', function(e) {
+     e.preventDefault();
       if (megaMenu.style.display === 'none' || megaMenu.style.display === '') {
         megaMenu.style.display = 'block';
         (headerNav, megaToggle).classList.add('open');
@@ -15,6 +17,12 @@ jQuery(document).ready(function() {
       }
     });
   }
+  
+    //make parent div of front-page call-to-action button clickable
+    jQuery(".front-page-classic .first-content p:last-of-type").click(function(){
+      window.location=jQuery(this).find("a").attr("href"); 
+      return false;
+  });
 
   // find the size of the header logo and assign classes accordingly
   var logo = jQuery('.cu2017_logo');
@@ -92,6 +100,7 @@ jQuery(document).ready(function() {
       }
     });
   }
+// targets should be set in the template
   newWindow('ul.menu--transaction-menu li a');
   newWindow('ul.header_nav li a');
   newWindow('ul#schools_and_colleges_menu_body  li a');

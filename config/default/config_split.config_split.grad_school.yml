@@ -1,0 +1,16 @@
+uuid: c76e9604-2642-4734-a6fa-308d4ac375da
+langcode: en
+status: false
+dependencies: {  }
+id: grad_school
+label: 'Grad School (Deprecated)'
+description: ''
+folder: ../config/sites/grad
+module:
+  cu2019_grad_util: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

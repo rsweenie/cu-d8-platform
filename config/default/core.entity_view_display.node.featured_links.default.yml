@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.featured_links.field_featured_link
     - field.field.node.featured_links.field_featured_link_button_color
     - field.field.node.featured_links.field_featured_p_link
     - node.type.featured_links
@@ -25,15 +24,6 @@ targetEntityType: node
 bundle: featured_links
 mode: default
 content:
-  field_featured_link:
-    weight: 2
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   field_featured_link_button_color:
     weight: 1
     label: above
@@ -54,3 +44,4 @@ hidden:
   links: true
   private: true
   scheduled_publication: true
+  search_api_excerpt: true

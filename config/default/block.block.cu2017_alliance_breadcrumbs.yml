@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_aria_landmark_roles
     - system
   theme:
     - cu2017_alliance
+third_party_settings:
+  block_aria_landmark_roles:
+    role: navigation
+    label: 'Breadcrumb Navigation'
 _core:
   default_config_hash: n7zAKFFLaH1srpMUok1Uch7g-z3byKJj0vGyaUYJYiY
 id: cu2017_alliance_breadcrumbs

@@ -1,0 +1,5 @@
+name: 'CU 2019 Grad - Utilities'
+type: module
+description: 'Utilities and overrides specific to the grad site.'
+package: 'Creighton Grad'
+core: 8.x

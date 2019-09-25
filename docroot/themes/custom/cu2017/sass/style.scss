@@ -4,8 +4,6 @@
 // Bootstrap Framework.
 @import '../bootstrap/assets/stylesheets/bootstrap';
 
-// Base-theme overrides.
-@import 'overrides';
 
 // Variable declarations
 @import 'core/colors';
@@ -43,6 +41,10 @@
 @import 'custom/links';
 @import 'custom/frontpage';
 @import 'custom/sitename';
+@import 'custom/stickyheader';
 
 // override bootstrap defaults that interfere with custom styles
 @import 'custom/bootstrapoverride';
+
+// Base-theme overrides.
+@import 'overrides';

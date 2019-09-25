@@ -1,0 +1,42 @@
+{
+  "name": "component-library",
+  "version": "0.0.1",
+  "author": "r2i",
+  "description": "R2i Component Library",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browserify": "^16.1.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-debug": "^4.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-iconfont": "^10.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-pleeease": "^2.0.2",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pxtorem": "^3.0.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^1.12.1",
+    "gulp-watch": "^4.2.4",
+    "run-sequence": "^2.2.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "scripts": {
+    "start": "gulp FED",
+    "stage": "gulp stage --production"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "devDependencies": {
+    "gulp-iconfont-css": "^3.0.0",
+    "lodash": "^4.17.11"
+  }
+}

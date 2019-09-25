@@ -80,23 +80,30 @@ nodejs_install_npm_user: "{{ drupalvm_user }}"
 npm_config_prefix: "/home/{{ drupalvm_user }}/.npm-global"
 installed_extras: [adminer, selenium, drush, mailhog, memcached, nodejs, solr, xdebug]
 
-# PHP 7.1.
-php_version: "7.1"
+# PHP 7.2.
+php_version: "7.2"
 php_packages_extra:
   - "php{{ php_version }}-bz2"
   - "php{{ php_version }}-imagick"
   - imagemagick
 
 # XDebug configuration.
-php_xdebug_version: 2.5.0
+php_xdebug_version: 2.7.1
 # Change this value to 1 in order to enable xdebug by default.
-php_xdebug_default_enable: 0
-php_xdebug_coverage_enable: 0
+php_xdebug_default_enable: 1
+# Xdebug's code coverage functionality is often used in combination with PHP_CodeCoverage as part of PHPUnit runs
+# https://xdebug.org/docs/code_coverage
+php_xdebug_coverage_enable: 1
+# Recommended when using composer to set it to yes
+# https://stackoverflow.com/questions/31083195/disabling-xdebug-when-running-composer
 php_xdebug_cli_disable: yes
 php_xdebug_remote_enable: 1
+php_xdebug_remote_autostart: 1
 php_xdebug_remote_connect_back: 1
+# Use VSCODE for VS Code
+php_xdebug_idekey: VSCODE
 # Use PHPSTORM for PHPStorm, sublime.xdebug for Sublime Text.
-php_xdebug_idekey: PHPSTORM
+# php_xdebug_idekey: PHPSTORM
 php_xdebug_max_nesting_level: 256
 php_xdebug_remote_port: "9000"
 php_memory_limit: "512M"

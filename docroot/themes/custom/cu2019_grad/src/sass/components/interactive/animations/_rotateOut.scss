@@ -1,0 +1,21 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > ROTATE OUT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(rotateOut) {
+    from {
+        @include transformOrigin(center);
+        opacity: 1;
+    }
+
+    to {
+        @include transformOrigin(center);
+        @include transform(rotate3d(0, 0, 1, 200deg));
+        opacity: 0;
+    }
+}
+
+&.rotate-out {
+    @include animationName(rotateOut);
+}

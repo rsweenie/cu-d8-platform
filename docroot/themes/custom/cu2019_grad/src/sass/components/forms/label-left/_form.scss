@@ -1,0 +1,25 @@
+/*  --------------------------------------------------------------------------  *\
+
+    FORM L-LEFT STYLING
+
+\*  --------------------------------------------------------------------------  */
+// REMOVE CLASS WHEN USING IN LIVE SITE ONLY THERE FOR DEMO PURPOSES
+&.l-left {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    
+    // FORM ELEMENTS
+    @import '_elements';
+    // FORM LABELS
+    @import '_labels';
+    // FIELDS
+    @import '_fields';
+    // CHECKBOX AND RADIO
+    @import '_check-radio';
+    // FORM BUTTON
+    @import '_form-btn';
+}

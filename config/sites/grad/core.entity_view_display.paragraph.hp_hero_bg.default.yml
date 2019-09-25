@@ -1,0 +1,58 @@
+uuid: 32d91551-6965-438e-89ce-dc3066abcf69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_caption
+    - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_caption2
+    - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_img
+    - field.field.paragraph.hp_hero_bg.field_hp_hero_bg_link
+    - paragraphs.paragraphs_type.hp_hero_bg
+  module:
+    - link
+_core:
+  default_config_hash: uunXD-_FDKSaVwNFU-5v5LAn5YXUs1Gq1reWVNyJ84E
+id: paragraph.hp_hero_bg.default
+targetEntityType: paragraph
+bundle: hp_hero_bg
+mode: default
+content:
+  field_hp_hero_bg_caption:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hp_hero_bg_caption2:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hp_hero_bg_img:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: header_background_image
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_hp_hero_bg_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  search_api_excerpt: true

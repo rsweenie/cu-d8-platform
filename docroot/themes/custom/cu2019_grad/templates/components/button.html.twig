@@ -1,0 +1,9 @@
+<a href="{{ url }}" class="{{ class }}">
+  {% if arrow and arrowPosition == "before" %}
+    <span class="{{ arrow }}"></span>
+  {% endif %}
+  <span>{{ title }}</span>
+  {% if arrow and arrowPosition == "after" %}
+    <span class="{{ arrow }}"></span>
+  {% endif %}
+</a>

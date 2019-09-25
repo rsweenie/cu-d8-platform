@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Level 0 of the main menu.
+ */
+#}
+
+<ul class="menu menu-level-{{ items|first.menu_level }}">
+  {% for key, item in items if key|first != '#' %}
+    {% set menu_item_classes = [
+      'menu-item',
+      item.is_expanded ? '',
+      item.is_collapsed ? '',
+      item.in_active_trail ? 'menu-item--active-trail',
+    ] %}
+
+    <li{{ item.attributes.addClass(menu_item_classes) }}>
+      {{ link(item.title, item.url) }}
+
+      {% if item.content.children %}
+        {% set rendered_content = item.content|without('') %}
+        {% if rendered_content|render %}
+          <input type="checkbox" id="SM-Nav-{{ item.entity.uuid.value }}">
+          <label class="sm_toggle" for="SM-Nav-{{ item.entity.uuid.value }}">
+            <span class="icon icon-chevron-right"></span>
+            <span class="sr-only">Subpages</span>
+          </label>
+
+          {{ rendered_content }}
+        {% endif %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

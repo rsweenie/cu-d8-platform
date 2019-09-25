@@ -1,0 +1,31 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > HEARTBEAT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(heartBeat) {
+    0% {
+        @include transform(scale(1));
+    }
+
+    14% {
+        @include transform(scale(1.3));
+    }
+
+    28% {
+        @include transform(scale(1));
+    }
+
+    42% {
+        @include transform(scale(1.3));
+    }
+
+    70% {
+        @include transform(scale(1));
+    }
+}
+
+&.heart-beat {
+    @include animationName(heartBeat);
+    @include animationTiming(ease-in-out);
+}

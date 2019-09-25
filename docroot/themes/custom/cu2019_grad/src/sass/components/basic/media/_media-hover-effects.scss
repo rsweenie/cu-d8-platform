@@ -1,0 +1,43 @@
+/*  --------------------------------------------------------------------------  *\
+
+    MEDIA HOVER EFFECTS
+
+    This file modifies what's found in the base components/basic/_media
+    file.
+
+    This is the base of the hover effects, and then their modifications to the 
+    effects are located in the imported files here.
+
+    If all figures will have the hover effects, move the following definitions
+    to the media base file.
+
+    If you only have one hover effect for all figures, combine those styles with
+    the base media file as well.
+
+    No classes should be needed at that point to modify them.
+
+\*  --------------------------------------------------------------------------  */
+&.hov-eff {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    @include position(relative, 0);
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    overflow: hidden;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    color: $white;
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    text-align: center;
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    figcaption {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        @include position(absolute, 1, (left, top), (50%, 50%), translate(-50%, -50%));
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        border: .2rem solid $accent-2;
+        background: rgba($primary, .5);
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    }
+}

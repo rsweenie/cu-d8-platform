@@ -1,0 +1,49 @@
+/*  --------------------------------------------------------------------------  *\
+
+    CARD - STORY ELEMENTS
+
+\*  --------------------------------------------------------------------------  */
+&.story {
+    padding: #{$gutter}rem;
+            
+            
+    @media #{$mediaMd} {
+    padding: 0 #{$gutter}rem;
+    }
+    
+    .full-screen & {
+        justify-content: space-between;
+
+        > img {
+            order: 0;
+            width: 100%;
+            height: auto;
+            margin: 0 0 #{$gutter}rem;
+            
+            @media #{$mediaMd} {
+                width: calc(50% - #{$gutter}rem);
+                margin: 0;
+                order: 2;
+            }
+        }
+
+        > div {
+            padding: 0;
+            text-align: left;
+            
+            @media #{$mediaMd} {
+                padding: #{$gutter}rem;
+                width: calc(50% - #{$gutter}rem);
+                background: $white;
+            }
+            
+            @media #{$mediaLg} {
+                width: 41.667%;
+            }
+            
+            @media #{$mediaXl} {
+                width: 33.333%;
+            }
+        }
+    }
+}

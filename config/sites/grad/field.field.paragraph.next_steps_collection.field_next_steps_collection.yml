@@ -1,0 +1,30 @@
+uuid: 6a6a0214-cfb6-4ef8-b093-8fce00c60447
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_next_steps_collection
+    - node.type.next_steps
+    - paragraphs.paragraphs_type.next_steps_collection
+_core:
+  default_config_hash: vKX32_ezyz46NmP_Ev0cX9Uk6XLaBmuENb2CQueO6jY
+id: paragraph.next_steps_collection.field_next_steps_collection
+field_name: field_next_steps_collection
+entity_type: paragraph
+bundle: next_steps_collection
+label: 'Next steps collection'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      next_steps: next_steps
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

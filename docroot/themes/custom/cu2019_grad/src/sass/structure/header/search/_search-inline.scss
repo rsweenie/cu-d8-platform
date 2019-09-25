@@ -1,0 +1,94 @@
+/*  --------------------------------------------------------------------------  *\
+
+    SEARCH - INLINE
+
+\*  --------------------------------------------------------------------------  */
+form.search {
+    // VARIABLES
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION)
+    @include flex(space-between, center, center, row nowrap);
+    // BOX SIZING (DISPLAY, MARGIN, PADDING, WIDTH, HEIGHT)
+    padding: 30px 13px;
+    margin: 0;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    border: none;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITIONS AND ANIMATIONS)
+
+    @media #{$mediaFullHeader} {
+        padding: 0;
+        border-top: none;
+        border-bottom: .1rem solid $white;
+    }
+
+    [class*="btn-"] {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION)
+        // BOX SIZING (DISPLAY, MARGIN, PADDING, WIDTH, HEIGHT)
+        // margin: 0;
+        // width: 38px;
+        // height: 38px;
+        // padding: 0;
+        // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // border: 1px solid $secondary;
+        // background: $secondary;
+        // border-top-right-radius: 4px;
+        // border-bottom-right-radius: 4px;
+        // border-left: 0;
+        // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // font-size: 22px;
+        // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // text-align: center;
+        // // OTHER (TRANSITIONS AND ANIMATIONS)
+        //
+        // span {
+        //   top: 3px;
+        //   left: -1px;
+        // }
+        //
+        // @media #{$mediaFullHeader} {
+        //     padding: 0;
+        //     background: $gray1;
+        //     border: 1px solid $gray1;
+        // }
+        //
+        // &:hover {
+        //   background: $accent-2;
+        //   color: $white;
+        // }
+    }
+
+    .form-el {
+        @include flexItem(1, 1, auto);
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .form-btn {
+        padding: 0;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]) {
+        width: 100%;
+        height: 38px;
+        padding: 0 7px 0 25px;
+        background: #F5F5F5;
+        border: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-right: 0;
+        color: $secondary;
+        font-size: 18px;
+        font-family: $headingFF;
+
+        @media #{$mediaFullHeader} {
+            width: 155px;
+            border: 1px solid $gray1;
+        }
+    }
+
+    label {
+      @include srOnly;
+    }
+}

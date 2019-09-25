@@ -1,0 +1,22 @@
+uuid: 80dcc75f-3d24-4cea-9dfb-3564205a1f6e
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - cu2019_grad
+_core:
+  default_config_hash: bTX-Qs6x1tjMMjsjAEkYO1KZC0P_cMAy3KN7qKPJiJA
+id: cu2019_grad_breadcrumbs
+theme: cu2019_grad
+region: dump
+weight: -10
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

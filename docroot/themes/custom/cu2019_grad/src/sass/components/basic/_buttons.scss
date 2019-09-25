@@ -1,0 +1,119 @@
+/*  --------------------------------------------------------------------------  *\
+
+    Buttons
+
+    These are used throughout the website to create a call to action for another element like
+    submitting a form, linking to another page, or linking to another element on the same page.
+    GENERIC BUTTON STYLES
+    This sets up the base of all our styles, it's also the btn-default styles
+
+\*  --------------------------------------------------------------------------  */
+[class*="btn-"] {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    display: block;
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    padding: #{$gutter * .4}rem #{$gutter * .8}rem;
+    margin: #{$gutter * .2}rem 0;
+    width: 100%;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    border: .2rem solid $primary;
+    background: $accent-1;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    color: $primary;
+    font-family: $copyFF;
+    @include fontSize(1.6, 1.2);
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    text-decoration: none;
+    text-align: center;
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    transition: all .25s;
+
+    span:not(.sr-only) {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media #{$mediaLg} {
+      font-size: 19px;
+    }
+
+    .arrow:last-child {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+
+      font-size: 1.4em;
+      transform: translateY(-46%);
+      transition: transform 0.25s;
+    }
+
+    // WHEN DEFINING HOVER, BE SURE TO ADD , &:focus TO STYLE THE FOCUS STATE OF THE ELEMENT
+    // AS WELL.  THIS IS EXTREMELY IMPORTANT TO MEET WCAG 2.1 LEVEL AA COMPLIANCE
+    @include hover {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        border-color: currentColor;
+        background: $primary;
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        color: $accent-1;
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        .arrow:last-child {
+          transform: translate(3px, -46%);
+        }
+    }
+
+    @media #{$mediaSm} {
+        display: inline-block;
+        width: auto;
+        text-align: left;
+    }
+
+    // SETUP FOR ALL ARROWS
+    //@import 'buttons/icon/_icon-top';
+    //@import 'buttons/icon/_icon-bottom';
+    //@import 'buttons/icon/_icon-left';
+    @import 'buttons/icon/_icon-right';
+}
+.skip-section {
+    @include position(fixed, 1100, (right, bottom), ((#{$gutter}rem), 0));
+    padding: #{$gutter * .6}rem;
+    background: $tertiary;
+    color: $white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    span {
+        display: block;
+        margin: #{$gutter * .4}rem 0 0;
+    }
+
+    @media #{$mediaFullHeader} {
+        display: none;
+    }
+}
+// IMPORT BUTTON COLORS
+@import 'buttons/colors/_primary';
+@import 'buttons/colors/_secondary';
+@import 'buttons/colors/_hero';
+@import 'buttons/colors/_search';
+@import 'buttons/colors/_expand';
+//@import 'buttons/colors/_tertiary';
+@import 'buttons/colors/_text';
+//@import 'buttons/colors/_success';
+//@import 'buttons/colors/_danger';
+//@import 'buttons/colors/_warning';
+// SETUP FOR ALL ANIMATED BUTTONS
+//@import 'buttons/animations/_base';
+//@import 'buttons/animations/_fill';
+//@import 'buttons/animations/_press';
+//@import 'buttons/animations/_effects/_effect-1';
+//@import 'buttons/animations/_effects/_effect-2';
+//@import 'buttons/animations/_effects/_effect-3';
+//@import 'buttons/animations/_effects/_effect-4';
+//@import 'buttons/animations/_effects/_effect-5';

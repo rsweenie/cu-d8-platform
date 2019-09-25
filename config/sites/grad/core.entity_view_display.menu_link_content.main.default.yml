@@ -1,0 +1,18 @@
+uuid: 29889398-4ab2-4c89-83bb-886a164abf5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_mainmenu_feat_content
+    - field.field.menu_link_content.main.field_mainmenu_feat_link
+    - system.menu.main
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content: {  }
+hidden:
+  children: true
+  field_mainmenu_feat_content: true
+  field_mainmenu_feat_link: true
+  search_api_excerpt: true

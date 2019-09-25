@@ -1,0 +1,64 @@
+&.fw_photo {
+  color: $white;
+  border-top: 8px solid $tertiary;
+  border-bottom: 8px solid $tertiary;
+
+  &.img-behind {
+    padding: 45px 0;
+
+    @media #{$mediaLg} {
+      padding: 135px 0 80px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &:before {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: "";
+    background: rgba($primary,.85);
+    z-index: 1;
+  }
+
+  &.bg-grey {
+    &:before {
+      background: rgba($black,.82);
+    }
+  }
+
+  h3 {
+    font-size: 30px;
+    @include letterSpacing(50);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: $white;
+
+    @media #{$mediaMd} {
+      font-size: 40px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    line-height: (19.6 / 14) * 1em;
+
+    @media #{$mediaMd} {
+      font-size: 19px;
+    }
+  }
+
+
+  [class*="btn-"] {
+    margin-top: 20px;
+
+    @media #{$mediaMd} {
+      float: right;
+    }
+  }
+}

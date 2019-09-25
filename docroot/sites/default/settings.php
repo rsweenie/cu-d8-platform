@@ -1,7 +1,10 @@
 <?php
 
 // ===== Added by acsf-init, please do not delete. Section start. =====
-include dirname(__FILE__) . '/acsf.settings.php';
+$_acsf_infrastructure = include dirname(__FILE__) . '/acsf.settings.php';
+if ($_acsf_infrastructure === 'acsf-infrastructure') {
+  return;
+}
 // ===== Added by acsf-init, please do not delete. Section end. =====
 
 
@@ -669,15 +672,6 @@ if (!empty($_ENV['AH_SITE_GROUP']) && !empty($_ENV['AH_SITE_ENVIRONMENT']) && fu
 # $config['system.theme']['default'] = 'stark';
 # $config['user.settings']['anonymous'] = 'Visitor';
 
-/*
-* A temporary solution to theme default settings not sticking on update
-*/
-$alliance_hosts = ['alliance.creighton.edu', 'www.alliance.creighton.edu', 'alliance.creighton.acsitefactory.com', 'alliance.test-creighton.acsitefactory.com', 'alliance.dev-creighton.acsitefactory.com'];
-$host = $_SERVER['SERVER_NAME'];
-if (in_array($host, $alliance_hosts)) {
-  $config['system.theme']['default'] = 'cu2017_alliance';
-}
-
 /**
  * Fast 404 pages:
  *
@@ -806,3 +800,9 @@ $settings['entity_update_batch_size'] = 50;
 # }
 require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
 $settings['install_profile'] = 'creighton';
+#
+# IMPORTANT
+# Do not include additional settings here. Instead, add them to settings included
+# by `blt.settings.php`. See [BLT's documentation](http://blt.readthedocs.io)
+# for more detail.
+#

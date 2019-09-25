@@ -1,0 +1,196 @@
+/*  --------------------------------------------------------------------------  *\
+
+    THE SITES HEADER
+
+    Make sure to keep the header within the body so that we can use <header> in
+    other places as well and style it differently
+
+\*  --------------------------------------------------------------------------  */
+//.header-cl, // COMMENT OUT FOR PRODUCTION, USED FOR CL SITE ONLY
+.main-header {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // MOVE THE ENDING COMMENT TAG BELOW THE HEADER OPTION YOU WANT TO USE
+    /* -------------------------- *\
+    RELATIVE HEADER
+    @include position(relative, 1000);
+    \* -------------------------- */
+    /* -------------------------- *\
+    FIXED HEADER
+    \* -------------------------- */
+    @include position(fixed, 500, (left, top), (0, 0));
+    width: 100%;
+    /* -------------------------- *\
+    STICKY HEADER
+    @include position(sticky, 1000, (top), (-3.8rem));
+    width: 100%;
+    \* -------------------------- */
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    background: $white;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    @media #{$mediaFullHeader} {
+      height: 132px;
+      //padding: #{$gutter * .8}rem 0;
+    }
+
+    /* -------------------------- *\
+
+    HEADER LAYOUT OPTIONS
+
+    \* -------------------------- */
+    /* ------------------ *\
+    Toggle Only
+    &.t-only { // COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'header/layouts/_toggle';
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------ */
+    /* ------------------ *\
+    Main Nav Only
+    &.mn-only { // COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'header/layouts/_main-nav';
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------ */
+    /* ------------------ *\
+    Main Nav w/ Utility Nav
+    &.mn-w-un { // COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'header/layouts/_main-nav-w-utility-nav';
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------ */
+    /* ------------------ *\
+    Main Nav w/ Utility Bar
+    &.mn-w-ub { // COMMENT THIS OUT FOR PRODUCTION USE
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------ */
+    @import 'header/layouts/_main-nav-w-utility-bar';
+
+    /* -------------------------- *\
+
+    LOGO OPTIONS
+
+    We want to use SVG for our logos when available.
+
+    Choose which option below is the most relevant to your site.
+
+    \* -------------------------- */
+    /* ------------------ *\
+    SVG Logo
+    @import 'header/logo/_svg';
+    @import 'header/logo/_svg-w-tagline';
+    \* ------------------ */
+
+    /* ------------------ *\
+    Text Logo
+    @import 'header/logo/_text';
+    \* ------------------ */
+
+    /* ------------------ *\
+    IMG Logo
+    @import 'header/logo/_img-w-tagline';
+    \* ------------------ */
+    @import 'header/logo/_svg';
+
+    /* -------------------------- *\
+
+    NAVIGATIONS OPTIONS
+
+    \* -------------------------- */
+    /* ------------------ *\
+    Main Nav - Toggle Only
+    &.t-only { // COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'header/navs/_main-toggle-only';
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------ */
+    /* ------------------ *\
+    Main Nav - Root Only
+    &.mn-root { // COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'header/navs/_main-root-only';
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------ */
+    /* ------------------ *\
+    Main Nav - With Dropodown
+    &.mn-w-dd { // COMMENT THIS OUT FOR PRODUCTION USE
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    @import 'header/navs/_main-w-dropdown';
+    \* ------------------ */
+    /* ------------------ *\
+    Medga Menu
+    \* ------------------ */
+    //&.mm { // COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'header/navs/_mega-menu';
+    //} // COMMENT THIS OUT FOR PRODUCTION USE
+    /* ------------------ *\
+    Utility Navigation
+    &.un { // COMMENT THIS OUT FOR PRODUCTION USE
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------ */
+    @import 'header/navs/_utility-nav';
+
+    /* -------------------------- *\
+
+    SEARCH OPTIONS
+
+    \* -------------------------- */
+    /* ------------------ *\
+    Search Inline
+    \* ------------------ */
+    //&.si { // COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'header/search/_search-inline';
+    //} // COMMENT THIS OUT FOR PRODUCTION USE
+    /* ------------------ *\
+    Search Toggle
+    &.st { // COMMENT THIS OUT FOR PRODUCTION USE
+        @import 'header/search/_search-toggle';
+    } // COMMENT THIS OUT FOR PRODUCTION USE
+    \* ------------------ */
+    /* ------------------ *\
+    Search Dialog - does not require a css file to be imported
+    \* ------------------ */
+}
+
+
+@import 'header/navs/_cta';
+/* -------------------------- *\
+
+COMPONENT LIBRARY MODIFICATIONS
+Delete everything below including comment
+
+\* -------------------------- */
+//.header-cl {
+//    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+//    @include position(relative, 1000);
+//    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+//    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+//    border-top: .1rem solid $accent-2;
+//    border-bottom: .1rem solid $accent-2;
+//    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+//    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+//    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+//    /* ------------------ *\
+//    Toggle Only
+//    \* ------------------ */
+//    &.t-only {
+//        z-index: 500;
+//    }
+//    /* ------------------ *\
+//    Main Nav Only
+//    \* ------------------ */
+//    &.mn-only {
+//        z-index: 490;
+//    }
+//    /* ------------------ *\
+//    Main Nav w/ Utility Nav
+//    \* ------------------ */
+//    &.mn-w-un {
+//        z-index: 480;
+//    }
+//    /* ------------------ *\
+//    Main Nav w/ Utility Bar
+//    \* ------------------ */
+//    &.mn-w-ub {
+//        z-index: 470;
+//    }
+//}

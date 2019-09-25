@@ -1,0 +1,20 @@
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+
+  > main {
+    padding-top: 69px;
+    flex-grow: 1;
+
+    @media #{$mediaFullHeader} {
+      padding-top: 189px;
+        //padding: 11.4rem 0 0;
+    }
+
+    @media #{$mediaXl} {
+        //padding: 13.4rem 0 0;
+    }
+  }
+}

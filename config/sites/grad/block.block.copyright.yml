@@ -1,0 +1,30 @@
+uuid: dbe88f54-be5f-49c4-89d9-c5616f566802
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b053f663-1584-45e8-b84e-e04e68b4486c'
+  module:
+    - block_aria_landmark_roles
+    - block_content
+  theme:
+    - cu2019_grad
+third_party_settings:
+  block_aria_landmark_roles:
+    role: ''
+    label: ''
+id: copyright
+theme: cu2019_grad
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'block_content:b053f663-1584-45e8-b84e-e04e68b4486c'
+settings:
+  id: 'block_content:b053f663-1584-45e8-b84e-e04e68b4486c'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

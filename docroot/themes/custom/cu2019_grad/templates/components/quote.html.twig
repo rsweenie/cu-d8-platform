@@ -1,0 +1,26 @@
+<blockquote {% if class %}class="{{ class }}"{% endif %}>
+  {% if link %}<a href="{{ link }}">{% endif %}
+  <div class="quote-inner">
+    <div class="quote">
+      {% if quote %}
+        {{ quote }}
+      {% endif %}
+      <div class="attr">
+        {% if name %}
+          {{ name }}
+        {% endif %}
+        {% if title %}
+            <span>, </span>{{ title }}
+        {% endif %}
+        {% if area %}
+            <br>
+            <small>{{ area }}</small>
+        {% endif %}
+      </div>
+    </div>
+    {% if img %}
+        {{ img }}
+    {% endif %}
+  </div>
+  {% if link %}</a>{% endif %}
+</blockquote>

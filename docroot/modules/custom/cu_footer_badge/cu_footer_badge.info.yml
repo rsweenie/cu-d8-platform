@@ -1,8 +1,0 @@
-name: 'CU Footer Badge Block'
-description: Installs Footer Badge Block
-type: module
-core: 8.x
-version: 8.x-1.0
-package: Creighton
-dependencies:
-  - block_content

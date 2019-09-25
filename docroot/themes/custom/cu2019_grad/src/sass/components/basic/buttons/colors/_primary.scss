@@ -1,0 +1,92 @@
+/*  --------------------------------------------------------------------------  *\
+
+    Button - Primary
+
+\*  --------------------------------------------------------------------------  */
+.btn-primary {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    position: relative;
+    display: flex;
+    align-items: center;
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    overflow: hidden;
+    min-height: 60px;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    background: linear-gradient(0deg, $accent-3 0%, lighten($accent-3, 7) 100%);
+    border: none;
+    border-radius: 4px;
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    color: $primary;
+    font-weight: bold;
+    padding: 10px 65px 10px 15px;
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    &:before {
+      width: 130px;
+      height: 150%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 0;
+      content: "";
+      background: linear-gradient(-45deg, $accent-4 50%, rgba($accent-4,0) 50%);
+      transform-origin: bottom right;
+      transition: opacity 0.25s;
+
+      @media #{$mediaSm} {
+        //width: 83px;
+      }
+    }
+
+    @media #{$mediaSm} {
+      display: inline-flex;
+      padding: 16px 80px 16px 30px;
+    }
+
+    /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
+    &:not([class*="btn-ani-fill-"]) {
+        @include hover {
+            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+            background: $primary;
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            color: $white;
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        }
+    }
+
+    @include hover {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        color: $primary;
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    }
+    \*-------------------------------------------------------------------------------*/
+
+    /*------  USE THIS IF YOU DO NOT HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------*\
+    \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
+    @include hover {
+        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        background: linear-gradient(0deg, #ffde8c 0%, #ffdf91 100%);
+        color: $primary;
+        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        &:before {
+          background: linear-gradient(-45deg, #ffd072 50%, rgba(#ffd072,0) 50%);
+        }
+    }
+
+    @media #{$mediaMd} {
+      max-width: 320px;
+    }
+}

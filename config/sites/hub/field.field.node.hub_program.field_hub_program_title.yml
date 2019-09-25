@@ -1,0 +1,19 @@
+uuid: 81f7aed5-3a35-4664-a5e9-f8ffee0a18c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_program_title
+    - node.type.hub_program
+id: node.hub_program.field_hub_program_title
+field_name: field_hub_program_title
+entity_type: node
+bundle: hub_program
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

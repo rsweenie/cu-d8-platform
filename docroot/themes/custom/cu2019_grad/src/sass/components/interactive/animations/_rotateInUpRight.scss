@@ -1,0 +1,22 @@
+/*  --------------------------------------------------------------------------  *\
+
+    ANIMATION > ROTATE IN UP RIGHT
+
+\*  --------------------------------------------------------------------------  */
+@include keyframes(rotateInUpRight) {
+    from {
+        @include transformOrigin(right bottom);
+        @include transform(rotate3d(0, 0, 1, -90deg));
+        opacity: 0;
+    }
+
+    to {
+        @include transformOrigin(right bottom);
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
+    }
+}
+
+&.rotate-in-up-right {
+    @include animationName(rotateInUpRight);
+}

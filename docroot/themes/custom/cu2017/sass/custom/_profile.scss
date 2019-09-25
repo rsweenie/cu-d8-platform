@@ -17,7 +17,7 @@
 	.field--name-field-profile-name {
 		color: $darkBlue;
 		font-family: $condensedFont;
-		font-size: 2em;
+		font-size: .9em;
 		font-weight: $bold;
 		margin-bottom: 8px;
 	}
@@ -44,7 +44,7 @@
 	flex: 0 1 auto;
 	flex-direction: column;
 	float: left;
-	margin: 5px 10px 1.5em 0;
+	margin: 0 10px 1.5em 0;
 	padding: 10px;
 	padding-bottom: 34px;
 	position: relative;
@@ -130,7 +130,7 @@
 		span.invisible {
 		 position: absolute;
 		}
-		
+
 		.paragraph {
 			margin-bottom: 0;
 			padding-bottom: 0;

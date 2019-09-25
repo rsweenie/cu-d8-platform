@@ -1,0 +1,26 @@
+/*  --------------------------------------------------------------------------  *\
+
+    COPY - BODY STYLES
+
+\*  --------------------------------------------------------------------------  */
+body {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    //padding: 8.2rem 0 0;
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    color: $gray2;
+    font-family: $copyFF;
+    font-size: 15px;
+    line-height: $copyLH;
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+    @media #{$mediaFullHeader} {
+      font-size: $copyFS;
+    }
+
+    @media #{$mediaXl} {
+        //padding: 13.4rem 0 0;
+    }
+}

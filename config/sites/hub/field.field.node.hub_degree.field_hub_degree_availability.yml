@@ -1,0 +1,29 @@
+uuid: e2d90a58-6e1d-4cc6-8706-7c080b6c3c57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_availability
+    - node.type.hub_degree
+    - taxonomy.vocabulary.program_availability
+id: node.hub_degree.field_hub_degree_availability
+field_name: field_hub_degree_availability
+entity_type: node
+bundle: hub_degree
+label: 'Availability / Method'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      program_availability: program_availability
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
