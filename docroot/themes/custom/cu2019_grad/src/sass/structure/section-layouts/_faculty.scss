@@ -40,3 +40,31 @@
     }
   }
 }
+
+.layout__region--facmiddle {
+  @media #{$mediaMd} {
+    padding-right: #{$gutter * 2}rem;
+  }
+
+  .field__item {
+    margin-bottom: (6 / 19) * 1em;
+
+    &.field--name-hub-field-hub-faculty-department {
+      @include h4;
+      margin-bottom: (10 / 24) * 1em;
+    }
+  }
+
+  h3.field__item {
+    line-height: .825em;
+    margin-bottom: (33 / 40) * 1em;
+    &:after {
+      bottom: (10 / 40) * -1em;
+    }
+  }
+
+  .btn-secondary {
+    margin-top: 20px;
+    min-width: 0;
+  }
+}

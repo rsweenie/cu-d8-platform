@@ -42,6 +42,14 @@ function cu2019_grad_preprocess_field__field_interior_page_content(&$variables) 
   }
 }
 
+function cu2019_grad_preprocess_field__field_hub_reference__faculty_detail(&$variables) {
+  $element = $variables['element'];
+
+  foreach ($variables['items'] as $key => &$item) {
+    $item['attributes']->addClass('test');
+  }
+}
+
 function cu2019_grad_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $variables['par_id'] = $paragraph->id();
