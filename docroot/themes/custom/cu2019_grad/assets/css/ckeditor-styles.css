@@ -419,7 +419,7 @@ textarea {
           order: 0;
 }
 
-/* line 17, src/sass/structure/_grid.scss */
+/* line 23, src/sass/structure/_grid.scss */
 
 .row + * {
   margin-top: 5rem;
@@ -447,7 +447,7 @@ textarea {
   width: calc(100% + (-2.5rem * -2));
 }
 
-/* line 39, src/sass/structure/_grid.scss */
+/* line 45, src/sass/structure/_grid.scss */
 
 .row.align-center {
   -webkit-box-pack: center;
@@ -458,7 +458,7 @@ textarea {
           align-items: center;
 }
 
-/* line 43, src/sass/structure/_grid.scss */
+/* line 49, src/sass/structure/_grid.scss */
 
 .row.align-left {
   -webkit-box-pack: start;
@@ -466,7 +466,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 46, src/sass/structure/_grid.scss */
+/* line 52, src/sass/structure/_grid.scss */
 
 .row.align-right {
   -webkit-box-pack: end;
@@ -474,7 +474,7 @@ textarea {
           justify-content: flex-end;
 }
 
-/* line 49, src/sass/structure/_grid.scss */
+/* line 55, src/sass/structure/_grid.scss */
 
 .row.va-center {
   -webkit-box-align: center;
@@ -482,7 +482,7 @@ textarea {
           align-items: center;
 }
 
-/* line 52, src/sass/structure/_grid.scss */
+/* line 58, src/sass/structure/_grid.scss */
 
 .row.va-top {
   -webkit-box-align: start;
@@ -490,7 +490,7 @@ textarea {
           align-items: flex-start;
 }
 
-/* line 55, src/sass/structure/_grid.scss */
+/* line 61, src/sass/structure/_grid.scss */
 
 .row.va-bottom {
   -webkit-box-align: end;
@@ -498,7 +498,7 @@ textarea {
           align-items: flex-end;
 }
 
-/* line 58, src/sass/structure/_grid.scss */
+/* line 64, src/sass/structure/_grid.scss */
 
 .row.ha-center {
   -webkit-box-pack: center;
@@ -506,7 +506,7 @@ textarea {
           justify-content: center;
 }
 
-/* line 61, src/sass/structure/_grid.scss */
+/* line 67, src/sass/structure/_grid.scss */
 
 .row.ha-top {
   -webkit-box-pack: start;
@@ -514,7 +514,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 64, src/sass/structure/_grid.scss */
+/* line 70, src/sass/structure/_grid.scss */
 
 .row.ha-right {
   -webkit-box-pack: end;
@@ -11023,18 +11023,33 @@ aside .program_rail h3 ~ .h4 {
 
 /* line 37, src/sass/components/feeds-detail/programs/_programs.scss */
 
+.program_rail:before {
+  position: absolute;
+  width: calc(100vw - 33%);
+  height: calc(100% + 6.2rem);
+  top: -6.2rem;
+  right: 100%;
+  background-image: url(../../img/feature_slash_bg.png);
+  background-repeat: repeat-y;
+  background-size: 75%;
+  background-position: 98rem;
+  content: "";
+}
+
+/* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
+
 .program_rail > div {
   position: relative;
   z-index: 10;
 }
 
-/* line 42, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 55, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail ul {
   margin-left: 0;
 }
 
-/* line 46, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 59, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail .field--name-hub-field-hub-degree-title {
   font-size: 1.2rem;
@@ -11941,7 +11956,13 @@ form.search .search button {
             order: 1;
   }
 
-  /* line 22, src/sass/structure/_grid.scss */
+  /* line 17, src/sass/structure/_grid.scss */
+
+  .no-gutter {
+    padding: 0;
+  }
+
+  /* line 28, src/sass/structure/_grid.scss */
 
   .pull-left {
     -webkit-box-ordinal-group: 1;
@@ -11949,7 +11970,7 @@ form.search .search button {
             order: 0;
   }
 
-  /* line 25, src/sass/structure/_grid.scss */
+  /* line 31, src/sass/structure/_grid.scss */
 
   .push-right {
     -webkit-box-ordinal-group: 3;
@@ -11957,14 +11978,14 @@ form.search .search button {
             order: 2;
   }
 
-  /* line 28, src/sass/structure/_grid.scss */
+  /* line 34, src/sass/structure/_grid.scss */
 
   .float-left {
     margin: 0 2.5rem 2.5rem 0;
     float: left;
   }
 
-  /* line 32, src/sass/structure/_grid.scss */
+  /* line 38, src/sass/structure/_grid.scss */
 
   .float-right {
     margin: 0 0 2.5rem 2.5rem;
@@ -13312,7 +13333,7 @@ form.search .search button {
     padding-left: 2.5rem;
   }
 
-  /* line 46, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 59, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail .field--name-hub-field-hub-degree-title {
     font-size: 1.5rem;
