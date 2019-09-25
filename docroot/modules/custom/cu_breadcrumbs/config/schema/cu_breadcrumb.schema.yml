@@ -1,10 +1,18 @@
-cu_breadcrumbs:
+cu_breadcrumbs.global_settings:
+  type: config_entity
+  label: 'cu breadcrumbs global config'
+  mapping:
+    builder:
+      type: string
+      label: 'Breadcrumb builder mode'
+
+cu_breadcrumbs.settings.*:
   type: config_entity
   label: 'cu breadcrumbs config'
   mapping:
     uuid:
       type: string
-      label: 'uuid'
-    apply:
-      type: boolean
-      label: 'Apply'
+      label: 'UUID'
+    builder:
+      type: string
+      label: 'Breadcrumb builder mode'

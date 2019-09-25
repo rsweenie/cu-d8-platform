@@ -1,39 +1,42 @@
-uuid: 355f5145-bd8b-4a73-9d8e-762a61fea0be
+uuid: eff58576-dd3b-410e-8a37-586c0e6dc5c0
 langcode: en
 status: true
 dependencies: {  }
-id: taxonomy_term__program_availability
-type_id: taxonomy_term--program_availability
+id: node__hub_statistic_highlight
+type_id: node--hub_statistic_highlight
 fields:
-  drupal_internal__tid:
+  drupal_internal__nid:
     type: integer
     multiple: false
-  drupal_internal__revision_id:
+  drupal_internal__vid:
     type: integer
     multiple: false
   langcode:
     type: string_long
     multiple: false
-  revision_created:
+  revision_timestamp:
     type: datetime
     multiple: false
-  revision_log_message:
+  revision_log:
     type: hub_unknown
     multiple: false
   status:
     type: string_long
     multiple: false
-  name:
+  title:
     type: string_long
     multiple: false
-  description:
-    type: hub_unknown
-    multiple: false
-  weight:
-    type: integer
+  created:
+    type: datetime
     multiple: false
   changed:
     type: datetime
+    multiple: false
+  promote:
+    type: string_long
+    multiple: false
+  sticky:
+    type: string_long
     multiple: false
   default_langcode:
     type: string_long
@@ -41,6 +44,12 @@ fields:
   revision_translation_affected:
     type: string_long
     multiple: false
+  scheduled_transition_date:
+    type: hub_unknown
+    multiple: true
+  scheduled_transition_state:
+    type: hub_unknown
+    multiple: true
   metatag:
     type: hub_unknown
     multiple: false
@@ -50,14 +59,20 @@ fields:
   path:
     type: hub_unknown
     multiple: false
-  field_term_tooltip:
-    type: string_long
+  private:
+    type: hub_unknown
     multiple: false
-  vid:
-    type: hub_resource
-    hub_type: taxonomy_vocabulary
+  publish_on:
+    type: hub_unknown
     multiple: false
-  parent:
+  unpublish_on:
+    type: hub_unknown
+    multiple: false
+  node_type:
     type: hub_resource
-    hub_type: taxonomy_term
-    multiple: true
+    hub_type: node_type
+    multiple: false
+  field_hub_stat_highlight_image:
+    type: hub_resource
+    hub_type: media
+    multiple: false

@@ -11733,6 +11733,14 @@ form.search .search button {
   top: 7.8rem;
 }
 
+/* line 5, src/sass/ckeditor-styles.scss */
+
+.cke_widget_drupalentity .embedded-entity {
+  outline: lightgray 1px dashed;
+  margin: 1rem;
+  padding: 1rem;
+}
+
 @media screen and (min-width: 576px) {
   /* line 285, src/sass/base/_mixins.scss */
 
