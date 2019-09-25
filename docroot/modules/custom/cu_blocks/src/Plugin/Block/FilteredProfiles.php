@@ -12,7 +12,6 @@ use Drupal\Core\Session\AccountInterface;
  * @Block(
  *   id = "cu_blocks_filtered_profiles",
  *   admin_label = @Translation("Filtered Profiles"),
- *   category = @Translation("CU Blocks"),
  * )
  */
 class FilteredProfiles extends BlockBase {
@@ -70,6 +69,12 @@ class FilteredProfiles extends BlockBase {
       '#description' => $this->t('Select the profile type you would like featured in this block.'),
       '#default_value' => isset($config['filtered_profiles_tid']) ? $config['filtered_profiles_tid'] : '',
     ];
+    $form['filtered_profiles_foo'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Foo Here'),
+      '#description' => $this->t('Select the profile type you would like featured in this block.'),
+      '#default_value' => isset($config['filtered_profiles_foo']) ? $config['filtered_profiles_foo'] : '',
+    ];
 
     return $form;
   }
@@ -86,6 +91,9 @@ class FilteredProfiles extends BlockBase {
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     // Adds block type-specific submission handling for the block form.
+
+    $this->setConfigurationValue('filtered_profiles_tid', $form_state->getValue('filtered_profiles_tid'));
+    $this->setConfigurationValue('filtered_profiles_foo', $form_state->getValue('filtered_profiles_foo'));
   }
 
   /**
