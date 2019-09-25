@@ -730,7 +730,7 @@ a:focus {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 198, src/sass/components/copy/_headings.scss */
+/* line 201, src/sass/components/copy/_headings.scss */
 
 h1,
 h4,
@@ -739,14 +739,14 @@ h6 {
   font-family: proxima-nova, sans-serif;
 }
 
-/* line 202, src/sass/components/copy/_headings.scss */
+/* line 205, src/sass/components/copy/_headings.scss */
 
 h2,
 h3 {
   font-family: "Conduit";
 }
 
-/* line 209, src/sass/components/copy/_headings.scss */
+/* line 212, src/sass/components/copy/_headings.scss */
 
 h1,
 .h1 {
@@ -758,7 +758,7 @@ h1,
   text-transform: uppercase;
 }
 
-/* line 213, src/sass/components/copy/_headings.scss */
+/* line 216, src/sass/components/copy/_headings.scss */
 
 h2,
 .h2 {
@@ -767,7 +767,7 @@ h2,
   font-size: 1.75em;
 }
 
-/* line 217, src/sass/components/copy/_headings.scss */
+/* line 220, src/sass/components/copy/_headings.scss */
 
 h3,
 .h3 {
@@ -776,16 +776,17 @@ h3,
   font-size: 3rem;
   color: #002E6D;
   text-transform: uppercase;
+  letter-spacing: .05em;
 }
 
-/* line 110, src/sass/components/copy/_headings.scss */
+/* line 111, src/sass/components/copy/_headings.scss */
 
 aside h3,
 aside .h3 {
   font-size: 1.125em;
 }
 
-/* line 113, src/sass/components/copy/_headings.scss */
+/* line 114, src/sass/components/copy/_headings.scss */
 
 aside h3 ~ h3,
 aside h3 ~ .h3,
@@ -796,25 +797,27 @@ aside .h3 ~ .h3 {
   border-top: 0.1rem solid #6CACE4;
 }
 
-/* line 221, src/sass/components/copy/_headings.scss */
+/* line 224, src/sass/components/copy/_headings.scss */
 
 h4,
 .h4 {
   margin: 0 0 .75em;
   padding: 0;
   color: #266db3;
-  font-size: 1.25em;
+  font-size: 1.8rem;
   text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 400;
 }
 
-/* line 152, src/sass/components/copy/_headings.scss */
+/* line 155, src/sass/components/copy/_headings.scss */
 
 aside h4,
 aside .h4 {
   font-size: 1em;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
+/* line 158, src/sass/components/copy/_headings.scss */
 
 aside h4 ~ h4,
 aside h4 ~ .h4,
@@ -2021,6 +2024,56 @@ Delete everything below including comment
   top: -2.5rem;
   content: "";
   background: #CEE2F3;
+}
+
+/* line 49, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle .field__item {
+  margin-bottom: 0.31579em;
+}
+
+/* line 52, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
+  color: #266db3;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 400;
+  margin-bottom: 0.41667em;
+}
+
+/* line 155, src/sass/components/copy/_headings.scss */
+
+aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
+  font-size: 1em;
+}
+
+/* line 158, src/sass/components/copy/_headings.scss */
+
+aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department ~ h4,
+aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department ~ .h4 {
+  margin-top: 0.5rem;
+}
+
+/* line 58, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle h3.field__item {
+  line-height: .825em;
+  margin-bottom: 0.825em;
+}
+
+/* line 61, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle h3.field__item:after {
+  bottom: -0.25em;
+}
+
+/* line 66, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle .btn-secondary {
+  margin-top: 2rem;
+  min-width: 0;
 }
 
 /* CSS Document */
@@ -10936,17 +10989,19 @@ nav.jn li + li {
 
 .program_rail h3 {
   color: #266db3;
-  font-size: 1.25em;
+  font-size: 1.8rem;
   text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 400;
 }
 
-/* line 152, src/sass/components/copy/_headings.scss */
+/* line 155, src/sass/components/copy/_headings.scss */
 
 aside .program_rail h3 {
   font-size: 1em;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
+/* line 158, src/sass/components/copy/_headings.scss */
 
 aside .program_rail h3 ~ h4,
 aside .program_rail h3 ~ .h4 {
@@ -12013,25 +12068,25 @@ form.search .search button {
          column-gap: 2.5rem;
   }
 
-  /* line 209, src/sass/components/copy/_headings.scss */
+  /* line 212, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
     font-size: 3.5rem;
   }
 
-  /* line 213, src/sass/components/copy/_headings.scss */
+  /* line 216, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 1.875em;
   }
 
-  /* line 221, src/sass/components/copy/_headings.scss */
+  /* line 224, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
-    font-size: 1.375em;
+    font-size: 2.4rem;
   }
 
   /* line 6, src/sass/components/copy/_copy-block.scss */
@@ -12269,6 +12324,18 @@ form.search .search button {
   .section.fac-3col .fac_rail:before {
     height: calc(100% + 7.5rem);
     top: -3.75rem;
+  }
+
+  /* line 44, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section .layout__region--facmiddle {
+    padding-right: 5rem;
+  }
+
+  /* line 52, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
+    font-size: 2.4rem;
   }
 
   /* line 5, src/sass/structure/section-layouts/_grid.scss */
@@ -13234,7 +13301,7 @@ form.search .search button {
   /* line 14, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail h3 {
-    font-size: 1.375em;
+    font-size: 2.4rem;
   }
 
   /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
@@ -13367,7 +13434,7 @@ form.search .search button {
          column-count: 4;
   }
 
-  /* line 209, src/sass/components/copy/_headings.scss */
+  /* line 212, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
@@ -13375,25 +13442,18 @@ form.search .search button {
     letter-spacing: .04em;
   }
 
-  /* line 213, src/sass/components/copy/_headings.scss */
+  /* line 216, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 2em;
   }
 
-  /* line 217, src/sass/components/copy/_headings.scss */
+  /* line 220, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
     font-size: 4rem;
-  }
-
-  /* line 221, src/sass/components/copy/_headings.scss */
-
-  h4,
-  .h4 {
-    font-size: 1.5em;
   }
 
   /* line 6, src/sass/components/copy/_tables.scss */
@@ -13817,12 +13877,6 @@ form.search .search button {
 
   .f-feat-faculty > article {
     width: calc(33.333% - 2.5rem);
-  }
-
-  /* line 14, src/sass/components/feeds-detail/programs/_programs.scss */
-
-  .program_rail h3 {
-    font-size: 1.5em;
   }
 
   /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
