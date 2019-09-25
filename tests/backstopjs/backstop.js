@@ -67,8 +67,9 @@ for (var k = 0; k < paths.length; k++) {
     "readyEvent": null,
     "delay": 500,
     "misMatchThreshold" : 0.1,
-    "onBeforeScript": "onBefore.js",
-    "onReadyScript": "onReady.js"
+    "onBeforeScript": "../engine_scripts/puppet/onBefore.js",
+    "onReadyScript": "../engine_scripts/puppet/onReady.js"
+  
   });
 }
 
