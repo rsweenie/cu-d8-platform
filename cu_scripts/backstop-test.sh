@@ -16,8 +16,7 @@ cmd_ref="backstop reference --configPath=backstop.js --pathfile=paths/$site_name
 cmd_test="backstop test --configPath=backstop.js --pathfile=paths/$site_name --testhost=http://local.creighton.com/"
 
 while true; do
-    read -p "Do you want to reference $site_name? " 
-    yn
+    read -p "Do you want to reference $site_name? " yn
     case $yn in
         [Yy]* ) 
         eval $cmd_ref 
