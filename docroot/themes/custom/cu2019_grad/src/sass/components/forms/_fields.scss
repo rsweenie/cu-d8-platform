@@ -8,7 +8,7 @@
 \*  --------------------------------------------------------------------------  */
 input:not([type="checkbox"]):not([type="radio"]), textarea, select {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    padding: #{$gutter * .4}rem;
+    padding: .65rem 1rem;
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     width: 100%;
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
@@ -21,6 +21,8 @@ input:not([type="checkbox"]):not([type="radio"]), textarea, select {
     background-color: $off-white;
     color: $gray2;
     box-sizing: border-box;
+    position: relative;
+    height: 4rem;
     transition: color .3s ease-out, background-color .3s ease-out, border-color .3s ease-out;
 
     &:focus {
@@ -43,4 +45,18 @@ input:not([type="checkbox"]):not([type="radio"]), textarea, select {
             border-width: .1rem .1rem .4rem;
         }
     }
+}
+
+select {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:url(../../img/select-arrow.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+    background-size: 17px auto;
+}
+
+textarea {
+    height: auto;
 }

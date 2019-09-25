@@ -15,3 +15,22 @@
     text-align: center;
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 }
+
+.form_action {
+    text-align: right;
+
+    button {
+        @extend .btn-secondary;
+        min-width: 0;
+        padding-right: 6rem;
+
+        &:after {
+            position: absolute;
+            font-family: $iconFont;
+            top: 50%;
+            right: 1.5rem;
+            transform: translateY(-50%);
+            content: "\E01C";
+        }
+    }
+}

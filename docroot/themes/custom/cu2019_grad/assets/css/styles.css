@@ -120,194 +120,200 @@
 
 /* line 36, src/sass/base/fonts/_icons.scss */
 
-.icon-checkbox-checked:before {
+.icon-check:before {
   content: "\E004";
 }
 
 /* line 40, src/sass/base/fonts/_icons.scss */
 
-.icon-checkbox-unchecked:before {
+.icon-checkbox-checked:before {
   content: "\E005";
 }
 
 /* line 44, src/sass/base/fonts/_icons.scss */
 
-.icon-chevron-right-double:before {
+.icon-checkbox-unchecked:before {
   content: "\E006";
 }
 
 /* line 48, src/sass/base/fonts/_icons.scss */
 
-.icon-chevron-right:before {
+.icon-chevron-right-double:before {
   content: "\E007";
 }
 
 /* line 52, src/sass/base/fonts/_icons.scss */
 
-.icon-chevron-up:before {
+.icon-chevron-right:before {
   content: "\E008";
 }
 
 /* line 56, src/sass/base/fonts/_icons.scss */
 
-.icon-close-window-filled:before {
+.icon-chevron-up:before {
   content: "\E009";
 }
 
 /* line 60, src/sass/base/fonts/_icons.scss */
 
-.icon-close-window:before {
+.icon-close-window-filled:before {
   content: "\E00A";
 }
 
 /* line 64, src/sass/base/fonts/_icons.scss */
 
-.icon-contact:before {
+.icon-close-window:before {
   content: "\E00B";
 }
 
 /* line 68, src/sass/base/fonts/_icons.scss */
 
-.icon-envelope:before {
+.icon-contact:before {
   content: "\E00C";
 }
 
 /* line 72, src/sass/base/fonts/_icons.scss */
 
-.icon-event-calendar:before {
+.icon-envelope:before {
   content: "\E00D";
 }
 
 /* line 76, src/sass/base/fonts/_icons.scss */
 
-.icon-expand-arrow:before {
+.icon-event-calendar:before {
   content: "\E00E";
 }
 
 /* line 80, src/sass/base/fonts/_icons.scss */
 
-.icon-filter:before {
+.icon-expand-arrow:before {
   content: "\E00F";
 }
 
 /* line 84, src/sass/base/fonts/_icons.scss */
 
-.icon-forward:before {
+.icon-filter:before {
   content: "\E010";
 }
 
 /* line 88, src/sass/base/fonts/_icons.scss */
 
-.icon-google-translate:before {
+.icon-forward:before {
   content: "\E011";
 }
 
 /* line 92, src/sass/base/fonts/_icons.scss */
 
-.icon-help:before {
+.icon-google-translate:before {
   content: "\E012";
 }
 
 /* line 96, src/sass/base/fonts/_icons.scss */
 
-.icon-hybrid:before {
+.icon-help:before {
   content: "\E013";
 }
 
 /* line 100, src/sass/base/fonts/_icons.scss */
 
-.icon-location-thin:before {
+.icon-hybrid:before {
   content: "\E014";
 }
 
 /* line 104, src/sass/base/fonts/_icons.scss */
 
-.icon-location:before {
+.icon-location-thin:before {
   content: "\E015";
 }
 
 /* line 108, src/sass/base/fonts/_icons.scss */
 
-.icon-news:before {
+.icon-location:before {
   content: "\E016";
 }
 
 /* line 112, src/sass/base/fonts/_icons.scss */
 
-.icon-off-campus:before {
+.icon-news:before {
   content: "\E017";
 }
 
 /* line 116, src/sass/base/fonts/_icons.scss */
 
-.icon-on-campus:before {
+.icon-off-campus:before {
   content: "\E018";
 }
 
 /* line 120, src/sass/base/fonts/_icons.scss */
 
-.icon-online:before {
+.icon-on-campus:before {
   content: "\E019";
 }
 
 /* line 124, src/sass/base/fonts/_icons.scss */
 
-.icon-phone:before {
+.icon-online:before {
   content: "\E01A";
 }
 
 /* line 128, src/sass/base/fonts/_icons.scss */
 
-.icon-right:before {
+.icon-phone:before {
   content: "\E01B";
 }
 
 /* line 132, src/sass/base/fonts/_icons.scss */
 
-.icon-search-more:before {
+.icon-right:before {
   content: "\E01C";
 }
 
 /* line 136, src/sass/base/fonts/_icons.scss */
 
-.icon-search:before {
+.icon-search-more:before {
   content: "\E01D";
 }
 
 /* line 140, src/sass/base/fonts/_icons.scss */
 
-.icon-social-facebook:before {
+.icon-search:before {
   content: "\E01E";
 }
 
 /* line 144, src/sass/base/fonts/_icons.scss */
 
-.icon-social-instagram:before {
+.icon-social-facebook:before {
   content: "\E01F";
 }
 
 /* line 148, src/sass/base/fonts/_icons.scss */
 
-.icon-social-linkedin:before {
+.icon-social-instagram:before {
   content: "\E020";
 }
 
 /* line 152, src/sass/base/fonts/_icons.scss */
 
-.icon-social-twitter:before {
+.icon-social-linkedin:before {
   content: "\E021";
 }
 
 /* line 156, src/sass/base/fonts/_icons.scss */
 
-.icon-social-youtube:before {
+.icon-social-twitter:before {
   content: "\E022";
 }
 
 /* line 160, src/sass/base/fonts/_icons.scss */
 
-.icon-tag:before {
+.icon-social-youtube:before {
   content: "\E023";
+}
+
+/* line 164, src/sass/base/fonts/_icons.scss */
+
+.icon-tag:before {
+  content: "\E024";
 }
 
 /*---===<<< UNIVERSAL RESETS >>>===---*/
@@ -2344,7 +2350,8 @@ section[class*="sbg-"]:after {
 
 /* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
 
-.btn-secondary {
+.btn-secondary,
+form .form_action button {
   position: relative;
   min-width: 320px;
   max-width: 100%;
@@ -2360,21 +2367,24 @@ section[class*="sbg-"]:after {
 
 /* line 55, src/sass/components/basic/buttons/colors/_secondary.scss */
 
-.btn-secondary span {
+.btn-secondary span,
+form .form_action button span {
   position: relative;
   z-index: 10;
 }
 
 /* line 59, src/sass/components/basic/buttons/colors/_secondary.scss */
 
-.btn-secondary span:first-of-type {
+.btn-secondary span:first-of-type,
+form .form_action button span:first-of-type {
   max-width: 320px;
   display: block;
 }
 
 /* line 65, src/sass/components/basic/buttons/colors/_secondary.scss */
 
-.btn-secondary:before {
+.btn-secondary:before,
+form .form_action button:before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2388,7 +2398,9 @@ section[class*="sbg-"]:after {
 /* line 59, src/sass/base/_mixins.scss */
 
 .btn-secondary:hover,
-.btn-secondary:focus {
+form .form_action button:hover,
+.btn-secondary:focus,
+form .form_action button:focus {
   background: #0054A6;
   color: #fff;
 }
@@ -11212,9 +11224,14 @@ form .form-group {
 form label {
   display: block;
   margin-bottom: 1rem;
+  font-size: 1.9rem;
+  font-family: proxima-nova, sans-serif;
+  line-height: 1;
+  color: #555555;
+  font-weight: 700;
 }
 
-/* line 19, src/sass/components/forms/_labels.scss */
+/* line 24, src/sass/components/forms/_labels.scss */
 
 form label .req {
   color: #f32836;
@@ -11225,7 +11242,7 @@ form label .req {
 form input:not([type="checkbox"]):not([type="radio"]),
 form textarea,
 form select {
-  padding: 1rem;
+  padding: .65rem 1rem;
   width: 100%;
   border: 0.1rem solid #949494;
   font-family: proxima-nova, sans-serif;
@@ -11235,11 +11252,13 @@ form select {
   color: #555555;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
+  height: 4rem;
   -webkit-transition: color .3s ease-out, background-color .3s ease-out, border-color .3s ease-out;
   transition: color .3s ease-out, background-color .3s ease-out, border-color .3s ease-out;
 }
 
-/* line 26, src/sass/components/forms/_fields.scss */
+/* line 28, src/sass/components/forms/_fields.scss */
 
 form input:not([type="checkbox"]):not([type="radio"]):focus,
 form textarea:focus,
@@ -11252,7 +11271,7 @@ form select:focus {
   transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
 }
 
-/* line 34, src/sass/components/forms/_fields.scss */
+/* line 36, src/sass/components/forms/_fields.scss */
 
 form input:not([type="checkbox"]):not([type="radio"]):hover,
 form textarea:hover,
@@ -11263,7 +11282,7 @@ form select:hover {
   transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
 }
 
-/* line 39, src/sass/components/forms/_fields.scss */
+/* line 41, src/sass/components/forms/_fields.scss */
 
 form input:not([type="checkbox"]):not([type="radio"]):hover:focus,
 form textarea:hover:focus,
@@ -11272,6 +11291,24 @@ form select:hover:focus {
   background-color: #e5f0f9;
   color: #002E6D;
   border-width: .1rem .1rem .4rem;
+}
+
+/* line 50, src/sass/components/forms/_fields.scss */
+
+form select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url(../../img/select-arrow.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  background-size: 17px auto;
+}
+
+/* line 60, src/sass/components/forms/_fields.scss */
+
+form textarea {
+  height: auto;
 }
 
 /* line 9, src/sass/components/forms/_check-radio.scss */
@@ -11306,14 +11343,14 @@ form input[type="radio"] + label:before {
   position: absolute;
   z-index: 0;
   left: 0;
-  top: calc(.75em + 0.5rem);
+  top: calc(.75em + .8rem);
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   width: 1.6em;
   height: 1.6em;
-  background: #fff;
-  border: 0.2rem solid #FFCC4F;
-  color: #FFCC4F;
+  background-color: #f7f7f7;
+  border: 0.1rem solid #949494;
+  color: #555555;
   font-family: "Font Awesome 5 Free";
   font-size: 1rem;
   line-height: 1.6;
@@ -11322,30 +11359,116 @@ form input[type="radio"] + label:before {
   content: "";
 }
 
+/* line 51, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"] + label:hover:before,
+form input[type="radio"] + label:hover:before {
+  border-color: #555555;
+}
+
+/* line 59, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:focus + label:before,
+form input[type="radio"]:focus + label:before {
+  border-color: #6CACE4;
+  background-color: #e5f0f9;
+  color: #002E6D;
+}
+
 /* line 68, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:focus + label:hover:before,
+form input[type="radio"]:focus + label:hover:before {
+  border-color: #6CACE4;
+  background-color: #e5f0f9;
+  color: #002E6D;
+}
+
+/* line 95, src/sass/components/forms/_check-radio.scss */
 
 form input[type="radio"] + label:before {
   border-radius: 100%;
 }
 
-/* line 95, src/sass/components/forms/_check-radio.scss */
+/* line 122, src/sass/components/forms/_check-radio.scss */
 
 form input[type="radio"]:checked + label:before {
   -webkit-box-shadow: 0 0 0 0.3rem #fff inset;
           box-shadow: 0 0 0 0.3rem #fff inset;
-  background: #FFCC4F;
+  background: #949494;
 }
 
-/* line 151, src/sass/components/forms/_check-radio.scss */
+/* line 134, src/sass/components/forms/_check-radio.scss */
 
-form input[type="checkbox"]:checked + label:before {
-  content: "\f00c";
+form input[type="radio"]:checked + label:hover:before {
+  background-color: #555555;
+}
+
+/* line 142, src/sass/components/forms/_check-radio.scss */
+
+form input[type="radio"]:checked:focus + label:before {
+  background-color: #002E6D;
+}
+
+/* line 148, src/sass/components/forms/_check-radio.scss */
+
+form input[type="radio"]:checked:focus:hover:before {
+  color: #002E6D;
+  background-color: #555555;
+}
+
+/* line 214, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:checked + label:after {
+  position: absolute;
+  left: 0.1rem;
+  top: 0.6rem;
+  font-size: 1.4rem;
+  content: "\E004";
+  font-family: "cu_icons";
+}
+
+/* line 230, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:checked:focus + label:after {
+  color: #002E6D;
+}
+
+/* line 238, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:checked:focus + label:hover:after {
+  color: #002E6D;
 }
 
 /* line 9, src/sass/components/forms/_form-btn.scss */
 
 form .form-btn {
   text-align: center;
+}
+
+/* line 19, src/sass/components/forms/_form-btn.scss */
+
+form .form_action {
+  text-align: right;
+}
+
+/* line 22, src/sass/components/forms/_form-btn.scss */
+
+form .form_action button {
+  min-width: 0;
+  padding-right: 6rem;
+}
+
+/* line 27, src/sass/components/forms/_form-btn.scss */
+
+form .form_action button:after {
+  position: absolute;
+  font-family: "cu_icons";
+  top: 50%;
+  right: 1.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "\E01C";
 }
 
 /* line 7, src/sass/components/forms/label-left/_form.scss */
@@ -13569,7 +13692,8 @@ form.search .search button {
 
   /* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
 
-  .btn-secondary {
+  .btn-secondary,
+  form .form_action button {
     font-size: 1.9rem;
   }
 
