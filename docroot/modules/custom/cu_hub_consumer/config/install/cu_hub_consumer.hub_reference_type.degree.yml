@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: degree
+label: 'Academic Degree'
+description: ''
+source: 'node:hub_degree'
+source_configuration:
+  source_field: hub_uuid
+field_map: {  }

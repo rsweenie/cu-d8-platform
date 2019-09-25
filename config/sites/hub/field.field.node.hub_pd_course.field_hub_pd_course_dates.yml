@@ -1,0 +1,28 @@
+uuid: 80448f4f-1a9d-450c-b3cf-304400c9ca8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_pd_course_dates
+    - node.type.hub_pd_course
+    - node.type.hub_pd_course_date
+id: node.hub_pd_course.field_hub_pd_course_dates
+field_name: field_hub_pd_course_dates
+entity_type: node
+bundle: hub_pd_course
+label: 'Course Dates'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_pd_course_date: hub_pd_course_date
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

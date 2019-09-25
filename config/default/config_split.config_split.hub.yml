@@ -12,6 +12,7 @@ module:
   jsonapi_extras: 0
 theme: {  }
 blacklist:
+  - paragraphs.paragraphs_type.hub_paragraph_next_steps
   - taxonomy.vocabulary.degree_type
   - taxonomy.vocabulary.program_availability
   - taxonomy.vocabulary.program_interests
@@ -19,13 +20,14 @@ blacklist:
   - 'core.entity_form_display.node.hub_*'
   - 'core.entity_view_display.node.hub_*'
   - 'field.field.node.hub_*'
+  - 'field.field.paragraph.hub_*'
   - 'field.storage.node.field_hub_*'
+  - 'field.storage.paragraph.field_hub_*'
   - 'node.type.hub_*'
   - 'cu_hub_api.*'
 graylist:
   - 'auto_entitylabel.settings.*'
   - 'block.block.*'
-  - 'filter.format.*'
   - 'jsonapi.*'
   - 'views.view.*'
   - 'search_api.*'

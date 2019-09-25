@@ -1,0 +1,70 @@
+uuid: f65f7457-d6c7-41ac-a5be-1660218e0ff8
+langcode: en
+status: true
+dependencies: {  }
+id: media__document
+type_id: media--document
+fields:
+  drupal_internal__mid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  revision_created:
+    type: datetime
+    multiple: false
+  revision_log_message:
+    type: hub_unknown
+    multiple: false
+  status:
+    type: string_long
+    multiple: false
+  name:
+    type: string_long
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  default_langcode:
+    type: string_long
+    multiple: false
+  revision_translation_affected:
+    type: string_long
+    multiple: false
+  scheduled_transition_date:
+    type: hub_unknown
+    multiple: true
+  scheduled_transition_state:
+    type: hub_unknown
+    multiple: true
+  metatag:
+    type: hub_unknown
+    multiple: false
+  metatag_normalized:
+    type: metatags
+    multiple: false
+  path:
+    type: hub_unknown
+    multiple: false
+  field_media_in_library:
+    type: string_long
+    multiple: false
+  bundle:
+    type: hub_resource
+    hub_type: media_type
+    multiple: false
+  thumbnail:
+    type: hub_resource
+    hub_type: file
+    multiple: false
+  field_document:
+    type: hub_resource
+    hub_type: file
+    multiple: false

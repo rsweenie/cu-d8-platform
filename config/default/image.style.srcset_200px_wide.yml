@@ -1,0 +1,15 @@
+uuid: 3c9ecd8f-d653-4d7e-9a78-060b4a22ff75
+langcode: en
+status: true
+dependencies: {  }
+name: srcset_200px_wide
+label: 'SrcSet (200px wide)'
+effects:
+  f6b6c5f3-ccc0-4bc4-88a9-2fa393b13fe3:
+    uuid: f6b6c5f3-ccc0-4bc4-88a9-2fa393b13fe3
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: null
+      upscale: false

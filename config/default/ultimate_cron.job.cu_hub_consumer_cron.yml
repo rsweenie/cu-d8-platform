@@ -1,0 +1,17 @@
+uuid: 061e5181-c662-4081-b796-f31bb990481a
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+title: 'Default cron handler'
+id: cu_hub_consumer_cron
+weight: 0
+module: cu_hub_consumer
+callback: cu_hub_consumer_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

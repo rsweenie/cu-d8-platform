@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_landing_page_content
+    - field.field.node.landing_page.layout_builder__layout
+    - field.field.node.landing_page.layout_builder__translation
     - node.type.landing_page
   module:
     - paragraphs
@@ -34,7 +36,7 @@ content:
       closed_mode_threshold: 0
       add_mode: modal
       form_display_mode: default
-      default_paragraph_type: formatted_text
+      default_paragraph_type: _none
       features:
         collapse_edit_all: collapse_edit_all
         add_above: add_above
@@ -107,4 +109,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true
+  layout_builder__translation: true
