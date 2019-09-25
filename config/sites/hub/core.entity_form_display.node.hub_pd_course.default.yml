@@ -1,0 +1,153 @@
+uuid: 6cb22985-a8f5-425e-8c30-bf614a9b7e84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_pd_course.body
+    - field.field.node.hub_pd_course.field_hub_pd_course_dates
+    - field.field.node.hub_pd_course.field_hub_pd_course_hero_image
+    - field.field.node.hub_pd_course.field_hub_pd_course_next_steps
+    - field.field.node.hub_pd_course.field_hub_pd_course_program
+    - field.field.node.hub_pd_course.field_hub_pd_course_site
+    - node.type.hub_pd_course
+  module:
+    - media_library
+    - paragraphs
+    - path
+    - private_content
+    - scheduler
+    - text
+id: node.hub_pd_course.default
+targetEntityType: node
+bundle: hub_pd_course
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hub_pd_course_dates:
+    weight: 124
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_hub_pd_course_hero_image:
+    type: media_library_widget
+    weight: 126
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_hub_pd_course_next_steps:
+    type: entity_reference_paragraphs
+    weight: 125
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_hub_pd_course_program:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_hub_pd_course_site:
+    weight: 123
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  private:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

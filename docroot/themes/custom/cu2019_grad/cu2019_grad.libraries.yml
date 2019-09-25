@@ -4,13 +4,19 @@ global-styling:
       assets/css/styles.css: {}
 
 global-scripts:
-  version: 1.x
   js:
     assets/js/site.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
     - core/drupal
+
+homepage:
+  js:
+    assets/js/homepage.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
 
 ct:
   js:
