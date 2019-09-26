@@ -77,14 +77,11 @@ services:
         - composer install --no-ansi
 
         # Our baseline is our defaulty Acquia setup
-        - ${TUGBOAT_ROOT}/vendor/bin/blt -n --no-ansi setup
+        ## Harry 26Sep19 - blt setup currently broken SEE: https://www.wrike.com/open.htm?id=403046727
+        #- ${TUGBOAT_ROOT}/vendor/bin/blt -n --no-ansi setup
 
         # If blt setup fails, may need to try something like this:
-        #- drush -r "${DOCROOT}" -y site-install standard
-
-        # If there are issues running blt setup, another option is a simple
-        # drupal install
-        #- drush -r "${DOCROOT}" -y site-install standard
+        - drush -r "${DOCROOT}" -y site-install standard
 
         # Generate a unique hash_salt to secure the site
         - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
