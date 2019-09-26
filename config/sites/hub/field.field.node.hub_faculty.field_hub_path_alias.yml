@@ -1,18 +1,18 @@
-uuid: 40c41be9-e9af-4732-87b6-db0a3141f594
+uuid: 47127678-37ae-4b78-8ea6-a4f4b8462a50
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hub_faculty_degree
+    - field.storage.node.field_hub_path_alias
     - node.type.hub_faculty
-id: node.hub_faculty.field_hub_faculty_degree
-field_name: field_hub_faculty_degree
+id: node.hub_faculty.field_hub_path_alias
+field_name: field_hub_path_alias
 entity_type: node
 bundle: hub_faculty
-label: Degree
+label: 'Path alias'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

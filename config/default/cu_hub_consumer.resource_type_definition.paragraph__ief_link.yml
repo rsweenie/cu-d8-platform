@@ -51,3 +51,7 @@ fields:
     type: hub_resource
     hub_type: paragraphs_type
     multiple: false
+  field_file_link:
+    type: hub_resource
+    hub_type: media
+    multiple: false
