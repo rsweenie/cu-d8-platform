@@ -6,9 +6,11 @@ dependencies:
     - core.entity_view_mode.hub_reference.featured
     - core.entity_view_mode.hub_reference.listing
     - cu_hub_consumer.hub_reference_type.news
+    - taxonomy.vocabulary.news_type
   module:
     - cu_hub_consumer
     - datetime
+    - taxonomy
 id: cu_news_references
 label: 'News from Hub'
 module: views
@@ -249,10 +251,10 @@ display:
         - 'languages:language_interface'
         - url.query_args
       tags:
-        - 'config:core.entity_view_display.hub_reference.news.default'
-        - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.degree.default'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.news.default'
+        - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
         - 'config:core.entity_view_display.hub_reference.program.default'
   attachment_1:
@@ -686,6 +688,8 @@ display:
       defaults:
         header: false
         empty: false
+        filters: false
+        filter_groups: false
       empty:
         area:
           id: area
@@ -700,12 +704,86 @@ display:
             value: 'No results found.'
             format: rich_text
           plugin_id: text
+      filters:
+        status:
+          value: '1'
+          table: hub_reference
+          field: status
+          plugin_id: boolean
+          entity_type: hub_reference
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: hub_reference
+          field: type
+          value:
+            news: news
+          entity_type: hub_reference
+          entity_field: type
+          plugin_id: bundle
+        field_news_type_target_id:
+          id: field_news_type_target_id
+          table: hub_reference__field_news_type
+          field: field_news_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_news_type_target_id_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: field_news_type_target_id_op
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              manager: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: news_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
       tags:
         - 'config:core.entity_view_display.hub_reference.degree.default'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'

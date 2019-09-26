@@ -29,12 +29,13 @@ content:
     type: datetime_default
     region: content
   field_news_type:
-    weight: 32
+    weight: 34
     settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
   path:
     type: path
