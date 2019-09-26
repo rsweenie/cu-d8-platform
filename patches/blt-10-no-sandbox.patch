@@ -1,0 +1,13 @@
+diff --git a/src/Robo/Commands/Tests/TestsCommandBase.php b/src/Robo/Commands/Tests/TestsCommandBase.php
+index b107d7f1..57890246 100644
+--- a/src/Robo/Commands/Tests/TestsCommandBase.php
++++ b/src/Robo/Commands/Tests/TestsCommandBase.php
+@@ -105,7 +105,7 @@ protected function launchChrome() {
+     $this->logger->info("Launching headless chrome...");
+     $this->getContainer()
+       ->get('executor')
+-      ->execute("'$chrome_bin' --headless --disable-web-security --remote-debugging-port={$this->chromePort} {$this->chromeArgs} $chrome_host")
++      ->execute("'$chrome_bin' --headless --no-sandbox --disable-web-security --remote-debugging-port={$this->chromePort} {$this->chromeArgs} $chrome_host")
+       ->background(TRUE)
+       ->printOutput(TRUE)
+       ->printMetadata(TRUE)

@@ -3,7 +3,6 @@ recipe: drupal8
 config:
   webroot: docroot
   php: 7.2
-  xdebug: true
 services:
   appserver:
     config:
@@ -16,6 +15,14 @@ services:
       - chmod 700 /var/www/.ssh
       - chmod 600 /var/www/.ssh/id_rsa
       - chmod 644 /var/www/.ssh/id_rsa.pub
+      ## Set up tools for behat testing. (https://askubuntu.com/questions/510056/how-to-install-google-chrome)
+    run_as_root:
+      - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+      - echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
+      - apt update
+      - apt -y install google-chrome-stable
+      - apt -y install libnss3
+      - ln -s /app /var/www/creighton
   mailhog:
     type: 'mailhog'
     hogfrom:
