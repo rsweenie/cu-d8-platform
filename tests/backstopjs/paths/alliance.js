@@ -3,7 +3,7 @@ pathConfig.array = [
   '/about',
   '/residencies-fellowships',
   '/residencies-fellowships/frequently-asked-questions',
-  'creighton_profiles',
+  '/creighton_profiles',
   '/about/creighton-university-arizona-health-education-alliance',
   '/profile',
   '/profile/shaghayegh-abdollahi-md',
