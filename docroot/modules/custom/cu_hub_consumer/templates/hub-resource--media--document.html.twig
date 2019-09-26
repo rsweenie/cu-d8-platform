@@ -13,12 +13,12 @@
 #}
 {%
   set classes = [
-    'hub-resource',
-    'hub-resource--type-' ~ resource_type|clean_class,
-  ]
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
 %}
-<picture{{ attributes.addClass(classes) }}>
-  {% if image %}
-    {{ image }}
+<div{{ attributes.addClass(classes) }}>
+  {% if document %}
+    {{ document }}
   {% endif %}
-</picture>
+</div>
