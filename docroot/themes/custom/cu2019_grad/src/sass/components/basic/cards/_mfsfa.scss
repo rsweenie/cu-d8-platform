@@ -34,6 +34,10 @@
 
     @media #{$mediaXl} {
       padding: 25px 80px;
+
+      .feat-tiles & {
+        padding: 30px;
+      }
     }
 
     a {
@@ -144,6 +148,10 @@
     font-size: 14px;
     line-height: 1.6em;
     padding: 30px 15px;
+
+    .feat-tiles & {
+      padding: #{$gutter}rem 0;
+    }
 
     @media #{$mediaLg} {
       color: $white;
