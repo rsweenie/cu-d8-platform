@@ -1,0 +1,10 @@
+&.layout--program-detail-feat-tile {
+  background: linear-gradient(0deg, darken($gray4,9) 0%, $gray4 17%, $gray4 83%, darken($gray4,9) 100%);
+  padding: #{$gutter * 2}rem 0;
+  border-top: 8px solid $tertiary;
+  border-bottom: 8px solid $tertiary;
+
+  @media #{$mediaMd} {
+    padding: #{$gutter * 3}rem 0;
+  }
+}
