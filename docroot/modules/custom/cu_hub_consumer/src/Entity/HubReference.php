@@ -42,7 +42,7 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
  *     },
- *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "views_data" = "Drupal\cu_hub_consumer\HubReferenceViewsData",
  *     "storage" = "Drupal\cu_hub_consumer\HubReferenceStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
@@ -50,11 +50,11 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *     "access" = "Drupal\cu_hub_consumer\HubReferenceAccessControlHandler",
  *   },
  *   base_table = "hub_reference",
- *   data_table = "hub_reference_field_data",
  *   translatable = FALSE,
  *   fieldable = TRUE,
  *   admin_permission = "administer cu hub references",
  *   field_ui_base_route = "entity.hub_reference_type.edit_form",
+ *   common_reference_target = TRUE,
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "title",
@@ -65,7 +65,7 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *   links = {
  *     "canonical" = "/hub-reference/{hub_reference}",
  *     "delete-form" = "/hub-reference/{hub_reference}/delete",
- *     "edit-form" = "/hub-reference/{hub_reference}"
+ *     "edit-form" = "/hub-reference/{hub_reference}/edit"
  *   },
  * )
  */
