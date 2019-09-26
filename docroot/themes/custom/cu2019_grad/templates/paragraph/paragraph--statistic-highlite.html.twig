@@ -55,7 +55,9 @@
 {% endif %}
         <div{{ attributes.addClass(classes) }}>
           {% if content.field_stat_highlight_image is not empty  %}
+          <div class="stat_hl_io">
             {{ content.field_stat_highlight_image }}
+          </div>
           {% else %}
             {% block content %}
             {% include '@cu2019_grad/components/fact.html.twig' with {

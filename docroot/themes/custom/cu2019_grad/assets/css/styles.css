@@ -5009,6 +5009,9 @@ blockquote .tooltip-trigger {
 /* line 45, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
+  width: 100%;
+  height: auto;
+  display: block;
   z-index: 0;
 }
 
