@@ -7,6 +7,7 @@ dependencies:
     - cu_hub_consumer.hub_reference_type.news
     - field.field.hub_reference.news.field_featured
     - field.field.hub_reference.news.field_news_date
+    - field.field.hub_reference.news.field_news_type
   module:
     - cu_hub_consumer
     - layout_builder
@@ -64,6 +65,7 @@ content:
 hidden:
   field_featured: true
   field_news_date: true
+  field_news_type: true
   hub_changed: true
   hub_created: true
   hub_default_langcode: true

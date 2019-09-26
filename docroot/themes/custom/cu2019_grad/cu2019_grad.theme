@@ -140,6 +140,10 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
 
 }
 
+function cu2019_grad_preprocess_views_view(&$variables) {
+  $variables['breadcrumb_links'] = \Drupal::service('breadcrumb')->build(\Drupal::routeMatch())->getLinks();
+}
+
 // Returns a render array with the sub-tree of the current active link.
 function _cu2019_grad_get_menu_sub_tree($menu_name = 'main') {
   $menu_tree = \Drupal::menuTree();
