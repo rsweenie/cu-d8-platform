@@ -1,0 +1,100 @@
+uuid: 942e706d-6805-4782-bac1-6a7610bbbb1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.hub_reference.listing
+    - cu_hub_consumer.hub_reference_type.news
+    - field.field.hub_reference.news.field_featured
+    - field.field.hub_reference.news.field_news_type
+  module:
+    - cu_hub_consumer
+    - layout_builder
+    - layout_builder_restrictions
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks:
+        Help: {  }
+        'Lists (Views)': {  }
+        'Social Media Links Block': {  }
+        'User fields': {  }
+        Views: {  }
+      allowed_layouts:
+        - generic_hero
+        - generic_content
+id: hub_reference.news.listing
+targetEntityType: hub_reference
+bundle: news
+mode: listing
+content:
+  hub_field_hub_news_description:
+    type: basic_string
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_news_listing_image:
+    type: hub_resource_media_image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      style_name: srcset_500px_wide
+      link_type: ''
+    third_party_settings: {  }
+  hub_field_hub_news_location:
+    type: hub_resource_link
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_news_title:
+    type: basic_string
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_news_type:
+    type: hub_resource_link
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_featured: true
+  field_news_type: true
+  hub_changed: true
+  hub_created: true
+  hub_default_langcode: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_news_body: true
+  hub_field_hub_news_featured: true
+  hub_field_hub_news_hero_image: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_metatag: true
+  hub_node_type: true
+  hub_path: true
+  hub_private: true
+  hub_promote: true
+  hub_publish_on: true
+  hub_revision_log: true
+  hub_revision_timestamp: true
+  hub_revision_translation_affected: true
+  hub_scheduled_transition_date: true
+  hub_scheduled_transition_state: true
+  hub_status: true
+  hub_sticky: true
+  hub_title: true
+  hub_unpublish_on: true
+  search_api_excerpt: true

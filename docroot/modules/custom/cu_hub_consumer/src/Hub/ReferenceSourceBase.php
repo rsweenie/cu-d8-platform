@@ -274,6 +274,7 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
     $resource_type = $this->getResourceType();
 
     if (!isset($this->resources[$hub_reference->id()])) {
+      $this->resources[$hub_reference->id()] = NULL;
       try {
         // @TODO: do we need to do a fetch here? Can't we use the cached data?
         $this->resources[$hub_reference->id()] = $resource_type->fetchResource($hub_uuid);
@@ -284,7 +285,10 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         return NULL;
       }
     }
-    $resource = $this->resources[$hub_reference->id()];
+
+    if (isset($this->resources[$hub_reference->id()])) {
+      $resource = $this->resources[$hub_reference->id()];
+    }
 
     switch ($attribute_name) {
       case 'default_name':
@@ -297,26 +301,35 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         return 'hub_reference:' . $hub_reference->bundle() . ':' . $hub_reference->uuid();
 
       case 'type':
-        return (string) $resource->type;
+        if ($resource) {
+          return (string) $resource->type;
+        }
+        break;
       
       case 'uuid':
-        return (string) $resource->id;
+        if ($resource) {
+          return (string) $resource->id;
+        }
+        break;
 
       case 'title':
-        if ($key = $resource_type->getKey('label')) {
+        if ($resource && ($key = $resource_type->getKey('label'))) {
           if (!empty($resource->{$key})) {
             return $resource->{$key}->getString();
           }
         }
-        return NULL;
+        break;
 
       case 'path':
-        if (!empty($resource->field_hub_path_alias)) {
+        if ($resource && !empty($resource->field_hub_path_alias)) {
           return $resource->field_hub_path_alias->getString();
         }
-        return NULL;
+        break;
 
       default:
+        if ($resource && !empty($resource->{$attribute_name})) {
+          return $resource->{$attribute_name}->getFieldFriendlyValues();
+        }
         break;
     }
 
