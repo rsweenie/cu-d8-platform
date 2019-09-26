@@ -1,0 +1,35 @@
+.feat-tiles {
+  @include flex();
+  margin: -5px;
+
+  > div {
+    width: 33.3%;
+    padding: 5px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.stat_hl_io {
+  position: relative;
+  @include innerBorder;
+
+  &:before {
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    content: "";
+    background: rgba($white,.3);
+    z-index: 10;
+  }
+
+  img {
+    z-index: 0;
+  }
+}
