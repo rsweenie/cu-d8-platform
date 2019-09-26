@@ -76,7 +76,9 @@ services:
         # Install/update packages managed by composer, including drush
         - composer install --no-ansi
 
-        # Our baseline is our defaulty Acquia setup
+        # Our baseline is our defaulty Acquia setup. We use 'blt setup' here not because it is useful here (it actually
+        # causes builds to be about 5x slower) but because we want to git it a chance to fail here before it fails
+        # in production.
         ## Harry 26Sep19 - blt setup currently broken SEE: https://www.wrike.com/open.htm?id=403046727
         #- ${TUGBOAT_ROOT}/vendor/bin/blt -n --no-ansi setup
 
