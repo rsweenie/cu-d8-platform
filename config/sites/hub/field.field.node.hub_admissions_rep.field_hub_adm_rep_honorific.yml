@@ -1,0 +1,21 @@
+uuid: 1ec4fd8e-7ac4-46ad-aa1d-c41e8f02fa60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_adm_rep_honorific
+    - node.type.hub_admissions_rep
+id: node.hub_admissions_rep.field_hub_adm_rep_honorific
+field_name: field_hub_adm_rep_honorific
+entity_type: node
+bundle: hub_admissions_rep
+label: Honorific
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Admissions Representative'
+default_value_callback: ''
+settings: {  }
+field_type: string

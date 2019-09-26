@@ -1,0 +1,49 @@
+.layout__region--right,
+.program_rail {
+  height: 100%;
+}
+
+.field--name-hub-field-hub-degree-intro {
+  @include intro;
+}
+
+.program_rail {
+  position: relative;
+  z-index: 10;
+
+  h3 {
+    @include h4;
+  }
+
+  @media #{$mediaMd} {
+    padding-left: #{$gutter}rem;
+  }
+
+  @media #{$mediaLg} {
+    padding-left: #{$gutter * 2}rem;
+  }
+
+  &:after {
+    width: 100vw;
+    height: calc(100% + 62px);
+    position: absolute;
+    top: -62px;
+    left: 0;
+    z-index: 0;
+    content: "";
+    background: rgba($accent-2XLt,.2);
+  }
+
+  > div {
+    position: relative;
+    z-index: 10;
+  }
+
+  ul {
+    margin-left: 0;
+  }
+
+  .field--name-hub-field-hub-degree-title {
+    @include h6;
+  }
+}

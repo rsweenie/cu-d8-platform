@@ -1,0 +1,11 @@
+uuid: 09614d8a-2cda-4ef5-958d-6d6bc8d3629b
+langcode: en
+status: true
+dependencies: {  }
+id: quote_box
+label: 'Quote Box'
+description: 'Quote Box hub node.'
+source: 'node:quote_box'
+source_configuration:
+  source_field: hub_uuid
+field_map: {  }

@@ -5,6 +5,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - pathologic
     - responsive_tables_filter
     - responsivewrappers
     - video_embed_wysiwyg
@@ -101,3 +102,13 @@ filters:
     status: false
     weight: -44
     settings: {  }
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: true
+    weight: 50
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''

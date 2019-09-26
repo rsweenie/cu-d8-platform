@@ -3,9 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.hub_faculty.field_hub_faculty_degree
+    - field.field.node.hub_faculty.field_hub_faculty_components
     - field.field.node.hub_faculty.field_hub_faculty_department
-    - field.field.node.hub_faculty.field_hub_faculty_description
     - field.field.node.hub_faculty.field_hub_faculty_email
     - field.field.node.hub_faculty.field_hub_faculty_image
     - field.field.node.hub_faculty.field_hub_faculty_name
@@ -14,15 +13,16 @@ dependencies:
     - field.field.node.hub_faculty.field_hub_faculty_provost_url
     - field.field.node.hub_faculty.field_hub_faculty_rel_degrees
     - field.field.node.hub_faculty.field_hub_faculty_title
+    - field.field.node.hub_faculty.field_hub_site
     - field.field.node.hub_faculty.field_meta_tags
     - node.type.hub_faculty
   module:
+    - entity_reference_revisions
     - link
     - metatag
     - name
     - panelizer
     - telephone
-    - text
     - user
 third_party_settings:
   panelizer:
@@ -35,13 +35,14 @@ targetEntityType: node
 bundle: hub_faculty
 mode: default
 content:
-  field_hub_faculty_degree:
-    weight: 4
+  field_hub_faculty_components:
+    type: entity_reference_revisions_entity_view
+    weight: 14
     label: above
     settings:
-      link_to_entity: false
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: string
     region: content
   field_hub_faculty_department:
     weight: 3
@@ -50,13 +51,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_hub_faculty_description:
-    weight: 8
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   field_hub_faculty_email:
     weight: 5
@@ -132,6 +126,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_hub_site:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_meta_tags:
     weight: 12

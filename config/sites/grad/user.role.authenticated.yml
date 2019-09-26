@@ -1,0 +1,22 @@
+uuid: bef7afb7-27a1-4ef2-8070-7bbd78f28ba3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access private content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'opt-in or out of google analytics tracking'
+  - 'view cu hub reference'
+  - 'view cu hub references'
+  - 'view field_header_background_image'
+  - 'view field_slide'
+  - 'view media'
+  - 'view own field_slide'
