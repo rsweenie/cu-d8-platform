@@ -164,6 +164,7 @@ permissions:
   - 'edit own webform submission'
   - 'edit webform assets'
   - 'edit webform twig'
+  - 'refresh cu hub reference'
   - 'revert all revisions'
   - 'revert content_page revisions'
   - 'revert copy_box revisions'

@@ -1,0 +1,9 @@
+uuid: a6ad8b7b-c679-40da-a7db-6953bcec2c54
+langcode: en
+status: true
+dependencies: {  }
+id: slate_form
+label: 'Slate Form'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -418,7 +418,6 @@ display:
         - 'url.query_args:sort_by'
         - user.permissions
       tags: {  }
-  # @todo Lock down access in https://www.drupal.org/node/2983179
   widget:
     display_plugin: page
     id: widget
@@ -673,7 +672,7 @@ display:
           table: views
           field: display_link
           display_id: widget
-          label: 'Grid'
+          label: Grid
           plugin_id: display_link
           empty: true
         display_link_table:
@@ -681,7 +680,7 @@ display:
           table: views
           field: display_link
           display_id: widget_table
-          label: 'Table'
+          label: Table
           plugin_id: display_link
           empty: true
       css_class: 'media-library-view js-media-library-view media-library-view--widget'
@@ -916,7 +915,7 @@ display:
           table: views
           field: display_link
           display_id: widget
-          label: 'Grid'
+          label: Grid
           plugin_id: display_link
           empty: true
         display_link_table:
@@ -924,7 +923,7 @@ display:
           table: views
           field: display_link
           display_id: widget_table
-          label: 'Table'
+          label: Table
           plugin_id: display_link
           empty: true
       css_class: 'media-library-view js-media-library-view media-library-view--widget'

@@ -1,0 +1,23 @@
+uuid: a5efe951-8c85-441f-b82f-ec5061c8fe75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_fac_spotlight_cta
+    - node.type.hub_faculty_alumni_spotlight
+  module:
+    - link
+id: node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_cta
+field_name: field_hub_fac_spotlight_cta
+entity_type: node
+bundle: hub_faculty_alumni_spotlight
+label: 'CTA Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

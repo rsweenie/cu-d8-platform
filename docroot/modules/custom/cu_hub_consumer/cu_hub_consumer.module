@@ -1,0 +1,577 @@
+<?php
+
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\field\FieldConfigInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Render\Element;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Plugin\DerivativeInspectionInterface;
+use Drupal\Core\Plugin\PluginBase;
+use Drupal\cu_hub_consumer\Entity\HubReferenceTypeInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\cu_hub_consumer\Entity\HubReferenceInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\Component\Utility\NestedArray;
+use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
+use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
+use Drupal\cu_hub_consumer\Plugin\Block\HubReferenceFieldBlock;
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function cu_hub_consumer_field_formatter_info_alter(array &$info) {
+  if (!empty($info['text_default'])) {
+    $info['text_default']['field_types'][] = 'hub_text_long';
+  }
+  if (!empty($info['text_trimmed'])) {
+    $info['text_trimmed']['field_types'][] = 'hub_text_long';
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function cu_hub_consumer_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'hub_reference') {
+    $fields = [];
+
+    $fields['path'] = BaseFieldDefinition::create('path')
+      ->setLabel(t('URL alias'))
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('form', array(
+        'type' => 'path',
+        'weight' => 30,
+      ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setComputed(TRUE);
+
+    return $fields;
+  }
+}
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function cu_hub_consumer_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $fields = [];
+
+  if ($entity_type->id() == 'hub_reference') {
+    if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
+      if ($reference_source = $hub_ref_type->getSource()) {
+        $resource_type = $reference_source->getResourceType();
+        $field_types = \Drupal::service('plugin.manager.field.field_type');
+
+        if ($hub_fields = $resource_type->getHubFields()) {
+          $field_prefix = HubReferenceInterface::HUB_FIELD_PREFIX;
+          foreach ($hub_fields as $field_name => $field_info) {
+            // Make sure the plugin actually exists.
+            if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
+
+              $field_definition = HubFieldStorageDefinition::create($field_info['type'])
+                ->setName($field_prefix . $field_name)
+                ->setReadOnly(TRUE)
+                ->setComputed(TRUE)
+                ->setLabel('Hub: ' . $field_name)
+                ->setDisplayConfigurable('view', TRUE)
+                ->setDisplayOptions('view', [
+                  'region' => 'hidden',
+                  'type' => $field_def['default_formatter']
+                ]);
+              $fields[$field_prefix . $field_name] = $field_definition;
+            }
+          }
+        }
+      }
+    }
+
+    //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_block_alter().
+ */
+/*
+function cu_hub_consumer_block_alter(array &$blocks) {
+  // If Layout Builder is installed it assumes that bundle fields will be known ahead of time and will
+  // choke if it can't derive the field blocks. We need to fill in the blanks.
+  if (\Drupal::moduleHandler()->moduleExists('layout_builder')) {
+    $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference');
+    foreach ($bundles as $bundle => $bundle_info) {
+      if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
+        if ($reference_source = $hub_ref_type->getSource()) {
+          $resource_type = $reference_source->getResourceType();
+          $field_types = \Drupal::service('plugin.manager.field.field_type');
+  
+          if ($hub_fields = $resource_type->getHubFields()) {
+            $field_prefix = HubReferenceInterface::HUB_FIELD_PREFIX;
+            foreach ($hub_fields as $field_name => $field_info) {
+              // Make sure the plugin actually exists.
+              if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
+
+                // Example: field_block:hub_reference:degree:hub_field_hub_degree_title
+                $data_block_id = 'field_block' . 
+                  PluginBase::DERIVATIVE_SEPARATOR . 
+                  'hub_reference' . 
+                  PluginBase::DERIVATIVE_SEPARATOR . 
+                  $bundle . 
+                  PluginBase::DERIVATIVE_SEPARATOR .
+                  'hub_data';
+
+                $field_block_id = 'field_block' . 
+                  PluginBase::DERIVATIVE_SEPARATOR . 
+                  'hub_reference' . 
+                  PluginBase::DERIVATIVE_SEPARATOR . 
+                  $bundle . 
+                  PluginBase::DERIVATIVE_SEPARATOR .
+                  $field_prefix . $field_name;
+
+                if (isset($blocks[$data_block_id]) && !isset($blocks[$field_block_id])) {
+                  $blocks[$field_block_id] = [];
+
+                  // Let's start by copying the definition for a known good field_block.
+                  foreach ($blocks[$data_block_id] as $prop_name => $prop_value) {
+                    if (is_object($prop_value)) {
+                      $blocks[$field_block_id][$prop_name] = clone $prop_value;
+                    }
+                    else {
+                      $blocks[$field_block_id][$prop_name] = $prop_value;
+                    }
+                  }
+
+                  $blocks[$field_block_id]['id'] = $field_block_id;
+                  unset($blocks[$field_block_id]['deriver']);
+                  $blocks[$field_block_id]['admin_label'] = t('Hub: ' . $field_name);
+                  $blocks[$field_block_id]['class'] = 'Drupal\cu_hub_consumer\Plugin\Block\HubReferenceFieldBlock';
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+  }
+}
+*/
+
+/**
+ * Implements hook_entity_operation().
+ */
+function cu_hub_consumer_entity_operation(EntityInterface $entity) {
+  $operations = [];
+
+  if ($entity->getEntityTypeId() == 'hub_reference') {
+    $operations['refresh'] = [
+      'title' => t('Refresh data'),
+      'url' => \Drupal\Core\Url::fromRoute('entity.hub_reference.refresh_form', ['hub_reference' => $entity->id()]),
+      'weight' => 0,
+    ];
+  }
+
+  return $operations;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cu_hub_consumer_theme() {
+  return [
+    'hub_reference' => [
+      'render element' => 'elements',
+    ],
+    'hub_resource' => [
+      'variables' => [
+        'resource_obj' => NULL,
+      ],
+    ],
+    'hub_resource__media__image' => [
+      'variables' => [
+        'resource_obj' => NULL,
+      ],
+    ],
+    'hub_resource__media__video' => [
+      'variables' => [
+        'resource_obj' => NULL,
+      ],
+    ],
+    'hub_resource_field' => [
+      'variables' => [
+        'title' => '',
+        'label_display' => 'hidden',
+        'field_list' => NULL,
+        'field_items' => NULL,
+        'elements' => NULL,
+        'is_multiple' => FALSE,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function cu_hub_consumer_theme_suggestions_hub_reference(array $variables) {
+  $suggestions = [];
+
+  /** @var \Drupal\cu_hub_consumer\Entity\HubReferenceInterface $hub_reference */
+  $hub_reference = $variables['elements']['#hub_reference'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'hub_reference__' . $sanitized_view_mode;
+  $suggestions[] = 'hub_reference__' . $hub_reference->bundle();
+  $suggestions[] = 'hub_reference__' . $hub_reference->bundle() . '__' . $sanitized_view_mode;
+
+  // Add suggestions based on the source plugin ID.
+  $source = $hub_reference->getSource();
+  if ($source instanceof DerivativeInspectionInterface) {
+    $source_id = $source->getBaseId();
+    $suggestions[] = 'hub_reference__source_' . $source_id;
+
+    if ($derivative_id = $source->getDerivativeId()) {
+      $source_id .= '_' . $derivative_id;
+      $suggestions[] = 'hub_reference__source_' . $source_id;
+    }
+  }
+  else {
+    $source_id = $source->getPluginId();
+    $suggestions[] = 'hub_reference__source_' . $source_id;
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Prepares variables for hub_reference templates.
+ *
+ * Default template: hub_reference.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements to display in view mode.
+ *   - hub_reference: The hub_reference item.
+ *   - name: The label for the hub_reference item.
+ *   - view_mode: View mode; e.g., 'full', 'teaser', etc.
+ */
+function template_preprocess_hub_reference(array &$variables) {
+  $variables['hub_base_url'] = \Drupal::config('cu_hub_consumer.settings')->get('hub_base_url');
+  $variables['hub_reference'] = $variables['elements']['#hub_reference'];
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $variables['title'] = $variables['hub_reference']->label();
+
+  // Helpful $content variable for templates.
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Prepares variables for hub_resource templates.
+ *
+ * Default template: hub_resource.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource(array &$variables) {
+  $variables['hub_base_url'] = \Drupal::config('cu_hub_consumer.settings')->get('hub_base_url');
+
+  $resource_types = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type');
+  $resource_obj = $variables['resource_obj'];
+  $resource_type = $resource_obj->getResourceTypeId();
+
+  // Replace any characters that aren't allowed.
+  $resource_type = preg_replace('/[^a-z0-9-]/i', '-', $resource_type);
+
+  $variables['resource_type'] = $resource_type;
+  $variables['attributes'] = new Attribute();
+
+  $variables['content'] = $variables['resource_obj']->view();
+}
+
+/**
+ * Prepares variables for hub_resource__media__image templates.
+ *
+ * Default template: hub_resource__media__image.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource__media__image(array &$variables) {
+  template_preprocess_hub_resource($variables);
+
+  $resource_obj = $variables['resource_obj'];
+
+  // Sanity check.
+  if (isset($resource_obj->image[0]->uri[0])) {
+    $url = $resource_obj->image[0]->uri[0]->getUrl();
+
+    $image_path = $url->toString();
+    $image_alt = isset($resource_obj->image[0]->meta['alt']) ? $resource_obj->image[0]->meta['alt'] : '';
+    $image_title = isset($resource_obj->image[0]->meta['title']) ? $resource_obj->image[0]->meta['title'] : '';
+
+    $module_handler = \Drupal::service('module_handler');
+    if ($module_handler->moduleExists('imagecache_external')) {
+      $image_path = imagecache_external_generate_path($url->toString());
+    }
+
+    // Skip rendering this item if there is no image_path.
+    if ($image_path) {
+      $image_factory = \Drupal::service('image.factory');
+      $image = $image_factory->get($image_path);
+      $style_name = isset($variables['style_name']) ? $variables['style_name'] : NULL;
+
+      $image_build_base = [
+        '#width' => $image->getWidth(),
+        '#height' => $image->getHeight(),
+        '#uri' => $image_path,
+        '#alt' => $image_alt,
+        '#title' => $image_title,
+      ];
+
+      if (empty($style_name)) {
+        $image_build = [
+          '#theme' => 'image',
+        ] + $image_build_base;
+      }
+      else {
+        $image_build = [
+          '#theme' => 'image_style',
+          '#style_name' => $style_name,
+        ] + $image_build_base;
+      }
+
+      $variables['image'] = $image_build;
+    }
+  }
+}
+
+/**
+ * Prepares variables for hub_resource__media__image templates.
+ *
+ * Default template: hub_resource__media__image.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource__media__video(array &$variables) {
+  template_preprocess_hub_resource($variables);
+
+  $resource_obj = $variables['resource_obj'];
+
+  if (isset($resource_obj->field_media_video_embed_field[0])) {
+    $variables['video_url'] = $resource_obj->field_media_video_embed_field[0]->getString();
+
+    $module_handler = \Drupal::service('module_handler');
+    if ($module_handler->moduleExists('video_embed_field')) {
+      $provider_manager = \Drupal::service('video_embed_field.provider_manager');
+      $provider = $provider_manager->loadProviderFromInput($variables['video_url']);
+
+      if (!$provider) {
+        $variables['video'] = ['#theme' => 'video_embed_field_missing_provider'];
+      }
+      else {
+        $autoplay = FALSE;
+        $variables['video'] = $provider->renderEmbedCode(854, 480, $autoplay);
+        $variables['video']['#cache']['contexts'][] = 'user.permissions';
+
+        $variables['video'] = [
+          '#type' => 'container',
+          '#attributes' => ['class' => [Html::cleanCssIdentifier(sprintf('video-embed-field-provider-%s', $provider->getPluginId()))]],
+          'children' => $variables['video'],
+        ];
+
+        // For responsive videos, wrap each field item in it's own container.
+        //if ($this->getSetting('responsive')) {
+          $variables['video']['#attached']['library'][] = 'video_embed_field/responsive-video';
+          $variables['video']['#attributes']['class'][] = 'video-embed-field-responsive-video';
+        //}
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function cu_hub_consumer_theme_suggestions_hub_resource(array $variables) {
+  $suggestions = [];
+
+  $resource_obj = $variables['resource_obj'];
+  $resource_type = $resource_obj->getResourceTypeId();
+
+  $sanitized_resource_type = preg_replace('/[^a-z0-9-]/i', '-', $resource_type);
+
+  //$suggestions[] = 'hub_reference__' . $sanitized_resource_type;
+
+  return $suggestions;
+}
+
+/**
+ * Prepares variables for hub_resource_field templates.
+ *
+ * Default template: hub_resource_field.html.twig.
+ *
+ * @param array $variables
+ */
+function template_preprocess_hub_resource_field(array &$variables) {
+  $variables['hub_base_url'] = \Drupal::config('cu_hub_consumer.settings')->get('hub_base_url');
+
+  $field_list = $variables['field_list'];
+  $field_items = $variables['field_items'];
+
+  $field_type = $field_list->getFieldType();
+
+  // Replace any characters that aren't allowed.
+  $field_type = preg_replace('/[^a-z0-9-]/i', '-', $field_type);
+  $field_type = preg_replace('/--+/i', '-', $field_type);
+
+  $variables['field_name'] = $field_list->getFieldName();
+  $variables['field_type'] = $field_type;
+  $variables['resource_obj'] = $field_list->getParentResource();
+  $variables['resource_type'] = $variables['resource_obj']->getResourceTypeId();
+
+  $variables['label_hidden'] = $variables['label_display'] == 'hidden';
+
+  static $default_attributes;
+  if (!isset($default_attributes)) {
+    $default_attributes = new Attribute();
+  }
+  $variables['attributes'] = clone $default_attributes;
+
+  // Helpful $content variable for templates.
+  $variables['items'] = [];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['items'][$key]['content'] = $variables['elements'][$key];
+    $variables['items'][$key]['attributes'] = !empty($variables['field_items'][$key]->_attributes) ? new Attribute($variables['field_items'][$key]->_attributes) : clone $default_attributes;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function cu_hub_consumer_theme_suggestions_hub_resource_field(array $variables) {
+  $suggestions = [];
+
+  $field_list = $variables['field_list'];
+  $field_items = $variables['field_items'];
+  $field_type = $field_list->getFieldType();
+  $field_name = $field_list->getFieldName();
+
+  $resource_obj = $field_list->getParentResource();
+  $resource_type = $resource_obj->getResourceTypeId();
+
+  // Replace any characters that aren't allowed.
+  $sanitized_field_type = preg_replace('/[^a-z0-9_]/i', '_', $field_type);
+  $sanitized_field_type = preg_replace('/__+/i', '_', $sanitized_field_type);
+
+  // Replace any characters that aren't allowed.
+  $sanitized_field_name = preg_replace('/[^a-z0-9_]/i', '_', $field_name);
+  $sanitized_field_name = preg_replace('/__+/i', '_', $sanitized_field_name);
+
+  // Replace any characters that aren't allowed.
+  $sanitized_resource_type = preg_replace('/[^a-z0-9_]/i', '_', $resource_type);
+  $sanitized_resource_type = preg_replace('/__+/i', '_', $sanitized_resource_type);
+
+  $suggestions[] = 'hub_resource_field__' . $sanitized_field_type;
+  $suggestions[] = 'hub_resource_field__' . $sanitized_resource_type;
+  $suggestions[] = 'hub_resource_field__' . $sanitized_field_name;
+  $suggestions[] = 'hub_resource_field__' . $sanitized_resource_type . '__' . $sanitized_field_type;
+  $suggestions[] = 'hub_resource_field__' . $sanitized_resource_type . '__' . $sanitized_field_name;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function cu_hub_consumer_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($operation === 'delete' && $entity instanceof FieldConfigInterface && $entity->getTargetEntityTypeId() === 'hub_reference') {
+    /** @var \Drupal\cu_hub_consumer\Entity\HubReferenceTypeInterface $hub_reference_type */
+    //$hub_reference_type = \Drupal::entityTypeManager()->getStorage('media_type')->load($entity->getTargetBundle());
+    //return AccessResult::forbiddenIf($entity->id() === 'media.' . $hub_reference_type->id() . '.' . $hub_reference_type->getSource()->getConfiguration()['source_field']);
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_cron().
+ */
+function cu_hub_consumer_cron() {
+  $settings = \Drupal::config('cu_hub_consumer.settings');
+
+  if ($settings->get('enabled') && $settings->get('cron.enabled')) {
+    $lock = \Drupal::lock();
+    $state = \Drupal::state();
+    $request_time = \Drupal::time()->getRequestTime();
+
+    // Check to see if it's time for a full refresh.
+    if ($refresh_freq = $settings->get('cron.refresh_freq')) {
+      $last_refresh = $state->get('cu_hub_consumer.cron.last_refresh', 0);
+
+      if ($request_time > ($last_refresh + ($refresh_freq*60))) {
+        // We want to try and get a lock before we mess with the queues.
+        if ($lock->acquire('cu_hub_consumer.cron')) {
+          $queue_factory = \Drupal::service('queue');
+          $list_fetch_queue = $queue_factory->get('hub_resource_list_fetch_worker');
+          $resource_process_queue = $queue_factory->get('hub_resource_process_worker');
+
+          // Delete existing queues to prevent them from filling up if things are processing too slowly.
+          $list_fetch_queue->deleteQueue();
+          $resource_process_queue->deleteQueue();
+
+          $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference');
+          foreach ($bundles as $bundle => $bundle_info) {
+            // Create new queue item
+            $item = new \stdClass();
+            $item->bundle = $bundle;
+            $item->url = '';
+            $list_fetch_queue->createItem($item);
+          }
+
+          $lock->release('cu_hub_consumer.cron');
+          $state->set('cu_hub_consumer.cron.last_refresh', $request_time);
+        }
+        else {
+          \Drupal::logger('cu_hub_consumer')->notice(t('Cron did not run because it is locked.'));
+        }
+      }
+    }
+
+    // Check to see if there are any hub references that need to be unpublished.
+    if ($unpublish_age = $settings->get('cron.unpublish_age')) {
+      $query = \Drupal::entityQuery('hub_reference')
+        ->condition('changed', ($request_time - ($unpublish_age * 60)), '<')
+        ->condition('status', 1)
+        ->range(0, 10);
+      $ref_ids = $query->execute();
+
+      if ($ref_ids) {
+        $hub_reference_storage = \Drupal::entityTypeManager()->getStorage('hub_reference');
+        $hub_references = $hub_reference_storage->loadMultiple($ref_ids);
+        foreach ($hub_references as $hub_reference) {
+          $hub_reference->setPublished(FALSE);
+          $hub_reference->save();
+        }
+      }
+    }
+
+    // Check to see if there are any hub references that need to be unpublished.
+    if ($delete_age = $settings->get('cron.delete_age')) {
+      $query = \Drupal::entityQuery('hub_reference')
+        ->condition('status', 0)
+        ->condition('changed', ($request_time - ($delete_age * 60)), '<')
+        ->range(0, 10);
+      $ref_ids = $query->execute();
+
+      if ($ref_ids) {
+        $hub_reference_storage = \Drupal::entityTypeManager()->getStorage('hub_reference');
+        $hub_references = $hub_reference_storage->loadMultiple($ref_ids);
+        $hub_reference_storage->delete($hub_references);
+      }
+    }
+  }
+}

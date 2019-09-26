@@ -1,0 +1,14 @@
+uuid: 5be88cad-a669-4c10-9bcf-69097675548f
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.full_width_banner
+label: 'Full Width Banner'
+targetEntityType: media
+cache: true
