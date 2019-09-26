@@ -1,0 +1,22 @@
+uuid: 948a7c06-b6b0-4e1e-82ab-48e6096050e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_faculty_alumni_spotlight
+id: node.hub_faculty_alumni_spotlight.promote
+field_name: promote
+entity_type: node
+bundle: hub_faculty_alumni_spotlight
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,36 @@
+uuid: 5805fb5d-7555-42c2-b20c-107c0ab06220
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.statistic_highlight.field_hub_stat_highlight_ref
+    - paragraphs.paragraphs_type.statistic_highlight
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+id: paragraph.statistic_highlight.default
+targetEntityType: paragraph
+bundle: statistic_highlight
+mode: default
+content:
+  field_hub_stat_highlight_ref:
+    weight: 0
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+hidden:
+  created: true
+  status: true
