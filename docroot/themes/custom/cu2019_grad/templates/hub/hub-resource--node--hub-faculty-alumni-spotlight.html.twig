@@ -38,7 +38,9 @@
 
     {{ content.field_hub_fac_spotlight_image }}
     {{ content.field_hub_fac_spotlight_title }}
-    {{ content.field_hub_fac_spotlight_type } #}
     {{ content.field_hub_fac_spotlight_cta }}
+    {{ content.field_hub_fac_spotlight_type } #}
+
+    {# { content.field_hub_fac_spotlight_cta|merge({ '#attributes': { 'class': [ 'your', 'custom', 'classes' ] } }) } #}
   {% endif %}
 </article>

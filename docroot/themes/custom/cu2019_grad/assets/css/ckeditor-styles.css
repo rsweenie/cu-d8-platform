@@ -14223,12 +14223,6 @@ form.search .search button {
     font-size: 2.4rem;
   }
 
-  /* line 9, src/sass/components/basic/_feat-tiles.scss */
-
-  .feat-tiles > div {
-    width: 33.3%;
-  }
-
   /* line 6, src/sass/components/navigation/_landing.scss */
 
   nav.cp {
@@ -15921,6 +15915,12 @@ form.search .search button {
   a.card h4,
   a.card .h4 {
     font-size: 1.75em;
+  }
+
+  /* line 9, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div {
+    width: 33.3%;
   }
 
   /* line 44, src/sass/components/navigation/_interior.scss */
