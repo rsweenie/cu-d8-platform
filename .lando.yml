@@ -20,6 +20,10 @@ services:
     type: 'mailhog'
     hogfrom:
       - 'appserver'
+  node:
+    type: node:10
+    globals:
+      gulp-cli: "latest"
 tooling:
   blt:
     service: appserver
@@ -35,3 +39,12 @@ tooling:
       - chmod 700 /var/www/.ssh
       - chmod 600 /var/www/.ssh/id_rsa
       - chmod 644 /var/www/.ssh/id_rsa.pub
+  npm:
+    service: node
+    description: "Run NPM: lando npm"
+  node:
+    service: node
+    description: "Run NodeJS: lando node"
+  gulp:
+    service: node
+    description: "Run Gulp: lando gulp"

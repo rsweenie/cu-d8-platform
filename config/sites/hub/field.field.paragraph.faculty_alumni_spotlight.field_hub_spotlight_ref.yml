@@ -1,0 +1,28 @@
+uuid: 18dab4bd-a97b-4019-a540-4b6c3309c0f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hub_spotlight_ref
+    - node.type.hub_faculty_alumni_spotlight
+    - paragraphs.paragraphs_type.faculty_alumni_spotlight
+id: paragraph.faculty_alumni_spotlight.field_hub_spotlight_ref
+field_name: field_hub_spotlight_ref
+entity_type: paragraph
+bundle: faculty_alumni_spotlight
+label: Spotlight
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_faculty_alumni_spotlight: hub_faculty_alumni_spotlight
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

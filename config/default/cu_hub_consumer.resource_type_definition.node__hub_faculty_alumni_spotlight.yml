@@ -1,0 +1,93 @@
+uuid: 938653a6-cf2c-4057-8663-72f24f754552
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_faculty_alumni_spotlight
+type_id: node--hub_faculty_alumni_spotlight
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  revision_log:
+    type: hub_unknown
+    multiple: false
+  status:
+    type: string_long
+    multiple: false
+  title:
+    type: string_long
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  promote:
+    type: string_long
+    multiple: false
+  sticky:
+    type: string_long
+    multiple: false
+  default_langcode:
+    type: string_long
+    multiple: false
+  revision_translation_affected:
+    type: string_long
+    multiple: false
+  scheduled_transition_date:
+    type: hub_unknown
+    multiple: true
+  scheduled_transition_state:
+    type: hub_unknown
+    multiple: true
+  metatag:
+    type: hub_unknown
+    multiple: false
+  metatag_normalized:
+    type: metatags
+    multiple: false
+  path:
+    type: hub_unknown
+    multiple: false
+  private:
+    type: hub_unknown
+    multiple: false
+  publish_on:
+    type: hub_unknown
+    multiple: false
+  unpublish_on:
+    type: hub_unknown
+    multiple: false
+  field_hub_fac_spotlight_cta:
+    type: link
+    multiple: false
+  field_hub_fac_spotlight_desc:
+    type: string_long
+    multiple: false
+  field_hub_fac_spotlight_name:
+    type: name
+    multiple: false
+  field_hub_fac_spotlight_title:
+    type: string_long
+    multiple: false
+  field_hub_fac_spotlight_type:
+    type: string_long
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type
+    multiple: false
+  field_hub_fac_spotlight_image:
+    type: hub_resource
+    hub_type: media
+    multiple: false
