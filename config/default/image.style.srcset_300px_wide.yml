@@ -1,0 +1,15 @@
+uuid: 5d3a476f-52cf-459b-ac25-bea783780b63
+langcode: en
+status: true
+dependencies: {  }
+name: srcset_300px_wide
+label: 'SrcSet (300px wide)'
+effects:
+  c064cda1-d7fa-46bd-91d7-23f7c0ac5385:
+    uuid: c064cda1-d7fa-46bd-91d7-23f7c0ac5385
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: false

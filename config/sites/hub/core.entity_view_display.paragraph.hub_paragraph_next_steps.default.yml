@@ -1,0 +1,32 @@
+uuid: 8d093832-5194-457a-9367-a4e03f0acca1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hub_paragraph_next_steps.field_hub_next_steps
+    - field.field.paragraph.hub_paragraph_next_steps.field_hub_next_steps_title
+    - paragraphs.paragraphs_type.hub_paragraph_next_steps
+id: paragraph.hub_paragraph_next_steps.default
+targetEntityType: paragraph
+bundle: hub_paragraph_next_steps
+mode: default
+content:
+  field_hub_next_steps:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_hub_next_steps_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

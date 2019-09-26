@@ -1,0 +1,213 @@
+uuid: 43b5e1af-bb2b-42fa-8da5-f83ebf9eca78
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.faculty_detail
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - system
+  theme:
+    - cu2019_grad
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: generic_hero
+        layout_settings: {  }
+        components:
+          fc8e2665-2181-4a37-8163-404fc5284f9d:
+            uuid: fc8e2665-2181-4a37-8163-404fc5284f9d
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_name'
+              label: 'Hub: field_hub_faculty_name'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_unknown
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          8d25aa2c-ecf6-4d33-a4c9-56e18bdfa139:
+            uuid: 8d25aa2c-ecf6-4d33-a4c9-56e18bdfa139
+            region: main
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: faculty_detail_3col
+        layout_settings: {  }
+        components:
+          bf322293-e8f4-4f6a-9b7b-3f960ba20b9d:
+            uuid: bf322293-e8f4-4f6a-9b7b-3f960ba20b9d
+            region: right
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_rel_degrees'
+              label: 'Associated Programs'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: hub_resource_link
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 6
+          1c1e3a20-3e0f-4bc2-9abf-b863556a4c3e:
+            uuid: 1c1e3a20-3e0f-4bc2-9abf-b863556a4c3e
+            region: left
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_image'
+              label: 'Hub: field_hub_faculty_image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource_media_image
+                settings:
+                  style_name: square_medium_large_395_x_395_
+                  link_type: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          67dcda95-9c40-4650-8c5b-b3a100a4b5f5:
+            uuid: 67dcda95-9c40-4650-8c5b-b3a100a4b5f5
+            region: middle
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_email'
+              label: 'Hub: field_hub_faculty_email'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -8
+          e5b9016c-5f1a-41fa-ae9e-f1d9010ca3f2:
+            uuid: e5b9016c-5f1a-41fa-ae9e-f1d9010ca3f2
+            region: middle
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_title'
+              label: 'Hub: field_hub_faculty_title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -10
+          131d65aa-2b4f-45a0-8024-180a1bedccb1:
+            uuid: 131d65aa-2b4f-45a0-8024-180a1bedccb1
+            region: middle
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_department'
+              label: 'Hub: field_hub_faculty_department'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -9
+          c4612ce3-b248-4201-9718-e11459d09b0e:
+            uuid: c4612ce3-b248-4201-9718-e11459d09b0e
+            region: middle
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_phone'
+              label: 'Hub: field_hub_faculty_phone'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 4
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          32ade59c-69eb-46f7-9498-eeddf0407dd2:
+            uuid: 32ade59c-69eb-46f7-9498-eeddf0407dd2
+            region: content
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_components'
+              label: 'Hub: field_hub_faculty_components'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks: {  }
+      allowed_layouts: {  }
+id: hub_reference.faculty_detail.default
+targetEntityType: hub_reference
+bundle: faculty_detail
+mode: default
+content: {  }
+hidden:
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_faculty_components: true
+  hub_field_hub_faculty_degree: true
+  hub_field_hub_faculty_department: true
+  hub_field_hub_faculty_description: true
+  hub_field_hub_faculty_email: true
+  hub_field_hub_faculty_image: true
+  hub_field_hub_faculty_name: true
+  hub_field_hub_faculty_phone: true
+  hub_field_hub_faculty_provost_id: true
+  hub_field_hub_faculty_provost_url: true
+  hub_field_hub_faculty_rel_degrees: true
+  hub_field_hub_faculty_title: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_node_type: true
+  hub_revision_timestamp: true
+  search_api_excerpt: true

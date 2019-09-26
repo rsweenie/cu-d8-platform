@@ -17,11 +17,22 @@
         z-index: 0;
       }
     }
+
+    @media #{$mediaToggleHeader} {
+      > div {
+        padding: 0;
+        width: 100%;
+      }
+    }
   }
 }
 
 &.side-nav {
   position: relative;
+
+  @media #{$mediaFullHeader} {
+    width: 18%;
+  }
 
   label,
   ul {
@@ -33,6 +44,7 @@
   ul {
     margin: 0;
     padding: 0;
+    line-height: 1.2em;
 
     @media #{$mediaToggleHeader} {
       display: none;
@@ -66,7 +78,13 @@
     color: $gray2;
     text-decoration: none;
 
+    &.is-active {
+      color: $gray2;
+      text-decoration: underline;
+    }
+
     @include hover {
+      color: $secondary;
       text-decoration: underline;
     }
 

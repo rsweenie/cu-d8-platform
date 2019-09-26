@@ -8,10 +8,10 @@ dependencies:
     - field.field.paragraph.quote.field_quote_full_name
     - field.field.paragraph.quote.field_quote_image
     - field.field.paragraph.quote.field_quote_quote
+    - field.field.paragraph.quote.field_quote_style
     - field.field.paragraph.quote.field_quote_title
     - paragraphs.paragraphs_type.quote
   module:
-    - image
     - link
     - name
     - text
@@ -21,7 +21,7 @@ bundle: quote
 mode: default
 content:
   field_quote_background_area:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -56,13 +56,13 @@ content:
     third_party_settings: {  }
     region: content
   field_quote_image:
-    weight: 4
+    type: entity_reference_entity_view
+    weight: 5
     label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      view_mode: quote_image
+      link: false
     third_party_settings: {  }
-    type: image
     region: content
   field_quote_quote:
     weight: 0
@@ -80,4 +80,5 @@ content:
     type: string
     region: content
 hidden:
+  field_quote_style: true
   search_api_excerpt: true

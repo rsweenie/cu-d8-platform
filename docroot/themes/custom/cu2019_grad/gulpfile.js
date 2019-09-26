@@ -241,3 +241,5 @@ gulp.task('watch', function() {
 
 gulp.task('stage', ['iconfont', 'sass']);
 gulp.task('FED',['watch']);
+
+gulp.task('default', ['sass', 'js']);
