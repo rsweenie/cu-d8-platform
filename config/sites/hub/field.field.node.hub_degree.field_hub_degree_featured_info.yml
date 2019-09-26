@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.faculty_alumni_spotlight
     - paragraphs.paragraphs_type.featured_content_item
     - paragraphs.paragraphs_type.quote_ref
+    - paragraphs.paragraphs_type.statistic_highlight
   module:
     - entity_reference_revisions
 id: node.hub_degree.field_hub_degree_featured_info
@@ -28,6 +29,7 @@ settings:
       featured_content_item: featured_content_item
       faculty_alumni_spotlight: faculty_alumni_spotlight
       quote_ref: quote_ref
+      statistic_highlight: statistic_highlight
     target_bundles_drag_drop:
       accordion:
         weight: 6
@@ -53,4 +55,7 @@ settings:
       video:
         weight: 14
         enabled: false
+      statistic_highlight:
+        enabled: true
+        weight: 17
 field_type: entity_reference_revisions

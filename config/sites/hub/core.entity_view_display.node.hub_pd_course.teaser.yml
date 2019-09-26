@@ -36,4 +36,9 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
+  field_hub_pd_course_dates: true
+  field_hub_pd_course_hero_image: true
+  field_hub_pd_course_next_steps: true
+  field_hub_pd_course_program: true
+  field_hub_pd_course_site: true
   search_api_excerpt: true

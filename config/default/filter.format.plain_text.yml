@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - noreferrer
     - pathologic
     - responsivewrappers
 _core:
@@ -30,12 +29,6 @@ filters:
     provider: filter
     status: true
     weight: 0
-    settings: {  }
-  noreferrer:
-    id: noreferrer
-    provider: noreferrer
-    status: true
-    weight: 10
     settings: {  }
   filter_bootstrap_responsive_wrapper:
     id: filter_bootstrap_responsive_wrapper

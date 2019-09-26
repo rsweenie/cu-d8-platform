@@ -1,19 +1,21 @@
-uuid: 36e9d01a-ca79-4782-bc30-2d48a381a54d
+uuid: 166f8655-31bc-468e-9f80-9e65ebbef5b9
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
-    - node
+    - taxonomy
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_hub_pd_course_site
-field_name: field_hub_pd_course_site
-entity_type: node
-type: entity_reference
+id: taxonomy_term.field_term_tooltip
+field_name: field_term_tooltip
+entity_type: taxonomy_term
+type: string
 settings:
-  target_type: node
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1
