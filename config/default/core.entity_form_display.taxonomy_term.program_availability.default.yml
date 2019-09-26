@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.program_availability.field_term_tooltip
     - taxonomy.vocabulary.program_availability
   module:
     - text
@@ -19,6 +20,14 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
+  field_term_tooltip:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   name:
     type: string_textfield
     weight: 0

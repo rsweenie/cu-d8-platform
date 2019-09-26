@@ -1,0 +1,8 @@
+uuid: 2b844df1-65cf-4f6a-9971-e208701711a5
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_degree
+label: 'Content: Hub: Academic Degree / Program Detail'
+tags:
+  canonical_url: '[node:field_hub_site:entity:field_hub_site_base_uri][node:field_hub_path_alias]'
