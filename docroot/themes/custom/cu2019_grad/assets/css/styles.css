@@ -3676,15 +3676,20 @@ a.card.mfsfa {
 /* line 4, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa > a,
-a.card.mfsfa > a {
+.card.mfsfa > span,
+a.card.mfsfa > a,
+a.card.mfsfa > span {
   position: relative;
   z-index: 0;
+  display: block;
 }
 
-/* line 8, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 10, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa > a:after,
-a.card.mfsfa > a:after {
+.card.mfsfa > span:after,
+a.card.mfsfa > a:after,
+a.card.mfsfa > span:after {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3695,7 +3700,7 @@ a.card.mfsfa > a:after {
   background: linear-gradient(0deg, rgba(33, 35, 34, 0.8) 0%, rgba(33, 35, 34, 0) 50%);
 }
 
-/* line 19, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 21, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .content,
 a.card.mfsfa .content {
@@ -3712,7 +3717,7 @@ a.card.mfsfa .content {
           flex-flow: column nowrap;
 }
 
-/* line 37, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 39, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .content a,
 a.card.mfsfa .content a {
@@ -3724,14 +3729,14 @@ a.card.mfsfa .content a {
   font-weight: 600;
 }
 
-/* line 54, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 56, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .content a span:first-child,
 a.card.mfsfa .content a span:first-child {
   text-decoration: underline;
 }
 
-/* line 58, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 60, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .content a span:last-child,
 a.card.mfsfa .content a span:last-child {
@@ -3741,14 +3746,14 @@ a.card.mfsfa .content a span:last-child {
   font-size: 1.3em;
 }
 
-/* line 71, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 73, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .title,
 a.card.mfsfa .title {
   text-align: center;
 }
 
-/* line 83, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 85, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .type,
 a.card.mfsfa .type {
@@ -3764,7 +3769,7 @@ a.card.mfsfa .type {
   z-index: 20;
 }
 
-/* line 101, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 103, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa h3,
 a.card.mfsfa h3 {
@@ -3776,7 +3781,7 @@ a.card.mfsfa h3 {
   margin-bottom: 0.63636em;
 }
 
-/* line 109, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 111, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa h3:after,
 a.card.mfsfa h3:after {
@@ -3791,7 +3796,7 @@ a.card.mfsfa h3:after {
           transform: translateX(-50%);
 }
 
-/* line 131, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 133, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .subtitle,
 a.card.mfsfa .subtitle {
@@ -3800,7 +3805,7 @@ a.card.mfsfa .subtitle {
   text-transform: none;
 }
 
-/* line 141, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 143, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .body,
 a.card.mfsfa .body {
@@ -4930,6 +4935,72 @@ blockquote .tooltip-trigger {
 
 .mfs h3 {
   text-align: center;
+}
+
+/* line 1, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: -0.5rem;
+}
+
+/* line 5, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div {
+  width: 33.3%;
+  padding: 0.5rem;
+}
+
+/* line 10, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 17, src/sass/components/basic/_feat-tiles.scss */
+
+.stat_hl_io {
+  position: relative;
+}
+
+/* line 463, src/sass/base/_mixins.scss */
+
+.stat_hl_io:after {
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  content: "";
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* line 21, src/sass/components/basic/_feat-tiles.scss */
+
+.stat_hl_io:before {
+  width: 1.1rem;
+  height: 1.1rem;
+  position: absolute;
+  top: 1.7rem;
+  left: 1.7rem;
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 10;
+}
+
+/* line 32, src/sass/components/basic/_feat-tiles.scss */
+
+.stat_hl_io img {
+  z-index: 0;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -12914,14 +12985,14 @@ form.search .search button {
     padding-left: 3.2rem;
   }
 
-  /* line 101, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 103, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3,
   a.card.mfsfa h3 {
     font-size: 3rem;
   }
 
-  /* line 131, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 133, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .subtitle,
   a.card.mfsfa .subtitle {
@@ -13957,7 +14028,7 @@ form.search .search button {
     width: 83.33333%;
   }
 
-  /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 21, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .content,
   a.card.mfsfa .content {
@@ -13970,7 +14041,7 @@ form.search .search button {
     padding: 1.5rem;
   }
 
-  /* line 37, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 39, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .content a,
   a.card.mfsfa .content a {
@@ -13978,7 +14049,7 @@ form.search .search button {
     display: none;
   }
 
-  /* line 83, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 85, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .type,
   a.card.mfsfa .type {
@@ -13986,7 +14057,7 @@ form.search .search button {
     padding: 1.2rem;
   }
 
-  /* line 109, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 111, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3:after,
   a.card.mfsfa h3:after {
@@ -13995,7 +14066,7 @@ form.search .search button {
     bottom: -1rem;
   }
 
-  /* line 141, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 143, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .body,
   a.card.mfsfa .body {
@@ -14004,15 +14075,17 @@ form.search .search button {
     display: none;
   }
 
-  /* line 160, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 163, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover > a:after,
-  a.card.mfsfa:hover > a:after {
+  .card.mfsfa:hover > span:after,
+  a.card.mfsfa:hover > a:after,
+  a.card.mfsfa:hover > span:after {
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
     background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
   }
 
-  /* line 165, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 168, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover .body,
   .card.mfsfa:hover .content a,
@@ -14021,7 +14094,7 @@ form.search .search button {
     display: block;
   }
 
-  /* line 170, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 173, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover .content,
   a.card.mfsfa:hover .content {
@@ -15756,21 +15829,21 @@ form.search .search button {
     width: 33.333%;
   }
 
-  /* line 19, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 21, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .content,
   a.card.mfsfa .content {
     padding: 2.5rem 8rem;
   }
 
-  /* line 37, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 39, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .content a,
   a.card.mfsfa .content a {
     font-size: 1.9rem;
   }
 
-  /* line 141, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 143, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .body,
   a.card.mfsfa .body {
@@ -16414,7 +16487,7 @@ form.search .search button {
 }
 
 @media screen and (max-width: 991.9px) {
-  /* line 58, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 60, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .content a span:last-child,
   a.card.mfsfa .content a span:last-child {
@@ -16422,7 +16495,7 @@ form.search .search button {
     opacity: .3;
   }
 
-  /* line 71, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 73, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .title,
   a.card.mfsfa .title {

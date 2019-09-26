@@ -1,9 +1,11 @@
 &.mfsfa {
   position: relative;
 
-  > a {
+  > a,
+  > span {
     position: relative;
     z-index: 0;
+    display: block;
 
     &:after {
       width: 100%;
@@ -156,7 +158,8 @@
 
   &:hover {
     @media #{$mediaLg} {
-      > a {
+      > a,
+      > span {
         &:after {
           background: linear-gradient(0deg, rgba($black, .9) 0%, rgba($black,.5) 50%);
         }

@@ -19,11 +19,25 @@
 %}
 <article {{ attributes.addClass(classes) }}>
   {% if content %}
-    {{ content.field_hub_fac_spotlight_name }}
+  {% include '@cu2019_grad/components/card.html.twig' with {
+    'image': content.field_hub_fac_spotlight_image,
+    'title': content.field_hub_fac_spotlight_name,
+    'subtitle': content.field_hub_fac_spotlight_title,
+    'body': content.field_hub_fac_spotlight_desc,
+    'tag': content.field_hub_fac_spotlight_type,
+    'class': 'mfsfa',
+    'button': {
+      'url': content.field_hub_fac_spotlight_cta[0]['#url'],
+      'title': content.field_hub_fac_spotlight_cta[0]['#title'],
+      'class': 'mfsfa-btn'
+    }
+  } %}
+
+    {# { content.field_hub_fac_spotlight_name }}
     {{ content.field_hub_fac_spotlight_desc }}
     {{ content.field_hub_fac_spotlight_cta }}
     {{ content.field_hub_fac_spotlight_image }}
     {{ content.field_hub_fac_spotlight_title }}
-    {{ content.field_hub_fac_spotlight_type }}
+    {{ content.field_hub_fac_spotlight_type } #}
   {% endif %}
 </article>
