@@ -80,13 +80,12 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
-
 <div {{ attributes.addClass(classes) }}>
   {% include '@cu2019_grad/components/quote.html.twig' with {
     'class': 'q-left ' ~ node.field_quote_box_quotes.value|clean_class,
     'quote': content.field_quote_box_quote_text,
     'img': content.field_quote_box_photo,
-    'name': content.field_name_person,
+    'name': content.field_name_person|without("credentials"),
     'title': '',
     'area': content.field_quote_box_affiliation,
     'link': content.field_quote_p_link[0]['#url']

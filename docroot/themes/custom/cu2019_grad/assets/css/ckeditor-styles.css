@@ -1077,7 +1077,7 @@ table tfoot td {
   background: #6CACE4;
 }
 
-/* line 23, src/sass/components/copy/_copy-block.scss */
+/* line 24, src/sass/components/copy/_copy-block.scss */
 
 .ct-content {
   position: relative;
@@ -1085,7 +1085,7 @@ table tfoot td {
   overflow: hidden;
 }
 
-/* line 29, src/sass/components/copy/_copy-block.scss */
+/* line 30, src/sass/components/copy/_copy-block.scss */
 
 .ct-content:after {
   width: 100%;
@@ -1098,25 +1098,25 @@ table tfoot td {
   background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* line 47, src/sass/components/copy/_copy-block.scss */
+/* line 48, src/sass/components/copy/_copy-block.scss */
 
 .ct-content.expanded {
   max-height: none;
 }
 
-/* line 49, src/sass/components/copy/_copy-block.scss */
+/* line 50, src/sass/components/copy/_copy-block.scss */
 
 .ct-content.expanded:after {
   display: none;
 }
 
-/* line 55, src/sass/components/copy/_copy-block.scss */
+/* line 56, src/sass/components/copy/_copy-block.scss */
 
 .ct {
   margin-bottom: 3rem;
 }
 
-/* line 64, src/sass/components/copy/_copy-block.scss */
+/* line 65, src/sass/components/copy/_copy-block.scss */
 
 .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
 .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
@@ -4463,24 +4463,136 @@ blockquote {
 
 /* line 28, src/sass/components/basic/_quotes.scss */
 
-.copy-block blockquote,
-.cke_editable blockquote {
-  margin-left: 4.2rem;
-  color: #002E6D;
-  position: relative;
+.align-right blockquote {
+  margin-left: 3rem;
 }
 
-/* line 37, src/sass/components/basic/_quotes.scss */
+/* line 32, src/sass/components/basic/_quotes.scss */
 
-.copy-block blockquote:before,
-.cke_editable blockquote:before {
-  height: 100%;
-  width: 1.2rem;
+.align-left blockquote {
+  margin-right: 3rem;
+}
+
+/* line 36, src/sass/components/basic/_quotes.scss */
+
+.copy-block blockquote,
+.cke_editable blockquote {
+  color: #002E6D;
+  position: relative;
+  background: #5D6468;
+  max-width: 425px;
+  /*&:before { height: 100%; width: 12px; position: absolute; left: -26px; top: 0; content: ""; background: $primaryXLt; @media  screen and (min-width: 1090px) { width: 19px; left: -54px; transition: all 10s; } }*/
+}
+
+/* line 463, src/sass/base/_mixins.scss */
+
+.copy-block blockquote:after,
+.cke_editable blockquote:after {
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
   position: absolute;
-  left: -2.6rem;
-  top: 0;
+  top: 1.5rem;
+  left: 1.5rem;
   content: "";
-  background: #e5f0f9;
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* line 3, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block blockquote a,
+.cke_editable blockquote a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 8, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block blockquote a:hover,
+.cke_editable blockquote a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 13, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block blockquote p,
+.cke_editable blockquote p {
+  margin-bottom: 1em;
+}
+
+/* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block blockquote .quote-inner,
+.cke_editable blockquote .quote-inner {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 7rem 3.2rem 3.6rem;
+  /*&:before { width: calc(100% - 5rem); height: 1px; position: absolute; top: 42px; left: 2.5rem; content: ""; background: $white; opacity: .5; @media  screen and (min-width: 768px) { width: calc(100% - 162px); top: 79px; left: 81px; } }*/
+}
+
+/* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block blockquote .quote-inner:before,
+.cke_editable blockquote .quote-inner:before {
+  width: 3.9rem;
+  height: 3.9rem;
+  font-size: 7rem;
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  content: "“";
+  color: white;
+  background: transparent;
+  line-height: 1;
+  font-family: "Conduit";
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  border-width: 0 2px 2px 0;
+  text-align: center;
+}
+
+/* line 80, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block blockquote .quote-inner .field--name-field-quote-box-photo,
+.cke_editable blockquote .quote-inner .field--name-field-quote-box-photo {
+  display: none;
+}
+
+/* line 85, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.card .copy-block blockquote .quote-inner img,
+.card .cke_editable blockquote .quote-inner img {
+  width: auto;
+  height: auto;
+  max-width: 160px;
+  max-height: 160px;
+}
+
+/* line 105, src/sass/components/basic/_quotes.scss */
+
+blockquote .quote {
+  color: white;
+  line-height: 1.3;
+}
+
+/* line 183, src/sass/components/basic/_quotes.scss */
+
+blockquote .quote > .field__item {
+  font-size: 2.2rem;
+}
+
+/* line 188, src/sass/components/basic/_quotes.scss */
+
+blockquote .attr {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
 }
 
 /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
@@ -12339,19 +12451,19 @@ form.search .search button {
     height: 0.8rem;
   }
 
-  /* line 23, src/sass/components/copy/_copy-block.scss */
+  /* line 24, src/sass/components/copy/_copy-block.scss */
 
   .ct-content {
     max-height: 320px;
   }
 
-  /* line 42, src/sass/components/copy/_copy-block.scss */
+  /* line 43, src/sass/components/copy/_copy-block.scss */
 
   .ct-content:after {
     height: 9rem;
   }
 
-  /* line 64, src/sass/components/copy/_copy-block.scss */
+  /* line 65, src/sass/components/copy/_copy-block.scss */
 
   .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
   .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
@@ -13158,6 +13270,23 @@ form.search .search button {
     display: block;
   }
 
+  /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+  .copy-block blockquote .quote-inner,
+  .cke_editable blockquote .quote-inner {
+    padding: 10rem 4.2rem 4.6rem;
+  }
+
+  /* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+  .copy-block blockquote .quote-inner:before,
+  .cke_editable blockquote .quote-inner:before {
+    width: 5.9rem;
+    height: 5.9rem;
+    font-size: 10.5rem;
+    line-height: 1;
+  }
+
   /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .quote-inner {
@@ -13732,7 +13861,7 @@ form.search .search button {
     display: table;
   }
 
-  /* line 64, src/sass/components/copy/_copy-block.scss */
+  /* line 65, src/sass/components/copy/_copy-block.scss */
 
   .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
   .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
@@ -15335,23 +15464,6 @@ form.search .search button {
     width: 90%;
   }
 
-  /* line 28, src/sass/components/basic/_quotes.scss */
-
-  .copy-block blockquote,
-  .cke_editable blockquote {
-    margin-left: 9.6rem;
-  }
-
-  /* line 37, src/sass/components/basic/_quotes.scss */
-
-  .copy-block blockquote:before,
-  .cke_editable blockquote:before {
-    width: 1.9rem;
-    left: -5.4rem;
-    -webkit-transition: all 10s;
-    transition: all 10s;
-  }
-
   /* line 1, src/sass/components/basic/_ns.scss */
 
   .section.ns {
@@ -15703,7 +15815,7 @@ form.search .search button {
 }
 
 @media screen and (min-width: 1210px) {
-  /* line 64, src/sass/components/copy/_copy-block.scss */
+  /* line 65, src/sass/components/copy/_copy-block.scss */
 
   .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
   .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
@@ -16512,6 +16624,14 @@ form.search .search button {
     padding-left: calc(20% + 5rem);
   }
 
+  /* line 36, src/sass/components/basic/_quotes.scss */
+
+  .copy-block blockquote,
+  .cke_editable blockquote {
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+  }
+
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left {
@@ -16581,6 +16701,13 @@ form.search .search button {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991.9px) {
+  /* line 36, src/sass/components/basic/_quotes.scss */
+
+  .copy-block blockquote,
+  .cke_editable blockquote {
+    margin: 0 -2.5rem 1.5rem;
+  }
+
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left {
