@@ -35,7 +35,9 @@ module:
   cu_breadcrumbs: 0
   cu_data_transform: 0
   cu_entity_embed: 0
+  cu_noreferrer: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   diff: 0
   dropzonejs: 0
@@ -107,7 +109,6 @@ module:
   module_filter: 0
   name: 0
   node: 0
-  noreferrer: 0
   openapi: 0
   openapi_ui: 0
   openapi_ui_redoc: 0

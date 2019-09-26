@@ -1,0 +1,58 @@
+/*
+   Create sticky header for the creighton theme
+*/
+
+.sticky-header .header_bg_wrapper {
+    position: fixed;
+    margin-top:0;
+    top:0;
+
+}
+
+.sticky-header.toolbar-adjust .header_bg_wrapper {
+    top: auto;
+
+}
+
+.sticky-header .header_top_section_mega_menu {
+    @include respond-to(null, tablet-max) {
+         position: fixed;
+         top: 100px;
+         max-height: 100vh;
+         overflow-y: scroll;
+         padding: 0 20px 100px 20px;
+    }
+}
+
+body.sticky-header header.header_opacity .header_bg_wrapper {
+    background-color: #0054a6;
+}
+
+
+.sticky-header .header_top_section_menu{
+    @media all and (max-width:768px)
+    {
+        position: fixed;
+        top: 65px;
+        right: .5px;
+    }
+}
+
+body.toolbar-vertical.sticky-header .header_bg_wrapper {
+  
+     @media all and (max-width:600px)
+        {
+        top: 0;
+        }
+    
+}
+
+.sticky-header main{
+    padding-top: 85px;
+    @include respond-to(null, tablet-max) {
+    }
+}
+
+.site_name {
+    z-index: 1;
+}

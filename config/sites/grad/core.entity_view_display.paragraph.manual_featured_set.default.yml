@@ -1,0 +1,34 @@
+uuid: 695f0a6c-e878-4716-8698-d6c74c8bb1c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.manual_featured_set.field_mfs_featured_items
+    - field.field.paragraph.manual_featured_set.field_mfs_name
+    - paragraphs.paragraphs_type.manual_featured_set
+  module:
+    - entity_reference_revisions
+id: paragraph.manual_featured_set.default
+targetEntityType: paragraph
+bundle: manual_featured_set
+mode: default
+content:
+  field_mfs_featured_items:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_mfs_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

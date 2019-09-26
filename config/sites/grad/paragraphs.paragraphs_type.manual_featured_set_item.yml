@@ -1,0 +1,9 @@
+uuid: 61067e37-b4a9-4113-b2ba-5f95373bc199
+langcode: en
+status: true
+dependencies: {  }
+id: manual_featured_set_item
+label: 'Manual Featured Set Item'
+icon_uuid: null
+description: 'Featured Set item that is fully authored for use with the Manual Feature Set component.'
+behavior_plugins: {  }
