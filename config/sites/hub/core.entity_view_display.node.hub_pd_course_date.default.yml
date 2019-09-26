@@ -1,0 +1,49 @@
+uuid: 53cabff1-dbad-40da-a7b4-fef7b9b6108c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_pd_course_date.field_hub_pd_course_date_cta
+    - field.field.node.hub_pd_course_date.field_pd_course_date_date
+    - node.type.hub_pd_course_date
+  module:
+    - datetime
+    - link
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.hub_pd_course_date.default
+targetEntityType: node
+bundle: hub_pd_course_date
+mode: default
+content:
+  field_hub_pd_course_date_cta:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_pd_course_date_date:
+    weight: 0
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  links: true
+  private: true
+  search_api_excerpt: true

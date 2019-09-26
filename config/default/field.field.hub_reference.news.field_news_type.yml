@@ -1,0 +1,19 @@
+uuid: 772c7295-75bc-4fe5-b489-540e8687c919
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.news
+    - field.storage.hub_reference.field_news_type
+id: hub_reference.news.field_news_type
+field_name: field_news_type
+entity_type: hub_reference
+bundle: news
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

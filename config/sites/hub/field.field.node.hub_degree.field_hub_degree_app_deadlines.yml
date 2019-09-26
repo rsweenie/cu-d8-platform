@@ -1,0 +1,28 @@
+uuid: 13ce2422-f4fe-4012-be0d-39a1f067249a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_app_deadlines
+    - node.type.hub_degree
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: node.hub_degree.field_hub_degree_app_deadlines
+field_name: field_hub_degree_app_deadlines
+entity_type: node
+bundle: hub_degree
+label: 'Application Deadlines'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

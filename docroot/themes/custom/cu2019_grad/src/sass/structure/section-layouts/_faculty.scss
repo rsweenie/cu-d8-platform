@@ -1,5 +1,6 @@
 &.fac-3col {
   background: $facDetailBg;
+  border-bottom: 8px solid $tertiary;
 
   .layout__region {
     height: 100%;
@@ -38,6 +39,10 @@
         top: -#{$gutter * 2.5}rem;
       }
     }
+  }
+
+  .faculty-image {
+    padding-bottom: #{$gutter}rem;
   }
 }
 
