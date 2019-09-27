@@ -71,6 +71,7 @@ content:
 hidden:
   field_featured: true
   field_news_date: true
+  field_news_type: true
   hub_changed: true
   hub_created: true
   hub_default_langcode: true
