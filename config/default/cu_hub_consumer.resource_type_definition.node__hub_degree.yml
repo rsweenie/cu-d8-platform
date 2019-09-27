@@ -78,10 +78,6 @@ fields:
     type: hub_resource
     hub_type: media
     multiple: false
-  field_hub_degree_next_steps:
-    type: hub_resource
-    hub_type: paragraph
-    multiple: false
   field_hub_degree_related_degrees:
     type: hub_resource
     hub_type: node
@@ -102,3 +98,7 @@ fields:
     type: hub_resource
     hub_type: paragraph
     multiple: true
+  field_hub_degree_next_steps:
+    type: hub_resource
+    hub_type: node
+    multiple: false
