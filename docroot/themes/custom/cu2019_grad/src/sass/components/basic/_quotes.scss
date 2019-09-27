@@ -33,7 +33,7 @@ blockquote {
         margin-right: 3rem;
     }
 
-    .copy-block &, .cke_editable & {
+    .copy-block .embedded-entity &, .cke_editable .embedded-entity & {
       color: $primary;
       position: relative;
       background: $gray1;
@@ -186,9 +186,15 @@ blockquote {
     }
 
     .attr {
-        font-size: 15px;
-        font-weight: 600;
-        margin-top: 2rem;
+        .copy-block .embedded-entity &, .cke_editable .embedded-entity & {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 2rem;
+
+            .field--name-field-quote-box-affiliation {
+                font-weight: 400;
+            }
+        }
         // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
