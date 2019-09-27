@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'PD Course'
+name: 'Hub: Professional Development Course'
 type: hub_pd_course
 description: 'Course detail page that can be linked to from a program or degree page.'
 help: ''

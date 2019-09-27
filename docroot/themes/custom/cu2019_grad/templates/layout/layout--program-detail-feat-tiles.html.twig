@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Displays the featured-tiles program detail layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <section {{ attributes.addClass('layout--program-detail-feat-tile','section') }}>
+    <div>
+      <div class="row">
+        <div class="col-xs-12">
+          {% if content.main %}
+            <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
+              {{ content.main }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

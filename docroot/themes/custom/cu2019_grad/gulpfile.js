@@ -1,4 +1,6 @@
 var gulp = require('gulp'),
+
+    debug = require('gulp-debug'),
     plumber = require('gulp-plumber'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -14,7 +16,8 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     source = require('vinyl-source-stream'),
     iconfont = require('gulp-iconfont'),
-    iconfontCss = require('gulp-iconfont-css');
+    iconfontCss = require('gulp-iconfont-css'),
+    eslint = require('gulp-eslint');
 
     autoprefixer = require('gulp-autoprefixer'),
     gcmq = require('gulp-group-css-media-queries'),
@@ -112,6 +115,11 @@ var pxtoremOptions = {
     'padding-left',
     'padding-right',
     'padding-bottom',
+    'margin',
+    'margin-top',
+    'margin-left',
+    'margin-right',
+    'margin-bottom',
     'width',
     'height',
     'border',
@@ -127,6 +135,31 @@ var pxtoremOptions = {
   ],
   rootValue: 10
 };
+
+var eslintRules = {
+  "consistent-return": ["off"],
+  "no-underscore-dangle": ["off"],
+  "max-nested-callbacks": ["warn", 3],
+  "no-plusplus": ["warn", {
+    "allowForLoopAfterthoughts": true
+  }],
+  "no-param-reassign": ["off"],
+  "no-prototype-builtins": ["off"],
+  "valid-jsdoc": ["warn", {
+    "prefer": {
+      "returns": "return",
+      "property": "prop"
+    },
+    "requireReturn": false
+  }],
+  //"no-unused-vars": ["warn"],
+  "operator-linebreak": ["error", "after", { "overrides": { "?": "ignore", ":": "ignore" } }]
+};
+
+var eslintGlobals = [
+  "jQuery",
+  "$"
+];
 
 gulp.task('sass', function(){
   return gulp
@@ -181,10 +214,32 @@ gulp.task('iconfont', function(){
     .pipe(gulp.dest('assets/fonts/icons/'));
 });
 
+gulp.task('js', function() {
+  gulp.src(js_build+'/**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(debug({title: 'js:'}))
+    .pipe(eslint({
+      rules: eslintRules,
+      globals: eslintGlobals,
+      useEslintrc: false
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(js_output));
+});
+
+gulp.task('js:watch', ['js'], function() {
+  gulp.watch([js_build+'**/*.js'], ['js']);
+});
+
 gulp.task('watch', function() {
   gulp.watch(sass_build+'**/*.scss', function(){ runSequence('sass')});
   gulp.watch(icon_build+'*', function(){ runSequence('iconfont', 'sass')});
+  gulp.watch([js_build+'**/*.js'], ['js']);
 });
 
 gulp.task('stage', ['iconfont', 'sass']);
 gulp.task('FED',['watch']);
+
+gulp.task('default', ['sass', 'js']);

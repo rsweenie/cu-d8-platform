@@ -1,0 +1,61 @@
+uuid: e2ca708d-7d53-4a40-a156-7d0b7e10aa52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_featured_info
+    - node.type.hub_degree
+    - paragraphs.paragraphs_type.faculty_alumni_spotlight
+    - paragraphs.paragraphs_type.featured_content_item
+    - paragraphs.paragraphs_type.quote_ref
+    - paragraphs.paragraphs_type.statistic_highlight
+  module:
+    - entity_reference_revisions
+id: node.hub_degree.field_hub_degree_featured_info
+field_name: field_hub_degree_featured_info
+entity_type: node
+bundle: hub_degree
+label: 'Featured Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      featured_content_item: featured_content_item
+      faculty_alumni_spotlight: faculty_alumni_spotlight
+      quote_ref: quote_ref
+      statistic_highlight: statistic_highlight
+    target_bundles_drag_drop:
+      accordion:
+        weight: 6
+        enabled: false
+      copy:
+        weight: 7
+        enabled: false
+      featured_content_item:
+        enabled: true
+        weight: 8
+      hub_paragraph_next_steps:
+        weight: 9
+        enabled: false
+      ief_link:
+        weight: 10
+        enabled: false
+      faculty_alumni_spotlight:
+        enabled: true
+        weight: 11
+      quote_ref:
+        enabled: true
+        weight: 12
+      video:
+        weight: 14
+        enabled: false
+      statistic_highlight:
+        enabled: true
+        weight: 17
+field_type: entity_reference_revisions

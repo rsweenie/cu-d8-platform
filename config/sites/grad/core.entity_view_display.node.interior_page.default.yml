@@ -10,6 +10,9 @@ dependencies:
     - node.type.interior_page
   module:
     - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
     - panelizer
     - user
 third_party_settings:
@@ -18,6 +21,13 @@ third_party_settings:
     custom: false
     allow: false
     default: default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks: {  }
+      allowed_layouts: {  }
 _core:
   default_config_hash: mmdrKtJzPiJxRqK7paSQTaDhzbPWgFoXgkxAw-zHoy8
 id: node.interior_page.default

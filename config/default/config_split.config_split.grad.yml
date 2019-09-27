@@ -16,12 +16,18 @@ blacklist:
   - node.type.interior_page
   - node.type.landing_page
   - node.type.next_steps
+  - paragraphs.paragraphs_type.collapsible_text
+  - paragraphs.paragraphs_type.featured_element
   - paragraphs.paragraphs_type.formatted_text
   - paragraphs.paragraphs_type.full_width_banner
   - paragraphs.paragraphs_type.full_width_photo
   - paragraphs.paragraphs_type.hp_hero
   - paragraphs.paragraphs_type.hp_hero_bg
   - paragraphs.paragraphs_type.image_video
+  - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
+  - paragraphs.paragraphs_type.manual_featured_event
+  - paragraphs.paragraphs_type.manual_featured_set
+  - paragraphs.paragraphs_type.manual_featured_set_item
   - paragraphs.paragraphs_type.next_step
   - paragraphs.paragraphs_type.next_steps_collection
   - paragraphs.paragraphs_type.quote
@@ -33,40 +39,64 @@ blacklist:
   - 'core.entity_form_display.node.interior_page.*'
   - 'core.entity_form_display.node.landing_page.*'
   - 'core.entity_form_display.node.next_steps.*'
+  - 'core.entity_form_display.paragraph.collapsible_text.*'
+  - 'core.entity_form_display.paragraph.featured_element.*'
   - 'core.entity_form_display.paragraph.full_width_banner.*'
   - 'core.entity_form_display.paragraph.full_width_photo.*'
   - 'core.entity_form_display.paragraph.formatted_text.*'
   - 'core.entity_form_display.paragraph.hp_hero.*'
   - 'core.entity_form_display.paragraph.image_video.*'
+  - 'core.entity_form_display.paragraph.manual_faculty_alumni_highlight.*'
+  - 'core.entity_form_display.paragraph.manual_featured_event.*'
+  - 'core.entity_form_display.paragraph.manual_featured_set.*'
+  - 'core.entity_form_display.paragraph.manual_featured_set_item.*'
   - 'core.entity_form_display.paragraph.quote.*'
   - 'core.entity_form_display.paragraph.statistic_highlite.*'
   - 'core.entity_view_display.node.interior_page.*'
   - 'core.entity_view_display.node.landing_page.*'
   - 'core.entity_view_display.node.next_steps.*'
+  - 'core.entity_view_display.paragraph.collapsible_text.*'
+  - 'core.entity_view_display.paragraph.featured_element.*'
   - 'core.entity_view_display.paragraph.full_width_banner.*'
   - 'core.entity_view_display.paragraph.full_width_photo.*'
   - 'core.entity_view_display.paragraph.formatted_text.*'
   - 'core.entity_view_display.paragraph.hp_hero.*'
   - 'core.entity_view_display.paragraph.image_video.*'
+  - 'core.entity_view_display.paragraph.manual_faculty_alumni_highlight.*'
+  - 'core.entity_view_display.paragraph.manual_featured_event.*'
+  - 'core.entity_view_display.paragraph.manual_featured_set.*'
+  - 'core.entity_view_display.paragraph.manual_featured_set_item.*'
   - 'core.entity_view_display.paragraph.quote.*'
   - 'core.entity_view_display.paragraph.statistic_highlite.*'
   - 'field.field.node.interior_page.*'
   - 'field.field.node.landing_page.*'
   - 'field.field.node.next_steps.*'
+  - 'field.field.paragraph.collapsible_text.*'
+  - 'field.field.paragraph.featured_element.*'
   - 'field.field.paragraph.full_width_banner.*'
   - 'field.field.paragraph.full_width_photo.*'
   - 'field.field.paragraph.formatted_text.*'
   - 'field.field.paragraph.hp_hero.*'
   - 'field.field.paragraph.image_video.*'
+  - 'field.field.paragraph.manual_faculty_alumni_highlight.*'
+  - 'field.field.paragraph.manual_featured_event.*'
+  - 'field.field.paragraph.manual_featured_set.*'
+  - 'field.field.paragraph.manual_featured_set_item.*'
   - 'field.field.paragraph.next_step.*'
   - 'field.field.paragraph.next_steps_collection.*'
   - 'field.field.paragraph.quote.*'
   - 'field.field.paragraph.statistic_highlite.*'
+  - 'field.storage.paragraph.field_ct_*'
+  - 'field.storage.paragraph.field_fel_*'
   - 'field.storage.paragraph.field_fwb_*'
   - 'field.storage.paragraph.field_fwp_*'
   - 'field.storage.paragraph.field_formatted_text_*'
   - 'field.storage.paragraph.field_hp_hero_*'
   - 'field.storage.paragraph.field_image_video_*'
+  - 'field.storage.paragraph.field_mfsfa_*'
+  - 'field.storage.paragraph.field_mfse_*'
+  - 'field.storage.paragraph.field_mfs_*'
+  - 'field.storage.paragraph.field_mfsi_*'
   - 'field.storage.paragraph.field_next_step_*'
   - 'field.storage.paragraph.field_next_steps_*'
   - 'field.storage.paragraph.field_quote_*'
@@ -79,15 +109,12 @@ graylist:
   - core.entity_view_display.menu_link_content.main.default
   - core.entity_view_display.menu_link_content.main.tier1
   - core.entity_view_mode.menu_link_content.tier1
-  - cu_breadcrumbs.settings
   - field.field.menu_link_content.main.field_mainmenu_feat_content
   - field.field.menu_link_content.main.field_mainmenu_feat_link
   - field.storage.menu_link_content.field_mainmenu_feat_content
   - field.storage.menu_link_content.field_mainmenu_feat_link
   - lightning_core.versions
   - paragraphs.paragraphs_type.full_width_photo
-  - paragraphs.paragraphs_type.image_video
-  - paragraphs.paragraphs_type.quote
   - search_api.index.content
   - system.file
   - system.site
@@ -95,11 +122,11 @@ graylist:
   - system.theme.global
   - views.view.search
   - 'block.block.*'
-  - 'filter.format.*'
   - 'views.view.*'
   - 'search_api.*'
   - 'system.*'
   - 'user.role.*'
+  - 'core.entity_view_display.hub_reference.*'
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

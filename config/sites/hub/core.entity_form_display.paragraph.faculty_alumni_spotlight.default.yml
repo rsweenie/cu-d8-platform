@@ -1,0 +1,24 @@
+uuid: e5a70c59-377d-47ef-a146-35c6407af00c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faculty_alumni_spotlight.field_hub_spotlight_ref
+    - paragraphs.paragraphs_type.faculty_alumni_spotlight
+id: paragraph.faculty_alumni_spotlight.default
+targetEntityType: paragraph
+bundle: faculty_alumni_spotlight
+mode: default
+content:
+  field_hub_spotlight_ref:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

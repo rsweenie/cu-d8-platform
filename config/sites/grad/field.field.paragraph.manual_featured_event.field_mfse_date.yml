@@ -1,0 +1,21 @@
+uuid: bdfd53ca-ec23-4b84-8eb1-684424c7bb48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfse_date
+    - paragraphs.paragraphs_type.manual_featured_event
+  module:
+    - datetime_range
+id: paragraph.manual_featured_event.field_mfse_date
+field_name: field_mfse_date
+entity_type: paragraph
+bundle: manual_featured_event
+label: Dates
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

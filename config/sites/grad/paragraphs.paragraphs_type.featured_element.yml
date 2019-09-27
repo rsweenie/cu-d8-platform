@@ -1,0 +1,9 @@
+uuid: 5fc538f5-1190-4773-a52f-350580925d82
+langcode: en
+status: true
+dependencies: {  }
+id: featured_element
+label: 'Featured Element'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
