@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "424a4febd14df75b0e40d154de4442a2",
+    "content-hash": "ba85409301556ed22a56bb503c27a4c4",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -5765,6 +5765,7 @@
                     "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
                     "Santize file names on upload": "https://www.drupal.org/files/issues/2019-05-04/2492171-285.patch",
                     "Call to a member function transformDimensions() on null in template_preprocess | https://www.drupal.org/project/drupal/issues/2957368": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch",
+                    "Layout builder doesn't support bundle computed field | https://www.drupal.org/project/drupal/issues/3034979": "https://www.drupal.org/files/issues/2019-02-22/layoutbuilder-bundlecomputedfieldsfix-3034979-1-8.7x.patch",
                     "2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
                     "2885441 - EntityReferenceAutocompleteWidget should define its size setting as an integer": "https://www.drupal.org/files/issues/2885441-2.patch",
                     "2815221 - Add quickedit to the latest-revision route": "https://www.drupal.org/files/issues/2019-03-05/2815221-116.patch",
@@ -6985,6 +6986,10 @@
                 {
                     "name": "cs_shadow",
                     "homepage": "https://www.drupal.org/user/2828287"
+                },
+                {
+                    "name": "oknate",
+                    "homepage": "https://www.drupal.org/user/471638"
                 },
                 {
                     "name": "phenaproxima",
@@ -9741,6 +9746,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Surpress regular system menu in Layout Builder | https://www.drupal.org/project/menu_block/issues/3062278": "https://www.drupal.org/files/issues/2019-06-17/3062278-hide-system-menus.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

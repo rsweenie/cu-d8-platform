@@ -241,6 +241,9 @@
             "Drupal\\Tests\\PHPUnit\\": "tests/phpunit/src/"
         }
     },
+    "scripts-descriptions": {
+        "safe-nuke": "Removes/reinstalls all packages, preserves .lock, and composer cache."
+    },
     "scripts": {
         "post-create-project-cmd": [
             "blt internal:create-project:init-repo"
@@ -250,6 +253,11 @@
             "rm -rf vendor composer.lock docroot/core docroot/modules/contrib docroot/profiles/contrib docroot/themes/contrib",
             "@composer clearcache --ansi",
             "@composer install --ansi"
+        ],
+        "safe-nuke": [
+            "rm -rf vendor docroot/core docroot/modules/contrib docroot/profiles/contrib docroot/themes/contrib",
+            "@composer install --ansi"
         ]
+
     }
 }
