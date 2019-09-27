@@ -2048,28 +2048,36 @@ Delete everything below including comment
 /* line 18, src/sass/structure/section-layouts/_faculty.scss */
 
 .section.fac-3col .fac_rail:before {
-  width: 100vw;
+  width: 200vw;
   height: calc(100% + 5rem);
   position: absolute;
-  left: -5rem;
+  left: 0;
   top: -2.5rem;
   content: "";
   background: #CEE2F3;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
-/* line 44, src/sass/structure/section-layouts/_faculty.scss */
+/* line 47, src/sass/structure/section-layouts/_faculty.scss */
 
 .section.fac-3col .faculty-image {
   padding-bottom: 2.5rem;
 }
 
-/* line 54, src/sass/structure/section-layouts/_faculty.scss */
+/* line 52, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle {
+  padding-bottom: 5rem;
+}
+
+/* line 58, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle .field__item {
   margin-bottom: 0.31579em;
 }
 
-/* line 57, src/sass/structure/section-layouts/_faculty.scss */
+/* line 61, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
   color: #266db3;
@@ -2093,20 +2101,20 @@ aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub
   margin-top: 0.5rem;
 }
 
-/* line 63, src/sass/structure/section-layouts/_faculty.scss */
+/* line 67, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle h3.field__item {
   line-height: .825em;
   margin-bottom: 0.825em;
 }
 
-/* line 66, src/sass/structure/section-layouts/_faculty.scss */
+/* line 70, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle h3.field__item:after {
   bottom: -0.25em;
 }
 
-/* line 71, src/sass/structure/section-layouts/_faculty.scss */
+/* line 75, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle .btn-secondary,
 .section .layout__region--facmiddle form .form_action button,
@@ -12820,16 +12828,19 @@ form.search .search button {
 
   .section.fac-3col .fac_rail:before {
     height: calc(100% + 7.5rem);
+    left: -5rem;
     top: -3.75rem;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 
-  /* line 49, src/sass/structure/section-layouts/_faculty.scss */
+  /* line 52, src/sass/structure/section-layouts/_faculty.scss */
 
   .section .layout__region--facmiddle {
     padding-right: 5rem;
   }
 
-  /* line 57, src/sass/structure/section-layouts/_faculty.scss */
+  /* line 61, src/sass/structure/section-layouts/_faculty.scss */
 
   .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
     font-size: 2.4rem;
