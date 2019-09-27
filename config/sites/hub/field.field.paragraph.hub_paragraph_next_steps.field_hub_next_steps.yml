@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_hub_next_steps
-    - node.type.hub_next_step
     - paragraphs.paragraphs_type.hub_paragraph_next_steps
 id: paragraph.hub_paragraph_next_steps.field_hub_next_steps
 field_name: field_hub_next_steps
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      hub_next_step: hub_next_step
+    target_bundles: {  }
     sort:
       field: _none
     auto_create: false

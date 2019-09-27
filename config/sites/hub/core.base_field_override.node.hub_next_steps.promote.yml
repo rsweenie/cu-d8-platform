@@ -1,13 +1,13 @@
-uuid: afbab7cb-ae1c-4c33-b098-fe78803066f4
+uuid: 2fc83111-7785-4199-9bb3-79de3c4625ae
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.hub_next_step
-id: node.hub_next_step.promote
+    - node.type.hub_next_steps
+id: node.hub_next_steps.promote
 field_name: promote
 entity_type: node
-bundle: hub_next_step
+bundle: hub_next_steps
 label: 'Promoted to front page'
 description: ''
 required: false
