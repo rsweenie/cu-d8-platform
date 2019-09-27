@@ -8,7 +8,7 @@ id: node.hub_faculty_alumni_spotlight.title
 field_name: title
 entity_type: node
 bundle: hub_faculty_alumni_spotlight
-label: Name
+label: 'Spotlight Title'
 description: ''
 required: true
 translatable: true

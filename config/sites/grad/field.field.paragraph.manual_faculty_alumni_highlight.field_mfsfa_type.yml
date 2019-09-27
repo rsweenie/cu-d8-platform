@@ -1,0 +1,21 @@
+uuid: e50f8685-74d3-4547-87b5-0073423257b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfsfa_type
+    - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
+  module:
+    - options
+id: paragraph.manual_faculty_alumni_highlight.field_mfsfa_type
+field_name: field_mfsfa_type
+entity_type: paragraph
+bundle: manual_faculty_alumni_highlight
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

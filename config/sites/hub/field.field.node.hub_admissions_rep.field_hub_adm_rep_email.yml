@@ -1,0 +1,19 @@
+uuid: 9fe4f149-faf3-46cd-9b6c-bb048d50cee3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_adm_rep_email
+    - node.type.hub_admissions_rep
+id: node.hub_admissions_rep.field_hub_adm_rep_email
+field_name: field_hub_adm_rep_email
+entity_type: node
+bundle: hub_admissions_rep
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

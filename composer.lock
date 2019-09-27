@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53badb0c79e5f6fa6e9f0a152e27250b",
+    "content-hash": "a9748c0a4ea01878fcc38734a4fe53de",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -5542,6 +5542,7 @@
                 "patches_applied": {
                     "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
                     "Santize file names on upload": "https://www.drupal.org/files/issues/2019-05-04/2492171-285.patch",
+                    "Call to a member function transformDimensions() on null in template_preprocess | https://www.drupal.org/project/drupal/issues/2957368": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch",
                     "2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
                     "2885441 - EntityReferenceAutocompleteWidget should define its size setting as an integer": "https://www.drupal.org/files/issues/2885441-2.patch",
                     "2815221 - Add quickedit to the latest-revision route": "https://www.drupal.org/files/issues/2019-03-05/2815221-116.patch",
@@ -6649,53 +6650,6 @@
             }
         },
         {
-            "name": "drupal/entity_clone",
-            "version": "1.0.0-beta3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/entity_clone.git",
-                "reference": "8.x-1.0-beta3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_clone-8.x-1.0-beta3.zip",
-                "reference": "8.x-1.0-beta3",
-                "shasum": "011ca7b8e2af77594f2d9df41954d5a950b0958c"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-beta3",
-                    "datestamp": "1551868984",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "vpeltot",
-                    "homepage": "https://www.drupal.org/user/1361586"
-                }
-            ],
-            "description": "Add a clone action for all entities",
-            "homepage": "https://www.drupal.org/project/entity_clone",
-            "support": {
-                "source": "https://git.drupalcode.org/project/entity_clone"
-            }
-        },
-        {
             "name": "drupal/entity_embed",
             "version": "1.0.0-beta2",
             "source": {
@@ -6939,32 +6893,35 @@
         },
         {
             "name": "drupal/eva",
-            "version": "1.3.0",
+            "version": "2.0.0-rc3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/eva.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-2.0-rc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eva-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "75613d17488158d844071388fea264c37adb7d6c"
+                "url": "https://ftp.drupal.org/files/projects/eva-8.x-2.0-rc3.zip",
+                "reference": "8.x-2.0-rc3",
+                "shasum": "74a5216e6389ca8a42f769583ecbd63054cf1bff"
             },
             "require": {
                 "drupal/core": "*"
             },
+            "suggest": {
+                "drupal/token": "Enable the argument token browser"
+            },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1519483384",
+                    "version": "8.x-2.0-rc3",
+                    "datestamp": "1561127285",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -6997,7 +6954,7 @@
             "description": "Attach a view to an entity",
             "homepage": "https://www.drupal.org/project/eva",
             "support": {
-                "source": "http://cgit.drupalcode.org/eva"
+                "source": "https://git.drupalcode.org/project/eva"
             }
         },
         {
@@ -7201,17 +7158,17 @@
         },
         {
             "name": "drupal/field_group",
-            "version": "1.0.0",
+            "version": "3.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_group.git",
-                "reference": "8.x-1.0"
+                "reference": "8.x-3.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "e8aa3fae5c3c5dec84644bb577996938d638a611"
+                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.0-rc1.zip",
+                "reference": "8.x-3.0-rc1",
+                "shasum": "e291b5468c834a344e9aa6cafd3a76171d473a22"
             },
             "require": {
                 "drupal/core": "*"
@@ -7219,14 +7176,14 @@
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1510352885",
+                    "version": "8.x-3.0-rc1",
+                    "datestamp": "1558647185",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -7259,7 +7216,7 @@
             "description": "Provides the field_group module.",
             "homepage": "https://www.drupal.org/project/field_group",
             "support": {
-                "source": "http://cgit.drupalcode.org/field_group"
+                "source": "https://git.drupalcode.org/project/field_group"
             }
         },
         {
@@ -10552,6 +10509,61 @@
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
                 "source": "https://git.drupalcode.org/project/pathauto"
+            }
+        },
+        {
+            "name": "drupal/pathologic",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/pathologic.git",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/pathologic-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "51c699cc001969baa00cca60cf2302a32e578090"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1525211884",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Garrett Albright",
+                    "homepage": "https://www.drupal.org/user/191212"
+                },
+                {
+                    "name": "dww",
+                    "homepage": "https://www.drupal.org/user/46549"
+                }
+            ],
+            "description": "Helps avoid broken links and incorrect paths in content.",
+            "homepage": "https://www.drupal.org/project/pathologic",
+            "support": {
+                "source": "https://git.drupalcode.org/project/pathologic"
             }
         },
         {
@@ -21875,7 +21887,6 @@
         "drupal/conditional_fields": 15,
         "drupal/content_browser": 15,
         "drupal/context": 10,
-        "drupal/entity_clone": 15,
         "drupal/entity_embed_linkit": 10,
         "drupal/field_permissions": 5,
         "drupal/field_validation": 15,
@@ -21883,6 +21894,7 @@
         "drupal/libraries": 15,
         "drupal/mimemail": 15,
         "drupal/name": 5,
+        "drupal/pathologic": 15,
         "drupal/plupload": 10,
         "drupal/private": 15,
         "drupal/private_content-private_content": 10,

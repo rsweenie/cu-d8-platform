@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - noreferrer
+    - pathologic
     - responsivewrappers
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
@@ -30,12 +30,6 @@ filters:
     status: true
     weight: 0
     settings: {  }
-  noreferrer:
-    id: noreferrer
-    provider: noreferrer
-    status: true
-    weight: 10
-    settings: {  }
   filter_bootstrap_responsive_wrapper:
     id: filter_bootstrap_responsive_wrapper
     provider: responsivewrappers
@@ -46,3 +40,13 @@ filters:
       responsive_iframe_pattern: '#.*(youtube.|vimeo.).*#ui'
       responsive_table: '0'
       responsive_image: '0'
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: true
+    weight: 50
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''

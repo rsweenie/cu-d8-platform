@@ -28,6 +28,7 @@ third_party_settings:
         open: false
         required_fields: true
       label: Links
+      region: content
 _core:
   default_config_hash: eWY4KprDzt4kLr9BEBdPxRmfjrhQRB0oYyS0sqhDenc
 id: node.slide.default

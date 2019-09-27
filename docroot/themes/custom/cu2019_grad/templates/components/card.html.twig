@@ -1,11 +1,12 @@
 {% if wrapper == 'section' %}
-<section id="Sect-{{ par_id }}" class="section{% if class %} {{ class }}{% endif %}">
+<section id="Sect-{{ par_id }}" class="section{% if wrapper_class %} {{ wrapper_class }}{% endif %}">
   <div>
-    <div class="card">
-{% else %}
-    <div class="card{% if class %} {{ class }}{% endif %}">
 {% endif %}
+    <div class="card{% if class %} {{ class }}{% endif %}">
         {% if image %}
+          {% if tag %}
+            <div class="type">{{ tag }}</div>
+          {% endif %}
           {% if button.url %}
           <a href="{{ button.url }}">
               {{ image }}
@@ -18,19 +19,18 @@
           {{ image }}
           {% endif %}
         {% endif %}
-        <div>
-          {% if tag %}
-            <p class="type">{{ tag }}</p>
-          {% endif %}
+        <div class="content">
           {% if icon %}
               <span class="{{ icon }}"></span>
           {% endif %}
+            <div class="title">
           {% if title %}
               <h3>{% if title_link %}<a href="{{ title_link }}">{% endif %}{{ title }}{% if title_link %}</a>{% endif %}</h3>
           {% endif %}
           {% if subtitle %}
               <div class="subtitle h4">{{ subtitle }}</div>
           {% endif %}
+            </div>
           {% if body %}
             <div class="body">
               {{ body }}

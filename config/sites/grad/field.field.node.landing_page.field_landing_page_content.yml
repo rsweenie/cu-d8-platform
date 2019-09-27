@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_landing_page_content
     - node.type.landing_page
+    - paragraphs.paragraphs_type.collapsible_text
     - paragraphs.paragraphs_type.formatted_text
     - paragraphs.paragraphs_type.full_width_photo
     - paragraphs.paragraphs_type.hp_hero
     - paragraphs.paragraphs_type.image_video
+    - paragraphs.paragraphs_type.manual_featured_set
     - paragraphs.paragraphs_type.next_steps_collection
   module:
     - entity_reference_revisions
@@ -34,6 +36,8 @@ settings:
       image_video: image_video
       hp_hero: hp_hero
       next_steps_collection: next_steps_collection
+      collapsible_text: collapsible_text
+      manual_featured_set: manual_featured_set
     target_bundles_drag_drop:
       accordion:
         weight: -23
@@ -67,5 +71,26 @@ settings:
         weight: -14
       quote:
         weight: -13
+        enabled: false
+      full_width_banner:
+        weight: 19
+        enabled: false
+      collapsible_text:
+        enabled: true
+        weight: 20
+      manual_featured_set:
+        enabled: true
+        weight: 25
+      manual_featured_set_item:
+        weight: 26
+        enabled: false
+      manual_faculty_alumni_highlight:
+        weight: 29
+        enabled: false
+      manual_featured_event:
+        weight: 30
+        enabled: false
+      statistic_highlite:
+        weight: 30
         enabled: false
 field_type: entity_reference_revisions
