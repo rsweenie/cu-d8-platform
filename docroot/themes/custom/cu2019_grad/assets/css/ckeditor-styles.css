@@ -10957,6 +10957,45 @@ nav.jn li + li {
   font-size: 1.6rem;
 }
 
+/* line 1, src/sass/components/feeds-detail/_detail.scss */
+
+.field--name-hub-field-hub-news-date {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* line 5, src/sass/components/feeds-detail/_detail.scss */
+
+.block-field-blockhub-referencenewshub-field-hub-news-body {
+  margin-top: 1em;
+}
+
+/* line 9, src/sass/components/feeds-detail/_detail.scss */
+
+.news-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 12, src/sass/components/feeds-detail/_detail.scss */
+
+.news-info .icon {
+  color: #BABABA;
+  margin-right: 0.9rem;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     FEED - LATEST
@@ -13727,6 +13766,12 @@ form.search .search button {
 
   .f-profile h3 {
     font-size: 2rem;
+  }
+
+  /* line 1, src/sass/components/feeds-detail/_detail.scss */
+
+  .field--name-hub-field-hub-news-date {
+    font-size: 1.5rem;
   }
 
   /* line 3, src/sass/components/feeds-detail/featured/_carousel.scss */
