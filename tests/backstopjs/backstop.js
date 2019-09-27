@@ -98,11 +98,11 @@ module.exports =
     scenarios
   ,
   "paths": {
-    "bitmaps_reference": "backstop_data/bitmaps_reference",
-    "bitmaps_test":      "backstop_data/bitmaps_test",
-    "casper_scripts":    "backstop_data/casper_scripts",
+    "bitmaps_reference": "../../docroot/sites/default/files/html_report/backstop_data/bitmaps_reference",
+    "bitmaps_test":      "../../docroot/sites/default/files/html_report/backstop_data/bitmaps_test",
+    "casper_scripts":    "../../docroot/sites/default/files/html_report/backstop_data/casper_scripts",
     "html_report":       "../../docroot/sites/default/files/html_report/",
-    "ci_report":         "backstop_data/ci_report"
+    "ci_report":         "../../docroot/sites/default/files/html_report/backstop_data/ci_report"
   },
   "casperFlags": [],
   "engine": "puppeteer",
