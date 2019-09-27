@@ -76,14 +76,15 @@ services:
         # Install/update packages managed by composer, including drush
         - composer install --no-ansi
 
-        # Our baseline is our defaulty Acquia setup. We use 'blt setup' here not because it is useful (it actually
-        # causes builds to be about 5x slower) but because we want to give it a chance to fail here before it fails
-        # in production.
-        ## Harry 26Sep19 - blt setup currently broken SEE: https://www.wrike.com/open.htm?id=403046727
-        #- ${TUGBOAT_ROOT}/vendor/bin/blt -n --no-ansi setup
+        # Our baseline is our defaulty Acquia setup
+        - ${TUGBOAT_ROOT}/vendor/bin/blt -n --no-ansi setup
 
         # If blt setup fails, may need to try something like this:
-        - drush -r "${DOCROOT}" -y site-install standard
+        #- drush -r "${DOCROOT}" -y site-install standard
+
+        # If there are issues running blt setup, another option is a simple
+        # drupal install
+        #- drush -r "${DOCROOT}" -y site-install standard
 
         # Generate a unique hash_salt to secure the site
         - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
@@ -108,10 +109,10 @@ services:
       # skipping the init step, because the results of that step will
       # already be present.
       # Backstop install
-        - curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-        - sudo apt-get install -y nodejs
-        - sudo apt-get install gconf-service libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxss1 libxtst6 libappindicator1 libnss3 libasound2 libatk1.0-0 libc6 ca-certificates fonts-liberation lsb-release xdg-utils wget
-        - npm install backstopjs ${TUGBOAT_ROOT}/tests/backstopjs/
+        - curl -sL https://deb.nodesource.com/setup_12.x | -E bash -
+        - apt-get install -y nodejs
+        - apt-get install gconf-service libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxss1 libxtst6 libappindicator1 libnss3 libasound2 libatk1.0-0 libc6 ca-certificates fonts-liberation lsb-release xdg-utils wget
+        #- npm install backstopjs ${TUGBOAT_ROOT}/tests/backstopjs/
       update:
         # CU: Things needed to establish a clean baseline env based on production
 
