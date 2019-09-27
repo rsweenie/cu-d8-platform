@@ -41,6 +41,11 @@ interface ResourceFieldItemListInterface extends \ArrayAccess, \IteratorAggregat
    */
   public function isMultiple();
 
+  /**
+   * Returns a string representation of list values.
+   *
+   * @return string
+   */
   public function getString();
 
   /**

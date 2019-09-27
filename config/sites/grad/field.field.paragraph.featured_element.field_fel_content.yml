@@ -16,7 +16,7 @@ entity_type: paragraph
 bundle: featured_element
 label: 'Featured Element'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -86,4 +86,7 @@ settings:
       statistic_highlite:
         enabled: true
         weight: 38
+      slate_form:
+        weight: 39
+        enabled: false
 field_type: entity_reference_revisions

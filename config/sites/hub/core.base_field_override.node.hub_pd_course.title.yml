@@ -1,0 +1,18 @@
+uuid: 4cc999c0-ff2b-472d-86ae-6535fab50c4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_pd_course
+id: node.hub_pd_course.title
+field_name: title
+entity_type: node
+bundle: hub_pd_course
+label: 'Course Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

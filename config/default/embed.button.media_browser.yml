@@ -2,6 +2,8 @@ uuid: 9e094191-c2e2-46b7-86d4-555985dcd6e3
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'file:file:c9a32bd1-bf2e-455d-8d22-e1d9a5c72651'
   module:
     - entity_embed
     - image
@@ -12,12 +14,12 @@ label: 'Media browser'
 id: media_browser
 type_id: entity
 type_settings:
-  entity_browser: ckeditor_media_browser
   entity_type: media
   bundles: {  }
   display_plugins:
     - 'view_mode:media.embedded'
     - media_image
+  entity_browser: media_browser
   entity_browser_settings:
     display_review: false
 icon_uuid: c9a32bd1-bf2e-455d-8d22-e1d9a5c72651

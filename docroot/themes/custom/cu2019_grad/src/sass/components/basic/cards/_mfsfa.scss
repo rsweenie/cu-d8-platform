@@ -1,9 +1,11 @@
 &.mfsfa {
   position: relative;
 
-  > a {
+  > a,
+  > span {
     position: relative;
     z-index: 0;
+    display: block;
 
     &:after {
       width: 100%;
@@ -32,6 +34,10 @@
 
     @media #{$mediaXl} {
       padding: 25px 80px;
+
+      .feat-tiles & {
+        padding: 30px;
+      }
     }
 
     a {
@@ -143,6 +149,10 @@
     line-height: 1.6em;
     padding: 30px 15px;
 
+    .feat-tiles & {
+      padding: #{$gutter}rem 0;
+    }
+
     @media #{$mediaLg} {
       color: $white;
       padding: 0;
@@ -156,7 +166,8 @@
 
   &:hover {
     @media #{$mediaLg} {
-      > a {
+      > a,
+      > span {
         &:after {
           background: linear-gradient(0deg, rgba($black, .9) 0%, rgba($black,.5) 50%);
         }
