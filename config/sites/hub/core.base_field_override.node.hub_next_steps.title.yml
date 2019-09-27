@@ -1,14 +1,14 @@
-uuid: 5753c686-35bb-411d-a785-4963e26cdeef
+uuid: 85faa4a7-a68f-462d-bce2-1c6de78b2941
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.hub_next_step
-id: node.hub_next_step.title
+    - node.type.hub_next_steps
+id: node.hub_next_steps.title
 field_name: title
 entity_type: node
-bundle: hub_next_step
-label: 'Step Title'
+bundle: hub_next_steps
+label: 'Administrative Title'
 description: ''
 required: true
 translatable: true
