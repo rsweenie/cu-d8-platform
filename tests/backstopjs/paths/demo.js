@@ -6,6 +6,6 @@ pathConfig.array = [
     '/how-build-site/content-types',
     '/how-build-site/content-types/featured-content-group',
     '/how-build-site/content-types/related-links',
-    '/how-build-site/content-types/tabbed-accordion',
+    '/how-build-site/content-types/tabbed-accordion'
 ]
 module.exports = pathConfig;
