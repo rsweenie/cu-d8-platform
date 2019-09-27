@@ -16,17 +16,20 @@
     }
 
     &:before {
-      width: 100vw;
+      width: 200vw;
       height: calc(100% + #{$gutter * 2}rem);
       position: absolute;
-      left: -#{$gutter * 2}rem;
+      left: 0;
       top: -#{$gutter}rem;
       content: "";
       background: $facDetailBgRt;
+      transform: translateX(-50%);
 
       @media #{$mediaMd} {
         height: calc(100% + #{$gutter * 3}rem);
+        left: -#{$gutter * 2}rem;
         top: -#{$gutter * 1.5}rem;
+        transform: translateX(0);
       }
 
       @media #{$mediaLg} {
@@ -47,6 +50,7 @@
 }
 
 .layout__region--facmiddle {
+  padding-bottom: #{$gutter * 2}rem;
   @media #{$mediaMd} {
     padding-right: #{$gutter * 2}rem;
   }
