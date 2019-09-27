@@ -1,22 +1,20 @@
-uuid: 7efc3f0a-c2e2-4c60-b844-a04e00560d15
+uuid: 800c2772-9228-4db4-8f54-706cf2266a2e
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
+    - link
     - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_hub_next_steps_title
-field_name: field_hub_next_steps_title
+id: paragraph.field_hub_next_step_link
+field_name: field_hub_next_step_link
 entity_type: paragraph
-type: string
-settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true
