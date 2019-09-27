@@ -1891,6 +1891,18 @@ Delete everything below including comment
   margin: auto;
 }
 
+/* line 93, src/sass/structure/_section.scss */
+
+.section.layout--program-detail-2col {
+  padding-bottom: 0;
+}
+
+/* line 97, src/sass/structure/_section.scss */
+
+.section.layout--generic-content {
+  padding: 0;
+}
+
 /* line 6, src/sass/structure/section-layouts/_full-screen.scss */
 
 .section.full-screen {
@@ -2115,7 +2127,7 @@ form .form_action .section .layout__region--facmiddle button {
 
 /* CSS Document */
 
-/* line 121, src/sass/structure/_section.scss */
+/* line 130, src/sass/structure/_section.scss */
 
 .layout--onecol {
   background-image: url(../../img/feature_slash_bg.png);
@@ -2132,7 +2144,7 @@ form .form_action .section .layout__region--facmiddle button {
     they can be good starting points to solve backgrounds and shapes used in the
     design.
 
-    These are included individually to make commenting out easier. Please comment 
+    These are included individually to make commenting out easier. Please comment
     out the backgrounds that you don't need for your site's design.
 
 \*  --------------------------------------------------------------------------  */
@@ -2238,7 +2250,7 @@ section[class*="sbg-"]:after {
 
 /*  --------------------------------------------------------------------------  *\ DELETE THIS SECTION OUT WHEN NOT USING ON COMPONENT LIBRARY SITE \*  --------------------------------------------------------------------------  */
 
-/* line 52, src/sass/structure/_section-backgrounds.scss */
+/* line 53, src/sass/structure/_section-backgrounds.scss */
 
 .cl-bg > section {
   min-height: 75vh;
@@ -12643,7 +12655,6 @@ form.search .search button {
   /* line 9, src/sass/structure/_section.scss */
 
   .section {
-    background: #fff;
     padding: 3.75rem 0;
   }
 
@@ -12864,6 +12875,34 @@ form.search .search button {
 
   .grid.wide {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* line 1, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash {
+    position: relative;
+  }
+
+  /* line 6, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash > div {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* line 11, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash:before {
+    width: 110vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -5rem;
+    content: "";
+    background-image: url(../../img/slash.png);
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-size: 3000px auto;
   }
 
   /* line 1, src/sass/structure/_home.scss */
@@ -14096,7 +14135,7 @@ form.search .search button {
     width: 95%;
   }
 
-  /* line 105, src/sass/structure/_section.scss */
+  /* line 114, src/sass/structure/_section.scss */
 
   .section.ptb-lgt {
     z-index: 0;
@@ -16154,6 +16193,14 @@ form.search .search button {
   }
 }
 
+@media screen and (min-width: 1700px) {
+  /* line 28, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash:before {
+    right: 5%;
+  }
+}
+
 @media screen and (max-width: 1089.9px) {
   /* line 29, src/sass/base/_resets.scss */
 
@@ -16395,13 +16442,13 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
-  /* line 94, src/sass/structure/_section.scss */
+  /* line 103, src/sass/structure/_section.scss */
 
   .section.ptb {
     padding: 5rem 0;
   }
 
-  /* line 97, src/sass/structure/_section.scss */
+  /* line 106, src/sass/structure/_section.scss */
 
   .section.ptb-lgt {
     z-index: 0;
