@@ -37,6 +37,7 @@
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 0;
+    color: $white;
 
     @media #{$mediaMd} {
       font-size: 40px;

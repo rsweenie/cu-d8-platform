@@ -1,0 +1,23 @@
+uuid: 90109fbe-402b-411a-aa34-b7a19f3c856b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faculty_alumni_spotlight.field_hub_spotlight_ref
+    - paragraphs.paragraphs_type.faculty_alumni_spotlight
+id: paragraph.faculty_alumni_spotlight.default
+targetEntityType: paragraph
+bundle: faculty_alumni_spotlight
+mode: default
+content:
+  field_hub_spotlight_ref:
+    weight: 0
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -6,7 +6,7 @@
     other places as well and style it differently
 
 \*  --------------------------------------------------------------------------  */
-section {
+.section {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     @include position(relative, 110);
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)

@@ -3,9 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.hub_degree.field_hub_degree_adm_rep
+    - field.field.node.hub_degree.field_hub_degree_app_deadlines
+    - field.field.node.hub_degree.field_hub_degree_app_link
     - field.field.node.hub_degree.field_hub_degree_availability
     - field.field.node.hub_degree.field_hub_degree_description
     - field.field.node.hub_degree.field_hub_degree_details
+    - field.field.node.hub_degree.field_hub_degree_featured_info
     - field.field.node.hub_degree.field_hub_degree_hero_image
     - field.field.node.hub_degree.field_hub_degree_interests
     - field.field.node.hub_degree.field_hub_degree_intro
@@ -39,6 +43,33 @@ targetEntityType: node
 bundle: hub_degree
 mode: default
 content:
+  field_hub_degree_adm_rep:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hub_degree_app_deadlines:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hub_degree_app_link:
+    weight: 12
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_hub_degree_availability:
     weight: 5
     label: above
@@ -48,22 +79,35 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_description:
-    weight: 8
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_hub_degree_details:
+    type: entity_reference_revisions_entity_view
     weight: 9
     label: above
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: text_default
+    region: content
+  field_hub_degree_details:
+    type: entity_reference_revisions_entity_view
+    weight: 15
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_hub_degree_featured_info:
+    type: entity_reference_revisions_entity_view
+    weight: 14
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_hub_degree_hero_image:
     type: entity_reference_entity_view
-    weight: 11
+    weight: 6
     label: above
     settings:
       view_mode: default
@@ -71,7 +115,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_degree_interests:
-    weight: 6
+    weight: 7
     label: above
     settings:
       link: true
@@ -79,7 +123,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_intro:
-    weight: 7
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -87,7 +131,7 @@ content:
     region: content
   field_hub_degree_next_steps:
     type: entity_reference_revisions_entity_view
-    weight: 17
+    weight: 18
     label: above
     settings:
       view_mode: default
@@ -95,7 +139,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_degree_other_programs:
-    weight: 13
+    weight: 16
     label: above
     settings:
       trim_length: 80
@@ -107,7 +151,7 @@ content:
     type: link
     region: content
   field_hub_degree_related_degrees:
-    weight: 12
+    weight: 17
     label: above
     settings:
       link: true
@@ -146,7 +190,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_path_alias:
-    weight: 14
+    weight: 19
     label: above
     settings:
       link_to_entity: false
@@ -170,14 +214,14 @@ content:
     type: entity_reference_label
     region: content
   field_meta_tags:
-    weight: 16
+    weight: 21
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   links:
-    weight: 15
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
