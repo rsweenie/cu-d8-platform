@@ -2917,9 +2917,9 @@ header.hp_hero:after {
 /* line 232, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
-  margin: 0;
+  margin: 0 0 0.18em 0;
   font-size: 3.4rem;
-  line-height: 1.2em;
+  line-height: 0.94em;
 }
 
 /* line 242, src/sass/components/basic/_hero.scss */
