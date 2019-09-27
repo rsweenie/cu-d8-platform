@@ -4475,8 +4475,8 @@ blockquote {
 
 /* line 36, src/sass/components/basic/_quotes.scss */
 
-.copy-block blockquote,
-.cke_editable blockquote {
+.copy-block .embedded-entity blockquote,
+.cke_editable .embedded-entity blockquote {
   color: #002E6D;
   position: relative;
   background: #5D6468;
@@ -4486,8 +4486,8 @@ blockquote {
 
 /* line 463, src/sass/base/_mixins.scss */
 
-.copy-block blockquote:after,
-.cke_editable blockquote:after {
+.copy-block .embedded-entity blockquote:after,
+.cke_editable .embedded-entity blockquote:after {
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
   position: absolute;
@@ -4500,8 +4500,8 @@ blockquote {
 
 /* line 3, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-.copy-block blockquote a,
-.cke_editable blockquote a {
+.copy-block .embedded-entity blockquote a,
+.cke_editable .embedded-entity blockquote a {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -4509,22 +4509,22 @@ blockquote {
 
 /* line 8, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-.copy-block blockquote a:hover,
-.cke_editable blockquote a:hover {
+.copy-block .embedded-entity blockquote a:hover,
+.cke_editable .embedded-entity blockquote a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
 /* line 13, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-.copy-block blockquote p,
-.cke_editable blockquote p {
+.copy-block .embedded-entity blockquote p,
+.cke_editable .embedded-entity blockquote p {
   margin-bottom: 1em;
 }
 
 /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-.copy-block blockquote .quote-inner,
-.cke_editable blockquote .quote-inner {
+.copy-block .embedded-entity blockquote .quote-inner,
+.cke_editable .embedded-entity blockquote .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4539,8 +4539,8 @@ blockquote {
 
 /* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-.copy-block blockquote .quote-inner:before,
-.cke_editable blockquote .quote-inner:before {
+.copy-block .embedded-entity blockquote .quote-inner:before,
+.cke_editable .embedded-entity blockquote .quote-inner:before {
   width: 3.9rem;
   height: 3.9rem;
   font-size: 7rem;
@@ -4559,15 +4559,15 @@ blockquote {
 
 /* line 80, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-.copy-block blockquote .quote-inner .field--name-field-quote-box-photo,
-.cke_editable blockquote .quote-inner .field--name-field-quote-box-photo {
+.copy-block .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
+.cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo {
   display: none;
 }
 
 /* line 85, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-.card .copy-block blockquote .quote-inner img,
-.card .cke_editable blockquote .quote-inner img {
+.card .copy-block .embedded-entity blockquote .quote-inner img,
+.card .cke_editable .embedded-entity blockquote .quote-inner img {
   width: auto;
   height: auto;
   max-width: 160px;
@@ -4587,12 +4587,20 @@ blockquote .quote > .field__item {
   font-size: 2.2rem;
 }
 
-/* line 188, src/sass/components/basic/_quotes.scss */
+/* line 189, src/sass/components/basic/_quotes.scss */
 
-blockquote .attr {
+.copy-block .embedded-entity blockquote .attr,
+.cke_editable .embedded-entity blockquote .attr {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
+}
+
+/* line 194, src/sass/components/basic/_quotes.scss */
+
+.copy-block .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
+.cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation {
+  font-weight: 400;
 }
 
 /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
@@ -13272,15 +13280,15 @@ form.search .search button {
 
   /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-  .copy-block blockquote .quote-inner,
-  .cke_editable blockquote .quote-inner {
+  .copy-block .embedded-entity blockquote .quote-inner,
+  .cke_editable .embedded-entity blockquote .quote-inner {
     padding: 10rem 4.2rem 4.6rem;
   }
 
   /* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-  .copy-block blockquote .quote-inner:before,
-  .cke_editable blockquote .quote-inner:before {
+  .copy-block .embedded-entity blockquote .quote-inner:before,
+  .cke_editable .embedded-entity blockquote .quote-inner:before {
     width: 5.9rem;
     height: 5.9rem;
     font-size: 10.5rem;
@@ -16626,8 +16634,8 @@ form.search .search button {
 
   /* line 36, src/sass/components/basic/_quotes.scss */
 
-  .copy-block blockquote,
-  .cke_editable blockquote {
+  .copy-block .embedded-entity blockquote,
+  .cke_editable .embedded-entity blockquote {
     margin-left: -2.5rem;
     margin-right: -2.5rem;
   }
@@ -16703,8 +16711,8 @@ form.search .search button {
 @media screen and (min-width: 768px) and (max-width: 991.9px) {
   /* line 36, src/sass/components/basic/_quotes.scss */
 
-  .copy-block blockquote,
-  .cke_editable blockquote {
+  .copy-block .embedded-entity blockquote,
+  .cke_editable .embedded-entity blockquote {
     margin: 0 -2.5rem 1.5rem;
   }
 
