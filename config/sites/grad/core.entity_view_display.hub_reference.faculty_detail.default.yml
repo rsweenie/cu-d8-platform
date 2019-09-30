@@ -206,6 +206,7 @@ hidden:
   hub_field_hub_faculty_provost_url: true
   hub_field_hub_faculty_rel_degrees: true
   hub_field_hub_faculty_title: true
+  hub_field_hub_path_alias: true
   hub_field_hub_site: true
   hub_langcode: true
   hub_node_type: true
