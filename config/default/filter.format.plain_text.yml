@@ -30,16 +30,6 @@ filters:
     status: true
     weight: 0
     settings: {  }
-  filter_bootstrap_responsive_wrapper:
-    id: filter_bootstrap_responsive_wrapper
-    provider: responsivewrappers
-    status: false
-    weight: 0
-    settings:
-      responsive_iframe: '0'
-      responsive_iframe_pattern: '#.*(youtube.|vimeo.).*#ui'
-      responsive_table: '0'
-      responsive_image: '0'
   filter_pathologic:
     id: filter_pathologic
     provider: pathologic
@@ -50,3 +40,13 @@ filters:
       local_settings:
         protocol_style: full
         local_paths: ''
+  filter_bootstrap_responsive_wrapper:
+    id: filter_bootstrap_responsive_wrapper
+    provider: responsivewrappers
+    status: false
+    weight: 0
+    settings:
+      responsive_iframe: '0'
+      responsive_iframe_pattern: '#.*(youtube.|vimeo.).*#ui'
+      responsive_table: '0'
+      responsive_image: '0'
