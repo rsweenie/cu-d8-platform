@@ -16,10 +16,13 @@
               {{ image }}
           </a>
           {% else %}
-          {{ image }}
+          <span>
+            {{ image }}
+          </span>
           {% endif %}
         {% endif %}
         <div class="content">
+          <div>
           {% if icon %}
               <span class="{{ icon }}"></span>
           {% endif %}
@@ -45,6 +48,7 @@
               'arrowPosition': 'after'
             } %}
           {% endif %}
+          </div>
         </div>
     </div>
 {% if wrapper %}
