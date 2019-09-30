@@ -1,4 +1,4 @@
-uuid: eae2a797-cf4b-4434-baab-c802b6a7ce71
+uuid: d08351c2-51b0-457c-ae42-4e00b688d314
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,8 @@ dependencies:
     - scheduler
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
+    available_menus: {  }
+    parent: ''
   private_content:
     private: 0
   scheduler:
@@ -24,10 +23,10 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Next Step'
-type: hub_next_step
-description: 'Next Step Tiles used for Program Detail next step sets.'
+name: 'Next Steps'
+type: hub_next_steps
+description: 'A collection of next step paragraphs. '
 help: ''
 new_revision: true
-preview_mode: 1
+preview_mode: 0
 display_submitted: false
