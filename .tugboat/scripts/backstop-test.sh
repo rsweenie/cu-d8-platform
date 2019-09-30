@@ -12,8 +12,8 @@ else
     site_url=$site_name'.creighton.acsitefactory.com'
 fi
 
-cmd_ref="backstop reference --configPath=backstop.js --pathfile=paths/$site_name --refhost=http://$site_name.creighton.acsitefactory.com/"
-cmd_test="backstop test --configPath=backstop.js --pathfile=paths/$site_name --testhost=$TUGBOAT_SERVICE_URL"
+cmd_ref="./node_modules/backstopjs/cli/index.js reference --configPath=backstop.js --pathfile=paths/$site_name --refhost=http://$site_name.creighton.acsitefactory.com/"
+cmd_test="./node_modules/backstopjs/cli/index.js test --configPath=backstop.js --pathfile=paths/$site_name --testhost=$TUGBOAT_SERVICE_URL"
 
 eval $cmd_ref 
 eval $cmd_test
