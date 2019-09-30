@@ -58,18 +58,20 @@
     </div>
   {% endif %}
   {% if attachment_before %}
-    <div class="attachment attachment-before">
+    <section class="featured-news section">
       {{ attachment_before }}
-    </div>
+    </section>
   {% endif %}
   {% if exposed %}
-    <div class="view-filters">
-      {{ exposed }}
-    </div>
+    <section class="view-filters section">
+      <div>
+        {{ exposed }}
+      </div>
+    </section>
   {% endif %}
 
   {% if rows %}
-    <div class="view-content">
+    <div class="news-listing section">
       {{ rows }}
     </div>
   {% elseif empty %}
