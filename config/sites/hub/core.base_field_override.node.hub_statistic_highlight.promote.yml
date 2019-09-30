@@ -1,0 +1,22 @@
+uuid: 33e8a77a-d441-4968-b46f-83ad3e960d69
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_statistic_highlight
+id: node.hub_statistic_highlight.promote
+field_name: promote
+entity_type: node
+bundle: hub_statistic_highlight
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

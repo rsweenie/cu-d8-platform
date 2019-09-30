@@ -10,91 +10,101 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
 use Drupal\Component\Utility\UrlHelper;
+use Drupal\cu_breadcrumbs\CUBreadcrumbsBreadcrumbBuilderBase;
 
 /**
- * Creates breadcrumbs for content pages and news/spotlight content types.
+ * Creates breadcrumbs for content pages.
  */
-class CUBreadcrumbsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
-  /** @var string Config settings */
-  const SETTINGS = 'cu_breadcrumbs.settings';
-  /** @var string Menu Name */
-  const MENU_NAME = 'breadcrumbs-menu';
+class CUBreadcrumbsBreadcrumbBuilder extends CUBreadcrumbsBreadcrumbBuilderBase implements BreadcrumbBuilderInterface {
+
   /**
-   * Checks content type of current node to determine if it gets a breadcrumb.
+   * The builder instance.
+   *
+   * @var \Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface0
+   */
+  protected $builders;
+  
+  /**
+   * {@inheritdoc}
    */
   public function applies(RouteMatchInterface $attributes) {
-    //sometimes param node is actually the nid (usually just revisions)
-    $node = $this->getNodeObject($attributes->getParameter('node'));
-    // If there's a node, do the code.
-    if (!empty($node)) {
-      //return the apply value(1 or 0, true or false)
-      return \Drupal::config(static::SETTINGS)
-                      ->get($node->type->entity->get('type'))['apply'];
+    $default_builder = $this->getGlobalSettings()->get('builder');
+    $default_builder = !empty($default_builder) ? $default_builder : 'system';
+
+    // Try and find settings based on node type.
+    // Sometimes param node is actually the nid (usually just revisions)
+    if ($node = $this->getNodeObject($attributes->getParameter('node'))) {
+      $node_builder = $this->getSettings()->get($node->type->entity->get('type'))['builder'];
+
+      // If not set to use default, then use whatever the builder gives us.
+      if ($node_builder != 'default') {
+        if ($builder = $this->getBuilder($node_builder)) {
+          return $this->getBuilder($node_builder)->applies($attributes);
+        }
+        return FALSE;
+      }
     }
 
+    // Else we can try the default builder.
+    if ($builder = $this->getBuilder($default_builder)) {
+      return $builder->applies($attributes);
+    }
+
+    return FALSE;
   }
 
   /**
-   * Builds the breadcrumb.
+   * {@inheritdoc}
    */
   public function build(RouteMatchInterface $route_match) {
-    // new breadcrumb
-    $breadcrumb = new Breadcrumb();
-    // Get and loop through breadcrumbs menu.
-    if ($menu_tmp = $this->createMenu()) {
-      if ($menu_tmp['#items']) {
-        foreach ($menu_tmp['#items'] as $item) {
-          //add breadcrumbs-menu link to breadcrumb
-          $breadcrumb->addLink(Link::fromTextAndUrl($item['title'], $item['url']));
-        }
-      }
-    }
-    
-    // Create breadcrumbs from current node and parents in main nav menu
-    // and append to breadcrumb.
+    $default_builder = $this->getGlobalSettings()->get('builder');
+    $default_builder = !empty($default_builder) ? $default_builder : 'system';
+
+    // Try and find settings based on node type.
+    // Sometimes param node is actually the nid (usually just revisions)
     $node = $this->getNodeObject($route_match->getParameter('node'));
-    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-    $links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->nid->value]);
-    if ($link = reset($links)) {
-      if ($link->getParent()) {
-        foreach (array_reverse($menu_link_manager->getParentIds($link->getParent())) as $parent) {
-          $parent = $menu_link_manager->createInstance($parent);
-          $breadcrumb->addLink(Link::fromTextAndUrl($parent->getTitle(), $parent->getUrlObject()));
-        }
+    if (!empty($node)) {
+      $node_builder = $this->getSettings()->get($node->type->entity->get('type'))['builder'];
+
+      if ($builder = $this->getBuilder($node_builder)) {
+        return $builder->build($route_match);
       }
     }
-    return $breadcrumb;
-  }
 
-  //return a menu or false
-  private function createMenu(){
-    $menu_name = static::MENU_NAME;
-    $menu_tree = \Drupal::menuTree();
-    $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
-    
-    //if tree is not empty, create the menu
-    if($tree = $menu_tree->load($menu_name, $parameters)){
-      $manipulators = [ // Only show links that are accessible for the current user.
-                        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-                        // Use the default sorting of menu links.
-                        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-                      ];
-
-      $tree = $menu_tree->transform($tree, $manipulators);
-      return $menu_tree->build($tree);
+    // Else we can try the default builder.
+    if ($builder = $this->getBuilder($default_builder)) {
+      return $builder->build($route_match);
     }
-    //return false if tree is empty
-    return false;
   }
 
-  //returns a node object
-  private function getNodeObject($obj){
-    // Get node object, node revisions are not the same as nodes and are not passed as objects.
-    // the above error was causing the original build function to display a warning message.
-    if (gettype($obj) === 'string') {
-      //if node is a string then its the nid not the actual node.
-      return Node::load($obj);
+  /**
+   * Returns the builder that matches settings.
+   *
+   * @return void
+   */
+  protected function getBuilder($builder_name) {
+    if (!isset($this->builders[$builder_name])) {
+      switch ($builder_name) {
+        case 'empty':
+          $this->builders[$builder_name] = new CUBreadcrumbsBreadcrumbBuilderEmpty();
+          break;
+
+        case 'path':
+          $this->builders[$builder_name] = new CUBreadcrumbsBreadcrumbBuilderPathBased();
+          break;
+
+        case 'menu':
+          $this->builders[$builder_name] = new CUBreadcrumbsBreadcrumbBuilderMenuBased();
+          break;
+
+        case 'system':
+        default:
+          $this->builders[$builder_name] = NULL;
+          break;
+      }
     }
-    return $obj;
+
+    return $this->builders[$builder_name];
   }
+
 }

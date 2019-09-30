@@ -1,0 +1,48 @@
+uuid: 7e3c51d2-49ba-437d-9670-257af782957a
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph__statistic_highlight
+type_id: paragraph--statistic_highlight
+fields:
+  drupal_internal__id:
+    type: integer
+    multiple: false
+  drupal_internal__revision_id:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  status:
+    type: string_long
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  parent_id:
+    type: integer
+    multiple: false
+  parent_type:
+    type: string_long
+    multiple: false
+  parent_field_name:
+    type: string_long
+    multiple: false
+  behavior_settings:
+    type: hub_unknown
+    multiple: true
+  default_langcode:
+    type: string_long
+    multiple: false
+  revision_translation_affected:
+    type: string_long
+    multiple: false
+  paragraph_type:
+    type: hub_resource
+    hub_type: paragraphs_type
+    multiple: false
+  field_hub_stat_highlight_ref:
+    type: hub_resource
+    hub_type: node
+    multiple: false
