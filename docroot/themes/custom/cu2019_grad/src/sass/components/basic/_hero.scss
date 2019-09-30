@@ -230,9 +230,9 @@ header.hp_hero {
     }
 
     h1 {
-      margin: 0;
+      margin: 0 0 (9 / 50) * 1em 0;
       font-size: 34px;
-      line-height: 1.2em;
+      line-height: (47 / 50) * 1em;
 
       @media #{$mediaFullHeader} {
         font-size: 50px;
