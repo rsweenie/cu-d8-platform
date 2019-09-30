@@ -2,7 +2,7 @@
 # Run Backstop test
 set -e
 
-site_name=$(`dirname "$0"`/get_site_alias.sh)
+site_name=$($TUGBOAT_ROOT/.tugboat/scripts/get_site_alias.sh)
 
 
 if [[ $site_name = "alliance" ]]
