@@ -77,4 +77,11 @@ interface ResourceInterface {
    */
   public function view();
 
+  /**
+   * Returns a string representation of the resource.
+   *
+   * @return string
+   */
+  public function getString();
+
 }

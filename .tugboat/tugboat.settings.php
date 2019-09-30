@@ -12,6 +12,7 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
+$config['system.file']['path']['temporary'] = '/tmp';
 
 // Site specific Drupal settings
 $cu_site_name = exec($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh');

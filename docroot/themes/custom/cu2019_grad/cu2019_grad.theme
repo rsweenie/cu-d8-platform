@@ -140,6 +140,28 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
 
 }
 
+function cu2019_grad_preprocess_views_view(&$variables) {
+  $variables['breadcrumb_links'] = \Drupal::service('breadcrumb')->build(\Drupal::routeMatch())->getLinks();
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_hub_resource_field__field_hub_fac_spotlight_type(&$variables) {
+  $value = &$variables['items'][0]['content']['#context']['value'];
+  switch ($value) {
+    case 'fac':
+      $value = 'Faculty spotlight';
+      break;
+    case 'alum':
+      $value = 'Alumni spotlight';
+      break;
+    default:
+      $value = '';
+      break;
+  }
+}
+
 // Returns a render array with the sub-tree of the current active link.
 function _cu2019_grad_get_menu_sub_tree($menu_name = 'main') {
   $menu_tree = \Drupal::menuTree();

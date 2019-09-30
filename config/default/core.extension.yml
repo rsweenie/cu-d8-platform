@@ -5,6 +5,7 @@ module:
   allowed_formats: 0
   anchor_link: 0
   auto_entitylabel: 0
+  better_exposed_filters: 0
   blazy: 0
   block: 0
   block_aria_landmark_roles: 0
@@ -39,6 +40,7 @@ module:
   dblog: 0
   diff: 0
   dropzonejs: 0
+  easy_breadcrumb: 0
   easy_install: 0
   editor: 0
   editor_advanced_link: 0

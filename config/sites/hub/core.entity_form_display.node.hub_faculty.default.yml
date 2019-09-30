@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.hub_faculty.field_hub_faculty_provost_url
     - field.field.node.hub_faculty.field_hub_faculty_rel_degrees
     - field.field.node.hub_faculty.field_hub_faculty_title
+    - field.field.node.hub_faculty.field_hub_path_alias
     - field.field.node.hub_faculty.field_hub_site
     - field.field.node.hub_faculty.field_meta_tags
     - node.type.hub_faculty
@@ -134,6 +135,14 @@ content:
     region: content
   field_hub_faculty_title:
     weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_path_alias:
+    weight: 26
     settings:
       size: 60
       placeholder: ''
