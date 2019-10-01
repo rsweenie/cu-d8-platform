@@ -50,37 +50,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
-          b4312428-5d11-4dec-8b24-42df177bbc3f:
-            uuid: b4312428-5d11-4dec-8b24-42df177bbc3f
-            region: main
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:hub_reference:faculty_detail:field_faculty_detail_namestring'
-              formatter:
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-                type: basic_string
-            additional: {  }
-            weight: 2
-          228beba4-7a62-4b2f-b5ec-62a7e8cbcc3d:
-            uuid: 228beba4-7a62-4b2f-b5ec-62a7e8cbcc3d
-            region: main
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:hub_reference:faculty_detail:field_faculty_detail_rel_degrees'
-              formatter:
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-                type: entity_reference_label
-            additional: {  }
-            weight: 3
         third_party_settings: {  }
       -
         layout_id: faculty_detail_3col
