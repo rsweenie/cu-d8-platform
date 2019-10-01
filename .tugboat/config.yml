@@ -165,9 +165,10 @@ services:
 
         # Run Backstop tests
         - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/tests/backstopjs"
-        - (cd tests/backstopjs/; ./backstop-test.sh)
+        - /bin/bash ${TUGBOAT_ROOT}/tests/backstopjs/backstop-test.sh
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli
+        - echo 
         
 
 

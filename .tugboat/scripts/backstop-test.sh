@@ -4,6 +4,7 @@ set -e
 
 site_name=$($TUGBOAT_ROOT/.tugboat/scripts/get_site_alias.sh)
 
+cd $TUGBOAT_ROOT/tests/backstopjs
 
 if [[ $site_name = "alliance" ]]
 then
