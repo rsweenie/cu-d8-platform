@@ -42,6 +42,13 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
   public function getKey($key);
 
   /**
+   * Returns the resource type definition.
+   *
+   * @return \Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinitionInterface
+   */
+  public function getResourceTypeDefinition();
+
+  /**
    * Gets a list of the fields returned by hub.
    *
    * @return array
@@ -79,4 +86,18 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
    */
   public function view(ResourceInterface $resource);
   
+  /**
+   * Returns a string representation of a resource.
+   *
+   * @return string
+   */
+  public function getString(ResourceInterface $resource);
+
+  /**
+   * Returns a values array friendly to Drupal fields.
+   *
+   * @return array
+   */
+  public function getFieldFriendlyValue(ResourceInterface $resource);
+
 }

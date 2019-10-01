@@ -13,6 +13,8 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinition;
+use Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinitionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 //use \GuzzleHttp\ClientInterface;
 //use GuzzleHttp\Exception\RequestException;
@@ -72,6 +74,13 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * @var \Drupal\cu_hub_consumer\Hub\ResourceInspector
    */
   protected $hubResourceInspector;
+
+  /**
+   * Hub resource type definition.
+   *
+   * @var \Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinitionInterface
+   */
+  protected $hubResourceTypeDefinition;
 
   /**
    * Constructs a new hub resource type instance.
@@ -190,7 +199,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   public function fetchResource($hub_uuid) {
     if ($path = $this->getResourcePath($hub_uuid)) {
       try {
-        $response = $this->hubClient->request('GET', $path);
+        $response = $this->hubClient->request('GET', $path, $this->buildFetchQuery());
       }
       catch (ClientException $e) {
         throw new ResourceException('Could not retrieve the hub resource: ' . $e->getMessage(), $e->getUrl(), [], $e);
@@ -242,6 +251,93 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
     }
   }
 
+  protected function buildFetchQuery() {
+    $query = [];
+
+    if ($type_def = $this->getResourceTypeDefinition()) {
+      //if ($includes = $this->findIncludes($type_def)) {
+        //$flat = $this->collapseIncludes($includes);
+        //$query['include'] = implode(',', $flat);
+      //}
+    }
+
+    return $query;
+  }
+
+  protected function findIncludes(HubResourceTypeDefinitionInterface $type_def, $depth = 0) {
+    $includes = [];
+
+    // Prevent recursing too deep.
+    if ($depth > 2) {
+      return $includes;
+    }
+
+    $fields = $type_def->get('fields');
+    foreach ($fields as $field_name => $field_info) {
+      if ($field_info['type'] == 'hub_resource') {
+        // Handle standard media includes.
+        if ($field_info['hub_type'] == 'media') {
+          $includes[$field_name] = [
+            'image',
+            'field_media_video_embed_field',
+            'field_document',
+          ];
+        }
+
+        // Handle paragraph references.
+        if ($field_info['hub_type'] == 'paragraph') {
+          $includes[$field_name] = [];
+
+          // Since we don't know which paragraph bundles might be involved, we just have to include all possible variants.
+          $resource_type_defs = HubResourceTypeDefinition::loadMultiple();
+          foreach ($resource_type_defs as $resource_type_def) {
+            $resource_type = $resource_type_def->get('type_id');
+            if (strpos($resource_type, 'paragraph--') === 0) {
+              $includes[$field_name] = array_merge($includes[$field_name], $this->findIncludes($resource_type_def, $depth+1));
+            }
+          }
+        }
+
+        if ($field_info['hub_type'] == 'node') {
+          $includes[$field_name] = [];
+
+          // Since we don't know which paragraph bundles might be involved, we just have to include all possible variants.
+          $resource_type_defs = HubResourceTypeDefinition::loadMultiple();
+          foreach ($resource_type_defs as $resource_type_def) {
+            $resource_type = $resource_type_def->get('type_id');
+            if (strpos($resource_type, 'node--') === 0) {
+              $includes[$field_name] = array_merge($includes[$field_name], $this->findIncludes($resource_type_def, $depth+1));
+            }
+          }
+        }
+      }
+    }
+
+    return $includes;
+  }
+
+  protected function collapseIncludes($includes) {
+    $flat_includes = [];
+
+    if (!is_array($includes)) {
+      return $flat_includes;
+    }
+
+    foreach ($includes as $field_name => $children) {
+      if (empty($children)) {
+        $flat_includes[] = $field_name;
+      }
+      else {
+        $flat_children = $this->collapseIncludes($children);
+        foreach ($flat_children as $child) {
+          $flat_includes[] = $field_name . '.' . $child;
+        }
+      }
+    }
+
+    return array_unique($flat_includes);
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -258,11 +354,28 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
     return isset($keys[$key]) ? $keys[$key] : FALSE;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getResourceTypeDefinition() {
+    if (!isset($this->hubResourceTypeDefinition)) {
+      $this->hubResourceTypeDefinition = NULL;
+
+      $def_storage = $this->entityTypeManager->getStorage('hub_resource_type_definition');
+      $type_defs = $def_storage->loadByProperties(['type_id' => $this->getHubTypeId()]);
+      if ($type_def = reset($type_defs)) {
+        $this->hubResourceTypeDefinition = $type_def;
+      }
+    }
+
+    return $this->hubResourceTypeDefinition;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getHubFields() {
-    //return $this->hubResourceInspector->inspect($this->getHubTypeId());
-    $def_storage = $this->entityTypeManager->getStorage('hub_resource_type_definition');
-    $type_defs = $def_storage->loadByProperties(['type_id' => $this->getHubTypeId()]);
-    if ($type_def = reset($type_defs)) {
+    if ($type_def = $this->getResourceTypeDefinition()) {
       return $type_def->get('fields');
     }
     return [];
@@ -341,4 +454,23 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
     return $elements;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getString(ResourceInterface $resource) {
+    return $resource->label();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFieldFriendlyValue(ResourceInterface $resource) {
+    if ($processed_data = $resource->getProcessedData()) {
+      return [
+        'value' => $processed_data['id'],
+        'resource' => $resource,
+      ];
+    }
+  }
+  
 }

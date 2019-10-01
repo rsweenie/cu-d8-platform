@@ -17,15 +17,11 @@ class HubReferenceStorage extends SqlContentEntityStorage {
   /**
    * {@inheritdoc}
    */
-  protected function doLoadMultiple(array $ids = NULL) {
-    $entities = parent::doLoadMultiple($ids);
-
+  protected function postLoad(array &$entities) {
     // Map hub field data onto entity fields.
     foreach ($entities as $entity) {
       $entity->mapHubFields();
     }
-
-    return $entities;
   }
 
   /**
