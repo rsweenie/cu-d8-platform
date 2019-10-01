@@ -19,18 +19,6 @@ generic_content:
   icon_map:
     - [main]
 
-program_detail_2col:
-  label: 'Program Detail - 2 Column'
-  category: 'CU 2019'
-  template: templates/layout/layout--program-detail-2col
-  regions:
-    main:
-      label: 'Main content'
-    right:
-      label: 'Right sidebar'
-  icon_map:
-    - [main, main, right]
-
 program_detail_feat_tiles:
   label: 'Program Detail - Featured Tiles'
   category: 'CU 2019'

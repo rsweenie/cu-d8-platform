@@ -1891,6 +1891,18 @@ Delete everything below including comment
   margin: auto;
 }
 
+/* line 93, src/sass/structure/_section.scss */
+
+.section.layout--program-detail-2col {
+  padding-bottom: 0;
+}
+
+/* line 97, src/sass/structure/_section.scss */
+
+.section.layout--generic-content {
+  padding: 0;
+}
+
 /* line 6, src/sass/structure/section-layouts/_full-screen.scss */
 
 .section.full-screen {
@@ -2036,28 +2048,36 @@ Delete everything below including comment
 /* line 18, src/sass/structure/section-layouts/_faculty.scss */
 
 .section.fac-3col .fac_rail:before {
-  width: 100vw;
+  width: 200vw;
   height: calc(100% + 5rem);
   position: absolute;
-  left: -5rem;
+  left: 0;
   top: -2.5rem;
   content: "";
   background: #CEE2F3;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
-/* line 44, src/sass/structure/section-layouts/_faculty.scss */
+/* line 47, src/sass/structure/section-layouts/_faculty.scss */
 
 .section.fac-3col .faculty-image {
   padding-bottom: 2.5rem;
 }
 
-/* line 54, src/sass/structure/section-layouts/_faculty.scss */
+/* line 52, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle {
+  padding-bottom: 5rem;
+}
+
+/* line 58, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle .field__item {
   margin-bottom: 0.31579em;
 }
 
-/* line 57, src/sass/structure/section-layouts/_faculty.scss */
+/* line 61, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
   color: #266db3;
@@ -2081,20 +2101,20 @@ aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub
   margin-top: 0.5rem;
 }
 
-/* line 63, src/sass/structure/section-layouts/_faculty.scss */
+/* line 67, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle h3.field__item {
   line-height: .825em;
   margin-bottom: 0.825em;
 }
 
-/* line 66, src/sass/structure/section-layouts/_faculty.scss */
+/* line 70, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle h3.field__item:after {
   bottom: -0.25em;
 }
 
-/* line 71, src/sass/structure/section-layouts/_faculty.scss */
+/* line 75, src/sass/structure/section-layouts/_faculty.scss */
 
 .section .layout__region--facmiddle .btn-secondary,
 .section .layout__region--facmiddle form .form_action button,
@@ -2115,7 +2135,7 @@ form .form_action .section .layout__region--facmiddle button {
 
 /* CSS Document */
 
-/* line 121, src/sass/structure/_section.scss */
+/* line 130, src/sass/structure/_section.scss */
 
 .layout--onecol {
   background-image: url(../../img/feature_slash_bg.png);
@@ -2132,7 +2152,7 @@ form .form_action .section .layout__region--facmiddle button {
     they can be good starting points to solve backgrounds and shapes used in the
     design.
 
-    These are included individually to make commenting out easier. Please comment 
+    These are included individually to make commenting out easier. Please comment
     out the backgrounds that you don't need for your site's design.
 
 \*  --------------------------------------------------------------------------  */
@@ -2238,7 +2258,7 @@ section[class*="sbg-"]:after {
 
 /*  --------------------------------------------------------------------------  *\ DELETE THIS SECTION OUT WHEN NOT USING ON COMPONENT LIBRARY SITE \*  --------------------------------------------------------------------------  */
 
-/* line 52, src/sass/structure/_section-backgrounds.scss */
+/* line 53, src/sass/structure/_section-backgrounds.scss */
 
 .cl-bg > section {
   min-height: 75vh;
@@ -2917,9 +2937,9 @@ header.hp_hero:after {
 /* line 232, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
-  margin: 0;
+  margin: 0 0 0.18em 0;
   font-size: 3.4rem;
-  line-height: 1.2em;
+  line-height: 0.94em;
 }
 
 /* line 242, src/sass/components/basic/_hero.scss */
@@ -10965,6 +10985,45 @@ nav.jn li + li {
   font-size: 1.6rem;
 }
 
+/* line 1, src/sass/components/feeds-detail/_detail.scss */
+
+.field--name-hub-field-hub-news-date {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* line 5, src/sass/components/feeds-detail/_detail.scss */
+
+.block-field-blockhub-referencenewshub-field-hub-news-body {
+  margin-top: 1em;
+}
+
+/* line 9, src/sass/components/feeds-detail/_detail.scss */
+
+.news-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 12, src/sass/components/feeds-detail/_detail.scss */
+
+.news-info .icon {
+  color: #BABABA;
+  margin-right: 0.9rem;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     FEED - LATEST
@@ -12604,7 +12663,6 @@ form.search .search button {
   /* line 9, src/sass/structure/_section.scss */
 
   .section {
-    background: #fff;
     padding: 3.75rem 0;
   }
 
@@ -12770,16 +12828,19 @@ form.search .search button {
 
   .section.fac-3col .fac_rail:before {
     height: calc(100% + 7.5rem);
+    left: -5rem;
     top: -3.75rem;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 
-  /* line 49, src/sass/structure/section-layouts/_faculty.scss */
+  /* line 52, src/sass/structure/section-layouts/_faculty.scss */
 
   .section .layout__region--facmiddle {
     padding-right: 5rem;
   }
 
-  /* line 57, src/sass/structure/section-layouts/_faculty.scss */
+  /* line 61, src/sass/structure/section-layouts/_faculty.scss */
 
   .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
     font-size: 2.4rem;
@@ -12825,6 +12886,34 @@ form.search .search button {
 
   .grid.wide {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* line 1, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash {
+    position: relative;
+  }
+
+  /* line 6, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash > div {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* line 11, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash:before {
+    width: 110vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -5rem;
+    content: "";
+    background-image: url(../../img/slash.png);
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-size: 3000px auto;
   }
 
   /* line 1, src/sass/structure/_home.scss */
@@ -13737,6 +13826,12 @@ form.search .search button {
     font-size: 2rem;
   }
 
+  /* line 1, src/sass/components/feeds-detail/_detail.scss */
+
+  .field--name-hub-field-hub-news-date {
+    font-size: 1.5rem;
+  }
+
   /* line 3, src/sass/components/feeds-detail/featured/_carousel.scss */
 
   .f-feat-carosuel .owl-stage-outer {
@@ -14051,7 +14146,7 @@ form.search .search button {
     width: 95%;
   }
 
-  /* line 105, src/sass/structure/_section.scss */
+  /* line 114, src/sass/structure/_section.scss */
 
   .section.ptb-lgt {
     z-index: 0;
@@ -16109,6 +16204,14 @@ form.search .search button {
   }
 }
 
+@media screen and (min-width: 1700px) {
+  /* line 28, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash:before {
+    right: 5%;
+  }
+}
+
 @media screen and (max-width: 1089.9px) {
   /* line 29, src/sass/base/_resets.scss */
 
@@ -16350,13 +16453,13 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
-  /* line 94, src/sass/structure/_section.scss */
+  /* line 103, src/sass/structure/_section.scss */
 
   .section.ptb {
     padding: 5rem 0;
   }
 
-  /* line 97, src/sass/structure/_section.scss */
+  /* line 106, src/sass/structure/_section.scss */
 
   .section.ptb-lgt {
     z-index: 0;
