@@ -199,5 +199,5 @@ services:
       # from the base preview.
       build:
         # Increase the max packet size to avoid "server has gone away" errors.
-        - mysql -e "SET GLOBAL max_allowed_packet=536870912;"
-        - echo "max_allowed_packet=536870912" >> /etc/mysql/conf.d/tugboat.cnf
+        - mysql -e "SET GLOBAL max_allowed_packet=104857600;"
+        - echo "max_allowed_packet=104857600" >> /etc/mysql/conf.d/tugboat.cnf
