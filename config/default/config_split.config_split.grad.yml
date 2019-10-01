@@ -116,15 +116,10 @@ graylist:
   - lightning_core.versions
   - paragraphs.paragraphs_type.full_width_photo
   - search_api.index.content
-  - system.file
-  - system.site
-  - system.theme
-  - system.theme.global
   - views.view.search
   - 'block.block.*'
   - 'views.view.*'
   - 'search_api.*'
-  - 'system.*'
   - 'user.role.*'
   - 'core.entity_view_display.hub_reference.*'
 graylist_dependents: true
