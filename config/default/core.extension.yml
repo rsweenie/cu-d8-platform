@@ -37,6 +37,7 @@ module:
   cu_data_transform: 0
   cu_entity_embed: 0
   cu_hub_consumer: 0
+  cu_layout_tweaks: 0
   cu_noreferrer: 0
   cu_slate_forms: 0
   datetime: 0
