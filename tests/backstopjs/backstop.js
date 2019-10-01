@@ -122,5 +122,6 @@ module.exports =
   "asyncCaptureLimit": 5,
   "asyncCompareLimit": 50,
   "debug": false,
-  "debugWindow": false
+  "debugWindow": false,  
+  "report": ["browser"]
 };
