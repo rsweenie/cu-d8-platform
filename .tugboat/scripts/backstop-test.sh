@@ -1,6 +1,5 @@
 #!/bin/bash
 # Run Backstop test
-set -e
 
 site_name=$($TUGBOAT_ROOT/.tugboat/scripts/get_site_alias.sh)
 
@@ -18,5 +17,3 @@ cmd_test="./node_modules/backstopjs/cli/index.js test --configPath=backstop.js -
 
 eval $cmd_ref 
 eval $cmd_test
-
-echo $TUGBOAT_SERVICE_URL"sites/default/files/html_report/"
