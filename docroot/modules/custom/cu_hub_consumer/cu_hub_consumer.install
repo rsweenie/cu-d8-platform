@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Remove the data_table key from the hub_reference entity type.
+ */
+function cu_hub_consumer_update_8700(&$sandbox) {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $last_installed_schema_repository = \Drupal::service('entity.last_installed_schema.repository');
+
+  $entity_type = $definition_update_manager->getEntityType('hub_reference');
+  $entity_type_id = $entity_type->id();
+
+  $field_storage_definitions = $last_installed_schema_repository->getLastInstalledFieldStorageDefinitions('hub_reference');
+
+  $entity_type->set('data_table', NULL);
+
+  $definition_update_manager->updateFieldableEntityType($entity_type, $field_storage_definitions, $sandbox);
+}
