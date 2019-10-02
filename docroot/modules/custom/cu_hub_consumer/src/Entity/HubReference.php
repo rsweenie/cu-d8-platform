@@ -5,12 +5,14 @@ namespace Drupal\cu_hub_consumer\Entity;
 use Drupal\Component\Utility\Crypt;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\cu_hub_consumer\Hub\Resource;
 use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
 use Drupal\cu_hub_consumer\Hub\ResourceRelationshipListInterface;
@@ -42,7 +44,7 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
  *     },
- *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "views_data" = "Drupal\cu_hub_consumer\HubReferenceViewsData",
  *     "storage" = "Drupal\cu_hub_consumer\HubReferenceStorage",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
@@ -50,11 +52,11 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *     "access" = "Drupal\cu_hub_consumer\HubReferenceAccessControlHandler",
  *   },
  *   base_table = "hub_reference",
- *   data_table = "hub_reference_field_data",
  *   translatable = FALSE,
  *   fieldable = TRUE,
  *   admin_permission = "administer cu hub references",
  *   field_ui_base_route = "entity.hub_reference_type.edit_form",
+ *   common_reference_target = TRUE,
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "title",
@@ -65,7 +67,7 @@ use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
  *   links = {
  *     "canonical" = "/hub-reference/{hub_reference}",
  *     "delete-form" = "/hub-reference/{hub_reference}/delete",
- *     "edit-form" = "/hub-reference/{hub_reference}"
+ *     "edit-form" = "/hub-reference/{hub_reference}/edit"
  *   },
  * )
  */
@@ -348,7 +350,19 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         // hub reference type config.
         foreach ($translation->type->entity->getFieldMap() as $metadata_attribute_name => $entity_field_name) {
           if ($translation->hasField($entity_field_name)) {
-            $translation->set($entity_field_name, $hub_reference_source->getMetadata($translation, $metadata_attribute_name));
+            $field_def = $translation->get($entity_field_name)->getFieldDefinition();
+            $field_type = $field_def->getType();
+            $metadata_values = $hub_reference_source->getMetadata($translation, $metadata_attribute_name);
+            
+            switch ($field_type) {
+              case 'entity_reference':
+                $this->handleEntityReferencePrepareSave($translation, $entity_field_name, $metadata_values);
+                break;
+
+              default:
+                $translation->set($entity_field_name, $metadata_values);
+                break;
+            }
           }
         }
 
@@ -363,6 +377,52 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
             'pathauto' => PathautoState::SKIP,
           ]);
         }
+      }
+    }
+  }
+
+  protected function handleEntityReferencePrepareSave(ContentEntityInterface $entity, $entity_field_name, $values) {
+    $field_def = $entity->get($entity_field_name)->getFieldDefinition();
+    $target_type = $field_def->getSetting('target_type');
+
+    if ($target_type == 'taxonomy_term') {
+      if ($field_def->getSetting('handler') != 'default:taxonomy_term') {
+        // We only know how to deal with the one handler.
+        return;
+      }
+
+      $target_bundles = $field_def->getSetting('handler_settings')['target_bundles'];
+      if (count($target_bundles) > 1) {
+        // If there are more than one bundle then we don't know which vocabulary to use.
+        return;
+      }
+      $target_bundle = reset($target_bundles);
+
+      // Sanity check.
+      if (is_array($values)) {
+        $field_values = [];
+        foreach ($values as $value) {
+          if (isset($value['value'])) {
+            $term_name = trim($value['value']);
+
+            $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $term_name]);
+            $term = reset($terms);
+
+            // If term doesn't exist yet, try to create it.
+            if (!$term) {
+              $term = Term::create([
+                'name' => $term_name, 
+                'vid' => $target_bundle,
+              ]);
+              $term->save();
+            }
+
+            if ($tid = $term->id()) {
+              $field_values[] = ['target_id' => $tid];
+            }
+          }
+        }
+        $entity->set($entity_field_name, $field_values);
       }
     }
   }

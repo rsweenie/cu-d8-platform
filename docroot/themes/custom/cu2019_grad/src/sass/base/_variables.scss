@@ -29,7 +29,10 @@ $gray3: #707070;
 $gray4: #EEEFF0;
 $gray5: #d4d4d4;
 $gray6: #ECF0F3;
+$gray65: #BABABA;
 $gray7: #C5C7CA;
+$gray8: #949494;
+$off-white: #f7f7f7;
 
 $accent-2Lt: #99CFFF;
 $accent-2XLt: #A5D2F9;
@@ -54,6 +57,7 @@ $linkC: $secondary;
 $linkCHov: $primary;
 $linkCAct: $secondary;
 $iconFF: "Font Awesome 5 Free"; // FONT FAMILY FOR HEADINGS (H1-H6)
+$iconFont: "cu_icons";
 $remBase: 10; // REM BASE SHOULD REMAIN 10 UNLESS YOU WANT TO DO A DIFFERENT BASE FOR MEASUREMENT
 /*---=== MEDIA QUERIES ===---*/
 $headerBp: 1090px;

@@ -26,9 +26,17 @@ third_party_settings:
       - field_hub_degree_featured_info.field_quote_ref_item
       - field_hub_degree_featured_info.field_featured_content_image
       - field_hub_degree_featured_info.field_fc_p_link
+      - field_hub_degree_featured_info.field_fc_p_link.field_file_link.field_document
       - field_hub_degree_featured_info.field_fc_supporting_p_links
+      - field_hub_degree_featured_info.field_fc_supporting_p_links.field_file_link.field_document
       - field_hub_degree_featured_info.field_hub_spotlight_ref
+      - field_hub_degree_featured_info.field_hub_spotlight_ref.field_hub_fac_spotlight_image.image
+      - field_hub_degree_featured_info.field_hub_stat_highlight_ref
+      - field_hub_degree_featured_info.field_hub_stat_highlight_ref.field_hub_stat_highlight_image.image
+      - field_hub_degree_featured_info.field_hub_image_image
+      - field_hub_degree_featured_info.field_hub_image_image.image
       - field_hub_degree_next_steps
+      - field_hub_degree_next_steps.field_hub_next_steps_items
 id: node--hub_degree
 disabled: false
 path: node/hub_degree

@@ -1,0 +1,23 @@
+uuid: 9df3ae82-522c-4d2e-9f8c-d286f9663b60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.statistic_highlight.field_hub_stat_highlight_ref
+    - paragraphs.paragraphs_type.statistic_highlight
+id: paragraph.statistic_highlight.default
+targetEntityType: paragraph
+bundle: statistic_highlight
+mode: default
+content:
+  field_hub_stat_highlight_ref:
+    weight: 0
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true
