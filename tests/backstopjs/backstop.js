@@ -123,5 +123,5 @@ module.exports =
   "asyncCompareLimit": 50,
   "debug": false,
   "debugWindow": false,  
-  "report": ["json"]
+  "report": []
 };
