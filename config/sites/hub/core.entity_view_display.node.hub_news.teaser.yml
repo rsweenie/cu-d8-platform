@@ -29,7 +29,15 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
+  field_hub_news_body: true
+  field_hub_news_date: true
+  field_hub_news_description: true
   field_hub_news_featured: true
   field_hub_news_hero_image: true
   field_hub_news_listing_image: true
+  field_hub_news_location: true
+  field_hub_news_title: true
+  field_hub_news_type: true
+  field_hub_path_alias: true
+  field_hub_site: true
   search_api_excerpt: true

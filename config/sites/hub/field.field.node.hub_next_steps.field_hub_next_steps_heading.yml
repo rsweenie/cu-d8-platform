@@ -1,0 +1,21 @@
+uuid: a70edb9a-713b-4d2d-b79c-90a4847241b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_next_steps_heading
+    - node.type.hub_next_steps
+id: node.hub_next_steps.field_hub_next_steps_heading
+field_name: field_hub_next_steps_heading
+entity_type: node
+bundle: hub_next_steps
+label: Heading
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Let''s take the next steps together'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,16 +1,16 @@
-uuid: a7bf077f-b147-40e3-b8ee-49b560e9812b
+uuid: 215629ce-8207-47ef-a4e9-84868bfa43d9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hub_next_step_icon
+    - field.storage.paragraph.field_hub_image_image
     - media.type.image
-    - node.type.hub_next_step
-id: node.hub_next_step.field_hub_next_step_icon
-field_name: field_hub_next_step_icon
-entity_type: node
-bundle: hub_next_step
-label: Icon
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.field_hub_image_image
+field_name: field_hub_image_image
+entity_type: paragraph
+bundle: image
+label: Image
 description: ''
 required: false
 translatable: false
