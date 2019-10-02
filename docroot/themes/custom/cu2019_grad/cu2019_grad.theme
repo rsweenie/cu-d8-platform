@@ -30,6 +30,10 @@ function cu2019_grad_preprocess_node(&$variables) {
   }
 }
 
+function cu2019_grad_preprocess_hub_resource__paragraph__hub_paragraph_next_steps(&$variables) {
+  //$variables['shmeh'] = "GUSHMUHH!";
+}
+
 function cu2019_grad_preprocess_field__field_interior_page_content(&$variables) {
   $element = $variables['element'];
 
