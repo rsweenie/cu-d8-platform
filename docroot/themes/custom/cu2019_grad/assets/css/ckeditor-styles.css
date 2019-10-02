@@ -2281,7 +2281,7 @@ section[class*="sbg-"]:after {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 11, src/sass/components/basic/_buttons.scss */
+/* line 75, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"] {
   display: block;
@@ -2369,7 +2369,7 @@ section[class*="sbg-"]:after {
   transform: translate(1rem, 0);
 }
 
-/* line 81, src/sass/components/basic/_buttons.scss */
+/* line 84, src/sass/components/basic/_buttons.scss */
 
 .skip-section {
   position: fixed;
@@ -2386,7 +2386,7 @@ section[class*="sbg-"]:after {
   text-decoration: none;
 }
 
-/* line 92, src/sass/components/basic/_buttons.scss */
+/* line 95, src/sass/components/basic/_buttons.scss */
 
 .skip-section span {
   display: block;
@@ -2461,7 +2461,7 @@ section[class*="sbg-"]:after {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
+/* line 85, src/sass/components/basic/buttons/colors/_secondary.scss */
 
 .btn-secondary,
 form .form_action button {
@@ -3849,6 +3849,25 @@ a.card.mfsfa .body {
 .feat-tiles .card.mfsfa .body,
 .feat-tiles a.card.mfsfa .body {
   padding: 2.5rem 0;
+}
+
+/* line 191, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .hub-resource-field--type-link a:after,
+a.card.mfsfa .hub-resource-field--type-link a:after {
+  font-family: "cu_icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  content: "\E01C";
+  font-size: 1.3em;
+  -webkit-transform: translate(0.2em, 0.2em);
+          transform: translate(0.2em, 0.2em);
+  display: inline-block;
 }
 
 /* line 25, src/sass/components/basic/cards/_copy.scss */
@@ -12352,7 +12371,7 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 11, src/sass/components/basic/_buttons.scss */
+  /* line 75, src/sass/components/basic/_buttons.scss */
 
   [class*="btn-"] {
     display: inline-block;
@@ -14191,13 +14210,13 @@ form.search .search button {
     top: -5rem;
   }
 
-  /* line 11, src/sass/components/basic/_buttons.scss */
+  /* line 75, src/sass/components/basic/_buttons.scss */
 
   [class*="btn-"] {
     font-size: 1.9rem;
   }
 
-  /* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
+  /* line 85, src/sass/components/basic/buttons/colors/_secondary.scss */
 
   .btn-secondary,
   form .form_action button {
@@ -15496,7 +15515,7 @@ form.search .search button {
     transform: translate(0, -50%);
   }
 
-  /* line 81, src/sass/components/basic/_buttons.scss */
+  /* line 84, src/sass/components/basic/_buttons.scss */
 
   .skip-section {
     display: none;

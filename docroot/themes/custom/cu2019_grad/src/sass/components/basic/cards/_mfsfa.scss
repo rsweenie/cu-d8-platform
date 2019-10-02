@@ -183,4 +183,25 @@
       }
     }
   }
+
+  .hub-resource-field--type-link {
+    a {
+      // @include btn;
+      // @include btn-secondary;
+      &:after {
+        font-family: "cu_icons";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        text-decoration: none;
+        text-transform: none;
+        content: "\E01C";
+        font-size: 1.3em;
+        transform: translate(0.2em,0.2em);
+        display: inline-block;
+      }
+    }
+  }
 }
