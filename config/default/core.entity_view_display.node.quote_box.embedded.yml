@@ -1,0 +1,89 @@
+uuid: afb6c457-41b7-4a00-8987-26f4f1e265f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.embedded
+    - field.field.node.quote_box.field_name_person
+    - field.field.node.quote_box.field_quote_box_affiliation
+    - field.field.node.quote_box.field_quote_box_photo
+    - field.field.node.quote_box.field_quote_box_quote_text
+    - field.field.node.quote_box.field_quote_box_quotes
+    - field.field.node.quote_box.field_quote_p_link
+    - node.type.quote_box
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - name
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  layout_builder:
+    allow_custom: false
+    enabled: false
+_core:
+  default_config_hash: C2S6LP16STTJgqW4v8sU8gXsHMbGcjbKZheD0elmomo
+id: node.quote_box.embedded
+targetEntityType: node
+bundle: quote_box
+mode: embedded
+content:
+  field_name_person:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      markup: ''
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_quote_box_affiliation:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_quote_box_photo:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: quote_box_image
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_quote_box_quote_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_quote_p_link:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_quote_box_quotes: true
+  links: true
+  private: true
+  scheduled_publication: true
+  search_api_excerpt: true

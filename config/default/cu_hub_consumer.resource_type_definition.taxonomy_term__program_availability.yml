@@ -50,6 +50,9 @@ fields:
   path:
     type: hub_unknown
     multiple: false
+  field_term_tooltip:
+    type: string_long
+    multiple: false
   vid:
     type: hub_resource
     hub_type: taxonomy_vocabulary

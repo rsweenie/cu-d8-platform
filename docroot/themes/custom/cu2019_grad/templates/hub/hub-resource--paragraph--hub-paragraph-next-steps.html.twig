@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+
+{% if content %}
+<article{{ attributes.addClass(classes) }}>
+    {{ content.field_hub_next_step_icon }}
+    {{ content.field_hub_next_step_link }}
+</article>
+{% endif %}

@@ -5,6 +5,7 @@ module:
   allowed_formats: 0
   anchor_link: 0
   auto_entitylabel: 0
+  better_exposed_filters: 0
   blazy: 0
   block: 0
   block_aria_landmark_roles: 0
@@ -13,7 +14,6 @@ module:
   captcha: 0
   cer: 0
   ckeditor: 0
-  ckeditor_markdown: 0
   coffee: 0
   config: 0
   config_filter: 0
@@ -25,15 +25,12 @@ module:
   contact_storage: 0
   content_browser: 0
   content_moderation: 0
-  context: 0
-  context_ui: 0
   contextual: 0
   crop: 0
   csv_serialization: 0
   ctools: 0
   ctools_block: 0
   cu_breadcrumbs: 0
-  cu_data_transform: 0
   cu_entity_embed: 0
   cu_hub_consumer: 0
   cu_noreferrer: 0
@@ -43,6 +40,7 @@ module:
   dblog: 0
   diff: 0
   dropzonejs: 0
+  easy_breadcrumb: 0
   easy_install: 0
   editor: 0
   editor_advanced_link: 0
@@ -116,7 +114,6 @@ module:
   module_filter: 0
   name: 0
   node: 0
-  noreferrer: 0
   openapi: 0
   openapi_ui: 0
   openapi_ui_redoc: 0

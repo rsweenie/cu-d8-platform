@@ -130,13 +130,12 @@ content:
     type: basic_string
     region: content
   field_hub_degree_next_steps:
-    type: entity_reference_revisions_entity_view
     weight: 18
     label: above
     settings:
-      view_mode: default
-      link: ''
+      link: true
     third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_hub_degree_other_programs:
     weight: 16
