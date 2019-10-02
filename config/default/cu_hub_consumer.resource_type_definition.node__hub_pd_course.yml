@@ -1,0 +1,71 @@
+uuid: 7d386404-2009-46b7-8124-2948e1cf3e3f
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_pd_course
+type_id: node--hub_pd_course
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  title:
+    type: string_long
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag:
+    type: hub_unknown
+    multiple: false
+  metatag_normalized:
+    type: metatags
+    multiple: false
+  path:
+    type: hub_unknown
+    multiple: false
+  body:
+    type: hub_text_long
+    multiple: false
+  field_hub_path_alias:
+    type: string_long
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type
+    multiple: false
+  field_hub_pd_course_dates:
+    type: hub_resource
+    hub_type: node
+    multiple: true
+  field_hub_pd_course_hero_image:
+    type: hub_resource
+    hub_type: media
+    multiple: false
+  field_hub_pd_course_next_steps:
+    type: hub_resource
+    hub_type: node
+    multiple: false
+  field_hub_pd_course_program:
+    type: hub_resource
+    hub_type: node
+    multiple: false
+  field_hub_pd_related_degrees:
+    type: hub_resource
+    hub_type: node
+    multiple: true
+  field_hub_site:
+    type: hub_resource
+    hub_type: node
+    multiple: false

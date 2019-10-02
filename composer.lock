@@ -4257,7 +4257,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Undefined index: value in BetterExposedFilters->buildOptionsForm() | https://www.drupal.org/project/better_exposed_filters/issues/3012046": "https://www.drupal.org/files/issues/2018-12-05/better_exposed_filters_fix_undefined_value-3012046-5.patch"
+                    "Undefined index: value in BetterExposedFilters->buildOptionsForm() | https://www.drupal.org/project/better_exposed_filters/issues/3012046": "https://www.drupal.org/files/issues/2018-12-05/better_exposed_filters_fix_undefined_value-3012046-5.patch",
+                    "Undefined index on on slider_options | https://www.drupal.org/project/better_exposed_filters/issues/3084325": "https://www.drupal.org/files/issues/2019-09-27/undefined-index-slider-options-3084325-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

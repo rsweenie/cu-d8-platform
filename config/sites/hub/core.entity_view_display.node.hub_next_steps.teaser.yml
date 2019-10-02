@@ -1,16 +1,16 @@
-uuid: 5268a3f9-7838-426c-95e5-cbb133712e26
+uuid: da2d4bdd-a9e9-4ffe-97c0-159f87918988
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.hub_next_step
+    - node.type.hub_next_steps
   module:
     - private_content
     - user
-id: node.hub_next_step.teaser
+id: node.hub_next_steps.teaser
 targetEntityType: node
-bundle: hub_next_step
+bundle: hub_next_steps
 mode: teaser
 content:
   links:
