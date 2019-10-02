@@ -1,0 +1,14 @@
+uuid: 9199ef9a-20c3-47da-acd8-464dc96b6a74
+langcode: en
+status: true
+dependencies: {  }
+id: news
+label: News
+description: ''
+source: 'node:hub_news'
+source_configuration:
+  source_field: hub_uuid
+field_map:
+  field_hub_news_date: field_news_date
+  field_hub_news_featured: field_featured
+  field_hub_news_type: field_news_type

@@ -277,8 +277,15 @@ class Resource implements ResourceInterface {
   /**
    * {@inheritdoc}
    */
+  public function getString() {
+    return $this->getResourceType()->getString($this);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getFieldFriendlyValue() {
-    return ['value' => $this];
+    return $this->getResourceType()->getFieldFriendlyValue($this);
   }
 
   /**

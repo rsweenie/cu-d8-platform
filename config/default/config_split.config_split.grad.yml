@@ -109,7 +109,6 @@ graylist:
   - core.entity_view_display.menu_link_content.main.default
   - core.entity_view_display.menu_link_content.main.tier1
   - core.entity_view_mode.menu_link_content.tier1
-  - cu_breadcrumbs.settings
   - field.field.menu_link_content.main.field_mainmenu_feat_content
   - field.field.menu_link_content.main.field_mainmenu_feat_link
   - field.storage.menu_link_content.field_mainmenu_feat_content
@@ -117,15 +116,10 @@ graylist:
   - lightning_core.versions
   - paragraphs.paragraphs_type.full_width_photo
   - search_api.index.content
-  - system.file
-  - system.site
-  - system.theme
-  - system.theme.global
   - views.view.search
   - 'block.block.*'
   - 'views.view.*'
   - 'search_api.*'
-  - 'system.*'
   - 'user.role.*'
   - 'core.entity_view_display.hub_reference.*'
 graylist_dependents: true

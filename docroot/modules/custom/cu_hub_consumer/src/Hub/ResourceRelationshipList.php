@@ -16,16 +16,16 @@ use Drupal\cu_hub_consumer\Hub\ResourceInterface;
 class ResourceRelationshipList implements ResourceRelationshipListInterface {
 
   /**
-   * Numerically indexed array of field items.
+   * Numerically indexed array of resource items.
    *
-   * @var \Drupal\cu_hub_consumer\Hub\ResourceFieldItemInterface[]
+   * @var \Drupal\cu_hub_consumer\Hub\ResourceInterface[]
    */
   protected $list = array();
 
   /**
    * The resource object that contains this list.
    *
-   * @var \Drupal\cu_hub_consumer\Hub\ResourceFieldItemInterface[]
+   * @var \Drupal\cu_hub_consumer\Hub\ResourceInterface[]
    */
   protected $parent;
 

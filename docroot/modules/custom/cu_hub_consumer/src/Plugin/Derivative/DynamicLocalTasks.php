@@ -62,24 +62,19 @@ class DynamicLocalTasks extends DeriverBase implements ContainerDeriverInterface
    * {@inheritdoc}
    */
   public function getDerivativeDefinitions($base_plugin_definition) {
-    // Provide an edit_form task if standalone media URLs are enabled.
     $this->derivatives["entity.hub_reference.canonical"] = [
       'route_name' => "entity.hub_reference.canonical",
-      'title' => $this->t('Edit'),
+      'title' => $this->t('View'),
       'base_route' => "entity.hub_reference.canonical",
       'weight' => 1,
     ] + $base_plugin_definition;
 
-    if ($this->config->get('standalone_url')) {
-      $this->derivatives["entity.hub_reference.canonical"]['title'] = $this->t('View');
-
-      $this->derivatives["entity.hub_reference.edit_form"] = [
-        'route_name' => "entity.hub_reference.edit_form",
-        'title' => $this->t('Edit'),
-        'base_route' => 'entity.hub_reference.canonical',
-        'weight' => 2,
-      ] + $base_plugin_definition;
-    }
+    $this->derivatives["entity.hub_reference.edit_form"] = [
+      'route_name' => "entity.hub_reference.edit_form",
+      'title' => $this->t('Edit'),
+      'base_route' => 'entity.hub_reference.canonical',
+      'weight' => 2,
+    ] + $base_plugin_definition;
 
     $this->derivatives["entity.hub_reference.refresh_form"] = [
       'route_name' => "entity.hub_reference.refresh_form",
