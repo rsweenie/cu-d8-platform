@@ -1,0 +1,22 @@
+uuid: 2fc83111-7785-4199-9bb3-79de3c4625ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_next_steps
+id: node.hub_next_steps.promote
+field_name: promote
+entity_type: node
+bundle: hub_next_steps
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
