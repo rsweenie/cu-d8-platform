@@ -167,8 +167,7 @@ services:
         - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/tests/backstopjs"
         - (cd ${TUGBOAT_ROOT}/tests/backstopjs/; ./backstop-test.sh)
         # Just in case we need to log in as admin
-        - drush -r "${DOCROOT}" uli 
-        
+        - drush -r "${DOCROOT}" uli       
 
 
   # What to call the service hosting MySQL. This name also acts as the
