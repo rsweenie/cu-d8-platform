@@ -19,11 +19,6 @@ use Drupal\Core\Plugin\PluginFormInterface;
  *     "right" = {
  *       "label" = @Translation("Right sidebar")
  *     }
- *   },
- *   icon_map = {
- *     "main",
- *     "main",
- *     "right"
  *   }
  * )
  */
