@@ -13293,6 +13293,44 @@ form.search .search button {
     padding-left: 3.2rem;
   }
 
+  /* line 21, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content,
+  a.card.mfsfa .content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 1.5rem;
+  }
+
+  /* line 43, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a,
+  a.card.mfsfa .content a {
+    padding: 0;
+    display: none;
+  }
+
+  /* line 89, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .type,
+  a.card.mfsfa .type {
+    font-size: 1.8rem;
+    padding: 1.2rem;
+  }
+
+  /* line 115, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa h3:after,
+  a.card.mfsfa h3:after {
+    width: 5.9rem;
+    height: 0.5rem;
+    bottom: -1rem;
+  }
+
   /* line 107, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3,
@@ -13305,6 +13343,43 @@ form.search .search button {
   .card.mfsfa .subtitle,
   a.card.mfsfa .subtitle {
     font-size: 2rem;
+  }
+
+  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .body,
+  a.card.mfsfa .body {
+    color: #fff;
+    padding: 0;
+    display: none;
+  }
+
+  /* line 171, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover > a:after,
+  .card.mfsfa:hover > span:after,
+  a.card.mfsfa:hover > a:after,
+  a.card.mfsfa:hover > span:after {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
+    background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
+  }
+
+  /* line 176, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover .body,
+  .card.mfsfa:hover .content a,
+  a.card.mfsfa:hover .body,
+  a.card.mfsfa:hover .content a {
+    display: block;
+  }
+
+  /* line 181, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover .content,
+  a.card.mfsfa:hover .content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   /* line 25, src/sass/components/basic/cards/_copy.scss */
@@ -14380,81 +14455,6 @@ form.search .search button {
   .card.fw_photo .content > div,
   a.card.fw_photo .content > div {
     width: 83.33333%;
-  }
-
-  /* line 21, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .content,
-  a.card.mfsfa .content {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    padding: 1.5rem;
-  }
-
-  /* line 43, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .content a,
-  a.card.mfsfa .content a {
-    padding: 0;
-    display: none;
-  }
-
-  /* line 89, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .type,
-  a.card.mfsfa .type {
-    font-size: 1.8rem;
-    padding: 1.2rem;
-  }
-
-  /* line 115, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa h3:after,
-  a.card.mfsfa h3:after {
-    width: 5.9rem;
-    height: 0.5rem;
-    bottom: -1rem;
-  }
-
-  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .body,
-  a.card.mfsfa .body {
-    color: #fff;
-    padding: 0;
-    display: none;
-  }
-
-  /* line 171, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa:hover > a:after,
-  .card.mfsfa:hover > span:after,
-  a.card.mfsfa:hover > a:after,
-  a.card.mfsfa:hover > span:after {
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
-    background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
-  }
-
-  /* line 176, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa:hover .body,
-  .card.mfsfa:hover .content a,
-  a.card.mfsfa:hover .body,
-  a.card.mfsfa:hover .content a {
-    display: block;
-  }
-
-  /* line 181, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa:hover .content,
-  a.card.mfsfa:hover .content {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 
   /* line 25, src/sass/components/basic/cards/_copy.scss */
@@ -16844,28 +16844,6 @@ form.search .search button {
   }
 }
 
-@media screen and (max-width: 991.9px) {
-  /* line 64, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .content a span:last-child,
-  a.card.mfsfa .content a span:last-child {
-    color: #212322;
-    opacity: .3;
-  }
-
-  /* line 77, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .title,
-  a.card.mfsfa .title {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
-}
-
 @media screen and (max-width: 767.9px) {
   /* line 72, src/sass/structure/_footer.scss */
 
@@ -16909,6 +16887,26 @@ form.search .search button {
   .card.img-side .element .img_vid,
   a.card.img-side .element .img_vid {
     margin: 0 -2.5rem 2.5rem;
+  }
+
+  /* line 64, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a span:last-child,
+  a.card.mfsfa .content a span:last-child {
+    color: #212322;
+    opacity: .3;
+  }
+
+  /* line 77, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .title,
+  a.card.mfsfa .title {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 
   /* line 65, src/sass/components/basic/_facts.scss */
