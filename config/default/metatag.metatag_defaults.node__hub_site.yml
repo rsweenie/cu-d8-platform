@@ -1,0 +1,8 @@
+uuid: f816c85c-f1df-48f2-83b6-d933018bce87
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_site
+label: 'Content: Hub: Website'
+tags:
+  canonical_url: '[node:field_hub_site_base_uri:uri]'

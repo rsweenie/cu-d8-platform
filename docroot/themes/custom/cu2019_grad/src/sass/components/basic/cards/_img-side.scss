@@ -5,7 +5,7 @@
 \*  --------------------------------------------------------------------------  */
 &.img-side {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    @include flex(space-between, stretch, stretch, column-reverse nowrap);
+    @include flex(space-between, stretch, stretch, column nowrap);
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
@@ -20,6 +20,10 @@
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        .contextual {
+            display: none;
+        }
     }
 
     > div {
@@ -70,13 +74,17 @@
     @media #{$mediaMd} {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         align-content: center;
-        align-items: center;
+        align-items: flex-start;
         flex-flow: row nowrap;
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+        .style-left & {
+            flex-flow: row-reverse nowrap;
+        }
 
         > a {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
@@ -205,4 +213,6 @@
             margin-top: 1em;
         }
     }
+
+    @import '_featured-element';
 }

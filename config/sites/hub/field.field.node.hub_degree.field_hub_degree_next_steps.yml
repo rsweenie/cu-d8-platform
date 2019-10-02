@@ -1,0 +1,28 @@
+uuid: 65357fa7-53da-457b-9fd1-9b1788d69db4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_next_steps
+    - node.type.hub_degree
+    - node.type.hub_next_steps
+id: node.hub_degree.field_hub_degree_next_steps
+field_name: field_hub_degree_next_steps
+entity_type: node
+bundle: hub_degree
+label: 'Next Steps'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_next_steps: hub_next_steps
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

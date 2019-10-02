@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'PD Course Date'
+name: 'Hub: PD Course Date'
 type: hub_pd_course_date
 description: 'Course dates to use with PD Course content.'
 help: ''
