@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4dd09bf853ff7a0973feaa3e4f985f03",
+    "content-hash": "3b47efea1cbbea65d7b9497a73ec6e6a",
     "packages": [
         {
             "name": "acquia/acsf-tools",
@@ -3463,7 +3463,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.59",
-                    "datestamp": "1566389287",
+                    "datestamp": "1564571285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3506,6 +3506,10 @@
                     "homepage": "https://www.drupal.org/user/3603140"
                 },
                 {
+                    "name": "lcatlett",
+                    "homepage": "https://www.drupal.org/user/855628"
+                },
+                {
                     "name": "nagba",
                     "homepage": "https://www.drupal.org/user/21231"
                 },
@@ -3538,7 +3542,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.59",
-                    "datestamp": "1566389287",
+                    "datestamp": "1564571285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3573,6 +3577,10 @@
                 {
                     "name": "glitchinfinity",
                     "homepage": "https://www.drupal.org/user/3603140"
+                },
+                {
+                    "name": "lcatlett",
+                    "homepage": "https://www.drupal.org/user/855628"
                 },
                 {
                     "name": "nagba",
@@ -3608,7 +3616,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.59",
-                    "datestamp": "1566389287",
+                    "datestamp": "1564571285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3643,6 +3651,10 @@
                 {
                     "name": "glitchinfinity",
                     "homepage": "https://www.drupal.org/user/3603140"
+                },
+                {
+                    "name": "lcatlett",
+                    "homepage": "https://www.drupal.org/user/855628"
                 },
                 {
                     "name": "nagba",
@@ -3678,7 +3690,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.59",
-                    "datestamp": "1566389287",
+                    "datestamp": "1564571285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3713,6 +3725,10 @@
                 {
                     "name": "glitchinfinity",
                     "homepage": "https://www.drupal.org/user/3603140"
+                },
+                {
+                    "name": "lcatlett",
+                    "homepage": "https://www.drupal.org/user/855628"
                 },
                 {
                     "name": "nagba",
@@ -3747,7 +3763,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.59",
-                    "datestamp": "1566389287",
+                    "datestamp": "1564571285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3782,6 +3798,10 @@
                 {
                     "name": "glitchinfinity",
                     "homepage": "https://www.drupal.org/user/3603140"
+                },
+                {
+                    "name": "lcatlett",
+                    "homepage": "https://www.drupal.org/user/855628"
                 },
                 {
                     "name": "nagba",
@@ -6101,7 +6121,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.7",
-                    "datestamp": "1565734688",
+                    "datestamp": "1555098188",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6326,7 +6346,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-alpha3",
-                    "datestamp": "1555407785",
+                    "datestamp": "1513265285",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -8252,7 +8272,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.8",
-                    "datestamp": "1565730484",
+                    "datestamp": "1560872886",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8890,6 +8910,9 @@
                     "drupal/panelizer": {
                         "2778565 - Multilingual support for Panelizer": "https://www.drupal.org/files/issues/2018-08-13/panelizer-multilingual-2778565-38.patch"
                     }
+                },
+                "patches_applied": {
+                    "Adds Contexts back for Panelizer Behat tests": "patches/panelizer-contexts-fix.patch"
                 }
             },
             "autoload": {
@@ -9147,7 +9170,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.9",
-                    "datestamp": "1568317385",
+                    "datestamp": "1568049785",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9483,7 +9506,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-alpha2",
-                    "datestamp": "1552577885",
+                    "datestamp": "1507907344",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -9515,7 +9538,7 @@
             "description": "Media entity Twitter provider.",
             "homepage": "https://www.drupal.org/project/media_entity_twitter",
             "support": {
-                "source": "https://git.drupalcode.org/project/media_entity_twitter"
+                "source": "http://cgit.drupalcode.org/media_entity_twitter"
             }
         },
         {
@@ -9810,7 +9833,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.9",
-                    "datestamp": "1567099985",
+                    "datestamp": "1563995941",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
