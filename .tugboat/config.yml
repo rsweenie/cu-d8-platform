@@ -167,8 +167,6 @@ services:
         - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/tests/backstopjs"
         - (cd ${TUGBOAT_ROOT}/tests/backstopjs/; ./backstop-test.sh)
         # Just in case we need to log in as admin
-        - drush -r "${DOCROOT}" uli 
-        - echo $TUGBOAT_SERVICE_URL'sites/default/files/html_report/'
         
 
 
