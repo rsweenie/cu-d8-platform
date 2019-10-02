@@ -19,11 +19,21 @@
 %}
 <article {{ attributes.addClass(classes) }}>
   {% if content %}
+    {% include '@cu2019_grad/components/quote.html.twig' with {
+      'class': 'quote-box',
+      'quote': content.field_quote_box_quote_text,
+      'name': content.field_name_person,
+      'title': '',
+      'area': content.field_quote_box_affiliation
+    } %}
+    {# ,
+    'link': content.field_quote_p_link[0]['#url']
     {{ content.field_quote_box_quote_text }}
     {{ content.field_quote_box_affiliation }}
     {{ content.field_name_person }}
     {{ content.field_quote_p_link }}
     {{ content.field_quote_box_photo }}
     {{ content.field_quote_box_quotes }}
+     #}
   {% endif %}
 </article>
