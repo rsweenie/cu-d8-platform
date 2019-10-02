@@ -1,3 +1,7 @@
+%h100 {
+  height: 100%;
+}
+
 .feat-tiles {
   margin: 0 #{$gutter}rem;
 
@@ -18,6 +22,25 @@
     @media #{$mediaXl} {
       width: 33.3%;
     }
+
+    > .field__item {
+      @extend %h100;
+      > .hub-resource--type-paragraph-quote-ref {
+        @extend %h100;
+        > .field__items {
+          @extend %h100;
+          > .field__item {
+            @extend %h100;
+            > div {
+              @extend %h100;
+              > .hub-resource {
+                @extend %h100;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   img {
@@ -25,6 +48,8 @@
     height: auto;
     display: block;
   }
+
+
 }
 
 .stat_hl_io {

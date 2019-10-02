@@ -4537,18 +4537,19 @@ blockquote {
 /* line 36, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote,
-.cke_editable .embedded-entity blockquote {
+.cke_editable .embedded-entity blockquote,
+blockquote.quote-box {
   color: #002E6D;
   position: relative;
   background: #5D6468;
-  max-width: 425px;
   /*&:before { height: 100%; width: 12px; position: absolute; left: -26px; top: 0; content: ""; background: $primaryXLt; @media  screen and (min-width: 1090px) { width: 19px; left: -54px; transition: all 10s; } }*/
 }
 
 /* line 463, src/sass/base/_mixins.scss */
 
 .copy-block .embedded-entity blockquote:after,
-.cke_editable .embedded-entity blockquote:after {
+.cke_editable .embedded-entity blockquote:after,
+blockquote.quote-box:after {
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
   position: absolute;
@@ -4562,7 +4563,8 @@ blockquote {
 /* line 3, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote a,
-.cke_editable .embedded-entity blockquote a {
+.cke_editable .embedded-entity blockquote a,
+blockquote.quote-box a {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -4571,21 +4573,24 @@ blockquote {
 /* line 8, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote a:hover,
-.cke_editable .embedded-entity blockquote a:hover {
+.cke_editable .embedded-entity blockquote a:hover,
+blockquote.quote-box a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
 /* line 13, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote p,
-.cke_editable .embedded-entity blockquote p {
+.cke_editable .embedded-entity blockquote p,
+blockquote.quote-box p {
   margin-bottom: 1em;
 }
 
 /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner,
-.cke_editable .embedded-entity blockquote .quote-inner {
+.cke_editable .embedded-entity blockquote .quote-inner,
+blockquote.quote-box .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4601,7 +4606,8 @@ blockquote {
 /* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner:before,
-.cke_editable .embedded-entity blockquote .quote-inner:before {
+.cke_editable .embedded-entity blockquote .quote-inner:before,
+blockquote.quote-box .quote-inner:before {
   width: 3.9rem;
   height: 3.9rem;
   font-size: 7rem;
@@ -4621,47 +4627,84 @@ blockquote {
 /* line 80, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
-.cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo {
+.cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
+blockquote.quote-box .quote-inner .field--name-field-quote-box-photo {
   display: none;
 }
 
 /* line 85, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .card .copy-block .embedded-entity blockquote .quote-inner img,
-.card .cke_editable .embedded-entity blockquote .quote-inner img {
+.card .cke_editable .embedded-entity blockquote .quote-inner img,
+.card blockquote.quote-box .quote-inner img {
   width: auto;
   height: auto;
   max-width: 160px;
   max-height: 160px;
 }
 
-/* line 105, src/sass/components/basic/_quotes.scss */
+/* line 44, src/sass/components/basic/_quotes.scss */
 
-blockquote .quote {
-  color: white;
-  line-height: 1.3;
-}
-
-/* line 183, src/sass/components/basic/_quotes.scss */
-
-blockquote .quote > .field__item {
+.copy-block .embedded-entity blockquote .quote,
+.cke_editable .embedded-entity blockquote .quote,
+blockquote.quote-box .quote {
   font-size: 2.2rem;
 }
 
-/* line 189, src/sass/components/basic/_quotes.scss */
+/* line 48, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr,
-.cke_editable .embedded-entity blockquote .attr {
+.cke_editable .embedded-entity blockquote .attr,
+blockquote.quote-box .attr {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
 }
 
-/* line 194, src/sass/components/basic/_quotes.scss */
+/* line 53, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
-.cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation {
+.cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
+blockquote.quote-box .attr .field--name-field-quote-box-affiliation {
   font-weight: 400;
+}
+
+/* line 79, src/sass/components/basic/_quotes.scss */
+
+.copy-block .embedded-entity blockquote,
+.cke_editable .embedded-entity blockquote {
+  max-width: 425px;
+}
+
+/* line 84, src/sass/components/basic/_quotes.scss */
+
+blockquote.quote-box {
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 89, src/sass/components/basic/_quotes.scss */
+
+blockquote.quote-box .quote-inner {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 148, src/sass/components/basic/_quotes.scss */
+
+blockquote .quote {
+  color: white;
+  line-height: 1.3;
 }
 
 /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
@@ -5115,17 +5158,28 @@ blockquote .tooltip-trigger {
 
 /* line 1, src/sass/components/basic/_feat-tiles.scss */
 
+.feat-tiles > div > .field__item,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource {
+  height: 100%;
+}
+
+/* line 5, src/sass/components/basic/_feat-tiles.scss */
+
 .feat-tiles {
   margin: 0 2.5rem;
 }
 
-/* line 9, src/sass/components/basic/_feat-tiles.scss */
+/* line 13, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles > div {
   margin: 1.6rem 0;
 }
 
-/* line 23, src/sass/components/basic/_feat-tiles.scss */
+/* line 46, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles img {
   width: 100%;
@@ -5133,7 +5187,7 @@ blockquote .tooltip-trigger {
   display: block;
 }
 
-/* line 30, src/sass/components/basic/_feat-tiles.scss */
+/* line 55, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io {
   position: relative;
@@ -5152,7 +5206,7 @@ blockquote .tooltip-trigger {
   pointer-events: none;
 }
 
-/* line 34, src/sass/components/basic/_feat-tiles.scss */
+/* line 59, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io:before {
   width: 1.1rem;
@@ -5165,7 +5219,7 @@ blockquote .tooltip-trigger {
   z-index: 10;
 }
 
-/* line 45, src/sass/components/basic/_feat-tiles.scss */
+/* line 70, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -13478,14 +13532,16 @@ form.search .search button {
   /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
   .copy-block .embedded-entity blockquote .quote-inner,
-  .cke_editable .embedded-entity blockquote .quote-inner {
+  .cke_editable .embedded-entity blockquote .quote-inner,
+  blockquote.quote-box .quote-inner {
     padding: 10rem 4.2rem 4.6rem;
   }
 
   /* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
   .copy-block .embedded-entity blockquote .quote-inner:before,
-  .cke_editable .embedded-entity blockquote .quote-inner:before {
+  .cke_editable .embedded-entity blockquote .quote-inner:before,
+  blockquote.quote-box .quote-inner:before {
     width: 5.9rem;
     height: 5.9rem;
     font-size: 10.5rem;
@@ -13660,7 +13716,7 @@ form.search .search button {
     border-left: 1px solid #ECF0F3;
   }
 
-  /* line 1, src/sass/components/basic/_feat-tiles.scss */
+  /* line 5, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles {
     display: -webkit-box;
@@ -13673,7 +13729,7 @@ form.search .search button {
     margin: -0.5rem;
   }
 
-  /* line 9, src/sass/components/basic/_feat-tiles.scss */
+  /* line 13, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
     width: 50%;
@@ -16154,7 +16210,7 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 9, src/sass/components/basic/_feat-tiles.scss */
+  /* line 13, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
     width: 33.3%;
@@ -16882,9 +16938,16 @@ form.search .search button {
   /* line 36, src/sass/components/basic/_quotes.scss */
 
   .copy-block .embedded-entity blockquote,
-  .cke_editable .embedded-entity blockquote {
+  .cke_editable .embedded-entity blockquote,
+  blockquote.quote-box {
     margin-left: -2.5rem;
     margin-right: -2.5rem;
+  }
+
+  /* line 96, src/sass/components/basic/_quotes.scss */
+
+  .feat-tiles blockquote.quote-box {
+    margin: 0;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
@@ -16959,8 +17022,15 @@ form.search .search button {
   /* line 36, src/sass/components/basic/_quotes.scss */
 
   .copy-block .embedded-entity blockquote,
-  .cke_editable .embedded-entity blockquote {
+  .cke_editable .embedded-entity blockquote,
+  blockquote.quote-box {
     margin: 0 -2.5rem 1.5rem;
+  }
+
+  /* line 96, src/sass/components/basic/_quotes.scss */
+
+  .feat-tiles blockquote.quote-box {
+    margin: 0;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
