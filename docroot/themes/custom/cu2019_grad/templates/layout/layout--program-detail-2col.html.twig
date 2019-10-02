@@ -22,12 +22,11 @@
       </div>
 
       <div class="col-xs-12 col-md-5 col-lg-4">
-        pickles???
+        {% if settings.sidebar_title %}
+          <h2>{{ settings.sidebar_title }}</h2>
+        {% endif %}
         {% if content.right %}
           <div {{ region_attributes.right.addClass('layout__region', 'layout__region--right', settings.sidebar_classes) }}>
-            {% if settings.sidebar_title %}
-              <h2>{{ settings.sidebar_title }}</h2>
-            {% endif %}
             {{ content.right }}
           </div>
         {% endif %}
