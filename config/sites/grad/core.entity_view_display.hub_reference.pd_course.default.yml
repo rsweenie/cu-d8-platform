@@ -1,0 +1,40 @@
+uuid: cbb6ff07-b517-4236-8316-1b401c522c70
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.pd_course
+  module:
+    - layout_builder
+    - layout_library
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+  layout_library:
+    enable: false
+id: hub_reference.pd_course.default
+targetEntityType: hub_reference
+bundle: pd_course
+mode: default
+content: {  }
+hidden:
+  hub_body: true
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_pd_course_dates: true
+  hub_field_hub_pd_course_hero_image: true
+  hub_field_hub_pd_course_next_steps: true
+  hub_field_hub_pd_course_program: true
+  hub_field_hub_pd_related_degrees: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_metatag: true
+  hub_node_type: true
+  hub_path: true
+  hub_revision_timestamp: true
+  hub_title: true
+  search_api_excerpt: true

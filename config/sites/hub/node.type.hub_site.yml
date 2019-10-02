@@ -23,7 +23,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: Website
+name: 'Hub: Website'
 type: hub_site
 description: ''
 help: ''

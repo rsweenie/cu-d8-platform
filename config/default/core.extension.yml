@@ -5,6 +5,7 @@ module:
   allowed_formats: 0
   anchor_link: 0
   auto_entitylabel: 0
+  better_exposed_filters: 0
   blazy: 0
   block: 0
   block_aria_landmark_roles: 0
@@ -13,7 +14,6 @@ module:
   captcha: 0
   cer: 0
   ckeditor: 0
-  ckeditor_markdown: 0
   coffee: 0
   config: 0
   config_filter: 0
@@ -25,23 +25,23 @@ module:
   contact_storage: 0
   content_browser: 0
   content_moderation: 0
-  context: 0
-  context_ui: 0
   contextual: 0
   crop: 0
   csv_serialization: 0
   ctools: 0
   ctools_block: 0
   cu_breadcrumbs: 0
-  cu_data_transform: 0
   cu_entity_embed: 0
   cu_hub_consumer: 0
+  cu_layout_tweaks: 0
   cu_noreferrer: 0
+  cu_slate_forms: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
   diff: 0
   dropzonejs: 0
+  easy_breadcrumb: 0
   easy_install: 0
   editor: 0
   editor_advanced_link: 0
@@ -85,6 +85,7 @@ module:
   layout_builder_restrictions: 0
   layout_builder_st: 0
   layout_discovery: 0
+  layout_library: 0
   libraries: 0
   lightning_api: 0
   lightning_contact_form: 0
@@ -125,6 +126,7 @@ module:
   panels: 0
   panels_ipe: 0
   path: 0
+  pathologic: 0
   plupload: 0
   private_content: 0
   quickedit: 0

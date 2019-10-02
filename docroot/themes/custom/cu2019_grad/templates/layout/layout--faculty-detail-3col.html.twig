@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Displays the 2 column program detail layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <section {{ attributes.addClass('layout--faculty-detail-3col','fac-3col','section') }}>
+    <div class="row">
+      <div class="col-xs-12 col-sm-5 col-md-3">
+        {% if content.left %}
+          <div {{ region_attributes.main.addClass('layout__region', 'layout__region--facleft') }}>
+            {{ content.left }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="col-xs-12 col-sm-7 col-md-5">
+        {% if content.middle %}
+          <div {{ region_attributes.middle.addClass('layout__region', 'layout__region--facmiddle') }}>
+            <div class="copy-block">
+              {{ content.middle }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="col-xs-12 col-md-4">
+        {% if content.right %}
+          <div {{ region_attributes.right.addClass('layout__region', 'layout__region--facright') }}>
+            <div class="fac_rail">
+              {{ content.right }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}

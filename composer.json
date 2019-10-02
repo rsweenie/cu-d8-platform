@@ -23,13 +23,13 @@
         "drupal/allowed_formats": "^1.1",
         "drupal/anchor_link": "^1.6",
         "drupal/auto_entitylabel": "^2.1@beta",
+        "drupal/better_exposed_filters": "^3.0@alpha",
         "drupal/block_aria_landmark_roles": "^1.3",
         "drupal/bootstrap": "3.16",
         "drupal/cer": "^4.0@alpha",
         "drupal/ckeditor_markdown": "^1.0",
         "drupal/coffee": "^1.0@beta",
         "drupal/cog": "^1.0.0",
-        "drupal/conditional_fields": "^1.0@alpha",
         "drupal/config_ignore": "^2.1",
         "drupal/config_split": "^1.3",
         "drupal/content_browser": "^1.0@alpha",
@@ -37,13 +37,12 @@
         "drupal/core": "^8.7",
         "drupal/decoupled_router": "^1.7",
         "drupal/devel": "^2.0.0",
-        "drupal/disable_messages": "^1.1",
+        "drupal/easy_breadcrumb": "^1.12",
         "drupal/easy_install": "^10.1",
         "drupal/editor_advanced_link": "^1.4",
         "drupal/entity_browser": "^2.0",
         "drupal/entity_embed": "1.0.0-beta2",
         "drupal/entity_embed_link": "^1.0",
-        "drupal/entity_embed_linkit": "^1.0@beta",
         "drupal/eva": "^2.0",
         "drupal/externalauth": "^1.1",
         "drupal/features": "^3.7.0",
@@ -57,7 +56,6 @@
         "drupal/gtranslate": "^1.13",
         "drupal/honeypot": "^1.27",
         "drupal/image_enhanced": "^1.0",
-        "drupal/image_style_quality": "^1.3",
         "drupal/imagecache_external": "^1.1",
         "drupal/imagemagick": "^2.3",
         "drupal/inline_entity_form": "^1.0",
@@ -67,11 +65,11 @@
         "drupal/lightning_core": "^4.0",
         "drupal/lightning_layout": "^2.1",
         "drupal/link_attributes": "^1.9",
+        "drupal/linkit": "^4.3",
         "drupal/mailsystem": "^4.1",
         "drupal/memcache": "2.0-alpha7",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
-        "drupal/menu_breadcrumb": "^1.5",
         "drupal/menu_item_extras": "^2.6",
         "drupal/mimemail": "^1.0@alpha",
         "drupal/module_filter": "^3.1",
@@ -82,6 +80,7 @@
         "drupal/panels": "^4.3",
         "drupal/paragraphs": "^1.3",
         "drupal/pathauto": "^1.2",
+        "drupal/pathologic": "^1.0@alpha",
         "drupal/plupload": "^1.0@beta",
         "drupal/private": "^2.0@alpha",
         "drupal/private_content-private_content": "^2.0@beta",
@@ -167,7 +166,8 @@
                 "Metadata Generator null plugin id": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
                 "Santize file names on upload": "https://www.drupal.org/files/issues/2019-05-04/2492171-285.patch",
                 "Call to a member function transformDimensions() on null in template_preprocess | https://www.drupal.org/project/drupal/issues/2957368": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch",
-                "Layout builder doesn't support bundle computed field | https://www.drupal.org/project/drupal/issues/3034979": "https://www.drupal.org/files/issues/2019-02-22/layoutbuilder-bundlecomputedfieldsfix-3034979-1-8.7x.patch"
+                "Layout builder doesn't support bundle computed field | https://www.drupal.org/project/drupal/issues/3034979": "https://www.drupal.org/files/issues/2019-02-22/layoutbuilder-bundlecomputedfieldsfix-3034979-1-8.7x.patch",
+                "Generalize TaxonomyIndexTid filter to be available for all entity reference fields | https://www.drupal.org/node/2429699": "https://www.drupal.org/files/issues/2019-09-13/generic_entityreference_filter_2429699-206-reroll-8.7.x.patch"
             },
             "drupal/panels": {
                 "bootstrap Warning: array_search() expects parameter": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
@@ -180,8 +180,11 @@
             },
             "drupal/menu_block": {
                 "Surpress regular system menu in Layout Builder | https://www.drupal.org/project/menu_block/issues/3062278": "https://www.drupal.org/files/issues/2019-06-17/3062278-hide-system-menus.patch"
+            },
+            "drupal/better_exposed_filters": {
+                "Undefined index: value in BetterExposedFilters->buildOptionsForm() | https://www.drupal.org/project/better_exposed_filters/issues/3012046": "https://www.drupal.org/files/issues/2018-12-05/better_exposed_filters_fix_undefined_value-3012046-5.patch",
+                "Undefined index on on slider_options | https://www.drupal.org/project/better_exposed_filters/issues/3084325" : "https://www.drupal.org/files/issues/2019-09-27/undefined-index-slider-options-3084325-2.patch"
             }
-
         },
         "installer-types": [
             "bower-asset",

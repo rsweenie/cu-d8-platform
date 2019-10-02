@@ -17,7 +17,7 @@
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
     @media #{$mediaMd} {
-        background: $white;
+        //background: $white;
         padding: #{$gutter * 1.5}rem 0;
     }
 
@@ -90,6 +90,15 @@
       }
     }
 
+    &.layout--program-detail-2col {
+      padding-bottom: 0;
+    }
+
+    &.layout--generic-content {
+      padding: 0;
+    }
+
+
     @media #{$mediaToggleHeader} {
         &.ptb {
             padding: #{$gutter * 2}rem 0;
@@ -112,5 +121,15 @@
     @import 'section-layouts/_home';
     @import 'section-layouts/_int';
     @import 'section-layouts/_prg';
+    @import 'section-layouts/_faculty';
+
+    @import 'section-backgrounds/_feat-tiles';
 }
 @import 'section-layouts/_grid';
+
+.layout--onecol {
+  background-image: url(../../img/feature_slash_bg.png);
+  background-repeat: repeat-y;
+  background-size: 75%;
+  background-position: 98rem;
+}

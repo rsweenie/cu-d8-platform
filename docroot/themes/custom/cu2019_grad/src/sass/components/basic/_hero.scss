@@ -7,6 +7,9 @@
     using a <header> in the <main id="content"> tag.
 
 \*  --------------------------------------------------------------------------  */
+$triangle: 30px;
+$triangleM: 16px;
+
 .node__content > header,
 .hub-reference > header,
 header.hp_hero {
@@ -23,15 +26,15 @@ header.hp_hero {
     z-index: 120;
 
     &:after {
-      width: 200vh;
-      height: 200vh;
+      width: 150%;
+      height: 100%;
       position: absolute;
       top: 0;
-      right: 0;
+      left: 100%;
       content: "";
       background: rgba($secondary,.65);
       transform-origin: top right;
-      transform: rotate(-45deg);
+      transform: skew(-45deg);
       z-index: 90;
     }
 
@@ -52,15 +55,15 @@ header.hp_hero {
 
     .hero_title {
       width: 100%;
-      position: absolute;
+      //position: absolute;
       left: 0;
       bottom: 42px;
-      background-color: rgba($secondary,.85);
-      padding: 25px 0;
+      background-color: $primary;
+      padding: 62px 0 25px 0;
       z-index: 200;
 
       @media #{$mediaFullHeader} {
-        bottom: 72px;
+        padding: 147px 0 25px 0;
       }
 
       h1 {
@@ -158,14 +161,41 @@ header.hp_hero {
     }
 }
 
+header {
+  > .field,
+  > .block {
+    + .hero_title {
+      position: absolute;
+      left: 0;
+      bottom: 42px;
+      background-color: rgba($secondary,.85);
+      padding: 25px 0;
+
+      @media #{$mediaFullHeader} {
+        bottom: 72px;
+        padding: 25px 0;
+      }
+    }
+  }
+}
+
 header.hp_hero {
   position: relative;
-  margin-bottom: 128px;
+  margin-bottom: 128px - $triangle;
 
   @media #{$mediaToggleHeader} {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  &:after {
+    height: calc(100% - #{$triangle});
+
+    @media #{$mediaToggleHeader} {
+      top: 33px;
+      height: calc(100% - #{$triangleM + 33px});
+    }
   }
 }
 
@@ -175,6 +205,7 @@ header.hp_hero {
   width: 100%;
   order: 2;
 
+
   @media #{$mediaFullHeader} {
     position: absolute;
     top: 0;
@@ -183,23 +214,25 @@ header.hp_hero {
   }
 
   > div {
-    @include contentConstrain;
+    max-width: $siteWMx;
+    margin: 0 auto;
 
     > div {
       padding: 25px 16px 16px 16px;
-      background: rgba($secondary,.83);
+      background: rgba($secondary,.87);
       color: $white;
 
       @media #{$mediaFullHeader} {
         max-width: 545px;
         margin: 0 25px;
-        padding: 50px;
+        padding: 50px 40px 50px 50px;
       }
     }
 
     h1 {
-      margin: 0;
+      margin: 0 0 (9 / 50) * 1em 0;
       font-size: 34px;
+      line-height: (47 / 50) * 1em;
 
       @media #{$mediaFullHeader} {
         font-size: 50px;
@@ -269,6 +302,7 @@ header.hp_hero {
   font-family: $headingFF;
   line-height: 1.2em;
   z-index: 95;
+  text-align: right;
 
   @media #{$mediaToggleHeader} {
     display: none;
@@ -276,16 +310,28 @@ header.hp_hero {
 
   a {
     color: $white;
+
+    @include hover {
+      color: rgba($white,.7);
+    }
   }
 }
 
 
 .hp_hero_header {
   position: relative;
-  background: $primary;
+  margin-bottom: $triangleM;
   order: 3;
 
+  @media #{$mediaToggleHeader} {
+    background: $primary;
+    z-index: 100;
+    text-align: center;
+  }
+
   @media #{$mediaFullHeader} {
+    margin-bottom: $triangle;
+
     &:before {
       width: 100vw;
       height: 58px;
@@ -296,12 +342,25 @@ header.hp_hero {
       background: rgba($primary,.85);
     }
 
+    &:after {
+      width: 100vw;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background: $primary;
+      @supports (mix-blend-mode: screen) {
+        mix-blend-mode: screen;
+      }
+    }
+
     @supports (mix-blend-mode: screen) {
       z-index: 300;
-      mix-blend-mode: screen;
+      //mix-blend-mode: screen;
 
       &:before {
-        background: $primary;
+        //background: $primary;
       }
     }
   }
@@ -314,7 +373,7 @@ header.hp_hero {
 .hp_hero_header_inner {
   position: relative;
   margin: 0;
-  padding: 50px 16px;
+  padding: 26px 16px;
   font-size: 34px;
   color: $white;
   z-index: 200;
@@ -323,12 +382,20 @@ header.hp_hero {
     width: 0;
     height: 0;
     position: absolute;
-    bottom: -30px;
-    left: 115px;
+    bottom: -#{$triangleM};
+    left: 50%;
+    transform: translateX(-50%);
     content: "";
     border-style: solid;
-    border-width: 30px 31px 0 31px;
+    border-width: $triangleM $triangleM 0 $triangleM;
     border-color: $primary transparent transparent transparent;
+
+    @media #{$mediaFullHeader} {
+      border-width: $triangle $triangle 0 $triangle;
+      bottom: -#{$triangle};
+      left: 115px;
+      transform: translateX(0);
+    }
   }
 
   div:last-child {
@@ -340,7 +407,7 @@ header.hp_hero {
 
   @media #{$mediaFullHeader} {
     font-size: 45px;
-    padding: 50px 25px;
+    padding: 50px 25px 50px 75px;
 
     div:last-child {
       font-size: 36px;

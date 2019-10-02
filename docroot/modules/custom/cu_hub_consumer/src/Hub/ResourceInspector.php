@@ -80,8 +80,8 @@ class ResourceInspector {
    *   The time service.
    */
   public function __construct(
-    ConfigFactoryInterface $config_factory, 
-    LoggerInterface $logger, 
+    ConfigFactoryInterface $config_factory,
+    LoggerInterface $logger,
     ClientInterface $hub_client,
     CacheBackendInterface $cache,
     TimeInterface $time
@@ -98,10 +98,12 @@ class ResourceInspector {
    *
    * @param boolean $safe
    *   If TRUE it will capture and log client exceptions rather than emitting an exception.
+   * @param boolean $skip_cache
+   *   If TRUE it will skip the cached version of the resource types.
    * @return void
    */
-  public function getResourceTypes($safe = TRUE) {
-    return $this->hubClient->getEndpoints($safe);
+  public function getResourceTypes($safe=TRUE, $skip_cache=FALSE) {
+    return $this->hubClient->getEndpoints($safe, $skip_cache);
   }
 
   /**
@@ -134,7 +136,7 @@ class ResourceInspector {
       else {
         $this->inspectionInfo[$resource_type_id] = [];
 
-        if ($endpoint = $this->hubClient->getEndpoint($resource_type_id)) {
+        if ($endpoint = $this->hubClient->getEndpoint($resource_type_id, FALSE, $skip_cache)) {
           $response = $this->hubClient->get($endpoint);
           if ($json = Json::decode($response->getBody())) {
             if (!empty($json['data']) && is_array($json['data'])) {
@@ -154,7 +156,7 @@ class ResourceInspector {
           //$this->entityTypeId . '_values',
           'entity_field_info',
         ];
-    
+
         // $max_age = Cache::PERMANENT;
         $max_age = 10;
         $expire = $max_age === Cache::PERMANENT
@@ -214,23 +216,23 @@ class ResourceInspector {
     foreach ($relationships as $relationship_name => $relationship_info) {
       if (!empty($relationship_info['data']) && is_array($relationship_info['data'])) {
         if ($this->isMultiple($relationship_info['data'])) {
-          $inspection_info[$relationship_name] = [
-            'type' => 'hub_resource',
-            'hub_type' => $relationship_info['data'][0]['type'],
-            'multiple' => TRUE,
-          ];
-
-          $this->inspect($relationship_info['data'][0]['type'], $skip_cache);
+          $resource_data = $relationship_info['data'][0];
+          $multiple = TRUE;
         }
         else {
-          $inspection_info[$relationship_name] = [
-            'type' => 'hub_resource',
-            'hub_type' => $relationship_info['data']['type'],
-            'multiple' => FALSE,
-          ];
-
-          $this->inspect($relationship_info['data']['type'], $skip_cache);
+          $resource_data = $relationship_info['data'];
+          $multiple = FALSE;
         }
+
+        $resource_type = $resource_data['type'];
+        list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
+        $inspection_info[$relationship_name] = [
+          'type' => 'hub_resource',
+          'hub_type' => $resource_main_type,
+          'multiple' => $multiple,
+        ];
+
+        $this->inspect($resource_type, $skip_cache);
       }
     }
   }
@@ -263,6 +265,11 @@ class ResourceInspector {
     if (is_array($value)) {
       // Is this array associative?
       if ($this->arrayIsAssociative($value)) {
+        // Is this a name field?
+        if (isset($value['given']) && isset($value['family'])) {
+          return 'name';
+        }
+
         // Is this a preprocessed text field?
         if (isset($value['value']) && isset($value['format']) && isset($value['processed'])) {
           return 'hub_text_long';
@@ -273,7 +280,7 @@ class ResourceInspector {
           return 'text_long';
         }
 
-        // Is this a link field?
+        // Is this a uri field?
         if (isset($value['value']) && isset($value['url'])) {
           return 'uri';
         }
@@ -281,6 +288,12 @@ class ResourceInspector {
         // Is this a link field?
         if (isset($value['uri'])) {
           return 'link';
+        }
+
+        // Is this a name field?
+        // keys { title, given, middle, family, generational, credentials }
+        if (array_key_exists('given', $value) && array_key_exists('middle', $value) && array_key_exists('family', $value)) {
+          return 'name';
         }
       }
       // Else, if array is not associative then it's likely a multi-value attribute.
@@ -306,8 +319,9 @@ class ResourceInspector {
    */
   protected function getBetterType($type1, $type2) {
     $specificity = [
-      'hub_resource' => 12,
-      'hub_text_long' => 11,
+      'hub_resource' => 13,
+      'hub_text_long' => 12,
+      'name' => 11,
       'text_long' => 10,
       'text' => 9,
       'uri' => 8,

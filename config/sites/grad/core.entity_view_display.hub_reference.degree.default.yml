@@ -7,6 +7,7 @@ dependencies:
   module:
     - ctools_block
     - cu_hub_consumer
+    - cu_layout_tweaks
     - datetime
     - layout_builder
     - layout_builder_restrictions
@@ -75,7 +76,9 @@ third_party_settings:
         third_party_settings: {  }
       -
         layout_id: program_detail_2col
-        layout_settings: {  }
+        layout_settings:
+          sidebar_classes: program_rail
+          sidebar_title: 'Program At A Glance'
         components:
           8a5f69ee-2dd4-4f94-bae8-a4670196186c:
             uuid: 8a5f69ee-2dd4-4f94-bae8-a4670196186c
@@ -127,7 +130,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: -9
+            weight: -7
           7524de1a-596c-4a70-adc7-a1076cb39964:
             uuid: 7524de1a-596c-4a70-adc7-a1076cb39964
             region: main
@@ -145,6 +148,45 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 2
+          d398d274-b50f-4513-ab17-394e9d6d0760:
+            uuid: d398d274-b50f-4513-ab17-394e9d6d0760
+            region: right
+            configuration:
+              id: 'field_block:hub_reference:degree:hub_field_hub_degree_app_link'
+              label: 'Hub: field_hub_degree_app_link'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: link
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -6
+          2203dc17-fcaf-49cd-b85f-6ed6296115a2:
+            uuid: 2203dc17-fcaf-49cd-b85f-6ed6296115a2
+            region: right
+            configuration:
+              id: 'field_block:hub_reference:degree:hub_field_hub_degree_adm_rep'
+              label: 'Hub: field_hub_degree_adm_rep'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -5
           677f643b-f56b-42da-b4d3-9ad471b21616:
             uuid: 677f643b-f56b-42da-b4d3-9ad471b21616
             region: right
@@ -162,11 +204,45 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: -8
+          d810b25a-e83f-45d6-9d1b-9d58bcf13f07:
+            uuid: d810b25a-e83f-45d6-9d1b-9d58bcf13f07
+            region: right
+            configuration:
+              id: 'field_block:hub_reference:degree:hub_field_hub_degree_app_deadlines'
+              label: 'Application Deadline'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: hub_text_processed
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -9
         third_party_settings: {  }
       -
         layout_id: program_detail_feat_tiles
         layout_settings: {  }
-        components: {  }
+        components:
+          7e40c8e2-9caf-4389-a20f-4fa0547cc617:
+            uuid: 7e40c8e2-9caf-4389-a20f-4fa0547cc617
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:degree:hub_field_hub_degree_featured_info'
+              label: 'Hub: field_hub_degree_featured_info'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: program_detail_2col
@@ -189,8 +265,8 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
-          e4e58abd-883c-40ba-83a7-59721933e78d:
-            uuid: e4e58abd-883c-40ba-83a7-59721933e78d
+          7c527308-7cfa-4706-a0fb-e399823f61e6:
+            uuid: 7c527308-7cfa-4706-a0fb-e399823f61e6
             region: main
             configuration:
               id: 'field_block:hub_reference:degree:hub_field_hub_degree_details'
@@ -199,13 +275,13 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: hub_text_processed
+                type: hub_resource
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: -10
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: generic_content
@@ -390,6 +466,10 @@ content:
 hidden:
   hub_drupal_internal__nid: true
   hub_drupal_internal__vid: true
+  hub_field_hub_degree_adm_rep: true
+  hub_field_hub_degree_app_deadlines: true
+  hub_field_hub_degree_app_link: true
+  hub_field_hub_degree_featured_info: true
   hub_field_hub_degree_next_steps: true
   hub_langcode: true
   hub_revision_timestamp: true

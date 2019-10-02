@@ -30,6 +30,10 @@
 &.side-nav {
   position: relative;
 
+  @media #{$mediaFullHeader} {
+    width: 18%;
+  }
+
   label,
   ul {
     font-size: 12px;
@@ -40,6 +44,7 @@
   ul {
     margin: 0;
     padding: 0;
+    line-height: 1.2em;
 
     @media #{$mediaToggleHeader} {
       display: none;

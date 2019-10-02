@@ -1,0 +1,21 @@
+uuid: e471d0aa-0bab-46d7-bc12-00b873115718
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.news
+    - field.storage.hub_reference.field_news_date
+  module:
+    - datetime
+id: hub_reference.news.field_news_date
+field_name: field_news_date
+entity_type: hub_reference
+bundle: news
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
