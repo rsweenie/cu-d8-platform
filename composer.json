@@ -182,6 +182,9 @@
             },
             "drupal/better_exposed_filters": {
                 "Undefined index: value in BetterExposedFilters->buildOptionsForm() | https://www.drupal.org/project/better_exposed_filters/issues/3012046": "https://www.drupal.org/files/issues/2018-12-05/better_exposed_filters_fix_undefined_value-3012046-5.patch"
+            },
+            "drupal/lightning_layout": {
+                "Adds Contexts back for Panelizer Behat tests":"patches/panelizer-contexts-fix.patch"
             }
         },
         "installer-types": [
