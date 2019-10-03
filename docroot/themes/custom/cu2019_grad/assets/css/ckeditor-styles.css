@@ -11366,40 +11366,45 @@ nav.jn li + li {
 /* line 15, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h3 {
-  color: #266db3;
-  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.25455em;
+}
+
+/* line 20, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail h3:after {
+  width: 5.5rem;
+  height: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: #6CACE4;
+}
+
+/* line 35, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
   text-transform: uppercase;
-  line-height: 1.2em;
-  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
-
-aside .program_rail h3 {
-  font-size: 1em;
-}
-
-/* line 158, src/sass/components/copy/_headings.scss */
-
-aside .program_rail h3 ~ h4,
-aside .program_rail h3 ~ .h4 {
-  margin-top: 0.5rem;
-}
-
-/* line 55, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 75, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > div {
   position: relative;
   z-index: 10;
 }
 
-/* line 60, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 80, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail ul {
   margin-left: 0;
 }
 
-/* line 64, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 84, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail .field--name-hub-field-hub-degree-title {
   font-size: 1.2rem;
@@ -11408,20 +11413,20 @@ aside .program_rail h3 ~ .h4 {
   letter-spacing: 0.05em;
 }
 
-/* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 89, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep {
   padding: 6rem 0;
   border-top: 1px solid rgba(33, 35, 34, 0.2);
 }
 
-/* line 73, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 93, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep h4 {
   margin-bottom: 0.125em;
 }
 
-/* line 82, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 102, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info {
   display: -webkit-box;
@@ -11434,14 +11439,14 @@ aside .program_rail h3 ~ .h4 {
   margin-top: 2.5rem;
 }
 
-/* line 87, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 107, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:first-child {
   width: 10.2rem;
   margin-right: 1.6rem;
 }
 
-/* line 97, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 117, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child {
   -webkit-box-flex: 1;
@@ -11449,13 +11454,13 @@ aside .program_rail h3 ~ .h4 {
           flex-grow: 1;
 }
 
-/* line 100, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 120, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child .hub-resource-field {
   margin-bottom: 0.31579em;
 }
 
-/* line 106, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 126, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info img {
   width: 100%;
@@ -11463,7 +11468,7 @@ aside .program_rail h3 ~ .h4 {
   display: block;
 }
 
-/* line 113, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 133, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .hub-resource-field--name-field-hub-adm-rep-name {
   text-transform: uppercase;
@@ -14034,10 +14039,16 @@ form.search .search button {
     font-size: 3rem;
   }
 
-  /* line 15, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 20, src/sass/components/feeds-detail/programs/_programs.scss */
 
-  .program_rail h3 {
-    font-size: 2.4rem;
+  .program_rail h3:after {
+    height: 0.8rem;
+  }
+
+  /* line 35, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail h5 {
+    font-size: 1.5rem;
   }
 
   /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
@@ -14046,7 +14057,7 @@ form.search .search button {
     background-color: transparent;
   }
 
-  /* line 30, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail:after {
     width: 100vw;
@@ -14059,19 +14070,19 @@ form.search .search button {
     background: rgba(165, 210, 249, 0.2);
   }
 
-  /* line 64, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 84, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail .field--name-hub-field-hub-degree-title {
     font-size: 1.5rem;
   }
 
-  /* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 89, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep {
     padding: 7rem 0;
   }
 
-  /* line 87, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 107, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep-info > div:first-child {
     width: 17rem;
