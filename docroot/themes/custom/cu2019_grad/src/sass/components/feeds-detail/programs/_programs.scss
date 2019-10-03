@@ -12,8 +12,52 @@
   z-index: 10;
   background: rgba($accent-2XLt,.2);
 
+  @media #{$mediaMdMax} {
+    margin: 0 -#{$gutter}rem;
+    padding: #{$gutter * 2}rem #{$gutter}rem;
+  }
+
+  > .block {
+    margin: 1em 0;
+
+    p,
+    ul {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.block-field-blockhub-referencedegreehub-field-hub-degree-adm-rep {
+      margin-top: 2em;
+    }
+  }
+
   h3 {
-    @include h4;
+    //@include h4;
+    position: relative;
+    padding-bottom: (24 / 55) * 1em;
+
+    &:after {
+      width: 55px;
+      height: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background: $tertiary;
+
+      @media #{$mediaMd} {
+        height: 8px;
+      }
+    }
+  }
+
+  h4 {
+    margin-bottom: (2 / 24) * 1em;
+  }
+
+  h5 {
+    @include h6;
   }
 
   @media #{$mediaMd} {
@@ -66,8 +110,14 @@
   }
 }
 
+.prog_left {
+  @media #{$mediaMd} {
+    margin-right: #{$gutter * 2}rem;
+  }
+}
+
 .admissions-rep {
-  padding: 60px 0;
+  padding: 60px 0 0;
   border-top: 1px solid rgba($black,.2);
 
   h4 {
@@ -75,7 +125,7 @@
   }
 
   @media #{$mediaMd} {
-    padding: 70px 0;
+    padding: 70px 0 7rem - $gutter;
   }
 }
 

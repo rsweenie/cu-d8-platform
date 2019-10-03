@@ -43,6 +43,13 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    {{ content }}
+    {% include '@cu2019_grad/components/button.html.twig' with {
+      'class': 'btn-primary',
+      'url': '#',
+      'title': 'Apply Now',
+      'arrow': 'arrow icon icon-right',
+      'arrowPosition': 'after'
+    } %}
+    {# { content } #}
   {% endblock %}
 </div>
