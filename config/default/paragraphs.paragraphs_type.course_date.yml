@@ -1,0 +1,9 @@
+uuid: 9b78a941-1db7-4fd3-a198-449db53f7b06
+langcode: en
+status: true
+dependencies: {  }
+id: course_date
+label: 'Course Date'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
