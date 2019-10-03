@@ -182,6 +182,9 @@
             },
             "drupal/better_exposed_filters": {
                 "Undefined index: value in BetterExposedFilters->buildOptionsForm() | https://www.drupal.org/project/better_exposed_filters/issues/3012046": "https://www.drupal.org/files/issues/2018-12-05/better_exposed_filters_fix_undefined_value-3012046-5.patch"
+            },
+            "drupal/lightning_layout": {
+                "Adds Contexts back for Panelizer Behat tests":"patches/panelizer-contexts-fix.patch"
             }
         },
         "installer-types": [
@@ -241,6 +244,9 @@
             "Drupal\\Tests\\PHPUnit\\": "tests/phpunit/src/"
         }
     },
+    "scripts-descriptions": {
+        "safe-nuke": "Removes/reinstalls all packages, preserves .lock, and composer cache."
+    },
     "scripts": {
         "post-create-project-cmd": [
             "blt internal:create-project:init-repo"
@@ -250,6 +256,11 @@
             "rm -rf vendor composer.lock docroot/core docroot/modules/contrib docroot/profiles/contrib docroot/themes/contrib",
             "@composer clearcache --ansi",
             "@composer install --ansi"
+        ],
+        "safe-nuke": [
+            "rm -rf vendor docroot/core docroot/modules/contrib docroot/profiles/contrib docroot/themes/contrib",
+            "@composer install --ansi"
         ]
+
     }
 }
