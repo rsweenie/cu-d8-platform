@@ -1,0 +1,60 @@
+uuid: aa3b973e-32ac-4e5b-a90d-f85867bd3c85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_next_steps.field_hub_next_steps_heading
+    - field.field.node.hub_next_steps.field_hub_next_steps_items
+    - node.type.hub_next_steps
+  module:
+    - paragraphs
+id: node.hub_next_steps.default
+targetEntityType: node
+bundle: hub_next_steps
+mode: default
+content:
+  field_hub_next_steps_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hub_next_steps_items:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  private: true
+  promote: true
+  publish_on: true
+  status: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

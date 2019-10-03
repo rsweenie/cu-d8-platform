@@ -25,16 +25,41 @@ blockquote {
     //     padding: #{$gutter * 2}rem;
     // }
 
-    .copy-block &, .cke_editable & {
-      margin-left: 42px;
+    .align-right & {
+        margin-left: 3rem;
+    }
+
+    .align-left & {
+        margin-right: 3rem;
+    }
+
+    .copy-block .embedded-entity &,
+    .cke_editable .embedded-entity &,
+    &.quote-box {
       color: $primary;
       position: relative;
+      background: $gray1;
+      @import 'quotes/direction/_quote-copy';
 
-      @media #{$mediaFullHeader} {
-        margin-left: 96px;
+      .quote {
+          font-size: 22px;
       }
 
-      &:before {
+      .attr {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 2rem;
+
+        .field--name-field-quote-box-affiliation {
+            font-weight: 400;
+        }
+      }
+
+      @media #{$mediaFullHeader} {
+
+      }
+
+      /*&:before {
         height: 100%;
         width: 12px;
         position: absolute;
@@ -47,6 +72,34 @@ blockquote {
           width: 19px;
           left: -54px;
           transition: all 10s;
+        }
+      }*/
+    }
+
+    .copy-block .embedded-entity &,
+    .cke_editable .embedded-entity & {
+      max-width: 425px;
+    }
+
+    &.quote-box {
+      margin-bottom: 0;
+      width: 100%;
+      height: 100%;
+
+      .quote-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .feat-tiles & {
+        @media #{$mediaMdOnly} {
+          margin: 0;
+        }
+
+        @media #{$mediaMdMax} {
+          margin: 0;
         }
       }
     }
@@ -93,84 +146,14 @@ blockquote {
 
 
     .quote {
-        // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        // margin: 0 0 #{$gutter * 2}rem;
-        // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        //
-        // p {
-        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        //     @include position(relative, 0);
-        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        //
-        //     &:first-child {
-        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        //
-        //         &:before {
-        //             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        //             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        //             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        //             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        //             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        //             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        //             content: "\201C";
-        //         }
-        //     }
-        //
-        //     &:last-child {
-        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        //         margin: 0;
-        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        //
-        //         &:after {
-        //             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        //             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        //             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        //             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        //             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        //             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        //             content: "\201D";
-        //         }
-        //     }
-        //
-        //     @media #{$mediaMd} {
-        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        //         font-size: 1.25em;
-        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        //     }
-        //
-        //     @media #{$mediaXl} {
-        //         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        //         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        //         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        //         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        //         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        //         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        //     }
-        // }
+        color: white;
+        line-height: 1.3;
     }
 
     .attr {
+        .copy-block .embedded-entity &, .cke_editable .embedded-entity & {
+
+        }
         // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)

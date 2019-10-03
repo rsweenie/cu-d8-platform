@@ -14,6 +14,12 @@
   @include col;
 }
 
+.no-gutter {
+  @media #{$mediaMd} {
+    padding: 0;
+  }
+}
+
 .row + * {
     margin-top: #{$gutter * 2}rem;
 }

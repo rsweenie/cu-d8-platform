@@ -28,7 +28,7 @@ class HubResourceLinkFormatter extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $resource_obj = $item->value;
+      $resource_obj = $item->resource;
       if ($resource_obj instanceof ResourceInterface) {
         if (isset($resource_obj->metatag_normalized->link_canonical)) {
           // By default use the full URL as the link text.

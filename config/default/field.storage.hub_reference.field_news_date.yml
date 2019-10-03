@@ -1,0 +1,24 @@
+uuid: c2e4e1e0-51a3-4749-bf26-21f51a01c862
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+    - datetime
+    - field_permissions
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: hub_reference.field_news_date
+field_name: field_news_date
+entity_type: hub_reference
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

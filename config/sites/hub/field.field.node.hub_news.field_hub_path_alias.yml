@@ -1,0 +1,19 @@
+uuid: d9d215d2-d6a6-4970-a0eb-d5630c2e4d50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_path_alias
+    - node.type.hub_news
+id: node.hub_news.field_hub_path_alias
+field_name: field_hub_path_alias
+entity_type: node
+bundle: hub_news
+label: 'Path alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
