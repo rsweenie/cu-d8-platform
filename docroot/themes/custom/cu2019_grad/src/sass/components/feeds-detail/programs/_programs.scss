@@ -13,7 +13,27 @@
   background: rgba($accent-2XLt,.2);
 
   h3 {
-    @include h4;
+    //@include h4;
+    position: relative;
+    padding-bottom: (14 / 55) * 1em;
+
+    &:after {
+      width: 55px;
+      height: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background: $tertiary;
+
+      @media #{$mediaMd} {
+        height: 8px;
+      }
+    }
+  }
+
+  h5 {
+    @include h6;
   }
 
   @media #{$mediaMd} {
