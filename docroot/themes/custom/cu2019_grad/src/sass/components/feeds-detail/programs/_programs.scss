@@ -12,6 +12,21 @@
   z-index: 10;
   background: rgba($accent-2XLt,.2);
 
+  > .block {
+    margin: 1em 0;
+
+    p,
+    ul {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.block-field-blockhub-referencedegreehub-field-hub-degree-adm-rep {
+      margin-top: 2em;
+    }
+  }
+
   h3 {
     //@include h4;
     position: relative;
@@ -30,6 +45,10 @@
         height: 8px;
       }
     }
+  }
+
+  h4 {
+    margin-bottom: (2 / 24) * 1em;
   }
 
   h5 {

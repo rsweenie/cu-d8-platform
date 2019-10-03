@@ -114,23 +114,6 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: -10
-          87dc5b25-9c5a-4d3e-9dc7-5ea6f461e470:
-            uuid: 87dc5b25-9c5a-4d3e-9dc7-5ea6f461e470
-            region: right
-            configuration:
-              id: 'field_block:hub_reference:degree:hub_field_hub_degree_availability'
-              label: 'Hub: field_hub_degree_availability'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: hub_resource
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: -7
           7524de1a-596c-4a70-adc7-a1076cb39964:
             uuid: 7524de1a-596c-4a70-adc7-a1076cb39964
             region: main
@@ -192,9 +175,9 @@ third_party_settings:
             region: right
             configuration:
               id: 'field_block:hub_reference:degree:hub_field_hub_degree_requirements'
-              label: 'Hub: field_hub_degree_requirements'
+              label: Requirements
               provider: layout_builder
-              label_display: '0'
+              label_display: visible
               formatter:
                 label: hidden
                 type: hub_text_processed
@@ -203,7 +186,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: -8
+            weight: -7
           d810b25a-e83f-45d6-9d1b-9d58bcf13f07:
             uuid: d810b25a-e83f-45d6-9d1b-9d58bcf13f07
             region: right
@@ -215,6 +198,23 @@ third_party_settings:
               formatter:
                 label: hidden
                 type: hub_text_processed
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -8
+          87dc5b25-9c5a-4d3e-9dc7-5ea6f461e470:
+            uuid: 87dc5b25-9c5a-4d3e-9dc7-5ea6f461e470
+            region: right
+            configuration:
+              id: 'field_block:hub_reference:degree:hub_field_hub_degree_availability'
+              label: 'Hub: field_hub_degree_availability'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:
