@@ -1,0 +1,58 @@
+uuid: 5b7a0cc3-b303-462b-a247-13007c92f567
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.featured_element.field_fel_body
+    - field.field.paragraph.featured_element.field_fel_content
+    - field.field.paragraph.featured_element.field_fel_link
+    - field.field.paragraph.featured_element.field_fel_style
+    - field.field.paragraph.featured_element.field_fel_title
+    - paragraphs.paragraphs_type.featured_element
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.featured_element.default
+targetEntityType: paragraph
+bundle: featured_element
+mode: default
+content:
+  field_fel_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_fel_content:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_fel_link:
+    type: link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_fel_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_fel_style: true
+  search_api_excerpt: true

@@ -1,0 +1,42 @@
+uuid: 24f492db-3b9d-4331-b2aa-720d0f8227ad
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_next_steps
+type_id: node--hub_next_steps
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag:
+    type: hub_unknown
+    multiple: false
+  metatag_normalized:
+    type: metatags
+    multiple: false
+  field_hub_next_steps_heading:
+    type: string_long
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type
+    multiple: false
+  field_hub_next_steps_items:
+    type: hub_resource
+    hub_type: paragraph
+    multiple: true

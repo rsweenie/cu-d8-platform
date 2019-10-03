@@ -47,23 +47,28 @@
   ]
 %}
 {% block paragraph %}
-{{ field_stat_highlite_background }}
 {% if parent == 'field_landing_page_content' %}
 <section class="section">
   <div>
     <div class="row">
-      <div class="col-md-12 col-lg-7">
+      <div class="col-xs-12 col-md-12 col-lg-7">
 {% endif %}
         <div{{ attributes.addClass(classes) }}>
-          {% block content %}
-          {% include '@cu2019_grad/components/fact.html.twig' with {
-            'class': 'stat_hl ' ~ bg,
-            'textAbove': content.field_stat_highlite_top_text,
-            'figure': content.field_stat_highlite_statistic,
-            'textBelow': content.field_stat_highlite_bottom_text,
-            'factIcon': content.field_stat_highlite_icon
-          } %}
-          {% endblock %}
+          {% if content.field_stat_highlight_image is not empty  %}
+          <div class="stat_hl_io">
+            {{ content.field_stat_highlight_image }}
+          </div>
+          {% else %}
+            {% block content %}
+            {% include '@cu2019_grad/components/fact.html.twig' with {
+              'class': 'stat_hl ' ~ bg_class|clean_class,
+              'textAbove': content.field_stat_highlite_top_text,
+              'figure': content.field_stat_highlite_statistic,
+              'textBelow': content.field_stat_highlite_bottom_text,
+              'factIcon': content.field_stat_highlite_icon
+            } %}
+            {% endblock %}
+          {% endif %}
         </div>
 {% if parent == 'field_landing_page_content' %}
       </div>

@@ -1,0 +1,34 @@
+uuid: bd0bda00-2465-4873-986b-396e415b9ce4
+langcode: en
+status: true
+dependencies: {  }
+id: file__file
+type_id: file--file
+fields:
+  drupal_internal__fid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  filename:
+    type: string_long
+    multiple: false
+  uri:
+    type: uri
+    multiple: false
+  filemime:
+    type: string_long
+    multiple: false
+  filesize:
+    type: integer
+    multiple: false
+  status:
+    type: string_long
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false

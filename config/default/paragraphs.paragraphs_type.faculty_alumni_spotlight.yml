@@ -1,0 +1,9 @@
+uuid: f4492eb1-e9e9-4747-b0b4-22daed51d6be
+langcode: en
+status: true
+dependencies: {  }
+id: faculty_alumni_spotlight
+label: 'Faculty/Alumni Spotlight'
+icon_uuid: null
+description: 'Reference to hub Faculty/Alumni Spotlight node.'
+behavior_plugins: {  }

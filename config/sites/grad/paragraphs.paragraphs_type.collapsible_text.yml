@@ -1,0 +1,9 @@
+uuid: d4327cea-5fc5-450c-b867-724586e919d7
+langcode: en
+status: true
+dependencies: {  }
+id: collapsible_text
+label: 'Collapsible Text'
+icon_uuid: null
+description: 'A section of text that can be collapsed.'
+behavior_plugins: {  }

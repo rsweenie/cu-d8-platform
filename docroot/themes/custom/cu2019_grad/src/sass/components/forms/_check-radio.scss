@@ -29,15 +29,15 @@ input[type="checkbox"], input[type="radio"] {
         &:before {
             // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
             display: block;
-            @include position(absolute, 0, (left, top), (0, calc(.75em + #{$gutter * .2}rem)), translate(0, -50%));
+            @include position(absolute, 0, (left, top), (0, calc(.75em + .8rem)), translate(0, -50%));
             // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
             width: 1.6em;
             height: 1.6em;
             // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            background: $white;
-            border: .2rem solid $accent-3;
+            background-color: $off-white;
+            border: .1rem solid $gray8;
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            color: $accent-3;
+            color: $gray2;
             font-family: $iconFF;
             @include fontSize(1, 1.6);
             font-weight: 900;
@@ -46,8 +46,35 @@ input[type="checkbox"], input[type="radio"] {
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
             content: "";
         }
+
+        &:hover {
+            &:before {
+                border-color: $gray2;
+            }
+        }
+    }
+
+    &:focus {
+        + label {
+            &:before {
+                border-color: $tertiary;
+                background-color: $primaryXLt;
+                color: $primary;
+            }
+        }
+
+        + label{ 
+            &:hover {
+                &:before {
+                    border-color: $tertiary;
+                    background-color: $primaryXLt;
+                    color: $primary;
+                }
+            }
+        }
     }
 }
+
 // RADIOS
 input[type="radio"] {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
@@ -73,7 +100,7 @@ input[type="radio"] {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }        
+        }       
     }
     
     &:checked {
@@ -97,10 +124,31 @@ input[type="radio"] {
                 // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
                 // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
                 @include boxShadow(0 0 0 .3rem $white inset);
-                background: $accent-3;
+                background: $gray8;
                 // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+            }
+
+            &:hover {
+                &:before {
+                    background-color: $gray2;
+                }
+            }
+        }
+
+        &:focus {
+            + label {
+                &:before {
+                    background-color: $primary;
+                }
+            }
+
+            &:hover {
+                &:before {
+                    color: $primary;
+                    background-color: $gray2;
+                }
             }
         }
     }
@@ -129,7 +177,13 @@ input[type="checkbox"] {
             // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
             // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
             // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }        
+        }
+
+        &:hover {
+            &:before {
+                //background-color: $gray2;
+            }
+        }    
     }
     
     &:checked {
@@ -155,7 +209,36 @@ input[type="checkbox"] {
                 // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
                 // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
                 // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                content: "\f00c";
+            }
+
+            &:after {
+                position: absolute;
+                left: 1px;
+                top: 6px;
+                font-size: 1.4rem;
+                content: "\E004";
+                font-family: $iconFont;
+            }
+        }
+
+        &:focus {
+            + label {
+                &:before {
+                    //background-color: $tertiary;
+                }
+
+                &:after {
+                    color: $primary;
+                }
+                &:hover {
+                    &:before {
+
+                    }
+
+                    &:after {
+                        color: $primary;
+                    }
+                }
             }
         }
     }

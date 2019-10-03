@@ -17,6 +17,12 @@
         ckeditor_editor_mode_btn: 'span.cke_button_icon.cke_button__media_browser_icon',
         ckeditor_config_mode_btn: 'li[data-drupal-ckeditor-button-name="media_browser"]',
       },
+      reusable_content: {
+        image_url: '/modules/custom/cu_entity_embed/images/reusable_content.png',
+        style: 'background-position:0 0px;background-size:16px !important;',
+        ckeditor_editor_mode_btn: 'span.cke_button_icon.cke_button__reusable_content_icon',
+        ckeditor_config_mode_btn: 'li[data-drupal-ckeditor-button-name="reusable_content"]',
+      },
       // another_button: {
       //   image_url: '/modules/custom/cu_entity_embed/images/gray.gif',
       //   style: 'background-position:0 0px;background-size:16px;',

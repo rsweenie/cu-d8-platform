@@ -1,0 +1,31 @@
+uuid: bc3b0111-8b9d-48d0-bf7c-5d25a6b1390c
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_fel_style
+field_name: field_fel_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: right
+      label: 'Featured element on right'
+    -
+      value: left
+      label: 'Featured element on left'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

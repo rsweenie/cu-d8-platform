@@ -32,6 +32,17 @@ custom-javascript:
     js/typeahead.bundle.js: {}
     js/typeahead.fb.js: {}
     js/fitty.min.js: {}
-
+    js/creighton.edu.js: {}
   dependencies:
     - core/jquery
+    - core/jquery.once
+
+cu-sticky-header:
+  css:
+    theme:
+      css/sticky-header.css: {}
+  js:
+    js/sticky-header.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
