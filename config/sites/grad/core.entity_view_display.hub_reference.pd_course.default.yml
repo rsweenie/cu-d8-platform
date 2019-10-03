@@ -95,9 +95,9 @@ third_party_settings:
             region: right
             configuration:
               id: 'field_block:hub_reference:pd_course:hub_field_hub_pd_course_dates'
-              label: 'Hub: field_hub_pd_course_dates'
+              label: 'This Course is Offered on the Following Dates'
               provider: layout_builder
-              label_display: '0'
+              label_display: visible
               formatter:
                 label: hidden
                 type: hub_resource
