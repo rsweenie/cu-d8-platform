@@ -1,0 +1,11 @@
+uuid: cf4c6298-eee9-49c2-8a83-b1d061b2086b
+langcode: en
+status: true
+dependencies: {  }
+id: pd_course
+label: 'PD Course'
+description: 'Hub PD Course'
+source: 'node:hub_pd_course'
+source_configuration:
+  source_field: hub_uuid
+field_map: {  }

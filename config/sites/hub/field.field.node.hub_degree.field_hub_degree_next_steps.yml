@@ -1,13 +1,11 @@
-uuid: 4991c14c-f4d3-4c74-bc5d-96fd4fd99753
+uuid: 65357fa7-53da-457b-9fd1-9b1788d69db4
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_hub_degree_next_steps
     - node.type.hub_degree
-    - paragraphs.paragraphs_type.hub_paragraph_next_steps
-  module:
-    - entity_reference_revisions
+    - node.type.hub_next_steps
 id: node.hub_degree.field_hub_degree_next_steps
 field_name: field_hub_degree_next_steps
 entity_type: node
@@ -19,22 +17,12 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:paragraph'
+  handler: 'default:node'
   handler_settings:
-    negate: 0
     target_bundles:
-      hub_paragraph_next_steps: hub_paragraph_next_steps
-    target_bundles_drag_drop:
-      accordion:
-        weight: 5
-        enabled: false
-      featured_content_item:
-        weight: 6
-        enabled: false
-      hub_paragraph_next_steps:
-        enabled: true
-        weight: 7
-      ief_link:
-        weight: 8
-        enabled: false
-field_type: entity_reference_revisions
+      hub_next_steps: hub_next_steps
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -25,6 +25,21 @@ class NameFieldItem extends ArrayFieldItemBase {
   /**
    * {@inheritdoc}
    */
+  public function __toString() {
+    if (!$this->isEmpty()) {
+      $name_parts = [
+        isset($this->given) ? ScalarFieldItemBase::castToString($this->given) : NULL,
+        isset($this->middle) ? ScalarFieldItemBase::castToString($this->middle) : NULL,
+        isset($this->family) ? ScalarFieldItemBase::castToString($this->family) : NULL,
+      ];
+      $name_parts = array_filter($name_parts);
+      return (string) implode(' ', $name_parts);
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function view() {
     $elements = [];
 
