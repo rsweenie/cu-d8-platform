@@ -1,0 +1,23 @@
+uuid: bb754267-fcde-4a72-a7b5-ad89721a909d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hub_cd_cta
+    - paragraphs.paragraphs_type.course_date
+  module:
+    - link
+id: paragraph.course_date.field_hub_cd_cta
+field_name: field_hub_cd_cta
+entity_type: paragraph
+bundle: course_date
+label: CTA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

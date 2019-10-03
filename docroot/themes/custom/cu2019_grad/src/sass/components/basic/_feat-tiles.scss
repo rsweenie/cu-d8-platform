@@ -1,0 +1,51 @@
+.feat-tiles {
+  margin: 0 #{$gutter}rem;
+
+  @media #{$mediaMd} {
+    @include flex();
+    margin: -5px;
+  }
+
+  > div {
+    margin: 16px 0;
+
+    @media #{$mediaMd} {
+      width: 50%;
+      padding: 5px;
+      margin: 0;
+    }
+
+    @media #{$mediaXl} {
+      width: 33.3%;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.stat_hl_io {
+  position: relative;
+  @include innerBorder;
+
+  &:before {
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    content: "";
+    background: rgba($white,.3);
+    z-index: 10;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 0;
+  }
+}

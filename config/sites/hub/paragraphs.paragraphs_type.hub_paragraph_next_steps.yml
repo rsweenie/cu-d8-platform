@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: hub_paragraph_next_steps
-label: 'Next Steps'
+label: 'Next Step Item'
 icon_uuid: null
-description: 'The next steps content set allows the user to associate multiple Next Step Tiles to Programs or Degrees.'
+description: 'The next step content item is used for building Next Step content sets.'
 behavior_plugins: {  }

@@ -89,6 +89,7 @@ permissions:
   - 'edit terms in documentation_taxonomy'
   - 'edit terms in profile_specialties'
   - 'edit terms in profile_type'
+  - 'refresh cu hub reference'
   - 'revert content_page revisions'
   - 'revert copy_box revisions'
   - 'revert featured_content_group revisions'

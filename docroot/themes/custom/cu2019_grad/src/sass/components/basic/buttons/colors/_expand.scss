@@ -1,0 +1,63 @@
+.btn-expand {
+  position: relative;
+  color: $thead;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 4px solid $gray5;
+  background-color: transparent;
+  transition: border-color .25s, color .25s;
+
+  &:after {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    content: "";
+    border-style: solid;
+    border-width: 12px 11.5px 0 11.5px;
+    border-color: $gray5 transparent transparent transparent;
+    transform: translateX(-14px);
+    transition: border-color .25s;
+  }
+
+  @include hover {
+    color: $secondary;
+    background-color: transparent;
+    border-bottom-color: $secondary;
+
+    &:after {
+      border-color: $secondary transparent transparent transparent;
+    }
+  }
+
+  .expanded &,
+  .expanded + & {
+    border-top: 4px solid $gray5;
+    border-bottom: 0;
+
+    @include hover {
+      border-top-color: $secondary;
+    }
+
+    &:after {
+      transform: translateX(-9px) rotate(180deg);
+      bottom: auto;
+      top: -15px;
+    }
+  }
+
+  @media #{$mediaSm} {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  @media #{$mediaLg} {
+    font-size: 13px;
+  }
+}
