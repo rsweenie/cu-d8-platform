@@ -11,6 +11,7 @@ dependencies:
     - datetime
     - layout_builder
     - layout_builder_restrictions
+    - layout_library
     - link
     - system
   theme:
@@ -284,7 +285,7 @@ third_party_settings:
             weight: 0
         third_party_settings: {  }
       -
-        layout_id: generic_content
+        layout_id: generic_content_full
         layout_settings: {  }
         components:
           139181b3-78d0-4927-bf1d-fba819522a17:
@@ -319,8 +320,11 @@ third_party_settings:
       allowed_layouts:
         - generic_hero
         - generic_content
-        - program_detail_2col
+        - generic_content_full
         - program_detail_feat_tiles
+        - program_detail_2col
+  layout_library:
+    enable: false
 id: hub_reference.degree.default
 targetEntityType: hub_reference
 bundle: degree
