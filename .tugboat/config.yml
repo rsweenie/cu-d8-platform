@@ -167,11 +167,7 @@ services:
         - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/tests/backstopjs"
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli 
-        - sudo apt-get install sysv-rc-conf
-        - sudo apt-get install -y at 
-        - service atd start   
-        - sysv-rc-conf --level 35 atd on  
-        - (cd ${TUGBOAT_ROOT}/tests/backstopjs/; ./backstop-test.sh) | at now
+        - (cd ${TUGBOAT_ROOT}/tests/backstopjs/; ./backstop-test.sh) 
 
 
   # What to call the service hosting MySQL. This name also acts as the
