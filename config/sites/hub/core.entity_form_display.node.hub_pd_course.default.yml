@@ -15,6 +15,7 @@ dependencies:
     - node.type.hub_pd_course
   module:
     - entity_browser
+    - paragraphs
     - path
     - private_content
     - scheduler
@@ -48,13 +49,22 @@ content:
     type: string_textfield
     region: content
   field_hub_pd_course_dates:
-    weight: 5
+    type: paragraphs
+    weight: 7
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   field_hub_pd_course_hero_image:
     type: entity_browser_entity_reference
@@ -71,7 +81,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_pd_course_next_steps:
-    weight: 26
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -89,7 +99,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_pd_related_degrees:
-    weight: 7
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
