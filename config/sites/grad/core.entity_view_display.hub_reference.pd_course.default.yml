@@ -70,7 +70,7 @@ third_party_settings:
       -
         layout_id: program_detail_2col
         layout_settings:
-          sidebar_classes: ''
+          sidebar_classes: program_rail
           sidebar_title: ''
         components:
           47329885-0667-4d8b-b29d-90bb18e669bc:
@@ -78,9 +78,9 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:hub_reference:pd_course:hub_body'
-              label: 'Hub: body'
+              label: 'Course Details'
               provider: layout_builder
-              label_display: '0'
+              label_display: visible
               formatter:
                 label: hidden
                 type: hub_text_processed
@@ -109,7 +109,7 @@ third_party_settings:
             weight: 0
         third_party_settings: {  }
       -
-        layout_id: generic_content
+        layout_id: generic_content_full
         layout_settings: {  }
         components:
           b2f5add5-e713-486f-bd73-9f9102fc615d:
