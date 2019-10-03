@@ -736,7 +736,7 @@ a:focus {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 201, src/sass/components/copy/_headings.scss */
+/* line 202, src/sass/components/copy/_headings.scss */
 
 h1,
 h4,
@@ -745,14 +745,14 @@ h6 {
   font-family: proxima-nova, sans-serif;
 }
 
-/* line 205, src/sass/components/copy/_headings.scss */
+/* line 206, src/sass/components/copy/_headings.scss */
 
 h2,
 h3 {
   font-family: "Conduit";
 }
 
-/* line 212, src/sass/components/copy/_headings.scss */
+/* line 213, src/sass/components/copy/_headings.scss */
 
 h1,
 .h1 {
@@ -764,7 +764,7 @@ h1,
   text-transform: uppercase;
 }
 
-/* line 216, src/sass/components/copy/_headings.scss */
+/* line 217, src/sass/components/copy/_headings.scss */
 
 h2,
 .h2 {
@@ -773,7 +773,7 @@ h2,
   font-size: 1.75em;
 }
 
-/* line 220, src/sass/components/copy/_headings.scss */
+/* line 221, src/sass/components/copy/_headings.scss */
 
 h3,
 .h3 {
@@ -781,18 +781,19 @@ h3,
   padding: 0;
   font-size: 3rem;
   color: #002E6D;
+  line-height: 1.1em;
   text-transform: uppercase;
   letter-spacing: .05em;
 }
 
-/* line 111, src/sass/components/copy/_headings.scss */
+/* line 112, src/sass/components/copy/_headings.scss */
 
 aside h3,
 aside .h3 {
   font-size: 1.125em;
 }
 
-/* line 114, src/sass/components/copy/_headings.scss */
+/* line 115, src/sass/components/copy/_headings.scss */
 
 aside h3 ~ h3,
 aside h3 ~ .h3,
@@ -803,7 +804,7 @@ aside .h3 ~ .h3 {
   border-top: 0.1rem solid #6CACE4;
 }
 
-/* line 224, src/sass/components/copy/_headings.scss */
+/* line 225, src/sass/components/copy/_headings.scss */
 
 h4,
 .h4 {
@@ -816,14 +817,14 @@ h4,
   font-weight: 400;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
+/* line 156, src/sass/components/copy/_headings.scss */
 
 aside h4,
 aside .h4 {
   font-size: 1em;
 }
 
-/* line 158, src/sass/components/copy/_headings.scss */
+/* line 159, src/sass/components/copy/_headings.scss */
 
 aside h4 ~ h4,
 aside h4 ~ .h4,
@@ -1836,7 +1837,7 @@ Delete everything below including comment
 .section {
   position: relative;
   z-index: 110;
-  padding: 2.5rem 2.5rem;
+  padding: 2.5rem 0;
   /*  --------------------------------------------------------------------------  *\
 
     SECTION LAYOUTS > INTERIOR
@@ -1859,7 +1860,7 @@ Delete everything below including comment
 \*  --------------------------------------------------------------------------  */
 }
 
-/* line 32, src/sass/structure/_section.scss */
+/* line 33, src/sass/structure/_section.scss */
 
 .section > div {
   max-width: 1350px;
@@ -1867,37 +1868,37 @@ Delete everything below including comment
   width: 100%;
 }
 
-/* line 72, src/sass/structure/_section.scss */
+/* line 73, src/sass/structure/_section.scss */
 
 .section.npt {
   padding-top: 0;
 }
 
-/* line 76, src/sass/structure/_section.scss */
+/* line 77, src/sass/structure/_section.scss */
 
 .section.np {
   padding: 0;
 }
 
-/* line 80, src/sass/structure/_section.scss */
+/* line 81, src/sass/structure/_section.scss */
 
 .section.static {
   position: static;
 }
 
-/* line 85, src/sass/structure/_section.scss */
+/* line 86, src/sass/structure/_section.scss */
 
 .section.copy-block > div > div {
   margin: auto;
 }
 
-/* line 93, src/sass/structure/_section.scss */
+/* line 94, src/sass/structure/_section.scss */
 
 .section.layout--program-detail-2col {
   padding-bottom: 0;
 }
 
-/* line 97, src/sass/structure/_section.scss */
+/* line 98, src/sass/structure/_section.scss */
 
 .section.layout--generic-content {
   padding: 0;
@@ -2088,13 +2089,13 @@ Delete everything below including comment
   margin-bottom: 0.41667em;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
+/* line 156, src/sass/components/copy/_headings.scss */
 
 aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
   font-size: 1em;
 }
 
-/* line 158, src/sass/components/copy/_headings.scss */
+/* line 159, src/sass/components/copy/_headings.scss */
 
 aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department ~ h4,
 aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department ~ .h4 {
@@ -2135,7 +2136,7 @@ form .form_action .section .layout__region--facmiddle button {
 
 /* CSS Document */
 
-/* line 130, src/sass/structure/_section.scss */
+/* line 131, src/sass/structure/_section.scss */
 
 .layout--onecol {
   background-image: url(../../img/feature_slash_bg.png);
@@ -11363,33 +11364,33 @@ nav.jn li + li {
   background: rgba(165, 210, 249, 0.2);
 }
 
-/* line 15, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 20, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block {
   margin: 1em 0;
 }
 
-/* line 20, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 25, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block p:last-child,
 .program_rail > .block ul:last-child {
   margin-bottom: 0;
 }
 
-/* line 25, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 30, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block.block-field-blockhub-referencedegreehub-field-hub-degree-adm-rep {
   margin-top: 2em;
 }
 
-/* line 30, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 35, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h3 {
   position: relative;
-  padding-bottom: 0.25455em;
+  padding-bottom: 0.43636em;
 }
 
-/* line 35, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 40, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h3:after {
   width: 5.5rem;
@@ -11401,13 +11402,13 @@ nav.jn li + li {
   background: #6CACE4;
 }
 
-/* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 55, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h4 {
   margin-bottom: 0.08333em;
 }
 
-/* line 54, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 59, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h5 {
   font-size: 1.2rem;
@@ -11416,20 +11417,20 @@ nav.jn li + li {
   letter-spacing: 0.05em;
 }
 
-/* line 94, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 99, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > div {
   position: relative;
   z-index: 10;
 }
 
-/* line 99, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 104, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail ul {
   margin-left: 0;
 }
 
-/* line 103, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 108, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail .field--name-hub-field-hub-degree-title {
   font-size: 1.2rem;
@@ -11438,20 +11439,20 @@ nav.jn li + li {
   letter-spacing: 0.05em;
 }
 
-/* line 108, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 119, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep {
-  padding: 6rem 0;
+  padding: 6rem 0 0;
   border-top: 1px solid rgba(33, 35, 34, 0.2);
 }
 
-/* line 112, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep h4 {
   margin-bottom: 0.125em;
 }
 
-/* line 121, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 132, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info {
   display: -webkit-box;
@@ -11464,14 +11465,14 @@ nav.jn li + li {
   margin-top: 2.5rem;
 }
 
-/* line 126, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 137, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:first-child {
   width: 10.2rem;
   margin-right: 1.6rem;
 }
 
-/* line 136, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 147, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child {
   -webkit-box-flex: 1;
@@ -11479,13 +11480,13 @@ nav.jn li + li {
           flex-grow: 1;
 }
 
-/* line 139, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 150, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child .hub-resource-field {
   margin-bottom: 0.31579em;
 }
 
-/* line 145, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 156, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info img {
   width: 100%;
@@ -11493,7 +11494,7 @@ nav.jn li + li {
   display: block;
 }
 
-/* line 152, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 163, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .hub-resource-field--name-field-hub-adm-rep-name {
   text-transform: uppercase;
@@ -12669,21 +12670,21 @@ form.search .search button {
          column-gap: 2.5rem;
   }
 
-  /* line 212, src/sass/components/copy/_headings.scss */
+  /* line 213, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
     font-size: 3.5rem;
   }
 
-  /* line 216, src/sass/components/copy/_headings.scss */
+  /* line 217, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 1.875em;
   }
 
-  /* line 224, src/sass/components/copy/_headings.scss */
+  /* line 225, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
@@ -12761,7 +12762,7 @@ form.search .search button {
     padding: 3.75rem 0;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 33, src/sass/structure/_section.scss */
 
   .section > div {
     padding: 0 2.5rem;
@@ -14056,13 +14057,13 @@ form.search .search button {
     font-size: 3rem;
   }
 
-  /* line 35, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 40, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail h3:after {
     height: 0.8rem;
   }
 
-  /* line 54, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 59, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail h5 {
     font-size: 1.5rem;
@@ -14074,7 +14075,7 @@ form.search .search button {
     background-color: transparent;
   }
 
-  /* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 74, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail:after {
     width: 100vw;
@@ -14087,19 +14088,25 @@ form.search .search button {
     background: rgba(165, 210, 249, 0.2);
   }
 
-  /* line 103, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 108, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail .field--name-hub-field-hub-degree-title {
     font-size: 1.5rem;
   }
 
-  /* line 108, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 113, src/sass/components/feeds-detail/programs/_programs.scss */
 
-  .admissions-rep {
-    padding: 7rem 0;
+  .prog_left {
+    margin-right: 5rem;
   }
 
-  /* line 126, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 119, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .admissions-rep {
+    padding: 7rem 0 4.5rem;
+  }
+
+  /* line 137, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep-info > div:first-child {
     width: 17rem;
@@ -14224,7 +14231,7 @@ form.search .search button {
          column-count: 4;
   }
 
-  /* line 212, src/sass/components/copy/_headings.scss */
+  /* line 213, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
@@ -14232,14 +14239,14 @@ form.search .search button {
     letter-spacing: .04em;
   }
 
-  /* line 216, src/sass/components/copy/_headings.scss */
+  /* line 217, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 2em;
   }
 
-  /* line 220, src/sass/components/copy/_headings.scss */
+  /* line 221, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
@@ -14318,13 +14325,13 @@ form.search .search button {
     padding: 5rem 0;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 33, src/sass/structure/_section.scss */
 
   .section > div {
     width: 95%;
   }
 
-  /* line 114, src/sass/structure/_section.scss */
+  /* line 115, src/sass/structure/_section.scss */
 
   .section.ptb-lgt {
     z-index: 0;
@@ -15115,13 +15122,13 @@ form.search .search button {
     width: 90%;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 33, src/sass/structure/_section.scss */
 
   .section > div {
     width: 90%;
   }
 
-  /* line 85, src/sass/structure/_section.scss */
+  /* line 86, src/sass/structure/_section.scss */
 
   .section.copy-block > div > div {
     width: 58.33%;
@@ -16276,7 +16283,7 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 33, src/sass/structure/_section.scss */
 
   .section > div {
     width: 85%;
@@ -16556,13 +16563,13 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
-  /* line 103, src/sass/structure/_section.scss */
+  /* line 104, src/sass/structure/_section.scss */
 
   .section.ptb {
     padding: 5rem 0;
   }
 
-  /* line 106, src/sass/structure/_section.scss */
+  /* line 107, src/sass/structure/_section.scss */
 
   .section.ptb-lgt {
     z-index: 0;
@@ -16994,6 +17001,13 @@ form.search .search button {
 
   .mfs .field--name-field-mfs-featured-items .field__item:last-child .mfsi {
     margin-bottom: 0;
+  }
+
+  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail {
+    margin: 0 -2.5rem;
+    padding: 5rem 2.5rem;
   }
 }
 

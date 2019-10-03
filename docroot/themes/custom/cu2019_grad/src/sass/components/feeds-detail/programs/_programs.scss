@@ -12,6 +12,11 @@
   z-index: 10;
   background: rgba($accent-2XLt,.2);
 
+  @media #{$mediaMdMax} {
+    margin: 0 -#{$gutter}rem;
+    padding: #{$gutter * 2}rem #{$gutter}rem;
+  }
+
   > .block {
     margin: 1em 0;
 
@@ -30,7 +35,7 @@
   h3 {
     //@include h4;
     position: relative;
-    padding-bottom: (14 / 55) * 1em;
+    padding-bottom: (24 / 55) * 1em;
 
     &:after {
       width: 55px;
@@ -105,8 +110,14 @@
   }
 }
 
+.prog_left {
+  @media #{$mediaMd} {
+    margin-right: #{$gutter * 2}rem;
+  }
+}
+
 .admissions-rep {
-  padding: 60px 0;
+  padding: 60px 0 0;
   border-top: 1px solid rgba($black,.2);
 
   h4 {
@@ -114,7 +125,7 @@
   }
 
   @media #{$mediaMd} {
-    padding: 70px 0;
+    padding: 70px 0 7rem - $gutter;
   }
 }
 
