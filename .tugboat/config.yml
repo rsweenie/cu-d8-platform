@@ -164,14 +164,13 @@ services:
         - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-postbuild.sh
 
         # Run Backstop tests
-        - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/tests/backstopjs"
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli 
         - sudo apt-get install sysv-rc-conf
         - sudo apt-get install -y at 
         - service atd start   
         - sysv-rc-conf --level 35 atd on  
-        - echo "ping -c 4 www.google.com" | at -m + 1 minute
+        - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/tests/backstopjs" | at now + 1 minute
 
 
   # What to call the service hosting MySQL. This name also acts as the
