@@ -166,6 +166,17 @@ function cu2019_grad_preprocess_hub_resource_field__field_hub_fac_spotlight_type
   }
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_hub_resource_field__paragraph_course_date__field_hub_cd_date(&$variables) {
+  foreach ($variables['items'] as $key => $item) {
+    $date =  new Datetime($item['content']['#attributes']['datetime']);
+    $variables['items'][$key]['content']['month'] = $date->format('M');
+    $variables['items'][$key]['content']['day'] = $date->format('j');
+  }
+}
+
 // Returns a render array with the sub-tree of the current active link.
 function _cu2019_grad_get_menu_sub_tree($menu_name = 'main') {
   $menu_tree = \Drupal::menuTree();
