@@ -1,0 +1,29 @@
+uuid: d948fa0e-cf1b-4489-8239-ff665236f970
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.news
+    - field.storage.hub_reference.field_news_type
+    - taxonomy.vocabulary.news_type
+id: hub_reference.news.field_news_type
+field_name: field_news_type
+entity_type: hub_reference
+bundle: news
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_type: news_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -10,29 +10,47 @@
 .program_rail {
   position: relative;
   z-index: 10;
+  background: rgba($accent-2XLt,.2);
 
   h3 {
     @include h4;
   }
 
   @media #{$mediaMd} {
-    padding-left: #{$gutter}rem;
+    //padding-left: #{$gutter}rem;
   }
 
   @media #{$mediaLg} {
-    padding-left: #{$gutter * 2}rem;
+    //padding-left: #{$gutter * 2}rem;
   }
 
-  &:after {
-    width: 100vw;
-    height: calc(100% + 62px);
-    position: absolute;
-    top: -62px;
-    left: 0;
-    z-index: 0;
-    content: "";
-    background: rgba($accent-2XLt,.2);
+  @media #{$mediaMd} {
+    background-color: transparent;
+
+    &:after {
+      width: 100vw;
+      height: calc(100% + 62px);
+      position: absolute;
+      top: -62px;
+      left: -#{$gutter * 2}rem;
+      z-index: 0;
+      content: "";
+      background: rgba($accent-2XLt,.2);
+    }
   }
+
+  // &:before {
+  //   position: absolute;
+  //   width: calc(100vw - 33%);
+  //   height: calc(100% + 62px);
+  //   top: -62px;
+  //   right: 100%;
+  //   background-image: url(../../img/feature_slash_bg.png);
+  //   background-repeat: repeat-y;
+  //   background-size: 75%;
+  //   background-position: 98rem;
+  //   content: "";
+  // }
 
   > div {
     position: relative;
@@ -46,4 +64,53 @@
   .field--name-hub-field-hub-degree-title {
     @include h6;
   }
+}
+
+.admissions-rep {
+  padding: 60px 0;
+  border-top: 1px solid rgba($black,.2);
+
+  h4 {
+    margin-bottom: (3 / 24) * 1em;
+  }
+
+  @media #{$mediaMd} {
+    padding: 70px 0;
+  }
+}
+
+.admissions-rep-info {
+  @include flex();
+  margin-top: #{$gutter}rem;
+
+  > div {
+    &:first-child {
+      width: 102px;
+      margin-right: 16px;
+
+      @media #{$mediaMd} {
+        width: 170px;
+        margin-right: 18px;
+      }
+    }
+
+    &:last-child {
+      flex-grow: 1;
+
+      .hub-resource-field {
+        margin-bottom: (6 / 19) * 1em;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.hub-resource-field--name-field-hub-adm-rep-name {
+  text-transform: uppercase;
+  font-weight: 600;
 }
