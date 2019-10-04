@@ -104,217 +104,217 @@
   text-transform: none;
 }
 
-/* line 24, src/sass/base/fonts/_icons.scss */
+/* line 16, src/sass/base/fonts/_icons.scss */
 
 .icon-apply:before {
   content: "\E001";
 }
 
-/* line 28, src/sass/base/fonts/_icons.scss */
+/* line 20, src/sass/base/fonts/_icons.scss */
 
 .icon-ask-bubble:before {
   content: "\E002";
 }
 
-/* line 32, src/sass/base/fonts/_icons.scss */
+/* line 24, src/sass/base/fonts/_icons.scss */
 
 .icon-blog:before {
   content: "\E003";
 }
 
-/* line 36, src/sass/base/fonts/_icons.scss */
+/* line 28, src/sass/base/fonts/_icons.scss */
 
 .icon-check:before {
   content: "\E004";
 }
 
-/* line 40, src/sass/base/fonts/_icons.scss */
+/* line 32, src/sass/base/fonts/_icons.scss */
 
 .icon-checkbox-checked:before {
   content: "\E005";
 }
 
-/* line 44, src/sass/base/fonts/_icons.scss */
+/* line 36, src/sass/base/fonts/_icons.scss */
 
 .icon-checkbox-unchecked:before {
   content: "\E006";
 }
 
-/* line 48, src/sass/base/fonts/_icons.scss */
+/* line 40, src/sass/base/fonts/_icons.scss */
 
 .icon-chevron-right-double:before {
   content: "\E007";
 }
 
-/* line 52, src/sass/base/fonts/_icons.scss */
+/* line 44, src/sass/base/fonts/_icons.scss */
 
 .icon-chevron-right:before {
   content: "\E008";
 }
 
-/* line 56, src/sass/base/fonts/_icons.scss */
+/* line 48, src/sass/base/fonts/_icons.scss */
 
 .icon-chevron-up:before {
   content: "\E009";
 }
 
-/* line 60, src/sass/base/fonts/_icons.scss */
+/* line 52, src/sass/base/fonts/_icons.scss */
 
 .icon-close-window-filled:before {
   content: "\E00A";
 }
 
-/* line 64, src/sass/base/fonts/_icons.scss */
+/* line 56, src/sass/base/fonts/_icons.scss */
 
 .icon-close-window:before {
   content: "\E00B";
 }
 
-/* line 68, src/sass/base/fonts/_icons.scss */
+/* line 60, src/sass/base/fonts/_icons.scss */
 
 .icon-contact:before {
   content: "\E00C";
 }
 
-/* line 72, src/sass/base/fonts/_icons.scss */
+/* line 64, src/sass/base/fonts/_icons.scss */
 
 .icon-envelope:before {
   content: "\E00D";
 }
 
-/* line 76, src/sass/base/fonts/_icons.scss */
+/* line 68, src/sass/base/fonts/_icons.scss */
 
 .icon-event-calendar:before {
   content: "\E00E";
 }
 
-/* line 80, src/sass/base/fonts/_icons.scss */
+/* line 72, src/sass/base/fonts/_icons.scss */
 
 .icon-expand-arrow:before {
   content: "\E00F";
 }
 
-/* line 84, src/sass/base/fonts/_icons.scss */
+/* line 76, src/sass/base/fonts/_icons.scss */
 
 .icon-filter:before {
   content: "\E010";
 }
 
-/* line 88, src/sass/base/fonts/_icons.scss */
+/* line 80, src/sass/base/fonts/_icons.scss */
 
 .icon-forward:before {
   content: "\E011";
 }
 
-/* line 92, src/sass/base/fonts/_icons.scss */
+/* line 84, src/sass/base/fonts/_icons.scss */
 
 .icon-google-translate:before {
   content: "\E012";
 }
 
-/* line 96, src/sass/base/fonts/_icons.scss */
+/* line 88, src/sass/base/fonts/_icons.scss */
 
 .icon-help:before {
   content: "\E013";
 }
 
-/* line 100, src/sass/base/fonts/_icons.scss */
+/* line 92, src/sass/base/fonts/_icons.scss */
 
 .icon-hybrid:before {
   content: "\E014";
 }
 
-/* line 104, src/sass/base/fonts/_icons.scss */
+/* line 96, src/sass/base/fonts/_icons.scss */
 
 .icon-location-thin:before {
   content: "\E015";
 }
 
-/* line 108, src/sass/base/fonts/_icons.scss */
+/* line 100, src/sass/base/fonts/_icons.scss */
 
 .icon-location:before {
   content: "\E016";
 }
 
-/* line 112, src/sass/base/fonts/_icons.scss */
+/* line 104, src/sass/base/fonts/_icons.scss */
 
 .icon-news:before {
   content: "\E017";
 }
 
-/* line 116, src/sass/base/fonts/_icons.scss */
+/* line 108, src/sass/base/fonts/_icons.scss */
 
 .icon-off-campus:before {
   content: "\E018";
 }
 
-/* line 120, src/sass/base/fonts/_icons.scss */
+/* line 112, src/sass/base/fonts/_icons.scss */
 
 .icon-on-campus:before {
   content: "\E019";
 }
 
-/* line 124, src/sass/base/fonts/_icons.scss */
+/* line 116, src/sass/base/fonts/_icons.scss */
 
 .icon-online:before {
   content: "\E01A";
 }
 
-/* line 128, src/sass/base/fonts/_icons.scss */
+/* line 120, src/sass/base/fonts/_icons.scss */
 
 .icon-phone:before {
   content: "\E01B";
 }
 
-/* line 132, src/sass/base/fonts/_icons.scss */
+/* line 124, src/sass/base/fonts/_icons.scss */
 
 .icon-right:before {
   content: "\E01C";
 }
 
-/* line 136, src/sass/base/fonts/_icons.scss */
+/* line 128, src/sass/base/fonts/_icons.scss */
 
 .icon-search-more:before {
   content: "\E01D";
 }
 
-/* line 140, src/sass/base/fonts/_icons.scss */
+/* line 132, src/sass/base/fonts/_icons.scss */
 
 .icon-search:before {
   content: "\E01E";
 }
 
-/* line 144, src/sass/base/fonts/_icons.scss */
+/* line 136, src/sass/base/fonts/_icons.scss */
 
 .icon-social-facebook:before {
   content: "\E01F";
 }
 
-/* line 148, src/sass/base/fonts/_icons.scss */
+/* line 140, src/sass/base/fonts/_icons.scss */
 
 .icon-social-instagram:before {
   content: "\E020";
 }
 
-/* line 152, src/sass/base/fonts/_icons.scss */
+/* line 144, src/sass/base/fonts/_icons.scss */
 
 .icon-social-linkedin:before {
   content: "\E021";
 }
 
-/* line 156, src/sass/base/fonts/_icons.scss */
+/* line 148, src/sass/base/fonts/_icons.scss */
 
 .icon-social-twitter:before {
   content: "\E022";
 }
 
-/* line 160, src/sass/base/fonts/_icons.scss */
+/* line 152, src/sass/base/fonts/_icons.scss */
 
 .icon-social-youtube:before {
   content: "\E023";
 }
 
-/* line 164, src/sass/base/fonts/_icons.scss */
+/* line 156, src/sass/base/fonts/_icons.scss */
 
 .icon-tag:before {
   content: "\E024";
@@ -11449,20 +11449,26 @@ nav.jn li + li {
   letter-spacing: 0.05em;
 }
 
-/* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 117, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.prog_left {
+  padding-bottom: 2.5rem;
+}
+
+/* line 132, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep {
   padding: 6rem 0 0;
   border-top: 1px solid rgba(33, 35, 34, 0.2);
 }
 
-/* line 127, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 136, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep h4 {
   margin-bottom: 0.125em;
 }
 
-/* line 136, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 145, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info {
   display: -webkit-box;
@@ -11475,14 +11481,14 @@ nav.jn li + li {
   margin-top: 2.5rem;
 }
 
-/* line 141, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 150, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:first-child {
   width: 10.2rem;
   margin-right: 1.6rem;
 }
 
-/* line 151, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 160, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child {
   -webkit-box-flex: 1;
@@ -11490,13 +11496,13 @@ nav.jn li + li {
           flex-grow: 1;
 }
 
-/* line 154, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 163, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child .hub-resource-field {
   margin-bottom: 0.31579em;
 }
 
-/* line 160, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 169, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info img {
   width: 100%;
@@ -11504,11 +11510,140 @@ nav.jn li + li {
   display: block;
 }
 
-/* line 167, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 176, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .hub-resource-field--name-field-hub-adm-rep-name {
   text-transform: uppercase;
   font-weight: 600;
+}
+
+/* line 182, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  padding: 1.2rem 0;
+}
+
+/* line 190, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.field + .field .course-date {
+  border-top: 1px solid #d4d4d4;
+}
+
+/* line 196, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child {
+  width: 4.8rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48px;
+          flex: 0 0 48px;
+  color: #fff;
+  text-align: center;
+  font-family: "Conduit";
+  font-weight: bold;
+}
+
+/* line 213, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child time > div {
+  width: 100%;
+  height: 5.6rem;
+  background: #0054A6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+/* line 223, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child time span {
+  line-height: 1em;
+}
+
+/* line 225, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child time span:first-child {
+  font-size: 2.2rem;
+  margin-bottom: -0.13636em;
+}
+
+/* line 234, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child time span:last-child {
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* line 247, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 1.6rem;
+  line-height: 1.3em;
+  padding-left: 1.4rem;
+  color: #555555;
+}
+
+/* line 254, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:last-child a {
+  color: #555555;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: .1em;
+  display: inline-block;
+}
+
+/* line 261, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:last-child a:after {
+  font-family: "cu_icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none;
+  content: "\E01C";
+  display: inline-block;
+  margin-left: 0.75em;
+  -webkit-transform: translate(0, 0.2em);
+          transform: translate(0, 0.2em);
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.course-date > div:last-child a:hover,
+.course-date > div:last-child a:focus {
+  color: #0054A6;
+}
+
+/* line 275, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:last-child a:hover:after,
+.course-date > div:last-child a:focus:after {
+  -webkit-transform: translate(0.25em, 0.2em);
+          transform: translate(0.25em, 0.2em);
 }
 
 /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
@@ -14108,15 +14243,16 @@ form.search .search button {
 
   .prog_left {
     margin-right: 5rem;
+    padding-bottom: 10rem;
   }
 
-  /* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 132, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep {
     padding: 7rem 0 4.5rem;
   }
 
-  /* line 141, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 150, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep-info > div:first-child {
     width: 17rem;
@@ -14612,6 +14748,45 @@ form.search .search button {
 
   .f-feat-faculty > article {
     width: calc(33.333% - 2.5rem);
+  }
+
+  /* line 182, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date {
+    padding: 2rem 0;
+  }
+
+  /* line 196, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:first-child {
+    width: 7rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70px;
+            flex: 0 0 70px;
+  }
+
+  /* line 213, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:first-child time > div {
+    height: 8.2rem;
+  }
+
+  /* line 225, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:first-child time span:first-child {
+    font-size: 3.2rem;
+  }
+
+  /* line 234, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:first-child time span:last-child {
+    font-size: 1.8rem;
+  }
+
+  /* line 247, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:last-child {
+    font-size: 2rem;
   }
 }
 
@@ -15907,6 +16082,13 @@ form.search .search button {
     z-index: 900;
     top: 13.5rem;
     padding: 0;
+  }
+
+  /* line 125, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail,
+  .prog_left {
+    padding-top: 3.8rem;
   }
 
   /* line 6, src/sass/components/forms/search/_form.scss */
