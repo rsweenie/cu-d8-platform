@@ -52,10 +52,20 @@
 
 }
 
-.stat_hl_io {
+.stat_hl_io,
+.hub_img {
   position: relative;
   @include innerBorder;
 
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 0;
+  }
+}
+
+.stat_hl_io {
   &:before {
     width: 11px;
     height: 11px;
@@ -65,12 +75,5 @@
     content: "";
     background: rgba($white,.3);
     z-index: 10;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    z-index: 0;
   }
 }

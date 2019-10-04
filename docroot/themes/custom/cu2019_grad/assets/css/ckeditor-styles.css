@@ -5194,13 +5194,15 @@ blockquote .tooltip-trigger {
 
 /* line 55, src/sass/components/basic/_feat-tiles.scss */
 
-.stat_hl_io {
+.stat_hl_io,
+.hub_img {
   position: relative;
 }
 
 /* line 463, src/sass/base/_mixins.scss */
 
-.stat_hl_io:after {
+.stat_hl_io:after,
+.hub_img:after {
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
   position: absolute;
@@ -5211,7 +5213,17 @@ blockquote .tooltip-trigger {
   pointer-events: none;
 }
 
-/* line 59, src/sass/components/basic/_feat-tiles.scss */
+/* line 60, src/sass/components/basic/_feat-tiles.scss */
+
+.stat_hl_io img,
+.hub_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 0;
+}
+
+/* line 69, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io:before {
   width: 1.1rem;
@@ -5222,15 +5234,6 @@ blockquote .tooltip-trigger {
   content: "";
   background: rgba(255, 255, 255, 0.3);
   z-index: 10;
-}
-
-/* line 70, src/sass/components/basic/_feat-tiles.scss */
-
-.stat_hl_io img {
-  width: 100%;
-  height: auto;
-  display: block;
-  z-index: 0;
 }
 
 /*  --------------------------------------------------------------------------  *\
