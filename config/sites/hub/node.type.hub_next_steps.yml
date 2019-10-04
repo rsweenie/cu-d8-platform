@@ -23,7 +23,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Next Steps'
+name: 'Hub: Next Steps'
 type: hub_next_steps
 description: 'A collection of next step paragraphs. '
 help: ''
