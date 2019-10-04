@@ -1,7 +1,6 @@
 #!/bin/bash
 # Run Backstop test
 
-sleep 10m
 
 site_name=$($TUGBOAT_ROOT/.tugboat/scripts/get_site_alias.sh)
 
