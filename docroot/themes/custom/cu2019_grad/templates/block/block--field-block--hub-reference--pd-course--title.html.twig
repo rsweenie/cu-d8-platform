@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override to display a field block.
+ * Theme override to display a block.
  *
  * Available variables:
  * - plugin_id: The ID of the block implementation.
@@ -30,16 +30,13 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    'hero_title'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    {% if configuration.label %}
-      <h4{{ title_attributes }}>{{ configuration.label }}</h4>
-    {% else %}
-      <h4{{ title_attributes }}>{{ label }}</h4>
-    {% endif %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}

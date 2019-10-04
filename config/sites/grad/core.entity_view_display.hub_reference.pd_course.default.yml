@@ -5,12 +5,131 @@ dependencies:
   config:
     - cu_hub_consumer.hub_reference_type.pd_course
   module:
+    - cu_layout_tweaks
     - layout_builder
     - layout_library
+    - system
+  theme:
+    - cu2019_grad
 third_party_settings:
   layout_builder:
     allow_custom: false
     enabled: true
+    sections:
+      -
+        layout_id: generic_hero
+        layout_settings: {  }
+        components:
+          5ea658a1-2496-498c-a0b2-a9353c1ec20f:
+            uuid: 5ea658a1-2496-498c-a0b2-a9353c1ec20f
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:pd_course:hub_field_hub_pd_course_hero_image'
+              label: 'Hub: field_hub_pd_course_hero_image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          186926cc-ddd7-4ff1-98f3-2912d33964ec:
+            uuid: 186926cc-ddd7-4ff1-98f3-2912d33964ec
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:pd_course:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          853b77f9-607d-41d1-a65b-80bfe89da5a4:
+            uuid: 853b77f9-607d-41d1-a65b-80bfe89da5a4
+            region: main
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: program_detail_2col
+        layout_settings:
+          sidebar_classes: program_rail
+          sidebar_title: ''
+        components:
+          47329885-0667-4d8b-b29d-90bb18e669bc:
+            uuid: 47329885-0667-4d8b-b29d-90bb18e669bc
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:pd_course:hub_body'
+              label: 'Course Details'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: hub_text_processed
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          13d250f5-3c63-490d-9ef1-b4891fb3567b:
+            uuid: 13d250f5-3c63-490d-9ef1-b4891fb3567b
+            region: right
+            configuration:
+              id: 'field_block:hub_reference:pd_course:hub_field_hub_pd_course_dates'
+              label: 'This Course is Offered on the Following Dates'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: generic_content_full
+        layout_settings: {  }
+        components:
+          b2f5add5-e713-486f-bd73-9f9102fc615d:
+            uuid: b2f5add5-e713-486f-bd73-9f9102fc615d
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:pd_course:hub_field_hub_pd_course_next_steps'
+              label: 'Hub: field_hub_pd_course_next_steps'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
   layout_library:
     enable: false
 id: hub_reference.pd_course.default

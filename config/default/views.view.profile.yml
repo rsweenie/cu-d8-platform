@@ -34478,6 +34478,144 @@ display:
         - 'config:field.storage.node.field_profile_phone'
         - 'config:field.storage.node.field_profile_position'
         - 'config:field.storage.node.field_profile_specialties'
+  block_68:
+    display_plugin: block
+    id: block_68
+    display_title: 'Sorted (link) - HP Recent Grad'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: 'Sorted view of Profiles with a view profile link'
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            profile: profile
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            476: 476
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: profile_specialties
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      defaults:
+        filters: false
+        filter_groups: false
+        sorts: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_sort_order_value:
+          id: field_sort_order_value
+          table: node__field_sort_order
+          field: field_sort_order_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        field_profile_name_family:
+          id: field_profile_name_family
+          table: node__field_profile_name
+          field: field_profile_name_family
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        field_profile_name_credentials:
+          id: field_profile_name_credentials
+          table: node__field_profile_name
+          field: field_profile_name_credentials
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_profile_email'
+        - 'config:field.storage.node.field_profile_image'
+        - 'config:field.storage.node.field_profile_name'
+        - 'config:field.storage.node.field_profile_office_location'
+        - 'config:field.storage.node.field_profile_p_link'
+        - 'config:field.storage.node.field_profile_phone'
+        - 'config:field.storage.node.field_profile_position'
+        - 'config:field.storage.node.field_profile_specialties'
   block_7:
     display_plugin: block
     id: block_7

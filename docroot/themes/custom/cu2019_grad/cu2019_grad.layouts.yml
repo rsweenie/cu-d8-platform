@@ -19,6 +19,16 @@ generic_content:
   icon_map:
     - [main]
 
+generic_content_full:
+  label: 'Generic Content Full-Width'
+  category: 'CU 2019'
+  template: templates/layout/layout--generic-content-full
+  regions:
+    main:
+      label: 'Main content'
+  icon_map:
+    - [main]
+
 program_detail_feat_tiles:
   label: 'Program Detail - Featured Tiles'
   category: 'CU 2019'

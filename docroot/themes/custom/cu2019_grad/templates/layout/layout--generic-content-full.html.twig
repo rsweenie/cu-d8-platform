@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Displays the featured-tiles program detail layout.
+ * Displays the generic content layout.
  *
  * Available variables:
  * - content: The content for this layout.
@@ -11,11 +11,11 @@
  */
 #}
 {% if content %}
-  <div {{ attributes.addClass('layout--program-detail-feat-tile') }}>
+  <section {{ attributes.addClass('layout--generic-content') }}>
   {% if content.main %}
     <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
       {{ content.main }}
     </div>
   {% endif %}
-  </div>
+  </section>
 {% endif %}
