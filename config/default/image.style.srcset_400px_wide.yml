@@ -1,0 +1,15 @@
+uuid: 6d0003c6-5cb0-4c01-b1be-bb79bed69a2f
+langcode: en
+status: true
+dependencies: {  }
+name: srcset_400px_wide
+label: 'SrcSet (400px wide)'
+effects:
+  6c782707-e9f2-4b3c-baad-dce1a2558736:
+    uuid: 6c782707-e9f2-4b3c-baad-dce1a2558736
+    id: image_scale
+    weight: 1
+    data:
+      width: 400
+      height: null
+      upscale: false

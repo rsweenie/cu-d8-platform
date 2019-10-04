@@ -1,0 +1,21 @@
+uuid: 7be3951d-1574-452f-8478-a31e468c1311
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_adm_rep_phone
+    - node.type.hub_admissions_rep
+  module:
+    - telephone
+id: node.hub_admissions_rep.field_hub_adm_rep_phone
+field_name: field_hub_adm_rep_phone
+entity_type: node
+bundle: hub_admissions_rep
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

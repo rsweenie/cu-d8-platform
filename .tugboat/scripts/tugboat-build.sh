@@ -32,13 +32,14 @@ case $CU_SITE_ALIAS in
       echo "Could not find appropriate database to import"
       exit 1
     fi
+    drush -r "${DOCROOT}" rsync "@grad.01live":%files @self:%files -y
   ;;
   none)
     echo "Nothing to do for generic install"
   ;;
   
   *)
-    echo "ERROR: Could not determine site alias"
+    echo "Could not determine site alias. Please check Tugboat scripts!"
     exit 1
   ;;
 esac

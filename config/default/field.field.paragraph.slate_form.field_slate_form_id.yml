@@ -1,0 +1,21 @@
+uuid: bf4d6787-41f8-40cb-9286-e1ae2dbb53eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slate_form_id
+    - paragraphs.paragraphs_type.slate_form
+  module:
+    - cu_slate_forms
+id: paragraph.slate_form.field_slate_form_id
+field_name: field_slate_form_id
+entity_type: paragraph
+bundle: slate_form
+label: 'Form ID'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: slate_form_id

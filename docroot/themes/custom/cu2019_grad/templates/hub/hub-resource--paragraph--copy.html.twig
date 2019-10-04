@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'hub-resource',
+    'hub-resource--type-' ~ resource_type|clean_class
+  ]
+%}
+
+<section{{ attributes.addClass(classes) }}>
+  {% if content.field_copy_body %}
+    {{ content.field_copy_body }}
+  {% endif %}
+</section>

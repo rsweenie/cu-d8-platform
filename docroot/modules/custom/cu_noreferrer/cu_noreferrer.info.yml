@@ -1,0 +1,11 @@
+name: CU No Referrer
+description: Adds the <code>rel="noopener"</code> and/or <code>rel="noreferrer"</code> link attributes to all links in dom.
+# core: 8.x
+configure: cu_noreferrer.settings
+type: module
+
+# Information added by Drupal.org packaging script on 2019-01-06
+version: '8.x-1.0'
+core: '8.x'
+project: 'cu_noreferrer'
+datestamp: 1546781284

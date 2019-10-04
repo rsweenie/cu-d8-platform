@@ -1,0 +1,23 @@
+uuid: d5f14f26-da71-49fe-85fc-034717c361a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fel_style
+    - paragraphs.paragraphs_type.featured_element
+  module:
+    - options
+id: paragraph.featured_element.field_fel_style
+field_name: field_fel_style
+entity_type: paragraph
+bundle: featured_element
+label: Style
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string

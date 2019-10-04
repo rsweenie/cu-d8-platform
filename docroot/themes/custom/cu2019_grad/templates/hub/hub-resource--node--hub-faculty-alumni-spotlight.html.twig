@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+<article {{ attributes.addClass(classes) }}>
+  {% if content %}
+  {% include '@cu2019_grad/components/card2.html.twig' with {
+    'image': content.field_hub_fac_spotlight_image,
+    'title': content.field_hub_fac_spotlight_name,
+    'subtitle': content.field_hub_fac_spotlight_title,
+    'body': content.field_hub_fac_spotlight_desc,
+    'tag': content.field_hub_fac_spotlight_type,
+    'class': 'mfsfa',
+    'button': content.field_hub_fac_spotlight_cta
+  } %}
+
+    {# { content.field_hub_fac_spotlight_name }}
+    {{ content.field_hub_fac_spotlight_desc }}
+
+    {{ content.field_hub_fac_spotlight_image }}
+    {{ content.field_hub_fac_spotlight_title }}
+    {{ content.field_hub_fac_spotlight_cta }}
+    {{ content.field_hub_fac_spotlight_type } #}
+
+    {# { content.field_hub_fac_spotlight_cta|merge({ '#attributes': { 'class': [ 'your', 'custom', 'classes' ] } }) } #}
+  {% endif %}
+</article>

@@ -5,12 +5,15 @@ dependencies:
   config:
     - field.storage.node.field_landing_page_content
     - node.type.landing_page
+    - paragraphs.paragraphs_type.collapsible_text
+    - paragraphs.paragraphs_type.featured_element
     - paragraphs.paragraphs_type.formatted_text
     - paragraphs.paragraphs_type.full_width_photo
     - paragraphs.paragraphs_type.hp_hero
     - paragraphs.paragraphs_type.image_video
     - paragraphs.paragraphs_type.manual_featured_set
     - paragraphs.paragraphs_type.next_steps_collection
+    - paragraphs.paragraphs_type.slate_form
   module:
     - entity_reference_revisions
 _core:
@@ -30,56 +33,74 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      formatted_text: formatted_text
+      featured_element: featured_element
       full_width_photo: full_width_photo
+      formatted_text: formatted_text
+      collapsible_text: collapsible_text
       image_video: image_video
-      hp_hero: hp_hero
-      next_steps_collection: next_steps_collection
       manual_featured_set: manual_featured_set
+      next_steps_collection: next_steps_collection
+      hp_hero: hp_hero
+      slate_form: slate_form
     target_bundles_drag_drop:
       accordion:
-        weight: -23
+        weight: -39
         enabled: false
       featured_content_item:
-        weight: -22
+        weight: -38
         enabled: false
-      formatted_text:
+      featured_element:
         enabled: true
-        weight: -21
+        weight: -37
       full_width_photo:
         enabled: true
-        weight: -20
-      ief_link:
-        weight: -19
-        enabled: false
+        weight: -36
+      formatted_text:
+        enabled: true
+        weight: -35
+      collapsible_text:
+        enabled: true
+        weight: -34
       image_video:
         enabled: true
-        weight: -18
-      hp_hero:
-        enabled: true
-        weight: -17
+        weight: -33
+      ief_link:
+        weight: -32
+        enabled: false
       next_step:
-        weight: -16
+        weight: -31
         enabled: false
       hp_hero_bg:
-        weight: -15
+        weight: -30
         enabled: false
-      next_steps_collection:
-        enabled: true
-        weight: -14
       quote:
-        weight: -13
+        weight: -29
         enabled: false
       full_width_banner:
-        weight: 19
+        weight: -28
         enabled: false
       manual_featured_set:
         enabled: true
-        weight: 25
+        weight: -27
+      next_steps_collection:
+        enabled: true
+        weight: -26
+      hp_hero:
+        enabled: true
+        weight: -25
       manual_featured_set_item:
-        weight: 26
+        weight: -24
+        enabled: false
+      manual_faculty_alumni_highlight:
+        weight: -23
+        enabled: false
+      manual_featured_event:
+        weight: -22
         enabled: false
       statistic_highlite:
-        weight: 30
+        weight: -21
         enabled: false
+      slate_form:
+        enabled: true
+        weight: 39
 field_type: entity_reference_revisions

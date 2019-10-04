@@ -30,6 +30,22 @@ function cu2019_grad_preprocess_node(&$variables) {
   }
 }
 
+function cu2019_grad_preprocess_hub_resource__paragraph__hub_paragraph_next_steps(&$variables) {
+  //$variables['shmeh'] = "GUSHMUHH!";
+}
+
+function cu2019_grad_preprocess_field__field_interior_page_content(&$variables) {
+  $element = $variables['element'];
+
+  if ($paragraphs = $element['#items']->referencedEntities()) {
+    foreach ($variables['items'] as $key => &$item) {
+      if (isset($paragraphs[$key])) {
+        $item['attributes']->addClass('paragraph-type-' . $paragraphs[$key]->bundle());
+      }
+    }
+  }
+}
+
 function cu2019_grad_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $variables['par_id'] = $paragraph->id();
@@ -41,26 +57,39 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
   if ($paragraph->hasField('field_fwp_color') && !$paragraph->field_fwp_color->isEmpty()) {
     $variables['bg_style'] = $paragraph->get('field_fwp_color')->getString();
     switch ($variables['bg_style']) {
-      default:
-        $variables['overlay'] = 'bg-blue';
-        break;
       case 'grey':
         $variables['overlay'] = 'bg-grey';
+        break;
+      default:
+        $variables['overlay'] = 'bg-blue';
         break;
     }
   }
 
-  if ($paragraph->hasField('field_stat_highlite_background') && !$paragraph->field_stat_highlite_background->isEmpty()) {
-    $variables['bg_option'] = $paragraph->get('field_stat_highlite_background')->getString();
-    switch ($variables['bg_option']) {
-      default:
-        $variables['bg'] = 'bg-secondary';
-        break;
+  $variables['bg_class'] = 'bg-secondary';
+  if ($paragraph->hasField('field_stat_highlite_style') && !$paragraph->field_stat_highlite_style->isEmpty()) {
+    $variables['bg_style'] = $paragraph->get('field_stat_highlite_style')->getString();
+    switch ($variables['bg_style']) {
       case 'color2':
-        $variables['bg'] = 'bg-primary';
+        $variables['bg_class'] = 'bg-primary';
         break;
       case 'color3':
-        $variables['bg'] = 'bg-gray2';
+        $variables['bg_class'] = 'bg-gray2';
+        break;
+      default:
+        $variables['bg_class'] = 'bg-secondary';
+        break;
+    }
+  }
+
+  if ($paragraph->hasField('field_mfsfa_type') && !$paragraph->field_mfsfa_type->isEmpty()) {
+    $variables['mfsfa_type'] = $paragraph->get('field_mfsfa_type')->getString();
+    switch ($variables['mfsfa_type']) {
+      case 'optionFaculty':
+        $variables['highlite_tag'] = 'Faculty Spotlight';
+        break;
+      case 'optionAlumni':
+        $variables['highlite_tag'] = 'Alumni Spotlight';
         break;
     }
   }
@@ -94,6 +123,58 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
     list($variables['start_month'], $variables['start_day']) = explode(' ', $dateRange->get('start_date')->getValue()->format('M j'));
   }
 
+  if ($paragraph->getType() == 'image_video') {
+    if ($paragraph->hasField('field_image_video_media') && !$paragraph->field_image_video_media->isEmpty()) {
+      if ($media = $paragraph->field_image_video_media->referencedEntities()) {
+        $media = reset($media);
+        $variables['media_type'] = $media->bundle();
+
+        // If this is a video, try to fetch the required render array.
+        if ($media->bundle() == 'video') {
+          $provider_manager = \Drupal::service('video_embed_field.provider_manager');
+          $provider = $provider_manager->loadProviderFromInput($media->field_media_video_embed_field->value);
+          if ($provider) {
+            $video =  $provider->renderEmbedCode(560, 315, FALSE);
+            $variables['video'] = $video;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+function cu2019_grad_preprocess_views_view(&$variables) {
+  $variables['breadcrumb_links'] = \Drupal::service('breadcrumb')->build(\Drupal::routeMatch())->getLinks();
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_hub_resource_field__field_hub_fac_spotlight_type(&$variables) {
+  $value = &$variables['items'][0]['content']['#context']['value'];
+  switch ($value) {
+    case 'fac':
+      $value = 'Faculty spotlight';
+      break;
+    case 'alum':
+      $value = 'Alumni spotlight';
+      break;
+    default:
+      $value = '';
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_hub_resource_field__paragraph_course_date__field_hub_cd_date(&$variables) {
+  foreach ($variables['items'] as $key => $item) {
+    $date =  new Datetime($item['content']['#attributes']['datetime']);
+    $variables['items'][$key]['content']['month'] = $date->format('M');
+    $variables['items'][$key]['content']['day'] = $date->format('j');
+  }
 }
 
 // Returns a render array with the sub-tree of the current active link.
