@@ -166,12 +166,8 @@ services:
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli 
         # Run Backstop tests
-        - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/"
-        - /bin/bash backstop-test.sh
-        - touch /etc/rc.local
-        - chmod 755 /etc/rc.local
-        - echo "/bin/bash backstop-test.sh" > /etc/rc.local
-
+        - cp "${TUGBOAT_ROOT}/.tugboat/scripts/{backstop-reference,backstop-test.sh}" "${TUGBOAT_ROOT}/"
+        - /bin/bash backstop-reference.sh
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
