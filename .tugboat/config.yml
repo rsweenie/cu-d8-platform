@@ -164,11 +164,11 @@ services:
         - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-postbuild.sh
 
         # Just in case we need to log in as admin
-        - drush -r "${DOCROOT}" uli 
         # Run Backstop tests
         - cp ${TUGBOAT_ROOT}/.tugboat/scripts/backstop-reference.sh ${TUGBOAT_ROOT}/
         - cp ${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh ${TUGBOAT_ROOT}/
         - /bin/bash backstop-reference.sh
+        - drush -r "${DOCROOT}" uli 
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
