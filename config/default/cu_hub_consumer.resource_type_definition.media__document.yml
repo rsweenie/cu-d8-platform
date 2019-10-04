@@ -12,19 +12,7 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
-    multiple: false
-  revision_created:
-    type: datetime
-    multiple: false
-  revision_log_message:
-    type: hub_unknown
-    multiple: false
-  status:
-    type: string_long
-    multiple: false
-  name:
-    type: string_long
+    type: language
     multiple: false
   created:
     type: datetime
@@ -32,29 +20,11 @@ fields:
   changed:
     type: datetime
     multiple: false
-  default_langcode:
-    type: string_long
-    multiple: false
-  revision_translation_affected:
-    type: string_long
-    multiple: false
-  scheduled_transition_date:
-    type: hub_unknown
-    multiple: true
-  scheduled_transition_state:
-    type: hub_unknown
-    multiple: true
-  metatag:
-    type: hub_unknown
-    multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
-  path:
-    type: hub_unknown
-    multiple: false
+    type: hub_metatags
+    multiple: true
   field_media_in_library:
-    type: string_long
+    type: boolean
     multiple: false
   bundle:
     type: hub_resource

@@ -12,7 +12,7 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   revision_timestamp:
     type: datetime
@@ -24,16 +24,16 @@ fields:
     type: datetime
     multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
+    type: hub_metatags
+    multiple: true
   field_hub_path_alias:
-    type: string_long
+    type: string
     multiple: false
   field_hub_program_description:
     type: hub_text_long
     multiple: false
   field_hub_program_title:
-    type: string_long
+    type: string
     multiple: false
   node_type:
     type: hub_resource

@@ -12,22 +12,19 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   revision_created:
     type: datetime
     multiple: false
-  revision_log_message:
-    type: hub_unknown
-    multiple: false
   status:
-    type: string_long
+    type: boolean
     multiple: false
   name:
-    type: string_long
+    type: string
     multiple: false
   description:
-    type: hub_unknown
+    type: hub_text_long
     multiple: false
   weight:
     type: integer
@@ -35,23 +32,11 @@ fields:
   changed:
     type: datetime
     multiple: false
-  default_langcode:
-    type: string_long
-    multiple: false
-  revision_translation_affected:
-    type: string_long
-    multiple: false
-  metatag:
-    type: hub_unknown
-    multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
-  path:
-    type: hub_unknown
-    multiple: false
+    type: hub_metatags
+    multiple: true
   field_term_tooltip:
-    type: string_long
+    type: string
     multiple: false
   vid:
     type: hub_resource

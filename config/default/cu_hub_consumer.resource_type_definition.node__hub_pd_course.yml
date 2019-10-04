@@ -12,13 +12,13 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   revision_timestamp:
     type: datetime
     multiple: false
   title:
-    type: string_long
+    type: string
     multiple: false
   created:
     type: datetime
@@ -26,20 +26,17 @@ fields:
   changed:
     type: datetime
     multiple: false
-  metatag:
-    type: hub_unknown
-    multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
+    type: hub_metatags
+    multiple: true
   path:
-    type: hub_unknown
+    type: path
     multiple: false
   body:
     type: hub_text_long
     multiple: false
   field_hub_path_alias:
-    type: string_long
+    type: string
     multiple: false
   node_type:
     type: hub_resource

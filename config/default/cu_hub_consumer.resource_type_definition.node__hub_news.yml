@@ -12,7 +12,7 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   revision_timestamp:
     type: datetime
@@ -24,8 +24,8 @@ fields:
     type: datetime
     multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
+    type: hub_metatags
+    multiple: true
   field_hub_news_body:
     type: hub_text_long
     multiple: false
@@ -36,33 +36,33 @@ fields:
     type: string_long
     multiple: false
   field_hub_news_featured:
-    type: string_long
+    type: boolean
     multiple: false
   field_hub_news_title:
-    type: string_long
+    type: string
     multiple: false
   field_hub_path_alias:
-    type: string_long
+    type: string
     multiple: false
   node_type:
     type: hub_resource
     hub_type: node_type
     multiple: false
-  field_hub_news_listing_image:
+  field_hub_news_hero_image:
     type: hub_resource
     hub_type: media
     multiple: false
-  field_hub_news_type:
+  field_hub_news_listing_image:
     type: hub_resource
-    hub_type: taxonomy_term
+    hub_type: media
     multiple: false
   field_hub_news_location:
     type: hub_resource
     hub_type: taxonomy_term
     multiple: true
-  field_hub_news_hero_image:
+  field_hub_news_type:
     type: hub_resource
-    hub_type: media
+    hub_type: taxonomy_term
     multiple: false
   field_hub_site:
     type: hub_resource
