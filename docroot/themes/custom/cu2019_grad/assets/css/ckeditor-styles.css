@@ -10682,54 +10682,191 @@ nav.side-nav input[type='checkbox']:checked ~ label span:after {
   opacity: 0;
 }
 
-/* line 14, src/sass/components/navigation/_pagination.scss */
+/* line 6, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination ul,
-nav.pagination ol {
+nav.pager {
+  background: #f5f8fc;
+  border-top: 1px solid #DADADA;
+  padding: 1.4rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
 }
 
-/* line 48, src/sass/components/navigation/_pagination.scss */
+/* line 14, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination ul > li:first-child a {
-  border-left: 0.2rem solid #F0F5FA;
+nav.pager ul,
+nav.pager ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 19, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li {
+  font-size: 1.6rem;
+  text-align: center;
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
+  background: #fff;
+  padding: 0;
+}
+
+/* line 27, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li a {
+  color: #555555;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.8rem;
+  height: 4.3rem;
+}
+
+/* line 36, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li:first-child {
+  border-left: 1px solid #DADADA;
+}
+
+/* line 40, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li:last-child {
+  border-right: 1px solid #DADADA;
+}
+
+/* line 44, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first {
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+
+/* line 49, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a:after {
+  content: "\E007";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* line 56, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--last {
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 }
 
 /* line 61, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a {
-  display: block;
-  padding: 1rem;
-  border: 0.2rem solid #F0F5FA;
-  border-left: none;
+nav.pager li.pager__item--last a:after {
+  content: "\E007";
 }
 
-/* line 73, src/sass/components/navigation/_pagination.scss */
+/* line 67, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a[disabled] {
-  color: #F0F5FA;
-  pointer-events: none;
+nav.pager li.pager__item--previous {
+  border-right: 1px solid #DADADA;
 }
 
-/* line 84, src/sass/components/navigation/_pagination.scss */
+/* line 71, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a.active {
-  background: #F0F5FA;
-  color: #002E6D;
+nav.pager li.pager__item--previous a:after {
+  content: "\E008";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* line 78, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--next {
+  border-left: 1px solid #DADADA;
+}
+
+/* line 82, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--next a:after {
+  content: "\E008";
+}
+
+/* line 92, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a,
+nav.pager li.pager__item--previous a,
+nav.pager li.pager__item--last a,
+nav.pager li.pager__item--next a {
+  color: #BABABA;
+  position: relative;
+}
+
+/* line 95, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a span,
+nav.pager li.pager__item--previous a span,
+nav.pager li.pager__item--last a span,
+nav.pager li.pager__item--next a span {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* line 100, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a:after,
+nav.pager li.pager__item--previous a:after,
+nav.pager li.pager__item--last a:after,
+nav.pager li.pager__item--next a:after {
+  font-family: "cu_icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 115, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.is-active {
+  font-weight: normal;
+  background: #0054A6;
+}
+
+/* line 119, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.is-active a {
+  color: #fff;
 }
 
 /* line 6, src/sass/components/navigation/_jump.scss */
