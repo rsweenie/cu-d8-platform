@@ -164,10 +164,10 @@ services:
         - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-postbuild.sh
 
         # Run Backstop tests
-        - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/tests/backstopjs"
+        - cp "${TUGBOAT_ROOT}/.tugboat/scripts/backstop-test.sh" "${TUGBOAT_ROOT}/"
         # Just in case we need to log in as admin
         - drush -r "${DOCROOT}" uli 
-        - (cd ${TUGBOAT_ROOT}/tests/backstopjs/; ./backstop-test.sh) 
+        - /bin/bash backstop-test.sh
 
 
   # What to call the service hosting MySQL. This name also acts as the
