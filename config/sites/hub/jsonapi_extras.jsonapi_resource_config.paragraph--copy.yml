@@ -1,19 +1,13 @@
-uuid: a98e3a44-989d-45fb-a081-c68550891e90
+uuid: f2c4eda7-5d18-4a6c-9fb0-9dc4a688aa97
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.video
-  module:
-    - jsonapi_defaults
-third_party_settings:
-  jsonapi_defaults:
-    default_include:
-      - field_video_media
-id: paragraph--video
+    - paragraphs.paragraphs_type.copy
+id: paragraph--copy
 disabled: false
-path: paragraph/video
-resourceType: paragraph--video
+path: paragraph/copy
+resourceType: paragraph--copy
 resourceFields:
   id:
     fieldName: id
@@ -105,15 +99,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_video_caption:
-    fieldName: field_video_caption
-    publicName: field_video_caption
-    enhancer:
-      id: ''
-    disabled: false
-  field_video_media:
-    fieldName: field_video_media
-    publicName: field_video_media
+  field_copy_body:
+    fieldName: field_copy_body
+    publicName: field_copy_body
     enhancer:
       id: ''
     disabled: false

@@ -1,19 +1,13 @@
-uuid: a98e3a44-989d-45fb-a081-c68550891e90
+uuid: a16c56f1-72cb-49cd-bd75-93ba9f65ac0c
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.video
-  module:
-    - jsonapi_defaults
-third_party_settings:
-  jsonapi_defaults:
-    default_include:
-      - field_video_media
-id: paragraph--video
+    - paragraphs.paragraphs_type.accordion
+id: paragraph--accordion
 disabled: false
-path: paragraph/video
-resourceType: paragraph--video
+path: paragraph/accordion
+resourceType: paragraph--accordion
 resourceFields:
   id:
     fieldName: id
@@ -105,15 +99,15 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_video_caption:
-    fieldName: field_video_caption
-    publicName: field_video_caption
+  field_tabbed_acc_body:
+    fieldName: field_tabbed_acc_body
+    publicName: field_tabbed_acc_body
     enhancer:
       id: ''
     disabled: false
-  field_video_media:
-    fieldName: field_video_media
-    publicName: field_video_media
+  field_tabbed_acc_title:
+    fieldName: field_tabbed_acc_title
+    publicName: field_tabbed_acc_title
     enhancer:
       id: ''
     disabled: false
