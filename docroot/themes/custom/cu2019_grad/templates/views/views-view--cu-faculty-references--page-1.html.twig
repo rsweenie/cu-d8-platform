@@ -70,7 +70,15 @@
 
   {% if rows %}
     <div class="view-content">
-      {{ rows }}
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="fac-listing">
+              {{ rows }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   {% elseif empty %}
     <div class="view-empty">
