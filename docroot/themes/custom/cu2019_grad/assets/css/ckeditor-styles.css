@@ -11959,7 +11959,8 @@ form .form-group {
 
 /* line 9, src/sass/components/forms/_labels.scss */
 
-form label {
+form label,
+form legend {
   display: block;
   margin-bottom: 1rem;
   font-size: 1.9rem;
@@ -11971,7 +11972,8 @@ form label {
 
 /* line 24, src/sass/components/forms/_labels.scss */
 
-form label .req {
+form label .req,
+form legend .req {
   color: #f32836;
 }
 
@@ -12047,6 +12049,25 @@ form select {
 
 form textarea {
   height: auto;
+}
+
+/* line 65, src/sass/components/forms/_fields.scss */
+
+form .form_birthdate .form-responses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 73, src/sass/components/forms/_fields.scss */
+
+form .form_birthdate .form-responses select {
+  margin-bottom: 1rem;
+  margin-left: 0;
 }
 
 /* line 9, src/sass/components/forms/_check-radio.scss */
@@ -12783,6 +12804,43 @@ form.search .search button {
   nav.cp li {
     width: calc(33.333% - 5rem);
     margin: 0 2.5rem;
+  }
+
+  /* line 65, src/sass/components/forms/_fields.scss */
+
+  form .form_birthdate .form-responses {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  /* line 73, src/sass/components/forms/_fields.scss */
+
+  form .form_birthdate .form-responses select {
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+  }
+
+  /* line 84, src/sass/components/forms/_fields.scss */
+
+  form .form_birthdate .form-responses select[aria-label="Month"] {
+    -ms-flex-preferred-size: 55%;
+        flex-basis: 55%;
+  }
+
+  /* line 88, src/sass/components/forms/_fields.scss */
+
+  form .form_birthdate .form-responses select[aria-label="Day"] {
+    -ms-flex-preferred-size: 15%;
+        flex-basis: 15%;
+  }
+
+  /* line 92, src/sass/components/forms/_fields.scss */
+
+  form .form_birthdate .form-responses select[aria-label="Year"] {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
   }
 }
 

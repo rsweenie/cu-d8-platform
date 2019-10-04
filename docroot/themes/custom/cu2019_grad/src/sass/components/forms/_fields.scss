@@ -60,3 +60,38 @@ select {
 textarea {
     height: auto;
 }
+
+.form_birthdate {
+    .form-responses {
+        display: flex;
+        flex-direction: column;
+
+        @media #{$mediaSm} {
+            flex-direction: row;
+        }
+
+        select {
+            margin-bottom: 1rem;
+            margin-left: 0;
+
+            @media #{$mediaSm} {
+                margin-bottom: 0;
+                margin-left: 5px;
+            }
+        }
+        
+        @media #{$mediaSm} {
+            select[aria-label="Month"] {
+                flex-basis: 55%;
+            }
+
+            select[aria-label="Day"] {
+                flex-basis: 15%;   
+            }
+
+            select[aria-label="Year"] {
+                flex-basis: 30%;
+            }
+        }
+    }
+}
