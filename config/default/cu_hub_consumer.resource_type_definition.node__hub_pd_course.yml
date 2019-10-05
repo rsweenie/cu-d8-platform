@@ -65,6 +65,10 @@ fields:
     type: hub_resource
     hub_type: node
     multiple: true
+  field_hub_pd_right_side_copy:
+    type: hub_resource
+    hub_type: paragraph
+    multiple: false
   field_hub_site:
     type: hub_resource
     hub_type: node
