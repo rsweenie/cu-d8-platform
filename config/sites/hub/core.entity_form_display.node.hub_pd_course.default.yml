@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.hub_pd_course.field_hub_pd_course_next_steps
     - field.field.node.hub_pd_course.field_hub_pd_course_program
     - field.field.node.hub_pd_course.field_hub_pd_related_degrees
+    - field.field.node.hub_pd_course.field_hub_pd_right_side_copy
     - field.field.node.hub_pd_course.field_hub_site
     - node.type.hub_pd_course
   module:
@@ -36,12 +37,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_hub_path_alias:
-    weight: 8
+    weight: 9
     settings:
       size: 60
       placeholder: ''
@@ -50,7 +51,7 @@ content:
     region: content
   field_hub_pd_course_dates:
     type: paragraphs
-    weight: 7
+    weight: 8
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -107,6 +108,24 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_hub_pd_right_side_copy:
+    type: paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
   field_hub_site:
     weight: 0
     settings:
@@ -118,12 +137,12 @@ content:
     region: content
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   private:
-    weight: 17
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -132,12 +151,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 16
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -145,14 +164,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 15
     region: content
     third_party_settings: {  }
   title:
@@ -165,12 +184,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
