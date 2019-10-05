@@ -16,6 +16,7 @@ third_party_settings:
       - field_hub_pd_course_next_steps.field_hub_next_steps_items
       - field_hub_pd_related_degrees
       - field_hub_site
+      - field_hub_pd_right_side_copy
 id: node--hub_pd_course
 disabled: false
 path: node/hub_pd_course
@@ -222,6 +223,12 @@ resourceFields:
   field_hub_pd_related_degrees:
     fieldName: field_hub_pd_related_degrees
     publicName: field_hub_pd_related_degrees
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_right_side_copy:
+    fieldName: field_hub_pd_right_side_copy
+    publicName: field_hub_pd_right_side_copy
     enhancer:
       id: ''
     disabled: false
