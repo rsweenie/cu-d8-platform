@@ -13,12 +13,12 @@ use Drupal\Core\Datetime\DateFormatterInterface;
  * Generic datetime resource field.
  * 
  * @HubResourceFieldType(
- *   id = "datetime",
- *   label = @Translation("Date"),
- *   description = @Translation("Date and time."),
+ *   id = "daterange",
+ *   label = @Translation("Date Range"),
+ *   description = @Translation("Date and time range."),
  * )
  */
-class DateTimeFieldItem extends ScalarFieldItemBase {
+class DateRangeFieldItem extends ArrayFieldItemBase {
 
   /**
    * The date formatter service.
@@ -28,11 +28,18 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
   protected $dateFormatter;
 
   /**
-   * Cached computed date.
+   * Cached computed start date.
    *
    * @var \DateTime|null
    */
-  protected $date = NULL;
+  protected $dateStart = NULL;
+
+  /**
+   * Cached computed end date.
+   *
+   * @var \DateTime|null
+   */
+  protected $dateEnd = NULL;
 
   /**
    * Constructs a new class instance.
@@ -75,13 +82,20 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
   }
 
   /**
-   * Get the date as a datetime object.
+   * {@inheritdoc}
+   */
+  public function mainPropertyName() {
+    return 'value';
+  }
+
+  /**
+   * Get the start date as a datetime object.
    *
    * @return \Drupal\Core\Datetime\DrupalDateTime
    */
-  public function getDateTime() {
-    if ($this->date !== NULL) {
-      return $this->date;
+  public function getStartDateTime() {
+    if ($this->dateStart !== NULL) {
+      return $this->dateStart;
     }
 
     // 2019-08-13T03:48:53+00:00
@@ -89,15 +103,41 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
 
     try {
       // Assumes ISO 8601 date/time format.
-      $date = DrupalDateTime::createFromFormat('Y-m-d\TH:i:sP', $this->value, 'UTC');
+      $date = DrupalDateTime::createFromFormat('Y-m-d\TH:i:sP', $this->value['value'], 'UTC');
       if ($date instanceof DrupalDateTime && !$date->hasErrors()) {
-        $this->date = $date;
+        $this->dateStart = $date;
       }
     }
     catch (\Exception $e) {
       // @todo Handle this.
     }
-    return $this->date;
+    return $this->dateStart;
+  }
+
+  /**
+   * Get the start date as a datetime object.
+   *
+   * @return \Drupal\Core\Datetime\DrupalDateTime
+   */
+  public function getEndDateTime() {
+    if ($this->dateEnd !== NULL) {
+      return $this->dateEnd;
+    }
+
+    // 2019-08-13T03:48:53+00:00
+    $format = 'Y-m-d\TH:i:sP';
+
+    try {
+      // Assumes ISO 8601 date/time format.
+      $date = DrupalDateTime::createFromFormat('Y-m-d\TH:i:sP', $this->value['end_value'], 'UTC');
+      if ($date instanceof DrupalDateTime && !$date->hasErrors()) {
+        $this->dateEnd = $date;
+      }
+    }
+    catch (\Exception $e) {
+      // @todo Handle this.
+    }
+    return $this->dateEnd;
   }
 
   /**
@@ -118,10 +158,10 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
   public function view() {
     $elements = [];
 
-    if ($date = $this->getDateTime()) {
+    if ($start_date = $this->getStartDateTime()) {
       // Create the ISO date in Universal Time.
-      $iso_date = $date->format("Y-m-d\\TH:i:s") . 'Z';
-      $output = $this->formatDate($date);
+      $iso_date = $start_date->format("Y-m-d\\TH:i:s") . 'Z';
+      $output = $this->formatDate($start_date);
 
       // Display the date using theme datetime.
       $elements = [
@@ -137,15 +177,35 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
           'datetime' => $iso_date,
         ),
       ];
-      /*
-      if (!empty($item->_attributes)) {
-        $elements[$delta]['#attributes'] += $item->_attributes;
 
-        // Unset field item attributes since they have been included in the
-        // formatter output and should not be rendered in the field template.
-        unset($item->_attributes);
+      if ($end_date = $this->getEndDateTime()) {
+        if ($start_date->getTimestamp() !== $end_date->getTimestamp()) {
+          // Create the ISO date in Universal Time.
+          $iso_date = $start_date->format("Y-m-d\\TH:i:s") . 'Z';
+          $output = $this->formatDate($start_date);
+
+          // Display the date using theme datetime.
+          $end_elements = [
+            '#cache' => [
+              'contexts' => [
+                'timezone',
+              ],
+            ],
+            '#theme' => 'time',
+            '#text' => $output,
+            '#html' => FALSE,
+            '#attributes' => array(
+              'datetime' => $iso_date,
+            ),
+          ];
+
+          $elements = [
+            'start_date' => $elements,
+            'separator' => ['#plain_text' => ' - '],
+            'end_date' => $end_elements,
+          ];
+        }
       }
-      */
     }
 
     return $elements;
@@ -155,11 +215,12 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
    * {@inheritdoc}
    */
   public function getFieldFriendlyValue() {
-    //return ['value' => $this->value];
-    //return ['date' => $this->getDateTime()->format(\DateTime::ISO8601)];
-    //return ['value' => $this->getDateTime()->getTimestamp()];
-    if ($datetime = $this->getDateTime()) {
-      return ['value' => $datetime->format('Y-m-d\TH:i:s')];
+    if ($start_datetime = $this->getStartDateTime()) {
+      $value = ['value' => $start_datetime->format('Y-m-d\TH:i:s')];
+      if ($end_datetime = $this->getEndDateTime()) {
+        $value['end_value'] = $end_datetime->format('Y-m-d\TH:i:s');
+      }
+      return $value;
     }
   }
 
