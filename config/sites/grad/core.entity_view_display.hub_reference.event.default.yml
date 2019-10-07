@@ -5,6 +5,7 @@ dependencies:
   config:
     - cu_hub_consumer.hub_reference_type.event
     - field.field.hub_reference.event.field_event_date
+    - field.field.hub_reference.event.field_event_location
     - field.field.hub_reference.event.field_event_type
     - field.field.hub_reference.event.field_featured
   module:
@@ -86,7 +87,7 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: hub_resource_link
+                type: hub_resource_label
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:
@@ -103,7 +104,7 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: hub_resource_link
+                type: hub_resource_label
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:
@@ -165,6 +166,14 @@ content:
     third_party_settings: {  }
     type: daterange_default
     region: content
+  field_event_location:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: main
   field_event_type:
     weight: 2
     label: above
