@@ -34,7 +34,7 @@ Feature: Featured Content Group
     Then I should see "Testing Featured Content Group"
     #Deleting Featured Content Group'
     And I click "Testing Featured Content Group"
-    And I wait for AJAX to finish
+  
     And I visit the edit form
     And I wait "5" seconds
     And I visit the "#edit-delete" link
