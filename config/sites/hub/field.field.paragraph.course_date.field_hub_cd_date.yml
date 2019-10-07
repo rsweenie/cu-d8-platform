@@ -1,0 +1,24 @@
+uuid: f3b9850b-abce-47e4-a403-df5cbca0cca0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hub_cd_date
+    - paragraphs.paragraphs_type.course_date
+  module:
+    - datetime
+id: paragraph.course_date.field_hub_cd_date
+field_name: field_hub_cd_date
+entity_type: paragraph
+bundle: course_date
+label: Date
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

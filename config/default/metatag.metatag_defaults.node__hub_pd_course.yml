@@ -1,0 +1,8 @@
+uuid: f588d6d8-f4a9-4d76-bf7d-fd7bbb0144fd
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_pd_course
+label: 'Content: Hub: Professional Development Course'
+tags:
+  canonical_url: '[node:field_hub_site:entity:field_hub_site_base_uri][node:field_hub_path_alias]'
