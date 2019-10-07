@@ -1,9 +1,9 @@
-uuid: 7c4983e5-2bca-429e-80cd-840fc7078a50
+uuid: e2e757e8-6aab-4fa2-bda2-83fd290fdeab
 langcode: en
 status: true
 dependencies: {  }
-id: node__hub_blog
-type_id: node--hub_blog
+id: node__hub_event
+type_id: node--hub_event
 fields:
   drupal_internal__nid:
     type: integer
@@ -26,19 +26,19 @@ fields:
   metatag_normalized:
     type: hub_metatags
     multiple: true
-  field_hub_blog_body:
+  field_hub_event_body:
     type: hub_text_long
     multiple: false
-  field_hub_blog_date:
-    type: datetime
+  field_hub_event_date:
+    type: daterange
     multiple: false
-  field_hub_blog_description:
+  field_hub_event_description:
     type: string_long
     multiple: false
-  field_hub_blog_featured:
+  field_hub_event_featured:
     type: boolean
     multiple: false
-  field_hub_blog_title:
+  field_hub_event_title:
     type: string
     multiple: false
   field_hub_path_alias:
@@ -48,23 +48,29 @@ fields:
     type: hub_resource
     hub_type: node_type
     multiple: false
-  field_hub_blog_hero_image:
+  field_hub_event_hero_image:
     type: hub_resource
     hub_type: media
     hub_bundles:
       - media--image
     multiple: false
-  field_hub_blog_listing_image:
+  field_hub_event_listing_image:
     type: hub_resource
     hub_type: media
     hub_bundles:
       - media--image
     multiple: false
-  field_hub_blog_type:
+  field_hub_event_location:
     type: hub_resource
     hub_type: taxonomy_term
     hub_bundles:
-      - taxonomy_term--blog_type
+      - taxonomy_term--location
+    multiple: true
+  field_hub_event_type:
+    type: hub_resource
+    hub_type: taxonomy_term
+    hub_bundles:
+      - taxonomy_term--event_type
     multiple: false
   field_hub_site:
     type: hub_resource
