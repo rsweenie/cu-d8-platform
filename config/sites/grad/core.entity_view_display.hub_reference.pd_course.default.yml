@@ -106,6 +106,23 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
+            weight: 1
+          8f314b8e-625e-4cb3-bca8-f220c493b41f:
+            uuid: 8f314b8e-625e-4cb3-bca8-f220c493b41f
+            region: right
+            configuration:
+              id: 'field_block:hub_reference:pd_course:hub_field_hub_pd_right_side_copy'
+              label: 'Hub: field_hub_pd_right_side_copy'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
             weight: 0
         third_party_settings: {  }
       -
@@ -149,6 +166,7 @@ hidden:
   hub_field_hub_pd_course_next_steps: true
   hub_field_hub_pd_course_program: true
   hub_field_hub_pd_related_degrees: true
+  hub_field_hub_pd_right_side_copy: true
   hub_field_hub_site: true
   hub_langcode: true
   hub_metatag: true
