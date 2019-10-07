@@ -1,20 +1,21 @@
-uuid: 2eab7159-0f72-45cb-b63f-85cb02c31cd3
+uuid: 81d748f9-b069-4fae-ac08-28502b0aa3cf
 langcode: en
 status: true
 dependencies:
   module:
+    - datetime
     - field_permissions
-    - node
+    - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_hub_pd_course_next_steps
-field_name: field_hub_pd_course_next_steps
-entity_type: node
-type: entity_reference
+id: paragraph.field_hub_cd_date
+field_name: field_hub_cd_date
+entity_type: paragraph
+type: datetime
 settings:
-  target_type: node
-module: core
+  datetime_type: datetime
+module: datetime
 locked: false
 cardinality: 1
 translatable: true

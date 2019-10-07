@@ -1,18 +1,18 @@
-uuid: 1db41c95-29b6-4403-9ea9-792bcc94d234
+uuid: 0696489f-4012-4c86-b5ec-fb9c7121294f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hub_pd_course_dates
+    - field.storage.node.field_hub_pd_right_side_copy
     - node.type.hub_pd_course
-    - paragraphs.paragraphs_type.course_date
+    - paragraphs.paragraphs_type.copy
   module:
     - entity_reference_revisions
-id: node.hub_pd_course.field_hub_pd_course_dates
-field_name: field_hub_pd_course_dates
+id: node.hub_pd_course.field_hub_pd_right_side_copy
+field_name: field_hub_pd_right_side_copy
 entity_type: node
 bundle: hub_pd_course
-label: 'Course Dates'
+label: 'Right Side Copy'
 description: ''
 required: false
 translatable: false
@@ -23,17 +23,17 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      course_date: course_date
+      copy: copy
     target_bundles_drag_drop:
       accordion:
         weight: 13
         enabled: false
       copy:
-        weight: 14
-        enabled: false
-      course_date:
         enabled: true
+        weight: 14
+      course_date:
         weight: 15
+        enabled: false
       faculty_alumni_spotlight:
         weight: 16
         enabled: false
