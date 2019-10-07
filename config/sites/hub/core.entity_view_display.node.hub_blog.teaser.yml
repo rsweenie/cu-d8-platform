@@ -1,0 +1,29 @@
+uuid: 7a6f7bba-d12f-460a-b098-29acdcf00b47
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.hub_blog
+  module:
+    - private_content
+    - user
+id: node.hub_blog.teaser
+targetEntityType: node
+bundle: hub_blog
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  search_api_excerpt: true
