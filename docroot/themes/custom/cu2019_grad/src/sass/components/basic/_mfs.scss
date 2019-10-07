@@ -30,13 +30,15 @@
     }
   }
 
-  a {
+  a,
+  h1 {
     display: block;
     font-size: 18px;
     line-height: 1.2em;
     font-weight: 600;
     color: $gray2;
     text-decoration: none;
+    text-transform: none;
 
     @media #{$mediaMd} {
       font-size: 24px;
@@ -120,6 +122,9 @@
 }
 
 .mfs {
+  &.section {
+    background: $gray9;
+  }
   h3 {
     text-align: center;
   }
