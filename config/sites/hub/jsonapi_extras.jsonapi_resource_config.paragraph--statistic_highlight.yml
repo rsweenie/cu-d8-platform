@@ -1,19 +1,13 @@
-uuid: a98e3a44-989d-45fb-a081-c68550891e90
+uuid: 63c99304-8064-44a1-bddb-ca454f2a0aeb
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.video
-  module:
-    - jsonapi_defaults
-third_party_settings:
-  jsonapi_defaults:
-    default_include:
-      - field_video_media
-id: paragraph--video
+    - paragraphs.paragraphs_type.statistic_highlight
+id: paragraph--statistic_highlight
 disabled: false
-path: paragraph/video
-resourceType: paragraph--video
+path: paragraph/statistic_highlight
+resourceType: paragraph--statistic_highlight
 resourceFields:
   id:
     fieldName: id
@@ -105,15 +99,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_video_caption:
-    fieldName: field_video_caption
-    publicName: field_video_caption
-    enhancer:
-      id: ''
-    disabled: false
-  field_video_media:
-    fieldName: field_video_media
-    publicName: field_video_media
+  field_hub_stat_highlight_ref:
+    fieldName: field_hub_stat_highlight_ref
+    publicName: field_hub_stat_highlight_ref
     enhancer:
       id: ''
     disabled: false

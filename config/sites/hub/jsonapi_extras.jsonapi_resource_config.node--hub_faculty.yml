@@ -126,6 +126,12 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  field_metadata:
+    fieldName: field_metadata
+    publicName: field_metadata
+    enhancer:
+      id: ''
+    disabled: false
   scheduled_transition_date:
     disabled: true
     fieldName: scheduled_transition_date
@@ -186,21 +192,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_hub_faculty_degree:
-    fieldName: field_hub_faculty_degree
-    publicName: field_hub_faculty_degree
-    enhancer:
-      id: ''
-    disabled: false
   field_hub_faculty_department:
     fieldName: field_hub_faculty_department
     publicName: field_hub_faculty_department
-    enhancer:
-      id: ''
-    disabled: false
-  field_hub_faculty_description:
-    fieldName: field_hub_faculty_description
-    publicName: field_hub_faculty_description
     enhancer:
       id: ''
     disabled: false
@@ -249,6 +243,12 @@ resourceFields:
   field_hub_faculty_title:
     fieldName: field_hub_faculty_title
     publicName: field_hub_faculty_title
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_path_alias:
+    fieldName: field_hub_path_alias
+    publicName: field_hub_path_alias
     enhancer:
       id: ''
     disabled: false

@@ -1,23 +1,17 @@
-uuid: a98e3a44-989d-45fb-a081-c68550891e90
+uuid: d77fdcc0-f7aa-4190-950e-9d50e926c0d3
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.video
-  module:
-    - jsonapi_defaults
-third_party_settings:
-  jsonapi_defaults:
-    default_include:
-      - field_video_media
-id: paragraph--video
+    - taxonomy.vocabulary.news_type
+id: taxonomy_term--news_type
 disabled: false
-path: paragraph/video
-resourceType: paragraph--video
+path: taxonomy_term/news_type
+resourceType: taxonomy_term--news_type
 resourceFields:
-  id:
-    fieldName: id
-    publicName: id
+  tid:
+    fieldName: tid
+    publicName: tid
     enhancer:
       id: ''
     disabled: false
@@ -39,48 +33,66 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  type:
-    fieldName: type
-    publicName: type
+  vid:
+    fieldName: vid
+    publicName: vid
     enhancer:
       id: ''
     disabled: false
+  revision_created:
+    fieldName: revision_created
+    publicName: revision_created
+    enhancer:
+      id: ''
+    disabled: false
+  revision_user:
+    disabled: true
+    fieldName: revision_user
+    publicName: revision_user
+    enhancer:
+      id: ''
+  revision_log_message:
+    disabled: true
+    fieldName: revision_log_message
+    publicName: revision_log_message
+    enhancer:
+      id: ''
   status:
     fieldName: status
     publicName: status
     enhancer:
       id: ''
     disabled: false
-  created:
-    fieldName: created
-    publicName: created
+  name:
+    fieldName: name
+    publicName: name
     enhancer:
       id: ''
     disabled: false
-  parent_id:
-    fieldName: parent_id
-    publicName: parent_id
+  description:
+    fieldName: description
+    publicName: description
     enhancer:
       id: ''
     disabled: false
-  parent_type:
-    fieldName: parent_type
-    publicName: parent_type
+  weight:
+    fieldName: weight
+    publicName: weight
     enhancer:
       id: ''
     disabled: false
-  parent_field_name:
-    fieldName: parent_field_name
-    publicName: parent_field_name
+  parent:
+    fieldName: parent
+    publicName: parent
     enhancer:
       id: ''
     disabled: false
-  behavior_settings:
-    disabled: true
-    fieldName: behavior_settings
-    publicName: behavior_settings
+  changed:
+    fieldName: changed
+    publicName: changed
     enhancer:
       id: ''
+    disabled: false
   default_langcode:
     disabled: true
     fieldName: default_langcode
@@ -105,15 +117,21 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_video_caption:
-    fieldName: field_video_caption
-    publicName: field_video_caption
+  metatag:
+    disabled: true
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  metatag_normalized:
+    fieldName: metatag_normalized
+    publicName: metatag_normalized
     enhancer:
       id: ''
     disabled: false
-  field_video_media:
-    fieldName: field_video_media
-    publicName: field_video_media
+  path:
+    disabled: true
+    fieldName: path
+    publicName: path
     enhancer:
       id: ''
-    disabled: false
