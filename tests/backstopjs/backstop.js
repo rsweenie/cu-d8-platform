@@ -27,7 +27,7 @@
 
 require('events').EventEmitter.defaultMaxListeners = 15;
 
-var arguments = require('/usr/local/lib/node_modules/minimist')(process.argv.slice(2)); // grabs the process arguments
+var arguments = require('~/usr/local/lib/node_modules/minimist')(process.argv.slice(2)); // grabs the process arguments
 var defaultPaths = ['/']; // By default is just checks the homepage
 var scenarios = []; // The array that'll have the pages to test
 
