@@ -9,17 +9,17 @@ use Drupal\Core\Url;
 use Drupal\cu_hub_consumer\Hub\ResourceInterface;
 
 /**
- * Plugin implementation of the 'hub_resource_link' formatter.
+ * Plugin implementation of the 'hub_resource_label' formatter.
  *
  * @FieldFormatter(
- *   id = "hub_resource_link",
- *   label = @Translation("Hub resource link"),
+ *   id = "hub_resource_label",
+ *   label = @Translation("Hub resource label"),
  *   field_types = {
  *     "hub_resource"
  *   }
  * )
  */
-class HubResourceLinkFormatter extends FormatterBase {
+class HubResourceLabelFormatter extends FormatterBase {
 
   /**
    * {@inheritdoc}
@@ -30,19 +30,9 @@ class HubResourceLinkFormatter extends FormatterBase {
     foreach ($items as $delta => $item) {
       $resource_obj = $item->resource;
       if ($resource_obj instanceof ResourceInterface) {
-        if (isset($resource_obj->metatag_normalized->link_canonical)) {
-          // By default use the full URL as the link text.
-          $url = Url::fromUri($resource_obj->metatag_normalized->link_canonical, []);
-          $link_title = $url->toString();
-
-          if ($resource_obj->label()) {
-            $link_title = $resource_obj->label();
-          }
-
+        if ($resource_label = $resource_obj->label()) {
           $elements = [
-            '#type' => 'link',
-            '#title' => $link_title,
-            '#url' => $url,
+            '#markup' => $resource_label,
           ];
         }
       }
