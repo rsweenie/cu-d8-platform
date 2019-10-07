@@ -15,7 +15,7 @@ case $CU_SITE_ALIAS in
     # DB sync MUST come before filesync always
     drush -r "${DOCROOT}" sql:drop -y
     drush -r "${DOCROOT}" sql:sync "@${CU_SITE_ALIAS}.01live" @self -y
-    drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y
+    drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y -- --exclude '/styles/'
   ;;
   grad-site)
     echo "Importing local DB file for Grad Site"
