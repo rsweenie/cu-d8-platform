@@ -54,7 +54,13 @@
   {{ title_suffix }}
   {% if attachment_before %}
     <div class="attachment attachment-before">
-      {{ attachment_before }}
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            {{ attachment_before }}
+          </div>
+        </div>
+      </div>
     </div>
   {% endif %}
   {% if exposed %}
