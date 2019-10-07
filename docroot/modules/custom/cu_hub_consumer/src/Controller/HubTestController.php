@@ -60,9 +60,9 @@ class HubTestController extends ControllerBase {
 
     $this->testResourceList('program');
 
-    $this->testResource('program', '0d40a955-8399-42e9-8be8-c9544b84bb5e');
+    //$this->testResource('program', '0d40a955-8399-42e9-8be8-c9544b84bb5e');
 
-    $degree = $this->testResource('degree', '9243a05e-396e-4aec-aed2-14f365b668ab');
+    $degree = $this->testResource('degree', 'fb6d4104-dc7f-4604-9447-cdc9a2ced203');
     dsm($degree->field_hub_degree_hero_image[0]->image[0]->uri[0]);
 
     return $build;
@@ -97,7 +97,7 @@ class HubTestController extends ControllerBase {
       dsm($e);
     }
 
-    if ($resource->getProcessedData()) {
+    if ($resource) {
       dsm($resource->type);
       dsm($resource->id);
       //dsm($resource->field_hub_degree_title->getString());

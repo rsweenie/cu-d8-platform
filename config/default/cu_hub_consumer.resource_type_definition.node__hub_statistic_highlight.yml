@@ -12,19 +12,19 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   revision_timestamp:
     type: datetime
     multiple: false
   revision_log:
-    type: hub_unknown
+    type: string_long
     multiple: false
   status:
-    type: string_long
+    type: boolean
     multiple: false
   title:
-    type: string_long
+    type: string
     multiple: false
   created:
     type: datetime
@@ -33,46 +33,66 @@ fields:
     type: datetime
     multiple: false
   promote:
-    type: string_long
+    type: boolean
     multiple: false
   sticky:
-    type: string_long
+    type: boolean
     multiple: false
   default_langcode:
-    type: string_long
+    type: boolean
     multiple: false
   revision_translation_affected:
-    type: string_long
+    type: boolean
     multiple: false
   scheduled_transition_date:
-    type: hub_unknown
+    type: datetime
     multiple: true
   scheduled_transition_state:
-    type: hub_unknown
+    type: string
     multiple: true
   metatag:
-    type: hub_unknown
+    type: map
     multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
+    type: hub_metatags
+    multiple: true
   path:
-    type: hub_unknown
+    type: path
     multiple: false
   private:
-    type: hub_unknown
+    type: private
     multiple: false
   publish_on:
-    type: hub_unknown
+    type: timestamp
     multiple: false
   unpublish_on:
-    type: hub_unknown
+    type: timestamp
     multiple: false
   node_type:
     type: hub_resource
     hub_type: node_type
     multiple: false
+  revision_uid:
+    type: hub_resource
+    hub_type: user
+    hub_bundles:
+      - user--user
+    multiple: false
+  uid:
+    type: hub_resource
+    hub_type: user
+    hub_bundles:
+      - user--user
+    multiple: false
+  menu_link:
+    type: hub_resource
+    hub_type: menu_link_content
+    hub_bundles:
+      - menu_link_content--menu_link_content
+    multiple: false
   field_hub_stat_highlight_image:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false

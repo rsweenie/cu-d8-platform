@@ -9,12 +9,12 @@ use Drupal\Component\Serialization\Json;
  * Generic string resource field.
  * 
  * @HubResourceFieldType(
- *   id = "metatags",
+ *   id = "hub_metatags",
  *   label = @Translation("Metatags"),
  *   description = @Translation("Metatags."),
  * )
  */
-class MetatagsFieldItem extends ResourceFieldItemBase {
+class HubMetatagsFieldItem extends ResourceFieldItemBase {
 
   protected $mapped_values = [];
 

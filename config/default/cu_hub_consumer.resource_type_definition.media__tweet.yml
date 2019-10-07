@@ -1,9 +1,9 @@
-uuid: a3643da5-8649-4a30-89d8-ed277454965d
+uuid: e8f67b51-cebe-4a0b-9e03-717feeb8142d
 langcode: en
 status: true
 dependencies: {  }
-id: media__video
-type_id: media--video
+id: media__tweet
+type_id: media--tweet
 fields:
   drupal_internal__mid:
     type: integer
@@ -23,11 +23,11 @@ fields:
   metatag_normalized:
     type: hub_metatags
     multiple: true
+  embed_code:
+    type: string_long
+    multiple: false
   field_media_in_library:
     type: boolean
-    multiple: false
-  field_media_video_embed_field:
-    type: video_embed_field
     multiple: false
   bundle:
     type: hub_resource
