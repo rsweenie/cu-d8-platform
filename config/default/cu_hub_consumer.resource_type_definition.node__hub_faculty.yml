@@ -57,16 +57,25 @@ fields:
   field_hub_faculty_components:
     type: hub_resource
     hub_type: paragraph
+    hub_bundles:
+      - paragraph--copy
+      - paragraph--featured_content_item
     multiple: true
   field_hub_faculty_image:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false
   field_hub_faculty_rel_degrees:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_degree
     multiple: true
   field_hub_site:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_site
     multiple: false

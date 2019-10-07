@@ -36,4 +36,6 @@ fields:
   field_quote_ref_item:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--quote_box
     multiple: false

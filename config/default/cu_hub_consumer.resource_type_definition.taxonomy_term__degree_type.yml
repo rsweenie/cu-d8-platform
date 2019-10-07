@@ -38,8 +38,12 @@ fields:
   vid:
     type: hub_resource
     hub_type: taxonomy_vocabulary
+    hub_bundles:
+      - taxonomy_vocabulary--taxonomy_vocabulary
     multiple: false
   parent:
     type: hub_resource
     hub_type: taxonomy_term
+    hub_bundles:
+      - taxonomy_term--degree_type
     multiple: true

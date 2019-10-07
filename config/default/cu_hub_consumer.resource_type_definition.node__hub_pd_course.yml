@@ -45,24 +45,36 @@ fields:
   field_hub_pd_course_dates:
     type: hub_resource
     hub_type: paragraph
+    hub_bundles:
+      - paragraph--course_date
     multiple: true
   field_hub_pd_course_hero_image:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false
   field_hub_pd_course_next_steps:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_next_steps
     multiple: false
   field_hub_pd_course_program:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_program
     multiple: false
   field_hub_pd_related_degrees:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_degree
     multiple: true
   field_hub_site:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_site
     multiple: false

@@ -29,6 +29,8 @@ fields:
   bundle:
     type: hub_resource
     hub_type: media_type
+    hub_bundles:
+      - media_type--media_type
     multiple: false
   thumbnail:
     type: hub_resource

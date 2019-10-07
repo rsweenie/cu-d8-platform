@@ -39,4 +39,6 @@ fields:
   field_video_media:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--video
     multiple: false

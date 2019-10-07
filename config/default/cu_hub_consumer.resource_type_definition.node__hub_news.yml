@@ -51,20 +51,30 @@ fields:
   field_hub_news_hero_image:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false
   field_hub_news_listing_image:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false
   field_hub_news_location:
     type: hub_resource
     hub_type: taxonomy_term
+    hub_bundles:
+      - taxonomy_term--location
     multiple: true
   field_hub_news_type:
     type: hub_resource
     hub_type: taxonomy_term
+    hub_bundles:
+      - taxonomy_term--news_type
     multiple: false
   field_hub_site:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_site
     multiple: false

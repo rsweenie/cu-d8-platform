@@ -45,4 +45,6 @@ fields:
   field_file_link:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--document
     multiple: false

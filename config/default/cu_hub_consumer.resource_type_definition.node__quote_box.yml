@@ -87,20 +87,30 @@ fields:
   revision_uid:
     type: hub_resource
     hub_type: user
+    hub_bundles:
+      - user--user
     multiple: false
   uid:
     type: hub_resource
     hub_type: user
+    hub_bundles:
+      - user--user
     multiple: false
   menu_link:
     type: hub_resource
     hub_type: menu_link_content
+    hub_bundles:
+      - menu_link_content--menu_link_content
     multiple: false
   field_quote_box_photo:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false
   field_quote_p_link:
     type: hub_resource
     hub_type: paragraph
+    hub_bundles:
+      - paragraph--ief_link
     multiple: false

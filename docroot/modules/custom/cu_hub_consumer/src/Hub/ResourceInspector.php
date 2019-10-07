@@ -282,9 +282,11 @@ class ResourceInspector {
           if (is_array($target_types)) {
             $resource_type = reset($target_types);
             list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
+
             $inspection_info[$relationship_name] = [
               'type' => 'hub_resource',
               'hub_type' => $resource_main_type,
+              'hub_bundles' => $target_types,
               'multiple' => isset($field_metadata[$relationship_name]['multiple']) ? $field_metadata[$relationship_name]['multiple'] : FALSE,
             ];
           }
