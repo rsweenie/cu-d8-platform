@@ -20,19 +20,19 @@ done
 if [[ $local = "lando" ]]
 then
     local=$local
+    uri_base="http://d8-platform.lndo.site/"
 elif [[ $local = "vagrant" ]]
 then
     local=""
+    uri_base="http://local.creighton.com/"
 fi
 
-echo 'Do you want to sync from a database/site? [Y,n]: '
-read new_database
-if [[ $new_database == "Y" || $new_database == "y" ]]; then            
-
-    echo 'Please enter the name of the site you would like to copy files from (alliance, hrnew, demo, etc.): '
+while true; do
+    read -p "Do you want to sync from a database/site? [Y,n]:" yn
+    case $yn in
+        [Yy]* )  echo 'Please enter the name of the site you would like to copy files from (alliance, hrnew, demo, etc.): '
     read site_name
-
-    echo 'Please select the site environment you want to use (live, test, dev): '
+ echo 'Please select the site environment you want to use (live, test, dev): '
     options=('01live' '01test' '01dev')
     declare env
     select option in "${options[@]}"
@@ -51,10 +51,11 @@ if [[ $new_database == "Y" || $new_database == "y" ]]; then
     site_alias="@$site_name.$env"
 
     # Does all the things from the selected Acquia site to the local environment
-    eval $local drush sql-drop -y; $local composer install; $local drush sql:sync $site_alias @self -y; $local drush rsync $site_alias:%files @self:%files -y; $local drush updatedb -y; $local drush cim -y; $local drush cr; $local drush cron; $local drush uli 
+    eval $local drush sql-drop -y; $local composer install; $local drush sql:sync $site_alias @self -y; $local drush rsync $site_alias:%files @self:%files -y; $local drush updatedb -y; $local drush cim -y; $local drush cr; $local drush cron; $local drush uli --uri=$uri_base; break;;
+        [Nn]* ) eval $local composer install; $local drush updatedb -y; $local drush cim -y; $local drush cr; $local drush cron; $local drush uli --uri=$uri_base; exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
-else
-    eval $local composer install; $local drush updatedb -y; $local drush cim -y; $local drush cr; $local drush cron; $local drush uli
-fi
 
 

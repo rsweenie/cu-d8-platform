@@ -1,0 +1,19 @@
+uuid: 5280276b-74fa-465a-9433-5bcbbff8b7f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_fac_spotlight_title
+    - node.type.hub_faculty_alumni_spotlight
+id: node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_title
+field_name: field_hub_fac_spotlight_title
+entity_type: node
+bundle: hub_faculty_alumni_spotlight
+label: Title(s)
+description: 'Faculty or Alumni credentials: MBA, PhD, Master of the Universe.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

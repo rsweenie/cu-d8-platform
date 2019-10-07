@@ -1,0 +1,46 @@
+uuid: 9db1a75e-36f2-4239-8c0c-7df5c69dd259
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hub_pd_course.body
+    - node.type.hub_pd_course
+  module:
+    - private_content
+    - text
+    - user
+id: node.hub_pd_course.teaser
+targetEntityType: node
+bundle: hub_pd_course
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  field_hub_path_alias: true
+  field_hub_pd_course_dates: true
+  field_hub_pd_course_hero_image: true
+  field_hub_pd_course_next_steps: true
+  field_hub_pd_course_program: true
+  field_hub_pd_course_site: true
+  field_hub_site: true
+  search_api_excerpt: true

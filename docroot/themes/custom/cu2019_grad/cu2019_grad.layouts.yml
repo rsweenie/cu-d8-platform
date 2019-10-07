@@ -1,0 +1,64 @@
+
+generic_hero:
+  label: 'Generic Hero'
+  category: 'CU 2019'
+  template: templates/layout/layout--generic-hero
+  regions:
+    main:
+      label: 'Main content'
+  icon_map:
+    - [main]
+
+generic_content:
+  label: 'Generic Content'
+  category: 'CU 2019'
+  template: templates/layout/layout--generic-content
+  regions:
+    main:
+      label: 'Main content'
+  icon_map:
+    - [main]
+
+generic_content_full:
+  label: 'Generic Content Full-Width'
+  category: 'CU 2019'
+  template: templates/layout/layout--generic-content-full
+  regions:
+    main:
+      label: 'Main content'
+  icon_map:
+    - [main]
+
+program_detail_feat_tiles:
+  label: 'Program Detail - Featured Tiles'
+  category: 'CU 2019'
+  template: templates/layout/layout--program-detail-feat-tiles
+  regions:
+    main:
+      label: 'Main content'
+  icon_map:
+    - [main]
+
+faculty_detail_3col:
+  label: 'Faculty Detail - 3 Column'
+  category: 'CU 2019'
+  template: templates/layout/layout--faculty-detail-3col
+  regions:
+    left:
+      label: 'Left'
+    middle:
+      label: 'Middle'
+    right:
+      label: 'Right'
+  icon_map:
+    - [main, main, right]
+
+onecol_centered:
+  label: 'One Column - Centered'
+  category: 'CU 2019'
+  template: templates/layout/layout--onecol-centered
+  regions:
+    main:
+      label: 'main'
+  icon_map:
+    - [main]

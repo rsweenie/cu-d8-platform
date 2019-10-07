@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+
+{% if content %}
+<article{{ attributes.addClass(classes) }}>
+  <a href="{{ resource_obj.field_hub_next_step_link[0].uri }}">
+    <span class="icon icon-{{ resource_obj.field_hub_next_step_icon[0].value|clean_class }}"></span>
+    <span>{{ resource_obj.field_hub_next_step_link[0].title }}</span>
+  </a>
+</article>
+{% endif %}

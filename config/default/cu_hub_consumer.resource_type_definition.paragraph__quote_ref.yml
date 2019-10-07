@@ -1,0 +1,48 @@
+uuid: ff0323c9-8180-4ff5-a677-f8628df720de
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph__quote_ref
+type_id: paragraph--quote_ref
+fields:
+  drupal_internal__id:
+    type: integer
+    multiple: false
+  drupal_internal__revision_id:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  status:
+    type: string_long
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  parent_id:
+    type: integer
+    multiple: false
+  parent_type:
+    type: string_long
+    multiple: false
+  parent_field_name:
+    type: string_long
+    multiple: false
+  behavior_settings:
+    type: hub_unknown
+    multiple: true
+  default_langcode:
+    type: string_long
+    multiple: false
+  revision_translation_affected:
+    type: string_long
+    multiple: false
+  paragraph_type:
+    type: hub_resource
+    hub_type: paragraphs_type
+    multiple: false
+  field_quote_ref_item:
+    type: hub_resource
+    hub_type: node
+    multiple: false

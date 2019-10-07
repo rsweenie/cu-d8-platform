@@ -1,11 +1,10 @@
-uuid: c07360dd-b571-4135-af2b-76a5c260aaed
+uuid: c490fb0b-59ed-4839-b2de-47dab54e1434
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
-    - file
-    - image
+    - media
     - paragraphs
 third_party_settings:
   field_permissions:
@@ -13,19 +12,10 @@ third_party_settings:
 id: paragraph.field_quote_image
 field_name: field_quote_image
 entity_type: paragraph
-type: image
+type: entity_reference
 settings:
-  uri_scheme: public
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  target_type: file
-  display_field: false
-  display_default: false
-module: image
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true
