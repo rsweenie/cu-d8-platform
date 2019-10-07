@@ -1,0 +1,64 @@
+uuid: 0696489f-4012-4c86-b5ec-fb9c7121294f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_pd_right_side_copy
+    - node.type.hub_pd_course
+    - paragraphs.paragraphs_type.copy
+  module:
+    - entity_reference_revisions
+id: node.hub_pd_course.field_hub_pd_right_side_copy
+field_name: field_hub_pd_right_side_copy
+entity_type: node
+bundle: hub_pd_course
+label: 'Right Side Copy'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      copy: copy
+    target_bundles_drag_drop:
+      accordion:
+        weight: 13
+        enabled: false
+      copy:
+        enabled: true
+        weight: 14
+      course_date:
+        weight: 15
+        enabled: false
+      faculty_alumni_spotlight:
+        weight: 16
+        enabled: false
+      featured_content_item:
+        weight: 17
+        enabled: false
+      hub_paragraph_next_steps:
+        weight: 18
+        enabled: false
+      ief_link:
+        weight: 19
+        enabled: false
+      image:
+        weight: 20
+        enabled: false
+      quote_ref:
+        weight: 21
+        enabled: false
+      slate_form:
+        weight: 22
+        enabled: false
+      statistic_highlight:
+        weight: 23
+        enabled: false
+      video:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

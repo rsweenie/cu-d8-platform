@@ -27,5 +27,25 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
+  field_hub_degree_adm_rep: true
+  field_hub_degree_app_deadlines: true
+  field_hub_degree_app_link: true
+  field_hub_degree_availability: true
+  field_hub_degree_description: true
+  field_hub_degree_details: true
+  field_hub_degree_featured_info: true
+  field_hub_degree_hero_image: true
+  field_hub_degree_interests: true
+  field_hub_degree_intro: true
+  field_hub_degree_next_steps: true
+  field_hub_degree_other_programs: true
+  field_hub_degree_related_degrees: true
+  field_hub_degree_requirements: true
+  field_hub_degree_title: true
+  field_hub_degree_title_short: true
+  field_hub_degree_type: true
+  field_hub_path_alias: true
+  field_hub_program: true
   field_hub_site: true
+  field_meta_tags: true
   search_api_excerpt: true

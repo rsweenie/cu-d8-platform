@@ -9,22 +9,22 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   filename:
-    type: string_long
+    type: string
     multiple: false
   uri:
     type: uri
     multiple: false
   filemime:
-    type: string_long
+    type: string
     multiple: false
   filesize:
     type: integer
     multiple: false
   status:
-    type: string_long
+    type: boolean
     multiple: false
   created:
     type: datetime

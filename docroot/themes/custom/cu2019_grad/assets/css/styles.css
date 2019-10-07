@@ -5176,23 +5176,130 @@ blockquote .tooltip-trigger {
 
 .feat-tiles {
   margin: 0 2.5rem;
+  /*  img { width: 100%; height: auto; display: block; }*/
 }
 
-/* line 13, src/sass/components/basic/_feat-tiles.scss */
+/* line 14, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles > div {
-  margin: 1.6rem 0;
+  max-width: 300px;
+  margin: 1.6rem auto;
 }
 
-/* line 46, src/sass/components/basic/_feat-tiles.scss */
+/* line 30, src/sass/components/basic/_feat-tiles.scss */
 
-.feat-tiles img {
+.feat-tiles > div > .field__item {
+  background-color: #0054A6;
+  padding: 100% 0 0;
   width: 100%;
-  height: auto;
-  display: block;
+  height: 0;
+  position: relative;
 }
 
-/* line 55, src/sass/components/basic/_feat-tiles.scss */
+/* line 38, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-featured-content-item {
+  position: absolute;
+  border: solid 0.2rem rgba(225, 225, 225, 0.3);
+  padding: 1.6rem;
+  width: calc(100% - 2.8rem);
+  height: calc(100% - 2.8rem);
+  top: 1.4rem;
+  left: 1.4rem;
+}
+
+/* line 47, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-featured-content-item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: rgba(225, 225, 225, 0.3);
+  content: '';
+}
+
+/* line 58, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item h2 {
+  font-size: 4.8rem;
+  color: #6CACE4;
+  line-height: 1.02;
+  margin-bottom: 0;
+}
+
+/* line 68, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item h2 sup {
+  font-size: 2.7rem;
+}
+
+/* line 77, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1.06;
+}
+
+/* line 88, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* line 115, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div .hub-resource-field {
+  height: 100%;
+}
+
+/* line 119, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div .hub-resource-field__item {
+  height: 100%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 126, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div .hub-resource-field__item article.embedded-entity {
+  text-align: center;
+}
+
+/* line 129, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div .hub-resource-field__item article.embedded-entity img {
+  width: auto;
+  height: 100%;
+  max-height: 90px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* line 152, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles .hub-resource-field--name-field-fc-p-link {
+  display: none;
+}
+
+/* line 157, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io {
   position: relative;
@@ -5211,7 +5318,7 @@ blockquote .tooltip-trigger {
   pointer-events: none;
 }
 
-/* line 59, src/sass/components/basic/_feat-tiles.scss */
+/* line 161, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io:before {
   width: 1.1rem;
@@ -5224,7 +5331,7 @@ blockquote .tooltip-trigger {
   z-index: 10;
 }
 
-/* line 70, src/sass/components/basic/_feat-tiles.scss */
+/* line 172, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -11850,6 +11957,12 @@ form .form-group {
   margin-bottom: 2rem;
 }
 
+/* line 30, src/sass/components/forms/_elements.scss */
+
+form .form_question[data-required="1"] > label:after {
+  content: "*";
+}
+
 /* line 9, src/sass/components/forms/_labels.scss */
 
 form label {
@@ -13970,12 +14083,16 @@ form.search .search button {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     margin: -0.5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
-  /* line 13, src/sass/components/basic/_feat-tiles.scss */
+  /* line 14, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
     width: 50%;
+    max-width: 360px;
     padding: 0.5rem;
     margin: 0;
   }
@@ -14712,6 +14829,37 @@ form.search .search button {
   .mfsi time span:last-child > span,
   .mfse time span:last-child > span {
     font-size: 2.4rem;
+  }
+
+  /* line 58, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div > .field__item h2 {
+    font-size: 7.2rem;
+  }
+
+  /* line 68, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div > .field__item h2 sup {
+    font-size: 4rem;
+  }
+
+  /* line 77, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div > .field__item h3 {
+    font-size: 2.4rem;
+  }
+
+  /* line 88, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div > .field__item p {
+    font-size: 1.6rem;
+  }
+
+  /* line 129, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div .hub-resource-field__item article.embedded-entity img {
+    max-height: 135px;
+    margin-bottom: 2rem;
   }
 
   /* line 6, src/sass/components/navigation/_landing.scss */
@@ -16437,9 +16585,10 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 13, src/sass/components/basic/_feat-tiles.scss */
+  /* line 14, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
+    max-width: 430px;
     width: 33.3%;
   }
 
