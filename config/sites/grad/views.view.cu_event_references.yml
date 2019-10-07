@@ -1,19 +1,19 @@
-uuid: 4fdfb3ad-b81f-4b66-a48a-4b3d819535b7
+uuid: 39592173-d8c1-4c8b-b8c9-4f86a3c7842f
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.hub_reference.featured
     - core.entity_view_mode.hub_reference.listing
-    - cu_hub_consumer.hub_reference_type.blog
-    - taxonomy.vocabulary.blog_type
+    - cu_hub_consumer.hub_reference_type.event
+    - taxonomy.vocabulary.event_type
   module:
     - better_exposed_filters
     - cu_hub_consumer
     - datetime
     - taxonomy
-id: cu_blog_references
-label: 'Blogs from Hub'
+id: cu_event_references
+label: 'Events from Hub'
 module: views
 description: ''
 tag: ''
@@ -65,7 +65,7 @@ display:
               more_options:
                 is_secondary: false
                 placeholder_text: 'Search Terms'
-            field_blog_type_target_id:
+            field_event_type_target_id:
               bef_format: default
               more_options:
                 bef_select_all_none: false
@@ -243,15 +243,15 @@ display:
           table: hub_reference
           field: type
           value:
-            blog: blog
+            event: event
           entity_type: hub_reference
           entity_field: type
           plugin_id: bundle
       sorts:
-        field_blog_date_value:
-          id: field_blog_date_value
-          table: hub_reference__field_blog_date
-          field: field_blog_date_value
+        field_event_date_value:
+          id: field_event_date_value
+          table: hub_reference__field_event_date
+          field: field_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -267,8 +267,8 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      title: Events
       use_ajax: true
-      title: Blog
     cache_metadata:
       max-age: -1
       contexts:
@@ -297,79 +297,14 @@ display:
     position: 3
     display_options:
       display_extenders: {  }
-      displays:
-        page_1: page_1
-      inherit_arguments: false
       pager:
         type: some
         options:
           items_per_page: 3
           offset: 0
-      filters:
-        status:
-          value: '1'
-          table: hub_reference
-          field: status
-          plugin_id: boolean
-          entity_type: hub_reference
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        type:
-          id: type
-          table: hub_reference
-          field: type
-          value:
-            blog: blog
-          entity_type: hub_reference
-          entity_field: type
-          plugin_id: bundle
-        field_featured_value:
-          id: field_featured_value
-          table: hub_reference__field_featured
-          field: field_featured_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: boolean
-      defaults:
-        filters: false
-        filter_groups: false
-        fields: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
+      displays:
+        page_1: page_1
+      inherit_arguments: false
       fields:
         title:
           id: title
@@ -487,6 +422,71 @@ display:
           view_mode: featured
           entity_type: hub_reference
           plugin_id: rendered_entity
+      defaults:
+        fields: false
+        filters: false
+        filter_groups: false
+      filters:
+        status:
+          value: '1'
+          table: hub_reference
+          field: status
+          plugin_id: boolean
+          entity_type: hub_reference
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: hub_reference
+          field: type
+          value:
+            event: event
+          entity_type: hub_reference
+          entity_field: type
+          plugin_id: bundle
+        field_featured_value:
+          id: field_featured_value
+          table: hub_reference__field_featured
+          field: field_featured_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -531,7 +531,7 @@ display:
           table: hub_reference
           field: type
           value:
-            blog: blog
+            event: event
           entity_type: hub_reference
           entity_field: type
           plugin_id: bundle
@@ -574,20 +574,15 @@ display:
       defaults:
         filters: false
         filter_groups: false
-        pager: false
         fields: false
+        pager: false
       filter_groups:
         operator: AND
         groups:
           1: AND
-      block_description: 'Blogs from Hub'
+      block_description: 'Events from Hub'
       allow:
         items_per_page: false
-      pager:
-        type: some
-        options:
-          items_per_page: 3
-          offset: 0
       fields:
         title:
           id: title
@@ -705,6 +700,11 @@ display:
           view_mode: featured
           entity_type: hub_reference
           plugin_id: rendered_entity
+      pager:
+        type: some
+        options:
+          items_per_page: 3
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
@@ -732,7 +732,6 @@ display:
     position: 2
     display_options:
       display_extenders: {  }
-      path: hub-blogs
       filters:
         status:
           value: '1'
@@ -750,7 +749,7 @@ display:
           table: hub_reference
           field: type
           value:
-            blog: blog
+            event: event
           entity_type: hub_reference
           entity_field: type
           plugin_id: bundle
@@ -797,10 +796,10 @@ display:
           fields:
             title: title
           plugin_id: combine
-        field_blog_type_target_id:
-          id: field_blog_type_target_id
-          table: hub_reference__field_blog_type
-          field: field_blog_type_target_id
+        field_event_type_target_id:
+          id: field_event_type_target_id
+          table: hub_reference__field_event_type
+          field: field_event_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -809,11 +808,11 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_blog_type_target_id_op
+            operator_id: field_event_type_target_id_op
             label: ''
             description: ''
             use_operator: false
-            operator: field_blog_type_target_id_op
+            operator: field_event_type_target_id_op
             identifier: type
             required: false
             remember: false
@@ -841,7 +840,7 @@ display:
           handler: 'default:taxonomy_term'
           handler_settings:
             target_bundles:
-              blog_type: blog_type
+              event_type: event_type
             sort:
               field: name
               direction: asc
@@ -860,6 +859,7 @@ display:
         operator: AND
         groups:
           1: AND
+      path: hub-events
     cache_metadata:
       max-age: -1
       contexts:

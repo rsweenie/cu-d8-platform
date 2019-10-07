@@ -1,0 +1,23 @@
+uuid: bc293e86-427f-4c06-81b8-9b316a1fca66
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.event
+    - field.storage.hub_reference.field_featured
+id: hub_reference.event.field_featured
+field_name: field_featured
+entity_type: hub_reference
+bundle: event
+label: Featured
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
