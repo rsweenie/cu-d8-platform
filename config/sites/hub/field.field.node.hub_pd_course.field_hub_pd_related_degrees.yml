@@ -1,16 +1,16 @@
-uuid: 8e50d071-16fc-4dc3-a160-f2a140e6bbac
+uuid: f6cf560e-e358-4701-956e-5d1b12ac1335
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hub_pd_course_next_steps
-    - node.type.hub_next_steps
+    - field.storage.node.field_hub_pd_related_degrees
+    - node.type.hub_degree
     - node.type.hub_pd_course
-id: node.hub_pd_course.field_hub_pd_course_next_steps
-field_name: field_hub_pd_course_next_steps
+id: node.hub_pd_course.field_hub_pd_related_degrees
+field_name: field_hub_pd_related_degrees
 entity_type: node
 bundle: hub_pd_course
-label: 'Next Steps'
+label: 'Related Degrees'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      hub_next_steps: hub_next_steps
+      hub_degree: hub_degree
     sort:
       field: _none
     auto_create: false
