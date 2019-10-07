@@ -1,0 +1,29 @@
+uuid: d53fa432-ca05-4a71-8bd8-8d79c02fa8dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_blog_type
+    - node.type.hub_blog
+    - taxonomy.vocabulary.blog_type
+id: node.hub_blog.field_hub_blog_type
+field_name: field_hub_blog_type
+entity_type: node
+bundle: hub_blog
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      blog_type: blog_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
