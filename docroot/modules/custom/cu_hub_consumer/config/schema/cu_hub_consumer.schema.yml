@@ -118,5 +118,9 @@ cu_hub_consumer.resource_type_definition.*:
             type: string
           hub_type: 
             type: string
+          hub_bundles: 
+            type: sequence
+            sequence:
+              type: string
           multiple: 
             type: boolean

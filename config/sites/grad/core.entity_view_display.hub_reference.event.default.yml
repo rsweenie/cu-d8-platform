@@ -1,0 +1,205 @@
+uuid: ee6adefa-201b-44b8-b191-61de7662b759
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.event
+    - field.field.hub_reference.event.field_event_date
+    - field.field.hub_reference.event.field_event_type
+    - field.field.hub_reference.event.field_featured
+  module:
+    - datetime_range
+    - layout_builder
+    - layout_library
+    - system
+  theme:
+    - cu2019_grad
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: generic_hero
+        layout_settings: {  }
+        components:
+          18a3a805-04e4-4c9c-86b5-c35db97d9606:
+            uuid: 18a3a805-04e4-4c9c-86b5-c35db97d9606
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:event:hub_field_hub_event_hero_image'
+              label: 'Hub: field_hub_event_hero_image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource_media_image
+                settings:
+                  style_name: srcset_1200px_wide
+                  link_type: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          b62238c3-b961-43f7-9d42-f68ba7e79bab:
+            uuid: b62238c3-b961-43f7-9d42-f68ba7e79bab
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:event:hub_field_hub_event_title'
+              label: 'Hub: field_hub_event_title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          41e2b36e-7569-4c13-8389-482bb90e3d3f:
+            uuid: 41e2b36e-7569-4c13-8389-482bb90e3d3f
+            region: main
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: generic_content
+        layout_settings: {  }
+        components:
+          1b4ca202-906a-4203-ac83-4ac56a0b38b9:
+            uuid: 1b4ca202-906a-4203-ac83-4ac56a0b38b9
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:event:hub_field_hub_event_location'
+              label: 'Hub: field_hub_event_location'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource_link
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -10
+          db30a527-4dca-4cbb-9e2e-e03c93482969:
+            uuid: db30a527-4dca-4cbb-9e2e-e03c93482969
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:event:hub_field_hub_event_type'
+              label: 'Hub: field_hub_event_type'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource_link
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -8
+          14d31552-2064-42b4-b088-7183a35a3599:
+            uuid: 14d31552-2064-42b4-b088-7183a35a3599
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:event:hub_field_hub_event_body'
+              label: 'Hub: field_hub_event_body'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_text_processed
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -7
+          2ec4bd4c-da3d-4816-949b-3f0543282869:
+            uuid: 2ec4bd4c-da3d-4816-949b-3f0543282869
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:event:hub_field_hub_event_date'
+              label: 'Hub: field_hub_event_date'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: daterange_default
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                  separator: '-'
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -9
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: hub_reference.event.default
+targetEntityType: hub_reference
+bundle: event
+mode: default
+content:
+  field_event_date:
+    weight: 1
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_event_type:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_featured:
+    weight: 0
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_event_body: true
+  hub_field_hub_event_date: true
+  hub_field_hub_event_description: true
+  hub_field_hub_event_featured: true
+  hub_field_hub_event_hero_image: true
+  hub_field_hub_event_listing_image: true
+  hub_field_hub_event_location: true
+  hub_field_hub_event_title: true
+  hub_field_hub_event_type: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_node_type: true
+  hub_revision_timestamp: true
+  search_api_excerpt: true

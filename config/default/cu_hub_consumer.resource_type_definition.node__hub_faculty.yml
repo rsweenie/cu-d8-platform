@@ -12,7 +12,7 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   revision_timestamp:
     type: datetime
@@ -24,31 +24,31 @@ fields:
     type: datetime
     multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
+    type: hub_metatags
+    multiple: true
   field_hub_faculty_department:
-    type: string_long
+    type: string
     multiple: false
   field_hub_faculty_email:
-    type: string_long
+    type: email
     multiple: false
   field_hub_faculty_name:
     type: name
     multiple: false
   field_hub_faculty_phone:
-    type: string_long
+    type: telephone
     multiple: false
   field_hub_faculty_provost_id:
-    type: integer
+    type: string
     multiple: false
   field_hub_faculty_provost_url:
     type: link
     multiple: false
   field_hub_faculty_title:
-    type: string_long
+    type: string
     multiple: false
   field_hub_path_alias:
-    type: string_long
+    type: string
     multiple: false
   node_type:
     type: hub_resource
@@ -57,16 +57,25 @@ fields:
   field_hub_faculty_components:
     type: hub_resource
     hub_type: paragraph
+    hub_bundles:
+      - paragraph--copy
+      - paragraph--featured_content_item
     multiple: true
   field_hub_faculty_image:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false
   field_hub_faculty_rel_degrees:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_degree
     multiple: true
   field_hub_site:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_site
     multiple: false

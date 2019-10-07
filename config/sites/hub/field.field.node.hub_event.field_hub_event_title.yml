@@ -1,0 +1,19 @@
+uuid: 880f9f1d-1efe-434b-a79f-c1a0c49f852a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_event_title
+    - node.type.hub_event
+id: node.hub_event.field_hub_event_title
+field_name: field_hub_event_title
+entity_type: node
+bundle: hub_event
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

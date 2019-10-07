@@ -1,0 +1,23 @@
+uuid: 9b634ac6-7d7c-4d5f-8ea3-ee365ab5cb39
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - link
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_hub_cd_cta
+field_name: field_hub_cd_cta
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
