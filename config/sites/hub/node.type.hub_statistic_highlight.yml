@@ -23,7 +23,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Statistic Highlight'
+name: 'Hub: Statistic Highlight'
 type: hub_statistic_highlight
 description: 'Statistic Highlite content is related to school or industry type of statistics.'
 help: ''

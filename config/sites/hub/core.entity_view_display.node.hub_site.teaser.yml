@@ -28,4 +28,5 @@ content:
     type: private
 hidden:
   field_hub_site_base_uri: true
+  field_hub_site_title: true
   search_api_excerpt: true

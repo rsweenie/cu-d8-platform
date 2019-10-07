@@ -1,0 +1,8 @@
+uuid: fa3e4c1f-82db-4d20-8fbd-8c190ed65030
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_faculty
+label: 'Content: Hub: Faculty Profile'
+tags:
+  canonical_url: '[node:field_hub_site:entity:field_hub_site_base_uri][node:field_hub_path_alias]'

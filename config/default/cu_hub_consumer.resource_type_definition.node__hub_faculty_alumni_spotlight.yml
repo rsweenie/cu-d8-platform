@@ -12,19 +12,10 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   revision_timestamp:
     type: datetime
-    multiple: false
-  revision_log:
-    type: hub_unknown
-    multiple: false
-  status:
-    type: string_long
-    multiple: false
-  title:
-    type: string_long
     multiple: false
   created:
     type: datetime
@@ -32,42 +23,9 @@ fields:
   changed:
     type: datetime
     multiple: false
-  promote:
-    type: string_long
-    multiple: false
-  sticky:
-    type: string_long
-    multiple: false
-  default_langcode:
-    type: string_long
-    multiple: false
-  revision_translation_affected:
-    type: string_long
-    multiple: false
-  scheduled_transition_date:
-    type: hub_unknown
-    multiple: true
-  scheduled_transition_state:
-    type: hub_unknown
-    multiple: true
-  metatag:
-    type: hub_unknown
-    multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
-  path:
-    type: hub_unknown
-    multiple: false
-  private:
-    type: hub_unknown
-    multiple: false
-  publish_on:
-    type: hub_unknown
-    multiple: false
-  unpublish_on:
-    type: hub_unknown
-    multiple: false
+    type: hub_metatags
+    multiple: true
   field_hub_fac_spotlight_cta:
     type: link
     multiple: false
@@ -78,10 +36,10 @@ fields:
     type: name
     multiple: false
   field_hub_fac_spotlight_title:
-    type: string_long
+    type: string
     multiple: false
   field_hub_fac_spotlight_type:
-    type: string_long
+    type: string
     multiple: false
   node_type:
     type: hub_resource
@@ -90,4 +48,6 @@ fields:
   field_hub_fac_spotlight_image:
     type: hub_resource
     hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false
