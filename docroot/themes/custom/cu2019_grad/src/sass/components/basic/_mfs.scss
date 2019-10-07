@@ -57,7 +57,9 @@
       transform: translateY(.25em);
       transition: all .25s;
     }
+  }
 
+  a {
     @include hover {
       text-decoration: underline;
 

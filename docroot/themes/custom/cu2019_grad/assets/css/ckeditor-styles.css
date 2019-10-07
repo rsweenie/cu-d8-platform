@@ -5087,30 +5087,22 @@ blockquote .tooltip-trigger {
 
 .mfsi a:hover,
 .mfsi a:focus,
-.mfsi h1:hover,
-.mfsi h1:focus,
 .mfse a:hover,
-.mfse a:focus,
-.mfse h1:hover,
-.mfse h1:focus {
+.mfse a:focus {
   text-decoration: underline;
 }
 
-/* line 64, src/sass/components/basic/_mfs.scss */
+/* line 66, src/sass/components/basic/_mfs.scss */
 
 .mfsi a:hover .icon,
 .mfsi a:focus .icon,
-.mfsi h1:hover .icon,
-.mfsi h1:focus .icon,
 .mfse a:hover .icon,
-.mfse a:focus .icon,
-.mfse h1:hover .icon,
-.mfse h1:focus .icon {
+.mfse a:focus .icon {
   -webkit-transform: translate(5px, 0.25em);
           transform: translate(5px, 0.25em);
 }
 
-/* line 70, src/sass/components/basic/_mfs.scss */
+/* line 72, src/sass/components/basic/_mfs.scss */
 
 .mfsi time,
 .mfse time {
@@ -5129,7 +5121,7 @@ blockquote .tooltip-trigger {
   text-transform: uppercase;
 }
 
-/* line 85, src/sass/components/basic/_mfs.scss */
+/* line 87, src/sass/components/basic/_mfs.scss */
 
 .mfsi time > div,
 .mfse time > div {
@@ -5137,14 +5129,14 @@ blockquote .tooltip-trigger {
   padding: 2rem 1.6rem 1.2rem 1.6rem;
 }
 
-/* line 90, src/sass/components/basic/_mfs.scss */
+/* line 92, src/sass/components/basic/_mfs.scss */
 
 .mfsi time span,
 .mfse time span {
   display: block;
 }
 
-/* line 93, src/sass/components/basic/_mfs.scss */
+/* line 95, src/sass/components/basic/_mfs.scss */
 
 .mfsi time span:first-child,
 .mfse time span:first-child {
@@ -5152,7 +5144,7 @@ blockquote .tooltip-trigger {
   letter-spacing: 0.05em;
 }
 
-/* line 102, src/sass/components/basic/_mfs.scss */
+/* line 104, src/sass/components/basic/_mfs.scss */
 
 .mfsi time span:last-child,
 .mfse time span:last-child {
@@ -5160,7 +5152,7 @@ blockquote .tooltip-trigger {
   margin-top: -0.29167em;
 }
 
-/* line 110, src/sass/components/basic/_mfs.scss */
+/* line 112, src/sass/components/basic/_mfs.scss */
 
 .mfsi time span:last-child > span,
 .mfse time span:last-child > span {
@@ -5170,13 +5162,13 @@ blockquote .tooltip-trigger {
           transform: translateY(-0.16667em);
 }
 
-/* line 125, src/sass/components/basic/_mfs.scss */
+/* line 127, src/sass/components/basic/_mfs.scss */
 
 .mfs.section {
   background: #F5F8FC;
 }
 
-/* line 128, src/sass/components/basic/_mfs.scss */
+/* line 130, src/sass/components/basic/_mfs.scss */
 
 .mfs h3 {
   text-align: center;
@@ -13962,7 +13954,7 @@ form.search .search button {
     font-size: 2.4rem;
   }
 
-  /* line 135, src/sass/components/basic/_mfs.scss */
+  /* line 137, src/sass/components/basic/_mfs.scss */
 
   .mfs .field--name-field-mfs-featured-items .field__item + .field__item {
     border-left: 1px solid #ECF0F3;
@@ -14705,21 +14697,21 @@ form.search .search button {
     font-size: 4.2rem;
   }
 
-  /* line 93, src/sass/components/basic/_mfs.scss */
+  /* line 95, src/sass/components/basic/_mfs.scss */
 
   .mfsi time span:first-child,
   .mfse time span:first-child {
     font-size: 1.8rem;
   }
 
-  /* line 102, src/sass/components/basic/_mfs.scss */
+  /* line 104, src/sass/components/basic/_mfs.scss */
 
   .mfsi time span:last-child,
   .mfse time span:last-child {
     font-size: 3.2rem;
   }
 
-  /* line 110, src/sass/components/basic/_mfs.scss */
+  /* line 112, src/sass/components/basic/_mfs.scss */
 
   .mfsi time span:last-child > span,
   .mfse time span:last-child > span {
@@ -17201,7 +17193,7 @@ form.search .search button {
     margin-bottom: 6.2rem;
   }
 
-  /* line 141, src/sass/components/basic/_mfs.scss */
+  /* line 143, src/sass/components/basic/_mfs.scss */
 
   .mfs .field--name-field-mfs-featured-items .field__item:last-child .mfsi {
     margin-bottom: 0;
