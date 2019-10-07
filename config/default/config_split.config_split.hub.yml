@@ -23,6 +23,7 @@ blacklist:
   - 'paragraphs.paragraphs_type.hub_*'
   - 'cu_hub_api.*'
   - 'auto_entitylabel.settings.node.hub_*'
+  - 'metatag.metatag_defaults.node__hub_*'
 graylist:
   - 'block.block.*'
   - 'jsonapi.*'

@@ -1,0 +1,28 @@
+uuid: 5653d8f9-4509-44e2-9c20-7aa21b2dad5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_blog_listing_image
+    - media.type.image
+    - node.type.hub_blog
+id: node.hub_blog.field_hub_blog_listing_image
+field_name: field_hub_blog_listing_image
+entity_type: node
+bundle: hub_blog
+label: 'Listing Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

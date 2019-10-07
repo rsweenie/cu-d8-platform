@@ -1,0 +1,23 @@
+uuid: f59cde5b-18ba-418b-be68-38b39a97381b
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.blog
+    - field.storage.hub_reference.field_featured
+id: hub_reference.blog.field_featured
+field_name: field_featured
+entity_type: hub_reference
+bundle: blog
+label: Featured
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

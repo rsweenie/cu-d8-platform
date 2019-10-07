@@ -507,12 +507,14 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
           foreach ($hub_fields as $field_name => $field_info) {
             // Make sure the field plugin actually exists.
             if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
-              if ($field_list = $resource_object->{$field_name}) {
-                if ($field_list instanceof ResourceFieldItemListInterface) {
-                  $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
-                }
-                elseif ($field_list instanceof ResourceRelationshipListInterface) {
-                  $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
+              if ($this->hasField($field_prefix . $field_name)) {
+                if ($field_list = $resource_object->{$field_name}) {
+                  if ($field_list instanceof ResourceFieldItemListInterface) {
+                    $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
+                  }
+                  elseif ($field_list instanceof ResourceRelationshipListInterface) {
+                    $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
+                  }
                 }
               }
             }
