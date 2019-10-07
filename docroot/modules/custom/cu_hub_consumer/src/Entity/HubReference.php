@@ -359,6 +359,18 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
                 $this->handleEntityReferencePrepareSave($translation, $entity_field_name, $metadata_values);
                 break;
 
+              case 'string':
+              case 'string_long':
+                if (!empty($metadata_values) && !isset($metadata_values['value'])) {
+                  if ($resource = $this->getResourceObj()) {
+                    if (isset($resource->{$metadata_attribute_name})) {
+                      $metadata_values = ['value' => $resource->{$metadata_attribute_name}->getString()];
+                    }
+                  }
+                }
+                $translation->set($entity_field_name, $metadata_values);
+                break;
+
               default:
                 $translation->set($entity_field_name, $metadata_values);
                 break;
@@ -425,6 +437,28 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         $entity->set($entity_field_name, $field_values);
       }
     }
+    elseif ($target_type == 'hub_reference') {
+      if ($field_def->getSetting('handler') != 'default:hub_reference') {
+        // We only know how to deal with the one handler.
+        return;
+      }
+
+      $target_bundles = $field_def->getSetting('handler_settings')['target_bundles'];
+
+      // Sanity check.
+      if (is_array($values)) {
+        $field_values = [];
+        foreach ($values as $value) {
+          $hub_refs = $this->entityTypeManager()->getStorage('hub_reference')->loadByProperties(['type' => $target_bundles, 'hub_uuid' => $value['value']]);
+          foreach ($hub_refs as $hub_ref) {
+            if ($hrid = $hub_ref->id()) {
+              $field_values[] = ['target_id' => $hrid];
+            }
+          }
+        }
+        $entity->set($entity_field_name, $field_values);
+      }
+    }
   }
 
   /**
@@ -473,12 +507,14 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
           foreach ($hub_fields as $field_name => $field_info) {
             // Make sure the field plugin actually exists.
             if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
-              if ($field_list = $resource_object->{$field_name}) {
-                if ($field_list instanceof ResourceFieldItemListInterface) {
-                  $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
-                }
-                elseif ($field_list instanceof ResourceRelationshipListInterface) {
-                  $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
+              if ($this->hasField($field_prefix . $field_name)) {
+                if ($field_list = $resource_object->{$field_name}) {
+                  if ($field_list instanceof ResourceFieldItemListInterface) {
+                    $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
+                  }
+                  elseif ($field_list instanceof ResourceRelationshipListInterface) {
+                    $this->set($field_prefix . $field_name, $field_list->getFieldFriendlyValues());
+                  }
                 }
               }
             }
