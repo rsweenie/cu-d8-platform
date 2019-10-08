@@ -1,13 +1,11 @@
-uuid: 416acdfc-83ee-43cc-bc5b-5e98338e5e85
+uuid: 8e50d071-16fc-4dc3-a160-f2a140e6bbac
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_hub_pd_course_next_steps
+    - node.type.hub_next_steps
     - node.type.hub_pd_course
-    - paragraphs.paragraphs_type.ief_link
-  module:
-    - entity_reference_revisions
 id: node.hub_pd_course.field_hub_pd_course_next_steps
 field_name: field_hub_pd_course_next_steps
 entity_type: node
@@ -19,19 +17,12 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:paragraph'
+  handler: 'default:node'
   handler_settings:
-    negate: 0
     target_bundles:
-      ief_link: ief_link
-    target_bundles_drag_drop:
-      accordion:
-        weight: 4
-        enabled: false
-      featured_content_item:
-        weight: 5
-        enabled: false
-      ief_link:
-        enabled: true
-        weight: 6
-field_type: entity_reference_revisions
+      hub_next_steps: hub_next_steps
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
