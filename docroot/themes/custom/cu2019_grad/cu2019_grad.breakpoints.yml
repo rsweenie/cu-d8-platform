@@ -1,0 +1,62 @@
+
+cu_2019_grad.srcset.single:
+  label: srcset
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+  group: cu_2019_grad.srcset
+
+cu_2019_grad.media.xs:
+  label: 'extra small'
+  mediaQuery: '(min-width: 0px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+  group: carey.media
+
+cu_2019_grad.media.sm:
+  label: small
+  mediaQuery: '(min-width: 576px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+  group: carey.media
+
+cu_2019_grad.media.md:
+  label: medium
+  mediaQuery: '(min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+  group: cu_2019_grad.media
+
+cu_2019_grad.media.lg:
+  label: large
+  mediaQuery: '(min-width: 992px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+  group: cu_2019_grad.media
+
+cu_2019_grad.media.xl:
+  label: 'extra large'
+  mediaQuery: '(min-width: 1210px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+  group: cu_2019_grad.media
+
+cu_2019_grad.media.xxl:
+  label: 'extra extra large'
+  mediaQuery: '(min-width: 1600px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+  group: cu_2019_grad.media

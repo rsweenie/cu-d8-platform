@@ -27,5 +27,9 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
+  field_hub_path_alias: true
+  field_hub_program_description: true
+  field_hub_program_title: true
   field_hub_site: true
+  field_meta_tags: true
   search_api_excerpt: true

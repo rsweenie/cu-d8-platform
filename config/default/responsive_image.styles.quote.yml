@@ -1,0 +1,25 @@
+uuid: b73cacfd-7518-4957-bb62-975a564065be
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.srcset_200px_wide
+    - image.style.srcset_300px_wide
+    - image.style.srcset_400px_wide
+  theme:
+    - cu2019_grad
+id: quote
+label: Quote
+image_style_mappings:
+  -
+    breakpoint_id: cu_2019_grad.srcset.single
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - srcset_200px_wide
+        - srcset_300px_wide
+        - srcset_400px_wide
+breakpoint_group: cu_2019_grad.srcset
+fallback_image_style: srcset_300px_wide

@@ -1,0 +1,13 @@
+uuid: 088e60ce-cf84-40bf-8c60-f1f9b1f78eb3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: u1GGPC5V-4IW09DU6x8R0LRSLNVqhCYck9r5YnVbDcs
+id: degree
+label: 'Academic Degree'
+description: ''
+source: 'node:hub_degree'
+source_configuration:
+  source_field: hub_uuid
+field_map: {  }

@@ -31,10 +31,12 @@ settings:
           name: Format
           items:
             - Format
+            - Styles
         -
           name: Media
           items:
             - media_browser
+            - reusable_content
         -
           name: Tables
           items:
@@ -65,7 +67,7 @@ settings:
             - RemoveFormat
   plugins:
     stylescombo:
-      styles: ''
+      styles: "a.btn-primary|Primary\r\na.btn-secondary|Secondary"
     language:
       language_list: un
     linkit:

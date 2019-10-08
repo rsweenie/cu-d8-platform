@@ -7,7 +7,7 @@
 
 \*  --------------------------------------------------------------------------  */
 label {
-    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // POSITIO$gray2NING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     display: block;
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     margin-bottom: #{$gutter * .4}rem;
@@ -15,7 +15,12 @@ label {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+    font-size: 19px;
+    font-family: $copyFF;
+    line-height: 1;
+    color: $gray2;
+    font-weight: 700;
+
     .req {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)

@@ -1,0 +1,7 @@
+uuid: a86d7b0a-133c-4f6e-849f-ff92262efef5
+langcode: en
+status: true
+dependencies: {  }
+name: srcset_750px_wide
+label: 'SrcSet (750px wide)'
+effects: {  }

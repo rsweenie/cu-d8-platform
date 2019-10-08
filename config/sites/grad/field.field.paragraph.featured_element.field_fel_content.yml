@@ -1,0 +1,92 @@
+uuid: 5b526a58-1814-425b-9477-e1300773514c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fel_content
+    - paragraphs.paragraphs_type.featured_element
+    - paragraphs.paragraphs_type.image_video
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.statistic_highlite
+  module:
+    - entity_reference_revisions
+id: paragraph.featured_element.field_fel_content
+field_name: field_fel_content
+entity_type: paragraph
+bundle: featured_element
+label: 'Featured Element'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image_video: image_video
+      quote: quote
+      statistic_highlite: statistic_highlite
+    target_bundles_drag_drop:
+      accordion:
+        weight: 20
+        enabled: false
+      collapsible_text:
+        weight: 21
+        enabled: false
+      featured_content_item:
+        weight: 22
+        enabled: false
+      featured_element:
+        weight: 23
+        enabled: false
+      formatted_text:
+        weight: 24
+        enabled: false
+      full_width_banner:
+        weight: 25
+        enabled: false
+      full_width_photo:
+        weight: 26
+        enabled: false
+      hp_hero:
+        weight: 27
+        enabled: false
+      hp_hero_bg:
+        weight: 28
+        enabled: false
+      ief_link:
+        weight: 29
+        enabled: false
+      image_video:
+        enabled: true
+        weight: 30
+      manual_faculty_alumni_highlight:
+        weight: 31
+        enabled: false
+      manual_featured_event:
+        weight: 32
+        enabled: false
+      manual_featured_set:
+        weight: 33
+        enabled: false
+      manual_featured_set_item:
+        weight: 34
+        enabled: false
+      next_step:
+        weight: 35
+        enabled: false
+      next_steps_collection:
+        weight: 36
+        enabled: false
+      quote:
+        enabled: true
+        weight: 37
+      statistic_highlite:
+        enabled: true
+        weight: 38
+      slate_form:
+        weight: 39
+        enabled: false
+field_type: entity_reference_revisions

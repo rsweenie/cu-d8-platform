@@ -1,0 +1,14 @@
+uuid: 2130d8a3-cc06-4fb4-a52d-c73a9cebb7f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.embedded
+label: Embedded
+targetEntityType: node
+cache: true

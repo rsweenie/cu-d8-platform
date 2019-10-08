@@ -110,7 +110,19 @@
     } %}
 
     {% if side_nav %}
-      <div class="side-nav">{{ side_nav }}</div>
+    <div class="section side-nav-section">
+      <div>
+        <div class="row">
+          <div class="col-xs-12">
+            <nav class="side-nav">
+              <input type="checkbox" id="side-nav-toggle">
+              <label for="side-nav-toggle"><span>Page Navigation</span></label>
+              {{ side_nav }}
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
     {% endif %}
 
     {{ content|without('field_interior_page_hero_hl','field_interior_page_hero_img') }}

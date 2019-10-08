@@ -1,0 +1,55 @@
+uuid: c661076d-d68c-40cb-8e28-c0f953b35073
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_next_steps_items
+    - node.type.hub_next_steps
+    - paragraphs.paragraphs_type.hub_paragraph_next_steps
+  module:
+    - entity_reference_revisions
+id: node.hub_next_steps.field_hub_next_steps_items
+field_name: field_hub_next_steps_items
+entity_type: node
+bundle: hub_next_steps
+label: Steps
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hub_paragraph_next_steps: hub_paragraph_next_steps
+    target_bundles_drag_drop:
+      accordion:
+        weight: 10
+        enabled: false
+      copy:
+        weight: 11
+        enabled: false
+      faculty_alumni_spotlight:
+        weight: 12
+        enabled: false
+      featured_content_item:
+        weight: 13
+        enabled: false
+      hub_paragraph_next_steps:
+        enabled: true
+        weight: 14
+      ief_link:
+        weight: 15
+        enabled: false
+      quote_ref:
+        weight: 16
+        enabled: false
+      statistic_highlight:
+        weight: 17
+        enabled: false
+      video:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,29 @@
+uuid: 9cae3d8e-3258-4e70-b0ac-0933a528e57b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_event_body
+    - node.type.hub_event
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    basic_text: '0'
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: node.hub_event.field_hub_event_body
+field_name: field_hub_event_body
+entity_type: node
+bundle: hub_event
+label: Body
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

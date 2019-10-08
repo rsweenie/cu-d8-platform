@@ -1,0 +1,23 @@
+uuid: 6cd68bba-b0f9-4141-9ef4-0251a0dc0e03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_event_featured
+    - node.type.hub_event
+id: node.hub_event.field_hub_event_featured
+field_name: field_hub_event_featured
+entity_type: node
+bundle: hub_event
+label: Featured
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

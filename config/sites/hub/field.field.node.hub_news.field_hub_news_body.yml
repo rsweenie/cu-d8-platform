@@ -1,0 +1,28 @@
+uuid: 2fb95a3d-1ef3-4253-84aa-6f3791147e0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_news_body
+    - node.type.hub_news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: node.hub_news.field_hub_news_body
+field_name: field_hub_news_body
+entity_type: node
+bundle: hub_news
+label: Body
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

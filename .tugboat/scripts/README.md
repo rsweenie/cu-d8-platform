@@ -11,9 +11,9 @@ The value extracted will be the 'middle' section of the branch name.
 Example: The value for a branch named 'feature/sitename/ticket-12345' would be
 'sitename'.
 
-'Site aliases' are loosely based on our Acquia drush aliases which you can
-see by running `drush sa`. You can see what aliases we are currently using
-(and add your own) in the tugboat-build.sh and tugboat-update.sh scripts.
+'Site aliases' are based on our Acquia drush aliases which you can see by
+running `drush sa`. You can see what aliases we are currently using (and
+add your own) in the tugboat-build.sh and tugboat-*.sh scripts.
 
 This script is called on by each of the following three scripts.
 
@@ -31,7 +31,7 @@ specific to the current site alias.
 ### ../tugboat.settings.php
 
 This is a custom drupal settings.php file used only in the Tugboat environment.
-Any Drupal configuration that is specific to a site alias should be set here. 
+Any Drupal configuration that is specific to a site alias should be set here.
 
 ## Default Database
 

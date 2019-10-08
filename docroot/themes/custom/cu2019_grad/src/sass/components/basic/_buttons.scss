@@ -31,10 +31,11 @@
     span:not(.sr-only) {
       position: relative;
       z-index: 1;
+      text-align: left;
     }
 
     @media #{$mediaLg} {
-      font-size: 24px;
+      font-size: 19px;
     }
 
     .arrow:last-child {
@@ -102,6 +103,7 @@
 @import 'buttons/colors/_secondary';
 @import 'buttons/colors/_hero';
 @import 'buttons/colors/_search';
+@import 'buttons/colors/_expand';
 //@import 'buttons/colors/_tertiary';
 @import 'buttons/colors/_text';
 //@import 'buttons/colors/_success';

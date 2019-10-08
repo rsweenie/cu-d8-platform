@@ -7,6 +7,7 @@ dependencies:
     - node.type.hub_degree
     - paragraphs.paragraphs_type.faculty_alumni_spotlight
     - paragraphs.paragraphs_type.featured_content_item
+    - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.quote_ref
     - paragraphs.paragraphs_type.statistic_highlight
   module:
@@ -29,6 +30,7 @@ settings:
       featured_content_item: featured_content_item
       faculty_alumni_spotlight: faculty_alumni_spotlight
       quote_ref: quote_ref
+      image: image
       statistic_highlight: statistic_highlight
     target_bundles_drag_drop:
       accordion:
@@ -55,6 +57,9 @@ settings:
       video:
         weight: 14
         enabled: false
+      image:
+        enabled: true
+        weight: 17
       statistic_highlight:
         enabled: true
         weight: 17

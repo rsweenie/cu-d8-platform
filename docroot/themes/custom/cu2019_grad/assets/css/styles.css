@@ -120,194 +120,200 @@
 
 /* line 36, src/sass/base/fonts/_icons.scss */
 
-.icon-checkbox-checked:before {
+.icon-check:before {
   content: "\E004";
 }
 
 /* line 40, src/sass/base/fonts/_icons.scss */
 
-.icon-checkbox-unchecked:before {
+.icon-checkbox-checked:before {
   content: "\E005";
 }
 
 /* line 44, src/sass/base/fonts/_icons.scss */
 
-.icon-chevron-right-double:before {
+.icon-checkbox-unchecked:before {
   content: "\E006";
 }
 
 /* line 48, src/sass/base/fonts/_icons.scss */
 
-.icon-chevron-right:before {
+.icon-chevron-right-double:before {
   content: "\E007";
 }
 
 /* line 52, src/sass/base/fonts/_icons.scss */
 
-.icon-chevron-up:before {
+.icon-chevron-right:before {
   content: "\E008";
 }
 
 /* line 56, src/sass/base/fonts/_icons.scss */
 
-.icon-close-window-filled:before {
+.icon-chevron-up:before {
   content: "\E009";
 }
 
 /* line 60, src/sass/base/fonts/_icons.scss */
 
-.icon-close-window:before {
+.icon-close-window-filled:before {
   content: "\E00A";
 }
 
 /* line 64, src/sass/base/fonts/_icons.scss */
 
-.icon-contact:before {
+.icon-close-window:before {
   content: "\E00B";
 }
 
 /* line 68, src/sass/base/fonts/_icons.scss */
 
-.icon-envelope:before {
+.icon-contact:before {
   content: "\E00C";
 }
 
 /* line 72, src/sass/base/fonts/_icons.scss */
 
-.icon-event-calendar:before {
+.icon-envelope:before {
   content: "\E00D";
 }
 
 /* line 76, src/sass/base/fonts/_icons.scss */
 
-.icon-expand-arrow:before {
+.icon-event-calendar:before {
   content: "\E00E";
 }
 
 /* line 80, src/sass/base/fonts/_icons.scss */
 
-.icon-filter:before {
+.icon-expand-arrow:before {
   content: "\E00F";
 }
 
 /* line 84, src/sass/base/fonts/_icons.scss */
 
-.icon-forward:before {
+.icon-filter:before {
   content: "\E010";
 }
 
 /* line 88, src/sass/base/fonts/_icons.scss */
 
-.icon-google-translate:before {
+.icon-forward:before {
   content: "\E011";
 }
 
 /* line 92, src/sass/base/fonts/_icons.scss */
 
-.icon-help:before {
+.icon-google-translate:before {
   content: "\E012";
 }
 
 /* line 96, src/sass/base/fonts/_icons.scss */
 
-.icon-hybrid:before {
+.icon-help:before {
   content: "\E013";
 }
 
 /* line 100, src/sass/base/fonts/_icons.scss */
 
-.icon-location-thin:before {
+.icon-hybrid:before {
   content: "\E014";
 }
 
 /* line 104, src/sass/base/fonts/_icons.scss */
 
-.icon-location:before {
+.icon-location-thin:before {
   content: "\E015";
 }
 
 /* line 108, src/sass/base/fonts/_icons.scss */
 
-.icon-news:before {
+.icon-location:before {
   content: "\E016";
 }
 
 /* line 112, src/sass/base/fonts/_icons.scss */
 
-.icon-off-campus:before {
+.icon-news:before {
   content: "\E017";
 }
 
 /* line 116, src/sass/base/fonts/_icons.scss */
 
-.icon-on-campus:before {
+.icon-off-campus:before {
   content: "\E018";
 }
 
 /* line 120, src/sass/base/fonts/_icons.scss */
 
-.icon-online:before {
+.icon-on-campus:before {
   content: "\E019";
 }
 
 /* line 124, src/sass/base/fonts/_icons.scss */
 
-.icon-phone:before {
+.icon-online:before {
   content: "\E01A";
 }
 
 /* line 128, src/sass/base/fonts/_icons.scss */
 
-.icon-right:before {
+.icon-phone:before {
   content: "\E01B";
 }
 
 /* line 132, src/sass/base/fonts/_icons.scss */
 
-.icon-search-more:before {
+.icon-right:before {
   content: "\E01C";
 }
 
 /* line 136, src/sass/base/fonts/_icons.scss */
 
-.icon-search:before {
+.icon-search-more:before {
   content: "\E01D";
 }
 
 /* line 140, src/sass/base/fonts/_icons.scss */
 
-.icon-social-facebook:before {
+.icon-search:before {
   content: "\E01E";
 }
 
 /* line 144, src/sass/base/fonts/_icons.scss */
 
-.icon-social-instagram:before {
+.icon-social-facebook:before {
   content: "\E01F";
 }
 
 /* line 148, src/sass/base/fonts/_icons.scss */
 
-.icon-social-linkedin:before {
+.icon-social-instagram:before {
   content: "\E020";
 }
 
 /* line 152, src/sass/base/fonts/_icons.scss */
 
-.icon-social-twitter:before {
+.icon-social-linkedin:before {
   content: "\E021";
 }
 
 /* line 156, src/sass/base/fonts/_icons.scss */
 
-.icon-social-youtube:before {
+.icon-social-twitter:before {
   content: "\E022";
 }
 
 /* line 160, src/sass/base/fonts/_icons.scss */
 
-.icon-tag:before {
+.icon-social-youtube:before {
   content: "\E023";
+}
+
+/* line 164, src/sass/base/fonts/_icons.scss */
+
+.icon-tag:before {
+  content: "\E024";
 }
 
 /*---===<<< UNIVERSAL RESETS >>>===---*/
@@ -406,7 +412,7 @@ textarea {
 
 /*---=== BASE STUFF ===---*/
 
-/* line 3, src/sass/structure/_grid.scss */
+/* line 13, src/sass/structure/_grid.scss */
 
 [class*="col-"] {
   padding: 0 2.5rem;
@@ -419,7 +425,7 @@ textarea {
           order: 0;
 }
 
-/* line 12, src/sass/structure/_grid.scss */
+/* line 23, src/sass/structure/_grid.scss */
 
 .row + * {
   margin-top: 5rem;
@@ -447,7 +453,7 @@ textarea {
   width: calc(100% + (-2.5rem * -2));
 }
 
-/* line 34, src/sass/structure/_grid.scss */
+/* line 45, src/sass/structure/_grid.scss */
 
 .row.align-center {
   -webkit-box-pack: center;
@@ -458,7 +464,7 @@ textarea {
           align-items: center;
 }
 
-/* line 38, src/sass/structure/_grid.scss */
+/* line 49, src/sass/structure/_grid.scss */
 
 .row.align-left {
   -webkit-box-pack: start;
@@ -466,7 +472,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 41, src/sass/structure/_grid.scss */
+/* line 52, src/sass/structure/_grid.scss */
 
 .row.align-right {
   -webkit-box-pack: end;
@@ -474,7 +480,7 @@ textarea {
           justify-content: flex-end;
 }
 
-/* line 44, src/sass/structure/_grid.scss */
+/* line 55, src/sass/structure/_grid.scss */
 
 .row.va-center {
   -webkit-box-align: center;
@@ -482,7 +488,7 @@ textarea {
           align-items: center;
 }
 
-/* line 47, src/sass/structure/_grid.scss */
+/* line 58, src/sass/structure/_grid.scss */
 
 .row.va-top {
   -webkit-box-align: start;
@@ -490,7 +496,7 @@ textarea {
           align-items: flex-start;
 }
 
-/* line 50, src/sass/structure/_grid.scss */
+/* line 61, src/sass/structure/_grid.scss */
 
 .row.va-bottom {
   -webkit-box-align: end;
@@ -498,7 +504,7 @@ textarea {
           align-items: flex-end;
 }
 
-/* line 53, src/sass/structure/_grid.scss */
+/* line 64, src/sass/structure/_grid.scss */
 
 .row.ha-center {
   -webkit-box-pack: center;
@@ -506,7 +512,7 @@ textarea {
           justify-content: center;
 }
 
-/* line 56, src/sass/structure/_grid.scss */
+/* line 67, src/sass/structure/_grid.scss */
 
 .row.ha-top {
   -webkit-box-pack: start;
@@ -514,7 +520,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 59, src/sass/structure/_grid.scss */
+/* line 70, src/sass/structure/_grid.scss */
 
 .row.ha-right {
   -webkit-box-pack: end;
@@ -615,8 +621,8 @@ textarea {
 body {
   color: #555555;
   font-family: proxima-nova, sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  line-height: 1.6;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -625,7 +631,7 @@ body {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 6, src/sass/components/copy/_block-elements.scss */
+/* line 25, src/sass/components/copy/_block-elements.scss */
 
 p,
 ul,
@@ -638,7 +644,7 @@ figure {
   margin: 0 0 1.5em;
 }
 
-/* line 16, src/sass/components/copy/_block-elements.scss */
+/* line 35, src/sass/components/copy/_block-elements.scss */
 
 aside p,
 aside ul,
@@ -650,7 +656,7 @@ aside figure {
   margin: 0 0 1rem;
 }
 
-/* line 20, src/sass/components/copy/_block-elements.scss */
+/* line 39, src/sass/components/copy/_block-elements.scss */
 
 hr {
   margin: 2.5rem auto;
@@ -660,32 +666,37 @@ hr {
   border: none;
 }
 
-/* line 41, src/sass/components/copy/_block-elements.scss */
+/* line 60, src/sass/components/copy/_block-elements.scss */
 
 .intro {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
+  font-family: "Conduit";
+  line-height: 1.3em;
+  font-weight: 600;
+  color: #002E6D;
+  margin-bottom: 1em;
 }
 
-/* line 50, src/sass/components/copy/_block-elements.scss */
+/* line 64, src/sass/components/copy/_block-elements.scss */
 
 .disclaimer {
   color: #6CACE4;
-  font-size: 1.2rem;
+  font-size: 1.425rem;
 }
 
-/* line 60, src/sass/components/copy/_block-elements.scss */
+/* line 74, src/sass/components/copy/_block-elements.scss */
 
 .ta-left {
   text-align: left !important;
 }
 
-/* line 69, src/sass/components/copy/_block-elements.scss */
+/* line 83, src/sass/components/copy/_block-elements.scss */
 
 .ta-center {
   text-align: center !important;
 }
 
-/* line 78, src/sass/components/copy/_block-elements.scss */
+/* line 92, src/sass/components/copy/_block-elements.scss */
 
 .ta-right {
   text-align: right !important;
@@ -725,7 +736,7 @@ a:focus {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 191, src/sass/components/copy/_headings.scss */
+/* line 201, src/sass/components/copy/_headings.scss */
 
 h1,
 h4,
@@ -734,14 +745,14 @@ h6 {
   font-family: proxima-nova, sans-serif;
 }
 
-/* line 195, src/sass/components/copy/_headings.scss */
+/* line 205, src/sass/components/copy/_headings.scss */
 
 h2,
 h3 {
   font-family: "Conduit";
 }
 
-/* line 202, src/sass/components/copy/_headings.scss */
+/* line 212, src/sass/components/copy/_headings.scss */
 
 h1,
 .h1 {
@@ -753,7 +764,7 @@ h1,
   text-transform: uppercase;
 }
 
-/* line 206, src/sass/components/copy/_headings.scss */
+/* line 216, src/sass/components/copy/_headings.scss */
 
 h2,
 .h2 {
@@ -762,7 +773,7 @@ h2,
   font-size: 1.75em;
 }
 
-/* line 210, src/sass/components/copy/_headings.scss */
+/* line 220, src/sass/components/copy/_headings.scss */
 
 h3,
 .h3 {
@@ -771,16 +782,17 @@ h3,
   font-size: 3rem;
   color: #002E6D;
   text-transform: uppercase;
+  letter-spacing: .05em;
 }
 
-/* line 110, src/sass/components/copy/_headings.scss */
+/* line 111, src/sass/components/copy/_headings.scss */
 
 aside h3,
 aside .h3 {
   font-size: 1.125em;
 }
 
-/* line 113, src/sass/components/copy/_headings.scss */
+/* line 114, src/sass/components/copy/_headings.scss */
 
 aside h3 ~ h3,
 aside h3 ~ .h3,
@@ -791,25 +803,27 @@ aside .h3 ~ .h3 {
   border-top: 0.1rem solid #6CACE4;
 }
 
-/* line 214, src/sass/components/copy/_headings.scss */
+/* line 224, src/sass/components/copy/_headings.scss */
 
 h4,
 .h4 {
   margin: 0 0 .75em;
   padding: 0;
   color: #266db3;
-  font-size: 1.25em;
+  font-size: 1.8rem;
   text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 400;
 }
 
-/* line 152, src/sass/components/copy/_headings.scss */
+/* line 155, src/sass/components/copy/_headings.scss */
 
 aside h4,
 aside .h4 {
   font-size: 1em;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
+/* line 158, src/sass/components/copy/_headings.scss */
 
 aside h4 ~ h4,
 aside h4 ~ .h4,
@@ -848,7 +862,7 @@ ol li:before {
   position: absolute;
   z-index: 0;
   left: 0;
-  top: 0.75em;
+  top: 0.8em;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
 }
@@ -1063,6 +1077,55 @@ table tfoot td {
   background: #6CACE4;
 }
 
+/* line 24, src/sass/components/copy/_copy-block.scss */
+
+.ct-content {
+  position: relative;
+  max-height: 244px;
+  overflow: hidden;
+}
+
+/* line 30, src/sass/components/copy/_copy-block.scss */
+
+.ct-content:after {
+  width: 100%;
+  height: 7.4rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* line 48, src/sass/components/copy/_copy-block.scss */
+
+.ct-content.expanded {
+  max-height: none;
+}
+
+/* line 50, src/sass/components/copy/_copy-block.scss */
+
+.ct-content.expanded:after {
+  display: none;
+}
+
+/* line 56, src/sass/components/copy/_copy-block.scss */
+
+.ct {
+  margin-bottom: 3rem;
+}
+
+/* line 65, src/sass/components/copy/_copy-block.scss */
+
+.paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
+.paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
+.paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
+.paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
+  padding-top: 0;
+  margin-top: -2.5rem;
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     NAVIGATION RESET
@@ -1171,7 +1234,7 @@ nav a {
   /* ------------------ *\ Search Dialog - does not require a css file to be imported \* ------------------ */
 }
 
-/* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+/* line 114, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
 .main-header > div {
   display: -webkit-box;
@@ -1191,7 +1254,6 @@ nav a {
           flex-flow: row wrap;
   max-width: 1350px;
   margin: 0 auto;
-  width: 100%;
 }
 
 /* line 6, src/sass/structure/header/logo/_svg.scss */
@@ -1311,47 +1373,47 @@ nav a {
   padding-top: 0;
 }
 
-/* line 494, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 503, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"] {
   position: absolute;
   width: 0.1rem;
   height: 0.1rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.1rem;
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 513, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 522, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle:after {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
 }
 
-/* line 517, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 526, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle .bar {
   background: #fff;
 }
 
-/* line 526, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 535, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle .bar:nth-child(1) {
   -webkit-transform: scale(0);
   transform: scale(0);
 }
 
-/* line 536, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 545, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle .bar:nth-child(2) {
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-/* line 546, src/sass/structure/header/navs/_mega-menu.scss */
+/* line 555, src/sass/structure/header/navs/_mega-menu.scss */
 
 .main-header input[type="checkbox"]:checked + .toggle .bar:nth-child(3) {
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
@@ -1443,7 +1505,7 @@ nav a {
   width: 0.1rem;
   height: 0.1rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.1rem;
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
@@ -1471,7 +1533,7 @@ nav a {
 
 .menu--cta ul li a {
   display: block;
-  padding: 1.8rem 2.2rem 1.4rem;
+  padding: 1.9rem 1.3rem 1.4rem;
   position: relative;
   color: #fff;
   background: #0054A6;
@@ -1500,7 +1562,19 @@ nav a {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 56, src/sass/structure/header/navs/_cta.scss */
+/* line 55, src/sass/structure/header/navs/_cta.scss */
+
+.menu--cta ul li:first-child a {
+  padding-left: 2.2rem;
+}
+
+/* line 61, src/sass/structure/header/navs/_cta.scss */
+
+.menu--cta ul li:last-child a {
+  padding-right: 2.2rem;
+}
+
+/* line 63, src/sass/structure/header/navs/_cta.scss */
 
 .menu--cta ul li:last-child a:after {
   display: none;
@@ -1745,7 +1819,7 @@ Delete everything below including comment
 /* line 44, src/sass/structure/footer/elements/_sitemap.scss */
 
 .main-footer nav.menu--footer li + li {
-  margin-top: 14px;
+  margin-top: 1.4rem;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -1759,7 +1833,7 @@ Delete everything below including comment
 
 /* line 9, src/sass/structure/_section.scss */
 
-section {
+.section {
   position: relative;
   z-index: 110;
   padding: 2.5rem 2.5rem;
@@ -1787,7 +1861,7 @@ section {
 
 /* line 32, src/sass/structure/_section.scss */
 
-section > div {
+.section > div {
   max-width: 1350px;
   margin: 0 auto;
   width: 100%;
@@ -1795,37 +1869,49 @@ section > div {
 
 /* line 72, src/sass/structure/_section.scss */
 
-section.npt {
+.section.npt {
   padding-top: 0;
 }
 
 /* line 76, src/sass/structure/_section.scss */
 
-section.np {
+.section.np {
   padding: 0;
 }
 
 /* line 80, src/sass/structure/_section.scss */
 
-section.static {
+.section.static {
   position: static;
 }
 
 /* line 85, src/sass/structure/_section.scss */
 
-section.copy-block > div > div {
+.section.copy-block > div > div {
   margin: auto;
+}
+
+/* line 93, src/sass/structure/_section.scss */
+
+.section.layout--program-detail-2col {
+  padding-bottom: 0;
+}
+
+/* line 97, src/sass/structure/_section.scss */
+
+.section.layout--generic-content {
+  padding: 0;
 }
 
 /* line 6, src/sass/structure/section-layouts/_full-screen.scss */
 
-section.full-screen {
+.section.full-screen {
   padding: 0;
 }
 
 /* line 15, src/sass/structure/section-layouts/_full-screen.scss */
 
-section.full-screen > div {
+.section.full-screen > div {
   max-width: none;
   width: 100%;
   padding: 0;
@@ -1833,19 +1919,19 @@ section.full-screen > div {
 
 /* line 6, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout {
+.section.int-layout {
   padding: 0;
 }
 
 /* line 9, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout > div {
+.section.int-layout > div {
   padding: 2.5rem 2.5rem 0;
 }
 
 /* line 12, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout > div > aside {
+.section.int-layout > div > aside {
   width: calc(100% + 5rem);
   margin: 2.5rem -2.5rem 0;
   padding: 2.5rem;
@@ -1853,14 +1939,14 @@ section.int-layout > div > aside {
 
 /* line 76, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout.trunc > div {
+.section.int-layout.trunc > div {
   max-height: 75rem;
   overflow: hidden;
 }
 
 /* line 80, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout.trunc > div:after {
+.section.int-layout.trunc > div:after {
   position: absolute;
   z-index: 100;
   left: 0;
@@ -1880,7 +1966,7 @@ section.int-layout.trunc > div:after {
 
 /* line 93, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout.trunc .toggle {
+.section.int-layout.trunc .toggle {
   position: absolute;
   z-index: 1000;
   left: 50%;
@@ -1896,43 +1982,167 @@ section.int-layout.trunc .toggle {
 
 /* line 104, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout.trunc.expanded > div {
+.section.int-layout.trunc.expanded > div {
   max-height: none;
 }
 
 /* line 107, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout.trunc.expanded > div:after {
+.section.int-layout.trunc.expanded > div:after {
   display: none;
 }
 
 /* line 112, src/sass/structure/section-layouts/_int.scss */
 
-section.int-layout.trunc.expanded .toggle {
+.section.int-layout.trunc.expanded .toggle {
   display: none;
 }
 
 /* line 6, src/sass/structure/section-layouts/_prg.scss */
 
-section.prg-layout {
+.section.prg-layout {
   padding: 0;
 }
 
 /* line 9, src/sass/structure/section-layouts/_prg.scss */
 
-section.prg-layout > div {
+.section.prg-layout > div {
   padding: 2.5rem 2.5rem 0;
 }
 
 /* line 12, src/sass/structure/section-layouts/_prg.scss */
 
-section.prg-layout > div > aside {
+.section.prg-layout > div > aside {
   width: calc(100% + 5rem);
   margin: 2.5rem -2.5rem 0;
   padding: 2.5rem;
 }
 
+/* line 1, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col {
+  background: #E5F0F9;
+  border-bottom: 8px solid #6CACE4;
+}
+
+/* line 5, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .layout__region {
+  height: 100%;
+}
+
+/* line 9, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail {
+  height: 100%;
+  position: relative;
+}
+
+/* line 13, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail > div {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 18, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .fac_rail:before {
+  width: 200vw;
+  height: calc(100% + 5rem);
+  position: absolute;
+  left: 0;
+  top: -2.5rem;
+  content: "";
+  background: #CEE2F3;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+/* line 47, src/sass/structure/section-layouts/_faculty.scss */
+
+.section.fac-3col .faculty-image {
+  padding-bottom: 2.5rem;
+}
+
+/* line 52, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle {
+  padding-bottom: 5rem;
+}
+
+/* line 58, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle .field__item {
+  margin-bottom: 0.31579em;
+}
+
+/* line 61, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
+  color: #266db3;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 400;
+  margin-bottom: 0.41667em;
+}
+
+/* line 155, src/sass/components/copy/_headings.scss */
+
+aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
+  font-size: 1em;
+}
+
+/* line 158, src/sass/components/copy/_headings.scss */
+
+aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department ~ h4,
+aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department ~ .h4 {
+  margin-top: 0.5rem;
+}
+
+/* line 67, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle h3.field__item {
+  line-height: .825em;
+  margin-bottom: 0.825em;
+}
+
+/* line 70, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle h3.field__item:after {
+  bottom: -0.25em;
+}
+
+/* line 75, src/sass/structure/section-layouts/_faculty.scss */
+
+.section .layout__region--facmiddle .btn-secondary,
+.section .layout__region--facmiddle form .form_action button,
+form .form_action .section .layout__region--facmiddle button {
+  margin-top: 2rem;
+  min-width: 0;
+}
+
+/* line 1, src/sass/structure/section-backgrounds/_feat-tiles.scss */
+
+.section.layout--program-detail-feat-tile {
+  background: -webkit-gradient(linear, left bottom, left top, from(#d6d8da), color-stop(17%, #EEEFF0), color-stop(83%, #EEEFF0), to(#d6d8da));
+  background: linear-gradient(0deg, #d6d8da 0%, #EEEFF0 17%, #EEEFF0 83%, #d6d8da 100%);
+  padding: 5rem 0;
+  border-top: 8px solid #6CACE4;
+  border-bottom: 8px solid #6CACE4;
+}
+
 /* CSS Document */
+
+/* line 130, src/sass/structure/_section.scss */
+
+.layout--onecol {
+  background-image: url(../../img/feature_slash_bg.png);
+  background-repeat: repeat-y;
+  background-size: 75%;
+  background-position: 98rem;
+}
 
 /*  --------------------------------------------------------------------------  *\
 
@@ -1942,7 +2152,7 @@ section.prg-layout > div > aside {
     they can be good starting points to solve backgrounds and shapes used in the
     design.
 
-    These are included individually to make commenting out easier. Please comment 
+    These are included individually to make commenting out easier. Please comment
     out the backgrounds that you don't need for your site's design.
 
 \*  --------------------------------------------------------------------------  */
@@ -2048,10 +2258,16 @@ section[class*="sbg-"]:after {
 
 /*  --------------------------------------------------------------------------  *\ DELETE THIS SECTION OUT WHEN NOT USING ON COMPONENT LIBRARY SITE \*  --------------------------------------------------------------------------  */
 
-/* line 52, src/sass/structure/_section-backgrounds.scss */
+/* line 53, src/sass/structure/_section-backgrounds.scss */
 
 .cl-bg > section {
   min-height: 75vh;
+}
+
+/* line 13, src/sass/structure/_home.scss */
+
+.field--name-field-landing-page-content .section {
+  background: transparent;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -2094,9 +2310,10 @@ section[class*="sbg-"]:after {
 [class*="btn-"] span:not(.sr-only) {
   position: relative;
   z-index: 1;
+  text-align: left;
 }
 
-/* line 40, src/sass/components/basic/_buttons.scss */
+/* line 41, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"] .arrow:last-child {
   position: absolute;
@@ -2120,7 +2337,7 @@ section[class*="sbg-"]:after {
   color: #F0F5FA;
 }
 
-/* line 63, src/sass/components/basic/_buttons.scss */
+/* line 64, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"]:hover .arrow:last-child,
 [class*="btn-"]:focus .arrow:last-child {
@@ -2152,7 +2369,7 @@ section[class*="sbg-"]:after {
   transform: translate(1rem, 0);
 }
 
-/* line 80, src/sass/components/basic/_buttons.scss */
+/* line 81, src/sass/components/basic/_buttons.scss */
 
 .skip-section {
   position: fixed;
@@ -2169,7 +2386,7 @@ section[class*="sbg-"]:after {
   text-decoration: none;
 }
 
-/* line 91, src/sass/components/basic/_buttons.scss */
+/* line 92, src/sass/components/basic/_buttons.scss */
 
 .skip-section span {
   display: block;
@@ -2246,11 +2463,12 @@ section[class*="sbg-"]:after {
 
 /* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
 
-.btn-secondary {
+.btn-secondary,
+form .form_action button {
   position: relative;
   min-width: 320px;
   max-width: 100%;
-  padding: 1rem 2.2rem;
+  padding: 1rem 5.4rem 1rem 2.2rem;
   background: #A5D2F9;
   border: 0;
   border-radius: 0.3rem;
@@ -2260,16 +2478,26 @@ section[class*="sbg-"]:after {
   /*------  USE THIS IF YOU DO NOT HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------*\ \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
 }
 
-/* line 51, src/sass/components/basic/buttons/colors/_secondary.scss */
+/* line 55, src/sass/components/basic/buttons/colors/_secondary.scss */
 
-.btn-secondary span {
+.btn-secondary span,
+form .form_action button span {
   position: relative;
   z-index: 10;
 }
 
-/* line 56, src/sass/components/basic/buttons/colors/_secondary.scss */
+/* line 59, src/sass/components/basic/buttons/colors/_secondary.scss */
 
-.btn-secondary:before {
+.btn-secondary span:first-of-type,
+form .form_action button span:first-of-type {
+  max-width: 320px;
+  display: block;
+}
+
+/* line 65, src/sass/components/basic/buttons/colors/_secondary.scss */
+
+.btn-secondary:before,
+form .form_action button:before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2283,7 +2511,9 @@ section[class*="sbg-"]:after {
 /* line 59, src/sass/base/_mixins.scss */
 
 .btn-secondary:hover,
-.btn-secondary:focus {
+form .form_action button:hover,
+.btn-secondary:focus,
+form .form_action button:focus {
   background: #0054A6;
   color: #fff;
 }
@@ -2295,11 +2525,13 @@ section[class*="sbg-"]:after {
   background: linear-gradient(0deg, #FFCC4F 0%, #ffd673 100%);
   border-radius: 0.2rem;
   color: #002E6D;
+  font-size: 1.8rem;
   font-weight: bold;
   border: 0;
-  padding: 1rem 1.5rem 0.5rem 1rem;
+  padding: 1.4rem 1rem 1rem 1rem;
   text-transform: uppercase;
   font-family: "Conduit";
+  letter-spacing: 0.05em;
 }
 
 /* line 59, src/sass/base/_mixins.scss */
@@ -2341,6 +2573,84 @@ section[class*="sbg-"]:after {
   background: #8AC8FF;
   color: #fff;
   border-color: #0054A6;
+}
+
+/* line 1, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.btn-expand {
+  position: relative;
+  color: #266db3;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 4px solid #d4d4d4;
+  background-color: transparent;
+  -webkit-transition: border-color .25s, color .25s;
+  transition: border-color .25s, color .25s;
+}
+
+/* line 14, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.btn-expand:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  bottom: -1.5rem;
+  content: "";
+  border-style: solid;
+  border-width: 12px 11.5px 0 11.5px;
+  border-color: #d4d4d4 transparent transparent transparent;
+  -webkit-transform: translateX(-14px);
+          transform: translateX(-14px);
+  -webkit-transition: border-color .25s;
+  transition: border-color .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.btn-expand:hover,
+.btn-expand:focus {
+  color: #0054A6;
+  background-color: transparent;
+  border-bottom-color: #0054A6;
+}
+
+/* line 33, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.btn-expand:hover:after,
+.btn-expand:focus:after {
+  border-color: #0054A6 transparent transparent transparent;
+}
+
+/* line 38, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.expanded .btn-expand,
+.expanded + .btn-expand {
+  border-top: 4px solid #d4d4d4;
+  border-bottom: 0;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.expanded .btn-expand:hover,
+.expanded .btn-expand:focus,
+.expanded + .btn-expand:hover,
+.expanded + .btn-expand:focus {
+  border-top-color: #0054A6;
+}
+
+/* line 47, src/sass/components/basic/buttons/colors/_expand.scss */
+
+.expanded .btn-expand:after,
+.expanded + .btn-expand:after {
+  -webkit-transform: translateX(-9px) rotate(180deg);
+          transform: translateX(-9px) rotate(180deg);
+  bottom: auto;
+  top: -1.5rem;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -2400,73 +2710,80 @@ aside .btn-text:hover {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 10, src/sass/components/basic/_hero.scss */
+/* line 13, src/sass/components/basic/_hero.scss */
 
 .node__content > header,
+.hub-reference > header,
 header.hp_hero {
   position: relative;
   overflow: hidden;
+  z-index: 120;
 }
 
-/* line 23, src/sass/components/basic/_hero.scss */
+/* line 28, src/sass/components/basic/_hero.scss */
 
 .node__content > header:after,
+.hub-reference > header:after,
 header.hp_hero:after {
-  width: 200vh;
-  height: 200vh;
+  width: 150%;
+  height: 100%;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 100%;
   content: "";
   background: rgba(0, 84, 166, 0.65);
   -webkit-transform-origin: top right;
           transform-origin: top right;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -webkit-transform: skew(-45deg);
+          transform: skew(-45deg);
   z-index: 90;
 }
 
-/* line 40, src/sass/components/basic/_hero.scss */
+/* line 45, src/sass/components/basic/_hero.scss */
 
 .node__content > header .field--name-field-interior-page-hero-img,
+.hub-reference > header .field--name-field-interior-page-hero-img,
 header.hp_hero .field--name-field-interior-page-hero-img {
   position: relative;
   z-index: 0;
 }
 
-/* line 45, src/sass/components/basic/_hero.scss */
+/* line 50, src/sass/components/basic/_hero.scss */
 
 .node__content > header img,
+.hub-reference > header img,
 header.hp_hero img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* line 51, src/sass/components/basic/_hero.scss */
+/* line 56, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title,
+.hub-reference > header .hero_title,
 header.hp_hero .hero_title {
   width: 100%;
-  position: absolute;
   left: 0;
   bottom: 4.2rem;
-  background-color: rgba(0, 84, 166, 0.85);
-  padding: 2.5rem 0;
+  background-color: #002E6D;
+  padding: 6.2rem 0 2.5rem 0;
   z-index: 200;
 }
 
-/* line 64, src/sass/components/basic/_hero.scss */
+/* line 69, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title h1,
+.hub-reference > header .hero_title h1,
 header.hp_hero .hero_title h1 {
   margin: 0;
   color: #fff;
 }
 
-/* line 74, src/sass/components/basic/_hero.scss */
+/* line 79, src/sass/components/basic/_hero.scss */
 
 .node__content > header .breadcrumb,
+.hub-reference > header .breadcrumb,
 header.hp_hero .breadcrumb {
   height: 4.2rem;
   position: relative;
@@ -2482,19 +2799,22 @@ header.hp_hero .breadcrumb {
 }
 
 @supports (mix-blend-mode: lighten) {
-  /* line 74, src/sass/components/basic/_hero.scss */
+  /* line 79, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
+  .hub-reference > header .breadcrumb,
   header.hp_hero .breadcrumb {
     z-index: 200;
     mix-blend-mode: lighten;
   }
 }
 
-/* line 95, src/sass/components/basic/_hero.scss */
+/* line 100, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title > div,
 .node__content > header .breadcrumb > div,
+.hub-reference > header .hero_title > div,
+.hub-reference > header .breadcrumb > div,
 header.hp_hero .hero_title > div,
 header.hp_hero .breadcrumb > div {
   max-width: 1350px;
@@ -2503,39 +2823,43 @@ header.hp_hero .breadcrumb > div {
   width: 100%;
 }
 
-/* line 115, src/sass/components/basic/_hero.scss */
+/* line 120, src/sass/components/basic/_hero.scss */
 
 .node__content > header.interior_page > .field,
+.hub-reference > header.interior_page > .field,
 header.hp_hero.interior_page > .field {
   height: 16.4rem;
   overflow: hidden;
 }
 
-/* line 129, src/sass/components/basic/_hero.scss */
+/* line 134, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background,
+.hub-reference > header .js-background,
 header.hp_hero .js-background {
   background-size: cover;
   background-position: top center;
 }
 
-/* line 133, src/sass/components/basic/_hero.scss */
+/* line 138, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background img,
+.hub-reference > header .js-background img,
 header.hp_hero .js-background img {
   position: absolute;
   width: 0.1rem;
   height: 0.1rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.1rem;
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 138, src/sass/components/basic/_hero.scss */
+/* line 143, src/sass/components/basic/_hero.scss */
 
 .node__content > header:before,
+.hub-reference > header:before,
 header.hp_hero:before {
   width: 100%;
   height: 100%;
@@ -2552,21 +2876,39 @@ header.hp_hero:before {
   pointer-events: none;
 }
 
-/* line 153, src/sass/components/basic/_hero.scss */
+/* line 158, src/sass/components/basic/_hero.scss */
 
 .menuhover .node__content > header:before,
+.menuhover .hub-reference > header:before,
 .menuhover header.hp_hero:before {
   opacity: 1;
 }
 
-/* line 159, src/sass/components/basic/_hero.scss */
+/* line 167, src/sass/components/basic/_hero.scss */
+
+header > .field + .hero_title,
+header > .block + .hero_title {
+  position: absolute;
+  left: 0;
+  bottom: 4.2rem;
+  background-color: rgba(0, 84, 166, 0.85);
+  padding: 2.5rem 0;
+}
+
+/* line 182, src/sass/components/basic/_hero.scss */
 
 header.hp_hero {
   position: relative;
-  margin-bottom: 128px;
+  margin-bottom: 9.8rem;
 }
 
-/* line 170, src/sass/components/basic/_hero.scss */
+/* line 192, src/sass/components/basic/_hero.scss */
+
+header.hp_hero:after {
+  height: calc(100% - 3rem);
+}
+
+/* line 202, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag {
   position: relative;
@@ -2577,30 +2919,30 @@ header.hp_hero {
           order: 2;
 }
 
-/* line 183, src/sass/components/basic/_hero.scss */
+/* line 216, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div {
   max-width: 1350px;
   margin: 0 auto;
-  width: 100%;
 }
 
-/* line 186, src/sass/components/basic/_hero.scss */
+/* line 220, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div > div {
   padding: 2.5rem 1.6rem 1.6rem 1.6rem;
-  background: rgba(0, 84, 166, 0.83);
+  background: rgba(0, 84, 166, 0.87);
   color: #fff;
 }
 
-/* line 198, src/sass/components/basic/_hero.scss */
+/* line 232, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
-  margin: 0;
+  margin: 0 0 0.18em 0;
   font-size: 3.4rem;
+  line-height: 0.94em;
 }
 
-/* line 207, src/sass/components/basic/_hero.scss */
+/* line 242, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
   font-family: "Conduit";
@@ -2612,7 +2954,7 @@ header.hp_hero {
   letter-spacing: 0.05em;
 }
 
-/* line 223, src/sass/components/basic/_hero.scss */
+/* line 258, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg {
   position: relative;
@@ -2623,7 +2965,7 @@ header.hp_hero {
   max-height: 680px;
 }
 
-/* line 231, src/sass/components/basic/_hero.scss */
+/* line 266, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image {
   position: relative;
@@ -2631,7 +2973,7 @@ header.hp_hero {
   padding-bottom: 50%;
 }
 
-/* line 240, src/sass/components/basic/_hero.scss */
+/* line 275, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image img {
   width: auto;
@@ -2645,7 +2987,7 @@ header.hp_hero {
           transform: translate(-50%, -50%);
 }
 
-/* line 261, src/sass/components/basic/_hero.scss */
+/* line 296, src/sass/components/basic/_hero.scss */
 
 .bg_caption {
   position: absolute;
@@ -2656,25 +2998,33 @@ header.hp_hero {
   font-family: "Conduit";
   line-height: 1.2em;
   z-index: 95;
+  text-align: right;
 }
 
-/* line 275, src/sass/components/basic/_hero.scss */
+/* line 311, src/sass/components/basic/_hero.scss */
 
 .bg_caption a {
   color: #fff;
 }
 
-/* line 281, src/sass/components/basic/_hero.scss */
+/* line 59, src/sass/base/_mixins.scss */
+
+.bg_caption a:hover,
+.bg_caption a:focus {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 321, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header {
   position: relative;
-  background: #002E6D;
+  margin-bottom: 1.6rem;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
 }
 
-/* line 307, src/sass/components/basic/_hero.scss */
+/* line 368, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header > div {
   max-width: 1350px;
@@ -2682,32 +3032,34 @@ header.hp_hero {
   width: 100%;
 }
 
-/* line 312, src/sass/components/basic/_hero.scss */
+/* line 373, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner {
   position: relative;
   margin: 0;
-  padding: 5rem 1.6rem;
+  padding: 2.6rem 1.6rem;
   font-size: 3.4rem;
   color: #fff;
   z-index: 200;
 }
 
-/* line 320, src/sass/components/basic/_hero.scss */
+/* line 381, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner:after {
   width: 0;
   height: 0;
   position: absolute;
-  bottom: -3rem;
-  left: 11.5rem;
+  bottom: -1.6rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   content: "";
   border-style: solid;
-  border-width: 30px 31px 0 31px;
+  border-width: 16px 16px 0 16px;
   border-color: #002E6D transparent transparent transparent;
 }
 
-/* line 332, src/sass/components/basic/_hero.scss */
+/* line 401, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner div:last-child {
   font-family: "Conduit";
@@ -2729,7 +3081,9 @@ header.hp_hero {
 
 /* line 11, src/sass/components/basic/_cards.scss */
 
-.card {
+.card,
+a.card {
+  text-decoration: none;
   /*---------------------*\ IMPORT STYLES FOR CARD LAYOUT OPTIONS Comment out any alterations that will not be used on your site. This will reduce the file size by removing unused definitions. \*---------------------*/
   /*  --------------------------------------------------------------------------  *\
 
@@ -2746,17 +3100,12 @@ header.hp_hero {
     CARD - WITH IMAGE ON SIDE
 
 \*  --------------------------------------------------------------------------  */
+  /*  --------------------------------------------------------------------------  *\
+
+    CARD - STORY ELEMENTS
+
+\*  --------------------------------------------------------------------------  */
   /*---------------------*\ IMPORT STYLES FOR CARD ICON OPTIONS Comment out any alterations that will not be used on your site. This will reduce the file size by removing unused definitions. \*---------------------*/
-  /*  --------------------------------------------------------------------------  *\
-
-    CARD - WITH ICON TOP
-
-\*  --------------------------------------------------------------------------  */
-  /*  --------------------------------------------------------------------------  *\
-
-    CARD - WITH ICON LEFT
-
-\*  --------------------------------------------------------------------------  */
   /*---------------------*\ IMPORT STYLES FOR CARD CONTENT STYLING Comment out any alterations that will not be used on your site. This will reduce the file size by removing unused definitions. \*---------------------*/
   /*  --------------------------------------------------------------------------  *\
 
@@ -2768,22 +3117,19 @@ header.hp_hero {
     CARD - ARTICLE ELEMENTS
 
 \*  --------------------------------------------------------------------------  */
-  /*  --------------------------------------------------------------------------  *\
-
-    CARD - STORY ELEMENTS
-
-\*  --------------------------------------------------------------------------  */
 }
 
 /* line 14, src/sass/components/basic/cards/_img-above.scss */
 
-.card > a {
+.card > a,
+a.card > a {
   display: block;
 }
 
 /* line 23, src/sass/components/basic/cards/_img-above.scss */
 
-.card > a img {
+.card > a img,
+a.card > a img {
   display: block;
   width: 100%;
   height: auto;
@@ -2791,49 +3137,39 @@ header.hp_hero {
 
 /* line 6, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind {
+.card.img-behind,
+a.card.img-behind {
   position: relative;
   z-index: 0;
   margin: 0 auto;
-  background-position: center;
-  background-size: cover;
+}
+
+/* line 17, src/sass/components/basic/cards/_img-behind.scss */
+
+.grid .card.img-behind,
+.grid a.card.img-behind {
+  width: 100%;
 }
 
 /* line 20, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind.js-background > a img {
-  position: absolute;
-  width: 0.1rem;
-  height: 0.1rem;
-  padding: 0;
-  margin: -1px;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-
-/* line 25, src/sass/components/basic/cards/_img-behind.scss */
-
-.grid .card.img-behind {
-  width: 100%;
-}
-
-/* line 28, src/sass/components/basic/cards/_img-behind.scss */
-
-.grid .card.img-behind.wide {
+.grid .card.img-behind.wide,
+.grid a.card.img-behind.wide {
   grid-column-end: span 2;
   text-align: left;
 }
 
-/* line 32, src/sass/components/basic/cards/_img-behind.scss */
+/* line 24, src/sass/components/basic/cards/_img-behind.scss */
 
-.grid .card.img-behind.wide > div {
+.grid .card.img-behind.wide > div,
+.grid a.card.img-behind.wide > div {
   width: 50%;
 }
 
-/* line 38, src/sass/components/basic/cards/_img-behind.scss */
+/* line 30, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind > div {
+.card.img-behind > div,
+a.card.img-behind > div {
   position: absolute;
   z-index: 100;
   left: 0;
@@ -2841,15 +3177,17 @@ header.hp_hero {
   padding: 0 2.5rem;
 }
 
-/* line 53, src/sass/components/basic/cards/_img-behind.scss */
+/* line 45, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind.hov-eff {
+.card.img-behind.hov-eff,
+a.card.img-behind.hov-eff {
   overflow: hidden;
 }
 
-/* line 62, src/sass/components/basic/cards/_img-behind.scss */
+/* line 54, src/sass/components/basic/cards/_img-behind.scss */
 
-.card.img-behind.hov-eff > div {
+.card.img-behind.hov-eff > div,
+a.card.img-behind.hov-eff > div {
   -webkit-transform: translate(0, 100%);
   transform: translate(0, 100%);
   -webkit-transition: -webkit-transform 0.5s 0.15s;
@@ -2858,48 +3196,87 @@ header.hp_hero {
   transition: transform 0.5s 0.15s, -webkit-transform 0.5s 0.15s;
 }
 
-/* line 81, src/sass/components/basic/cards/_img-behind.scss */
+/* line 73, src/sass/components/basic/cards/_img-behind.scss */
 
 .card.img-behind.hov-eff:hover > div,
-.card.img-behind.hov-eff:focus > div {
+.card.img-behind.hov-eff:focus > div,
+a.card.img-behind.hov-eff:hover > div,
+a.card.img-behind.hov-eff:focus > div {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 
-/* line 93, src/sass/components/basic/cards/_img-behind.scss */
+/* line 85, src/sass/components/basic/cards/_img-behind.scss */
 
-.full-screen .card.img-behind {
+.full-screen .card.img-behind,
+.full-screen a.card.img-behind {
   padding: 10rem 0;
   overflow: hidden;
 }
 
-/* line 97, src/sass/components/basic/cards/_img-behind.scss */
+/* line 89, src/sass/components/basic/cards/_img-behind.scss */
 
-.full-screen .card.img-behind > a {
+.full-screen .card.img-behind > a,
+.full-screen .card.img-behind > span,
+.full-screen a.card.img-behind > a,
+.full-screen a.card.img-behind > span {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* line 96, src/sass/components/basic/cards/_img-behind.scss */
+
+.full-screen .card.img-behind > a img,
+.full-screen .card.img-behind > span img,
+.full-screen a.card.img-behind > a img,
+.full-screen a.card.img-behind > span img {
   position: absolute;
   z-index: 0;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 100%;
-  z-index: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 }
 
-/* line 103, src/sass/components/basic/cards/_img-behind.scss */
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  /* line 96, src/sass/components/basic/cards/_img-behind.scss */
 
-.full-screen .card.img-behind > div {
+  .full-screen .card.img-behind > a img,
+  .full-screen .card.img-behind > span img,
+  .full-screen a.card.img-behind > a img,
+  .full-screen a.card.img-behind > span img {
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+/* line 113, src/sass/components/basic/cards/_img-behind.scss */
+
+.full-screen .card.img-behind > div,
+.full-screen a.card.img-behind > div {
   position: relative;
   left: auto;
   bottom: auto;
-  max-width: 1350px;
   margin: 0 auto;
-  width: 100%;
 }
 
 /* line 6, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side {
+.card.img-side,
+a.card.img-side {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2912,14 +3289,15 @@ header.hp_hero {
   -ms-flex-line-pack: stretch;
       align-content: stretch;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-flow: column-reverse nowrap;
-          flex-flow: column-reverse nowrap;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 /* line 15, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side > a {
+.card.img-side > a,
+a.card.img-side > a {
   -webkit-box-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2928,9 +3306,17 @@ header.hp_hero {
           order: 1;
 }
 
-/* line 25, src/sass/components/basic/cards/_img-side.scss */
+/* line 24, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side > div {
+.card.img-side > a .contextual,
+a.card.img-side > a .contextual {
+  display: none;
+}
+
+/* line 29, src/sass/components/basic/cards/_img-side.scss */
+
+.card.img-side > div,
+a.card.img-side > div {
   -webkit-box-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2939,30 +3325,34 @@ header.hp_hero {
           order: 0;
 }
 
-/* line 35, src/sass/components/basic/cards/_img-side.scss */
+/* line 39, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side .body + [class*="btn-"] {
+.card.img-side .body + [class*="btn-"],
+a.card.img-side .body + [class*="btn-"] {
   margin-top: 1em;
 }
 
-/* line 40, src/sass/components/basic/cards/_img-side.scss */
+/* line 44, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side.invert > a {
+.card.img-side.invert > a,
+a.card.img-side.invert > a {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
 }
 
-/* line 45, src/sass/components/basic/cards/_img-side.scss */
+/* line 49, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side h3 {
+.card.img-side h3,
+a.card.img-side h3 {
   position: relative;
   padding-bottom: 0.25455em;
 }
 
-/* line 49, src/sass/components/basic/cards/_img-side.scss */
+/* line 53, src/sass/components/basic/cards/_img-side.scss */
 
-.card.img-side h3:after {
+.card.img-side h3:after,
+a.card.img-side h3:after {
   width: 5.5rem;
   height: 0.5rem;
   position: absolute;
@@ -2972,9 +3362,10 @@ header.hp_hero {
   background: #6CACE4;
 }
 
-/* line 167, src/sass/components/basic/cards/_img-side.scss */
+/* line 175, src/sass/components/basic/cards/_img-side.scss */
 
-aside .card.img-side {
+aside .card.img-side,
+aside a.card.img-side {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
@@ -2990,9 +3381,10 @@ aside .card.img-side {
   max-height: 12.5rem;
 }
 
-/* line 174, src/sass/components/basic/cards/_img-side.scss */
+/* line 182, src/sass/components/basic/cards/_img-side.scss */
 
-aside .card.img-side:before {
+aside .card.img-side:before,
+aside a.card.img-side:before {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -3001,19 +3393,22 @@ aside .card.img-side:before {
   content: "";
 }
 
-/* line 189, src/sass/components/basic/cards/_img-side.scss */
+/* line 197, src/sass/components/basic/cards/_img-side.scss */
 
-aside .card.img-side > a {
+aside .card.img-side > a,
+aside a.card.img-side > a {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
   width: 25%;
 }
 
-/* line 194, src/sass/components/basic/cards/_img-side.scss */
+/* line 202, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side > div,
-aside .card.img-side > p {
+aside .card.img-side > p,
+aside a.card.img-side > div,
+aside a.card.img-side > p {
   width: calc(75% - 2.5rem);
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
@@ -3021,237 +3416,141 @@ aside .card.img-side > p {
   padding: 0;
 }
 
-/* line 200, src/sass/components/basic/cards/_img-side.scss */
+/* line 208, src/sass/components/basic/cards/_img-side.scss */
 
 aside .card.img-side h3,
-aside .card.img-side .h3 {
+aside .card.img-side .h3,
+aside a.card.img-side h3,
+aside a.card.img-side .h3 {
   font-size: 1.25em;
 }
 
-/* line 204, src/sass/components/basic/cards/_img-side.scss */
+/* line 212, src/sass/components/basic/cards/_img-side.scss */
 
-aside .card.img-side + p {
+aside .card.img-side + p,
+aside a.card.img-side + p {
   margin-top: 1em;
 }
 
-/* line 14, src/sass/components/basic/cards/_icon-left.scss */
+/* line 1, src/sass/components/basic/cards/_featured-element.scss */
 
-.card.ico-left > div {
-  position: relative;
-  padding: 2.5rem 2.5rem 2.5rem 5rem;
+.card.img-side .info,
+a.card.img-side .info {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
 }
 
-/* line 25, src/sass/components/basic/cards/_icon-left.scss */
+/* line 29, src/sass/components/basic/cards/_featured-element.scss */
 
-.card.ico-left .fas,
-.card.ico-left .fab,
-.card.ico-left .far {
-  position: absolute;
-  z-index: 100;
-  left: 2.5rem;
-  top: calc(2.5rem + .9375em);
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-}
-
-/* line 14, src/sass/components/basic/cards/_copy.scss */
-
-.card p:last-child {
-  margin-bottom: 0;
-}
-
-/* line 25, src/sass/components/basic/cards/_copy.scss */
-
-.card h2 {
-  font-size: 1.25em;
-}
-
-/* line 43, src/sass/components/basic/cards/_copy.scss */
-
-.card h3 {
-  font-size: 1.5em;
-}
-
-/* line 65, src/sass/components/basic/cards/_copy.scss */
-
-.card h4,
-.card .h4 {
-  font-size: 1.5em;
-}
-
-/* line 86, src/sass/components/basic/cards/_copy.scss */
-
-.card h4 small,
-.card .h4 small {
-  font-size: 1.6rem;
-}
-
-/* line 6, src/sass/components/basic/cards/_article.scss */
-
-.card h3.title {
-  font-size: 1.25em;
-  font-weight: normal;
-}
-
-/* line 16, src/sass/components/basic/cards/_article.scss */
-
-.card .type {
-  margin: 0 0 1.5rem;
-  font-size: .75em;
-  font-weight: bold;
+.card.img-side .info h2,
+a.card.img-side .info h2 {
+  font-size: 3.6rem;
+  font-family: proxima-nova, sans-serif;
+  color: #002E6D;
+  font-weight: 700;
   text-transform: uppercase;
-}
-
-/* line 28, src/sass/components/basic/cards/_article.scss */
-
-.card .type .fas,
-.card .type .far,
-.card .type .fab {
-  margin: 0 .5rem 0 0;
-  font-size: 1.5em;
-  line-height: 1em;
-}
-
-/* line 41, src/sass/components/basic/cards/_article.scss */
-
-.card .by {
-  font-size: .8em;
-}
-
-/* line 51, src/sass/components/basic/cards/_article.scss */
-
-.card .tags {
-  margin: 5rem 0 0;
-  font-size: .8em;
-}
-
-/* line 1, src/sass/components/basic/cards/_shadow.scss */
-
-.card.shadow {
-  -webkit-box-shadow: 0 0 1.5rem rgba(33, 35, 34, 0.15);
-          box-shadow: 0 0 1.5rem rgba(33, 35, 34, 0.15);
-}
-
-/* line 1, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro {
-  text-align: center;
-  color: #fff;
-}
-
-/* line 5, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro > div {
-  width: 100%;
-}
-
-/* line 9, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro h3 {
+  line-height: 1.2;
   position: relative;
-  z-index: 0;
-  padding: 0 0 0.3rem;
+  padding-bottom: 1.4rem;
+  -webkit-transition: color .3s ease-out;
+  transition: color .3s ease-out;
 }
 
-/* line 13, src/sass/components/basic/cards/_profile.scss */
+/* line 45, src/sass/components/basic/cards/_featured-element.scss */
 
-.card.pro h3:after {
+.card.img-side .info h2:after,
+a.card.img-side .info h2:after {
   position: absolute;
-  z-index: 0;
-  left: 50%;
-  top: 100%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: 5rem;
-  height: .3rem;
-  background: #fff;
-  content: "";
-}
-
-/* line 22, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro .type {
-  position: absolute;
-  z-index: 0;
-  left: 2.5rem;
-  top: 2.5rem;
-  text-transform: none;
-  font-size: 1.6rem;
-}
-
-/* line 28, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro h3 {
-  font-size: 1.5em;
-}
-
-/* line 32, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* line 36, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro a.btn-primary {
-  color: #002E6D;
-}
-
-/* line 39, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro a.btn-primary:hover {
-  color: #fff;
-}
-
-/* line 45, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro .reveal {
-  display: none;
-}
-
-/* line 51, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro:hover .reveal {
-  display: block;
-}
-
-/* line 58, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro > a:focus + div .reveal {
-  display: block;
-}
-
-/* line 64, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro.inv {
-  color: #002E6D;
-}
-
-/* line 68, src/sass/components/basic/cards/_profile.scss */
-
-.card.pro.inv h3:after {
-  background: #002E6D;
+  bottom: 0;
   left: 0;
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+  background-color: #6CACE4;
+  width: 3rem;
+  height: 0.5rem;
+  content: '';
 }
 
-/* line 75, src/sass/components/basic/cards/_profile.scss */
+/* line 61, src/sass/components/basic/cards/_featured-element.scss */
 
-.card.pro.inv a {
-  color: #002E6D;
+.card.img-side .info p,
+a.card.img-side .info p {
+  font-size: 1.6rem;
+  font-family: proxima-nova, sans-serif;
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+
+/* line 76, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element,
+a.card.img-side .element {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+/* line 90, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element .img_vid,
+a.card.img-side .element .img_vid {
+  overflow: hidden;
+}
+
+/* line 96, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element .img_vid .img img,
+a.card.img-side .element .img_vid .img img {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+/* line 102, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element blockquote .quote,
+a.card.img-side .element blockquote .quote {
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+}
+
+/* line 106, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element blockquote .field--name-field-quote-image,
+a.card.img-side .element blockquote .field--name-field-quote-image {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+/* line 109, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element blockquote .field--name-field-quote-image img,
+a.card.img-side .element blockquote .field--name-field-quote-image img {
+  width: 100%;
+  display: block;
+}
+
+/* line 116, src/sass/components/basic/cards/_featured-element.scss */
+
+.card.img-side .element blockquote.q-left .attr .field--name-field-quote-title,
+.card.img-side .element blockquote.q-left .attr small,
+a.card.img-side .element blockquote.q-left .attr .field--name-field-quote-title,
+a.card.img-side .element blockquote.q-left .attr small {
+  font-weight: 400;
 }
 
 /* line 6, src/sass/components/basic/cards/_story.scss */
 
-.card.story {
+.card.story,
+a.card.story {
   padding: 2.5rem;
 }
 
 /* line 14, src/sass/components/basic/cards/_story.scss */
 
-.full-screen .card.story {
+.full-screen .card.story,
+.full-screen a.card.story {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -3259,7 +3558,8 @@ aside .card.img-side + p {
 
 /* line 17, src/sass/components/basic/cards/_story.scss */
 
-.full-screen .card.story > img {
+.full-screen .card.story > img,
+.full-screen a.card.story > img {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
@@ -3270,14 +3570,16 @@ aside .card.img-side + p {
 
 /* line 30, src/sass/components/basic/cards/_story.scss */
 
-.full-screen .card.story > div {
+.full-screen .card.story > div,
+.full-screen a.card.story > div {
   padding: 0;
   text-align: left;
 }
 
 /* line 1, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo {
+.card.fw_photo,
+a.card.fw_photo {
   color: #fff;
   border-top: 8px solid #6CACE4;
   border-bottom: 8px solid #6CACE4;
@@ -3285,13 +3587,15 @@ aside .card.img-side + p {
 
 /* line 6, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo.img-behind {
+.card.fw_photo.img-behind,
+a.card.fw_photo.img-behind {
   padding: 4.5rem 0;
 }
 
 /* line 15, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo:before {
+.card.fw_photo:before,
+a.card.fw_photo:before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3304,42 +3608,84 @@ aside .card.img-side + p {
 
 /* line 29, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo.bg-grey:before {
+.card.fw_photo.bg-grey:before,
+a.card.fw_photo.bg-grey:before {
   background: rgba(33, 35, 34, 0.82);
 }
 
 /* line 34, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo h3 {
+.card.fw_photo h3,
+a.card.fw_photo h3 {
   font-size: 3rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 0;
+  color: #fff;
 }
 
-/* line 46, src/sass/components/basic/cards/_fwp.scss */
+/* line 47, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo p {
+.card.fw_photo p,
+a.card.fw_photo p {
   font-size: 1.4rem;
   line-height: 1.4em;
 }
 
-/* line 56, src/sass/components/basic/cards/_fwp.scss */
+/* line 57, src/sass/components/basic/cards/_fwp.scss */
 
-.card.fw_photo [class*="btn-"] {
-  margin-top: 20px;
+.card.fw_photo [class*="btn-"],
+a.card.fw_photo [class*="btn-"] {
+  margin-top: 2rem;
+}
+
+/* line 65, src/sass/components/basic/cards/_fwp.scss */
+
+.card.fw_photo .content,
+a.card.fw_photo .content {
+  max-width: 1350px;
+  width: 100%;
+}
+
+/* line 90, src/sass/components/basic/cards/_fwp.scss */
+
+.card.fw_photo .content > div,
+a.card.fw_photo .content > div {
+  margin: auto;
+  padding: 0 2.5rem;
+}
+
+/* line 27, src/sass/base/_mixins.scss */
+
+.card.fw_photo .content > div:before,
+.card.fw_photo .content > div:after,
+a.card.fw_photo .content > div:before,
+a.card.fw_photo .content > div:after {
+  display: block;
+  height: 0;
+  width: 100%;
+  content: "";
+  clear: both;
 }
 
 /* line 2, src/sass/components/basic/cards/_fwb.scss */
 
-.fwb .card .media {
+.fwb {
+  border-bottom: 8px solid #6CACE4;
+}
+
+/* line 8, src/sass/components/basic/cards/_fwb.scss */
+
+.fwb .card .media,
+.fwb a.card .media {
   position: relative;
 }
 
-/* line 5, src/sass/components/basic/cards/_fwb.scss */
+/* line 11, src/sass/components/basic/cards/_fwb.scss */
 
-.fwb .card .media:after {
+.fwb .card .media:after,
+.fwb a.card .media:after {
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
   position: absolute;
@@ -3348,6 +3694,284 @@ aside .card.img-side + p {
   content: "";
   border: 0.1rem solid #fff;
   opacity: .3;
+}
+
+/* line 1, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa,
+a.card.mfsfa {
+  position: relative;
+}
+
+/* line 4, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa > a,
+.card.mfsfa > span,
+a.card.mfsfa > a,
+a.card.mfsfa > span {
+  position: relative;
+  z-index: 0;
+  display: block;
+}
+
+/* line 10, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa > a:after,
+.card.mfsfa > span:after,
+a.card.mfsfa > a:after,
+a.card.mfsfa > span:after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.8)), color-stop(50%, rgba(33, 35, 34, 0)));
+  background: linear-gradient(0deg, rgba(33, 35, 34, 0.8) 0%, rgba(33, 35, 34, 0) 50%);
+}
+
+/* line 21, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .content,
+a.card.mfsfa .content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+/* line 43, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .content a,
+a.card.mfsfa .content a {
+  font-size: 1.6rem;
+  line-height: 1.6em;
+  padding: 0 1.5rem;
+  color: #79b4e6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* line 60, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .content a span:first-child,
+a.card.mfsfa .content a span:first-child {
+  text-decoration: underline;
+}
+
+/* line 64, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .content a span:last-child,
+a.card.mfsfa .content a span:last-child {
+  display: inline-block;
+  -webkit-transform: translateY(0.2em);
+          transform: translateY(0.2em);
+  font-size: 1.3em;
+}
+
+/* line 77, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .title,
+a.card.mfsfa .title {
+  text-align: center;
+}
+
+/* line 89, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .type,
+a.card.mfsfa .type {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 46, 109, 0.5);
+  color: #fff;
+  font-size: 1.3rem;
+  text-transform: none;
+  margin: 0;
+  padding: 0.9rem 0.7rem;
+  z-index: 20;
+}
+
+/* line 107, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa h3,
+a.card.mfsfa h3 {
+  position: relative;
+  color: #fff;
+  font-family: proxima-nova, sans-serif;
+  font-size: 2.2rem;
+  text-transform: none;
+  margin-bottom: 0.63636em;
+}
+
+/* line 115, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa h3:after,
+a.card.mfsfa h3:after {
+  width: 4.5rem;
+  height: 0.4rem;
+  position: absolute;
+  left: 50%;
+  bottom: -0.7rem;
+  content: "";
+  background: #79b4e6;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+/* line 137, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .subtitle,
+a.card.mfsfa .subtitle {
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: none;
+}
+
+/* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .body,
+a.card.mfsfa .body {
+  font-size: 1.4rem;
+  line-height: 1.6em;
+  padding: 3rem 1.5rem;
+}
+
+/* line 152, src/sass/components/basic/cards/_mfsfa.scss */
+
+.feat-tiles .card.mfsfa .body,
+.feat-tiles a.card.mfsfa .body {
+  padding: 2.5rem 0;
+}
+
+/* line 25, src/sass/components/basic/cards/_copy.scss */
+
+.card h2,
+a.card h2 {
+  font-size: 1.25em;
+}
+
+/* line 43, src/sass/components/basic/cards/_copy.scss */
+
+.card h3,
+a.card h3 {
+  font-size: 1.5em;
+}
+
+/* line 65, src/sass/components/basic/cards/_copy.scss */
+
+.card h4,
+.card .h4,
+a.card h4,
+a.card .h4 {
+  font-size: 1.5em;
+}
+
+/* line 86, src/sass/components/basic/cards/_copy.scss */
+
+.card h4 small,
+.card .h4 small,
+a.card h4 small,
+a.card .h4 small {
+  font-size: 1.6rem;
+}
+
+/* line 6, src/sass/components/basic/cards/_article.scss */
+
+.card h3.title,
+a.card h3.title {
+  font-size: 1.25em;
+  font-weight: normal;
+}
+
+/* line 16, src/sass/components/basic/cards/_article.scss */
+
+.card .type,
+a.card .type {
+  margin: 0 0 1.5rem;
+  font-size: .75em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* line 28, src/sass/components/basic/cards/_article.scss */
+
+.card .type .fas,
+.card .type .far,
+.card .type .fab,
+a.card .type .fas,
+a.card .type .far,
+a.card .type .fab {
+  margin: 0 .5rem 0 0;
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+/* line 41, src/sass/components/basic/cards/_article.scss */
+
+.card .by,
+a.card .by {
+  font-size: .8em;
+}
+
+/* line 51, src/sass/components/basic/cards/_article.scss */
+
+.card .tags,
+a.card .tags {
+  margin: 5rem 0 0;
+  font-size: .8em;
+}
+
+/* line 71, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .element .img_vid .img img,
+a.card.img-side:focus .element .img_vid .img img {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+/* line 76, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .btn-primary,
+a.card.img-side:focus .btn-primary {
+  background: -webkit-gradient(linear, left bottom, left top, from(#ffde8c), to(#ffdf91));
+  background: linear-gradient(0deg, #ffde8c 0%, #ffdf91 100%);
+  color: #002E6D;
+}
+
+/* line 83, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .btn-primary:before,
+a.card.img-side:focus .btn-primary:before {
+  background: linear-gradient(-45deg, #ffd072 50%, rgba(255, 208, 114, 0) 50%);
+}
+
+/* line 87, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .btn-primary .arrow:last-child,
+a.card.img-side:focus .btn-primary .arrow:last-child {
+  -webkit-transform: translate(3px, -46%);
+          transform: translate(3px, -46%);
+}
+
+/* line 93, src/sass/components/basic/_cards.scss */
+
+a.card.img-side:hover .info h2,
+a.card.img-side:focus .info h2 {
+  color: #019cdb;
+  -webkit-transition: color .2s ease-out;
+  transition: color .2s ease-out;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -3382,12 +4006,9 @@ aside .card.img-side + p {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-/* line 43, src/sass/components/basic/_facts.scss */
+/* line 46, src/sass/components/basic/_facts.scss */
 
 .fact.stat_hl .field--name-field-stat-highlite-top-text {
   -webkit-box-ordinal-group: 2;
@@ -3396,12 +4017,12 @@ aside .card.img-side + p {
   font-size: 2.1rem;
   font-family: "Conduit";
   line-height: 1.05em;
-  margin: 1.2em 0 0.96667em 0;
+  margin: 0 0 0.96667em 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-/* line 58, src/sass/components/basic/_facts.scss */
+/* line 65, src/sass/components/basic/_facts.scss */
 
 .fact.stat_hl .field--name-field-stat-highlite-icon {
   -webkit-box-ordinal-group: 3;
@@ -3409,7 +4030,7 @@ aside .card.img-side + p {
           order: 2;
 }
 
-/* line 78, src/sass/components/basic/_facts.scss */
+/* line 85, src/sass/components/basic/_facts.scss */
 
 .fact.stat_hl .field--name-field-stat-highlite-statistic {
   -webkit-box-ordinal-group: 4;
@@ -3421,24 +4042,24 @@ aside .card.img-side + p {
   text-transform: uppercase;
 }
 
-/* line 90, src/sass/components/basic/_facts.scss */
+/* line 97, src/sass/components/basic/_facts.scss */
 
 .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
   font-size: 1.4rem;
-  margin: 0 0 1.8125em 0;
+  margin: 0;
   max-width: 420px;
 }
 
-/* line 323, src/sass/components/basic/_facts.scss */
+/* line 334, src/sass/components/basic/_facts.scss */
 
 .fact-offset-tr .fact {
   margin-top: -5rem;
 }
 
-/* line 327, src/sass/components/basic/_facts.scss */
+/* line 338, src/sass/components/basic/_facts.scss */
 
 .fact-offset-bc {
   margin-top: -5rem;
@@ -3543,7 +4164,16 @@ figure .img:after {
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
 }
 
-/* line 49, src/sass/components/basic/_media.scss */
+/* line 47, src/sass/components/basic/_media.scss */
+
+.faculty-image figure .img:after {
+  width: calc(100% - 2.4rem);
+  height: calc(100% - 2.4rem);
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
+/* line 56, src/sass/components/basic/_media.scss */
 
 figure > figcaption {
   display: block;
@@ -3555,13 +4185,13 @@ figure > figcaption {
   line-height: 1.4em;
 }
 
-/* line 70, src/sass/components/basic/_media.scss */
+/* line 77, src/sass/components/basic/_media.scss */
 
 figure > figcaption :last-child {
   margin-bottom: 0;
 }
 
-/* line 75, src/sass/components/basic/_media.scss */
+/* line 82, src/sass/components/basic/_media.scss */
 
 figure .video {
   width: 100%;
@@ -3570,7 +4200,7 @@ figure .video {
   background: #212322;
 }
 
-/* line 81, src/sass/components/basic/_media.scss */
+/* line 88, src/sass/components/basic/_media.scss */
 
 figure .video iframe {
   width: 100%;
@@ -3580,7 +4210,7 @@ figure .video iframe {
   left: 0;
 }
 
-/* line 90, src/sass/components/basic/_media.scss */
+/* line 97, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] {
   display: -webkit-box;
@@ -3601,7 +4231,7 @@ figure[class*="img-"] {
   width: 100%;
 }
 
-/* line 100, src/sass/components/basic/_media.scss */
+/* line 107, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] > video,
 figure[class*="img-"] > img,
@@ -3617,7 +4247,7 @@ figure[class*="img-"] > picture {
   max-width: 40rem;
 }
 
-/* line 113, src/sass/components/basic/_media.scss */
+/* line 120, src/sass/components/basic/_media.scss */
 
 figure[class*="img-"] > figcaption {
   -webkit-box-flex: 1 1 auto;
@@ -3629,7 +4259,7 @@ figure[class*="img-"] > figcaption {
   width: 33.333%;
 }
 
-/* line 126, src/sass/components/basic/_media.scss */
+/* line 133, src/sass/components/basic/_media.scss */
 
 figure.img-right video,
 figure.img-right img,
@@ -3812,7 +4442,7 @@ figure.zoom:focus > video {
   transform: scale(1.4);
 }
 
-/* line 144, src/sass/components/basic/_media.scss */
+/* line 151, src/sass/components/basic/_media.scss */
 
 figure.float-left,
 figure.float-right {
@@ -3820,11 +4450,35 @@ figure.float-right {
   margin-bottom: 2.5rem;
 }
 
-/* line 148, src/sass/components/basic/_media.scss */
+/* line 155, src/sass/components/basic/_media.scss */
 
 figure.float-left > figcaption,
 figure.float-right > figcaption {
   padding: 1rem 0;
+}
+
+/* line 1, src/sass/components/basic/media/_embed.scss */
+
+iframe {
+  max-width: 100%;
+}
+
+/* line 5, src/sass/components/basic/media/_embed.scss */
+
+.embed-responsive-16by9 {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* line 12, src/sass/components/basic/media/_embed.scss */
+
+.embed-responsive-16by9 iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -3851,42 +4505,177 @@ blockquote {
 
 /* line 28, src/sass/components/basic/_quotes.scss */
 
-.copy-block blockquote {
-  margin-left: 42px;
-  color: #002E6D;
-  position: relative;
+.align-right blockquote {
+  margin-left: 3rem;
 }
 
-/* line 37, src/sass/components/basic/_quotes.scss */
+/* line 32, src/sass/components/basic/_quotes.scss */
 
-.copy-block blockquote:before {
-  height: 100%;
-  width: 1.2rem;
+.align-left blockquote {
+  margin-right: 3rem;
+}
+
+/* line 36, src/sass/components/basic/_quotes.scss */
+
+.copy-block .embedded-entity blockquote,
+.cke_editable .embedded-entity blockquote {
+  color: #002E6D;
+  position: relative;
+  background: #5D6468;
+  max-width: 425px;
+  /*&:before { height: 100%; width: 12px; position: absolute; left: -26px; top: 0; content: ""; background: $primaryXLt; @media  screen and (min-width: 1090px) { width: 19px; left: -54px; transition: all 10s; } }*/
+}
+
+/* line 463, src/sass/base/_mixins.scss */
+
+.copy-block .embedded-entity blockquote:after,
+.cke_editable .embedded-entity blockquote:after {
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
   position: absolute;
-  left: -2.6rem;
-  top: 0;
+  top: 1.5rem;
+  left: 1.5rem;
   content: "";
-  background: #e5f0f9;
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* line 3, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block .embedded-entity blockquote a,
+.cke_editable .embedded-entity blockquote a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 8, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block .embedded-entity blockquote a:hover,
+.cke_editable .embedded-entity blockquote a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 13, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block .embedded-entity blockquote p,
+.cke_editable .embedded-entity blockquote p {
+  margin-bottom: 1em;
+}
+
+/* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block .embedded-entity blockquote .quote-inner,
+.cke_editable .embedded-entity blockquote .quote-inner {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 7rem 3.2rem 3.6rem;
+  /*&:before { width: calc(100% - 5rem); height: 1px; position: absolute; top: 42px; left: 2.5rem; content: ""; background: $white; opacity: .5; @media  screen and (min-width: 768px) { width: calc(100% - 162px); top: 79px; left: 81px; } }*/
+}
+
+/* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block .embedded-entity blockquote .quote-inner:before,
+.cke_editable .embedded-entity blockquote .quote-inner:before {
+  width: 3.9rem;
+  height: 3.9rem;
+  font-size: 7rem;
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  content: "“";
+  color: white;
+  background: transparent;
+  line-height: 1;
+  font-family: "Conduit";
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  border-width: 0 2px 2px 0;
+  text-align: center;
+}
+
+/* line 80, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.copy-block .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
+.cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo {
+  display: none;
+}
+
+/* line 85, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+.card .copy-block .embedded-entity blockquote .quote-inner img,
+.card .cke_editable .embedded-entity blockquote .quote-inner img {
+  width: auto;
+  height: auto;
+  max-width: 160px;
+  max-height: 160px;
+}
+
+/* line 105, src/sass/components/basic/_quotes.scss */
+
+blockquote .quote {
+  color: white;
+  line-height: 1.3;
+}
+
+/* line 183, src/sass/components/basic/_quotes.scss */
+
+blockquote .quote > .field__item {
+  font-size: 2.2rem;
+}
+
+/* line 189, src/sass/components/basic/_quotes.scss */
+
+.copy-block .embedded-entity blockquote .attr,
+.cke_editable .embedded-entity blockquote .attr {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* line 194, src/sass/components/basic/_quotes.scss */
+
+.copy-block .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
+.cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation {
+  font-weight: 400;
 }
 
 /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left {
   position: relative;
-  padding: 8.6rem 2.5rem 3.6rem 2.5rem;
   background: #0054A6;
   color: #fff;
 }
 
 /* line 20, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
+blockquote.q-left a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 25, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+blockquote.q-left a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 30, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
 blockquote.q-left p {
   margin-bottom: 1em;
 }
 
-/* line 33, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left > div {
+blockquote.q-left .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3895,27 +4684,29 @@ blockquote.q-left > div {
   -webkit-box-direction: reverse;
       -ms-flex-flow: row-reverse nowrap;
           flex-flow: row-reverse nowrap;
+  padding: 8.6rem 2.5rem 3.6rem 2.5rem;
 }
 
-/* line 37, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 54, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left > div:before {
-  width: 100%;
+blockquote.q-left .quote-inner:before {
+  width: calc(100% - 5rem);
   height: 0.1rem;
   position: absolute;
-  top: -4.4rem;
-  left: 0;
+  top: 4.2rem;
+  left: 2.5rem;
   content: "";
   background: #fff;
+  opacity: .5;
 }
 
-/* line 51, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 71, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left > div:after {
+blockquote.q-left .quote-inner:after {
   width: 6.4rem;
   height: 4rem;
   position: absolute;
-  top: -7.6rem;
+  top: 1rem;
   left: calc(50% - 3.2rem);
   content: "“";
   background: #0054A6;
@@ -3925,7 +4716,16 @@ blockquote.q-left > div:after {
   text-align: center;
 }
 
-/* line 81, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+.card blockquote.q-left .quote-inner img {
+  width: auto;
+  height: auto;
+  max-width: 160px;
+  max-height: 160px;
+}
+
+/* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote {
   -webkit-box-flex: 1;
@@ -3934,13 +4734,13 @@ blockquote.q-left .quote {
   padding-left: 2rem;
 }
 
-/* line 89, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 118, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .quote:only-child {
   padding: 0;
 }
 
-/* line 94, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .field--name-field-quote-quote {
   font-size: 1.8rem;
@@ -3948,7 +4748,7 @@ blockquote.q-left .field--name-field-quote-quote {
   font-weight: 600;
 }
 
-/* line 115, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr {
   font-size: 1.4rem;
@@ -3956,14 +4756,14 @@ blockquote.q-left .attr {
   line-height: 1.2em;
 }
 
-/* line 124, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 153, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr small {
   font-size: 1em;
   font-weight: 500;
 }
 
-/* line 128, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 blockquote.q-left .attr div {
   display: inline;
@@ -4052,7 +4852,7 @@ blockquote .tooltip-trigger {
 
 /* line 1, src/sass/components/basic/_ns.scss */
 
-.ns {
+.section.ns {
   background: -webkit-gradient(linear, left bottom, left top, from(#00204c), to(#002E6D));
   background: linear-gradient(0deg, #00204c 0%, #002E6D 100%);
   color: #fff;
@@ -4061,7 +4861,7 @@ blockquote .tooltip-trigger {
 
 /* line 10, src/sass/components/basic/_ns.scss */
 
-.ns .icon {
+.section.ns .icon {
   width: 6.4rem;
   height: 6.4rem;
   display: -webkit-box;
@@ -4076,63 +4876,283 @@ blockquote .tooltip-trigger {
   background: #0054A6;
   border-radius: 50%;
   font-size: 2.6rem;
-  margin: 0 18px 0 0;
+  margin: 0 1.8rem 0 0;
   -webkit-transition: background .25s;
   transition: background .25s;
 }
 
 /* line 31, src/sass/components/basic/_ns.scss */
 
-.ns a {
+.section.ns a {
   color: #fff;
   text-decoration: none;
 }
 
 /* line 36, src/sass/components/basic/_ns.scss */
 
-.ns a:hover span:last-child {
+.section.ns a:hover span:last-child {
   text-decoration: underline;
 }
 
 /* line 39, src/sass/components/basic/_ns.scss */
 
-.ns a:hover .icon {
+.section.ns a:hover .icon {
   background: #019cdb;
 }
 
-/* line 56, src/sass/components/basic/_ns.scss */
+/* line 59, src/sass/components/basic/_ns.scss */
 
-.ns h2 {
+.section.ns h2 {
   font-size: 3.2rem;
   line-height: 1em;
   text-align: center;
   text-transform: uppercase;
 }
 
-/* line 75, src/sass/components/basic/_ns.scss */
+/* line 78, src/sass/components/basic/_ns.scss */
 
-.ns ul li {
+.section.ns ul li {
   padding: 0;
   font-size: 1.8rem;
 }
 
-/* line 78, src/sass/components/basic/_ns.scss */
+/* line 81, src/sass/components/basic/_ns.scss */
 
-.ns ul li:before {
+.section.ns ul li:before {
   display: none;
 }
 
-/* line 93, src/sass/components/basic/_ns.scss */
+/* line 96, src/sass/components/basic/_ns.scss */
 
 .field--name-field-next-steps-heading .field__label {
   position: absolute;
   width: 0.1rem;
   height: 0.1rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.1rem;
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+}
+
+/* line 1, src/sass/components/basic/_mfs.scss */
+
+.mfsi,
+.mfse {
+  position: relative;
+}
+
+/* line 9, src/sass/components/basic/_mfs.scss */
+
+.mfsi img,
+.mfse img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 14, src/sass/components/basic/_mfs.scss */
+
+.mfsi .tag,
+.mfse .tag {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #757575;
+  margin-top: -0.3rem;
+  margin-bottom: 1.13333em;
+}
+
+/* line 20, src/sass/components/basic/_mfs.scss */
+
+.mfsi .tag .icon,
+.mfse .tag .icon {
+  display: inline-block;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  margin-right: 1rem;
+  color: #A5A6A8;
+  font-size: 2.1rem;
+}
+
+/* line 33, src/sass/components/basic/_mfs.scss */
+
+.mfsi a,
+.mfse a {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 1.2em;
+  font-weight: 600;
+  color: #555555;
+  text-decoration: none;
+}
+
+/* line 45, src/sass/components/basic/_mfs.scss */
+
+.mfsi a > div,
+.mfse a > div {
+  display: inline;
+}
+
+/* line 49, src/sass/components/basic/_mfs.scss */
+
+.mfsi a .icon,
+.mfse a .icon {
+  display: inline-block;
+  color: #C5C7CA;
+  font-size: 1.3em;
+  line-height: 0;
+  margin-left: 0.4rem;
+  -webkit-transform: translateY(0.25em);
+          transform: translateY(0.25em);
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.mfsi a:hover,
+.mfsi a:focus,
+.mfse a:hover,
+.mfse a:focus {
+  text-decoration: underline;
+}
+
+/* line 62, src/sass/components/basic/_mfs.scss */
+
+.mfsi a:hover .icon,
+.mfsi a:focus .icon,
+.mfse a:hover .icon,
+.mfse a:focus .icon {
+  -webkit-transform: translate(5px, 0.25em);
+          transform: translate(5px, 0.25em);
+}
+
+/* line 68, src/sass/components/basic/_mfs.scss */
+
+.mfsi time,
+.mfse time {
+  display: block;
+  position: absolute;
+  top: -1.4rem;
+  right: -0.4rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.4rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  color: #fff;
+  font-family: "Conduit";
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 83, src/sass/components/basic/_mfs.scss */
+
+.mfsi time > div,
+.mfse time > div {
+  background: #0054A6;
+  padding: 2rem 1.6rem 1.2rem 1.6rem;
+}
+
+/* line 88, src/sass/components/basic/_mfs.scss */
+
+.mfsi time span,
+.mfse time span {
+  display: block;
+}
+
+/* line 91, src/sass/components/basic/_mfs.scss */
+
+.mfsi time span:first-child,
+.mfse time span:first-child {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+/* line 100, src/sass/components/basic/_mfs.scss */
+
+.mfsi time span:last-child,
+.mfse time span:last-child {
+  font-size: 2.4rem;
+  margin-top: -0.29167em;
+}
+
+/* line 108, src/sass/components/basic/_mfs.scss */
+
+.mfsi time span:last-child > span,
+.mfse time span:last-child > span {
+  font-size: 1.8rem;
+  display: inline-block;
+  -webkit-transform: translateY(-0.16667em);
+          transform: translateY(-0.16667em);
+}
+
+/* line 123, src/sass/components/basic/_mfs.scss */
+
+.mfs h3 {
+  text-align: center;
+}
+
+/* line 1, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles {
+  margin: 0 2.5rem;
+}
+
+/* line 9, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div {
+  margin: 1.6rem 0;
+}
+
+/* line 23, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 30, src/sass/components/basic/_feat-tiles.scss */
+
+.stat_hl_io {
+  position: relative;
+}
+
+/* line 463, src/sass/base/_mixins.scss */
+
+.stat_hl_io:after {
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  content: "";
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* line 34, src/sass/components/basic/_feat-tiles.scss */
+
+.stat_hl_io:before {
+  width: 1.1rem;
+  height: 1.1rem;
+  position: absolute;
+  top: 1.7rem;
+  left: 1.7rem;
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 10;
+}
+
+/* line 45, src/sass/components/basic/_feat-tiles.scss */
+
+.stat_hl_io img {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 0;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -9428,35 +10448,142 @@ nav.bc a:focus {
   text-decoration: underline;
 }
 
-/* line 6, src/sass/components/navigation/_interior.scss */
+/* line 7, src/sass/components/navigation/_interior.scss */
 
-nav.int {
-  display: none;
+.section.side-nav-section {
+  padding: 0;
 }
 
-/* line 38, src/sass/components/navigation/_interior.scss */
+/* line 30, src/sass/components/navigation/_interior.scss */
 
-nav.int ul ul {
-  margin: 1.5rem 0 0 2.5rem;
+nav.side-nav {
+  position: relative;
 }
 
-/* line 59, src/sass/components/navigation/_interior.scss */
+/* line 37, src/sass/components/navigation/_interior.scss */
 
-nav.int li + li {
-  margin: 1.5rem 0 0;
+nav.side-nav label,
+nav.side-nav ul {
+  font-size: 1.2rem;
+  font-family: "Conduit";
+  font-weight: 600;
+}
+
+/* line 44, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+}
+
+/* line 68, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav .menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 77, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav a {
+  color: #555555;
+  text-decoration: none;
+}
+
+/* line 81, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav a.is-active {
+  color: #555555;
+  text-decoration: underline;
 }
 
 /* line 59, src/sass/base/_mixins.scss */
 
-nav.int a:hover,
-nav.int a:focus {
+nav.side-nav a:hover,
+nav.side-nav a:focus {
+  color: #0054A6;
   text-decoration: underline;
 }
 
-/* line 88, src/sass/components/navigation/_interior.scss */
+/* line 97, src/sass/components/navigation/_interior.scss */
 
-nav.int a.active {
-  text-decoration: underline;
+nav.side-nav label {
+  display: block;
+  position: relative;
+  text-align: right;
+  background: #ECF0F3;
+  padding: 1.3rem 4.65rem 1.3rem 0;
+  border-bottom: 1px solid #e1e7ec;
+}
+
+/* line 105, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav label:before,
+nav.side-nav label:after,
+nav.side-nav label span:after {
+  width: 1.4rem;
+  height: 0.2rem;
+  background: #555555;
+  position: absolute;
+  content: "";
+  right: 1.4rem;
+  top: 1.9rem;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 118, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav label:before {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+/* line 122, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav label:after {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+/* line 132, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox'] {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* line 136, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox']:checked ~ ul {
+  display: block;
+}
+
+/* line 141, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox']:checked ~ label:before {
+  -webkit-transform: rotate(45deg) translate(0);
+          transform: rotate(45deg) translate(0);
+}
+
+/* line 145, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox']:checked ~ label:after {
+  -webkit-transform: rotate(-45deg) translate(0);
+          transform: rotate(-45deg) translate(0);
+}
+
+/* line 149, src/sass/components/navigation/_interior.scss */
+
+nav.side-nav input[type='checkbox']:checked ~ label span:after {
+  opacity: 0;
 }
 
 /* line 14, src/sass/components/navigation/_pagination.scss */
@@ -9858,6 +10985,45 @@ nav.jn li + li {
   font-size: 1.6rem;
 }
 
+/* line 1, src/sass/components/feeds-detail/_detail.scss */
+
+.field--name-hub-field-hub-news-date {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* line 5, src/sass/components/feeds-detail/_detail.scss */
+
+.block-field-blockhub-referencenewshub-field-hub-news-body {
+  margin-top: 1em;
+}
+
+/* line 9, src/sass/components/feeds-detail/_detail.scss */
+
+.news-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 12, src/sass/components/feeds-detail/_detail.scss */
+
+.news-info .icon {
+  color: #BABABA;
+  margin-right: 0.9rem;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     FEED - LATEST
@@ -10098,6 +11264,139 @@ nav.jn li + li {
   margin: 0;
 }
 
+/* line 1, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.layout__region--right,
+.program_rail {
+  height: 100%;
+}
+
+/* line 6, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.field--name-hub-field-hub-degree-intro {
+  font-size: 1.6rem;
+  font-family: "Conduit";
+  line-height: 1.3em;
+  font-weight: 600;
+  color: #002E6D;
+  margin-bottom: 1em;
+}
+
+/* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail {
+  position: relative;
+  z-index: 10;
+  background: rgba(165, 210, 249, 0.2);
+}
+
+/* line 15, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail h3 {
+  color: #266db3;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+/* line 155, src/sass/components/copy/_headings.scss */
+
+aside .program_rail h3 {
+  font-size: 1em;
+}
+
+/* line 158, src/sass/components/copy/_headings.scss */
+
+aside .program_rail h3 ~ h4,
+aside .program_rail h3 ~ .h4 {
+  margin-top: 0.5rem;
+}
+
+/* line 55, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail > div {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 60, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail ul {
+  margin-left: 0;
+}
+
+/* line 64, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail .field--name-hub-field-hub-degree-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.admissions-rep {
+  padding: 6rem 0;
+  border-top: 1px solid rgba(33, 35, 34, 0.2);
+}
+
+/* line 73, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.admissions-rep h4 {
+  margin-bottom: 0.125em;
+}
+
+/* line 82, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.admissions-rep-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin-top: 2.5rem;
+}
+
+/* line 87, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.admissions-rep-info > div:first-child {
+  width: 10.2rem;
+  margin-right: 1.6rem;
+}
+
+/* line 97, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.admissions-rep-info > div:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+/* line 100, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.admissions-rep-info > div:last-child .hub-resource-field {
+  margin-bottom: 0.31579em;
+}
+
+/* line 106, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.admissions-rep-info img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 113, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.hub-resource-field--name-field-hub-adm-rep-name {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
 
 .dropdown-bar {
@@ -10307,9 +11606,14 @@ form .form-group {
 form label {
   display: block;
   margin-bottom: 1rem;
+  font-size: 1.9rem;
+  font-family: proxima-nova, sans-serif;
+  line-height: 1;
+  color: #555555;
+  font-weight: 700;
 }
 
-/* line 19, src/sass/components/forms/_labels.scss */
+/* line 24, src/sass/components/forms/_labels.scss */
 
 form label .req {
   color: #f32836;
@@ -10320,20 +11624,73 @@ form label .req {
 form input:not([type="checkbox"]):not([type="radio"]),
 form textarea,
 form select {
-  padding: 1rem;
+  padding: .65rem 1rem;
   width: 100%;
-  border: 0.2rem solid #FFCC4F;
+  border: 0.1rem solid #949494;
   font-family: proxima-nova, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   line-height: 1.25;
+  background-color: #f7f7f7;
+  color: #555555;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  height: 4rem;
+  -webkit-transition: color .3s ease-out, background-color .3s ease-out, border-color .3s ease-out;
+  transition: color .3s ease-out, background-color .3s ease-out, border-color .3s ease-out;
 }
 
-/* line 22, src/sass/components/forms/_fields.scss */
+/* line 28, src/sass/components/forms/_fields.scss */
 
 form input:not([type="checkbox"]):not([type="radio"]):focus,
 form textarea:focus,
 form select:focus {
   border-color: #6CACE4;
+  background-color: #e5f0f9;
+  color: #002E6D;
+  border-width: .1rem .1rem .4rem;
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+}
+
+/* line 36, src/sass/components/forms/_fields.scss */
+
+form input:not([type="checkbox"]):not([type="radio"]):hover,
+form textarea:hover,
+form select:hover {
+  border-color: #555555;
+  border-width: .1rem;
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+}
+
+/* line 41, src/sass/components/forms/_fields.scss */
+
+form input:not([type="checkbox"]):not([type="radio"]):hover:focus,
+form textarea:hover:focus,
+form select:hover:focus {
+  border-color: #6CACE4;
+  background-color: #e5f0f9;
+  color: #002E6D;
+  border-width: .1rem .1rem .4rem;
+}
+
+/* line 50, src/sass/components/forms/_fields.scss */
+
+form select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url(../../img/select-arrow.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  background-size: 17px auto;
+}
+
+/* line 60, src/sass/components/forms/_fields.scss */
+
+form textarea {
+  height: auto;
 }
 
 /* line 9, src/sass/components/forms/_check-radio.scss */
@@ -10344,7 +11701,7 @@ form input[type="radio"] {
   width: 0.1rem;
   height: 0.1rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.1rem;
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
@@ -10368,14 +11725,14 @@ form input[type="radio"] + label:before {
   position: absolute;
   z-index: 0;
   left: 0;
-  top: calc(.75em + 0.5rem);
+  top: calc(.75em + .8rem);
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   width: 1.6em;
   height: 1.6em;
-  background: #fff;
-  border: 0.2rem solid #FFCC4F;
-  color: #FFCC4F;
+  background-color: #f7f7f7;
+  border: 0.1rem solid #949494;
+  color: #555555;
   font-family: "Font Awesome 5 Free";
   font-size: 1rem;
   line-height: 1.6;
@@ -10384,30 +11741,116 @@ form input[type="radio"] + label:before {
   content: "";
 }
 
+/* line 51, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"] + label:hover:before,
+form input[type="radio"] + label:hover:before {
+  border-color: #555555;
+}
+
+/* line 59, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:focus + label:before,
+form input[type="radio"]:focus + label:before {
+  border-color: #6CACE4;
+  background-color: #e5f0f9;
+  color: #002E6D;
+}
+
 /* line 68, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:focus + label:hover:before,
+form input[type="radio"]:focus + label:hover:before {
+  border-color: #6CACE4;
+  background-color: #e5f0f9;
+  color: #002E6D;
+}
+
+/* line 95, src/sass/components/forms/_check-radio.scss */
 
 form input[type="radio"] + label:before {
   border-radius: 100%;
 }
 
-/* line 95, src/sass/components/forms/_check-radio.scss */
+/* line 122, src/sass/components/forms/_check-radio.scss */
 
 form input[type="radio"]:checked + label:before {
   -webkit-box-shadow: 0 0 0 0.3rem #fff inset;
           box-shadow: 0 0 0 0.3rem #fff inset;
-  background: #FFCC4F;
+  background: #949494;
 }
 
-/* line 151, src/sass/components/forms/_check-radio.scss */
+/* line 134, src/sass/components/forms/_check-radio.scss */
 
-form input[type="checkbox"]:checked + label:before {
-  content: "\f00c";
+form input[type="radio"]:checked + label:hover:before {
+  background-color: #555555;
+}
+
+/* line 142, src/sass/components/forms/_check-radio.scss */
+
+form input[type="radio"]:checked:focus + label:before {
+  background-color: #002E6D;
+}
+
+/* line 148, src/sass/components/forms/_check-radio.scss */
+
+form input[type="radio"]:checked:focus:hover:before {
+  color: #002E6D;
+  background-color: #555555;
+}
+
+/* line 214, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:checked + label:after {
+  position: absolute;
+  left: 0.1rem;
+  top: 0.6rem;
+  font-size: 1.4rem;
+  content: "\E004";
+  font-family: "cu_icons";
+}
+
+/* line 230, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:checked:focus + label:after {
+  color: #002E6D;
+}
+
+/* line 238, src/sass/components/forms/_check-radio.scss */
+
+form input[type="checkbox"]:checked:focus + label:hover:after {
+  color: #002E6D;
 }
 
 /* line 9, src/sass/components/forms/_form-btn.scss */
 
 form .form-btn {
   text-align: center;
+}
+
+/* line 19, src/sass/components/forms/_form-btn.scss */
+
+form .form_action {
+  text-align: right;
+}
+
+/* line 22, src/sass/components/forms/_form-btn.scss */
+
+form .form_action button {
+  min-width: 0;
+  padding-right: 6rem;
+}
+
+/* line 27, src/sass/components/forms/_form-btn.scss */
+
+form .form_action button:after {
+  position: absolute;
+  font-family: "cu_icons";
+  top: 50%;
+  right: 1.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "\E01C";
 }
 
 /* line 7, src/sass/components/forms/label-left/_form.scss */
@@ -10489,7 +11932,7 @@ form.l-left input[type="radio"] {
   width: 0.1rem;
   height: 0.1rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.1rem;
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
@@ -10759,7 +12202,7 @@ form.stacked input[type="radio"] {
   width: 0.1rem;
   height: 0.1rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.1rem;
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
@@ -10918,14 +12361,23 @@ form.search .search button {
     padding: 1.6rem 8rem 1.6rem 3rem;
   }
 
-  /* line 115, src/sass/components/basic/_hero.scss */
+  /* line 1, src/sass/components/basic/buttons/colors/_expand.scss */
+
+  .btn-expand {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  /* line 120, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
+  .hub-reference > header.interior_page > .field,
   header.hp_hero.interior_page > .field {
     height: 32rem;
   }
 
-  /* line 81, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .quote {
     padding-left: 4.6rem;
@@ -10971,7 +12423,7 @@ form.search .search button {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 3, src/sass/structure/_grid.scss */
+  /* line 13, src/sass/structure/_grid.scss */
 
   [class*="col-"] {
     -webkit-box-ordinal-group: 2;
@@ -10981,13 +12433,19 @@ form.search .search button {
 
   /* line 17, src/sass/structure/_grid.scss */
 
+  .no-gutter {
+    padding: 0;
+  }
+
+  /* line 28, src/sass/structure/_grid.scss */
+
   .pull-left {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
   }
 
-  /* line 20, src/sass/structure/_grid.scss */
+  /* line 31, src/sass/structure/_grid.scss */
 
   .push-right {
     -webkit-box-ordinal-group: 3;
@@ -10995,14 +12453,14 @@ form.search .search button {
             order: 2;
   }
 
-  /* line 23, src/sass/structure/_grid.scss */
+  /* line 34, src/sass/structure/_grid.scss */
 
   .float-left {
     margin: 0 2.5rem 2.5rem 0;
     float: left;
   }
 
-  /* line 27, src/sass/structure/_grid.scss */
+  /* line 38, src/sass/structure/_grid.scss */
 
   .float-right {
     margin: 0 0 2.5rem 2.5rem;
@@ -11081,10 +12539,16 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 20, src/sass/components/copy/_block-elements.scss */
+  /* line 39, src/sass/components/copy/_block-elements.scss */
 
   hr {
     margin: 3.75rem auto;
+  }
+
+  /* line 60, src/sass/components/copy/_block-elements.scss */
+
+  .intro {
+    font-size: 3rem;
   }
 
   /* line 7, src/sass/components/copy/_multi-column.scss */
@@ -11102,31 +12566,52 @@ form.search .search button {
          column-gap: 2.5rem;
   }
 
-  /* line 202, src/sass/components/copy/_headings.scss */
+  /* line 212, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
     font-size: 3.5rem;
   }
 
-  /* line 206, src/sass/components/copy/_headings.scss */
+  /* line 216, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 1.875em;
   }
 
-  /* line 214, src/sass/components/copy/_headings.scss */
+  /* line 224, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
-    font-size: 1.375em;
+    font-size: 2.4rem;
   }
 
   /* line 6, src/sass/components/copy/_copy-block.scss */
 
   .copy-block h3:after {
     height: 0.8rem;
+  }
+
+  /* line 24, src/sass/components/copy/_copy-block.scss */
+
+  .ct-content {
+    max-height: 320px;
+  }
+
+  /* line 43, src/sass/components/copy/_copy-block.scss */
+
+  .ct-content:after {
+    height: 9rem;
+  }
+
+  /* line 65, src/sass/components/copy/_copy-block.scss */
+
+  .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
+    margin-top: -3.75rem;
   }
 
   /* line 45, src/sass/structure/_footer.scss */
@@ -11169,20 +12654,19 @@ form.search .search button {
 
   /* line 9, src/sass/structure/_section.scss */
 
-  section {
-    background: #fff;
+  .section {
     padding: 3.75rem 0;
   }
 
   /* line 32, src/sass/structure/_section.scss */
 
-  section > div {
+  .section > div {
     padding: 0 2.5rem;
   }
 
   /* line 9, src/sass/structure/section-layouts/_int.scss */
 
-  section.int-layout > div {
+  .section.int-layout > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -11203,7 +12687,7 @@ form.search .search button {
 
   /* line 22, src/sass/structure/section-layouts/_int.scss */
 
-  section.int-layout > div > nav {
+  .section.int-layout > div > nav {
     -webkit-box-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -11216,7 +12700,7 @@ form.search .search button {
 
   /* line 28, src/sass/structure/section-layouts/_int.scss */
 
-  section.int-layout > div > article {
+  .section.int-layout > div > article {
     -webkit-box-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -11228,7 +12712,7 @@ form.search .search button {
 
   /* line 33, src/sass/structure/section-layouts/_int.scss */
 
-  section.int-layout > div > aside {
+  .section.int-layout > div > aside {
     -webkit-box-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -11244,13 +12728,13 @@ form.search .search button {
 
   /* line 43, src/sass/structure/section-layouts/_int.scss */
 
-  section.int-layout > div > aside ul li:before {
+  .section.int-layout > div > aside ul li:before {
     background: #6CACE4;
   }
 
   /* line 49, src/sass/structure/section-layouts/_int.scss */
 
-  section.int-layout > div > aside.sticky {
+  .section.int-layout > div > aside.sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 16rem;
@@ -11258,7 +12742,7 @@ form.search .search button {
 
   /* line 9, src/sass/structure/section-layouts/_prg.scss */
 
-  section.prg-layout > div {
+  .section.prg-layout > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -11279,7 +12763,7 @@ form.search .search button {
 
   /* line 22, src/sass/structure/section-layouts/_prg.scss */
 
-  section.prg-layout > div > nav {
+  .section.prg-layout > div > nav {
     -webkit-box-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -11292,7 +12776,7 @@ form.search .search button {
 
   /* line 28, src/sass/structure/section-layouts/_prg.scss */
 
-  section.prg-layout > div > article {
+  .section.prg-layout > div > article {
     -webkit-box-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -11304,7 +12788,7 @@ form.search .search button {
 
   /* line 33, src/sass/structure/section-layouts/_prg.scss */
 
-  section.prg-layout > div > aside {
+  .section.prg-layout > div > aside {
     -webkit-box-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -11320,16 +12804,44 @@ form.search .search button {
 
   /* line 43, src/sass/structure/section-layouts/_prg.scss */
 
-  section.prg-layout > div > aside ul li:before {
+  .section.prg-layout > div > aside ul li:before {
     background: #6CACE4;
   }
 
   /* line 49, src/sass/structure/section-layouts/_prg.scss */
 
-  section.prg-layout > div > aside.sticky {
+  .section.prg-layout > div > aside.sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 16rem;
+  }
+
+  /* line 18, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 7.5rem);
+    left: -5rem;
+    top: -3.75rem;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  /* line 52, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section .layout__region--facmiddle {
+    padding-right: 5rem;
+  }
+
+  /* line 61, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
+    font-size: 2.4rem;
+  }
+
+  /* line 1, src/sass/structure/section-backgrounds/_feat-tiles.scss */
+
+  .section.layout--program-detail-feat-tile {
+    padding: 7.5rem 0;
   }
 
   /* line 5, src/sass/structure/section-layouts/_grid.scss */
@@ -11368,32 +12880,73 @@ form.search .search button {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  /* line 1, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash {
+    position: relative;
+  }
+
+  /* line 6, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash > div {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* line 11, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash:before {
+    width: 110vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -5rem;
+    content: "";
+    background-image: url(../../img/slash.png);
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-size: 3000px auto;
+  }
+
+  /* line 1, src/sass/structure/_home.scss */
+
+  .field--name-field-landing-page-content {
+    background-image: url(../../img/feature_slash_bg.png);
+    background-repeat: repeat-y;
+    background-size: 100%;
+    background-position: 0 790px;
+  }
+
   /* line 6, src/sass/components/basic/buttons/colors/_primary.scss */
 
   .btn-primary {
     max-width: 320px;
+    min-width: 220px;
   }
 
   /* line 6, src/sass/components/basic/cards/_img-behind.scss */
 
-  .card.img-behind {
+  .card.img-behind,
+  a.card.img-behind {
     width: 100%;
   }
 
-  /* line 49, src/sass/components/basic/cards/_img-side.scss */
+  /* line 53, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side h3:after {
+  .card.img-side h3:after,
+  a.card.img-side h3:after {
     height: 0.8rem;
   }
 
   /* line 6, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side {
+  .card.img-side,
+  a.card.img-side {
     -ms-flex-line-pack: center;
         align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
@@ -11405,25 +12958,39 @@ form.search .search button {
 \*  --------------------------------------------------------------------------  */
   }
 
-  /* line 81, src/sass/components/basic/cards/_img-side.scss */
+  /* line 85, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side > a {
+  .style-left .card.img-side,
+  .style-left a.card.img-side {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse nowrap;
+            flex-flow: row-reverse nowrap;
+  }
+
+  /* line 89, src/sass/components/basic/cards/_img-side.scss */
+
+  .card.img-side > a,
+  a.card.img-side > a {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
     width: 50%;
   }
 
-  /* line 92, src/sass/components/basic/cards/_img-side.scss */
+  /* line 100, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side > div {
+  .card.img-side > div,
+  a.card.img-side > div {
     width: 50%;
   }
 
-  /* line 110, src/sass/components/basic/cards/_img-side.scss */
+  /* line 118, src/sass/components/basic/cards/_img-side.scss */
 
   .card.img-side.alt > a,
-  .card.img-side:nth-child(even) > a {
+  .card.img-side:nth-child(even) > a,
+  a.card.img-side.alt > a,
+  a.card.img-side:nth-child(even) > a {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -11431,7 +12998,8 @@ form.search .search button {
 
   /* line 6, src/sass/components/basic/cards/_full-screen.scss */
 
-  .full-screen .card.img-side {
+  .full-screen .card.img-side,
+  .full-screen a.card.img-side {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
@@ -11440,7 +13008,9 @@ form.search .search button {
   /* line 15, src/sass/components/basic/cards/_full-screen.scss */
 
   .full-screen .card.img-side.alt,
-  .full-screen .card.img-side:nth-child(even) {
+  .full-screen .card.img-side:nth-child(even),
+  .full-screen a.card.img-side.alt,
+  .full-screen a.card.img-side:nth-child(even) {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -11448,44 +13018,50 @@ form.search .search button {
 
   /* line 25, src/sass/components/basic/cards/_full-screen.scss */
 
-  .full-screen .card.img-side > div {
+  .full-screen .card.img-side > div,
+  .full-screen a.card.img-side > div {
     padding: 5rem;
     max-width: 1084px;
   }
 
-  /* line 123, src/sass/components/basic/cards/_img-side.scss */
+  /* line 131, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side.bot {
+  .card.img-side.bot,
+  a.card.img-side.bot {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
   }
 
-  /* line 127, src/sass/components/basic/cards/_img-side.scss */
+  /* line 135, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side.small {
+  .card.img-side.small,
+  a.card.img-side.small {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
 
-  /* line 130, src/sass/components/basic/cards/_img-side.scss */
+  /* line 138, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side.small > a {
+  .card.img-side.small > a,
+  a.card.img-side.small > a {
     width: 12.5%;
     margin: 0 25% 17.5% 0;
   }
 
-  /* line 135, src/sass/components/basic/cards/_img-side.scss */
+  /* line 143, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t-lg .card.img-side.small {
+  .off-t-lg .card.img-side.small,
+  .off-t-lg a.card.img-side.small {
     padding: 0;
     position: relative;
   }
 
-  /* line 139, src/sass/components/basic/cards/_img-side.scss */
+  /* line 147, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t-lg .card.img-side.small > a {
+  .off-t-lg .card.img-side.small > a,
+  .off-t-lg a.card.img-side.small > a {
     position: absolute;
     z-index: 100;
     left: 0;
@@ -11496,74 +13072,84 @@ form.search .search button {
     margin: 0;
   }
 
-  /* line 145, src/sass/components/basic/cards/_img-side.scss */
+  /* line 153, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t-lg .card.img-side.small > div {
+  .off-t-lg .card.img-side.small > div,
+  .off-t-lg a.card.img-side.small > div {
     width: 100%;
   }
 
-  /* line 150, src/sass/components/basic/cards/_img-side.scss */
+  /* line 158, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t .align-center .card.img-side.small {
+  .off-t .align-center .card.img-side.small,
+  .off-t .align-center a.card.img-side.small {
     padding: 0;
     position: relative;
   }
 
-  /* line 154, src/sass/components/basic/cards/_img-side.scss */
+  /* line 162, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t .align-center .card.img-side.small > a {
+  .off-t .align-center .card.img-side.small > a,
+  .off-t .align-center a.card.img-side.small > a {
     -webkit-transform: translate(-300%, -120%);
     transform: translate(-300%, -120%);
     margin: 0;
     width: 25%;
   }
 
-  /* line 160, src/sass/components/basic/cards/_img-side.scss */
+  /* line 168, src/sass/components/basic/cards/_img-side.scss */
 
-  .off-t .align-center .card.img-side.small > div {
+  .off-t .align-center .card.img-side.small > div,
+  .off-t .align-center a.card.img-side.small > div {
     width: 100%;
   }
 
-  /* line 167, src/sass/components/basic/cards/_img-side.scss */
+  /* line 175, src/sass/components/basic/cards/_img-side.scss */
 
-  aside .card.img-side {
+  aside .card.img-side,
+  aside a.card.img-side {
     max-height: 15rem;
   }
 
-  /* line 184, src/sass/components/basic/cards/_img-side.scss */
+  /* line 192, src/sass/components/basic/cards/_img-side.scss */
 
-  aside .card.img-side:before {
+  aside .card.img-side:before,
+  aside a.card.img-side:before {
     min-height: 12.5rem;
   }
 
-  /* line 25, src/sass/components/basic/cards/_copy.scss */
+  /* line 1, src/sass/components/basic/cards/_featured-element.scss */
 
-  .card h2 {
-    font-size: 1.75em;
+  .card.img-side .info,
+  a.card.img-side .info {
+    padding: 3rem 4rem 0 3rem;
   }
 
-  /* line 43, src/sass/components/basic/cards/_copy.scss */
+  /* line 11, src/sass/components/basic/cards/_featured-element.scss */
 
-  .card h3 {
-    font-size: 1.667em;
+  .style-left .card.img-side .info,
+  .style-left a.card.img-side .info {
+    padding: 3rem 3rem 0 4rem;
   }
 
-  /* line 65, src/sass/components/basic/cards/_copy.scss */
+  /* line 79, src/sass/components/basic/cards/_featured-element.scss */
 
-  .card h4,
-  .card .h4 {
-    font-size: 1.5833em;
+  .card.img-side .element .fact.stat_hl,
+  a.card.img-side .element .fact.stat_hl {
+    margin: 0;
   }
 
   /* line 6, src/sass/components/basic/cards/_story.scss */
 
-  .card.story {
+  .card.story,
+  a.card.story {
     padding: 0 2.5rem;
   }
 
   /* line 17, src/sass/components/basic/cards/_story.scss */
 
-  .full-screen .card.story > img {
+  .full-screen .card.story > img,
+  .full-screen a.card.story > img {
     width: calc(50% - 2.5rem);
     margin: 0;
     -webkit-box-ordinal-group: 3;
@@ -11573,7 +13159,8 @@ form.search .search button {
 
   /* line 30, src/sass/components/basic/cards/_story.scss */
 
-  .full-screen .card.story > div {
+  .full-screen .card.story > div,
+  .full-screen a.card.story > div {
     padding: 2.5rem;
     width: calc(50% - 2.5rem);
     background: #fff;
@@ -11581,25 +13168,29 @@ form.search .search button {
 
   /* line 34, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo h3 {
+  .card.fw_photo h3,
+  a.card.fw_photo h3 {
     font-size: 4rem;
   }
 
-  /* line 46, src/sass/components/basic/cards/_fwp.scss */
+  /* line 47, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo p {
+  .card.fw_photo p,
+  a.card.fw_photo p {
     font-size: 1.9rem;
   }
 
-  /* line 56, src/sass/components/basic/cards/_fwp.scss */
+  /* line 57, src/sass/components/basic/cards/_fwp.scss */
 
-  .card.fw_photo [class*="btn-"] {
+  .card.fw_photo [class*="btn-"],
+  a.card.fw_photo [class*="btn-"] {
     float: right;
   }
 
-  /* line 17, src/sass/components/basic/cards/_fwb.scss */
+  /* line 23, src/sass/components/basic/cards/_fwb.scss */
 
-  .fwb .card > a {
+  .fwb .card > a,
+  .fwb a.card > a {
     -webkit-box-flex: 1 1 33.3%;
     -ms-flex: 1 1 33.3%;
     flex: 1 1 33.3%;
@@ -11608,9 +13199,10 @@ form.search .search button {
             order: 0;
   }
 
-  /* line 21, src/sass/components/basic/cards/_fwb.scss */
+  /* line 27, src/sass/components/basic/cards/_fwb.scss */
 
-  .fwb .card > div {
+  .fwb .card > div,
+  .fwb a.card > div {
     -webkit-box-flex: 1 1 66.6%;
     -ms-flex: 1 1 66.6%;
     flex: 1 1 66.6%;
@@ -11618,6 +13210,43 @@ form.search .search button {
         -ms-flex-order: 0;
             order: 0;
     padding-left: 3.2rem;
+  }
+
+  /* line 107, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa h3,
+  a.card.mfsfa h3 {
+    font-size: 3rem;
+  }
+
+  /* line 137, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .subtitle,
+  a.card.mfsfa .subtitle {
+    font-size: 2rem;
+  }
+
+  /* line 25, src/sass/components/basic/cards/_copy.scss */
+
+  .card h2,
+  a.card h2 {
+    font-size: 1.75em;
+  }
+
+  /* line 43, src/sass/components/basic/cards/_copy.scss */
+
+  .card h3,
+  a.card h3 {
+    font-size: 1.667em;
+  }
+
+  /* line 65, src/sass/components/basic/cards/_copy.scss */
+
+  .card h4,
+  .card .h4,
+  a.card h4,
+  a.card .h4 {
+    font-size: 1.5833em;
   }
 
   /* line 13, src/sass/components/basic/_facts.scss */
@@ -11651,20 +13280,40 @@ form.search .search button {
     background: rgba(255, 255, 255, 0.3);
   }
 
-  /* line 333, src/sass/components/basic/_facts.scss */
+  /* line 38, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl > div {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  /* line 46, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl .field--name-field-stat-highlite-top-text {
+    margin: 1.2em 0 0.96667em 0;
+  }
+
+  /* line 97, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
+    margin: 0 0 1.8125em 0;
+  }
+
+  /* line 344, src/sass/components/basic/_facts.scss */
 
   [class*="fact-offset-"] {
     z-index: 115;
   }
 
-  /* line 335, src/sass/components/basic/_facts.scss */
+  /* line 346, src/sass/components/basic/_facts.scss */
 
   [class*="fact-offset-"] > div {
     position: relative;
     z-index: 115;
   }
 
-  /* line 340, src/sass/components/basic/_facts.scss */
+  /* line 351, src/sass/components/basic/_facts.scss */
 
   .fact-offset-tr .fact {
     position: absolute;
@@ -11675,13 +13324,13 @@ form.search .search button {
             transform: translate(0, -33.333%);
   }
 
-  /* line 344, src/sass/components/basic/_facts.scss */
+  /* line 355, src/sass/components/basic/_facts.scss */
 
   .fact-offset-bc {
     margin-top: 0;
   }
 
-  /* line 347, src/sass/components/basic/_facts.scss */
+  /* line 358, src/sass/components/basic/_facts.scss */
 
   .fact-offset-bc .fact {
     position: absolute;
@@ -11691,7 +13340,7 @@ form.search .search button {
             transform: translate(-50%, 50%);
   }
 
-  /* line 49, src/sass/components/basic/_media.scss */
+  /* line 56, src/sass/components/basic/_media.scss */
 
   figure > figcaption {
     font-size: 1.6rem;
@@ -11799,25 +13448,44 @@ form.search .search button {
     display: block;
   }
 
-  /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
-  blockquote.q-left {
+  .copy-block .embedded-entity blockquote .quote-inner,
+  .cke_editable .embedded-entity blockquote .quote-inner {
+    padding: 10rem 4.2rem 4.6rem;
+  }
+
+  /* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+
+  .copy-block .embedded-entity blockquote .quote-inner:before,
+  .cke_editable .embedded-entity blockquote .quote-inner:before {
+    width: 5.9rem;
+    height: 5.9rem;
+    font-size: 10.5rem;
+    line-height: 1;
+  }
+
+  /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+  blockquote.q-left .quote-inner {
     padding: 13.1rem 8.1rem 7.2rem 8.1rem;
   }
 
-  /* line 37, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 54, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left > div:before {
-    top: -5.5rem;
+  blockquote.q-left .quote-inner:before {
+    width: calc(100% - 16.2rem);
+    top: 7.9rem;
+    left: 8.1rem;
   }
 
-  /* line 51, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 71, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left > div:after {
+  blockquote.q-left .quote-inner:after {
     width: 8.4rem;
     height: 8.4rem;
     left: calc(50% - 4.2rem);
-    top: -9.7rem;
+    top: 3.7rem;
     font-size: 16.2rem;
     line-height: 15.3rem;
   }
@@ -11835,7 +13503,7 @@ form.search .search button {
     pointer-events: none;
   }
 
-  /* line 115, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .attr {
     font-size: 1.6rem;
@@ -11937,6 +13605,55 @@ form.search .search button {
     border-bottom: 2rem solid transparent;
   }
 
+  /* line 14, src/sass/components/basic/_mfs.scss */
+
+  .mfsi .tag,
+  .mfse .tag {
+    font-size: 1.5rem;
+  }
+
+  /* line 20, src/sass/components/basic/_mfs.scss */
+
+  .mfsi .tag .icon,
+  .mfse .tag .icon {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+
+  /* line 33, src/sass/components/basic/_mfs.scss */
+
+  .mfsi a,
+  .mfse a {
+    font-size: 2.4rem;
+  }
+
+  /* line 130, src/sass/components/basic/_mfs.scss */
+
+  .mfs .field--name-field-mfs-featured-items .field__item + .field__item {
+    border-left: 1px solid #ECF0F3;
+  }
+
+  /* line 1, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    margin: -0.5rem;
+  }
+
+  /* line 9, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div {
+    width: 50%;
+    padding: 0.5rem;
+    margin: 0;
+  }
+
   /* line 7, src/sass/components/interactive/tabs/_minimal.scss */
 
   .tabs.minimal > dt {
@@ -11995,19 +13712,6 @@ form.search .search button {
 
   nav.cp {
     font-size: 1.6rem;
-  }
-
-  /* line 6, src/sass/components/navigation/_interior.scss */
-
-  nav.int {
-    display: block;
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-    width: 25%;
-    max-width: 35rem;
-    padding: 2rem 2.5rem 2rem 0;
-    border-right: 0.2rem solid #FFCC4F;
   }
 
   /* line 6, src/sass/components/navigation/_jump.scss */
@@ -12114,6 +13818,12 @@ form.search .search button {
     font-size: 2rem;
   }
 
+  /* line 1, src/sass/components/feeds-detail/_detail.scss */
+
+  .field--name-hub-field-hub-news-date {
+    font-size: 1.5rem;
+  }
+
   /* line 3, src/sass/components/feeds-detail/featured/_carousel.scss */
 
   .f-feat-carosuel .owl-stage-outer {
@@ -12160,6 +13870,56 @@ form.search .search button {
     width: calc(50% - 2.5rem);
   }
 
+  /* line 6, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .field--name-hub-field-hub-degree-intro {
+    font-size: 3rem;
+  }
+
+  /* line 15, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail h3 {
+    font-size: 2.4rem;
+  }
+
+  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail {
+    background-color: transparent;
+  }
+
+  /* line 30, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail:after {
+    width: 100vw;
+    height: calc(100% + 6.2rem);
+    position: absolute;
+    top: -6.2rem;
+    left: -5rem;
+    z-index: 0;
+    content: "";
+    background: rgba(165, 210, 249, 0.2);
+  }
+
+  /* line 64, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail .field--name-hub-field-hub-degree-title {
+    font-size: 1.5rem;
+  }
+
+  /* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .admissions-rep {
+    padding: 7rem 0;
+  }
+
+  /* line 87, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .admissions-rep-info > div:first-child {
+    width: 17rem;
+    margin-right: 1.8rem;
+  }
+
   /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
 
   .dropdown-bar {
@@ -12182,13 +13942,6 @@ form.search .search button {
 }
 
 @media screen and (min-width: 992px) {
-  /* line 41, src/sass/base/_resets.scss */
-
-  html {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
   /* line 285, src/sass/base/_mixins.scss */
 
   .col-lg-1 {
@@ -12261,7 +14014,7 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 20, src/sass/components/copy/_block-elements.scss */
+  /* line 39, src/sass/components/copy/_block-elements.scss */
 
   hr {
     margin: 5rem auto;
@@ -12285,7 +14038,7 @@ form.search .search button {
          column-count: 4;
   }
 
-  /* line 202, src/sass/components/copy/_headings.scss */
+  /* line 212, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
@@ -12293,31 +14046,459 @@ form.search .search button {
     letter-spacing: .04em;
   }
 
-  /* line 206, src/sass/components/copy/_headings.scss */
+  /* line 216, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 2em;
   }
 
-  /* line 210, src/sass/components/copy/_headings.scss */
+  /* line 220, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
     font-size: 4rem;
   }
 
-  /* line 214, src/sass/components/copy/_headings.scss */
-
-  h4,
-  .h4 {
-    font-size: 1.5em;
-  }
-
   /* line 6, src/sass/components/copy/_tables.scss */
 
   table {
     display: table;
+  }
+
+  /* line 65, src/sass/components/copy/_copy-block.scss */
+
+  .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
+    margin-top: -5rem;
+  }
+
+  /* line 121, src/sass/structure/_footer.scss */
+
+  .main-footer > div {
+    width: 95%;
+  }
+
+  /* line 14, src/sass/structure/footer/elements/_sitemap.scss */
+
+  .main-footer nav.menu--footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+
+  /* line 32, src/sass/structure/footer/elements/_sitemap.scss */
+
+  .main-footer nav.menu--footer li {
+    -webkit-box-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    width: auto;
+    margin: 0 1rem;
+  }
+
+  /* line 55, src/sass/structure/footer/elements/_sitemap.scss */
+
+  .main-footer nav.menu--footer li + li {
+    margin-top: 0;
+  }
+
+  /* line 59, src/sass/structure/footer/elements/_sitemap.scss */
+
+  .main-footer nav.menu--footer li:nth-child(n + 3) {
+    margin-top: 0;
+  }
+
+  /* line 9, src/sass/structure/_section.scss */
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  /* line 32, src/sass/structure/_section.scss */
+
+  .section > div {
+    width: 95%;
+  }
+
+  /* line 114, src/sass/structure/_section.scss */
+
+  .section.ptb-lgt {
+    z-index: 0;
+    margin-top: 0;
+    padding: 15rem 0 10rem;
+  }
+
+  /* line 57, src/sass/structure/section-layouts/_int.scss */
+
+  .section.int-layout > div > article {
+    width: 58.333%;
+  }
+
+  /* line 60, src/sass/structure/section-layouts/_int.scss */
+
+  .section.int-layout > div > article:not(:only-child) {
+    margin: 0 calc(8.333% - 2.5rem) 0 0;
+  }
+
+  /* line 63, src/sass/structure/section-layouts/_int.scss */
+
+  .section.int-layout > div > article:not(:only-child):first-child {
+    margin: 0 0 0 8.333%;
+  }
+
+  /* line 68, src/sass/structure/section-layouts/_int.scss */
+
+  .section.int-layout > div > article:only-child {
+    margin: auto;
+  }
+
+  /* line 57, src/sass/structure/section-layouts/_prg.scss */
+
+  .section.prg-layout > div > article {
+    width: 58.333%;
+  }
+
+  /* line 18, src/sass/structure/section-layouts/_faculty.scss */
+
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 10rem);
+    top: -5rem;
+  }
+
+  /* line 11, src/sass/components/basic/_buttons.scss */
+
+  [class*="btn-"] {
+    font-size: 1.9rem;
+  }
+
+  /* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
+
+  .btn-secondary,
+  form .form_action button {
+    font-size: 1.9rem;
+  }
+
+  /* line 1, src/sass/components/basic/buttons/colors/_expand.scss */
+
+  .btn-expand {
+    font-size: 1.3rem;
+  }
+
+  /* line 69, src/sass/components/basic/_hero.scss */
+
+  .node__content > header .hero_title h1,
+  .hub-reference > header .hero_title h1,
+  header.hp_hero .hero_title h1 {
+    width: 67%;
+  }
+
+  /* line 100, src/sass/components/basic/_hero.scss */
+
+  .node__content > header .hero_title > div,
+  .node__content > header .breadcrumb > div,
+  .hub-reference > header .hero_title > div,
+  .hub-reference > header .breadcrumb > div,
+  header.hp_hero .hero_title > div,
+  header.hp_hero .breadcrumb > div {
+    width: 95%;
+  }
+
+  /* line 368, src/sass/components/basic/_hero.scss */
+
+  .hp_hero_header > div {
+    width: 95%;
+  }
+
+  /* line 1, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info,
+  a.card.img-side .info {
+    -ms-flex-preferred-size: 42%;
+        flex-basis: 42%;
+    width: 42%;
+  }
+
+  /* line 29, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info h2,
+  a.card.img-side .info h2 {
+    font-size: 6.2rem;
+    padding-bottom: 2.6rem;
+  }
+
+  /* line 45, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info h2:after,
+  a.card.img-side .info h2:after {
+    width: 5.5rem;
+    height: 0.9rem;
+  }
+
+  /* line 61, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info p,
+  a.card.img-side .info p {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-bottom: 3.6rem;
+  }
+
+  /* line 76, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .element,
+  a.card.img-side .element {
+    -ms-flex-preferred-size: 58%;
+        flex-basis: 58%;
+    width: 58%;
+  }
+
+  /* line 30, src/sass/components/basic/cards/_story.scss */
+
+  .full-screen .card.story > div,
+  .full-screen a.card.story > div {
+    width: 41.667%;
+  }
+
+  /* line 6, src/sass/components/basic/cards/_fwp.scss */
+
+  .card.fw_photo.img-behind,
+  a.card.fw_photo.img-behind {
+    padding: 13.5rem 0 8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
+
+  .card.fw_photo .content,
+  a.card.fw_photo .content {
+    width: 95%;
+  }
+
+  /* line 90, src/sass/components/basic/cards/_fwp.scss */
+
+  .card.fw_photo .content > div,
+  a.card.fw_photo .content > div {
+    width: 83.33333%;
+  }
+
+  /* line 21, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content,
+  a.card.mfsfa .content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 1.5rem;
+  }
+
+  /* line 43, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a,
+  a.card.mfsfa .content a {
+    padding: 0;
+    display: none;
+  }
+
+  /* line 89, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .type,
+  a.card.mfsfa .type {
+    font-size: 1.8rem;
+    padding: 1.2rem;
+  }
+
+  /* line 115, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa h3:after,
+  a.card.mfsfa h3:after {
+    width: 5.9rem;
+    height: 0.5rem;
+    bottom: -1rem;
+  }
+
+  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .body,
+  a.card.mfsfa .body {
+    color: #fff;
+    padding: 0;
+    display: none;
+  }
+
+  /* line 171, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover > a:after,
+  .card.mfsfa:hover > span:after,
+  a.card.mfsfa:hover > a:after,
+  a.card.mfsfa:hover > span:after {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
+    background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
+  }
+
+  /* line 176, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover .body,
+  .card.mfsfa:hover .content a,
+  a.card.mfsfa:hover .body,
+  a.card.mfsfa:hover .content a {
+    display: block;
+  }
+
+  /* line 181, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover .content,
+  a.card.mfsfa:hover .content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  /* line 25, src/sass/components/basic/cards/_copy.scss */
+
+  .card h2,
+  a.card h2 {
+    font-size: 2em;
+  }
+
+  /* line 43, src/sass/components/basic/cards/_copy.scss */
+
+  .card h3,
+  a.card h3 {
+    font-size: 2.25em;
+  }
+
+  /* line 65, src/sass/components/basic/cards/_copy.scss */
+
+  .card h4,
+  .card .h4,
+  a.card h4,
+  a.card .h4 {
+    font-size: 1.667em;
+  }
+
+  /* line 46, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl .field--name-field-stat-highlite-top-text {
+    font-size: 3rem;
+    max-width: 420px;
+  }
+
+  /* line 85, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl .field--name-field-stat-highlite-statistic {
+    font-size: 7.2rem;
+  }
+
+  /* line 97, src/sass/components/basic/_facts.scss */
+
+  .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
+    font-size: 1.6rem;
+    margin-top: -1.3125em;
+  }
+
+  /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+  blockquote.q-left .field--name-field-quote-quote {
+    font-size: 3rem;
+  }
+
+  /* line 59, src/sass/components/basic/_ns.scss */
+
+  .section.ns h2 {
+    font-size: 4.2rem;
+  }
+
+  /* line 91, src/sass/components/basic/_mfs.scss */
+
+  .mfsi time span:first-child,
+  .mfse time span:first-child {
+    font-size: 1.8rem;
+  }
+
+  /* line 100, src/sass/components/basic/_mfs.scss */
+
+  .mfsi time span:last-child,
+  .mfse time span:last-child {
+    font-size: 3.2rem;
+  }
+
+  /* line 108, src/sass/components/basic/_mfs.scss */
+
+  .mfsi time span:last-child > span,
+  .mfse time span:last-child > span {
+    font-size: 2.4rem;
+  }
+
+  /* line 6, src/sass/components/navigation/_landing.scss */
+
+  nav.cp {
+    font-size: 1.8rem;
+  }
+
+  /* line 34, src/sass/components/navigation/_landing.scss */
+
+  nav.cp li {
+    width: calc(20% - 5rem);
+  }
+
+  /* line 95, src/sass/components/feeds-detail/feeds/_basic.scss */
+
+  .f-basic h3 {
+    font-size: 2.2rem;
+  }
+
+  /* line 17, src/sass/components/feeds-detail/feeds/_profile.scss */
+
+  .f-profile > article {
+    width: calc(25% - 5rem);
+  }
+
+  /* line 6, src/sass/components/feeds-detail/feeds/_tile.scss */
+
+  .f-tiles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* line 15, src/sass/components/feeds-detail/featured/_faculty.scss */
+
+  .f-feat-faculty > article {
+    width: calc(33.333% - 2.5rem);
+  }
+}
+
+@media screen and (min-width: 1090px) {
+  /* line 41, src/sass/base/_resets.scss */
+
+  html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* line 6, src/sass/components/copy/_body.scss */
+
+  body {
+    font-size: 1.9rem;
   }
 
   /* line 10, src/sass/structure/_header.scss */
@@ -12334,9 +14515,10 @@ form.search .search button {
     z-index: 1;
     left: 0;
     top: 13.1rem;
+    padding-right: 3.6rem;
   }
 
-  /* line 63, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 64, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header .region-primary-menu:before {
     position: absolute;
@@ -12351,7 +14533,7 @@ form.search .search button {
     content: "";
   }
 
-  /* line 75, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 76, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header .region-primary-menu:after {
     position: absolute;
@@ -12366,7 +14548,7 @@ form.search .search button {
     content: "";
   }
 
-  /* line 87, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 88, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header .region-primary-menu > div {
     display: -webkit-box;
@@ -12380,18 +14562,12 @@ form.search .search button {
             align-items: stretch;
   }
 
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 114, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header > div {
     position: relative;
     z-index: 0;
     padding: 0 3.6rem;
-  }
-
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
-
-  .main-header > div {
-    width: 95%;
   }
 
   /* line 6, src/sass/structure/header/logo/_svg.scss */
@@ -12413,7 +14589,7 @@ form.search .search button {
     width: 0.1rem;
     height: 0.1rem;
     padding: 0;
-    margin: -1px;
+    margin: -0.1rem;
     border: 0;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
@@ -12544,13 +14720,14 @@ form.search .search button {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+    font-family: proxima-nova, sans-serif;
     font-size: 2.1rem;
     line-height: 1.4em;
     padding: 3.8rem 3rem;
     font-style: italic;
   }
 
-  /* line 220, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 221, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content a {
     font-style: normal;
@@ -12559,7 +14736,21 @@ form.search .search button {
     color: #0054A6;
   }
 
-  /* line 226, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 59, src/sass/base/_mixins.scss */
+
+  .main-header nav.mega > ul .mega_content a:hover,
+  .main-header nav.mega > ul .mega_content a:focus {
+    text-decoration: none;
+  }
+
+  /* line 230, src/sass/structure/header/navs/_mega-menu.scss */
+
+  .main-header nav.mega > ul .mega_content a:hover span,
+  .main-header nav.mega > ul .mega_content a:focus span {
+    text-decoration: underline;
+  }
+
+  /* line 235, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content a i {
     -webkit-transition: -webkit-transform 0.25s;
@@ -12570,13 +14761,13 @@ form.search .search button {
             transform: translateX(10px);
   }
 
-  /* line 229, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 238, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content a i:before {
     vertical-align: middle;
   }
 
-  /* line 235, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 244, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content a:hover i {
     -webkit-transform: translateX(15px);
@@ -12584,13 +14775,13 @@ form.search .search button {
     text-decoration: none;
   }
 
-  /* line 242, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 251, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content ~ ul {
     width: 64%;
   }
 
-  /* line 246, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 255, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul .mega_content ~ ul li {
     -webkit-box-flex: 1;
@@ -12598,7 +14789,7 @@ form.search .search button {
             flex: 1 1 50%;
   }
 
-  /* line 252, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 261, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul label {
     display: none;
@@ -12618,19 +14809,19 @@ form.search .search button {
     white-space: nowrap;
   }
 
-  /* line 286, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 295, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul input[type="checkbox"]:focus + label {
     display: block;
   }
 
-  /* line 305, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 314, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega > ul input[type="checkbox"]:checked + label {
     display: none;
   }
 
-  /* line 328, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 337, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega a {
     display: block;
@@ -12643,26 +14834,26 @@ form.search .search button {
     text-decoration: underline;
   }
 
-  /* line 348, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 357, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li {
     position: relative;
     z-index: 0;
   }
 
-  /* line 366, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 375, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li li {
     margin: 0;
   }
 
-  /* line 375, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 384, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li li + li {
     margin: 0;
   }
 
-  /* line 409, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 418, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li:hover > div {
     display: -webkit-box;
@@ -12682,14 +14873,14 @@ form.search .search button {
             flex-flow: row nowrap;
   }
 
-  /* line 422, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 431, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li > a {
     position: relative;
     color: #0054A6;
   }
 
-  /* line 426, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 435, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li > a:before {
     width: 100%;
@@ -12703,28 +14894,28 @@ form.search .search button {
     transition: all 0.25s;
   }
 
-  /* line 439, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 448, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li:hover > a {
     text-decoration: none;
   }
 
-  /* line 441, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 450, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li:hover > a:before {
     height: 0.5rem;
   }
 
-  /* line 447, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 456, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-0 > li:last-of-type > a {
     padding-right: 3rem;
   }
 
-  /* line 453, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 462, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega .menu-level-1 > .menu-item {
-    margin-bottom: 12px;
+    margin-bottom: 1.2rem;
   }
 
   /* line 6, src/sass/structure/header/navs/_utility-nav.scss */
@@ -12788,14 +14979,14 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 71, src/sass/structure/header/navs/_cta.scss */
+  /* line 78, src/sass/structure/header/navs/_cta.scss */
 
   .region-mobile-cta {
     position: absolute;
     width: 0.1rem;
     height: 0.1rem;
     padding: 0;
-    margin: -1px;
+    margin: -0.1rem;
     border: 0;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
@@ -12810,100 +15001,41 @@ form.search .search button {
   /* line 121, src/sass/structure/_footer.scss */
 
   .main-footer > div {
-    width: 95%;
-  }
-
-  /* line 14, src/sass/structure/footer/elements/_sitemap.scss */
-
-  .main-footer nav.menu--footer ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-  }
-
-  /* line 32, src/sass/structure/footer/elements/_sitemap.scss */
-
-  .main-footer nav.menu--footer li {
-    -webkit-box-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-    width: auto;
-    margin: 0 10px;
-  }
-
-  /* line 55, src/sass/structure/footer/elements/_sitemap.scss */
-
-  .main-footer nav.menu--footer li + li {
-    margin-top: 0;
-  }
-
-  /* line 59, src/sass/structure/footer/elements/_sitemap.scss */
-
-  .main-footer nav.menu--footer li:nth-child(n + 3) {
-    margin-top: 0;
-  }
-
-  /* line 9, src/sass/structure/_section.scss */
-
-  section {
-    padding: 5rem 0;
+    width: 90%;
   }
 
   /* line 32, src/sass/structure/_section.scss */
 
-  section > div {
-    width: 95%;
+  .section > div {
+    width: 90%;
   }
 
   /* line 85, src/sass/structure/_section.scss */
 
-  section.copy-block > div > div {
+  .section.copy-block > div > div {
     width: 58.33%;
-  }
-
-  /* line 105, src/sass/structure/_section.scss */
-
-  section.ptb-lgt {
-    z-index: 0;
-    margin-top: 0;
-    padding: 15rem 0 10rem;
   }
 
   /* line 29, src/sass/structure/section-layouts/_home.scss */
 
-  section[class*="hp-sec-"] > div {
+  .section[class*="hp-sec-"] > div {
     position: relative;
     z-index: 0;
   }
 
   /* line 32, src/sass/structure/section-layouts/_home.scss */
 
-  section[class*="hp-sec-"] > div > div,
-  section[class*="hp-sec-"] > div > article,
-  section[class*="hp-sec-"] > div > figure {
+  .section[class*="hp-sec-"] > div > div,
+  .section[class*="hp-sec-"] > div > article,
+  .section[class*="hp-sec-"] > div > figure {
     margin-bottom: 0;
   }
 
   /* line 39, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1 > div,
-  section.hp-sec-2 > div,
-  section.hp-sec-3 > div {
+  .section.hp-sec-1 > div,
+  .section.hp-sec-2 > div,
+  .section.hp-sec-3 > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -12923,12 +15055,12 @@ form.search .search button {
 
   /* line 42, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1 > div > .card,
-  section.hp-sec-1 > div > .fact,
-  section.hp-sec-2 > div > .card,
-  section.hp-sec-2 > div > .fact,
-  section.hp-sec-3 > div > .card,
-  section.hp-sec-3 > div > .fact {
+  .section.hp-sec-1 > div > .card,
+  .section.hp-sec-1 > div > .fact,
+  .section.hp-sec-2 > div > .card,
+  .section.hp-sec-2 > div > .fact,
+  .section.hp-sec-3 > div > .card,
+  .section.hp-sec-3 > div > .fact {
     -webkit-box-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -12940,25 +15072,25 @@ form.search .search button {
 
   /* line 47, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1 > div > div.card,
-  section.hp-sec-2 > div > div.card,
-  section.hp-sec-3 > div > div.card {
+  .section.hp-sec-1 > div > div.card,
+  .section.hp-sec-2 > div > div.card,
+  .section.hp-sec-3 > div > div.card {
     width: 50%;
   }
 
   /* line 51, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1 > div > article.card,
-  section.hp-sec-2 > div > article.card,
-  section.hp-sec-3 > div > article.card {
+  .section.hp-sec-1 > div > article.card,
+  .section.hp-sec-2 > div > article.card,
+  .section.hp-sec-3 > div > article.card {
     width: 33.333%;
   }
 
   /* line 58, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.justified > div,
-  section.hp-sec-2.justified > div,
-  section.hp-sec-3.justified > div {
+  .section.hp-sec-1.justified > div,
+  .section.hp-sec-2.justified > div,
+  .section.hp-sec-3.justified > div {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -12966,7 +15098,7 @@ form.search .search button {
 
   /* line 68, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2 > div > :nth-child(3) {
+  .section.hp-sec-2 > div > :nth-child(3) {
     position: absolute;
     z-index: 100;
     margin: 0;
@@ -12974,13 +15106,13 @@ form.search .search button {
 
   /* line 74, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2[class*="off-"] {
+  .section.hp-sec-2[class*="off-"] {
     z-index: 150;
   }
 
   /* line 79, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-tl > div {
+  .section.hp-sec-2.off-tl > div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -12988,7 +15120,7 @@ form.search .search button {
 
   /* line 82, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-tl > div > :nth-child(3) {
+  .section.hp-sec-2.off-tl > div > :nth-child(3) {
     left: 2.5rem;
     top: 0;
     -webkit-transform: translate(0, -50%);
@@ -12997,7 +15129,7 @@ form.search .search button {
 
   /* line 91, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-tc > div {
+  .section.hp-sec-2.off-tc > div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -13005,7 +15137,7 @@ form.search .search button {
 
   /* line 94, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-tc > div > :nth-child(3) {
+  .section.hp-sec-2.off-tc > div > :nth-child(3) {
     left: 50%;
     top: 0;
     -webkit-transform: translate(-50%, -50%);
@@ -13014,7 +15146,7 @@ form.search .search button {
 
   /* line 103, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-tr > div {
+  .section.hp-sec-2.off-tr > div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -13022,7 +15154,7 @@ form.search .search button {
 
   /* line 106, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-tr > div > :nth-child(3) {
+  .section.hp-sec-2.off-tr > div > :nth-child(3) {
     right: 2.5rem;
     top: 0;
     -webkit-transform: translate(0, -50%);
@@ -13031,7 +15163,7 @@ form.search .search button {
 
   /* line 115, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-bl > div {
+  .section.hp-sec-2.off-bl > div {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -13039,7 +15171,7 @@ form.search .search button {
 
   /* line 118, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-bl > div > :nth-child(3) {
+  .section.hp-sec-2.off-bl > div > :nth-child(3) {
     left: 0;
     top: 100%;
     -webkit-transform: translate(0, -50%);
@@ -13048,7 +15180,7 @@ form.search .search button {
 
   /* line 127, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-bc > div {
+  .section.hp-sec-2.off-bc > div {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -13056,7 +15188,7 @@ form.search .search button {
 
   /* line 130, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-bc > div > :nth-child(3) {
+  .section.hp-sec-2.off-bc > div > :nth-child(3) {
     left: 50%;
     top: 100%;
     -webkit-transform: translate(-50%, -50%);
@@ -13065,7 +15197,7 @@ form.search .search button {
 
   /* line 139, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-br > div {
+  .section.hp-sec-2.off-br > div {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -13073,7 +15205,7 @@ form.search .search button {
 
   /* line 142, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-br > div > :nth-child(3) {
+  .section.hp-sec-2.off-br > div > :nth-child(3) {
     right: 0;
     top: 100%;
     -webkit-transform: translate(0, -50%);
@@ -13082,7 +15214,7 @@ form.search .search button {
 
   /* line 154, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.flipped > div > :nth-child(1) {
+  .section.hp-sec-2.flipped > div > :nth-child(1) {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -13090,7 +15222,7 @@ form.search .search button {
 
   /* line 158, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.flipped > div > :nth-child(2) {
+  .section.hp-sec-2.flipped > div > :nth-child(2) {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
@@ -13098,7 +15230,7 @@ form.search .search button {
 
   /* line 167, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-3 > div {
+  .section.hp-sec-3 > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -13118,21 +15250,21 @@ form.search .search button {
 
   /* line 170, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-3 > div > :nth-child(1) {
+  .section.hp-sec-3 > div > :nth-child(1) {
     position: absolute;
     z-index: 0;
   }
 
   /* line 174, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-3 > div figure {
+  .section.hp-sec-3 > div figure {
     max-width: 27.5rem;
   }
 
   /* line 185, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1 > div > :nth-child(1),
-  section.hp-sec-3 > div > :nth-child(1) {
+  .section.hp-sec-1 > div > :nth-child(1),
+  .section.hp-sec-3 > div > :nth-child(1) {
     position: absolute;
     z-index: 0;
     margin: 0;
@@ -13141,8 +15273,8 @@ form.search .search button {
 
   /* line 193, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tl > div,
-  section.hp-sec-3.off-tl > div {
+  .section.hp-sec-1.off-tl > div,
+  .section.hp-sec-3.off-tl > div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -13150,8 +15282,8 @@ form.search .search button {
 
   /* line 196, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tl > div > :nth-child(1),
-  section.hp-sec-3.off-tl > div > :nth-child(1) {
+  .section.hp-sec-1.off-tl > div > :nth-child(1),
+  .section.hp-sec-3.off-tl > div > :nth-child(1) {
     left: 2.5rem;
     top: 0;
     -webkit-transform: translate(0, -100%);
@@ -13160,15 +15292,15 @@ form.search .search button {
 
   /* line 202, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tl > div > :nth-child(2),
-  section.hp-sec-3.off-tl > div > :nth-child(2) {
+  .section.hp-sec-1.off-tl > div > :nth-child(2),
+  .section.hp-sec-3.off-tl > div > :nth-child(2) {
     top: 5rem;
   }
 
   /* line 209, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tc > div,
-  section.hp-sec-3.off-tc > div {
+  .section.hp-sec-1.off-tc > div,
+  .section.hp-sec-3.off-tc > div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -13176,8 +15308,8 @@ form.search .search button {
 
   /* line 212, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tc > div > :nth-child(1),
-  section.hp-sec-3.off-tc > div > :nth-child(1) {
+  .section.hp-sec-1.off-tc > div > :nth-child(1),
+  .section.hp-sec-3.off-tc > div > :nth-child(1) {
     left: 50%;
     top: 0;
     -webkit-transform: translate(-50%, -100%);
@@ -13186,8 +15318,8 @@ form.search .search button {
 
   /* line 221, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tr > div,
-  section.hp-sec-3.off-tr > div {
+  .section.hp-sec-1.off-tr > div,
+  .section.hp-sec-3.off-tr > div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -13195,8 +15327,8 @@ form.search .search button {
 
   /* line 224, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tr > div > :nth-child(1),
-  section.hp-sec-3.off-tr > div > :nth-child(1) {
+  .section.hp-sec-1.off-tr > div > :nth-child(1),
+  .section.hp-sec-3.off-tr > div > :nth-child(1) {
     right: 2.5rem;
     top: 0;
     -webkit-transform: translate(0, -100%);
@@ -13205,15 +15337,15 @@ form.search .search button {
 
   /* line 230, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tr > div > :nth-child(3),
-  section.hp-sec-3.off-tr > div > :nth-child(3) {
+  .section.hp-sec-1.off-tr > div > :nth-child(3),
+  .section.hp-sec-3.off-tr > div > :nth-child(3) {
     top: 5rem;
   }
 
   /* line 237, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-bl > div,
-  section.hp-sec-3.off-bl > div {
+  .section.hp-sec-1.off-bl > div,
+  .section.hp-sec-3.off-bl > div {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -13221,8 +15353,8 @@ form.search .search button {
 
   /* line 240, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-bl > div > :nth-child(1),
-  section.hp-sec-3.off-bl > div > :nth-child(1) {
+  .section.hp-sec-1.off-bl > div > :nth-child(1),
+  .section.hp-sec-3.off-bl > div > :nth-child(1) {
     left: 2.5rem;
     top: 100%;
     -webkit-transform: translate(0, -50%);
@@ -13231,8 +15363,8 @@ form.search .search button {
 
   /* line 249, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-bc > div,
-  section.hp-sec-3.off-bc > div {
+  .section.hp-sec-1.off-bc > div,
+  .section.hp-sec-3.off-bc > div {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -13240,8 +15372,8 @@ form.search .search button {
 
   /* line 252, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-bc > div > :nth-child(1),
-  section.hp-sec-3.off-bc > div > :nth-child(1) {
+  .section.hp-sec-1.off-bc > div > :nth-child(1),
+  .section.hp-sec-3.off-bc > div > :nth-child(1) {
     left: 50%;
     top: 100%;
     -webkit-transform: translate(-50%, -50%);
@@ -13250,8 +15382,8 @@ form.search .search button {
 
   /* line 261, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-br > div,
-  section.hp-sec-3.off-br > div {
+  .section.hp-sec-1.off-br > div,
+  .section.hp-sec-3.off-br > div {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -13259,8 +15391,8 @@ form.search .search button {
 
   /* line 264, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-br > div > :nth-child(1),
-  section.hp-sec-3.off-br > div > :nth-child(1) {
+  .section.hp-sec-1.off-br > div > :nth-child(1),
+  .section.hp-sec-3.off-br > div > :nth-child(1) {
     right: 2.5rem;
     top: 100%;
     -webkit-transform: translate(0, -50%);
@@ -13269,8 +15401,8 @@ form.search .search button {
 
   /* line 276, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.flipped > div > :nth-child(2),
-  section.hp-sec-3.flipped > div > :nth-child(2) {
+  .section.hp-sec-1.flipped > div > :nth-child(2),
+  .section.hp-sec-3.flipped > div > :nth-child(2) {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -13278,8 +15410,8 @@ form.search .search button {
 
   /* line 280, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.flipped > div > :nth-child(3),
-  section.hp-sec-3.flipped > div > :nth-child(3) {
+  .section.hp-sec-1.flipped > div > :nth-child(3),
+  .section.hp-sec-3.flipped > div > :nth-child(3) {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
@@ -13287,41 +15419,41 @@ form.search .search button {
 
   /* line 287, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.flipped.off-tl > div > :nth-child(2),
-  section.hp-sec-3.flipped.off-tl > div > :nth-child(2) {
+  .section.hp-sec-1.flipped.off-tl > div > :nth-child(2),
+  .section.hp-sec-3.flipped.off-tl > div > :nth-child(2) {
     top: 0;
   }
 
   /* line 291, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.flipped.off-tl > div > :nth-child(3),
-  section.hp-sec-3.flipped.off-tl > div > :nth-child(3) {
+  .section.hp-sec-1.flipped.off-tl > div > :nth-child(3),
+  .section.hp-sec-3.flipped.off-tl > div > :nth-child(3) {
     top: 5rem;
   }
 
   /* line 299, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.flipped.off-tr > div > :nth-child(2),
-  section.hp-sec-3.flipped.off-tr > div > :nth-child(2) {
+  .section.hp-sec-1.flipped.off-tr > div > :nth-child(2),
+  .section.hp-sec-3.flipped.off-tr > div > :nth-child(2) {
     top: 5rem;
   }
 
   /* line 303, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.flipped.off-tr > div > :nth-child(3),
-  section.hp-sec-3.flipped.off-tr > div > :nth-child(3) {
+  .section.hp-sec-1.flipped.off-tr > div > :nth-child(3),
+  .section.hp-sec-3.flipped.off-tr > div > :nth-child(3) {
     top: 0;
   }
 
   /* line 311, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1 {
+  .section.hp-sec-1 {
     padding: 0;
   }
 
   /* line 315, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tl > div {
+  .section.hp-sec-1.off-tl > div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -13329,14 +15461,14 @@ form.search .search button {
 
   /* line 318, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tl > div > :nth-child(1) {
+  .section.hp-sec-1.off-tl > div > :nth-child(1) {
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
   }
 
   /* line 325, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tc > div {
+  .section.hp-sec-1.off-tc > div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -13344,58 +15476,29 @@ form.search .search button {
 
   /* line 328, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tc > div > :nth-child(1) {
+  .section.hp-sec-1.off-tc > div > :nth-child(1) {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
 
   /* line 337, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1.off-tr > div > :nth-child(1) {
+  .section.hp-sec-1.off-tr > div > :nth-child(1) {
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
   }
 
-  /* line 57, src/sass/structure/section-layouts/_int.scss */
-
-  section.int-layout > div > article {
-    width: 58.333%;
-  }
-
-  /* line 60, src/sass/structure/section-layouts/_int.scss */
-
-  section.int-layout > div > article:not(:only-child) {
-    margin: 0 calc(8.333% - 2.5rem) 0 0;
-  }
-
-  /* line 63, src/sass/structure/section-layouts/_int.scss */
-
-  section.int-layout > div > article:not(:only-child):first-child {
-    margin: 0 0 0 8.333%;
-  }
-
-  /* line 68, src/sass/structure/section-layouts/_int.scss */
-
-  section.int-layout > div > article:only-child {
-    margin: auto;
-  }
-
-  /* line 57, src/sass/structure/section-layouts/_prg.scss */
-
-  section.prg-layout > div > article {
-    width: 58.333%;
-  }
-
-  /* line 11, src/sass/components/basic/_buttons.scss */
-
-  [class*="btn-"] {
-    font-size: 2.4rem;
-  }
-
-  /* line 80, src/sass/components/basic/_buttons.scss */
+  /* line 81, src/sass/components/basic/_buttons.scss */
 
   .skip-section {
     display: none;
+  }
+
+  /* line 1, src/sass/components/basic/buttons/colors/_hero.scss */
+
+  .btn-hero {
+    font-size: 3.2rem;
+    padding: 1.7rem 2.7rem 0.8rem 2.7rem;
   }
 
   /* line 1, src/sass/components/basic/buttons/colors/_search.scss */
@@ -13408,44 +15511,50 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 51, src/sass/components/basic/_hero.scss */
+  /* line 56, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title,
+  .hub-reference > header .hero_title,
   header.hp_hero .hero_title {
-    bottom: 7.2rem;
+    padding: 14.7rem 0 2.5rem 0;
   }
 
-  /* line 64, src/sass/components/basic/_hero.scss */
-
-  .node__content > header .hero_title h1,
-  header.hp_hero .hero_title h1 {
-    width: 67%;
-  }
-
-  /* line 74, src/sass/components/basic/_hero.scss */
+  /* line 79, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
+  .hub-reference > header .breadcrumb,
   header.hp_hero .breadcrumb {
     height: 7.2rem;
   }
 
-  /* line 95, src/sass/components/basic/_hero.scss */
+  /* line 100, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
+  .hub-reference > header .hero_title > div,
+  .hub-reference > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
   header.hp_hero .breadcrumb > div {
-    width: 95%;
+    width: 90%;
   }
 
-  /* line 115, src/sass/components/basic/_hero.scss */
+  /* line 120, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
+  .hub-reference > header.interior_page > .field,
   header.hp_hero.interior_page > .field {
     height: 51.5rem;
   }
 
-  /* line 170, src/sass/components/basic/_hero.scss */
+  /* line 167, src/sass/components/basic/_hero.scss */
+
+  header > .field + .hero_title,
+  header > .block + .hero_title {
+    bottom: 7.2rem;
+    padding: 2.5rem 0;
+  }
+
+  /* line 202, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag {
     position: absolute;
@@ -13454,39 +15563,39 @@ form.search .search button {
     z-index: 10;
   }
 
-  /* line 183, src/sass/components/basic/_hero.scss */
-
-  .hp_hero_tag > div {
-    width: 95%;
-  }
-
-  /* line 186, src/sass/components/basic/_hero.scss */
+  /* line 220, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div > div {
     max-width: 545px;
-    margin: 0 25px;
-    padding: 5rem;
+    margin: 0 2.5rem;
+    padding: 5rem 4rem 5rem 5rem;
   }
 
-  /* line 198, src/sass/components/basic/_hero.scss */
+  /* line 232, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div h1 {
     font-size: 5rem;
   }
 
-  /* line 207, src/sass/components/basic/_hero.scss */
+  /* line 242, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
     font-size: 3.6rem;
   }
 
-  /* line 231, src/sass/components/basic/_hero.scss */
+  /* line 266, src/sass/components/basic/_hero.scss */
 
   .hp_hero_bg .field--name-image {
     padding-bottom: 42%;
   }
 
-  /* line 287, src/sass/components/basic/_hero.scss */
+  /* line 321, src/sass/components/basic/_hero.scss */
+
+  .hp_hero_header {
+    margin-bottom: 3rem;
+  }
+
+  /* line 335, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:before {
     width: 100vw;
@@ -13498,143 +15607,96 @@ form.search .search button {
     background: rgba(0, 46, 109, 0.85);
   }
 
+  /* line 345, src/sass/components/basic/_hero.scss */
+
+  .hp_hero_header:after {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: #002E6D;
+  }
+
 @supports (mix-blend-mode: screen) {
-    /* line 281, src/sass/components/basic/_hero.scss */
+    /* line 345, src/sass/components/basic/_hero.scss */
 
-    .hp_hero_header {
-      z-index: 300;
+    .hp_hero_header:after {
       mix-blend-mode: screen;
-    }
-
-    /* line 301, src/sass/components/basic/_hero.scss */
-
-    .hp_hero_header:before {
-      background: #002E6D;
     }
 }
 
-  /* line 307, src/sass/components/basic/_hero.scss */
+@supports (mix-blend-mode: screen) {
+    /* line 321, src/sass/components/basic/_hero.scss */
+
+    .hp_hero_header {
+      z-index: 300;
+    }
+}
+
+  /* line 368, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
-    width: 95%;
+    width: 90%;
   }
 
-  /* line 312, src/sass/components/basic/_hero.scss */
+  /* line 381, src/sass/components/basic/_hero.scss */
+
+  .hp_hero_header_inner:after {
+    border-width: 30px 30px 0 30px;
+    bottom: -3rem;
+    left: 11.5rem;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  /* line 373, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     font-size: 4.5rem;
-    padding: 5rem 2.5rem;
+    padding: 5rem 2.5rem 5rem 7.5rem;
   }
 
-  /* line 343, src/sass/components/basic/_hero.scss */
+  /* line 412, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner div:last-child {
     font-size: 3.6rem;
   }
 
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .full-screen .card.img-behind > div {
-    width: 95%;
-  }
-
-  /* line 25, src/sass/components/basic/cards/_copy.scss */
-
-  .card h2 {
-    font-size: 2em;
-  }
-
-  /* line 43, src/sass/components/basic/cards/_copy.scss */
-
-  .card h3 {
-    font-size: 2.25em;
-  }
-
-  /* line 65, src/sass/components/basic/cards/_copy.scss */
-
-  .card h4,
-  .card .h4 {
-    font-size: 1.667em;
-  }
-
-  /* line 30, src/sass/components/basic/cards/_story.scss */
-
-  .full-screen .card.story > div {
-    width: 41.667%;
-  }
-
-  /* line 6, src/sass/components/basic/cards/_fwp.scss */
-
-  .card.fw_photo.img-behind {
-    padding: 13.5rem 0 8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  /* line 43, src/sass/components/basic/_facts.scss */
-
-  .fact.stat_hl .field--name-field-stat-highlite-top-text {
-    font-size: 3rem;
-    max-width: 420px;
-  }
-
-  /* line 78, src/sass/components/basic/_facts.scss */
-
-  .fact.stat_hl .field--name-field-stat-highlite-statistic {
-    font-size: 7.2rem;
-  }
-
-  /* line 90, src/sass/components/basic/_facts.scss */
-
-  .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
-    font-size: 1.6rem;
-    margin-top: -1.3125em;
-  }
-
-  /* line 28, src/sass/components/basic/_quotes.scss */
-
-  .copy-block blockquote {
-    margin-left: 96px;
-  }
-
-  /* line 37, src/sass/components/basic/_quotes.scss */
-
-  .copy-block blockquote:before {
-    width: 1.9rem;
-    left: -5.4rem;
-    -webkit-transition: all 10s;
-    transition: all 10s;
-  }
-
-  /* line 94, src/sass/components/basic/quotes/direction/_quote-left.scss */
-
-  blockquote.q-left .field--name-field-quote-quote {
-    font-size: 3rem;
+  .card.fw_photo .content,
+  a.card.fw_photo .content {
+    width: 90%;
   }
 
   /* line 1, src/sass/components/basic/_ns.scss */
 
-  .ns {
+  .section.ns {
     padding: 7.5rem 0;
   }
 
   /* line 10, src/sass/components/basic/_ns.scss */
 
-  .ns .icon {
+  .section.ns .icon {
     width: 13.6rem;
     height: 13.6rem;
     font-size: 6rem;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 2rem auto;
   }
 
-  /* line 56, src/sass/components/basic/_ns.scss */
+  /* line 50, src/sass/components/basic/_ns.scss */
 
-  .ns h2 {
-    font-size: 4.2rem;
+  .section.ns a .icon + span {
+    display: block;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
   }
 
-  /* line 67, src/sass/components/basic/_ns.scss */
+  /* line 70, src/sass/components/basic/_ns.scss */
 
-  .ns ul {
+  .section.ns ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -13645,31 +15707,68 @@ form.search .search button {
     max-width: 1084px;
   }
 
-  /* line 75, src/sass/components/basic/_ns.scss */
+  /* line 78, src/sass/components/basic/_ns.scss */
 
-  .ns ul li {
+  .section.ns ul li {
     width: 20%;
-    margin: 0 35px;
+    margin: 0 3.5rem;
     font-size: 2.1rem;
     text-align: center;
-  }
-
-  /* line 6, src/sass/components/navigation/_landing.scss */
-
-  nav.cp {
-    font-size: 1.8rem;
-  }
-
-  /* line 34, src/sass/components/navigation/_landing.scss */
-
-  nav.cp li {
-    width: calc(20% - 5rem);
   }
 
   /* line 15, src/sass/components/navigation/_breadcrumb.scss */
 
   nav.bc ol {
     font-size: 1.8rem;
+  }
+
+  /* line 7, src/sass/components/navigation/_interior.scss */
+
+  .section.side-nav-section {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* line 15, src/sass/components/navigation/_interior.scss */
+
+  .section.side-nav-section + .field--name-field-interior-page-content {
+    position: relative;
+    z-index: 0;
+  }
+
+  /* line 30, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav {
+    width: 18%;
+  }
+
+  /* line 44, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav ul {
+    font-size: 2.4rem;
+    width: 100%;
+    position: absolute;
+    padding: 5rem 0;
+  }
+
+  /* line 68, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav .menu-item {
+    margin: 0 0 0.58333em 0;
+  }
+
+  /* line 97, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav label {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
   }
 
   /* line 6, src/sass/components/navigation/_jump.scss */
@@ -13680,30 +15779,6 @@ form.search .search button {
     z-index: 900;
     top: 13.5rem;
     padding: 0;
-  }
-
-  /* line 95, src/sass/components/feeds-detail/feeds/_basic.scss */
-
-  .f-basic h3 {
-    font-size: 2.2rem;
-  }
-
-  /* line 17, src/sass/components/feeds-detail/feeds/_profile.scss */
-
-  .f-profile > article {
-    width: calc(25% - 5rem);
-  }
-
-  /* line 6, src/sass/components/feeds-detail/feeds/_tile.scss */
-
-  .f-tiles {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  /* line 15, src/sass/components/feeds-detail/featured/_faculty.scss */
-
-  .f-feat-faculty > article {
-    width: calc(33.333% - 2.5rem);
   }
 
   /* line 6, src/sass/components/forms/search/_form.scss */
@@ -13947,16 +16022,13 @@ form.search .search button {
 }
 
 @media screen and (min-width: 1210px) {
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 65, src/sass/components/copy/_copy-block.scss */
 
-  .main-header > div {
-    width: 90%;
-  }
-
-  /* line 121, src/sass/structure/_footer.scss */
-
-  .main-footer > div {
-    width: 90%;
+  .paragraph-type-formatted_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-formatted_text + .paragraph-type-collapsible_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-formatted_text .section,
+  .paragraph-type-collapsible_text + .paragraph-type-collapsible_text .section {
+    margin-top: -6.25rem;
   }
 
   /* line 14, src/sass/structure/footer/elements/_sitemap.scss */
@@ -13968,65 +16040,103 @@ form.search .search button {
   /* line 32, src/sass/structure/footer/elements/_sitemap.scss */
 
   .main-footer nav.menu--footer li {
-    margin: 0 15px;
+    margin: 0 1.5rem;
   }
 
   /* line 9, src/sass/structure/_section.scss */
 
-  section {
+  .section {
     padding: 6.25rem 0;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 18, src/sass/structure/section-layouts/_faculty.scss */
 
-  section > div {
-    width: 90%;
+  .section.fac-3col .fac_rail:before {
+    height: calc(100% + 12.5rem);
+    top: -6.25rem;
   }
 
-  /* line 95, src/sass/components/basic/_hero.scss */
+  /* line 1, src/sass/structure/_home.scss */
 
-  .node__content > header .hero_title > div,
-  .node__content > header .breadcrumb > div,
-  header.hp_hero .hero_title > div,
-  header.hp_hero .breadcrumb > div {
-    width: 90%;
+  .field--name-field-landing-page-content {
+    background-position: 0 1000px;
   }
 
-  /* line 183, src/sass/components/basic/_hero.scss */
+  /* line 1, src/sass/components/basic/cards/_featured-element.scss */
 
-  .hp_hero_tag > div {
-    width: 90%;
+  .card.img-side .info,
+  a.card.img-side .info {
+    padding: 4rem 7rem 0 6rem;
   }
 
-  /* line 307, src/sass/components/basic/_hero.scss */
+  /* line 24, src/sass/components/basic/cards/_featured-element.scss */
 
-  .hp_hero_header > div {
-    width: 90%;
+  .style-left .card.img-side .info,
+  .style-left a.card.img-side .info {
+    padding: 4rem 6rem 0 7rem;
   }
 
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
+  /* line 30, src/sass/components/basic/cards/_story.scss */
 
-  .full-screen .card.img-behind > div {
-    width: 90%;
+  .full-screen .card.story > div,
+  .full-screen a.card.story > div {
+    width: 33.333%;
+  }
+
+  /* line 21, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content,
+  a.card.mfsfa .content {
+    padding: 2.5rem 8rem;
+  }
+
+  /* line 38, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .feat-tiles .card.mfsfa .content,
+  .feat-tiles a.card.mfsfa .content {
+    padding: 3rem;
+  }
+
+  /* line 43, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a,
+  a.card.mfsfa .content a {
+    font-size: 1.9rem;
+  }
+
+  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .body,
+  a.card.mfsfa .body {
+    font-size: 1.9rem;
   }
 
   /* line 43, src/sass/components/basic/cards/_copy.scss */
 
-  .card h3 {
+  .card h3,
+  a.card h3 {
     font-size: 3em;
   }
 
   /* line 65, src/sass/components/basic/cards/_copy.scss */
 
   .card h4,
-  .card .h4 {
+  .card .h4,
+  a.card h4,
+  a.card .h4 {
     font-size: 1.75em;
   }
 
-  /* line 30, src/sass/components/basic/cards/_story.scss */
+  /* line 9, src/sass/components/basic/_feat-tiles.scss */
 
-  .full-screen .card.story > div {
-    width: 33.333%;
+  .feat-tiles > div {
+    width: 33.3%;
+  }
+
+  /* line 44, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav ul {
+    padding: 6.25rem 0;
   }
 
   /* line 17, src/sass/components/feeds-detail/feeds/_profile.scss */
@@ -14049,12 +16159,6 @@ form.search .search button {
 }
 
 @media screen and (min-width: 1600px) {
-  /* line 113, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
-
-  .main-header > div {
-    width: 85%;
-  }
-
   /* line 121, src/sass/structure/_footer.scss */
 
   .main-footer > div {
@@ -14063,39 +16167,44 @@ form.search .search button {
 
   /* line 32, src/sass/structure/_section.scss */
 
-  section > div {
+  .section > div {
     width: 85%;
   }
 
-  /* line 95, src/sass/components/basic/_hero.scss */
+  /* line 100, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
+  .hub-reference > header .hero_title > div,
+  .hub-reference > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
   header.hp_hero .breadcrumb > div {
     width: 85%;
   }
 
-  /* line 183, src/sass/components/basic/_hero.scss */
-
-  .hp_hero_tag > div {
-    width: 85%;
-  }
-
-  /* line 307, src/sass/components/basic/_hero.scss */
+  /* line 368, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 85%;
   }
 
-  /* line 103, src/sass/components/basic/cards/_img-behind.scss */
+  /* line 65, src/sass/components/basic/cards/_fwp.scss */
 
-  .full-screen .card.img-behind > div {
+  .card.fw_photo .content,
+  a.card.fw_photo .content {
     width: 85%;
   }
 }
 
-@media screen and (max-width: 991.9px) {
+@media screen and (min-width: 1700px) {
+  /* line 28, src/sass/structure/section-backgrounds/_slash.scss */
+
+  .slash:before {
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: 1089.9px) {
   /* line 29, src/sass/base/_resets.scss */
 
   html,
@@ -14112,7 +16221,7 @@ form.search .search button {
     text-align: center;
   }
 
-  /* line 95, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
+  /* line 96, src/sass/structure/header/layouts/_main-nav-w-utility-bar.scss */
 
   .main-header .nav-wrapper {
     position: absolute;
@@ -14130,21 +16239,21 @@ form.search .search button {
     transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
   }
 
-  /* line 559, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 568, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header input[type="checkbox"]:checked ~ nav {
     -webkit-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
   }
 
-  /* line 577, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 586, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega {
     background: #0054A6;
     font-size: 1.8rem;
   }
 
-  /* line 581, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 590, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li {
     display: -webkit-box;
@@ -14153,7 +16262,7 @@ form.search .search button {
     padding: 0 1.3rem;
   }
 
-  /* line 585, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 594, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li a {
     color: #fff;
@@ -14163,14 +16272,14 @@ form.search .search button {
             flex-grow: 1;
   }
 
-  /* line 592, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 601, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li ~ li a,
   .main-header nav.mega li ~ li label {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  /* line 598, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 607, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li > div {
     position: absolute;
@@ -14186,7 +16295,7 @@ form.search .search button {
     transition: transform 0.25s, -webkit-transform 0.25s;
   }
 
-  /* line 611, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 620, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li > div .sm_toggle {
     width: auto;
@@ -14195,20 +16304,20 @@ form.search .search button {
             justify-content: flex-start;
     color: #fff;
     padding: 1.3rem 0;
-    margin: 0 13px;
+    margin: 0 1.3rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     font-weight: bold;
   }
 
-  /* line 620, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 629, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header nav.mega li > div .sm_toggle .icon {
     padding: 0 1rem;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    -webkit-transform: rotate(180deg) translateY(6px);
+            transform: rotate(180deg) translateY(6px);
   }
 
-  /* line 629, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 638, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header .sm_toggle {
     color: #8AC8FF;
@@ -14224,19 +16333,19 @@ form.search .search button {
     width: 5.2rem;
   }
 
-  /* line 637, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 646, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header .mega_content {
     display: none;
   }
 
-  /* line 650, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 659, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header input[type="checkbox"]:focus + label {
     text-decoration: underline;
   }
 
-  /* line 669, src/sass/structure/header/navs/_mega-menu.scss */
+  /* line 678, src/sass/structure/header/navs/_mega-menu.scss */
 
   .main-header input[type="checkbox"]:checked ~ div,
   .main-header input[type="checkbox"]:checked ~ ul {
@@ -14323,28 +16432,28 @@ form.search .search button {
     padding: 0 0.5rem;
   }
 
-  /* line 64, src/sass/structure/header/navs/_cta.scss */
+  /* line 71, src/sass/structure/header/navs/_cta.scss */
 
   .region-primary-menu .menu--cta {
     position: absolute;
     width: 0.1rem;
     height: 0.1rem;
     padding: 0;
-    margin: -1px;
+    margin: -0.1rem;
     border: 0;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
   }
 
-  /* line 94, src/sass/structure/_section.scss */
+  /* line 103, src/sass/structure/_section.scss */
 
-  section.ptb {
+  .section.ptb {
     padding: 5rem 0;
   }
 
-  /* line 97, src/sass/structure/_section.scss */
+  /* line 106, src/sass/structure/_section.scss */
 
-  section.ptb-lgt {
+  .section.ptb-lgt {
     z-index: 0;
     margin-top: -7.5rem;
     padding: 7.5rem 0;
@@ -14352,19 +16461,19 @@ form.search .search button {
 
   /* line 7, src/sass/structure/section-layouts/_home.scss */
 
-  section[class*="hp-sec-"] {
+  .section[class*="hp-sec-"] {
     padding: 2.5rem 0;
   }
 
   /* line 11, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-1 {
+  .section.hp-sec-1 {
     margin-top: -7.5rem;
   }
 
   /* line 15, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-3.off-tl {
+  .section.hp-sec-3.off-tl {
     z-index: 100;
     padding-top: 0;
     margin-top: -7.5rem;
@@ -14372,13 +16481,13 @@ form.search .search button {
 
   /* line 21, src/sass/structure/section-layouts/_home.scss */
 
-  section.hp-sec-2.off-bc {
+  .section.hp-sec-2.off-bc {
     z-index: 90;
     padding-top: 0;
     margin-top: -7.5rem;
   }
 
-  /* line 159, src/sass/components/basic/_hero.scss */
+  /* line 182, src/sass/components/basic/_hero.scss */
 
   header.hp_hero {
     width: 100%;
@@ -14391,10 +16500,25 @@ form.search .search button {
             flex-direction: column;
   }
 
-  /* line 261, src/sass/components/basic/_hero.scss */
+  /* line 192, src/sass/components/basic/_hero.scss */
+
+  header.hp_hero:after {
+    top: 3.3rem;
+    height: calc(100% - 4.9rem);
+  }
+
+  /* line 296, src/sass/components/basic/_hero.scss */
 
   .bg_caption {
     display: none;
+  }
+
+  /* line 321, src/sass/components/basic/_hero.scss */
+
+  .hp_hero_header {
+    background: #002E6D;
+    z-index: 100;
+    text-align: center;
   }
 
   /* line 13, src/sass/components/basic/_facts.scss */
@@ -14406,20 +16530,13 @@ form.search .search button {
 
   /* line 31, src/sass/components/basic/_ns.scss */
 
-  .ns a {
+  .section.ns a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-
-  /* line 48, src/sass/components/basic/_ns.scss */
-
-  .ns a .icon + span {
-    display: block;
-    margin: 0 -2rem;
   }
 
   /* line 31, src/sass/components/navigation/_breadcrumb.scss */
@@ -14438,6 +16555,29 @@ form.search .search button {
 
   nav.bc li:nth-last-child(2):before {
     display: none;
+  }
+
+  /* line 22, src/sass/components/navigation/_interior.scss */
+
+  .section.side-nav-section > div {
+    padding: 0;
+    width: 100%;
+  }
+
+  /* line 44, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav ul {
+    display: none;
+    background: #e1e7ec;
+    padding: 2.5rem 4.65rem 2.5rem 2.5rem;
+    text-align: right;
+  }
+
+  /* line 77, src/sass/components/navigation/_interior.scss */
+
+  nav.side-nav a {
+    display: block;
+    padding: 0.7rem 0;
   }
 
   /* line 32, src/sass/components/forms/search/_form.scss */
@@ -14621,6 +16761,28 @@ form.search .search button {
   }
 }
 
+@media screen and (max-width: 991.9px) {
+  /* line 64, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a span:last-child,
+  a.card.mfsfa .content a span:last-child {
+    color: #212322;
+    opacity: .3;
+  }
+
+  /* line 77, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .title,
+  a.card.mfsfa .title {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
 @media screen and (max-width: 767.9px) {
   /* line 72, src/sass/structure/_footer.scss */
 
@@ -14645,46 +16807,82 @@ form.search .search button {
     z-index: 3;
   }
 
-  /* line 65, src/sass/components/basic/cards/_img-side.scss */
+  /* line 69, src/sass/components/basic/cards/_img-side.scss */
 
-  .card.img-side > a {
+  .card.img-side > a,
+  a.card.img-side > a {
     margin-bottom: 1em;
   }
 
-  /* line 58, src/sass/components/basic/_facts.scss */
+  /* line 1, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .info,
+  a.card.img-side .info {
+    padding-bottom: 2rem;
+  }
+
+  /* line 90, src/sass/components/basic/cards/_featured-element.scss */
+
+  .card.img-side .element .img_vid,
+  a.card.img-side .element .img_vid {
+    margin: 0 -2.5rem 2.5rem;
+  }
+
+  /* line 65, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-icon {
     width: 20%;
     position: absolute;
-    top: 2.7rem;
-    left: 2.5;
+    top: 3.3rem;
+    left: 2.5rem;
   }
 
-  /* line 67, src/sass/components/basic/_facts.scss */
+  /* line 74, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-icon img {
     width: 100%;
     height: auto;
   }
 
-  /* line 103, src/sass/components/basic/_facts.scss */
+  /* line 114, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-top-text,
   .fact.stat_hl .field--name-field-stat-highlite-statistic,
   .fact.stat_hl .field--name-field-stat-highlite-bottom-text {
-    padding-left: calc(20% + 2.5rem);
+    padding-left: calc(20% + 5rem);
+  }
+
+  /* line 36, src/sass/components/basic/_quotes.scss */
+
+  .copy-block .embedded-entity blockquote,
+  .cke_editable .embedded-entity blockquote {
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left {
-    margin-left: -25px;
-    margin-right: -25px;
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+  }
+
+  /* line 1, src/sass/components/basic/_mfs.scss */
+
+  .mfsi,
+  .mfse {
+    margin-bottom: 6.2rem;
+  }
+
+  /* line 136, src/sass/components/basic/_mfs.scss */
+
+  .mfs .field--name-field-mfs-featured-items .field__item:last-child .mfsi {
+    margin-bottom: 0;
   }
 }
 
 @media screen and (max-width: 575.9px) {
-  /* line 104, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 133, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image {
     -webkit-box-flex: 0;
@@ -14692,7 +16890,7 @@ form.search .search button {
             flex: 0 0 20%;
   }
 
-  /* line 108, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 137, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .field--name-field-quote-image img {
     width: 100%;
@@ -14727,6 +16925,21 @@ form.search .search button {
   nav.cp li > a > img {
     margin: 0 2.5rem 0 0;
     width: 7.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px) {
+  /* line 36, src/sass/components/basic/_quotes.scss */
+
+  .copy-block .embedded-entity blockquote,
+  .cke_editable .embedded-entity blockquote {
+    margin: 0 -2.5rem 1.5rem;
+  }
+
+  /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+  blockquote.q-left {
+    margin: 0 -2.5rem 1.5rem;
   }
 }
 
