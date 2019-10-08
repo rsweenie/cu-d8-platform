@@ -15,9 +15,8 @@ case $CU_SITE_ALIAS in
     # DB sync MUST come before filesync always
     drush -r "${DOCROOT}" sql:drop -y
     drush -r "${DOCROOT}" sql:sync "@${CU_SITE_ALIAS}.01live" @self -y
-    drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y
+    drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y -- --exclude '/styles/'
   ;;
-  
   grad-site)
     echo "Importing local DB file for Grad Site"
     DB_FILE="${TUGBOAT_ROOT}/.tugboat/db/${TUGBOAT_GITHUB_HEAD}.sql.gz"
@@ -38,7 +37,6 @@ case $CU_SITE_ALIAS in
   none)
     echo "Nothing to do for generic install"
   ;;
-  
   *)
     echo "Could not determine site alias. Please check Tugboat scripts!"
     exit 1
