@@ -38,5 +38,6 @@ Feature: Featured Content Group
     And I visit the edit form
     And I wait "5" seconds
     And I visit the "#edit-delete" link
+    And I wait "5" seconds
     And I visit the "#edit-submit" link
     Then I should see "Testing Featured Content Group has been deleted"
