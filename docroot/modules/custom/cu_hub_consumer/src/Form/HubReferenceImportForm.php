@@ -5,7 +5,7 @@ namespace Drupal\cu_hub_consumer\Form;
 //use Drupal\Core\Database\Database;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-
+use Drupal\Core\Queue\SuspendQueueException;
  
 /**
  * Defines a form that triggers batch operations to download and process
@@ -164,6 +164,10 @@ class HubReferenceImportForm extends FormBase {
     $list_fetch_queue = $queue_factory->get('hub_resource_list_fetch_worker');
     $list_fetch_queue_worker = $queue_manager->createInstance('hub_resource_list_fetch_worker');
 
+    if (!isset($context['results']['warnings'])) {
+      $context['results']['warnings'] = [];
+    }
+
     if (!isset($context['sandbox']['progress'])) {
       $context['finished'] = 0;
       $context['sandbox'] = [
@@ -192,8 +196,10 @@ class HubReferenceImportForm extends FormBase {
           $sandbox['progress']++;
         }
         catch (SuspendQueueException $e) {
-          // If there was an Exception trown because of an error
-          // Releases the item that the worker could not process.
+          $context['results']['warnings'][] = $e->getMessage();
+
+          // If there was an Exception thrown because of an error
+          // release the item that the worker could not process.
           // Another worker can come and process it
           $list_fetch_queue->releaseItem($item);
           break;
@@ -225,6 +231,10 @@ class HubReferenceImportForm extends FormBase {
     $resource_process_queue = $queue_factory->get('hub_resource_process_worker');
     $resource_process_queue_worker = $queue_manager->createInstance('hub_resource_process_worker');
 
+    if (!isset($context['results']['warnings'])) {
+      $context['results']['warnings'] = [];
+    }
+
     if (!isset($context['sandbox']['progress'])) {
       $context['finished'] = 0;
       $context['sandbox'] = [
@@ -253,8 +263,10 @@ class HubReferenceImportForm extends FormBase {
           $sandbox['progress']++;
         }
         catch (SuspendQueueException $e) {
-          // If there was an Exception trown because of an error
-          // Releases the item that the worker could not process.
+          $context['results']['warnings'][] = $e->getMessage();
+
+          // If there was an Exception thrown because of an error
+          // release the item that the worker could not process.
           // Another worker can come and process it
           $resource_process_queue->releaseItem($item);
           break;
@@ -301,6 +313,12 @@ class HubReferenceImportForm extends FormBase {
         'One resource fetched/processed.',
         '@count resources fetched/processed.'
       );
+    }
+
+    if (!empty($results['warnings'])) {
+      foreach ($results['warnings'] as $warning) {
+        drupal_set_message($warning, 'warning');
+      }
     }
 
     drupal_set_message($lists);
