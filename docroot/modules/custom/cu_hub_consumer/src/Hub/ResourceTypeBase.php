@@ -15,6 +15,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinition;
 use Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinitionInterface;
+use Drupal\cu_hub_consumer\hub\ResourceException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 //use \GuzzleHttp\ClientInterface;
 //use GuzzleHttp\Exception\RequestException;
@@ -239,12 +240,12 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
         $response = $this->hubClient->request('GET', $path, $query);
       }
       catch (ClientException $e) {
-        throw new ResourceException('Could not retrieve the hub resource list: ' . $e->getMessage(), $path, [], $e);
+        throw new ResourceException('Could not retrieve the hub resource list for ' . $this->pluginDefinition['hub_type_id'] . ': ' . $e->getMessage(), $path, [], $e);
       }
       
       $resource = ResourceList::createFromHttpResponse($this, $response);
       if (!$resource) {
-        throw new ResourceException('Could not properly decode the hub resource list.', $path);
+        throw new ResourceException('Could not properly decode the hub resource list ' . $this->pluginDefinition['hub_type_id'] . '.', $path);
       }
 
       return $resource;

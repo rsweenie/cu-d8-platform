@@ -37,7 +37,7 @@ class HubResourceProcessWorker extends QueueWorkerBase {
     }
     catch (ResourceException $e) {
       watchdog_exception('cu_hub_consumer', $e);
-      throw new SuspendQueueException('Could not properly fetch the hub resource data.');
+      throw new SuspendQueueException('Could not properly fetch the hub resource data for ' . $resource_type->getPluginId() . ':' . $data->hub_uuid . '.');
     }
 
     if ($raw_json_data = $resource->getRawJsonData()) {
