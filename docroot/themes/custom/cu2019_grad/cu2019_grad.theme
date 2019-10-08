@@ -145,6 +145,25 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cu2019_grad_theme_suggestions_field_alter(&$suggestions, $variables) {
+  $element = $variables['element'];
+
+  $field_name = $element['#field_name'];
+  $view_mode = $element['#view_mode'];
+  $entity_type = $element['#entity_type'];
+  $bundle = $element['#bundle'];
+
+  // Add view mode based suggestions if this view mode doesn't use layout builder.
+  if (strpos($view_mode, 'layout_builder-') !== 0) {
+    $suggestions[] = 'field__' . $field_name . '__' . $view_mode;
+    $suggestions[] = 'field__' . $entity_type . '__' . $field_name . '__' . $view_mode;
+    $suggestions[] = 'field__' . $entity_type . '__' . $field_name . '__' . $bundle . '__' . $view_mode;
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function cu2019_grad_preprocess_field(&$variables) {
