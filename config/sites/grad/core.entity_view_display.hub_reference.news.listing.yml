@@ -7,8 +7,10 @@ dependencies:
     - cu_hub_consumer.hub_reference_type.news
     - field.field.hub_reference.news.field_featured
     - field.field.hub_reference.news.field_news_date
+    - field.field.hub_reference.news.field_news_type
   module:
     - cu_hub_consumer
+    - datetime
     - layout_builder
     - layout_builder_restrictions
 third_party_settings:
@@ -31,9 +33,18 @@ targetEntityType: hub_reference
 bundle: news
 mode: listing
 content:
+  hub_field_hub_news_date:
+    type: datetime_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: cu_news
+    third_party_settings: {  }
   hub_field_hub_news_description:
     type: basic_string
-    weight: 4
+    weight: 5
     region: content
     label: hidden
     settings: {  }
@@ -48,22 +59,23 @@ content:
       link_type: ''
     third_party_settings: {  }
   hub_field_hub_news_location:
-    type: hub_resource_link
-    weight: 2
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  hub_field_hub_news_title:
-    type: basic_string
+    type: hub_resource_label
     weight: 3
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  hub_field_hub_news_title:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   hub_field_hub_news_type:
-    type: hub_resource_link
-    weight: 1
+    type: hub_resource_label
+    weight: 2
     region: content
     label: hidden
     settings: {  }
@@ -78,7 +90,6 @@ hidden:
   hub_drupal_internal__nid: true
   hub_drupal_internal__vid: true
   hub_field_hub_news_body: true
-  hub_field_hub_news_date: true
   hub_field_hub_news_featured: true
   hub_field_hub_news_hero_image: true
   hub_field_hub_path_alias: true
