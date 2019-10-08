@@ -1,0 +1,6 @@
+name: 'CU Layout Tweaks'
+description: Provides extra features for select layouts.
+type: module
+core: 8.x
+version: 8.x-1.0
+package: Creighton

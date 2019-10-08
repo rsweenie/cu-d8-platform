@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_browser
     - field.field.node.hub_faculty.field_hub_faculty_components
     - field.field.node.hub_faculty.field_hub_faculty_department
     - field.field.node.hub_faculty.field_hub_faculty_email
@@ -18,8 +19,8 @@ dependencies:
     - field.field.node.hub_faculty.field_meta_tags
     - node.type.hub_faculty
   module:
+    - entity_browser
     - link
-    - media_library
     - metatag
     - name
     - paragraphs
@@ -35,16 +36,17 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      edit_mode: closed
       closed_mode: summary
-      autocollapse: none
+      autocollapse: all
       closed_mode_threshold: 0
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: copy
       features:
-        duplicate: duplicate
         collapse_edit_all: collapse_edit_all
+        add_above: add_above
+        duplicate: '0'
     third_party_settings: {  }
     region: content
   field_hub_faculty_department:
@@ -64,10 +66,18 @@ content:
     type: email_default
     region: content
   field_hub_faculty_image:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 8
     settings:
-      media_types: {  }
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
     third_party_settings: {  }
     region: content
   field_hub_faculty_name:

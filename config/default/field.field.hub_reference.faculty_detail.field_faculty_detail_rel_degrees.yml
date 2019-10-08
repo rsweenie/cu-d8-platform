@@ -1,0 +1,28 @@
+uuid: 41b3e299-b6fd-43eb-89f5-9a9b5ca353ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.degree
+    - cu_hub_consumer.hub_reference_type.faculty_detail
+    - field.storage.hub_reference.field_faculty_detail_rel_degrees
+id: hub_reference.faculty_detail.field_faculty_detail_rel_degrees
+field_name: field_faculty_detail_rel_degrees
+entity_type: hub_reference
+bundle: faculty_detail
+label: 'Related Degrees'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:hub_reference'
+  handler_settings:
+    target_bundles:
+      degree: degree
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
