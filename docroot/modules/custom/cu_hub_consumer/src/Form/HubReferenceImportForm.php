@@ -165,6 +165,7 @@ class HubReferenceImportForm extends FormBase {
     $list_fetch_queue_worker = $queue_manager->createInstance('hub_resource_list_fetch_worker');
 
     if (!isset($context['sandbox']['progress'])) {
+      $context['finished'] = 0;
       $context['sandbox'] = [
         'progress' => 0,
         'limit'    => $limit,
@@ -178,11 +179,17 @@ class HubReferenceImportForm extends FormBase {
 
     for ($i = 0; $i < $run_size; $i++) {
       if ($item = $list_fetch_queue->claimItem()) {
+        // Build a message so this isn't entirely boring for admins
+        $context['message'] = '<h2>' . t('Fetching @bundle list...', ['@bundle' => $item->data->bundle]) . '</h2>';
+
         try {
           // Process it
           $list_fetch_queue_worker->processItem($item->data);
           // If everything was correct, delete the processed item from the queue
           $list_fetch_queue->deleteItem($item);
+
+          $context['results']['lists']++;
+          $sandbox['progress']++;
         }
         catch (SuspendQueueException $e) {
           // If there was an Exception trown because of an error
@@ -191,11 +198,6 @@ class HubReferenceImportForm extends FormBase {
           $list_fetch_queue->releaseItem($item);
           break;
         }
-
-        $context['results']['lists']++;
-        $sandbox['progress']++;
-        // Build a message so this isn't entirely boring for admins
-        $context['message'] = '<h2>' . t('Fetching @bundle a list...', ['@bundle' => $item->data->bundle]) . '</h2>';
       }
       else {
         $context['finished'] = 1;
@@ -224,6 +226,7 @@ class HubReferenceImportForm extends FormBase {
     $resource_process_queue_worker = $queue_manager->createInstance('hub_resource_process_worker');
 
     if (!isset($context['sandbox']['progress'])) {
+      $context['finished'] = 0;
       $context['sandbox'] = [
         'progress' => 0,
         'limit'    => $limit,
@@ -237,11 +240,17 @@ class HubReferenceImportForm extends FormBase {
 
     for ($i = 0; $i < $run_size; $i++) {
       if ($item = $resource_process_queue->claimItem()) {
+        // Build a message so this isn't entirely boring for admins
+        $context['message'] = '<h2>' . t('Fetching @bundle a list...', ['@bundle' => $item->data->bundle]) . '</h2>';
+
         try {
           // Process it
           $resource_process_queue_worker->processItem($item->data);
           // If everything was correct, delete the processed item from the queue
           $resource_process_queue->deleteItem($item);
+
+          $context['results']['resources']++;
+          $sandbox['progress']++;
         }
         catch (SuspendQueueException $e) {
           // If there was an Exception trown because of an error
@@ -250,11 +259,6 @@ class HubReferenceImportForm extends FormBase {
           $resource_process_queue->releaseItem($item);
           break;
         }
-
-        $context['results']['resources']++;
-        $sandbox['progress']++;
-        // Build a message so this isn't entirely boring for admins
-        $context['message'] = '<h2>' . t('Fetching @bundle a list...', ['@bundle' => $item->data->bundle]) . '</h2>';
       }
       else {
         $context['finished'] = 1;
