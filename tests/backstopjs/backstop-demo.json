@@ -1,0 +1,69 @@
+{
+    "id": "backstop_default",
+    "viewports": [
+      {
+        "label": "phone",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "label": "tablet",
+        "width": 768,
+        "height": 768
+      },
+      {
+        "label": "desktop display",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "onBeforeScript": "puppet/onBefore.js",
+    "onReadyScript": "puppet/onReady.js",
+    "scenarios": [
+      {
+        "label": "test hrnew index",
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "http://local.creighton.com",
+        "referenceUrl": "http://hrnew.creighton.acsitefactory.com/",
+        "readyEvent": "",
+        "readySelector": "",
+        "delay": 0,
+        "hideSelectors": [],
+        "removeSelectors": [],
+        "hoverSelector": "",
+        "clickSelector": "",
+        "postInteractionWait": 0,
+        "selectors": [],
+        "selectorExpansion": true,
+        "expect": 0,
+        "misMatchThreshold" : 0.04,
+        "requireSameDimensions": true
+      }
+  ],
+    "paths": {
+      "bitmaps_reference": "backstop_data/bitmaps_reference",
+      "bitmaps_dev": "backstop_data/bitmaps_dev",
+      "engine_scripts": "backstop_data/engine_scripts",
+      "html_report": "backstop_data/html_report",
+      "ci_report": "backstop_data/ci_report"
+    },
+    "report": ["browser"],
+    "engine": "puppeteer",
+    "engineOptions": {
+      "args": ["--no-sandbox",
+                "--ignore-certificate-errors",
+                "--ignore-certificate-errors-spki-list"
+              ]
+    },
+    "resembleOutputOptions": {
+      "errorColor": {
+        "red": 0,
+        "green": 255,
+        "blue": 255
+      }
+    },
+    "asyncCaptureLimit": 5,
+    "asyncCompareLimit": 50,
+    "debug": false,
+    "debugWindow": false
+  }
