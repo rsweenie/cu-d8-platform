@@ -32,6 +32,7 @@ case $CU_SITE_ALIAS in
       echo "Could not find appropriate database to import"
       exit 1
     fi
+    drush -r "${DOCROOT}" rsync "@grad.01live":%files @self:%files -y  -- --exclude '/styles/'
   ;;
   none)
     echo "Nothing to do for generic install"

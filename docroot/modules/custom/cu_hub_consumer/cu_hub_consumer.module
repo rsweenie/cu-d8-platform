@@ -70,6 +70,10 @@ function cu_hub_consumer_entity_bundle_field_info(EntityTypeInterface $entity_ty
           foreach ($hub_fields as $field_name => $field_info) {
             // Make sure the plugin actually exists.
             if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
+              if (!isset($field_def['default_formatter'])) {
+                // If the field doesn't have a default formatter (eg metatags_normalized), skip adding it.
+                continue;
+              }
 
               $field_definition = HubFieldStorageDefinition::create($field_info['type'])
                 ->setName($field_prefix . $field_name)
@@ -79,7 +83,7 @@ function cu_hub_consumer_entity_bundle_field_info(EntityTypeInterface $entity_ty
                 ->setDisplayConfigurable('view', TRUE)
                 ->setDisplayOptions('view', [
                   'region' => 'hidden',
-                  'type' => $field_def['default_formatter']
+                  'type' => $field_def['default_formatter'],
                 ]);
               $fields[$field_prefix . $field_name] = $field_definition;
             }
@@ -93,74 +97,6 @@ function cu_hub_consumer_entity_bundle_field_info(EntityTypeInterface $entity_ty
 
   return $fields;
 }
-
-/**
- * Implements hook_block_alter().
- */
-/*
-function cu_hub_consumer_block_alter(array &$blocks) {
-  // If Layout Builder is installed it assumes that bundle fields will be known ahead of time and will
-  // choke if it can't derive the field blocks. We need to fill in the blanks.
-  if (\Drupal::moduleHandler()->moduleExists('layout_builder')) {
-    $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('hub_reference');
-    foreach ($bundles as $bundle => $bundle_info) {
-      if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($bundle)) {
-        if ($reference_source = $hub_ref_type->getSource()) {
-          $resource_type = $reference_source->getResourceType();
-          $field_types = \Drupal::service('plugin.manager.field.field_type');
-
-          if ($hub_fields = $resource_type->getHubFields()) {
-            $field_prefix = HubReferenceInterface::HUB_FIELD_PREFIX;
-            foreach ($hub_fields as $field_name => $field_info) {
-              // Make sure the plugin actually exists.
-              if ($field_def = $field_types->getDefinition($field_info['type'], FALSE)) {
-
-                // Example: field_block:hub_reference:degree:hub_field_hub_degree_title
-                $data_block_id = 'field_block' .
-                  PluginBase::DERIVATIVE_SEPARATOR .
-                  'hub_reference' .
-                  PluginBase::DERIVATIVE_SEPARATOR .
-                  $bundle .
-                  PluginBase::DERIVATIVE_SEPARATOR .
-                  'hub_data';
-
-                $field_block_id = 'field_block' .
-                  PluginBase::DERIVATIVE_SEPARATOR .
-                  'hub_reference' .
-                  PluginBase::DERIVATIVE_SEPARATOR .
-                  $bundle .
-                  PluginBase::DERIVATIVE_SEPARATOR .
-                  $field_prefix . $field_name;
-
-                if (isset($blocks[$data_block_id]) && !isset($blocks[$field_block_id])) {
-                  $blocks[$field_block_id] = [];
-
-                  // Let's start by copying the definition for a known good field_block.
-                  foreach ($blocks[$data_block_id] as $prop_name => $prop_value) {
-                    if (is_object($prop_value)) {
-                      $blocks[$field_block_id][$prop_name] = clone $prop_value;
-                    }
-                    else {
-                      $blocks[$field_block_id][$prop_name] = $prop_value;
-                    }
-                  }
-
-                  $blocks[$field_block_id]['id'] = $field_block_id;
-                  unset($blocks[$field_block_id]['deriver']);
-                  $blocks[$field_block_id]['admin_label'] = t('Hub: ' . $field_name);
-                  $blocks[$field_block_id]['class'] = 'Drupal\cu_hub_consumer\Plugin\Block\HubReferenceFieldBlock';
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    //\Drupal::service('plugin.manager.block')->clearCachedDefinitions();
-  }
-}
-*/
 
 /**
  * Implements hook_entity_operation().
@@ -270,6 +206,13 @@ function template_preprocess_hub_reference(array &$variables) {
   $variables['hub_reference'] = $variables['elements']['#hub_reference'];
   $variables['view_mode'] = $variables['elements']['#view_mode'];
   $variables['title'] = $variables['hub_reference']->label();
+
+  $hub_reference = $variables['hub_reference'];
+
+  $variables['url'] = !$hub_reference
+    ->isNew() ? $hub_reference
+    ->toUrl('canonical')
+    ->toString() : NULL;
 
   // Helpful $content variable for templates.
   foreach (Element::children($variables['elements']) as $key) {

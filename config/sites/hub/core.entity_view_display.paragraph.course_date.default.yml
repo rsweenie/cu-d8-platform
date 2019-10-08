@@ -1,0 +1,48 @@
+uuid: 1ca18d62-3500-43e9-93b2-18499e08a1fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.course_date.field_hub_cd_cta
+    - field.field.paragraph.course_date.field_hub_cd_date
+    - field.field.paragraph.course_date.field_hub_cd_description
+    - paragraphs.paragraphs_type.course_date
+  module:
+    - datetime
+    - link
+id: paragraph.course_date.default
+targetEntityType: paragraph
+bundle: course_date
+mode: default
+content:
+  field_hub_cd_cta:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hub_cd_date:
+    weight: 2
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: html_datetime
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_hub_cd_description:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

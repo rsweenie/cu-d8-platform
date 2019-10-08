@@ -20,7 +20,9 @@
 
 {% if content %}
 <article{{ attributes.addClass(classes) }}>
-    {{ content.field_hub_next_step_icon }}
-    {{ content.field_hub_next_step_link }}
+  <a href="{{ resource_obj.field_hub_next_step_link[0].uri }}">
+    <span class="icon icon-{{ resource_obj.field_hub_next_step_icon[0].value|clean_class }}"></span>
+    <span>{{ resource_obj.field_hub_next_step_link[0].title }}</span>
+  </a>
 </article>
 {% endif %}

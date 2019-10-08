@@ -14,7 +14,6 @@ module:
   captcha: 0
   cer: 0
   ckeditor: 0
-  ckeditor_markdown: 0
   coffee: 0
   config: 0
   config_filter: 0
@@ -26,15 +25,12 @@ module:
   contact_storage: 0
   content_browser: 0
   content_moderation: 0
-  context: 0
-  context_ui: 0
   contextual: 0
   crop: 0
   csv_serialization: 0
   ctools: 0
   ctools_block: 0
   cu_breadcrumbs: 0
-  cu_data_transform: 0
   cu_entity_embed: 0
   cu_hub_consumer: 0
   cu_layout_tweaks: 0
@@ -89,6 +85,7 @@ module:
   layout_builder_restrictions: 0
   layout_builder_st: 0
   layout_discovery: 0
+  layout_library: 0
   libraries: 0
   lightning_api: 0
   lightning_contact_form: 0
@@ -118,7 +115,6 @@ module:
   module_filter: 0
   name: 0
   node: 0
-  noreferrer: 0
   openapi: 0
   openapi_ui: 0
   openapi_ui_redoc: 0
