@@ -1,9 +1,9 @@
-uuid: ff0323c9-8180-4ff5-a677-f8628df720de
+uuid: 675131a0-70d5-4465-9887-a9c44d32fb0e
 langcode: en
 status: true
 dependencies: {  }
-id: paragraph__quote_ref
-type_id: paragraph--quote_ref
+id: paragraph__hub_quote_ref
+type_id: paragraph--hub_quote_ref
 fields:
   drupal_internal__id:
     type: integer
@@ -33,9 +33,9 @@ fields:
     type: hub_resource
     hub_type: paragraphs_type
     multiple: false
-  field_quote_ref_item:
+  field_hub_quote_ref_item:
     type: hub_resource
     hub_type: node
     hub_bundles:
-      - node--quote_box
+      - node--hub_quote
     multiple: false
