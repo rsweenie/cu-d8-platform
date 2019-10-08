@@ -152,7 +152,7 @@ services:
         - drush -r "${DOCROOT}" config-import -y
         # Run config import a second time to capture changes from new config splits.
         - drush -r "${DOCROOT}" config-import -y
-        - timeout 1m drush -r "${DOCROOT}" cron -y
+        - timeout 1m --preserve-status drush -r "${DOCROOT}" cron -y
         - drush -r "${DOCROOT}" cache-rebuild
 
         # Site alias specific post-build steps
