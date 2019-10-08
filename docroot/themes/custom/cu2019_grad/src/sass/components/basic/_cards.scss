@@ -8,12 +8,13 @@
     They can include images, icons, buttons, and text.
 
 \*  --------------------------------------------------------------------------  */
-.card {
+.card, a.card {
     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    text-decoration: none;
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
     > div {
@@ -40,6 +41,10 @@
     @import 'cards/_img-above';
     @import 'cards/_img-behind';
     @import 'cards/_img-side';
+    @import 'cards/_story';
+    @import 'cards/_fwp';
+    @import 'cards/_fwb';
+    @import 'cards/_mfsfa';
     // @import 'cards/_img-overlap';
     /*---------------------*\
       IMPORT STYLES FOR CARD ICON OPTIONS
@@ -47,8 +52,8 @@
       Comment out any alterations that will not be used on your site.
       This will reduce the file size by removing unused definitions.
     \*---------------------*/
-    @import 'cards/_icon-top';
-    @import 'cards/_icon-left';
+    // @import 'cards/_icon-top';
+    // @import 'cards/_icon-left';
     /*---------------------*\
       IMPORT STYLES FOR CARD CONTENT STYLING
 
@@ -57,9 +62,38 @@
     \*---------------------*/
     @import 'cards/_copy';
     @import 'cards/_article';
-    @import 'cards/_shadow';
-    @import 'cards/_profile';
-    @import 'cards/_story';
-    @import 'cards/_fwp';
-    @import 'cards/_fwb';
+    // @import 'cards/_shadow';
+    // @import 'cards/_profile';
+}
+
+a.card.img-side {
+    @include hover {
+        .element .img_vid .img img {
+            transition: transform .3s ease-out;
+            transform: scale(1.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(0deg, #ffde8c 0%, #ffdf91 100%);
+            color: $primary;
+            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+            &:before {
+                background: linear-gradient(-45deg, #ffd072 50%, rgba(#ffd072,0) 50%);
+            }
+
+            .arrow:last-child {
+              transform: translate(3px, -46%);
+            }
+        }
+
+        .info {
+            h2 {
+                color: $primaryLt;
+                transition: color .2s ease-out;
+            }
+        }
+    }
 }

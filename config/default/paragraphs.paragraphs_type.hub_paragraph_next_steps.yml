@@ -1,9 +1,0 @@
-uuid: 16690a23-f0e7-488c-8f7d-21c9c25ac5c3
-langcode: en
-status: true
-dependencies: {  }
-id: hub_paragraph_next_steps
-label: 'Next Steps'
-icon_uuid: null
-description: 'The next steps content set allows the user to associate multiple Next Step Tiles to Programs or Degrees.'
-behavior_plugins: {  }

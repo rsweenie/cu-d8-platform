@@ -1,0 +1,29 @@
+uuid: 6031d517-27b2-40f1-a868-27197e05d0a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.hub_event
+  module:
+    - private_content
+    - user
+id: node.hub_event.teaser
+targetEntityType: node
+bundle: hub_event
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  search_api_excerpt: true

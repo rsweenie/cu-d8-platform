@@ -1,0 +1,21 @@
+uuid: 798d1540-ea37-4ab3-ba8c-9331a83ed876
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfsi_source_type
+    - paragraphs.paragraphs_type.manual_featured_set_item
+  module:
+    - options
+id: paragraph.manual_featured_set_item.field_mfsi_source_type
+field_name: field_mfsi_source_type
+entity_type: paragraph
+bundle: manual_featured_set_item
+label: Source/Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

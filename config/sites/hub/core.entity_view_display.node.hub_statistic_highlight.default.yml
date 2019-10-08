@@ -1,0 +1,38 @@
+uuid: 46428f24-74bf-4a86-ad43-a31cb15dc205
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_statistic_highlight.field_hub_stat_highlight_image
+    - node.type.hub_statistic_highlight
+  module:
+    - private_content
+    - user
+id: node.hub_statistic_highlight.default
+targetEntityType: node
+bundle: hub_statistic_highlight
+mode: default
+content:
+  field_hub_stat_highlight_image:
+    type: entity_reference_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  search_api_excerpt: true

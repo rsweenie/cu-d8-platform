@@ -1,0 +1,29 @@
+uuid: ed5c2941-0506-42a0-93a1-979b0ea4e145
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_blog_body
+    - node.type.hub_blog
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    basic_text: '0'
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: node.hub_blog.field_hub_blog_body
+field_name: field_hub_blog_body
+entity_type: node
+bundle: hub_blog
+label: Body
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

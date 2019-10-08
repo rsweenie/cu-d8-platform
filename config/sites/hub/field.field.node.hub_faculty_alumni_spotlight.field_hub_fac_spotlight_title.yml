@@ -9,7 +9,7 @@ id: node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_title
 field_name: field_hub_fac_spotlight_title
 entity_type: node
 bundle: hub_faculty_alumni_spotlight
-label: Title
+label: Title(s)
 description: 'Faculty or Alumni credentials: MBA, PhD, Master of the Universe.'
 required: false
 translatable: false

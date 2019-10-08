@@ -3,15 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_browser
     - field.field.node.hub_pd_course.body
+    - field.field.node.hub_pd_course.field_hub_path_alias
     - field.field.node.hub_pd_course.field_hub_pd_course_dates
     - field.field.node.hub_pd_course.field_hub_pd_course_hero_image
     - field.field.node.hub_pd_course.field_hub_pd_course_next_steps
     - field.field.node.hub_pd_course.field_hub_pd_course_program
-    - field.field.node.hub_pd_course.field_hub_pd_course_site
+    - field.field.node.hub_pd_course.field_hub_pd_related_degrees
+    - field.field.node.hub_pd_course.field_hub_pd_right_side_copy
+    - field.field.node.hub_pd_course.field_hub_site
     - node.type.hub_pd_course
   module:
-    - media_library
+    - entity_browser
     - paragraphs
     - path
     - private_content
@@ -24,7 +28,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 4
     settings:
       rows: 9
       summary_rows: 3
@@ -33,29 +37,21 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hub_pd_course_dates:
-    weight: 124
+  field_hub_path_alias:
+    weight: 9
     settings:
-      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: string_textfield
     region: content
-  field_hub_pd_course_hero_image:
-    type: media_library_widget
-    weight: 126
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-    region: content
-  field_hub_pd_course_next_steps:
-    type: entity_reference_paragraphs
-    weight: 125
+  field_hub_pd_course_dates:
+    type: paragraphs
+    weight: 8
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -63,10 +59,39 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
+    region: content
+  field_hub_pd_course_hero_image:
+    type: entity_browser_entity_reference
+    weight: 3
+    settings:
+      entity_browser: media_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hub_pd_course_next_steps:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_hub_pd_course_program:
-    weight: 122
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -74,23 +99,47 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_hub_pd_course_site:
-    weight: 123
+  field_hub_pd_related_degrees:
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_hub_pd_right_side_copy:
+    type: paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  field_hub_site:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   path:
     type: path
-    weight: 30
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   private:
-    weight: 1
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -99,12 +148,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 16
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -112,42 +161,34 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 15
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 2
     region: content
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 11
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
-hidden: {  }
+hidden:
+  uid: true

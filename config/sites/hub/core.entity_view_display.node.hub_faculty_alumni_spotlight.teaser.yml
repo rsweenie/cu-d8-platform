@@ -26,4 +26,10 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
+  field_hub_fac_spotlight_cta: true
+  field_hub_fac_spotlight_desc: true
+  field_hub_fac_spotlight_image: true
+  field_hub_fac_spotlight_name: true
+  field_hub_fac_spotlight_title: true
+  field_hub_fac_spotlight_type: true
   search_api_excerpt: true

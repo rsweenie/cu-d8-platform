@@ -1,0 +1,92 @@
+@include innerBorder;
+
+a {
+  display: block;
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba($white,.7);
+  }
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+@media #{$mediaMdMax} {
+  margin-left: -25px;
+  margin-right: -25px;
+}
+
+@media #{$mediaMdOnly} {
+  margin: 0 -2.5rem 1.5rem;
+}
+
+
+
+.quote-inner {
+  position: relative;
+  @include flex($ff: column nowrap);
+  padding: 70px 32px 36px;
+
+  @media #{$mediaMd} {
+    padding: 100px 42px 46px;
+  }
+
+  /*&:before {
+    width: calc(100% - #{$gutter * 2}rem);
+    height: 1px;
+    position: absolute;
+    top: 42px;
+    left: #{$gutter}rem;
+    content: "";
+    background: $white;
+    opacity: .5;
+
+    @media #{$mediaMd} {
+      width: calc(100% - 162px);
+      top: 79px;
+      left: 81px;
+    }
+  }*/
+
+  &:before {
+    width: 39px;
+    height: 39px;
+    font-size: 70px;
+
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    content: "“";
+    color: white;
+    background: transparent;
+    line-height: 1;
+    font-family: $headingFF;
+    border: 2px solid rgba($white,.3);
+    border-width: 0 2px 2px 0;
+    text-align: center;
+
+    @media #{$mediaMd} {
+      width: 59px;
+      height: 59px;
+      font-size: 105px;
+      line-height: 1;
+    }
+  }
+
+  .field--name-field-quote-box-photo {
+    display: none;
+  }
+
+  img {
+    .card & {
+      width: auto;
+      height: auto;
+      max-width: 160px;
+      max-height: 160px;
+    }
+  }
+}

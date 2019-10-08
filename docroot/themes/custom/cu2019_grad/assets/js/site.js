@@ -4,7 +4,7 @@
   Drupal.behaviors.fsbg = {
     attach: function (context, settings) {
       // Hide image and add background image
-      $('.card.img-behind, header.interior_page > .field, .hp_hero_bg',context).each(function() {
+      $('header.interior_page > .field, .hp_hero_bg',context).each(function() {
         var bg = $('img',this).attr('src');
         $(this).css({'background-image':'url('+bg+')'});
         $(this).addClass('js-background');
@@ -32,6 +32,13 @@
              });
          }
       });
+      // Fix Primary buttons in copy blocks
+      $('.copy-block',context).each(function() {
+        $('a.btn-primary',this).each(function() {
+          var txt = $(this).text();
+          $(this).html('<span>'+txt+'</span>');
+        });
+      });
 
       // $('figure.img_vid.video', context).each(function() {
       //   $(this).on('click', function() {
@@ -43,3 +50,5 @@
     }
 };
 })(jQuery, Drupal);
+
+//# sourceMappingURL=site.js.map

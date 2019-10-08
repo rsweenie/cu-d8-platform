@@ -1,0 +1,90 @@
+uuid: da85cb4a-0697-41dc-9e74-9d7c166cfed4
+langcode: en
+status: true
+dependencies: {  }
+id: node__quote_box
+type_id: node--quote_box
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: string_long
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  revision_log:
+    type: hub_unknown
+    multiple: false
+  status:
+    type: string_long
+    multiple: false
+  title:
+    type: string_long
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  promote:
+    type: string_long
+    multiple: false
+  sticky:
+    type: string_long
+    multiple: false
+  default_langcode:
+    type: string_long
+    multiple: false
+  revision_translation_affected:
+    type: string_long
+    multiple: false
+  scheduled_transition_date:
+    type: hub_unknown
+    multiple: true
+  scheduled_transition_state:
+    type: hub_unknown
+    multiple: true
+  metatag:
+    type: hub_unknown
+    multiple: false
+  metatag_normalized:
+    type: metatags
+    multiple: false
+  path:
+    type: hub_unknown
+    multiple: false
+  private:
+    type: string_long
+    multiple: false
+  publish_on:
+    type: hub_unknown
+    multiple: false
+  unpublish_on:
+    type: hub_unknown
+    multiple: false
+  field_name_person:
+    type: name
+    multiple: false
+  field_quote_box_affiliation:
+    type: string_long
+    multiple: false
+  field_quote_box_quotes:
+    type: string_long
+    multiple: false
+  field_quote_box_quote_text:
+    type: string_long
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type
+    multiple: false
+  field_quote_p_link:
+    type: hub_resource
+    hub_type: paragraph
+    multiple: false
