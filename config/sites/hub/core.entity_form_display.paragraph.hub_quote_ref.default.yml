@@ -1,19 +1,19 @@
-uuid: feef9c55-b56f-4fc4-bcae-7ea232b02fa8
+uuid: a7b00d36-ac58-4f19-b8f2-4e35c91ef218
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.quote_ref.field_quote_ref_item
-    - paragraphs.paragraphs_type.quote_ref
+    - field.field.paragraph.hub_quote_ref.field_hub_quote_ref_item
+    - paragraphs.paragraphs_type.hub_quote_ref
   module:
     - entity_browser_entity_form
     - inline_entity_form
-id: paragraph.quote_ref.default
+id: paragraph.hub_quote_ref.default
 targetEntityType: paragraph
-bundle: quote_ref
+bundle: hub_quote_ref
 mode: default
 content:
-  field_quote_ref_item:
+  field_hub_quote_ref_item:
     weight: 0
     settings:
       form_mode: default

@@ -1,9 +1,9 @@
-uuid: 46926396-9183-4790-99a9-59206d765803
+uuid: 9a019800-d9f6-4d32-bdd5-63df2de1afbc
 langcode: en
 status: true
 dependencies: {  }
-id: quote_ref
-label: Quote
+id: hub_quote_ref
+label: 'Quote (reusable)'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }
