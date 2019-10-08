@@ -17,6 +17,7 @@ case $CU_SITE_ALIAS in
     drush -r "${DOCROOT}" sql:sync "@${CU_SITE_ALIAS}.01live" @self -y
     drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y
   ;;
+  
   grad-site)
     echo "Importing local DB file for Grad Site"
     DB_FILE="${TUGBOAT_ROOT}/.tugboat/db/${TUGBOAT_GITHUB_HEAD}.sql.gz"
