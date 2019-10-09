@@ -64,18 +64,22 @@
 
 /*--- FONT SIZE ---*/
 
+@import url("//hello.myfonts.net/count/3a1cd2");
+
 @import url("https://use.typekit.net/ntf3lqp.css");
 
 @font-face {
   font-family: "Conduit";
-  src: url("../fonts/Conduit-Regular/Conduit-Regular.woff2") format("woff2"), url("../fonts/Conduit-Regular/Conduit-Regular.woff") format("woff"), url("../fonts/Conduit-Regular/Conduit-Regular.otf") format("opentype");
+  src: url("../fonts/webfonts/3A1CD2_1_0.eot");
+  src: url("../fonts/webfonts/3A1CD2_1_0.eot?#iefix") format("embedded-opentype"), url("../fonts/webfonts/3A1CD2_1_0.woff2") format("woff2"), url("../fonts/webfonts/3A1CD2_1_0.woff") format("woff"), url("../fonts/webfonts/3A1CD2_1_0.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: "Conduit";
-  src: url("../fonts/Conduit-Bold/Conduit-Bold.woff2") format("woff2"), url("../fonts/Conduit-Bold/Conduit-Bold.woff") format("woff"), url("../fonts/Conduit-Bold/Conduit-Bold.otf") format("opentype");
+  src: url("../fonts/webfonts/3A1CD2_0_0.eot");
+  src: url("../fonts/webfonts/3A1CD2_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/webfonts/3A1CD2_0_0.woff2") format("woff2"), url("../fonts/webfonts/3A1CD2_0_0.woff") format("woff"), url("../fonts/webfonts/3A1CD2_0_0.ttf") format("truetype");
   font-style: normal;
   font-weight: bold;
 }
@@ -100,217 +104,217 @@
   text-transform: none;
 }
 
-/* line 24, src/sass/base/fonts/_icons.scss */
+/* line 16, src/sass/base/fonts/_icons.scss */
 
 .icon-apply:before {
   content: "\E001";
 }
 
-/* line 28, src/sass/base/fonts/_icons.scss */
+/* line 20, src/sass/base/fonts/_icons.scss */
 
 .icon-ask-bubble:before {
   content: "\E002";
 }
 
-/* line 32, src/sass/base/fonts/_icons.scss */
+/* line 24, src/sass/base/fonts/_icons.scss */
 
 .icon-blog:before {
   content: "\E003";
 }
 
-/* line 36, src/sass/base/fonts/_icons.scss */
+/* line 28, src/sass/base/fonts/_icons.scss */
 
 .icon-check:before {
   content: "\E004";
 }
 
-/* line 40, src/sass/base/fonts/_icons.scss */
+/* line 32, src/sass/base/fonts/_icons.scss */
 
 .icon-checkbox-checked:before {
   content: "\E005";
 }
 
-/* line 44, src/sass/base/fonts/_icons.scss */
+/* line 36, src/sass/base/fonts/_icons.scss */
 
 .icon-checkbox-unchecked:before {
   content: "\E006";
 }
 
-/* line 48, src/sass/base/fonts/_icons.scss */
+/* line 40, src/sass/base/fonts/_icons.scss */
 
 .icon-chevron-right-double:before {
   content: "\E007";
 }
 
-/* line 52, src/sass/base/fonts/_icons.scss */
+/* line 44, src/sass/base/fonts/_icons.scss */
 
 .icon-chevron-right:before {
   content: "\E008";
 }
 
-/* line 56, src/sass/base/fonts/_icons.scss */
+/* line 48, src/sass/base/fonts/_icons.scss */
 
 .icon-chevron-up:before {
   content: "\E009";
 }
 
-/* line 60, src/sass/base/fonts/_icons.scss */
+/* line 52, src/sass/base/fonts/_icons.scss */
 
 .icon-close-window-filled:before {
   content: "\E00A";
 }
 
-/* line 64, src/sass/base/fonts/_icons.scss */
+/* line 56, src/sass/base/fonts/_icons.scss */
 
 .icon-close-window:before {
   content: "\E00B";
 }
 
-/* line 68, src/sass/base/fonts/_icons.scss */
+/* line 60, src/sass/base/fonts/_icons.scss */
 
 .icon-contact:before {
   content: "\E00C";
 }
 
-/* line 72, src/sass/base/fonts/_icons.scss */
+/* line 64, src/sass/base/fonts/_icons.scss */
 
 .icon-envelope:before {
   content: "\E00D";
 }
 
-/* line 76, src/sass/base/fonts/_icons.scss */
+/* line 68, src/sass/base/fonts/_icons.scss */
 
 .icon-event-calendar:before {
   content: "\E00E";
 }
 
-/* line 80, src/sass/base/fonts/_icons.scss */
+/* line 72, src/sass/base/fonts/_icons.scss */
 
 .icon-expand-arrow:before {
   content: "\E00F";
 }
 
-/* line 84, src/sass/base/fonts/_icons.scss */
+/* line 76, src/sass/base/fonts/_icons.scss */
 
 .icon-filter:before {
   content: "\E010";
 }
 
-/* line 88, src/sass/base/fonts/_icons.scss */
+/* line 80, src/sass/base/fonts/_icons.scss */
 
 .icon-forward:before {
   content: "\E011";
 }
 
-/* line 92, src/sass/base/fonts/_icons.scss */
+/* line 84, src/sass/base/fonts/_icons.scss */
 
 .icon-google-translate:before {
   content: "\E012";
 }
 
-/* line 96, src/sass/base/fonts/_icons.scss */
+/* line 88, src/sass/base/fonts/_icons.scss */
 
 .icon-help:before {
   content: "\E013";
 }
 
-/* line 100, src/sass/base/fonts/_icons.scss */
+/* line 92, src/sass/base/fonts/_icons.scss */
 
 .icon-hybrid:before {
   content: "\E014";
 }
 
-/* line 104, src/sass/base/fonts/_icons.scss */
+/* line 96, src/sass/base/fonts/_icons.scss */
 
 .icon-location-thin:before {
   content: "\E015";
 }
 
-/* line 108, src/sass/base/fonts/_icons.scss */
+/* line 100, src/sass/base/fonts/_icons.scss */
 
 .icon-location:before {
   content: "\E016";
 }
 
-/* line 112, src/sass/base/fonts/_icons.scss */
+/* line 104, src/sass/base/fonts/_icons.scss */
 
 .icon-news:before {
   content: "\E017";
 }
 
-/* line 116, src/sass/base/fonts/_icons.scss */
+/* line 108, src/sass/base/fonts/_icons.scss */
 
 .icon-off-campus:before {
   content: "\E018";
 }
 
-/* line 120, src/sass/base/fonts/_icons.scss */
+/* line 112, src/sass/base/fonts/_icons.scss */
 
 .icon-on-campus:before {
   content: "\E019";
 }
 
-/* line 124, src/sass/base/fonts/_icons.scss */
+/* line 116, src/sass/base/fonts/_icons.scss */
 
 .icon-online:before {
   content: "\E01A";
 }
 
-/* line 128, src/sass/base/fonts/_icons.scss */
+/* line 120, src/sass/base/fonts/_icons.scss */
 
 .icon-phone:before {
   content: "\E01B";
 }
 
-/* line 132, src/sass/base/fonts/_icons.scss */
+/* line 124, src/sass/base/fonts/_icons.scss */
 
 .icon-right:before {
   content: "\E01C";
 }
 
-/* line 136, src/sass/base/fonts/_icons.scss */
+/* line 128, src/sass/base/fonts/_icons.scss */
 
 .icon-search-more:before {
   content: "\E01D";
 }
 
-/* line 140, src/sass/base/fonts/_icons.scss */
+/* line 132, src/sass/base/fonts/_icons.scss */
 
 .icon-search:before {
   content: "\E01E";
 }
 
-/* line 144, src/sass/base/fonts/_icons.scss */
+/* line 136, src/sass/base/fonts/_icons.scss */
 
 .icon-social-facebook:before {
   content: "\E01F";
 }
 
-/* line 148, src/sass/base/fonts/_icons.scss */
+/* line 140, src/sass/base/fonts/_icons.scss */
 
 .icon-social-instagram:before {
   content: "\E020";
 }
 
-/* line 152, src/sass/base/fonts/_icons.scss */
+/* line 144, src/sass/base/fonts/_icons.scss */
 
 .icon-social-linkedin:before {
   content: "\E021";
 }
 
-/* line 156, src/sass/base/fonts/_icons.scss */
+/* line 148, src/sass/base/fonts/_icons.scss */
 
 .icon-social-twitter:before {
   content: "\E022";
 }
 
-/* line 160, src/sass/base/fonts/_icons.scss */
+/* line 152, src/sass/base/fonts/_icons.scss */
 
 .icon-social-youtube:before {
   content: "\E023";
 }
 
-/* line 164, src/sass/base/fonts/_icons.scss */
+/* line 156, src/sass/base/fonts/_icons.scss */
 
 .icon-tag:before {
   content: "\E024";
@@ -736,7 +740,7 @@ a:focus {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 201, src/sass/components/copy/_headings.scss */
+/* line 202, src/sass/components/copy/_headings.scss */
 
 h1,
 h4,
@@ -745,14 +749,14 @@ h6 {
   font-family: proxima-nova, sans-serif;
 }
 
-/* line 205, src/sass/components/copy/_headings.scss */
+/* line 206, src/sass/components/copy/_headings.scss */
 
 h2,
 h3 {
   font-family: "Conduit";
 }
 
-/* line 212, src/sass/components/copy/_headings.scss */
+/* line 213, src/sass/components/copy/_headings.scss */
 
 h1,
 .h1 {
@@ -764,7 +768,7 @@ h1,
   text-transform: uppercase;
 }
 
-/* line 216, src/sass/components/copy/_headings.scss */
+/* line 217, src/sass/components/copy/_headings.scss */
 
 h2,
 .h2 {
@@ -773,7 +777,7 @@ h2,
   font-size: 1.75em;
 }
 
-/* line 220, src/sass/components/copy/_headings.scss */
+/* line 221, src/sass/components/copy/_headings.scss */
 
 h3,
 .h3 {
@@ -781,18 +785,19 @@ h3,
   padding: 0;
   font-size: 3rem;
   color: #002E6D;
+  line-height: 1.1em;
   text-transform: uppercase;
   letter-spacing: .05em;
 }
 
-/* line 111, src/sass/components/copy/_headings.scss */
+/* line 112, src/sass/components/copy/_headings.scss */
 
 aside h3,
 aside .h3 {
   font-size: 1.125em;
 }
 
-/* line 114, src/sass/components/copy/_headings.scss */
+/* line 115, src/sass/components/copy/_headings.scss */
 
 aside h3 ~ h3,
 aside h3 ~ .h3,
@@ -803,7 +808,7 @@ aside .h3 ~ .h3 {
   border-top: 0.1rem solid #6CACE4;
 }
 
-/* line 224, src/sass/components/copy/_headings.scss */
+/* line 225, src/sass/components/copy/_headings.scss */
 
 h4,
 .h4 {
@@ -816,14 +821,14 @@ h4,
   font-weight: 400;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
+/* line 156, src/sass/components/copy/_headings.scss */
 
 aside h4,
 aside .h4 {
   font-size: 1em;
 }
 
-/* line 158, src/sass/components/copy/_headings.scss */
+/* line 159, src/sass/components/copy/_headings.scss */
 
 aside h4 ~ h4,
 aside h4 ~ .h4,
@@ -1836,7 +1841,7 @@ Delete everything below including comment
 .section {
   position: relative;
   z-index: 110;
-  padding: 2.5rem 2.5rem;
+  padding: 2.5rem 0;
   /*  --------------------------------------------------------------------------  *\
 
     SECTION LAYOUTS > INTERIOR
@@ -1859,7 +1864,7 @@ Delete everything below including comment
 \*  --------------------------------------------------------------------------  */
 }
 
-/* line 32, src/sass/structure/_section.scss */
+/* line 33, src/sass/structure/_section.scss */
 
 .section > div {
   max-width: 1350px;
@@ -1867,37 +1872,37 @@ Delete everything below including comment
   width: 100%;
 }
 
-/* line 72, src/sass/structure/_section.scss */
+/* line 73, src/sass/structure/_section.scss */
 
 .section.npt {
   padding-top: 0;
 }
 
-/* line 76, src/sass/structure/_section.scss */
+/* line 77, src/sass/structure/_section.scss */
 
 .section.np {
   padding: 0;
 }
 
-/* line 80, src/sass/structure/_section.scss */
+/* line 81, src/sass/structure/_section.scss */
 
 .section.static {
   position: static;
 }
 
-/* line 85, src/sass/structure/_section.scss */
+/* line 86, src/sass/structure/_section.scss */
 
 .section.copy-block > div > div {
   margin: auto;
 }
 
-/* line 93, src/sass/structure/_section.scss */
+/* line 94, src/sass/structure/_section.scss */
 
 .section.layout--program-detail-2col {
   padding-bottom: 0;
 }
 
-/* line 97, src/sass/structure/_section.scss */
+/* line 98, src/sass/structure/_section.scss */
 
 .section.layout--generic-content {
   padding: 0;
@@ -2088,13 +2093,13 @@ Delete everything below including comment
   margin-bottom: 0.41667em;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
+/* line 156, src/sass/components/copy/_headings.scss */
 
 aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department {
   font-size: 1em;
 }
 
-/* line 158, src/sass/components/copy/_headings.scss */
+/* line 159, src/sass/components/copy/_headings.scss */
 
 aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department ~ h4,
 aside .section .layout__region--facmiddle .field__item.field--name-hub-field-hub-faculty-department ~ .h4 {
@@ -2125,7 +2130,7 @@ form .form_action .section .layout__region--facmiddle button {
 
 /* line 1, src/sass/structure/section-backgrounds/_feat-tiles.scss */
 
-.section.layout--program-detail-feat-tile {
+.section.feat-tiles-section {
   background: -webkit-gradient(linear, left bottom, left top, from(#d6d8da), color-stop(17%, #EEEFF0), color-stop(83%, #EEEFF0), to(#d6d8da));
   background: linear-gradient(0deg, #d6d8da 0%, #EEEFF0 17%, #EEEFF0 83%, #d6d8da 100%);
   padding: 5rem 0;
@@ -2135,7 +2140,7 @@ form .form_action .section .layout__region--facmiddle button {
 
 /* CSS Document */
 
-/* line 130, src/sass/structure/_section.scss */
+/* line 131, src/sass/structure/_section.scss */
 
 .layout--onecol {
   background-image: url(../../img/feature_slash_bg.png);
@@ -2281,7 +2286,7 @@ section[class*="sbg-"]:after {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 11, src/sass/components/basic/_buttons.scss */
+/* line 75, src/sass/components/basic/_buttons.scss */
 
 [class*="btn-"] {
   display: block;
@@ -2369,7 +2374,7 @@ section[class*="sbg-"]:after {
   transform: translate(1rem, 0);
 }
 
-/* line 81, src/sass/components/basic/_buttons.scss */
+/* line 84, src/sass/components/basic/_buttons.scss */
 
 .skip-section {
   position: fixed;
@@ -2386,7 +2391,7 @@ section[class*="sbg-"]:after {
   text-decoration: none;
 }
 
-/* line 92, src/sass/components/basic/_buttons.scss */
+/* line 95, src/sass/components/basic/_buttons.scss */
 
 .skip-section span {
   display: block;
@@ -2461,7 +2466,7 @@ section[class*="sbg-"]:after {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
+/* line 85, src/sass/components/basic/buttons/colors/_secondary.scss */
 
 .btn-secondary,
 form .form_action button {
@@ -3851,6 +3856,25 @@ a.card.mfsfa .body {
   padding: 2.5rem 0;
 }
 
+/* line 191, src/sass/components/basic/cards/_mfsfa.scss */
+
+.card.mfsfa .hub-resource-field--type-link a:after,
+a.card.mfsfa .hub-resource-field--type-link a:after {
+  font-family: "cu_icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  content: "\E01C";
+  font-size: 1.3em;
+  -webkit-transform: translate(0.2em, 0.2em);
+          transform: translate(0.2em, 0.2em);
+  display: inline-block;
+}
+
 /* line 25, src/sass/components/basic/cards/_copy.scss */
 
 .card h2,
@@ -4518,18 +4542,19 @@ blockquote {
 /* line 36, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote,
-.cke_editable .embedded-entity blockquote {
+.cke_editable .embedded-entity blockquote,
+blockquote.quote-box {
   color: #002E6D;
   position: relative;
   background: #5D6468;
-  max-width: 425px;
   /*&:before { height: 100%; width: 12px; position: absolute; left: -26px; top: 0; content: ""; background: $primaryXLt; @media  screen and (min-width: 1090px) { width: 19px; left: -54px; transition: all 10s; } }*/
 }
 
 /* line 463, src/sass/base/_mixins.scss */
 
 .copy-block .embedded-entity blockquote:after,
-.cke_editable .embedded-entity blockquote:after {
+.cke_editable .embedded-entity blockquote:after,
+blockquote.quote-box:after {
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
   position: absolute;
@@ -4543,7 +4568,8 @@ blockquote {
 /* line 3, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote a,
-.cke_editable .embedded-entity blockquote a {
+.cke_editable .embedded-entity blockquote a,
+blockquote.quote-box a {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -4552,21 +4578,24 @@ blockquote {
 /* line 8, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote a:hover,
-.cke_editable .embedded-entity blockquote a:hover {
+.cke_editable .embedded-entity blockquote a:hover,
+blockquote.quote-box a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
 /* line 13, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote p,
-.cke_editable .embedded-entity blockquote p {
+.cke_editable .embedded-entity blockquote p,
+blockquote.quote-box p {
   margin-bottom: 1em;
 }
 
 /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner,
-.cke_editable .embedded-entity blockquote .quote-inner {
+.cke_editable .embedded-entity blockquote .quote-inner,
+blockquote.quote-box .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4582,7 +4611,8 @@ blockquote {
 /* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner:before,
-.cke_editable .embedded-entity blockquote .quote-inner:before {
+.cke_editable .embedded-entity blockquote .quote-inner:before,
+blockquote.quote-box .quote-inner:before {
   width: 3.9rem;
   height: 3.9rem;
   font-size: 7rem;
@@ -4602,47 +4632,84 @@ blockquote {
 /* line 80, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
-.cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo {
+.cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
+blockquote.quote-box .quote-inner .field--name-field-quote-box-photo {
   display: none;
 }
 
 /* line 85, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .card .copy-block .embedded-entity blockquote .quote-inner img,
-.card .cke_editable .embedded-entity blockquote .quote-inner img {
+.card .cke_editable .embedded-entity blockquote .quote-inner img,
+.card blockquote.quote-box .quote-inner img {
   width: auto;
   height: auto;
   max-width: 160px;
   max-height: 160px;
 }
 
-/* line 105, src/sass/components/basic/_quotes.scss */
+/* line 44, src/sass/components/basic/_quotes.scss */
 
-blockquote .quote {
-  color: white;
-  line-height: 1.3;
-}
-
-/* line 183, src/sass/components/basic/_quotes.scss */
-
-blockquote .quote > .field__item {
+.copy-block .embedded-entity blockquote .quote,
+.cke_editable .embedded-entity blockquote .quote,
+blockquote.quote-box .quote {
   font-size: 2.2rem;
 }
 
-/* line 189, src/sass/components/basic/_quotes.scss */
+/* line 48, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr,
-.cke_editable .embedded-entity blockquote .attr {
+.cke_editable .embedded-entity blockquote .attr,
+blockquote.quote-box .attr {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
 }
 
-/* line 194, src/sass/components/basic/_quotes.scss */
+/* line 53, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
-.cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation {
+.cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
+blockquote.quote-box .attr .field--name-field-quote-box-affiliation {
   font-weight: 400;
+}
+
+/* line 79, src/sass/components/basic/_quotes.scss */
+
+.copy-block .embedded-entity blockquote,
+.cke_editable .embedded-entity blockquote {
+  max-width: 425px;
+}
+
+/* line 84, src/sass/components/basic/_quotes.scss */
+
+blockquote.quote-box {
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 89, src/sass/components/basic/_quotes.scss */
+
+blockquote.quote-box .quote-inner {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 148, src/sass/components/basic/_quotes.scss */
+
+blockquote .quote {
+  color: white;
+  line-height: 1.3;
 }
 
 /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
@@ -5096,25 +5163,143 @@ blockquote .tooltip-trigger {
 
 /* line 1, src/sass/components/basic/_feat-tiles.scss */
 
+.feat-tiles > div > .field__item,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div,
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource {
+  height: 100%;
+}
+
+/* line 5, src/sass/components/basic/_feat-tiles.scss */
+
 .feat-tiles {
   margin: 0 2.5rem;
+  /*  img { width: 100%; height: auto; display: block; }*/
 }
 
-/* line 9, src/sass/components/basic/_feat-tiles.scss */
+/* line 14, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles > div {
-  margin: 1.6rem 0;
-}
-
-/* line 23, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles img {
-  width: 100%;
-  height: auto;
-  display: block;
+  max-width: 300px;
+  margin: 1.6rem auto;
 }
 
 /* line 30, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item {
+  background-color: #0054A6;
+  padding: 100% 0 0;
+  width: 100%;
+  height: 0;
+  position: relative;
+}
+
+/* line 38, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-featured-content-item {
+  position: absolute;
+  border: solid 0.2rem rgba(225, 225, 225, 0.3);
+  padding: 1.6rem;
+  width: calc(100% - 2.8rem);
+  height: calc(100% - 2.8rem);
+  top: 1.4rem;
+  left: 1.4rem;
+}
+
+/* line 47, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item > .hub-resource--type-paragraph-featured-content-item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: rgba(225, 225, 225, 0.3);
+  content: '';
+}
+
+/* line 58, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item h2 {
+  font-size: 4.8rem;
+  color: #6CACE4;
+  line-height: 1.02;
+  margin-bottom: 0;
+}
+
+/* line 68, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item h2 sup {
+  font-size: 2.7rem;
+}
+
+/* line 77, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1.06;
+}
+
+/* line 88, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div > .field__item p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* line 115, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div .hub-resource-field {
+  height: 100%;
+}
+
+/* line 119, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div .hub-resource-field__item {
+  height: 100%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 126, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div .hub-resource-field__item article.embedded-entity {
+  text-align: center;
+}
+
+/* line 129, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles > div .hub-resource-field__item article.embedded-entity img {
+  width: auto;
+  height: 100%;
+  max-height: 90px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* line 152, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles .hub-resource-field--name-field-fc-p-link {
+  display: none;
+}
+
+/* line 157, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io {
   position: relative;
@@ -5133,7 +5318,7 @@ blockquote .tooltip-trigger {
   pointer-events: none;
 }
 
-/* line 34, src/sass/components/basic/_feat-tiles.scss */
+/* line 161, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io:before {
   width: 1.1rem;
@@ -5146,7 +5331,7 @@ blockquote .tooltip-trigger {
   z-index: 10;
 }
 
-/* line 45, src/sass/components/basic/_feat-tiles.scss */
+/* line 172, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -11290,43 +11475,79 @@ nav.jn li + li {
   background: rgba(165, 210, 249, 0.2);
 }
 
-/* line 15, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 20, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail > .block {
+  margin: 1em 0;
+}
+
+/* line 23, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail > .block:first-child {
+  margin-top: 0;
+}
+
+/* line 29, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail > .block p:last-child,
+.program_rail > .block ul:last-child {
+  margin-bottom: 0;
+}
+
+/* line 34, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail > .block.block-field-blockhub-referencedegreehub-field-hub-degree-adm-rep {
+  margin-top: 2em;
+}
+
+/* line 39, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h3 {
-  color: #266db3;
-  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.43636em;
+}
+
+/* line 44, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail h3:after {
+  width: 5.5rem;
+  height: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: #6CACE4;
+}
+
+/* line 59, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail h4 {
+  margin-bottom: 0.08333em;
+}
+
+/* line 63, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
   text-transform: uppercase;
-  line-height: 1.2em;
-  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
-/* line 155, src/sass/components/copy/_headings.scss */
-
-aside .program_rail h3 {
-  font-size: 1em;
-}
-
-/* line 158, src/sass/components/copy/_headings.scss */
-
-aside .program_rail h3 ~ h4,
-aside .program_rail h3 ~ .h4 {
-  margin-top: 0.5rem;
-}
-
-/* line 55, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 103, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > div {
   position: relative;
   z-index: 10;
 }
 
-/* line 60, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 108, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail ul {
   margin-left: 0;
 }
 
-/* line 64, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 112, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail .field--name-hub-field-hub-degree-title {
   font-size: 1.2rem;
@@ -11335,20 +11556,26 @@ aside .program_rail h3 ~ .h4 {
   letter-spacing: 0.05em;
 }
 
-/* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 117, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.prog_left {
+  padding-bottom: 2.5rem;
+}
+
+/* line 132, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep {
-  padding: 6rem 0;
+  padding: 6rem 0 0;
   border-top: 1px solid rgba(33, 35, 34, 0.2);
 }
 
-/* line 73, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 136, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep h4 {
   margin-bottom: 0.125em;
 }
 
-/* line 82, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 145, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info {
   display: -webkit-box;
@@ -11361,14 +11588,14 @@ aside .program_rail h3 ~ .h4 {
   margin-top: 2.5rem;
 }
 
-/* line 87, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 150, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:first-child {
   width: 10.2rem;
   margin-right: 1.6rem;
 }
 
-/* line 97, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 160, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child {
   -webkit-box-flex: 1;
@@ -11376,13 +11603,13 @@ aside .program_rail h3 ~ .h4 {
           flex-grow: 1;
 }
 
-/* line 100, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 163, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child .hub-resource-field {
   margin-bottom: 0.31579em;
 }
 
-/* line 106, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 169, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info img {
   width: 100%;
@@ -11390,11 +11617,140 @@ aside .program_rail h3 ~ .h4 {
   display: block;
 }
 
-/* line 113, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 176, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .hub-resource-field--name-field-hub-adm-rep-name {
   text-transform: uppercase;
   font-weight: 600;
+}
+
+/* line 182, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  padding: 1.2rem 0;
+}
+
+/* line 190, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.field + .field .course-date {
+  border-top: 1px solid #d4d4d4;
+}
+
+/* line 196, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child {
+  width: 4.8rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48px;
+          flex: 0 0 48px;
+  color: #fff;
+  text-align: center;
+  font-family: "Conduit";
+  font-weight: bold;
+}
+
+/* line 213, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child time > div {
+  width: 100%;
+  height: 5.6rem;
+  background: #0054A6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+/* line 223, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child time span {
+  line-height: 1em;
+}
+
+/* line 225, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child time span:first-child {
+  font-size: 2.2rem;
+  margin-bottom: -0.13636em;
+}
+
+/* line 234, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:first-child time span:last-child {
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* line 247, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 1.6rem;
+  line-height: 1.3em;
+  padding-left: 1.4rem;
+  color: #555555;
+}
+
+/* line 254, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:last-child a {
+  color: #555555;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: .1em;
+  display: inline-block;
+}
+
+/* line 261, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:last-child a:after {
+  font-family: "cu_icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none;
+  content: "\E01C";
+  display: inline-block;
+  margin-left: 0.75em;
+  -webkit-transform: translate(0, 0.2em);
+          transform: translate(0, 0.2em);
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.course-date > div:last-child a:hover,
+.course-date > div:last-child a:focus {
+  color: #0054A6;
+}
+
+/* line 275, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.course-date > div:last-child a:hover:after,
+.course-date > div:last-child a:focus:after {
+  -webkit-transform: translate(0.25em, 0.2em);
+          transform: translate(0.25em, 0.2em);
 }
 
 /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
@@ -11599,6 +11955,12 @@ form .form-group {
   position: relative;
   z-index: 0;
   margin-bottom: 2rem;
+}
+
+/* line 30, src/sass/components/forms/_elements.scss */
+
+form .form_question[data-required="1"] > label:after {
+  content: "*";
 }
 
 /* line 9, src/sass/components/forms/_labels.scss */
@@ -12352,7 +12714,7 @@ form.search .search button {
     width: 100%;
   }
 
-  /* line 11, src/sass/components/basic/_buttons.scss */
+  /* line 75, src/sass/components/basic/_buttons.scss */
 
   [class*="btn-"] {
     display: inline-block;
@@ -12574,21 +12936,21 @@ form.search .search button {
          column-gap: 2.5rem;
   }
 
-  /* line 212, src/sass/components/copy/_headings.scss */
+  /* line 213, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
     font-size: 3.5rem;
   }
 
-  /* line 216, src/sass/components/copy/_headings.scss */
+  /* line 217, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 1.875em;
   }
 
-  /* line 224, src/sass/components/copy/_headings.scss */
+  /* line 225, src/sass/components/copy/_headings.scss */
 
   h4,
   .h4 {
@@ -12666,7 +13028,7 @@ form.search .search button {
     padding: 3.75rem 0;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 33, src/sass/structure/_section.scss */
 
   .section > div {
     padding: 0 2.5rem;
@@ -12848,7 +13210,7 @@ form.search .search button {
 
   /* line 1, src/sass/structure/section-backgrounds/_feat-tiles.scss */
 
-  .section.layout--program-detail-feat-tile {
+  .section.feat-tiles-section {
     padding: 7.5rem 0;
   }
 
@@ -13220,6 +13582,44 @@ form.search .search button {
     padding-left: 3.2rem;
   }
 
+  /* line 21, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content,
+  a.card.mfsfa .content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 1.5rem;
+  }
+
+  /* line 43, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a,
+  a.card.mfsfa .content a {
+    padding: 0;
+    display: none;
+  }
+
+  /* line 89, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .type,
+  a.card.mfsfa .type {
+    font-size: 1.8rem;
+    padding: 1.2rem;
+  }
+
+  /* line 115, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa h3:after,
+  a.card.mfsfa h3:after {
+    width: 5.9rem;
+    height: 0.5rem;
+    bottom: -1rem;
+  }
+
   /* line 107, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3,
@@ -13232,6 +13632,43 @@ form.search .search button {
   .card.mfsfa .subtitle,
   a.card.mfsfa .subtitle {
     font-size: 2rem;
+  }
+
+  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .body,
+  a.card.mfsfa .body {
+    color: #fff;
+    padding: 0;
+    display: none;
+  }
+
+  /* line 171, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover > a:after,
+  .card.mfsfa:hover > span:after,
+  a.card.mfsfa:hover > a:after,
+  a.card.mfsfa:hover > span:after {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
+    background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
+  }
+
+  /* line 176, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover .body,
+  .card.mfsfa:hover .content a,
+  a.card.mfsfa:hover .body,
+  a.card.mfsfa:hover .content a {
+    display: block;
+  }
+
+  /* line 181, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa:hover .content,
+  a.card.mfsfa:hover .content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   /* line 25, src/sass/components/basic/cards/_copy.scss */
@@ -13459,14 +13896,16 @@ form.search .search button {
   /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
   .copy-block .embedded-entity blockquote .quote-inner,
-  .cke_editable .embedded-entity blockquote .quote-inner {
+  .cke_editable .embedded-entity blockquote .quote-inner,
+  blockquote.quote-box .quote-inner {
     padding: 10rem 4.2rem 4.6rem;
   }
 
   /* line 54, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
   .copy-block .embedded-entity blockquote .quote-inner:before,
-  .cke_editable .embedded-entity blockquote .quote-inner:before {
+  .cke_editable .embedded-entity blockquote .quote-inner:before,
+  blockquote.quote-box .quote-inner:before {
     width: 5.9rem;
     height: 5.9rem;
     font-size: 10.5rem;
@@ -13641,7 +14080,7 @@ form.search .search button {
     border-left: 1px solid #ECF0F3;
   }
 
-  /* line 1, src/sass/components/basic/_feat-tiles.scss */
+  /* line 5, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles {
     display: -webkit-box;
@@ -13652,12 +14091,16 @@ form.search .search button {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     margin: -0.5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
-  /* line 9, src/sass/components/basic/_feat-tiles.scss */
+  /* line 14, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
     width: 50%;
+    max-width: 360px;
     padding: 0.5rem;
     margin: 0;
   }
@@ -13884,10 +14327,16 @@ form.search .search button {
     font-size: 3rem;
   }
 
-  /* line 15, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 44, src/sass/components/feeds-detail/programs/_programs.scss */
 
-  .program_rail h3 {
-    font-size: 2.4rem;
+  .program_rail h3:after {
+    height: 0.8rem;
+  }
+
+  /* line 63, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail h5 {
+    font-size: 1.5rem;
   }
 
   /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
@@ -13896,7 +14345,7 @@ form.search .search button {
     background-color: transparent;
   }
 
-  /* line 30, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 78, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail:after {
     width: 100vw;
@@ -13909,19 +14358,26 @@ form.search .search button {
     background: rgba(165, 210, 249, 0.2);
   }
 
-  /* line 64, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 112, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail .field--name-hub-field-hub-degree-title {
     font-size: 1.5rem;
   }
 
-  /* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 117, src/sass/components/feeds-detail/programs/_programs.scss */
 
-  .admissions-rep {
-    padding: 7rem 0;
+  .prog_left {
+    margin-right: 5rem;
+    padding-bottom: 10rem;
   }
 
-  /* line 87, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 132, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .admissions-rep {
+    padding: 7rem 0 4.5rem;
+  }
+
+  /* line 150, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep-info > div:first-child {
     width: 17rem;
@@ -14046,7 +14502,7 @@ form.search .search button {
          column-count: 4;
   }
 
-  /* line 212, src/sass/components/copy/_headings.scss */
+  /* line 213, src/sass/components/copy/_headings.scss */
 
   h1,
   .h1 {
@@ -14054,14 +14510,14 @@ form.search .search button {
     letter-spacing: .04em;
   }
 
-  /* line 216, src/sass/components/copy/_headings.scss */
+  /* line 217, src/sass/components/copy/_headings.scss */
 
   h2,
   .h2 {
     font-size: 2em;
   }
 
-  /* line 220, src/sass/components/copy/_headings.scss */
+  /* line 221, src/sass/components/copy/_headings.scss */
 
   h3,
   .h3 {
@@ -14140,13 +14596,13 @@ form.search .search button {
     padding: 5rem 0;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 33, src/sass/structure/_section.scss */
 
   .section > div {
     width: 95%;
   }
 
-  /* line 114, src/sass/structure/_section.scss */
+  /* line 115, src/sass/structure/_section.scss */
 
   .section.ptb-lgt {
     z-index: 0;
@@ -14191,13 +14647,13 @@ form.search .search button {
     top: -5rem;
   }
 
-  /* line 11, src/sass/components/basic/_buttons.scss */
+  /* line 75, src/sass/components/basic/_buttons.scss */
 
   [class*="btn-"] {
     font-size: 1.9rem;
   }
 
-  /* line 6, src/sass/components/basic/buttons/colors/_secondary.scss */
+  /* line 85, src/sass/components/basic/buttons/colors/_secondary.scss */
 
   .btn-secondary,
   form .form_action button {
@@ -14307,81 +14763,6 @@ form.search .search button {
     width: 83.33333%;
   }
 
-  /* line 21, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .content,
-  a.card.mfsfa .content {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    padding: 1.5rem;
-  }
-
-  /* line 43, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .content a,
-  a.card.mfsfa .content a {
-    padding: 0;
-    display: none;
-  }
-
-  /* line 89, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .type,
-  a.card.mfsfa .type {
-    font-size: 1.8rem;
-    padding: 1.2rem;
-  }
-
-  /* line 115, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa h3:after,
-  a.card.mfsfa h3:after {
-    width: 5.9rem;
-    height: 0.5rem;
-    bottom: -1rem;
-  }
-
-  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .body,
-  a.card.mfsfa .body {
-    color: #fff;
-    padding: 0;
-    display: none;
-  }
-
-  /* line 171, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa:hover > a:after,
-  .card.mfsfa:hover > span:after,
-  a.card.mfsfa:hover > a:after,
-  a.card.mfsfa:hover > span:after {
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
-    background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
-  }
-
-  /* line 176, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa:hover .body,
-  .card.mfsfa:hover .content a,
-  a.card.mfsfa:hover .body,
-  a.card.mfsfa:hover .content a {
-    display: block;
-  }
-
-  /* line 181, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa:hover .content,
-  a.card.mfsfa:hover .content {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
   /* line 25, src/sass/components/basic/cards/_copy.scss */
 
   .card h2,
@@ -14458,6 +14839,37 @@ form.search .search button {
     font-size: 2.4rem;
   }
 
+  /* line 58, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div > .field__item h2 {
+    font-size: 7.2rem;
+  }
+
+  /* line 68, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div > .field__item h2 sup {
+    font-size: 4rem;
+  }
+
+  /* line 77, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div > .field__item h3 {
+    font-size: 2.4rem;
+  }
+
+  /* line 88, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div > .field__item p {
+    font-size: 1.6rem;
+  }
+
+  /* line 129, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div .hub-resource-field__item article.embedded-entity img {
+    max-height: 135px;
+    margin-bottom: 2rem;
+  }
+
   /* line 6, src/sass/components/navigation/_landing.scss */
 
   nav.cp {
@@ -14492,6 +14904,45 @@ form.search .search button {
 
   .f-feat-faculty > article {
     width: calc(33.333% - 2.5rem);
+  }
+
+  /* line 182, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date {
+    padding: 2rem 0;
+  }
+
+  /* line 196, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:first-child {
+    width: 7rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70px;
+            flex: 0 0 70px;
+  }
+
+  /* line 213, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:first-child time > div {
+    height: 8.2rem;
+  }
+
+  /* line 225, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:first-child time span:first-child {
+    font-size: 3.2rem;
+  }
+
+  /* line 234, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:first-child time span:last-child {
+    font-size: 1.8rem;
+  }
+
+  /* line 247, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .course-date > div:last-child {
+    font-size: 2rem;
   }
 }
 
@@ -15012,13 +15463,13 @@ form.search .search button {
     width: 90%;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 33, src/sass/structure/_section.scss */
 
   .section > div {
     width: 90%;
   }
 
-  /* line 85, src/sass/structure/_section.scss */
+  /* line 86, src/sass/structure/_section.scss */
 
   .section.copy-block > div > div {
     width: 58.33%;
@@ -15496,7 +15947,7 @@ form.search .search button {
     transform: translate(0, -50%);
   }
 
-  /* line 81, src/sass/components/basic/_buttons.scss */
+  /* line 84, src/sass/components/basic/_buttons.scss */
 
   .skip-section {
     display: none;
@@ -15787,6 +16238,13 @@ form.search .search button {
     z-index: 900;
     top: 13.5rem;
     padding: 0;
+  }
+
+  /* line 125, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail,
+  .prog_left {
+    padding-top: 3.8rem;
   }
 
   /* line 6, src/sass/components/forms/search/_form.scss */
@@ -16135,9 +16593,10 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 9, src/sass/components/basic/_feat-tiles.scss */
+  /* line 14, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
+    max-width: 430px;
     width: 33.3%;
   }
 
@@ -16173,7 +16632,7 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 32, src/sass/structure/_section.scss */
+  /* line 33, src/sass/structure/_section.scss */
 
   .section > div {
     width: 85%;
@@ -16453,13 +16912,13 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
-  /* line 103, src/sass/structure/_section.scss */
+  /* line 104, src/sass/structure/_section.scss */
 
   .section.ptb {
     padding: 5rem 0;
   }
 
-  /* line 106, src/sass/structure/_section.scss */
+  /* line 107, src/sass/structure/_section.scss */
 
   .section.ptb-lgt {
     z-index: 0;
@@ -16769,28 +17228,6 @@ form.search .search button {
   }
 }
 
-@media screen and (max-width: 991.9px) {
-  /* line 64, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .content a span:last-child,
-  a.card.mfsfa .content a span:last-child {
-    color: #212322;
-    opacity: .3;
-  }
-
-  /* line 77, src/sass/components/basic/cards/_mfsfa.scss */
-
-  .card.mfsfa .title,
-  a.card.mfsfa .title {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
-}
-
 @media screen and (max-width: 767.9px) {
   /* line 72, src/sass/structure/_footer.scss */
 
@@ -16836,6 +17273,26 @@ form.search .search button {
     margin: 0 -2.5rem 2.5rem;
   }
 
+  /* line 64, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a span:last-child,
+  a.card.mfsfa .content a span:last-child {
+    color: #212322;
+    opacity: .3;
+  }
+
+  /* line 77, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .title,
+  a.card.mfsfa .title {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
   /* line 65, src/sass/components/basic/_facts.scss */
 
   .fact.stat_hl .field--name-field-stat-highlite-icon {
@@ -16863,9 +17320,16 @@ form.search .search button {
   /* line 36, src/sass/components/basic/_quotes.scss */
 
   .copy-block .embedded-entity blockquote,
-  .cke_editable .embedded-entity blockquote {
+  .cke_editable .embedded-entity blockquote,
+  blockquote.quote-box {
     margin-left: -2.5rem;
     margin-right: -2.5rem;
+  }
+
+  /* line 96, src/sass/components/basic/_quotes.scss */
+
+  .feat-tiles blockquote.quote-box {
+    margin: 0;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
@@ -16886,6 +17350,13 @@ form.search .search button {
 
   .mfs .field--name-field-mfs-featured-items .field__item:last-child .mfsi {
     margin-bottom: 0;
+  }
+
+  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+
+  .program_rail {
+    margin: 0 -2.5rem;
+    padding: 5rem 2.5rem;
   }
 }
 
@@ -16940,8 +17411,15 @@ form.search .search button {
   /* line 36, src/sass/components/basic/_quotes.scss */
 
   .copy-block .embedded-entity blockquote,
-  .cke_editable .embedded-entity blockquote {
+  .cke_editable .embedded-entity blockquote,
+  blockquote.quote-box {
     margin: 0 -2.5rem 1.5rem;
+  }
+
+  /* line 96, src/sass/components/basic/_quotes.scss */
+
+  .feat-tiles blockquote.quote-box {
+    margin: 0;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */

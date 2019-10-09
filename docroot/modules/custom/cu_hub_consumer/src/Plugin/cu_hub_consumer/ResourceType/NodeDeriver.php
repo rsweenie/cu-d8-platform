@@ -32,8 +32,21 @@ class NodeDeriver extends DeriverBase {
         ] + $base_plugin_definition;
 
         // Try to automatically set the title field mapping.
-        if ($resource_type_def->getFieldInfo('field_' . $resource_sub_type . '_title')) {
-          $this->derivatives[$resource_sub_type]['entity_keys']['label'] = 'field_' . $resource_sub_type . '_title';
+        $title_fields = [
+          'field_' . $resource_sub_type . '_title',
+          'field_' . $resource_sub_type . '_name',
+          'title',
+        ];
+        foreach ($title_fields as $title_field) {
+          if ($resource_type_def->getFieldInfo($title_field)) {
+            $this->derivatives[$resource_sub_type]['entity_keys']['label'] = $title_field;
+            break;
+          }
+        }
+
+        // Overrides by type.
+        if ($resource_sub_type == 'hub_faculty') {
+          $this->derivatives[$resource_sub_type]['entity_keys']['label'] = 'field_hub_faculty_name';
         }
       }
     }

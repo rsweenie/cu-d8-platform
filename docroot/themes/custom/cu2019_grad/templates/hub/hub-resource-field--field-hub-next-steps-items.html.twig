@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource_field item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource_field()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'hub-resource-field',
+    'hub-resource-field--name-' ~ field_name|clean_class,
+    'hub-resource-field--type-' ~ field_type|clean_class,
+    'hub-resource-field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'hub-resource-field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+  {% endif %}
+  <ul{{ attributes.addClass(classes, 'field__items') }}>
+    {% for item in items %}
+      <li{{ item.attributes.addClass('field__item') }}>{{ item.content }}</li>
+    {% endfor %}
+  </ul>
+</div>

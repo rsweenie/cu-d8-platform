@@ -108,6 +108,7 @@ Feature: Alerts
   Scenario: Orange (Non-Weather) Alert
     #Adding Alert
     Given I am logged in as a user with the "administrator" role
+    And I set browser window size to "1920" x "1080"
     And I am on "/node/add"
     And I click "Header Alert"
     Then I fill in "title[0][value]" with "Testing Orange (Non-Weather) Header Alert"

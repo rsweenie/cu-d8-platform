@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.hub_reference.featured
     - core.entity_view_mode.hub_reference.listing
     - cu_hub_consumer.hub_reference_type.news
-    - taxonomy.vocabulary.news_type
   module:
     - better_exposed_filters
     - cu_hub_consumer
@@ -71,8 +70,9 @@ display:
                 bef_select_all_none: false
                 bef_collapsible: false
                 is_secondary: false
+                placeholder_text: ''
                 rewrite:
-                  filter_rewrite_values: '- Any -|Type'
+                  filter_rewrite_values: ''
           text_input_required_format: rich_text
       pager:
         type: full
@@ -276,11 +276,12 @@ display:
         - 'languages:language_interface'
         - url.query_args
       tags:
+        - 'config:core.entity_view_display.hub_reference.degree.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
-        - 'config:core.entity_view_display.hub_reference.degree.default'
-        - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
         - 'config:core.entity_view_display.hub_reference.program.default'
   attachment_1:
     display_plugin: attachment
@@ -487,6 +488,7 @@ display:
       tags:
         - 'config:core.entity_view_display.hub_reference.degree.default'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
@@ -697,6 +699,7 @@ display:
       tags:
         - 'config:core.entity_view_display.hub_reference.degree.default'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
@@ -856,6 +859,7 @@ display:
       tags:
         - 'config:core.entity_view_display.hub_reference.degree.default'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
