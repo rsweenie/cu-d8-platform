@@ -74,10 +74,10 @@ fields:
   field_quote_box_affiliation:
     type: string_long
     multiple: false
-  field_quote_box_quotes:
+  field_quote_box_quote_text:
     type: string_long
     multiple: false
-  field_quote_box_quote_text:
+  field_quote_box_quotes:
     type: string_long
     multiple: false
   node_type:
@@ -87,4 +87,8 @@ fields:
   field_quote_p_link:
     type: hub_resource
     hub_type: paragraph
+    multiple: false
+  field_quote_box_photo:
+    type: hub_resource
+    hub_type: media
     multiple: false

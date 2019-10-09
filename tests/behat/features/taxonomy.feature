@@ -18,9 +18,7 @@ Feature: Taxonomy
     And I press "Save"
     #Verify
     Then I should see "Title-Test-for-taxonomy"
-    And I wait for AJAX to finish
     And I click "Add term"
-    And I wait for AJAX to finish
     And I fill in "name[0][value]" with "Name for term for taxonomy"
     And I put "Term copy for taxonomy" into CKEditor
     And I fill in "path[0][alias]" with "/taxonomy-test"

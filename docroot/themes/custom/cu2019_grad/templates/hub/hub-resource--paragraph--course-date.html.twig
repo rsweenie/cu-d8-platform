@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+  'course-date'
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {% if content.field_hub_cd_date %}
+    {{ content.field_hub_cd_date }}
+  {% endif %}
+  <div>
+    {% if content.field_hub_cd_description %}
+      {{ content.field_hub_cd_description }}
+    {% endif %}
+    {% if content.field_hub_cd_cta %}
+      {{ content.field_hub_cd_cta }}
+    {% endif %}
+  </div>
+</article>
