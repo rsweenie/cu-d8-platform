@@ -10,5 +10,5 @@ cmd_test="/usr/local/lib/node_modules/backstopjs/cli/index.js test --configPath=
 eval $cmd_test
 
 
-echo $TUGBOAT_SERVICE_URL'/sites/default/files/html_report/'
+echo $TUGBOAT_SERVICE_URL'sites/default/files/html_report/'
 
