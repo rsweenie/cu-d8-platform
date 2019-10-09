@@ -198,6 +198,7 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
-        # Increase the max packet size to avoid "server has gone away" errors.
-        - mysql -e "SET GLOBAL max_allowed_packet=536870912;"
-        - echo "max_allowed_packet=536870912" >> /etc/mysql/conf.d/tugboat.cnf
+        # CU: Increase the max packet size to avoid "server has gone away" errors.
+        # The value 104857600 matches that on our Acquia production platform
+        - mysql -e "SET GLOBAL max_allowed_packet=104857600;"
+        - echo "max_allowed_packet=104857600" >> /etc/mysql/conf.d/tugboat.cnf
