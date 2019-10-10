@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_mfts_content_tiles
-    - node.type.quote_box
+    - node.type.grad_quote
     - paragraphs.paragraphs_type.manual_feature_tiles_set
 id: paragraph.manual_feature_tiles_set.field_mfts_content_tiles
 field_name: field_mfts_content_tiles
@@ -20,9 +20,9 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      quote_box: quote_box
+      grad_quote: grad_quote
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: grad_quote
 field_type: entity_reference
