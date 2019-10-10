@@ -1,0 +1,9 @@
+uuid: 7316009b-a7ae-4b5e-9217-ff3d32bb3265
+langcode: en
+status: true
+dependencies: {  }
+id: manual_feature_tiles_set
+label: 'Manual Feature Tiles Set'
+icon_uuid: null
+description: 'A set of feature tiles.'
+behavior_plugins: {  }

@@ -1,0 +1,28 @@
+uuid: 62a6b2e0-75f4-4c63-a741-48f31ec41569
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfts_content_tiles
+    - node.type.quote_box
+    - paragraphs.paragraphs_type.manual_feature_tiles_set
+id: paragraph.manual_feature_tiles_set.field_mfts_content_tiles
+field_name: field_mfts_content_tiles
+entity_type: paragraph
+bundle: manual_feature_tiles_set
+label: 'Content Tiles'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      quote_box: quote_box
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
