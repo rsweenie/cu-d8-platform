@@ -1,11 +1,12 @@
-uuid: 62a6b2e0-75f4-4c63-a741-48f31ec41569
+uuid: 1218a5d5-c1c9-441c-9610-ab39485a8edb
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_mfts_content_tiles
-    - node.type.grad_quote
     - paragraphs.paragraphs_type.manual_feature_tiles_set
+  module:
+    - entity_reference_revisions
 id: paragraph.manual_feature_tiles_set.field_mfts_content_tiles
 field_name: field_mfts_content_tiles
 entity_type: paragraph
@@ -17,12 +18,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
-  handler_settings:
-    target_bundles:
-      grad_quote: grad_quote
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: grad_quote
-field_type: entity_reference
+  handler: 'default:paragraph'
+  handler_settings: {  }
+field_type: entity_reference_revisions

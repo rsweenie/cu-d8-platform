@@ -1,21 +1,17 @@
-uuid: 5638b5fb-3d95-4d72-8d78-bf73b60fbef8
+uuid: a091a784-823d-4d08-9538-bb9e41a7be42
 langcode: en
 status: true
 dependencies:
   module:
-    - field_permissions
-    - node
+    - entity_reference_revisions
     - paragraphs
-third_party_settings:
-  field_permissions:
-    permission_type: public
 id: paragraph.field_mfts_content_tiles
 field_name: field_mfts_content_tiles
 entity_type: paragraph
-type: entity_reference
+type: entity_reference_revisions
 settings:
-  target_type: node
-module: core
+  target_type: paragraph
+module: entity_reference_revisions
 locked: false
 cardinality: -1
 translatable: true
