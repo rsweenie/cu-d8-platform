@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_mfts_content_tiles
+    - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.manual_feature_tiles_set
     - paragraphs.paragraphs_type.quote
   module:
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      image: image
       quote: quote
     target_bundles_drag_drop:
       accordion:
@@ -65,8 +67,8 @@ settings:
         weight: 40
         enabled: false
       image:
+        enabled: true
         weight: 41
-        enabled: false
       image_video:
         weight: 42
         enabled: false
