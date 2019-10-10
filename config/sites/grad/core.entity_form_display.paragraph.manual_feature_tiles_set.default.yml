@@ -6,30 +6,29 @@ dependencies:
     - field.field.paragraph.manual_feature_tiles_set.field_mfts_content_tiles
     - paragraphs.paragraphs_type.manual_feature_tiles_set
   module:
-    - entity_browser_entity_form
-    - inline_entity_form
+    - paragraphs
 id: paragraph.manual_feature_tiles_set.default
 targetEntityType: paragraph
 bundle: manual_feature_tiles_set
 mode: default
 content:
   field_mfts_content_tiles:
-    weight: 2
+    type: paragraphs
+    weight: 0
     settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: _none
-    type: inline_entity_form_complex
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
     region: content
 hidden:
   created: true

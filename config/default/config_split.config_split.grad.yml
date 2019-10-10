@@ -13,6 +13,7 @@ blacklist:
   - block.block.cta
   - block.block.cta_2
   - core.entity_view_mode.node.next_steps
+  - node.type.grad_quote
   - node.type.interior_page
   - node.type.landing_page
   - node.type.next_steps
@@ -28,6 +29,7 @@ blacklist:
   - paragraphs.paragraphs_type.manual_featured_event
   - paragraphs.paragraphs_type.manual_featured_set
   - paragraphs.paragraphs_type.manual_featured_set_item
+  - paragraphs.paragraphs_type.manual_feature_tiles_set
   - paragraphs.paragraphs_type.next_step
   - paragraphs.paragraphs_type.next_steps_collection
   - paragraphs.paragraphs_type.quote
@@ -104,6 +106,8 @@ blacklist:
   - 'field.storage.node.field_interior_page_*'
   - 'field.storage.node.field_landing_page_*'
   - 'field.storage.node.field_next_steps_*'
+  - 'field.storage.node.field_grad_quote_*'
+  - 'field.storage.paragraph.field_mfts_*'
 graylist:
   - core.entity_form_display.menu_link_content.main.default
   - core.entity_view_display.menu_link_content.main.default
