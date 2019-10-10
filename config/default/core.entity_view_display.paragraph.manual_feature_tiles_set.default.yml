@@ -1,0 +1,23 @@
+uuid: e00beb5b-f954-43b1-9b92-2bf8eeae7a27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.manual_feature_tiles_set.field_mfts_content_tiles
+    - paragraphs.paragraphs_type.manual_feature_tiles_set
+id: paragraph.manual_feature_tiles_set.default
+targetEntityType: paragraph
+bundle: manual_feature_tiles_set
+mode: default
+content:
+  field_mfts_content_tiles:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,36 @@
+uuid: cbedd97d-dfa3-4236-af63-442d7af17bda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.manual_feature_tiles_set.field_mfts_content_tiles
+    - paragraphs.paragraphs_type.manual_feature_tiles_set
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+id: paragraph.manual_feature_tiles_set.default
+targetEntityType: paragraph
+bundle: manual_feature_tiles_set
+mode: default
+content:
+  field_mfts_content_tiles:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+hidden:
+  created: true
+  status: true
