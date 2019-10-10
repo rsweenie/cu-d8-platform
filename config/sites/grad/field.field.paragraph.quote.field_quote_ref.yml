@@ -1,26 +1,26 @@
-uuid: 0216b706-a110-4c59-a751-5c8f8ce2f0d2
+uuid: f0ca8cb4-e03a-48f2-a5e7-cb0a1d18954a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_quote_image
-    - media.type.image
+    - field.storage.paragraph.field_quote_ref
+    - node.type.grad_quote
     - paragraphs.paragraphs_type.quote
-id: paragraph.quote.field_quote_image
-field_name: field_quote_image
+id: paragraph.quote.field_quote_ref
+field_name: field_quote_ref
 entity_type: paragraph
 bundle: quote
-label: Image
+label: Quote
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      image: image
+      grad_quote: grad_quote
     sort:
       field: _none
     auto_create: false

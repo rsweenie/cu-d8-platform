@@ -1,20 +1,21 @@
-uuid: 44be5ff3-c30c-43f6-b491-a0cb27afaad9
+uuid: 7fab4a5d-ba73-4586-aecf-5900ef9473f8
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
-    - name
+    - node
     - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_quote_full_name
-field_name: field_quote_full_name
+id: paragraph.field_quote_ref
+field_name: field_quote_ref
 entity_type: paragraph
-type: name
-settings: {  }
-module: name
+type: entity_reference
+settings:
+  target_type: node
+module: core
 locked: false
 cardinality: 1
 translatable: true
