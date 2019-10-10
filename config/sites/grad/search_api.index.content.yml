@@ -43,6 +43,7 @@ field_settings:
           documentation: default
           featured_content: default
           featured_links: default
+          grad_quote: default
           header_alert: default
           interior_page: default
           landing_page: default
