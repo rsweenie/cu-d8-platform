@@ -1,0 +1,19 @@
+uuid: 4ffa51a7-d3e8-437c-b7c8-5e9b44c61ec1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grad_quote_background_area
+    - node.type.grad_quote
+id: node.grad_quote.field_grad_quote_background_area
+field_name: field_grad_quote_background_area
+entity_type: node
+bundle: grad_quote
+label: 'Background Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
