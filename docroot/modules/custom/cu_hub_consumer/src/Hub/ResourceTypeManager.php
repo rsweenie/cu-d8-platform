@@ -13,6 +13,8 @@ use Drupal\cu_hub_consumer\Annotation\HubResourceType;
  */
 class ResourceTypeManager extends DefaultPluginManager implements FallbackPluginManagerInterface {
 
+  protected $typeInstances = [];
+
   /**
    * Constructs a new ResourceTypeManager.
    *
@@ -56,6 +58,12 @@ class ResourceTypeManager extends DefaultPluginManager implements FallbackPlugin
     return 'fallback';
   }
 
+  /**
+   * Returns the plugin ID that matches for a hub resource type ID.
+   *
+   * @param string $hub_type_id
+   * @return string
+   */
   public function findPluginByHubTypeId($hub_type_id) {
     // Try to find a resource type plugin that matches.
     $plugins = $this->getDefinitions();
@@ -66,6 +74,19 @@ class ResourceTypeManager extends DefaultPluginManager implements FallbackPlugin
     }
 
     return 'fallback';
+  }
+
+  /**
+   * Returns an an already created instance of a resource type, or creates one as needed.
+   *
+   * @param string $resource_type_plugin_id
+   * @return object
+   */
+  public function getResourceType($resource_type_plugin_id) {
+    if (!isset($this->typeInstances[$resource_type_plugin_id])) {
+      $this->typeInstances[$resource_type_plugin_id] = $this->createInstance($resource_type_plugin_id, []);
+    }
+    return $this->typeInstances[$resource_type_plugin_id];
   }
 
 }

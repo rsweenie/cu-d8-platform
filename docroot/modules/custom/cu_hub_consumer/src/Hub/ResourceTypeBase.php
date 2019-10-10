@@ -83,6 +83,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    */
   protected $hubResourceTypeDefinition;
 
+  protected $resourceCache = [];
+
   /**
    * Constructs a new hub resource type instance.
    *
@@ -457,14 +459,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * {@inheritdoc}
    */
   public function view(ResourceInterface $resource) {
-    //return ['#markup' => print_r($resource->getJsonData(), TRUE)];
     $elements = [];
-
-    //if ($label = $resource->label()) {
-    //  $elements = [
-    //    '#markup' => $label,
-    //  ];
-    //}
 
     $values = $resource->getProcessedData();
     if (is_array($values)) {
@@ -502,6 +497,27 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
         'resource' => $resource,
       ];
     }
+  }
+
+  /**
+   * Returns a resource if in the static cache for this type.
+   *
+   * @param string $uuid
+   * @return mixed
+   */
+  public function getFromStaticCache($uuid) {
+    return isset($this->resourceCache[$uuid]) ? $this->resourceCache[$uuid] : NULL;
+  }
+
+  /**
+   * Sets the resource in the static cache for this type.
+   *
+   * @param string $uuid
+   * @param object $resource
+   * @return void
+   */
+  public function setStaticCache($uuid, $resource) {
+    $this->resourceCache[$uuid] = $resource;
   }
   
 }

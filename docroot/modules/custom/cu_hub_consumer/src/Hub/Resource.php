@@ -66,12 +66,24 @@ class Resource implements ResourceInterface {
       return NULL;
     }
 
+    // Try to pull from the static cache if possible.
+    if (!empty($data['data']['id'])) {
+      if ($resource = $resource_type->getFromStaticCache($data['data']['id'])) {
+        return $resource;
+      }
+    }
+
     $resource = new static($resource_type);
 
     $resource->jsonData = $data;
     $resource->jsonDataRaw = Json::encode($resource->jsonData);
     
     $resource->getProcessedData();
+
+    // Try to set from the static cache if possible.
+    if (!empty($data['data']['id'])) {
+      $resource_type->setStaticCache($data['data']['id'], $resource);
+    }
 
     return $resource;
   }
@@ -84,6 +96,13 @@ class Resource implements ResourceInterface {
       return NULL;
     }
 
+    // Try to pull from the static cache if possible.
+    if (!empty($data['id'])) {
+      if ($resource = $resource_type->getFromStaticCache($data['id'])) {
+        return $resource;
+      }
+    }
+
     $resource = new static($resource_type);
 
     $resource->jsonData = ['data' => $data];
@@ -93,6 +112,11 @@ class Resource implements ResourceInterface {
     }
 
     $resource->getProcessedData();
+
+    // Try to set from the static cache if possible.
+    if (!empty($data['id'])) {
+      $resource_type->setStaticCache($data['id'], $resource);
+    }
 
     return $resource;
   }
@@ -215,7 +239,7 @@ class Resource implements ResourceInterface {
       }
 
       // Try to get the resource type of the first item.
-      $resource_type = 'fallback';
+      $resource_type = $resource_main_type = 'fallback';
       if ($first = reset($relationship_data['data'])) {
         if (!empty($first['type'])) {
           $resource_type = $first['type'];
