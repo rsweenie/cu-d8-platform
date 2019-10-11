@@ -112,6 +112,7 @@ blacklist:
   - 'field.storage.paragraph.field_mfts_*'
   - 'field.storage.node.field_stat_highlite_*'
   - 'field.storage.node.field_fac_spotlight_*'
+  - 'field.storage.paragraph.field_fac_spotlight_*'
 graylist:
   - core.entity_form_display.menu_link_content.main.default
   - core.entity_view_display.menu_link_content.main.default

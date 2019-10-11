@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_mfts_content_tiles
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
     - paragraphs.paragraphs_type.manual_feature_tiles_set
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.statistic_highlite
@@ -26,6 +27,7 @@ settings:
     negate: 0
     target_bundles:
       image: image
+      manual_faculty_alumni_highlight: manual_faculty_alumni_highlight
       quote: quote
       statistic_highlite: statistic_highlite
     target_bundles_drag_drop:
@@ -75,8 +77,8 @@ settings:
         weight: 42
         enabled: false
       manual_faculty_alumni_highlight:
+        enabled: true
         weight: 43
-        enabled: false
       manual_featured_event:
         weight: 44
         enabled: false

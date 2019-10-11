@@ -23,7 +23,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Faculty/Alumni Spotlight'
+name: 'Grad: Faculty/Alumni Spotlight'
 type: faculty_alumni_spotlight
 description: 'Grad version of Hub Faculty/Alumni Spotlight'
 help: ''
