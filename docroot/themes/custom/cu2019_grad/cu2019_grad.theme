@@ -185,7 +185,7 @@ function cu2019_grad_preprocess_field(&$variables) {
 
 /**
  * Get the root entity.
- * 
+ *
  * Will recurse through things like paragraphs till we hit a regular entity.
  *
  * @param mixed $entity
@@ -212,17 +212,16 @@ function cu2019_grad_preprocess_views_view(&$variables) {
  */
 function cu2019_grad_preprocess_hub_resource_field__field_hub_fac_spotlight_type(&$variables) {
   $value = &$variables['items'][0]['content']['#context']['value'];
-  switch ($value) {
-    case 'fac':
-      $value = 'Faculty spotlight';
-      break;
-    case 'alum':
-      $value = 'Alumni spotlight';
-      break;
-    default:
-      $value = '';
-      break;
-  }
+  $value = _cu2019_grad_faculty_spotlight_type($value);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_node__faculty_alumni_spotlight(&$variables) {
+  $type = $variables['node']->get('field_fac_spotlight_type')->first()->getValue()['value'];
+  $variables['highlite_tag'] = _cu2019_grad_faculty_spotlight_type($type);
+  return;
 }
 
 /**
@@ -312,4 +311,27 @@ function _cu2019_grad_get_menu_sibling_tree($menu_name = 'main') {
 
     return $build;
   }
+}
+
+/**
+ * Determines the correct wording for faculty spotlight type fields.
+ *
+ * @param string $type
+ *  Acceptable values are fac or alum
+ * @return string
+ */
+function _cu2019_grad_faculty_spotlight_type($type = NULL) {
+  switch ($type) {
+    case 'fac':
+      $value = 'Faculty spotlight';
+      break;
+    case 'alum':
+      $value = 'Alumni spotlight';
+      break;
+    default:
+      $value = '';
+      break;
+  }
+
+  return $value;
 }
