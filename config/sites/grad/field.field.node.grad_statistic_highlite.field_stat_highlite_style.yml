@@ -1,0 +1,23 @@
+uuid: 65d2edad-e831-4408-93e1-4fd80b578d6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_highlite_style
+    - node.type.grad_statistic_highlite
+  module:
+    - options
+id: node.grad_statistic_highlite.field_stat_highlite_style
+field_name: field_stat_highlite_style
+entity_type: node
+bundle: grad_statistic_highlite
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: color1
+default_value_callback: ''
+settings: {  }
+field_type: list_string

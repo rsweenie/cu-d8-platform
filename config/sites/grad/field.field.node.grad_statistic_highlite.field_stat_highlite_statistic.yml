@@ -1,0 +1,19 @@
+uuid: 0409775d-d383-49ad-8116-8971aa0e4e14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_highlite_statistic
+    - node.type.grad_statistic_highlite
+id: node.grad_statistic_highlite.field_stat_highlite_statistic
+field_name: field_stat_highlite_statistic
+entity_type: node
+bundle: grad_statistic_highlite
+label: Statistic
+description: 'example: "Top 20"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

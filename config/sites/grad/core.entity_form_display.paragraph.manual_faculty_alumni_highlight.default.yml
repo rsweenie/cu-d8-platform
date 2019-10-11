@@ -3,74 +3,33 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
-    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_cta
-    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_description
-    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_image
-    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_name
-    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_title
-    - field.field.paragraph.manual_faculty_alumni_highlight.field_mfsfa_type
+    - field.field.paragraph.manual_faculty_alumni_highlight.field_fac_spotlight_ref
     - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
   module:
-    - entity_browser
-    - link
+    - entity_browser_entity_form
+    - inline_entity_form
 id: paragraph.manual_faculty_alumni_highlight.default
 targetEntityType: paragraph
 bundle: manual_faculty_alumni_highlight
 mode: default
 content:
-  field_mfsfa_cta:
-    weight: 5
+  field_fac_spotlight_ref:
+    weight: 7
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_mfsfa_description:
-    weight: 4
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
-  field_mfsfa_image:
-    type: entity_browser_entity_reference
-    weight: 3
-    settings:
-      entity_browser: media_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: default
-      field_widget_replace: false
-      open: false
-    third_party_settings: {  }
-    region: content
-  field_mfsfa_name:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_mfsfa_title:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_mfsfa_type:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
     region: content
 hidden:
   created: true

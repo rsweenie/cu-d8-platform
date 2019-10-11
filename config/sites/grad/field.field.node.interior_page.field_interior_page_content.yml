@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.full_width_banner
     - paragraphs.paragraphs_type.full_width_photo
     - paragraphs.paragraphs_type.image_video
+    - paragraphs.paragraphs_type.manual_feature_tiles_set
     - paragraphs.paragraphs_type.manual_featured_set
     - paragraphs.paragraphs_type.next_steps_collection
   module:
@@ -38,6 +39,7 @@ settings:
       next_steps_collection: next_steps_collection
       collapsible_text: collapsible_text
       manual_featured_set: manual_featured_set
+      manual_feature_tiles_set: manual_feature_tiles_set
     target_bundles_drag_drop:
       accordion:
         weight: -25
@@ -87,10 +89,37 @@ settings:
       manual_faculty_alumni_highlight:
         weight: 29
         enabled: false
+      statistic_highlite:
+        weight: 30
+        enabled: false
       manual_featured_event:
         weight: 30
         enabled: false
-      statistic_highlite:
+      copy:
         weight: 30
+        enabled: false
+      course_date:
+        weight: 31
+        enabled: false
+      faculty_alumni_spotlight:
+        weight: 32
+        enabled: false
+      featured_element:
+        weight: 34
+        enabled: false
+      image:
+        weight: 41
+        enabled: false
+      manual_feature_tiles_set:
+        enabled: true
+        weight: 44
+      slate_form:
+        weight: 51
+        enabled: false
+      statistic_highlight:
+        weight: 52
+        enabled: false
+      video:
+        weight: 54
         enabled: false
 field_type: entity_reference_revisions
