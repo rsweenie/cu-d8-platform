@@ -24,6 +24,8 @@ blacklist:
   - 'field.storage.paragraph.field_hub_*'
   - 'node.type.hub_*'
   - 'paragraphs.paragraphs_type.hub_*'
+  - 'paragraphs.paragraphs_type.faculty_*'
+  - 'paragraphs.parapraphs_type.statistic_*'
   - 'cu_hub_api.*'
   - 'auto_entitylabel.settings.node.hub_*'
   - 'metatag.metatag_defaults.node__hub_*'
