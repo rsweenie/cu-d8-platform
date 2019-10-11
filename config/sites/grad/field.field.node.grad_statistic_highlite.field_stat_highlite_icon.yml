@@ -1,0 +1,28 @@
+uuid: 7a12ab46-89e0-461a-8e3c-c4c50535051e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_highlite_icon
+    - media.type.image
+    - node.type.grad_statistic_highlite
+id: node.grad_statistic_highlite.field_stat_highlite_icon
+field_name: field_stat_highlite_icon
+entity_type: node
+bundle: grad_statistic_highlite
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
