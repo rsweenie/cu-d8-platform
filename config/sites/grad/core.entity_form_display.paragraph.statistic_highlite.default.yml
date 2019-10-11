@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.paragraph.statistic_highlite.field_statistic_highlite_ref
     - paragraphs.paragraphs_type.statistic_highlite
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
 id: paragraph.statistic_highlite.default
 targetEntityType: paragraph
 bundle: statistic_highlite
@@ -13,11 +16,20 @@ content:
   field_statistic_highlite_ref:
     weight: 4
     settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+      override_labels: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
     region: content
 hidden:
   created: true
