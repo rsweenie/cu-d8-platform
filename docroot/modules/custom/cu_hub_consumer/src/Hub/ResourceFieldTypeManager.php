@@ -14,13 +14,6 @@ use Drupal\cu_hub_consumer\Annotation\HubResourceFieldType;
 class ResourceFieldTypeManager extends DefaultPluginManager implements FallbackPluginManagerInterface {
 
   /**
-   * A static cache of plugin instances.
-   *
-   * @var array
-   */
-  protected $typeInstances = [];
-
-  /**
    * Constructs a new ResourceFieldManager.
    *
    * @param \Traversable $namespaces
@@ -60,19 +53,6 @@ class ResourceFieldTypeManager extends DefaultPluginManager implements FallbackP
    */
   public function getFallbackPluginId($plugin_id, array $configuration = array()) {
     return 'hub_unknown';
-  }
-
-  /**
-   * Returns an an already created instance of a resource type, or creates one as needed.
-   *
-   * @param string $resource_type_plugin_id
-   * @return object
-   */
-  public function getResourceFieldType($resource_field_type_plugin_id) {
-    if (!isset($this->typeInstances[$resource_field_type_plugin_id])) {
-      $this->typeInstances[$resource_field_type_plugin_id] = $this->createInstance($resource_field_type_plugin_id, []);
-    }
-    return $this->typeInstances[$resource_field_type_plugin_id];
   }
 
 }
