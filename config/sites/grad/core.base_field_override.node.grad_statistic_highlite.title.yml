@@ -1,0 +1,18 @@
+uuid: e38c2b7b-db80-4e0b-94f6-c7340ecbd582
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.grad_statistic_highlite
+id: node.grad_statistic_highlite.title
+field_name: title
+entity_type: node
+bundle: grad_statistic_highlite
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

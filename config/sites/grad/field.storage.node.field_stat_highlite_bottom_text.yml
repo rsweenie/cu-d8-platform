@@ -1,20 +1,18 @@
-uuid: c9406657-1f46-4b64-8a4d-ef3749fa357c
+uuid: 4e35a15a-b9f8-47f4-90ed-d6a9c3c8ee31
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
-    - paragraphs
+    - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_stat_highlite_statistic
-field_name: field_stat_highlite_statistic
-entity_type: paragraph
-type: string
+id: node.field_stat_highlite_bottom_text
+field_name: field_stat_highlite_bottom_text
+entity_type: node
+type: string_long
 settings:
-  max_length: 255
-  is_ascii: false
   case_sensitive: false
 module: core
 locked: false

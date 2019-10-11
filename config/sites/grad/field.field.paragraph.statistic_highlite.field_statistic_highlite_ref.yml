@@ -1,26 +1,26 @@
-uuid: 88057afe-32c8-4263-aff2-1f59b3ffa9e6
+uuid: 5a74f919-3959-4783-be65-5d255132aa0a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_stat_highlite_icon
-    - media.type.image
+    - field.storage.paragraph.field_statistic_highlite_ref
+    - node.type.grad_statistic_highlite
     - paragraphs.paragraphs_type.statistic_highlite
-id: paragraph.statistic_highlite.field_stat_highlite_icon
-field_name: field_stat_highlite_icon
+id: paragraph.statistic_highlite.field_statistic_highlite_ref
+field_name: field_statistic_highlite_ref
 entity_type: paragraph
 bundle: statistic_highlite
-label: Icon
+label: 'Statistic Highlite'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      image: image
+      grad_statistic_highlite: grad_statistic_highlite
     sort:
       field: _none
     auto_create: false
