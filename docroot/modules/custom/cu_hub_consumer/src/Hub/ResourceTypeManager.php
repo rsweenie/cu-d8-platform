@@ -13,6 +13,11 @@ use Drupal\cu_hub_consumer\Annotation\HubResourceType;
  */
 class ResourceTypeManager extends DefaultPluginManager implements FallbackPluginManagerInterface {
 
+  /**
+   * A static cache of plugin instances.
+   *
+   * @var array
+   */
   protected $typeInstances = [];
 
   /**
