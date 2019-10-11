@@ -1,0 +1,32 @@
+uuid: bca719bd-d46c-450e-a0fc-fec8074cafd8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - private_content
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  private_content:
+    private: 1
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Faculty/Alumni Spotlight'
+type: faculty_alumni_spotlight
+description: 'Grad version of Hub Faculty/Alumni Spotlight'
+help: ''
+new_revision: true
+preview_mode: 2
+display_submitted: false
