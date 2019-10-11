@@ -44,7 +44,7 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'hp-quote'
+    'hp-quote',
   ]
 %}
 {% block paragraph %}
@@ -55,15 +55,9 @@
         <div class="col-xs-12 col-md-12 col-lg-7">
   {% endif %}
           <div {{ attributes.addClass(classes) }}>
-          {% include '@cu2019_grad/components/quote.html.twig' with {
-            'class': 'q-left',
-            'quote': content.field_quote_quote,
-            'img': content.field_quote_image,
-            'name': content.field_quote_full_name,
-            'title': content.field_quote_title,
-            'area': content.field_quote_background_area,
-            'link': content.field_quote_faculty_link[0]['#url']
-          } %}
+            {% if content.field_quote_ref %}
+              {{ content.field_quote_ref }}
+            {% endif %}
           </div>
   {% if parent == 'field_landing_page_content' %}
         </div>

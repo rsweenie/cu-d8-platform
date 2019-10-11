@@ -1,0 +1,50 @@
+uuid: 9bd16a56-ab88-4f6d-a895-305cdc8c3cd3
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph__ief_link
+type_id: paragraph--ief_link
+fields:
+  drupal_internal__id:
+    type: integer
+    multiple: false
+  drupal_internal__revision_id:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  status:
+    type: boolean
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  parent_id:
+    type: string
+    multiple: false
+  parent_type:
+    type: string
+    multiple: false
+  parent_field_name:
+    type: string
+    multiple: false
+  field_internal_or_external_link:
+    type: link
+    multiple: false
+  field_link_text:
+    type: string
+    multiple: false
+  field_open_in_new_window:
+    type: boolean
+    multiple: false
+  paragraph_type:
+    type: hub_resource
+    hub_type: paragraphs_type
+    multiple: false
+  field_file_link:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--document
+    multiple: false

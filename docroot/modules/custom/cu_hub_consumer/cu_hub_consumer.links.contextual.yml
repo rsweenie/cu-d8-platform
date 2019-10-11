@@ -1,0 +1,6 @@
+
+entity.hub_reference.delete_form:
+  route_name: entity.hub_reference.delete_form
+  group: hub_reference
+  title: Delete
+  weight: 10

@@ -8,68 +8,72 @@
     This sets up the base of all our styles, it's also the btn-default styles
 
 \*  --------------------------------------------------------------------------  */
+@mixin btn {
+  // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+  display: block;
+  // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+  padding: #{$gutter * .4}rem #{$gutter * .8}rem;
+  margin: #{$gutter * .2}rem 0;
+  width: 100%;
+  // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+  border: .2rem solid $primary;
+  background: $accent-1;
+  // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+  color: $primary;
+  font-family: $copyFF;
+  @include fontSize(1.6, 1.2);
+  // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+  text-decoration: none;
+  text-align: center;
+  // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+  transition: all .25s;
+
+  span:not(.sr-only) {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+  }
+
+  @media #{$mediaLg} {
+    font-size: 19px;
+  }
+
+  .arrow:last-child {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+
+    font-size: 1.4em;
+    transform: translateY(-46%);
+    transition: transform 0.25s;
+  }
+
+  // WHEN DEFINING HOVER, BE SURE TO ADD , &:focus TO STYLE THE FOCUS STATE OF THE ELEMENT
+  // AS WELL.  THIS IS EXTREMELY IMPORTANT TO MEET WCAG 2.1 LEVEL AA COMPLIANCE
+  @include hover {
+      // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+      // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+      // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+      border-color: currentColor;
+      background: $primary;
+      // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+      color: $accent-1;
+      // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+      // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+
+      .arrow:last-child {
+        transform: translate(3px, -46%);
+      }
+  }
+
+  @media #{$mediaSm} {
+      display: inline-block;
+      width: auto;
+      text-align: left;
+  }
+}
 [class*="btn-"] {
-    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    display: block;
-    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    padding: #{$gutter * .4}rem #{$gutter * .8}rem;
-    margin: #{$gutter * .2}rem 0;
-    width: 100%;
-    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    border: .2rem solid $primary;
-    background: $accent-1;
-    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    color: $primary;
-    font-family: $copyFF;
-    @include fontSize(1.6, 1.2);
-    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-    text-decoration: none;
-    text-align: center;
-    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    transition: all .25s;
-
-    span:not(.sr-only) {
-      position: relative;
-      z-index: 1;
-    }
-
-    @media #{$mediaLg} {
-      font-size: 24px;
-    }
-
-    .arrow:last-child {
-      position: absolute;
-      top: 50%;
-      right: 15px;
-
-      font-size: 1.4em;
-      transform: translateY(-46%);
-      transition: transform 0.25s;
-    }
-
-    // WHEN DEFINING HOVER, BE SURE TO ADD , &:focus TO STYLE THE FOCUS STATE OF THE ELEMENT
-    // AS WELL.  THIS IS EXTREMELY IMPORTANT TO MEET WCAG 2.1 LEVEL AA COMPLIANCE
-    @include hover {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        border-color: currentColor;
-        background: $primary;
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        color: $accent-1;
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-
-        .arrow:last-child {
-          transform: translate(3px, -46%);
-        }
-    }
-
-    @media #{$mediaSm} {
-        display: inline-block;
-        width: auto;
-        text-align: left;
-    }
+    @include btn;
 
     // SETUP FOR ALL ARROWS
     //@import 'buttons/icon/_icon-top';
@@ -102,6 +106,7 @@
 @import 'buttons/colors/_secondary';
 @import 'buttons/colors/_hero';
 @import 'buttons/colors/_search';
+@import 'buttons/colors/_expand';
 //@import 'buttons/colors/_tertiary';
 @import 'buttons/colors/_text';
 //@import 'buttons/colors/_success';

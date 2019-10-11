@@ -1,0 +1,119 @@
+uuid: 7c5cb82e-b217-48d6-abe0-a5cb49e1abda
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_quote
+type_id: node--hub_quote
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  revision_log:
+    type: string_long
+    multiple: false
+  status:
+    type: boolean
+    multiple: false
+  title:
+    type: string
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  promote:
+    type: boolean
+    multiple: false
+  sticky:
+    type: boolean
+    multiple: false
+  default_langcode:
+    type: boolean
+    multiple: false
+  revision_translation_affected:
+    type: boolean
+    multiple: false
+  scheduled_transition_date:
+    type: datetime
+    multiple: true
+  scheduled_transition_state:
+    type: string
+    multiple: true
+  metatag:
+    type: map
+    multiple: false
+  metatag_normalized:
+    type: hub_metatags
+    multiple: true
+  path:
+    type: path
+    multiple: false
+  private:
+    type: private
+    multiple: false
+  publish_on:
+    type: timestamp
+    multiple: false
+  unpublish_on:
+    type: timestamp
+    multiple: false
+  field_hub_quote_background_area:
+    type: string
+    multiple: false
+  field_hub_quote_source_honorific:
+    type: string
+    multiple: false
+  field_hub_quote_source_name:
+    type: name
+    multiple: false
+  field_hub_quote_style:
+    type: string
+    multiple: false
+  field_hub_quote_text:
+    type: string_long
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type
+    multiple: false
+  revision_uid:
+    type: hub_resource
+    hub_type: user
+    hub_bundles:
+      - user--user
+    multiple: false
+  uid:
+    type: hub_resource
+    hub_type: user
+    hub_bundles:
+      - user--user
+    multiple: false
+  menu_link:
+    type: hub_resource
+    hub_type: menu_link_content
+    hub_bundles:
+      - menu_link_content--menu_link_content
+    multiple: false
+  field_hub_quote_faculty_profile:
+    type: hub_resource
+    hub_type: node
+    hub_bundles:
+      - node--hub_faculty
+    multiple: false
+  field_hub_quote_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
+    multiple: false

@@ -3,4 +3,4 @@ services:
  cu_breadcrumbs.breadcrumb:
    class: Drupal\cu_breadcrumbs\Breadcrumb\CUBreadcrumbsBreadcrumbBuilder
    tags:
-    - { name: breadcrumb_builder, priority: 100 }
+    - { name: breadcrumb_builder, priority: 2000 }

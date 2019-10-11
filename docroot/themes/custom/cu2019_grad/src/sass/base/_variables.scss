@@ -29,20 +29,28 @@ $gray3: #707070;
 $gray4: #EEEFF0;
 $gray5: #d4d4d4;
 $gray6: #ECF0F3;
+$gray65: #BABABA;
+$gray7: #C5C7CA;
+$gray8: #949494;
+$gray9: #F5F8FC;
+$off-white: #f7f7f7;
 
 $accent-2Lt: #99CFFF;
 $accent-2XLt: #A5D2F9;
 
 $thead: #266db3;
+$cardLink: #79b4e6;
 
+$facDetailBg: #E5F0F9;
+$facDetailBgRt: #CEE2F3;
 
 $success: #76bd22;
 $warning: #fce300;
 $danger: #f32836;
 /*---=== FONT SETTINGS ===---*/
 $copyFF: proxima-nova, sans-serif; // FONT FAMILY FOR DEFAULT COPY
-$copyFS: 1.6rem;
-$copyLH: 1.5;
+$copyFS: 1.9rem;
+$copyLH: 1.6;
 $copyC: $primary;
 $headingFF: 'Conduit'; // FONT FAMILY FOR HEADINGS (H1-H6)
 $headingC: $secondary;
@@ -50,25 +58,30 @@ $linkC: $secondary;
 $linkCHov: $primary;
 $linkCAct: $secondary;
 $iconFF: "Font Awesome 5 Free"; // FONT FAMILY FOR HEADINGS (H1-H6)
+$iconFont: "cu_icons";
 $remBase: 10; // REM BASE SHOULD REMAIN 10 UNLESS YOU WANT TO DO A DIFFERENT BASE FOR MEASUREMENT
 /*---=== MEDIA QUERIES ===---*/
+$headerBp: 1090px;
 $mediaXs: " screen and (max-width: 575.9px)"; // MOBILE DEVICES
 $mediaSm: " screen and (min-width: 576px)"; // PHONES LANDSCAPE AND UP
 $mediaSmOnly: " screen and (min-width: 576px) and (max-width: 767.9px)"; // PHONES LANDSCAPE ONLY
 $mediaMd: " screen and (min-width: 768px)"; // TABLETS PORTRAIT AND UP
+$mediaMdm: " screen and (max-width: 767.9px)"; // TABLETS PORTRAIT AND UP
 $mediaMdOnly: " screen and (min-width: 768px) and (max-width: 991.9px)"; // TABLETS PORTRAIT ONLY
 $mediaLg: " screen and (min-width: 992px)"; // TABLETS LANDSCAPE AND UP
 $mediaLgOnly: " screen and (min-width: 992px) and (max-width: 1209.9px)"; // TABLETS LANDSCAPE ONLY
 $mediaXl: " screen and (min-width: 1210px)"; // SMALL MONITORS
 $mediaXxl: " screen and (min-width: 1600px)"; // LARGER MONITORS
-$mediaToggleHeader: " screen and (max-width: 991.9px)"; // ALL PHONES DEVICES
-$mediaFullHeader: " screen and (min-width: 992px)"; // ALL PHONES DEVICES
+$mediaToggleHeader: " screen and (max-width: #{$headerBp - .1})"; // ALL PHONES DEVICES
+$mediaFullHeader: " screen and (min-width: #{$headerBp})"; // ALL PHONES DEVICES
+
 $darkMode: " screen and (prefers-color-scheme: dark)"; // LARGER MONITORS
 
 $mediaMdMax: " screen and (max-width: 767.9px)";
+$mediaLgMax: " screen and (max-width: 991.9px)";
 /*---=== GRID ===---*/
 $siteWList: 100%, 95%, 90%, 85%;
-$siteWQueryList: $mediaXs, $mediaLg, $mediaXl, $mediaXxl;
+$siteWQueryList: $mediaXs, $mediaLg, $mediaFullHeader, $mediaXxl;
 $siteWMx: 1350px; // SITES CONTENT MAX WIDTH
 $gridMediaList: "XS", "SM", "MD", "LG"; // MEDIA QUERY LIST USED TO GENERATE GRID ELEMENTS
 $gridMediaQueryList: $mediaXs, $mediaSm, $mediaMd, $mediaLg; // MEDIA QUERIES USED IN COMBINATION WITH GRID MEDIA LIST

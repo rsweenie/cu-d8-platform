@@ -1,0 +1,23 @@
+uuid: 8d799bfa-95ad-4553-8bd9-f979d4fce085
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_slate_forms
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_slate_form_id
+field_name: field_slate_form_id
+entity_type: paragraph
+type: slate_form_id
+settings: {  }
+module: cu_slate_forms
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

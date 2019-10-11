@@ -1,0 +1,8 @@
+uuid: cf3b578c-07f7-42b9-a4c8-9652f8ad8660
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_program
+label: 'Content: Hub: Academic Program'
+tags:
+  canonical_url: '[node:field_hub_site:entity:field_hub_site_base_uri][node:field_hub_path_alias]'

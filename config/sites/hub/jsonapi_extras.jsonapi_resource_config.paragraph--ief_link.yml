@@ -1,0 +1,131 @@
+uuid: f79518e2-2cf5-4e2e-b3c5-ca3cd311a44a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.ief_link
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - field_file_link
+id: paragraph--ief_link
+disabled: false
+path: paragraph/ief_link
+resourceType: paragraph--ief_link
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  revision_id:
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  status:
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  parent_id:
+    fieldName: parent_id
+    publicName: parent_id
+    enhancer:
+      id: ''
+    disabled: false
+  parent_type:
+    fieldName: parent_type
+    publicName: parent_type
+    enhancer:
+      id: ''
+    disabled: false
+  parent_field_name:
+    fieldName: parent_field_name
+    publicName: parent_field_name
+    enhancer:
+      id: ''
+    disabled: false
+  behavior_settings:
+    disabled: true
+    fieldName: behavior_settings
+    publicName: behavior_settings
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  field_metadata:
+    fieldName: field_metadata
+    publicName: field_metadata
+    enhancer:
+      id: ''
+    disabled: false
+  field_file_link:
+    fieldName: field_file_link
+    publicName: field_file_link
+    enhancer:
+      id: ''
+    disabled: false
+  field_internal_or_external_link:
+    fieldName: field_internal_or_external_link
+    publicName: field_internal_or_external_link
+    enhancer:
+      id: ''
+    disabled: false
+  field_link_text:
+    fieldName: field_link_text
+    publicName: field_link_text
+    enhancer:
+      id: ''
+    disabled: false
+  field_open_in_new_window:
+    fieldName: field_open_in_new_window
+    publicName: field_open_in_new_window
+    enhancer:
+      id: ''
+    disabled: false

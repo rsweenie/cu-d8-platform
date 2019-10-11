@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.news_spotlight.field_tabbed_accordion
     - node.type.news_spotlight
   module:
-    - content_moderation
     - entity_browser
     - entity_browser_entity_form
     - field_group
@@ -42,6 +41,7 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Advanced Options'
+      region: content
 _core:
   default_config_hash: aSi4Te5DP5YH-gJhEe-SvY0ADpxIHnfxzGCeLZ5222A
 id: node.news_spotlight.default

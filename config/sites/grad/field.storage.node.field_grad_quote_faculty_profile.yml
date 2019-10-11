@@ -1,0 +1,24 @@
+uuid: 62b4b9e2-4b8a-4233-8cca-1dc7142b1516
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_grad_quote_faculty_profile
+field_name: field_grad_quote_faculty_profile
+entity_type: node
+type: entity_reference
+settings:
+  target_type: hub_reference
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

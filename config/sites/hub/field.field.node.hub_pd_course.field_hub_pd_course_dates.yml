@@ -1,0 +1,64 @@
+uuid: 1db41c95-29b6-4403-9ea9-792bcc94d234
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_pd_course_dates
+    - node.type.hub_pd_course
+    - paragraphs.paragraphs_type.course_date
+  module:
+    - entity_reference_revisions
+id: node.hub_pd_course.field_hub_pd_course_dates
+field_name: field_hub_pd_course_dates
+entity_type: node
+bundle: hub_pd_course
+label: 'Course Dates'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      course_date: course_date
+    target_bundles_drag_drop:
+      accordion:
+        weight: 13
+        enabled: false
+      copy:
+        weight: 14
+        enabled: false
+      course_date:
+        enabled: true
+        weight: 15
+      faculty_alumni_spotlight:
+        weight: 16
+        enabled: false
+      featured_content_item:
+        weight: 17
+        enabled: false
+      hub_paragraph_next_steps:
+        weight: 18
+        enabled: false
+      ief_link:
+        weight: 19
+        enabled: false
+      image:
+        weight: 20
+        enabled: false
+      quote_ref:
+        weight: 21
+        enabled: false
+      slate_form:
+        weight: 22
+        enabled: false
+      statistic_highlight:
+        weight: 23
+        enabled: false
+      video:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

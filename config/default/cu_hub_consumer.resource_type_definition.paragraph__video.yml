@@ -1,0 +1,44 @@
+uuid: 79acfc42-a0ca-4bb6-b4de-5a939239e53a
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph__video
+type_id: paragraph--video
+fields:
+  drupal_internal__id:
+    type: integer
+    multiple: false
+  drupal_internal__revision_id:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  status:
+    type: boolean
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  parent_id:
+    type: string
+    multiple: false
+  parent_type:
+    type: string
+    multiple: false
+  parent_field_name:
+    type: string
+    multiple: false
+  field_video_caption:
+    type: hub_text_long
+    multiple: false
+  paragraph_type:
+    type: hub_resource
+    hub_type: paragraphs_type
+    multiple: false
+  field_video_media:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--video
+    multiple: false

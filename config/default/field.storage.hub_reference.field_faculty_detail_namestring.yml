@@ -1,0 +1,23 @@
+uuid: e8ea82b0-cabb-4893-8261-2df8f70aa591
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+    - field_permissions
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: hub_reference.field_faculty_detail_namestring
+field_name: field_faculty_detail_namestring
+entity_type: hub_reference
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

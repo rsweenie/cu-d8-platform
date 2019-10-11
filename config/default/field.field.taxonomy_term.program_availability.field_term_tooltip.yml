@@ -1,0 +1,19 @@
+uuid: f281e2b2-a1b4-48e9-90a9-23b8189688c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_term_tooltip
+    - taxonomy.vocabulary.program_availability
+id: taxonomy_term.program_availability.field_term_tooltip
+field_name: field_term_tooltip
+entity_type: taxonomy_term
+bundle: program_availability
+label: Tooltip
+description: 'A short description of the term to be shown as a tooltip.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

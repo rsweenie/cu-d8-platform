@@ -4,6 +4,15 @@ status: true
 dependencies:
   config:
     - node.type.hub_faculty
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - field_hub_faculty_image.image
+      - field_hub_faculty_rel_degrees
+      - field_hub_faculty_components
+      - field_hub_site
 id: node--hub_faculty
 disabled: false
 path: node/hub_faculty
@@ -117,6 +126,12 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  field_metadata:
+    fieldName: field_metadata
+    publicName: field_metadata
+    enhancer:
+      id: ''
+    disabled: false
   scheduled_transition_date:
     disabled: true
     fieldName: scheduled_transition_date
@@ -171,21 +186,15 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  field_hub_faculty_degree:
-    fieldName: field_hub_faculty_degree
-    publicName: field_hub_faculty_degree
+  field_hub_faculty_components:
+    fieldName: field_hub_faculty_components
+    publicName: field_hub_faculty_components
     enhancer:
       id: ''
     disabled: false
   field_hub_faculty_department:
     fieldName: field_hub_faculty_department
     publicName: field_hub_faculty_department
-    enhancer:
-      id: ''
-    disabled: false
-  field_hub_faculty_description:
-    fieldName: field_hub_faculty_description
-    publicName: field_hub_faculty_description
     enhancer:
       id: ''
     disabled: false
@@ -234,6 +243,18 @@ resourceFields:
   field_hub_faculty_title:
     fieldName: field_hub_faculty_title
     publicName: field_hub_faculty_title
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_path_alias:
+    fieldName: field_hub_path_alias
+    publicName: field_hub_path_alias
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_site:
+    fieldName: field_hub_site
+    publicName: field_hub_site
     enhancer:
       id: ''
     disabled: false

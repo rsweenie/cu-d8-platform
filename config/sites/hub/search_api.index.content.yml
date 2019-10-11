@@ -46,8 +46,12 @@ field_settings:
           header_alert: default
           hub_degree: default
           hub_faculty: default
+          hub_faculty_alumni_spotlight: default
+          hub_next_steps: default
+          hub_pd_course: default
           hub_program: default
           hub_site: default
+          hub_statistic_highlight: default
           news_spotlight: default
           profile: default
           promo_box: default

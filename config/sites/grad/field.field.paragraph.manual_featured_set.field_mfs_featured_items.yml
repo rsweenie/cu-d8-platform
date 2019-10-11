@@ -1,0 +1,108 @@
+uuid: d7511359-0f24-424d-a26d-05a1f6748bb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfs_featured_items
+    - paragraphs.paragraphs_type.manual_featured_event
+    - paragraphs.paragraphs_type.manual_featured_set
+    - paragraphs.paragraphs_type.manual_featured_set_item
+  module:
+    - entity_reference_revisions
+id: paragraph.manual_featured_set.field_mfs_featured_items
+field_name: field_mfs_featured_items
+entity_type: paragraph
+bundle: manual_featured_set
+label: 'Featured Items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      manual_featured_set_item: manual_featured_set_item
+      manual_featured_event: manual_featured_event
+    target_bundles_drag_drop:
+      accordion:
+        weight: 16
+        enabled: false
+      featured_content_item:
+        weight: 17
+        enabled: false
+      formatted_text:
+        weight: 18
+        enabled: false
+      full_width_banner:
+        weight: 19
+        enabled: false
+      full_width_photo:
+        weight: 20
+        enabled: false
+      hp_hero:
+        weight: 21
+        enabled: false
+      hp_hero_bg:
+        weight: 22
+        enabled: false
+      ief_link:
+        weight: 23
+        enabled: false
+      image_video:
+        weight: 24
+        enabled: false
+      manual_featured_set:
+        weight: 25
+        enabled: false
+      manual_featured_set_item:
+        enabled: true
+        weight: 26
+      manual_faculty_alumni_highlight:
+        weight: 26
+        enabled: false
+      next_step:
+        weight: 27
+        enabled: false
+      collapsible_text:
+        weight: 28
+        enabled: false
+      manual_featured_event:
+        enabled: true
+        weight: 28
+      next_steps_collection:
+        weight: 28
+        enabled: false
+      quote:
+        weight: 29
+        enabled: false
+      copy:
+        weight: 29
+        enabled: false
+      statistic_highlite:
+        weight: 30
+        enabled: false
+      faculty_alumni_spotlight:
+        weight: 30
+        enabled: false
+      featured_element:
+        weight: 32
+        enabled: false
+      image:
+        weight: 39
+        enabled: false
+      quote_ref:
+        weight: 48
+        enabled: false
+      slate_form:
+        weight: 49
+        enabled: false
+      statistic_highlight:
+        weight: 50
+        enabled: false
+      video:
+        weight: 52
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,9 @@
+uuid: dcb42d0f-2eff-43e4-a68a-8ed9eea9a002
+langcode: en
+status: true
+dependencies: {  }
+id: manual_featured_event
+label: 'Manual Featured Event'
+icon_uuid: null
+description: 'Event Item to use with manual feature set.'
+behavior_plugins: {  }

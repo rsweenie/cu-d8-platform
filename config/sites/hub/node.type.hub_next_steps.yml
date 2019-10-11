@@ -1,0 +1,32 @@
+uuid: d08351c2-51b0-457c-ae42-4e00b688d314
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - private_content
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  private_content:
+    private: 0
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Hub: Next Steps'
+type: hub_next_steps
+description: 'A collection of next step paragraphs. '
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

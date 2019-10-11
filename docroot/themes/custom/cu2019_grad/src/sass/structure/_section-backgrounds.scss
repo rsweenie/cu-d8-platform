@@ -6,7 +6,7 @@
     they can be good starting points to solve backgrounds and shapes used in the
     design.
 
-    These are included individually to make commenting out easier. Please comment 
+    These are included individually to make commenting out easier. Please comment
     out the backgrounds that you don't need for your site's design.
 
 \*  --------------------------------------------------------------------------  */
@@ -20,7 +20,7 @@ section[class*="sbg-"] {
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
+
     &:before, &:after {
         // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
         display: block;
@@ -45,6 +45,7 @@ section[class*="sbg-"] {
 //    @import 'section-backgrounds/_caret-bottom';
 //}
 @import 'section-backgrounds/_basic';
+@import 'section-backgrounds/_slash';
 /*  --------------------------------------------------------------------------  *\
     DELETE THIS SECTION OUT WHEN NOT USING ON COMPONENT LIBRARY SITE
 \*  --------------------------------------------------------------------------  */

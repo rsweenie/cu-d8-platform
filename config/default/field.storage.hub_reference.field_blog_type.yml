@@ -1,0 +1,24 @@
+uuid: 177e8934-203d-4177-af2c-065d609dd5f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+    - field_permissions
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: hub_reference.field_blog_type
+field_name: field_blog_type
+entity_type: hub_reference
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -10,12 +10,15 @@
 @import 'feeds/_basic';
 @import 'feeds/_profile';
 @import 'feeds/_tile';
+@import 'detail';
 // LATEST FEED
 @import '_latest';
 // FEATURED FEED
-@import 'featured/_carousel';
-@import 'featured/_related';
+// @import 'featured/_carousel';
+// @import 'featured/_related';
+@import 'featured/_featured';
 @import 'featured/_faculty';
+@import 'programs/_programs';
 //@import 'featured/_flex';
 //@import 'featured/_grid';
 //@import 'featured/_grid-offset';
@@ -26,4 +29,4 @@
 // FEATURED ITEM
 // DETAIL
 //@import '_detail';
-
+@import 'faculty/_faculty';

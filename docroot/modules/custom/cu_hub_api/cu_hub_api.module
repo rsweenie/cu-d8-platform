@@ -1,0 +1,38 @@
+<?php 
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function cu_hub_api_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  // If the entity type doesn't have a base table then
+  // there's no point in supporting it.
+  $base_table = $entity_type->getBaseTable();
+  if (!empty($base_table)) {
+    $fields['field_metadata'] = BaseFieldDefinition::create('cu_hub_api_field_metadata')
+      ->setLabel(t('Field metadata'))
+      ->setDescription(t('The field metadata for the entity.'))
+      ->setComputed(TRUE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setTranslatable(FALSE);
+  }
+
+  return $fields;
+}
+
+
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function cu_hub_api_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
+  // If this entity bundle has both field_hub_site and field_hub_path_alias then we need to make sure the path
+  // is unqiue for that combination.
+  if (isset($fields['field_hub_site']) && isset($fields['field_hub_path_alias'])) {
+    $fields['field_hub_path_alias']->addConstraint('UniqueHubPath', []);
+  }
+}
