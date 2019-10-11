@@ -48,13 +48,14 @@
   ]
 %}
 {% block paragraph %}
+  {{ attach_library('cu2019_grad/homepage') }}
   <header{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="hp_hero_tag">
         <div>
           <div>
             {{ content|without('field_hp_hero_bg','field_hp_hero_cta') }}
-            <a href="{{ content.field_hp_hero_cta[0]['#url'] }}" class="btn-primary">
+            <a href="{{ content.field_hp_hero_cta[0]['#url'] }}" class="btn-hero">
               <span>{{ content.field_hp_hero_cta[0]['#title'] }}</span>
             </a>
           </div>

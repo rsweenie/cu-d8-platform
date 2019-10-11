@@ -1,0 +1,23 @@
+uuid: 454f0b13-54b1-4013-9b93-d7fe0e7add01
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.news
+    - field.storage.hub_reference.field_featured
+id: hub_reference.news.field_featured
+field_name: field_featured
+entity_type: hub_reference
+bundle: news
+label: Featured
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

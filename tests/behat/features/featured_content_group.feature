@@ -34,8 +34,10 @@ Feature: Featured Content Group
     Then I should see "Testing Featured Content Group"
     #Deleting Featured Content Group'
     And I click "Testing Featured Content Group"
-    And I visit the ".nav-tabs li:nth-child(2) a" link
+  
+    And I visit the edit form
+    And I wait "5" seconds
     And I visit the "#edit-delete" link
+    And I wait "5" seconds
     And I visit the "#edit-submit" link
-    And I am on "/admin/content"
-    Then I should not see "Testing Featured Content Group"
+    Then I should see "Testing Featured Content Group has been deleted"

@@ -9,6 +9,10 @@ vagrant_ip: 192.168.5.233
 vagrant_box: geerlingguy/ubuntu1604
 workspace: /root
 
+# Memory and CPU to use for this VM.
+vagrant_memory: 3072
+vagrant_cpus: 2
+
 # Set drupal_site_name to the project's human-readable name.
 drupal_site_name: "Creighton University"
 
@@ -80,15 +84,15 @@ nodejs_install_npm_user: "{{ drupalvm_user }}"
 npm_config_prefix: "/home/{{ drupalvm_user }}/.npm-global"
 installed_extras: [adminer, selenium, drush, mailhog, memcached, nodejs, solr, xdebug]
 
-# PHP 7.1.
-php_version: "7.1"
+# PHP 7.2.
+php_version: "7.2"
 php_packages_extra:
   - "php{{ php_version }}-bz2"
   - "php{{ php_version }}-imagick"
   - imagemagick
 
 # XDebug configuration.
-php_xdebug_version: 2.5.0
+php_xdebug_version: 2.7.1
 # Change this value to 1 in order to enable xdebug by default.
 php_xdebug_default_enable: 1
 # Xdebug's code coverage functionality is often used in combination with PHP_CodeCoverage as part of PHPUnit runs

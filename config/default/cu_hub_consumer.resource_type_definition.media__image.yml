@@ -1,0 +1,42 @@
+uuid: bf80939c-7c92-4906-b0a7-f777713097cd
+langcode: en
+status: true
+dependencies: {  }
+id: media__image
+type_id: media--image
+fields:
+  drupal_internal__mid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag_normalized:
+    type: hub_metatags
+    multiple: true
+  field_media_in_library:
+    type: boolean
+    multiple: false
+  bundle:
+    type: hub_resource
+    hub_type: media_type
+    hub_bundles:
+      - media_type--media_type
+    multiple: false
+  thumbnail:
+    type: hub_resource
+    hub_type: file
+    multiple: false
+  image:
+    type: hub_resource
+    hub_type: file
+    multiple: false

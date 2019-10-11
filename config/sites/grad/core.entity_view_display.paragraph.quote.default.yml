@@ -3,81 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.quote.field_quote_background_area
-    - field.field.paragraph.quote.field_quote_faculty_link
-    - field.field.paragraph.quote.field_quote_full_name
-    - field.field.paragraph.quote.field_quote_image
-    - field.field.paragraph.quote.field_quote_quote
-    - field.field.paragraph.quote.field_quote_title
+    - field.field.paragraph.quote.field_quote_ref
     - paragraphs.paragraphs_type.quote
-  module:
-    - image
-    - link
-    - name
-    - text
 id: paragraph.quote.default
 targetEntityType: paragraph
 bundle: quote
 mode: default
 content:
-  field_quote_background_area:
-    weight: 5
+  field_quote_ref:
+    weight: 6
     label: hidden
     settings:
-      link_to_entity: false
+      link: true
+      view_mode: default
     third_party_settings: {  }
-    type: string
-    region: content
-  field_quote_faculty_link:
-    weight: 3
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_quote_full_name:
-    type: name_default
-    settings:
-      list_format: default
-      format: default
-      markup: none
-      link_target: ''
-      preferred_field_reference: ''
-      preferred_field_reference_separator: ', '
-      alternative_field_reference: ''
-      alternative_field_reference_separator: ', '
-    weight: 1
-    label: hidden
-    third_party_settings: {  }
-    region: content
-  field_quote_image:
-    weight: 4
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_quote_quote:
-    weight: 0
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_quote_title:
-    weight: 2
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
+    type: entity_reference_entity_view
     region: content
 hidden:
   search_api_excerpt: true

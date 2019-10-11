@@ -1,0 +1,22 @@
+.btn-hero {
+  background: linear-gradient(0deg, $accent-3 0%, lighten($accent-3, 7) 100%);
+  border-radius: 2px;
+  color: $primary;
+  font-size: 18px;
+  font-weight: bold;
+  border: 0;
+  padding: 14px 10px 10px 10px;
+  text-transform: uppercase;
+  font-family: $headingFF;
+  @include letterSpacing(50);
+
+  @media #{$mediaFullHeader} {
+    font-size: 32px;
+    padding: 17px 27px 8px 27px;
+  }
+
+  @include hover {
+    background: linear-gradient(0deg, #ffde8c 0%, #ffdf91 100%);
+    color: $primary;
+  }
+}

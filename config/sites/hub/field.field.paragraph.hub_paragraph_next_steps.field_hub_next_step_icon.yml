@@ -1,0 +1,21 @@
+uuid: 4092fe3d-b101-4cf0-ade1-8ac6d7185ac2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hub_next_step_icon
+    - paragraphs.paragraphs_type.hub_paragraph_next_steps
+  module:
+    - options
+id: paragraph.hub_paragraph_next_steps.field_hub_next_step_icon
+field_name: field_hub_next_step_icon
+entity_type: paragraph
+bundle: hub_paragraph_next_steps
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

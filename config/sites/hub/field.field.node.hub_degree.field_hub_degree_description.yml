@@ -1,0 +1,54 @@
+uuid: 5b6385d8-0a74-4ca3-97e4-197c7e9d9088
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_description
+    - node.type.hub_degree
+    - paragraphs.paragraphs_type.copy
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.hub_degree.field_hub_degree_description
+field_name: field_hub_degree_description
+entity_type: node
+bundle: hub_degree
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      copy: copy
+      video: video
+    target_bundles_drag_drop:
+      accordion:
+        weight: 7
+        enabled: false
+      copy:
+        enabled: true
+        weight: 8
+      featured_content_item:
+        weight: 9
+        enabled: false
+      hub_paragraph_next_steps:
+        weight: 10
+        enabled: false
+      faculty_alumni_spotlight:
+        weight: 11
+        enabled: false
+      ief_link:
+        weight: 11
+        enabled: false
+      quote_ref:
+        weight: 12
+        enabled: false
+      video:
+        enabled: true
+        weight: 16
+field_type: entity_reference_revisions

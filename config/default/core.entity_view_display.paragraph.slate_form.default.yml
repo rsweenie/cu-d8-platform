@@ -1,0 +1,23 @@
+uuid: 49ef69cf-565b-4da0-a347-85206c3c40c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slate_form.field_slate_form_id
+    - paragraphs.paragraphs_type.slate_form
+  module:
+    - cu_slate_forms
+id: paragraph.slate_form.default
+targetEntityType: paragraph
+bundle: slate_form
+mode: default
+content:
+  field_slate_form_id:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: slate_form_default
+    region: content
+hidden:
+  search_api_excerpt: true

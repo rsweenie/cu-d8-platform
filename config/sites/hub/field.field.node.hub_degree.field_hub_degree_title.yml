@@ -1,0 +1,19 @@
+uuid: f79a6e77-5bb9-4608-a1b7-4094f00cdd53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_title
+    - node.type.hub_degree
+id: node.hub_degree.field_hub_degree_title
+field_name: field_hub_degree_title
+entity_type: node
+bundle: hub_degree
+label: Title
+description: 'Example: <em>Masters of Science</em>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

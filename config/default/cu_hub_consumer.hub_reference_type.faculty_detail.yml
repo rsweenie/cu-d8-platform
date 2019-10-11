@@ -1,0 +1,13 @@
+uuid: 04ec6167-541b-4e06-86ff-cbc1055ded57
+langcode: en
+status: true
+dependencies: {  }
+id: faculty_detail
+label: 'Faculty Detail'
+description: ''
+source: 'node:hub_faculty'
+source_configuration:
+  source_field: hub_uuid
+field_map:
+  field_hub_faculty_name: field_faculty_detail_namestring
+  field_hub_faculty_rel_degrees: field_faculty_detail_rel_degrees

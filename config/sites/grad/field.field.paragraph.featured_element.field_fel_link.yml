@@ -1,0 +1,23 @@
+uuid: f1ee51ac-ed23-400b-bc2f-76a4e2bb049b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fel_link
+    - paragraphs.paragraphs_type.featured_element
+  module:
+    - link
+id: paragraph.featured_element.field_fel_link
+field_name: field_fel_link
+entity_type: paragraph
+bundle: featured_element
+label: Link
+description: 'Leave link text blank to hide the CTA button.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

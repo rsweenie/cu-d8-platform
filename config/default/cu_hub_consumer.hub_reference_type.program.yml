@@ -1,0 +1,13 @@
+uuid: c7c1f1a2-a39a-4adc-a426-df9045868162
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: C6y_lae1-uHfiRDoaUyLcxmZCk6F6LROiPtfIMzhWxo
+id: program
+label: 'Academic Program'
+description: ''
+source: 'node:hub_program'
+source_configuration:
+  source_field: hub_uuid
+field_map: {  }

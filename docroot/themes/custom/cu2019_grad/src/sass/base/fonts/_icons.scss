@@ -9,15 +9,7 @@
 }
 
 .icon:before {
-	font-family: "cu_icons";
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
-	text-decoration: none;
-	text-transform: none;
+	@include iconfont;
 }
 
 
@@ -33,130 +25,134 @@
 	content: "\E003";
 }
 
-.icon-checkbox-checked:before {
+.icon-check:before {
 	content: "\E004";
 }
 
-.icon-checkbox-unchecked:before {
+.icon-checkbox-checked:before {
 	content: "\E005";
 }
 
-.icon-chevron-right-double:before {
+.icon-checkbox-unchecked:before {
 	content: "\E006";
 }
 
-.icon-chevron-right:before {
+.icon-chevron-right-double:before {
 	content: "\E007";
 }
 
-.icon-chevron-up:before {
+.icon-chevron-right:before {
 	content: "\E008";
 }
 
-.icon-close-window-filled:before {
+.icon-chevron-up:before {
 	content: "\E009";
 }
 
-.icon-close-window:before {
+.icon-close-window-filled:before {
 	content: "\E00A";
 }
 
-.icon-contact:before {
+.icon-close-window:before {
 	content: "\E00B";
 }
 
-.icon-envelope:before {
+.icon-contact:before {
 	content: "\E00C";
 }
 
-.icon-event-calendar:before {
+.icon-envelope:before {
 	content: "\E00D";
 }
 
-.icon-expand-arrow:before {
+.icon-event-calendar:before {
 	content: "\E00E";
 }
 
-.icon-filter:before {
+.icon-expand-arrow:before {
 	content: "\E00F";
 }
 
-.icon-forward:before {
+.icon-filter:before {
 	content: "\E010";
 }
 
-.icon-google-translate:before {
+.icon-forward:before {
 	content: "\E011";
 }
 
-.icon-help:before {
+.icon-google-translate:before {
 	content: "\E012";
 }
 
-.icon-hybrid:before {
+.icon-help:before {
 	content: "\E013";
 }
 
-.icon-location-thin:before {
+.icon-hybrid:before {
 	content: "\E014";
 }
 
-.icon-location:before {
+.icon-location-thin:before {
 	content: "\E015";
 }
 
-.icon-news:before {
+.icon-location:before {
 	content: "\E016";
 }
 
-.icon-off-campus:before {
+.icon-news:before {
 	content: "\E017";
 }
 
-.icon-on-campus:before {
+.icon-off-campus:before {
 	content: "\E018";
 }
 
-.icon-online:before {
+.icon-on-campus:before {
 	content: "\E019";
 }
 
-.icon-phone:before {
+.icon-online:before {
 	content: "\E01A";
 }
 
-.icon-right:before {
+.icon-phone:before {
 	content: "\E01B";
 }
 
-.icon-search-more:before {
+.icon-right:before {
 	content: "\E01C";
 }
 
-.icon-search:before {
+.icon-search-more:before {
 	content: "\E01D";
 }
 
-.icon-social-facebook:before {
+.icon-search:before {
 	content: "\E01E";
 }
 
-.icon-social-instagram:before {
+.icon-social-facebook:before {
 	content: "\E01F";
 }
 
-.icon-social-linkedin:before {
+.icon-social-instagram:before {
 	content: "\E020";
 }
 
-.icon-social-twitter:before {
+.icon-social-linkedin:before {
 	content: "\E021";
 }
 
-.icon-social-youtube:before {
+.icon-social-twitter:before {
 	content: "\E022";
 }
 
-.icon-tag:before {
+.icon-social-youtube:before {
 	content: "\E023";
+}
+
+.icon-tag:before {
+	content: "\E024";
 }

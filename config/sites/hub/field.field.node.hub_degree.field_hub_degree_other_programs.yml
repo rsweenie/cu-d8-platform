@@ -1,0 +1,23 @@
+uuid: e06838a1-3f03-43d4-9ae2-8bb3ed154df8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_other_programs
+    - node.type.hub_degree
+  module:
+    - link
+id: node.hub_degree.field_hub_degree_other_programs
+field_name: field_hub_degree_other_programs
+entity_type: node
+bundle: hub_degree
+label: 'Other Programs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

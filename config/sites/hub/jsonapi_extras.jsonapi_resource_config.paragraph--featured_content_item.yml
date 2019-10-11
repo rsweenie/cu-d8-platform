@@ -1,0 +1,135 @@
+uuid: 01f971d6-1596-4f0d-9472-d6345a92899d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.featured_content_item
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - field_featured_content_image
+      - field_fc_p_link
+      - field_fc_p_link.field_file_link
+      - field_fc_supporting_p_links
+      - field_fc_supporting_p_links.field_file_link
+id: paragraph--featured_content_item
+disabled: false
+path: paragraph/featured_content_item
+resourceType: paragraph--featured_content_item
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  revision_id:
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  status:
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  parent_id:
+    fieldName: parent_id
+    publicName: parent_id
+    enhancer:
+      id: ''
+    disabled: false
+  parent_type:
+    fieldName: parent_type
+    publicName: parent_type
+    enhancer:
+      id: ''
+    disabled: false
+  parent_field_name:
+    fieldName: parent_field_name
+    publicName: parent_field_name
+    enhancer:
+      id: ''
+    disabled: false
+  behavior_settings:
+    disabled: true
+    fieldName: behavior_settings
+    publicName: behavior_settings
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  field_metadata:
+    fieldName: field_metadata
+    publicName: field_metadata
+    enhancer:
+      id: ''
+    disabled: false
+  field_body:
+    fieldName: field_body
+    publicName: field_body
+    enhancer:
+      id: ''
+    disabled: false
+  field_fc_p_link:
+    fieldName: field_fc_p_link
+    publicName: field_fc_p_link
+    enhancer:
+      id: ''
+    disabled: false
+  field_fc_supporting_p_links:
+    fieldName: field_fc_supporting_p_links
+    publicName: field_fc_supporting_p_links
+    enhancer:
+      id: ''
+    disabled: false
+  field_featured_content_image:
+    fieldName: field_featured_content_image
+    publicName: field_featured_content_image
+    enhancer:
+      id: ''
+    disabled: false

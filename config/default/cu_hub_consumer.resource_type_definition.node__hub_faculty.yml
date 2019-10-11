@@ -1,0 +1,81 @@
+uuid: f6a204d1-96c2-403a-8262-3f11262c3621
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_faculty
+type_id: node--hub_faculty
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag_normalized:
+    type: hub_metatags
+    multiple: true
+  field_hub_faculty_department:
+    type: string
+    multiple: false
+  field_hub_faculty_email:
+    type: email
+    multiple: false
+  field_hub_faculty_name:
+    type: name
+    multiple: false
+  field_hub_faculty_phone:
+    type: telephone
+    multiple: false
+  field_hub_faculty_provost_id:
+    type: string
+    multiple: false
+  field_hub_faculty_provost_url:
+    type: link
+    multiple: false
+  field_hub_faculty_title:
+    type: string
+    multiple: false
+  field_hub_path_alias:
+    type: string
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type
+    multiple: false
+  field_hub_faculty_components:
+    type: hub_resource
+    hub_type: paragraph
+    hub_bundles:
+      - paragraph--copy
+      - paragraph--featured_content_item
+    multiple: true
+  field_hub_faculty_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
+    multiple: false
+  field_hub_faculty_rel_degrees:
+    type: hub_resource
+    hub_type: node
+    hub_bundles:
+      - node--hub_degree
+    multiple: true
+  field_hub_site:
+    type: hub_resource
+    hub_type: node
+    hub_bundles:
+      - node--hub_site
+    multiple: false

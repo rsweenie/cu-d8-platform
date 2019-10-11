@@ -1,0 +1,207 @@
+&.mfsfa {
+  position: relative;
+
+  > a,
+  > span {
+    position: relative;
+    z-index: 0;
+    display: block;
+
+    &:after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background: linear-gradient(0deg, rgba($black, .8) 0%, rgba($black,0) 50%);
+    }
+  }
+
+  .content {
+    position: relative;
+    @include flex($jc:flex-end, $ff: column nowrap);
+
+    @media #{$mediaMd} {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 15px;
+    }
+
+    @media #{$mediaXl} {
+      padding: 25px 80px;
+
+      .feat-tiles & {
+        padding: 30px;
+      }
+    }
+
+    a {
+      font-size: 16px;
+      line-height: 1.6em;
+      padding: 0 15px;
+      color: $cardLink;
+      text-decoration: none;
+      font-weight: 600;
+
+      @media #{$mediaMd} {
+        padding: 0;
+        display: none;
+      }
+
+      @media #{$mediaXl} {
+        font-size: 19px;
+      }
+
+      span:first-child {
+        text-decoration: underline;
+      }
+
+      span:last-child {
+        display: inline-block;
+        transform: translateY(.2em);
+        font-size: 1.3em;
+
+        @media #{$mediaMdMax} {
+          color: $black;
+          opacity: .3;
+        }
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+    @media #{$mediaMdMax} {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      // @include flex(flex-end, center, center, column nowrap);
+    }
+  }
+
+  .type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba($primary,.5);
+    color: $white;
+    font-size: 13px;
+    text-transform: none;
+    margin: 0;
+    padding: 9px 7px;
+    z-index: 20;
+
+    @media #{$mediaMd} {
+      font-size: 18px;
+      padding: 12px;
+    }
+  }
+
+  h3 {
+    position: relative;
+    color: $white;
+    font-family: $copyFF;
+    font-size: 22px;
+    text-transform: none;
+    margin-bottom: (14 / 22) * 1em;
+
+    &:after {
+      width: 45px;
+      height: 4px;
+      position: absolute;
+      left: 50%;
+      bottom: -7px;
+      content: "";
+      background: $cardLink;
+      transform: translateX(-50%);
+
+      @media #{$mediaMd} {
+        width: 59px;
+        height: 5px;
+        bottom: -10px;
+      }
+    }
+
+    @media #{$mediaMd} {
+      font-size: 30px;
+    }
+  }
+
+  .subtitle {
+    color: $white;
+    font-size: 14px;
+    text-transform: none;
+
+    @media #{$mediaMd} {
+      font-size: 20px;
+    }
+  }
+
+  .body {
+    font-size: 14px;
+    line-height: 1.6em;
+    padding: 30px 15px;
+
+    .feat-tiles & {
+      padding: #{$gutter}rem 0;
+    }
+
+    @media #{$mediaMd} {
+      color: $white;
+      padding: 0;
+      display: none;
+    }
+
+    @media #{$mediaXl} {
+      font-size: 19px;
+    }
+  }
+
+  &:hover {
+    @media #{$mediaMd} {
+      > a,
+      > span {
+        &:after {
+          background: linear-gradient(0deg, rgba($black, .9) 0%, rgba($black,.5) 50%);
+        }
+      }
+
+      .body,
+      .content a {
+        display: block;
+      }
+
+      .content {
+        justify-content: center;
+      }
+    }
+  }
+
+  .hub-resource-field--type-link {
+    a {
+      // @include btn;
+      // @include btn-secondary;
+      &:after {
+        font-family: "cu_icons";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        text-decoration: none;
+        text-transform: none;
+        content: "\E01C";
+        font-size: 1.3em;
+        transform: translate(0.2em,0.2em);
+        display: inline-block;
+      }
+    }
+  }
+}

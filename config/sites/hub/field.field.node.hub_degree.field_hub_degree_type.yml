@@ -1,0 +1,29 @@
+uuid: 938a652d-256d-4b21-957c-34aadb34dcac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_type
+    - node.type.hub_degree
+    - taxonomy.vocabulary.degree_type
+id: node.hub_degree.field_hub_degree_type
+field_name: field_hub_degree_type
+entity_type: node
+bundle: hub_degree
+label: 'Degree Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      degree_type: degree_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

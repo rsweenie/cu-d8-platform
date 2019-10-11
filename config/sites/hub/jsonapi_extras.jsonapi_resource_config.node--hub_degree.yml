@@ -1,0 +1,332 @@
+uuid: ae946907-ed7b-48d7-9388-407cf4432a40
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_degree
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - field_hub_site
+      - field_hub_program
+      - field_hub_degree_hero_image.image
+      - field_hub_degree_availability
+      - field_hub_degree_interests
+      - field_hub_degree_adm_rep
+      - field_hub_degree_description
+      - field_hub_degree_description.field_video_media
+      - field_hub_degree_related_degrees
+      - field_hub_degree_type
+      - field_hub_degree_adm_rep.field_hub_adm_rep_image.image
+      - field_hub_degree_details
+      - field_hub_degree_details.field_video_media
+      - field_hub_degree_featured_info
+      - field_hub_degree_featured_info.field_quote_ref_item
+      - field_hub_degree_featured_info.field_featured_content_image
+      - field_hub_degree_featured_info.field_fc_p_link
+      - field_hub_degree_featured_info.field_fc_p_link.field_file_link.field_document
+      - field_hub_degree_featured_info.field_fc_supporting_p_links
+      - field_hub_degree_featured_info.field_fc_supporting_p_links.field_file_link.field_document
+      - field_hub_degree_featured_info.field_hub_spotlight_ref
+      - field_hub_degree_featured_info.field_hub_spotlight_ref.field_hub_fac_spotlight_image.image
+      - field_hub_degree_featured_info.field_hub_stat_highlight_ref
+      - field_hub_degree_featured_info.field_hub_stat_highlight_ref.field_hub_stat_highlight_image.image
+      - field_hub_degree_featured_info.field_hub_image_image
+      - field_hub_degree_featured_info.field_hub_image_image.image
+      - field_hub_degree_next_steps
+      - field_hub_degree_next_steps.field_hub_next_steps_items
+id: node--hub_degree
+disabled: false
+path: node/hub_degree
+resourceType: node--hub_degree
+resourceFields:
+  nid:
+    fieldName: nid
+    publicName: nid
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  vid:
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  revision_timestamp:
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+    disabled: false
+  revision_uid:
+    disabled: true
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: true
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    disabled: true
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  uid:
+    disabled: true
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  title:
+    disabled: true
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  changed:
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+    disabled: false
+  promote:
+    disabled: true
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+  sticky:
+    disabled: true
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  scheduled_transition_date:
+    disabled: true
+    fieldName: scheduled_transition_date
+    publicName: scheduled_transition_date
+    enhancer:
+      id: ''
+  scheduled_transition_state:
+    disabled: true
+    fieldName: scheduled_transition_state
+    publicName: scheduled_transition_state
+    enhancer:
+      id: ''
+  metatag:
+    disabled: true
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  metatag_normalized:
+    fieldName: metatag_normalized
+    publicName: metatag_normalized
+    enhancer:
+      id: ''
+    disabled: false
+  path:
+    disabled: true
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+  private:
+    disabled: true
+    fieldName: private
+    publicName: private
+    enhancer:
+      id: ''
+  publish_on:
+    disabled: true
+    fieldName: publish_on
+    publicName: publish_on
+    enhancer:
+      id: ''
+  unpublish_on:
+    disabled: true
+    fieldName: unpublish_on
+    publicName: unpublish_on
+    enhancer:
+      id: ''
+  menu_link:
+    disabled: true
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+  field_hub_degree_adm_rep:
+    fieldName: field_hub_degree_adm_rep
+    publicName: field_hub_degree_adm_rep
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_app_deadlines:
+    fieldName: field_hub_degree_app_deadlines
+    publicName: field_hub_degree_app_deadlines
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_app_link:
+    fieldName: field_hub_degree_app_link
+    publicName: field_hub_degree_app_link
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_availability:
+    fieldName: field_hub_degree_availability
+    publicName: field_hub_degree_availability
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_description:
+    fieldName: field_hub_degree_description
+    publicName: field_hub_degree_description
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_details:
+    fieldName: field_hub_degree_details
+    publicName: field_hub_degree_details
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_featured_info:
+    fieldName: field_hub_degree_featured_info
+    publicName: field_hub_degree_featured_info
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_hero_image:
+    fieldName: field_hub_degree_hero_image
+    publicName: field_hub_degree_hero_image
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_interests:
+    fieldName: field_hub_degree_interests
+    publicName: field_hub_degree_interests
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_intro:
+    fieldName: field_hub_degree_intro
+    publicName: field_hub_degree_intro
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_next_steps:
+    fieldName: field_hub_degree_next_steps
+    publicName: field_hub_degree_next_steps
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_other_programs:
+    fieldName: field_hub_degree_other_programs
+    publicName: field_hub_degree_other_programs
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_related_degrees:
+    fieldName: field_hub_degree_related_degrees
+    publicName: field_hub_degree_related_degrees
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_requirements:
+    fieldName: field_hub_degree_requirements
+    publicName: field_hub_degree_requirements
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_title:
+    fieldName: field_hub_degree_title
+    publicName: field_hub_degree_title
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_title_short:
+    fieldName: field_hub_degree_title_short
+    publicName: field_hub_degree_title_short
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_type:
+    fieldName: field_hub_degree_type
+    publicName: field_hub_degree_type
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_path_alias:
+    fieldName: field_hub_path_alias
+    publicName: field_hub_path_alias
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_program:
+    fieldName: field_hub_program
+    publicName: field_hub_program
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_site:
+    fieldName: field_hub_site
+    publicName: field_hub_site
+    enhancer:
+      id: ''
+    disabled: false
+  field_meta_tags:
+    disabled: true
+    fieldName: field_meta_tags
+    publicName: field_meta_tags
+    enhancer:
+      id: ''

@@ -1,3 +1,4 @@
+uuid: fdbbe2b1-9872-433d-9913-00b198e8f7f9
 langcode: en
 status: true
 dependencies:
@@ -417,7 +418,6 @@ display:
         - 'url.query_args:sort_by'
         - user.permissions
       tags: {  }
-  # @todo Lock down access in https://www.drupal.org/node/2983179
   widget:
     display_plugin: page
     id: widget

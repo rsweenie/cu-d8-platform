@@ -1,0 +1,53 @@
+uuid: 938653a6-cf2c-4057-8663-72f24f754552
+langcode: en
+status: true
+dependencies: {  }
+id: node__hub_faculty_alumni_spotlight
+type_id: node--hub_faculty_alumni_spotlight
+fields:
+  drupal_internal__nid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  revision_timestamp:
+    type: datetime
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag_normalized:
+    type: hub_metatags
+    multiple: true
+  field_hub_fac_spotlight_cta:
+    type: link
+    multiple: false
+  field_hub_fac_spotlight_desc:
+    type: string_long
+    multiple: false
+  field_hub_fac_spotlight_name:
+    type: name
+    multiple: false
+  field_hub_fac_spotlight_title:
+    type: string
+    multiple: false
+  field_hub_fac_spotlight_type:
+    type: string
+    multiple: false
+  node_type:
+    type: hub_resource
+    hub_type: node_type
+    multiple: false
+  field_hub_fac_spotlight_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
+    multiple: false

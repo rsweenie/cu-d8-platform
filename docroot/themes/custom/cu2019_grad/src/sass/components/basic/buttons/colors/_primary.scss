@@ -14,7 +14,7 @@
     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
     background: linear-gradient(0deg, $accent-3 0%, lighten($accent-3, 7) 100%);
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
     color: $primary;
     font-weight: bold;
@@ -41,6 +41,7 @@
 
     @media #{$mediaSm} {
       display: inline-flex;
+      padding: 16px 80px 16px 30px;
     }
 
     /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
@@ -87,5 +88,6 @@
 
     @media #{$mediaMd} {
       max-width: 320px;
+      min-width: 220px;
     }
 }

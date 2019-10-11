@@ -1,0 +1,14 @@
+uuid: 37cb9e30-f275-4002-8117-0152eaccb3f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: ''
+id: hub_reference.listing
+label: Listing
+targetEntityType: hub_reference
+cache: true

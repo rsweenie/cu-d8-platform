@@ -23,10 +23,11 @@ services:
 #      - /residencies-fellowships
 #      - /residencies-fellowships/residency-programs/emergency-medicine/curriculum
 
-    # Use PHP 7.1 with Apache
+    # Use PHP with Apache
     # The -stretch label lets us use the old version of this container which doesn't break us ;)
     # But it's not static so it will probably still break in the future
-    image: tugboatqa/php:7.1-apache-stretch
+    #image: tugboatqa/php:7.1-apache-stretch
+    image: tugboatqa/php:7.2-apache-stretch
 
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
@@ -76,7 +77,14 @@ services:
         - composer install --no-ansi
 
         # Our baseline is our defaulty Acquia setup
-        - ${TUGBOAT_ROOT}/vendor/bin/blt --yes setup
+        - ${TUGBOAT_ROOT}/vendor/bin/blt -n --no-ansi setup
+
+        # If blt setup fails, may need to try something like this:
+        #- drush -r "${DOCROOT}" -y site-install standard
+
+        # If there are issues running blt setup, another option is a simple
+        # drupal install
+        #- drush -r "${DOCROOT}" -y site-install standard
 
         # Generate a unique hash_salt to secure the site
         - echo "\$settings['hash_salt'] = '$(openssl rand -hex 32)';" >> "${DOCROOT}/sites/default/settings/local.settings.php"
@@ -84,8 +92,8 @@ services:
         # Copy the files directory from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use rsync over SSH.
-        - mkdir -p "${DOCROOT}/sites/default/files"
-        - mkdir -p "${DOCROOT}/sites/default/files-private/temp"
+        #- mkdir -p "${DOCROOT}/sites/default/files"
+        #- mkdir -p "${DOCROOT}/sites/default/files-private/temp"
 
         # Fix settings on /files dir
         - chown -R www-data:www-data "${DOCROOT}/sites/default/files-private"
@@ -103,7 +111,8 @@ services:
       update:
         # CU: Things needed to establish a clean baseline env based on production
 
-
+        # We do a composer install here for an edge case in which there is a drush version mismatch
+        - composer install --no-ansi
         # Site alias specific build steps
         - ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-update.sh
 
@@ -123,6 +132,9 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        # Use the tugboat-specific Drupal settings
+        - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings/local.settings.php"
+
         # Site alias specific build steps
         - /bin/bash ${TUGBOAT_ROOT}/.tugboat/scripts/tugboat-build.sh
 
@@ -140,7 +152,7 @@ services:
         - drush -r "${DOCROOT}" config-import -y
         # Run config import a second time to capture changes from new config splits.
         - drush -r "${DOCROOT}" config-import -y
-        - drush -r "${DOCROOT}" cron -y
+        #- timeout 1m --preserve-status drush -r "${DOCROOT}" cron -y
         - drush -r "${DOCROOT}" cache-rebuild
 
         # Site alias specific post-build steps
@@ -186,3 +198,6 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
+        # Increase the max packet size to avoid "server has gone away" errors.
+        - mysql -e "SET GLOBAL max_allowed_packet=536870912;"
+        - echo "max_allowed_packet=536870912" >> /etc/mysql/conf.d/tugboat.cnf

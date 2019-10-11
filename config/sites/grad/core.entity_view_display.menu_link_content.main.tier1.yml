@@ -26,3 +26,4 @@ content:
     region: content
 hidden:
   field_mainmenu_feat_link: true
+  search_api_excerpt: true

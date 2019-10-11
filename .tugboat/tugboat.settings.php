@@ -12,15 +12,18 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
-
 // Site specific Drupal settings
-system($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh > /dev/null', $cu_site_name);
+$cu_site_name = exec($_ENV['TUGBOAT_ROOT'] . '/.tugboat/scripts/get_site_alias.sh');
 
 switch ($cu_site_name) {
   case 'alliance':
     break;
   case 'grad-site':
-    $config['config_split.config_split.grad_school']['status'] = 1;
+  case 'grad':
+    $config['config_split.config_split.grad']['status'] = 1;
+    break;
+  case 'hub':
+    $config['config_split.config_split.hub']['status'] = 1;
     break;
   default:
     break;

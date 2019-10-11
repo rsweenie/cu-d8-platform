@@ -1,0 +1,41 @@
+uuid: a3643da5-8649-4a30-89d8-ed277454965d
+langcode: en
+status: true
+dependencies: {  }
+id: media__video
+type_id: media--video
+fields:
+  drupal_internal__mid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag_normalized:
+    type: hub_metatags
+    multiple: true
+  field_media_in_library:
+    type: boolean
+    multiple: false
+  field_media_video_embed_field:
+    type: video_embed_field
+    multiple: false
+  bundle:
+    type: hub_resource
+    hub_type: media_type
+    hub_bundles:
+      - media_type--media_type
+    multiple: false
+  thumbnail:
+    type: hub_resource
+    hub_type: file
+    multiple: false

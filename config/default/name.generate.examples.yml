@@ -1,8 +1,8 @@
 examples:
   -
     title: Mr
-    given: Joe
-    middle: 'John Peter Mark'
+    given: John
+    middle: 'Peter Mark'
     family: Doe
     generational: Jnr.
     credentials: 'B.Sc., Ph.D.'
@@ -12,7 +12,7 @@ examples:
     title: ''
     given: JOAN
     middle: SUE
-    family: DOE
+    family: SMITH
     generational: ''
     credentials: ''
   -

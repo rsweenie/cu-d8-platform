@@ -1,0 +1,19 @@
+uuid: 70dda1d9-06d9-4e96-96b8-f9cd70c75a5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.faculty_detail
+    - field.storage.hub_reference.field_faculty_detail_namestring
+id: hub_reference.faculty_detail.field_faculty_detail_namestring
+field_name: field_faculty_detail_namestring
+entity_type: hub_reference
+bundle: faculty_detail
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

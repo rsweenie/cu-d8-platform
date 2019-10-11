@@ -1,0 +1,41 @@
+uuid: d98a68c3-7fe6-4386-a034-3a9d2be58f3e
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph__image
+type_id: paragraph--image
+fields:
+  drupal_internal__id:
+    type: integer
+    multiple: false
+  drupal_internal__revision_id:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  status:
+    type: boolean
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  parent_id:
+    type: string
+    multiple: false
+  parent_type:
+    type: string
+    multiple: false
+  parent_field_name:
+    type: string
+    multiple: false
+  paragraph_type:
+    type: hub_resource
+    hub_type: paragraphs_type
+    multiple: false
+  field_hub_image_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
+    multiple: false

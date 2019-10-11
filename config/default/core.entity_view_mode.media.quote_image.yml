@@ -1,0 +1,14 @@
+uuid: 6d3c2e17-5f79-4924-abf4-734ff7ae0334
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.quote_image
+label: 'Quote Image'
+targetEntityType: media
+cache: true

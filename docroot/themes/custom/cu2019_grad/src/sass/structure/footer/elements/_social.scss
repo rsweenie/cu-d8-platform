@@ -15,7 +15,7 @@
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
     @media #{$mediaMd} {
-      padding: 7px 0 25px;
+      padding: 6px 0 25px;
     }
 
     @media #{$mediaFullHeader} {
@@ -36,7 +36,7 @@
         // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
         // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
         // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        font-size: 1.5em;
+        font-size: 1.8em;
         // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
         // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
     }
@@ -63,8 +63,9 @@
     a {
       color: $accent-2;
 
-      &:hover {
+      &:hover, &:focus {
         color: $white;
+        text-decoration: none;
       }
     }
 }
