@@ -77,13 +77,14 @@ class Resource implements ResourceInterface {
 
     $resource->jsonData = $data;
     $resource->jsonDataRaw = Json::encode($resource->jsonData);
-    
-    $resource->getProcessedData();
 
     // Try to set from the static cache if possible.
     if (!empty($data['data']['id'])) {
       $resource_type->setStaticCache($data['data']['id'], $resource);
     }
+
+    // This must come after setting the static cache to avoid recursion.
+    $resource->getProcessedData();
 
     return $resource;
   }
@@ -111,12 +112,13 @@ class Resource implements ResourceInterface {
       $resource->jsonData['included'] = $included;
     }
 
-    $resource->getProcessedData();
-
     // Try to set from the static cache if possible.
     if (!empty($data['id'])) {
       $resource_type->setStaticCache($data['id'], $resource);
     }
+
+    // This must come after setting the static cache to avoid recursion.
+    $resource->getProcessedData();
 
     return $resource;
   }

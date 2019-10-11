@@ -243,7 +243,7 @@ class ResourceFieldItemList implements ResourceFieldItemListInterface {
   protected function createItem($value = NULL) {
     $resource_field_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_field_type');
 
-    if ($field_item = $resource_field_type_manager->createInstance($this->getFieldType(), [])) {
+    if ($field_item = $resource_field_type_manager->getResourceFieldType($this->getFieldType())) {
       $field_item->setParentList($this);
       $field_item->setValue($value);
 
