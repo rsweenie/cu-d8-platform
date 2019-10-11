@@ -1,16 +1,16 @@
-uuid: e6e5835a-cf18-4199-a0ce-cea5fbdd4677
+uuid: 65d2edad-e831-4408-93e1-4fd80b578d6b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_stat_highlite_style
-    - paragraphs.paragraphs_type.statistic_highlite
+    - field.storage.node.field_stat_highlite_style
+    - node.type.grad_statistic_highlite
   module:
     - options
-id: paragraph.statistic_highlite.field_stat_highlite_style
+id: node.grad_statistic_highlite.field_stat_highlite_style
 field_name: field_stat_highlite_style
-entity_type: paragraph
-bundle: statistic_highlite
+entity_type: node
+bundle: grad_statistic_highlite
 label: Style
 description: ''
 required: true

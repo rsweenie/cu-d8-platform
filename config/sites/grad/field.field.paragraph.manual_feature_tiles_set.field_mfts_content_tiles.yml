@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.manual_feature_tiles_set
     - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.statistic_highlite
   module:
     - entity_reference_revisions
 id: paragraph.manual_feature_tiles_set.field_mfts_content_tiles
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       image: image
       quote: quote
+      statistic_highlite: statistic_highlite
     target_bundles_drag_drop:
       accordion:
         weight: 28
@@ -103,8 +105,8 @@ settings:
         weight: 52
         enabled: false
       statistic_highlite:
+        enabled: true
         weight: 53
-        enabled: false
       video:
         weight: 54
         enabled: false
