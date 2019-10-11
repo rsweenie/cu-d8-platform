@@ -1,26 +1,26 @@
-uuid: b72989ce-01d1-493c-b63e-4134cfc65615
+uuid: 0a0f07c3-695d-4304-bdf1-bebcd7d025bf
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_mfsfa_image
-    - media.type.image
+    - field.storage.paragraph.field_fac_spotlight_ref
+    - node.type.faculty_alumni_spotlight
     - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
-id: paragraph.manual_faculty_alumni_highlight.field_mfsfa_image
-field_name: field_mfsfa_image
+id: paragraph.manual_faculty_alumni_highlight.field_fac_spotlight_ref
+field_name: field_fac_spotlight_ref
 entity_type: paragraph
 bundle: manual_faculty_alumni_highlight
-label: Image
+label: 'Faculty/Alumni Spotlight'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      image: image
+      faculty_alumni_spotlight: faculty_alumni_spotlight
     sort:
       field: _none
     auto_create: false

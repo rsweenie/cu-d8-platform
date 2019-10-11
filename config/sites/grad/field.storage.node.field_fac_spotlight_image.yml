@@ -1,21 +1,20 @@
-uuid: b8396ff1-dbe8-40a9-93b6-ef8af69f518b
+uuid: 192eb148-089f-4e7f-8fe5-41a99ac66a4c
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
-    - paragraphs
+    - media
+    - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_mfsfa_name
-field_name: field_mfsfa_name
-entity_type: paragraph
-type: string
+id: node.field_fac_spotlight_image
+field_name: field_fac_spotlight_image
+entity_type: node
+type: entity_reference
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
+  target_type: media
 module: core
 locked: false
 cardinality: 1

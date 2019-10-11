@@ -1,17 +1,17 @@
-uuid: 7ffc9107-07b7-49be-8e51-1e69e7ac782a
+uuid: 5779d9b5-b5af-442e-b337-6ae8bd7d9b83
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
     - link
-    - paragraphs
+    - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_mfsfa_cta
-field_name: field_mfsfa_cta
-entity_type: paragraph
+id: node.field_fac_spotlight_cta
+field_name: field_fac_spotlight_cta
+entity_type: node
 type: link
 settings: {  }
 module: link
