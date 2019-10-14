@@ -49,14 +49,15 @@ content:
       link_type: ''
     third_party_settings: {  }
   hub_field_hub_news_title:
-    type: basic_string
+    type: string
     weight: 2
     region: content
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
   hub_field_hub_news_type:
-    type: hub_resource_link
+    type: hub_resource_label
     weight: 1
     region: content
     label: hidden

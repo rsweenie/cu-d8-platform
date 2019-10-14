@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_browser
     - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_cta
     - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_desc
     - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_image
@@ -11,8 +12,8 @@ dependencies:
     - field.field.node.hub_faculty_alumni_spotlight.field_hub_fac_spotlight_type
     - node.type.hub_faculty_alumni_spotlight
   module:
+    - entity_browser
     - link
-    - media_library
     - name
     - path
 id: node.hub_faculty_alumni_spotlight.default
@@ -20,12 +21,6 @@ targetEntityType: node
 bundle: hub_faculty_alumni_spotlight
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_hub_fac_spotlight_cta:
     weight: 5
     settings:
@@ -43,10 +38,17 @@ content:
     type: string_textarea
     region: content
   field_hub_fac_spotlight_image:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 6
     settings:
-      media_types: {  }
+      entity_browser: media_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
     third_party_settings: {  }
     region: content
   field_hub_fac_spotlight_name:
@@ -96,7 +98,7 @@ content:
     region: content
   path:
     type: path
-    weight: 9
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -104,7 +106,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 9
     region: content
     third_party_settings: {  }
   title:
@@ -115,23 +117,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 7
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
   url_redirects:
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  created: true
   private: true
   promote: true
   publish_on: true
   sticky: true
+  uid: true
   unpublish_on: true

@@ -76,26 +76,38 @@ resourceFields:
       id: ''
     disabled: false
   behavior_settings:
+    disabled: true
     fieldName: behavior_settings
     publicName: behavior_settings
     enhancer:
       id: ''
-    disabled: false
   default_langcode:
+    disabled: true
     fieldName: default_langcode
     publicName: default_langcode
     enhancer:
       id: ''
-    disabled: false
   revision_default:
+    disabled: true
     fieldName: revision_default
     publicName: revision_default
     enhancer:
       id: ''
-    disabled: false
   revision_translation_affected:
+    disabled: true
     fieldName: revision_translation_affected
     publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  field_metadata:
+    fieldName: field_metadata
+    publicName: field_metadata
+    enhancer:
+      id: ''
+    disabled: false
+  field_video_caption:
+    fieldName: field_video_caption
+    publicName: field_video_caption
     enhancer:
       id: ''
     disabled: false

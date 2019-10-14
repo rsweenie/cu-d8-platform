@@ -1,0 +1,28 @@
+uuid: c2672cda-2037-46af-bb72-39d9895b99e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hub_quote_ref_item
+    - node.type.hub_quote
+    - paragraphs.paragraphs_type.hub_quote_ref
+id: paragraph.hub_quote_ref.field_hub_quote_ref_item
+field_name: field_hub_quote_ref_item
+entity_type: paragraph
+bundle: hub_quote_ref
+label: Quote
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_quote: hub_quote
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

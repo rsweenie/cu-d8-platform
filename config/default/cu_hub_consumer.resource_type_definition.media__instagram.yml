@@ -1,0 +1,41 @@
+uuid: 78bde134-921d-424a-9bad-8e9e07c7480f
+langcode: en
+status: true
+dependencies: {  }
+id: media__instagram
+type_id: media--instagram
+fields:
+  drupal_internal__mid:
+    type: integer
+    multiple: false
+  drupal_internal__vid:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  changed:
+    type: datetime
+    multiple: false
+  metatag_normalized:
+    type: hub_metatags
+    multiple: true
+  embed_code:
+    type: string_long
+    multiple: false
+  field_media_in_library:
+    type: boolean
+    multiple: false
+  bundle:
+    type: hub_resource
+    hub_type: media_type
+    hub_bundles:
+      - media_type--media_type
+    multiple: false
+  thumbnail:
+    type: hub_resource
+    hub_type: file
+    multiple: false

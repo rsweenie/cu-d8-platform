@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+<p{{ attributes.addClass(classes) }}>
+  {% if content %}
+    This program is offered {{ content }}
+  {% endif %}
+</p>

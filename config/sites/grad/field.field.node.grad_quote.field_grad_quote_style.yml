@@ -1,0 +1,23 @@
+uuid: 6d808920-0ca3-43b0-8eaa-c7cc3ce03af1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grad_quote_style
+    - node.type.grad_quote
+  module:
+    - options
+id: node.grad_quote.field_grad_quote_style
+field_name: field_grad_quote_style
+entity_type: node
+bundle: grad_quote
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: color1
+default_value_callback: ''
+settings: {  }
+field_type: list_string
