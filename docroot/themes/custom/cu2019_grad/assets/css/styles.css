@@ -2719,17 +2719,19 @@ aside .btn-text:hover {
 
 .node__content > header,
 .hub-reference > header,
-header.hp_hero {
+header.hp_hero,
+.view-cu-news-references > header {
   position: relative;
   overflow: hidden;
   z-index: 120;
 }
 
-/* line 28, src/sass/components/basic/_hero.scss */
+/* line 29, src/sass/components/basic/_hero.scss */
 
 .node__content > header:after,
 .hub-reference > header:after,
-header.hp_hero:after {
+header.hp_hero:after,
+.view-cu-news-references > header:after {
   width: 150%;
   height: 100%;
   position: absolute;
@@ -2744,30 +2746,33 @@ header.hp_hero:after {
   z-index: 90;
 }
 
-/* line 45, src/sass/components/basic/_hero.scss */
+/* line 46, src/sass/components/basic/_hero.scss */
 
 .node__content > header .field--name-field-interior-page-hero-img,
 .hub-reference > header .field--name-field-interior-page-hero-img,
-header.hp_hero .field--name-field-interior-page-hero-img {
+header.hp_hero .field--name-field-interior-page-hero-img,
+.view-cu-news-references > header .field--name-field-interior-page-hero-img {
   position: relative;
   z-index: 0;
 }
 
-/* line 50, src/sass/components/basic/_hero.scss */
+/* line 51, src/sass/components/basic/_hero.scss */
 
 .node__content > header img,
 .hub-reference > header img,
-header.hp_hero img {
+header.hp_hero img,
+.view-cu-news-references > header img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* line 56, src/sass/components/basic/_hero.scss */
+/* line 57, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title,
 .hub-reference > header .hero_title,
-header.hp_hero .hero_title {
+header.hp_hero .hero_title,
+.view-cu-news-references > header .hero_title {
   width: 100%;
   left: 0;
   bottom: 4.2rem;
@@ -2776,20 +2781,22 @@ header.hp_hero .hero_title {
   z-index: 200;
 }
 
-/* line 69, src/sass/components/basic/_hero.scss */
+/* line 70, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title h1,
 .hub-reference > header .hero_title h1,
-header.hp_hero .hero_title h1 {
+header.hp_hero .hero_title h1,
+.view-cu-news-references > header .hero_title h1 {
   margin: 0;
   color: #fff;
 }
 
-/* line 79, src/sass/components/basic/_hero.scss */
+/* line 80, src/sass/components/basic/_hero.scss */
 
 .node__content > header .breadcrumb,
 .hub-reference > header .breadcrumb,
-header.hp_hero .breadcrumb {
+header.hp_hero .breadcrumb,
+.view-cu-news-references > header .breadcrumb {
   height: 4.2rem;
   position: relative;
   z-index: 0;
@@ -2804,53 +2811,59 @@ header.hp_hero .breadcrumb {
 }
 
 @supports (mix-blend-mode: lighten) {
-  /* line 79, src/sass/components/basic/_hero.scss */
+  /* line 80, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
   .hub-reference > header .breadcrumb,
-  header.hp_hero .breadcrumb {
+  header.hp_hero .breadcrumb,
+  .view-cu-news-references > header .breadcrumb {
     z-index: 200;
     mix-blend-mode: lighten;
   }
 }
 
-/* line 100, src/sass/components/basic/_hero.scss */
+/* line 101, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title > div,
 .node__content > header .breadcrumb > div,
 .hub-reference > header .hero_title > div,
 .hub-reference > header .breadcrumb > div,
 header.hp_hero .hero_title > div,
-header.hp_hero .breadcrumb > div {
+header.hp_hero .breadcrumb > div,
+.view-cu-news-references > header .hero_title > div,
+.view-cu-news-references > header .breadcrumb > div {
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 2.5rem;
   width: 100%;
 }
 
-/* line 120, src/sass/components/basic/_hero.scss */
+/* line 121, src/sass/components/basic/_hero.scss */
 
 .node__content > header.interior_page > .field,
 .hub-reference > header.interior_page > .field,
-header.hp_hero.interior_page > .field {
+header.hp_hero.interior_page > .field,
+.view-cu-news-references > header.interior_page > .field {
   height: 16.4rem;
   overflow: hidden;
 }
 
-/* line 134, src/sass/components/basic/_hero.scss */
+/* line 135, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background,
 .hub-reference > header .js-background,
-header.hp_hero .js-background {
+header.hp_hero .js-background,
+.view-cu-news-references > header .js-background {
   background-size: cover;
   background-position: top center;
 }
 
-/* line 138, src/sass/components/basic/_hero.scss */
+/* line 139, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background img,
 .hub-reference > header .js-background img,
-header.hp_hero .js-background img {
+header.hp_hero .js-background img,
+.view-cu-news-references > header .js-background img {
   position: absolute;
   width: 0.1rem;
   height: 0.1rem;
@@ -2861,11 +2874,12 @@ header.hp_hero .js-background img {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 143, src/sass/components/basic/_hero.scss */
+/* line 144, src/sass/components/basic/_hero.scss */
 
 .node__content > header:before,
 .hub-reference > header:before,
-header.hp_hero:before {
+header.hp_hero:before,
+.view-cu-news-references > header:before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2881,15 +2895,16 @@ header.hp_hero:before {
   pointer-events: none;
 }
 
-/* line 158, src/sass/components/basic/_hero.scss */
+/* line 159, src/sass/components/basic/_hero.scss */
 
 .menuhover .node__content > header:before,
 .menuhover .hub-reference > header:before,
-.menuhover header.hp_hero:before {
+.menuhover header.hp_hero:before,
+.menuhover .view-cu-news-references > header:before {
   opacity: 1;
 }
 
-/* line 167, src/sass/components/basic/_hero.scss */
+/* line 168, src/sass/components/basic/_hero.scss */
 
 header > .field + .hero_title,
 header > .block + .hero_title {
@@ -2900,20 +2915,20 @@ header > .block + .hero_title {
   padding: 2.5rem 0;
 }
 
-/* line 182, src/sass/components/basic/_hero.scss */
+/* line 183, src/sass/components/basic/_hero.scss */
 
 header.hp_hero {
   position: relative;
   margin-bottom: 9.8rem;
 }
 
-/* line 192, src/sass/components/basic/_hero.scss */
+/* line 193, src/sass/components/basic/_hero.scss */
 
 header.hp_hero:after {
   height: calc(100% - 3rem);
 }
 
-/* line 202, src/sass/components/basic/_hero.scss */
+/* line 203, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag {
   position: relative;
@@ -2924,14 +2939,14 @@ header.hp_hero:after {
           order: 2;
 }
 
-/* line 216, src/sass/components/basic/_hero.scss */
+/* line 217, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div {
   max-width: 1350px;
   margin: 0 auto;
 }
 
-/* line 220, src/sass/components/basic/_hero.scss */
+/* line 221, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div > div {
   padding: 2.5rem 1.6rem 1.6rem 1.6rem;
@@ -2939,7 +2954,7 @@ header.hp_hero:after {
   color: #fff;
 }
 
-/* line 232, src/sass/components/basic/_hero.scss */
+/* line 233, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
   margin: 0 0 0.18em 0;
@@ -2947,7 +2962,7 @@ header.hp_hero:after {
   line-height: 0.94em;
 }
 
-/* line 242, src/sass/components/basic/_hero.scss */
+/* line 243, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
   font-family: "Conduit";
@@ -2959,7 +2974,7 @@ header.hp_hero:after {
   letter-spacing: 0.05em;
 }
 
-/* line 258, src/sass/components/basic/_hero.scss */
+/* line 259, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg {
   position: relative;
@@ -2970,7 +2985,7 @@ header.hp_hero:after {
   max-height: 680px;
 }
 
-/* line 266, src/sass/components/basic/_hero.scss */
+/* line 267, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image {
   position: relative;
@@ -2978,7 +2993,7 @@ header.hp_hero:after {
   padding-bottom: 50%;
 }
 
-/* line 275, src/sass/components/basic/_hero.scss */
+/* line 276, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image img {
   width: auto;
@@ -2992,7 +3007,7 @@ header.hp_hero:after {
           transform: translate(-50%, -50%);
 }
 
-/* line 296, src/sass/components/basic/_hero.scss */
+/* line 297, src/sass/components/basic/_hero.scss */
 
 .bg_caption {
   position: absolute;
@@ -3006,7 +3021,7 @@ header.hp_hero:after {
   text-align: right;
 }
 
-/* line 311, src/sass/components/basic/_hero.scss */
+/* line 312, src/sass/components/basic/_hero.scss */
 
 .bg_caption a {
   color: #fff;
@@ -3019,7 +3034,7 @@ header.hp_hero:after {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* line 321, src/sass/components/basic/_hero.scss */
+/* line 322, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header {
   position: relative;
@@ -3029,7 +3044,7 @@ header.hp_hero:after {
           order: 3;
 }
 
-/* line 368, src/sass/components/basic/_hero.scss */
+/* line 369, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header > div {
   max-width: 1350px;
@@ -3037,7 +3052,7 @@ header.hp_hero:after {
   width: 100%;
 }
 
-/* line 373, src/sass/components/basic/_hero.scss */
+/* line 374, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner {
   position: relative;
@@ -3048,7 +3063,7 @@ header.hp_hero:after {
   z-index: 200;
 }
 
-/* line 381, src/sass/components/basic/_hero.scss */
+/* line 382, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner:after {
   width: 0;
@@ -3064,7 +3079,7 @@ header.hp_hero:after {
   border-color: #002E6D transparent transparent transparent;
 }
 
-/* line 401, src/sass/components/basic/_hero.scss */
+/* line 402, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner div:last-child {
   font-family: "Conduit";
@@ -11085,6 +11100,89 @@ nav.jn li + li {
   font-size: 1.6rem;
 }
 
+/* line 1, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-row {
+  display: -ms-grid;
+  -ms-grid-columns: 34% 1fr;
+  -ms-grid-rows: auto auto;
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  grid-template-rows: auto auto;
+  padding: 2.5rem 0;
+  border-bottom: 2px solid #EEEFF0;
+}
+
+/* line 13, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.views-row:last-child .news-listing-row {
+  border-bottom: 0;
+}
+
+/* line 17, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-row h2 {
+  color: #266db3;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-transform: none;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+}
+
+/* line 156, src/sass/components/copy/_headings.scss */
+
+aside .news-listing-row h2 {
+  font-size: 1em;
+}
+
+/* line 159, src/sass/components/copy/_headings.scss */
+
+aside .news-listing-row h2 ~ h4,
+aside .news-listing-row h2 ~ .h4 {
+  margin-top: 0.5rem;
+}
+
+/* line 35, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-img {
+  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* line 42, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 49, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-tags {
+  -ms-grid-column: 1;
+  -ms-grid-row: 2;
+  -ms-grid-column-span: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 2;
+}
+
+/* line 60, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-prv {
+  -ms-grid-column: 2;
+  -ms-grid-row: 1;
+  grid-column: 2;
+  grid-row: 1;
+  padding-left: 2.5rem;
+}
+
 /* line 1, src/sass/components/feeds-detail/_detail.scss */
 
 .field--name-hub-field-hub-news-date {
@@ -12609,11 +12707,12 @@ form.search .search button {
     text-align: center;
   }
 
-  /* line 120, src/sass/components/basic/_hero.scss */
+  /* line 121, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
   .hub-reference > header.interior_page > .field,
-  header.hp_hero.interior_page > .field {
+  header.hp_hero.interior_page > .field,
+  .view-cu-news-references > header.interior_page > .field {
     height: 32rem;
   }
 
@@ -12659,6 +12758,43 @@ form.search .search button {
   nav.cp li {
     width: calc(33.333% - 5rem);
     margin: 0 2.5rem;
+  }
+
+  /* line 71, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row {
+    -ms-grid-rows: auto 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  /* line 76, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-img {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  /* line 86, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-tags {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    grid-column: 2;
+    grid-row: 1;
+    padding-left: 2.5rem;
+  }
+
+  /* line 96, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-prv {
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+    grid-column: 2;
+    grid-row: 2;
   }
 }
 
@@ -14137,6 +14273,18 @@ form.search .search button {
     font-size: 2rem;
   }
 
+  /* line 17, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row h2 {
+    font-size: 2.4rem;
+  }
+
+  /* line 1, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row {
+    padding: 5rem 0;
+  }
+
   /* line 1, src/sass/components/feeds-detail/_detail.scss */
 
   .field--name-hub-field-hub-news-date {
@@ -14537,26 +14685,29 @@ form.search .search button {
     font-size: 1.3rem;
   }
 
-  /* line 69, src/sass/components/basic/_hero.scss */
+  /* line 70, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title h1,
   .hub-reference > header .hero_title h1,
-  header.hp_hero .hero_title h1 {
+  header.hp_hero .hero_title h1,
+  .view-cu-news-references > header .hero_title h1 {
     width: 67%;
   }
 
-  /* line 100, src/sass/components/basic/_hero.scss */
+  /* line 101, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
-  header.hp_hero .breadcrumb > div {
+  header.hp_hero .breadcrumb > div,
+  .view-cu-news-references > header .hero_title > div,
+  .view-cu-news-references > header .breadcrumb > div {
     width: 95%;
   }
 
-  /* line 368, src/sass/components/basic/_hero.scss */
+  /* line 369, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 95%;
@@ -14738,6 +14889,13 @@ form.search .search button {
 
   .f-tiles {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* line 106, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row {
+    -ms-grid-columns: 28% 1fr;
+    grid-template-columns: 28% 1fr;
   }
 
   /* line 15, src/sass/components/feeds-detail/featured/_faculty.scss */
@@ -15810,42 +15968,47 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 56, src/sass/components/basic/_hero.scss */
+  /* line 57, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title,
   .hub-reference > header .hero_title,
-  header.hp_hero .hero_title {
+  header.hp_hero .hero_title,
+  .view-cu-news-references > header .hero_title {
     padding: 14.7rem 0 2.5rem 0;
   }
 
-  /* line 79, src/sass/components/basic/_hero.scss */
+  /* line 80, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
   .hub-reference > header .breadcrumb,
-  header.hp_hero .breadcrumb {
+  header.hp_hero .breadcrumb,
+  .view-cu-news-references > header .breadcrumb {
     height: 7.2rem;
   }
 
-  /* line 100, src/sass/components/basic/_hero.scss */
+  /* line 101, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
-  header.hp_hero .breadcrumb > div {
+  header.hp_hero .breadcrumb > div,
+  .view-cu-news-references > header .hero_title > div,
+  .view-cu-news-references > header .breadcrumb > div {
     width: 90%;
   }
 
-  /* line 120, src/sass/components/basic/_hero.scss */
+  /* line 121, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
   .hub-reference > header.interior_page > .field,
-  header.hp_hero.interior_page > .field {
+  header.hp_hero.interior_page > .field,
+  .view-cu-news-references > header.interior_page > .field {
     height: 51.5rem;
   }
 
-  /* line 167, src/sass/components/basic/_hero.scss */
+  /* line 168, src/sass/components/basic/_hero.scss */
 
   header > .field + .hero_title,
   header > .block + .hero_title {
@@ -15853,7 +16016,7 @@ form.search .search button {
     padding: 2.5rem 0;
   }
 
-  /* line 202, src/sass/components/basic/_hero.scss */
+  /* line 203, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag {
     position: absolute;
@@ -15862,7 +16025,7 @@ form.search .search button {
     z-index: 10;
   }
 
-  /* line 220, src/sass/components/basic/_hero.scss */
+  /* line 221, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div > div {
     max-width: 545px;
@@ -15870,31 +16033,31 @@ form.search .search button {
     padding: 5rem 4rem 5rem 5rem;
   }
 
-  /* line 232, src/sass/components/basic/_hero.scss */
+  /* line 233, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div h1 {
     font-size: 5rem;
   }
 
-  /* line 242, src/sass/components/basic/_hero.scss */
+  /* line 243, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
     font-size: 3.6rem;
   }
 
-  /* line 266, src/sass/components/basic/_hero.scss */
+  /* line 267, src/sass/components/basic/_hero.scss */
 
   .hp_hero_bg .field--name-image {
     padding-bottom: 42%;
   }
 
-  /* line 321, src/sass/components/basic/_hero.scss */
+  /* line 322, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header {
     margin-bottom: 3rem;
   }
 
-  /* line 335, src/sass/components/basic/_hero.scss */
+  /* line 336, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:before {
     width: 100vw;
@@ -15906,7 +16069,7 @@ form.search .search button {
     background: rgba(0, 46, 109, 0.85);
   }
 
-  /* line 345, src/sass/components/basic/_hero.scss */
+  /* line 346, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:after {
     width: 100vw;
@@ -15919,7 +16082,7 @@ form.search .search button {
   }
 
 @supports (mix-blend-mode: screen) {
-    /* line 345, src/sass/components/basic/_hero.scss */
+    /* line 346, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header:after {
       mix-blend-mode: screen;
@@ -15927,20 +16090,20 @@ form.search .search button {
 }
 
 @supports (mix-blend-mode: screen) {
-    /* line 321, src/sass/components/basic/_hero.scss */
+    /* line 322, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header {
       z-index: 300;
     }
 }
 
-  /* line 368, src/sass/components/basic/_hero.scss */
+  /* line 369, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 90%;
   }
 
-  /* line 381, src/sass/components/basic/_hero.scss */
+  /* line 382, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner:after {
     border-width: 30px 30px 0 30px;
@@ -15950,14 +16113,14 @@ form.search .search button {
             transform: translateX(0);
   }
 
-  /* line 373, src/sass/components/basic/_hero.scss */
+  /* line 374, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     font-size: 4.5rem;
     padding: 5rem 2.5rem 5rem 7.5rem;
   }
 
-  /* line 412, src/sass/components/basic/_hero.scss */
+  /* line 413, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner div:last-child {
     font-size: 3.6rem;
@@ -16477,18 +16640,20 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 100, src/sass/components/basic/_hero.scss */
+  /* line 101, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
-  header.hp_hero .breadcrumb > div {
+  header.hp_hero .breadcrumb > div,
+  .view-cu-news-references > header .hero_title > div,
+  .view-cu-news-references > header .breadcrumb > div {
     width: 85%;
   }
 
-  /* line 368, src/sass/components/basic/_hero.scss */
+  /* line 369, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 85%;
@@ -16793,7 +16958,7 @@ form.search .search button {
     margin-top: -7.5rem;
   }
 
-  /* line 182, src/sass/components/basic/_hero.scss */
+  /* line 183, src/sass/components/basic/_hero.scss */
 
   header.hp_hero {
     width: 100%;
@@ -16806,20 +16971,20 @@ form.search .search button {
             flex-direction: column;
   }
 
-  /* line 192, src/sass/components/basic/_hero.scss */
+  /* line 193, src/sass/components/basic/_hero.scss */
 
   header.hp_hero:after {
     top: 3.3rem;
     height: calc(100% - 4.9rem);
   }
 
-  /* line 296, src/sass/components/basic/_hero.scss */
+  /* line 297, src/sass/components/basic/_hero.scss */
 
   .bg_caption {
     display: none;
   }
 
-  /* line 321, src/sass/components/basic/_hero.scss */
+  /* line 322, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header {
     background: #002E6D;
@@ -17189,6 +17354,12 @@ form.search .search button {
 
   .mfs .field--name-field-mfs-featured-items .field__item:last-child .mfsi {
     margin-bottom: 0;
+  }
+
+  /* line 25, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row .field--name-hub-field-hub-news-description {
+    display: none;
   }
 
   /* line 16, src/sass/components/feeds-detail/programs/_programs.scss */
