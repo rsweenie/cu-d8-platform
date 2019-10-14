@@ -58,9 +58,19 @@
     </div>
   {% endif %}
   {% if exposed %}
-    <div class="view-filters">
-      {{ exposed }}
+  <div class="section listing-filters">
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="listing-filters-toggle">
+          <span class="icon icon-filter"></span>
+          <span>See Search and Filters</span>
+        </button>
+        <div class="view-filters">
+          {{ exposed }}
+        </div>
+      </div>
     </div>
+  </div>
   {% endif %}
   {% if header %}
     <div class="view-header">
@@ -70,7 +80,15 @@
 
   {% if rows %}
     <div class="view-content">
-      {{ rows }}
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="fac-listing">
+              {{ rows }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   {% elseif empty %}
     <div class="view-empty">
@@ -79,7 +97,13 @@
   {% endif %}
 
   {% if pager %}
-    {{ pager }}
+    <div class="section">
+      <div class="row">
+        <div class="col-xs-12">
+          {{ pager }}
+        </div>
+      </div>
+    </div>
   {% endif %}
   {% if attachment_after %}
     <div class="attachment attachment-after">
