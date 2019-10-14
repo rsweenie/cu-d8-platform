@@ -1,0 +1,28 @@
+uuid: cf3f88be-3a27-44b5-b0c4-7ebb732478e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_event_listing_image
+    - media.type.image
+    - node.type.hub_event
+id: node.hub_event.field_hub_event_listing_image
+field_name: field_hub_event_listing_image
+entity_type: node
+bundle: hub_event
+label: 'Listing Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

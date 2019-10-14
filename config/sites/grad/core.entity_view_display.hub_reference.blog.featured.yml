@@ -1,0 +1,86 @@
+uuid: 46da2f65-ea8b-44bc-abb5-0cde504029e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.hub_reference.featured
+    - cu_hub_consumer.hub_reference_type.blog
+    - field.field.hub_reference.blog.field_blog_date
+    - field.field.hub_reference.blog.field_blog_type
+    - field.field.hub_reference.blog.field_featured
+  module:
+    - cu_hub_consumer
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: hub_reference.blog.featured
+targetEntityType: hub_reference
+bundle: blog
+mode: featured
+content:
+  hub_field_hub_blog_description:
+    type: basic_string
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_blog_listing_image:
+    type: hub_resource_media_image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      style_name: srcset_500px_wide
+      link_type: ''
+    third_party_settings: {  }
+  hub_field_hub_blog_title:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  hub_field_hub_blog_type:
+    type: hub_resource_link
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_blog_date: true
+  field_blog_type: true
+  field_featured: true
+  hub_changed: true
+  hub_created: true
+  hub_default_langcode: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_blog_body: true
+  hub_field_hub_blog_date: true
+  hub_field_hub_blog_featured: true
+  hub_field_hub_blog_hero_image: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_menu_link: true
+  hub_node_type: true
+  hub_private: true
+  hub_promote: true
+  hub_publish_on: true
+  hub_revision_log: true
+  hub_revision_timestamp: true
+  hub_revision_translation_affected: true
+  hub_revision_uid: true
+  hub_scheduled_transition_date: true
+  hub_scheduled_transition_state: true
+  hub_status: true
+  hub_sticky: true
+  hub_title: true
+  hub_uid: true
+  hub_unpublish_on: true
+  search_api_excerpt: true

@@ -15,6 +15,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinition;
 use Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinitionInterface;
+use Drupal\cu_hub_consumer\hub\ResourceException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 //use \GuzzleHttp\ClientInterface;
 //use GuzzleHttp\Exception\RequestException;
@@ -81,6 +82,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * @var \Drupal\cu_hub_consumer\Entity\HubResourceTypeDefinitionInterface
    */
   protected $hubResourceTypeDefinition;
+
+  protected $resourceCache = [];
 
   /**
    * Constructs a new hub resource type instance.
@@ -239,12 +242,12 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
         $response = $this->hubClient->request('GET', $path, $query);
       }
       catch (ClientException $e) {
-        throw new ResourceException('Could not retrieve the hub resource list: ' . $e->getMessage(), $path, [], $e);
+        throw new ResourceException('Could not retrieve the hub resource list for ' . $this->pluginDefinition['hub_type_id'] . ': ' . $e->getMessage(), $path, [], $e);
       }
       
       $resource = ResourceList::createFromHttpResponse($this, $response);
       if (!$resource) {
-        throw new ResourceException('Could not properly decode the hub resource list.', $path);
+        throw new ResourceException('Could not properly decode the hub resource list ' . $this->pluginDefinition['hub_type_id'] . '.', $path);
       }
 
       return $resource;
@@ -254,12 +257,14 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   protected function buildFetchQuery() {
     $query = [];
 
+    /*
     if ($type_def = $this->getResourceTypeDefinition()) {
-      //if ($includes = $this->findIncludes($type_def)) {
-        //$flat = $this->collapseIncludes($includes);
-        //$query['include'] = implode(',', $flat);
-      //}
+      if ($includes = $this->findIncludes($type_def)) {
+        $flat = $this->collapseIncludes($includes);
+        $query['include'] = implode(',', $flat);
+      }
     }
+    */
 
     return $query;
   }
@@ -272,9 +277,17 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
       return $includes;
     }
 
+    $type_exclude = [
+      'node_type',
+      'media_type',
+      'taxonomy_vocabulary',
+      'paragraphs_type'
+    ];
+
     $fields = $type_def->get('fields');
     foreach ($fields as $field_name => $field_info) {
       if ($field_info['type'] == 'hub_resource') {
+        /*
         // Handle standard media includes.
         if ($field_info['hub_type'] == 'media') {
           $includes[$field_name] = [
@@ -307,6 +320,26 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
             $resource_type = $resource_type_def->get('type_id');
             if (strpos($resource_type, 'node--') === 0) {
               $includes[$field_name] = array_merge($includes[$field_name], $this->findIncludes($resource_type_def, $depth+1));
+            }
+          }
+        }
+        */
+
+        if (in_array($field_info['hub_type'], $type_exclude)) {
+          continue;
+        }
+
+        $includes[$field_name] = [];
+
+        // Try to use the bundles listed in the resource type definition.
+        if (isset($field_info['hub_bundles'])) {
+          if (is_array($field_info['hub_bundles'])) {
+            foreach ($field_info['hub_bundles'] as $hub_bundle_id) {
+              $def_storage = $this->entityTypeManager->getStorage('hub_resource_type_definition');
+              $resource_type_defs = $def_storage->loadByProperties(['type_id' => $hub_bundle_id]);
+              foreach ($resource_type_defs as $resource_type_def) {
+                $includes[$field_name] = array_merge($includes[$field_name], $this->findIncludes($resource_type_def, $depth+1));
+              }
             }
           }
         }
@@ -426,14 +459,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * {@inheritdoc}
    */
   public function view(ResourceInterface $resource) {
-    //return ['#markup' => print_r($resource->getJsonData(), TRUE)];
     $elements = [];
-
-    //if ($label = $resource->label()) {
-    //  $elements = [
-    //    '#markup' => $label,
-    //  ];
-    //}
 
     $values = $resource->getProcessedData();
     if (is_array($values)) {
@@ -471,6 +497,27 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
         'resource' => $resource,
       ];
     }
+  }
+
+  /**
+   * Returns a resource if in the static cache for this type.
+   *
+   * @param string $uuid
+   * @return mixed
+   */
+  public function getFromStaticCache($uuid) {
+    return isset($this->resourceCache[$uuid]) ? $this->resourceCache[$uuid] : NULL;
+  }
+
+  /**
+   * Sets the resource in the static cache for this type.
+   *
+   * @param string $uuid
+   * @param object $resource
+   * @return void
+   */
+  public function setStaticCache($uuid, $resource) {
+    $this->resourceCache[$uuid] = $resource;
   }
   
 }

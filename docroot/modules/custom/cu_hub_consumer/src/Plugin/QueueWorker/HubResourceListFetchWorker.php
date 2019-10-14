@@ -4,6 +4,7 @@ namespace Drupal\cu_hub_consumer\Plugin\QueueWorker;
  
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\Core\Queue\SuspendQueueException;
+use Drupal\cu_hub_consumer\hub\ResourceException;
  
 /**
  * Fetches resource list data from hub.
@@ -48,7 +49,7 @@ class HubResourceListFetchWorker extends QueueWorkerBase {
     }
     catch (ResourceException $e) {
       watchdog_exception('cu_hub_consumer', $e);
-      throw new SuspendQueueException('Could not properly fetch the hub resource list.');
+      throw new SuspendQueueException('Could not properly fetch the hub resource list for ' . $resource_type->getPluginId() . '.');
     }
 
     if ($resource_list) {

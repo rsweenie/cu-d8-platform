@@ -7,6 +7,7 @@ use Psr\Log\LoggerInterface;
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
 use GuzzleHttp\Exception\ClientException as GuzzleClientException;
+use GuzzleHttp\Exception\ServerException as GuzzleServerException;
 use Drupal\Component\Serialization\Json;
 
 /**
@@ -100,6 +101,9 @@ class Client implements ClientInterface {
       catch (GuzzleRequestException $e) {
         throw new ClientException($e->getMessage(), $url, $e);
       }
+      catch (GuzzleServerException $e) {
+        throw new ClientException($e->getMessage(), $url, $e);
+      }
     }
     throw new ClientException('Could not build a request URL.', $url);
   }
@@ -134,8 +138,10 @@ class Client implements ClientInterface {
    * @return array
    */
   protected function buildRequestOptions($query=[], $body='') {
-    $options = [];
-    //$options['auth'] = $this->auth();
+    $options = [
+      'timeout' => 5,
+    ];
+
     if ($body) {
       $options['body'] = $body;
     }
