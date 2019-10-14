@@ -2719,8 +2719,8 @@ aside .btn-text:hover {
 
 .node__content > header,
 .hub-reference > header,
-header.hp_hero,
-.view-cu-news-references > header {
+.view-cu-faculty-references > header,
+header.hp_hero {
   position: relative;
   overflow: hidden;
   z-index: 120;
@@ -2730,8 +2730,8 @@ header.hp_hero,
 
 .node__content > header:after,
 .hub-reference > header:after,
-header.hp_hero:after,
-.view-cu-news-references > header:after {
+.view-cu-faculty-references > header:after,
+header.hp_hero:after {
   width: 150%;
   height: 100%;
   position: absolute;
@@ -2750,8 +2750,8 @@ header.hp_hero:after,
 
 .node__content > header .field--name-field-interior-page-hero-img,
 .hub-reference > header .field--name-field-interior-page-hero-img,
-header.hp_hero .field--name-field-interior-page-hero-img,
-.view-cu-news-references > header .field--name-field-interior-page-hero-img {
+.view-cu-faculty-references > header .field--name-field-interior-page-hero-img,
+header.hp_hero .field--name-field-interior-page-hero-img {
   position: relative;
   z-index: 0;
 }
@@ -2760,8 +2760,8 @@ header.hp_hero .field--name-field-interior-page-hero-img,
 
 .node__content > header img,
 .hub-reference > header img,
-header.hp_hero img,
-.view-cu-news-references > header img {
+.view-cu-faculty-references > header img,
+header.hp_hero img {
   display: block;
   width: 100%;
   height: auto;
@@ -2771,8 +2771,8 @@ header.hp_hero img,
 
 .node__content > header .hero_title,
 .hub-reference > header .hero_title,
-header.hp_hero .hero_title,
-.view-cu-news-references > header .hero_title {
+.view-cu-faculty-references > header .hero_title,
+header.hp_hero .hero_title {
   width: 100%;
   left: 0;
   bottom: 4.2rem;
@@ -2785,8 +2785,8 @@ header.hp_hero .hero_title,
 
 .node__content > header .hero_title h1,
 .hub-reference > header .hero_title h1,
-header.hp_hero .hero_title h1,
-.view-cu-news-references > header .hero_title h1 {
+.view-cu-faculty-references > header .hero_title h1,
+header.hp_hero .hero_title h1 {
   margin: 0;
   color: #fff;
 }
@@ -2795,8 +2795,8 @@ header.hp_hero .hero_title h1,
 
 .node__content > header .breadcrumb,
 .hub-reference > header .breadcrumb,
-header.hp_hero .breadcrumb,
-.view-cu-news-references > header .breadcrumb {
+.view-cu-faculty-references > header .breadcrumb,
+header.hp_hero .breadcrumb {
   height: 4.2rem;
   position: relative;
   z-index: 0;
@@ -2815,8 +2815,8 @@ header.hp_hero .breadcrumb,
 
   .node__content > header .breadcrumb,
   .hub-reference > header .breadcrumb,
-  header.hp_hero .breadcrumb,
-  .view-cu-news-references > header .breadcrumb {
+  .view-cu-faculty-references > header .breadcrumb,
+  header.hp_hero .breadcrumb {
     z-index: 200;
     mix-blend-mode: lighten;
   }
@@ -2828,10 +2828,10 @@ header.hp_hero .breadcrumb,
 .node__content > header .breadcrumb > div,
 .hub-reference > header .hero_title > div,
 .hub-reference > header .breadcrumb > div,
+.view-cu-faculty-references > header .hero_title > div,
+.view-cu-faculty-references > header .breadcrumb > div,
 header.hp_hero .hero_title > div,
-header.hp_hero .breadcrumb > div,
-.view-cu-news-references > header .hero_title > div,
-.view-cu-news-references > header .breadcrumb > div {
+header.hp_hero .breadcrumb > div {
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 2.5rem;
@@ -2842,8 +2842,8 @@ header.hp_hero .breadcrumb > div,
 
 .node__content > header.interior_page > .field,
 .hub-reference > header.interior_page > .field,
-header.hp_hero.interior_page > .field,
-.view-cu-news-references > header.interior_page > .field {
+.view-cu-faculty-references > header.interior_page > .field,
+header.hp_hero.interior_page > .field {
   height: 16.4rem;
   overflow: hidden;
 }
@@ -2852,8 +2852,8 @@ header.hp_hero.interior_page > .field,
 
 .node__content > header .js-background,
 .hub-reference > header .js-background,
-header.hp_hero .js-background,
-.view-cu-news-references > header .js-background {
+.view-cu-faculty-references > header .js-background,
+header.hp_hero .js-background {
   background-size: cover;
   background-position: top center;
 }
@@ -2862,8 +2862,8 @@ header.hp_hero .js-background,
 
 .node__content > header .js-background img,
 .hub-reference > header .js-background img,
-header.hp_hero .js-background img,
-.view-cu-news-references > header .js-background img {
+.view-cu-faculty-references > header .js-background img,
+header.hp_hero .js-background img {
   position: absolute;
   width: 0.1rem;
   height: 0.1rem;
@@ -2878,8 +2878,8 @@ header.hp_hero .js-background img,
 
 .node__content > header:before,
 .hub-reference > header:before,
-header.hp_hero:before,
-.view-cu-news-references > header:before {
+.view-cu-faculty-references > header:before,
+header.hp_hero:before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2899,8 +2899,8 @@ header.hp_hero:before,
 
 .menuhover .node__content > header:before,
 .menuhover .hub-reference > header:before,
-.menuhover header.hp_hero:before,
-.menuhover .view-cu-news-references > header:before {
+.menuhover .view-cu-faculty-references > header:before,
+.menuhover header.hp_hero:before {
   opacity: 1;
 }
 
@@ -10701,54 +10701,191 @@ nav.side-nav input[type='checkbox']:checked ~ label span:after {
   opacity: 0;
 }
 
-/* line 14, src/sass/components/navigation/_pagination.scss */
+/* line 6, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination ul,
-nav.pagination ol {
+nav.pager {
+  background: #f5f8fc;
+  border-top: 1px solid #DADADA;
+  padding: 1.4rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
 }
 
-/* line 48, src/sass/components/navigation/_pagination.scss */
+/* line 14, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination ul > li:first-child a {
-  border-left: 0.2rem solid #F0F5FA;
+nav.pager ul,
+nav.pager ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 19, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li {
+  font-size: 1.6rem;
+  text-align: center;
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
+  background: #fff;
+  padding: 0;
+}
+
+/* line 27, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li a {
+  color: #555555;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.8rem;
+  height: 4.3rem;
+}
+
+/* line 36, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li:first-child {
+  border-left: 1px solid #DADADA;
+}
+
+/* line 40, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li:last-child {
+  border-right: 1px solid #DADADA;
+}
+
+/* line 44, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first {
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+
+/* line 49, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a:after {
+  content: "\E007";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* line 56, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--last {
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 }
 
 /* line 61, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a {
-  display: block;
-  padding: 1rem;
-  border: 0.2rem solid #F0F5FA;
-  border-left: none;
+nav.pager li.pager__item--last a:after {
+  content: "\E007";
 }
 
-/* line 73, src/sass/components/navigation/_pagination.scss */
+/* line 67, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a[disabled] {
-  color: #F0F5FA;
-  pointer-events: none;
+nav.pager li.pager__item--previous {
+  border-right: 1px solid #DADADA;
 }
 
-/* line 84, src/sass/components/navigation/_pagination.scss */
+/* line 71, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a.active {
-  background: #F0F5FA;
-  color: #002E6D;
+nav.pager li.pager__item--previous a:after {
+  content: "\E008";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* line 78, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--next {
+  border-left: 1px solid #DADADA;
+}
+
+/* line 82, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--next a:after {
+  content: "\E008";
+}
+
+/* line 92, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a,
+nav.pager li.pager__item--previous a,
+nav.pager li.pager__item--last a,
+nav.pager li.pager__item--next a {
+  color: #BABABA;
+  position: relative;
+}
+
+/* line 95, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a span,
+nav.pager li.pager__item--previous a span,
+nav.pager li.pager__item--last a span,
+nav.pager li.pager__item--next a span {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* line 100, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a:after,
+nav.pager li.pager__item--previous a:after,
+nav.pager li.pager__item--last a:after,
+nav.pager li.pager__item--next a:after {
+  font-family: "cu_icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 115, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.is-active {
+  font-weight: normal;
+  background: #0054A6;
+}
+
+/* line 119, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.is-active a {
+  color: #fff;
 }
 
 /* line 6, src/sass/components/navigation/_jump.scss */
@@ -11805,6 +11942,156 @@ aside .news-listing-row h2 ~ .h4 {
   border-bottom: none;
 }
 
+/* line 1, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 0 -1.25rem;
+  font-size: 1.6rem;
+  line-height: 1.125em;
+  color: #707070;
+}
+
+/* line 16, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .views-row {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  width: 50%;
+  padding: 1.25rem;
+}
+
+/* line 34, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .views-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 41, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing h1,
+.fac-listing a {
+  color: #0054A6;
+}
+
+/* line 46, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing h1 {
+  font-size: 1.6rem;
+  line-height: 1.2em;
+  font-family: "Conduit";
+  margin: 1em 0 0 0;
+}
+
+/* line 58, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing h3 {
+  font-size: 1.3rem;
+  line-height: 1.2em;
+  font-family: proxima-nova, sans-serif;
+  text-transform: none;
+  color: #555555;
+}
+
+/* line 77, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.field--name-hub-field-hub-faculty-email a,
+.field--name-hub-field-hub-faculty-phone a {
+  color: #555555;
+  text-decoration: none;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.field--name-hub-field-hub-faculty-email a:hover,
+.field--name-hub-field-hub-faculty-email a:focus,
+.field--name-hub-field-hub-faculty-phone a:hover,
+.field--name-hub-field-hub-faculty-phone a:focus {
+  color: #0054A6;
+  text-decoration: underline;
+}
+
+/* line 89, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.listing-filters.section {
+  padding: 0;
+}
+
+/* line 93, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.listing-filters .listing-filters-toggle {
+  width: 100%;
+  background: #002E6D;
+  color: #fff;
+  font-size: 1.8rem;
+  font-family: "Conduit";
+  padding: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 102, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.listing-filters .listing-filters-toggle span {
+  display: inline-block;
+}
+
+/* line 106, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.listing-filters .listing-filters-toggle .icon {
+  height: 3.8rem;
+  width: 3.8rem;
+  font-size: 2rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.4rem;
+  line-height: 1em;
+  margin-right: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 118, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.listing-filters .form-item {
+  margin: 0;
+}
+
 /*  --------------------------------------------------------------------------  *\
 
     FORMS
@@ -12711,8 +12998,8 @@ form.search .search button {
 
   .node__content > header.interior_page > .field,
   .hub-reference > header.interior_page > .field,
-  header.hp_hero.interior_page > .field,
-  .view-cu-news-references > header.interior_page > .field {
+  .view-cu-faculty-references > header.interior_page > .field,
+  header.hp_hero.interior_page > .field {
     height: 32rem;
   }
 
@@ -14422,6 +14709,34 @@ form.search .search button {
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
   }
+
+  /* line 1, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing {
+    margin: 0 -2.5rem;
+  }
+
+  /* line 16, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .views-row {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    width: 25%;
+    padding: 2.5rem;
+  }
+
+  /* line 46, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing h1 {
+    font-size: 1.9rem;
+    line-height: 1em;
+  }
+
+  /* line 58, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing h3 {
+    font-size: 1.6rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -14689,8 +15004,8 @@ form.search .search button {
 
   .node__content > header .hero_title h1,
   .hub-reference > header .hero_title h1,
-  header.hp_hero .hero_title h1,
-  .view-cu-news-references > header .hero_title h1 {
+  .view-cu-faculty-references > header .hero_title h1,
+  header.hp_hero .hero_title h1 {
     width: 67%;
   }
 
@@ -14700,10 +15015,10 @@ form.search .search button {
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
+  .view-cu-faculty-references > header .hero_title > div,
+  .view-cu-faculty-references > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
-  header.hp_hero .breadcrumb > div,
-  .view-cu-news-references > header .hero_title > div,
-  .view-cu-news-references > header .breadcrumb > div {
+  header.hp_hero .breadcrumb > div {
     width: 95%;
   }
 
@@ -14941,6 +15256,14 @@ form.search .search button {
 
   .course-date > div:last-child {
     font-size: 2rem;
+  }
+
+  /* line 16, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .views-row {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    width: 20%;
   }
 }
 
@@ -15972,8 +16295,8 @@ form.search .search button {
 
   .node__content > header .hero_title,
   .hub-reference > header .hero_title,
-  header.hp_hero .hero_title,
-  .view-cu-news-references > header .hero_title {
+  .view-cu-faculty-references > header .hero_title,
+  header.hp_hero .hero_title {
     padding: 14.7rem 0 2.5rem 0;
   }
 
@@ -15981,8 +16304,8 @@ form.search .search button {
 
   .node__content > header .breadcrumb,
   .hub-reference > header .breadcrumb,
-  header.hp_hero .breadcrumb,
-  .view-cu-news-references > header .breadcrumb {
+  .view-cu-faculty-references > header .breadcrumb,
+  header.hp_hero .breadcrumb {
     height: 7.2rem;
   }
 
@@ -15992,10 +16315,10 @@ form.search .search button {
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
+  .view-cu-faculty-references > header .hero_title > div,
+  .view-cu-faculty-references > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
-  header.hp_hero .breadcrumb > div,
-  .view-cu-news-references > header .hero_title > div,
-  .view-cu-news-references > header .breadcrumb > div {
+  header.hp_hero .breadcrumb > div {
     width: 90%;
   }
 
@@ -16003,8 +16326,8 @@ form.search .search button {
 
   .node__content > header.interior_page > .field,
   .hub-reference > header.interior_page > .field,
-  header.hp_hero.interior_page > .field,
-  .view-cu-news-references > header.interior_page > .field {
+  .view-cu-faculty-references > header.interior_page > .field,
+  header.hp_hero.interior_page > .field {
     height: 51.5rem;
   }
 
@@ -16248,6 +16571,69 @@ form.search .search button {
   .program_rail,
   .prog_left {
     padding-top: 3.8rem;
+  }
+
+  /* line 142, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .listing-filters .listing-filters-toggle {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* line 146, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .listing-filters .view-filters {
+    background: #f5f8fc;
+    border-bottom: 1px solid #DADADA;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  /* line 152, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .listing-filters .view-filters .form--inline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  /* line 156, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .listing-filters .view-filters .form--inline:after {
+    display: none;
+  }
+
+  /* line 160, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .listing-filters .view-filters .form--inline .form-actions {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* line 166, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .listing-filters .view-filters .form-item-search input {
+    height: 4.2rem;
+    width: 18.2rem;
+    border-radius: 0.4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 0 1rem;
   }
 
   /* line 6, src/sass/components/forms/search/_form.scss */
@@ -16646,10 +17032,10 @@ form.search .search button {
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
+  .view-cu-faculty-references > header .hero_title > div,
+  .view-cu-faculty-references > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
-  header.hp_hero .breadcrumb > div,
-  .view-cu-news-references > header .hero_title > div,
-  .view-cu-news-references > header .breadcrumb > div {
+  header.hp_hero .breadcrumb > div {
     width: 85%;
   }
 
@@ -16958,6 +17344,41 @@ form.search .search button {
     margin-top: -7.5rem;
   }
 
+  /* line 82, src/sass/structure/section-layouts/_faculty.scss */
+
+  .view-cu-faculty-references {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+
+  /* line 86, src/sass/structure/section-layouts/_faculty.scss */
+
+  .view-cu-faculty-references > header,
+  .view-cu-faculty-references > div {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  /* line 91, src/sass/structure/section-layouts/_faculty.scss */
+
+  .view-cu-faculty-references .section {
+    padding: 0;
+  }
+
+  /* line 95, src/sass/structure/section-layouts/_faculty.scss */
+
+  .view-cu-faculty-references .listing-filters {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
   /* line 183, src/sass/components/basic/_hero.scss */
 
   header.hp_hero {
@@ -17049,6 +17470,29 @@ form.search .search button {
   nav.side-nav a {
     display: block;
     padding: 0.7rem 0;
+  }
+
+  /* line 123, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .listing-filters .view-filters {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 99999;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: all .25s;
+    transition: all .25s;
+  }
+
+  /* line 135, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .listing-filters .row,
+  .listing-filters [class*="col-"] {
+    padding: 0;
   }
 
   /* line 32, src/sass/components/forms/search/_form.scss */
