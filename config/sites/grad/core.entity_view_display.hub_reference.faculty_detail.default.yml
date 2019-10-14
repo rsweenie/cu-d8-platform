@@ -101,7 +101,7 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: basic_string
+                type: email_mailto
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:
@@ -152,8 +152,9 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: basic_string
-                settings: {  }
+                type: telephone_link
+                settings:
+                  title: ''
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity

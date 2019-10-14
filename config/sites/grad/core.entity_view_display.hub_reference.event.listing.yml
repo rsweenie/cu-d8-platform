@@ -1,0 +1,88 @@
+uuid: fd761ec4-0bcd-4c0b-991c-e839af552f1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.hub_reference.listing
+    - cu_hub_consumer.hub_reference_type.event
+    - field.field.hub_reference.event.field_event_date
+    - field.field.hub_reference.event.field_event_type
+    - field.field.hub_reference.event.field_featured
+  module:
+    - cu_hub_consumer
+    - datetime_range
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: hub_reference.event.listing
+targetEntityType: hub_reference
+bundle: event
+mode: listing
+content:
+  hub_field_hub_event_date:
+    type: daterange_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short_month_and_day
+      separator: '-'
+    third_party_settings: {  }
+  hub_field_hub_event_description:
+    type: basic_string
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_event_listing_image:
+    type: hub_resource_media_image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      style_name: srcset_500px_wide
+      link_type: ''
+    third_party_settings: {  }
+  hub_field_hub_event_location:
+    type: hub_resource_link
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_event_title:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  hub_field_hub_event_type:
+    type: hub_resource_link
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_event_date: true
+  field_event_type: true
+  field_featured: true
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_event_body: true
+  hub_field_hub_event_featured: true
+  hub_field_hub_event_hero_image: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_node_type: true
+  hub_revision_timestamp: true
+  search_api_excerpt: true

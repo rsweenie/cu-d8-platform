@@ -1,0 +1,18 @@
+uuid: c412c0e1-08e8-4d99-bed5-4b13ba036b3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_event
+id: node.hub_event.title
+field_name: title
+entity_type: node
+bundle: hub_event
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

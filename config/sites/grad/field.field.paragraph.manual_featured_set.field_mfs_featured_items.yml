@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_mfs_featured_items
+    - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
     - paragraphs.paragraphs_type.manual_featured_event
     - paragraphs.paragraphs_type.manual_featured_set
     - paragraphs.paragraphs_type.manual_featured_set_item
@@ -24,6 +25,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      manual_faculty_alumni_highlight: manual_faculty_alumni_highlight
       manual_featured_set_item: manual_featured_set_item
       manual_featured_event: manual_featured_event
     target_bundles_drag_drop:
@@ -57,12 +59,12 @@ settings:
       manual_featured_set:
         weight: 25
         enabled: false
+      manual_faculty_alumni_highlight:
+        enabled: true
+        weight: 26
       manual_featured_set_item:
         enabled: true
         weight: 26
-      manual_faculty_alumni_highlight:
-        weight: 26
-        enabled: false
       next_step:
         weight: 27
         enabled: false
@@ -75,17 +77,20 @@ settings:
       next_steps_collection:
         weight: 28
         enabled: false
+      copy:
+        weight: 29
+        enabled: false
       quote:
         weight: 29
         enabled: false
-      copy:
-        weight: 29
+      faculty_alumni_spotlight:
+        weight: 30
         enabled: false
       statistic_highlite:
         weight: 30
         enabled: false
-      faculty_alumni_spotlight:
-        weight: 30
+      course_date:
+        weight: 31
         enabled: false
       featured_element:
         weight: 32
@@ -93,8 +98,8 @@ settings:
       image:
         weight: 39
         enabled: false
-      quote_ref:
-        weight: 48
+      manual_feature_tiles_set:
+        weight: 47
         enabled: false
       slate_form:
         weight: 49

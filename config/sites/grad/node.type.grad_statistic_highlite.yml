@@ -1,0 +1,32 @@
+uuid: 9f4710d1-0bf5-4a1b-bf92-f30f1b30c41d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - private_content
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  private_content:
+    private: 1
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Grad: Statistic Highlite'
+type: grad_statistic_highlite
+description: 'Statistic Highlite will be used to display content related to school or industry type of statistics.'
+help: ''
+new_revision: true
+preview_mode: 2
+display_submitted: false

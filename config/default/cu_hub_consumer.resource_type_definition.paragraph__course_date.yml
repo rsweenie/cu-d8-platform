@@ -12,31 +12,22 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   status:
-    type: string_long
+    type: boolean
     multiple: false
   created:
     type: datetime
     multiple: false
   parent_id:
-    type: integer
+    type: string
     multiple: false
   parent_type:
-    type: string_long
+    type: string
     multiple: false
   parent_field_name:
-    type: string_long
-    multiple: false
-  behavior_settings:
-    type: hub_unknown
-    multiple: true
-  default_langcode:
-    type: string_long
-    multiple: false
-  revision_translation_affected:
-    type: string_long
+    type: string
     multiple: false
   field_hub_cd_cta:
     type: link
@@ -45,7 +36,7 @@ fields:
     type: datetime
     multiple: false
   field_hub_cd_description:
-    type: string_long
+    type: string
     multiple: false
   paragraph_type:
     type: hub_resource

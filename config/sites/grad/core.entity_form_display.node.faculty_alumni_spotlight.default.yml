@@ -1,0 +1,128 @@
+uuid: 22775462-ba2e-4519-9263-2c4a1dba1a4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_browser
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_cta
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_desc
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_image
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_name
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_title
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_type
+    - node.type.faculty_alumni_spotlight
+  module:
+    - entity_browser
+    - link
+    - name
+    - private_content
+id: node.faculty_alumni_spotlight.default
+targetEntityType: node
+bundle: faculty_alumni_spotlight
+mode: default
+content:
+  field_fac_spotlight_cta:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_fac_spotlight_desc:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_fac_spotlight_image:
+    type: entity_browser_entity_reference
+    weight: 6
+    settings:
+      entity_browser: media_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fac_spotlight_name:
+    weight: 1
+    settings:
+      labels:
+        title: Title
+        given: Given
+        middle: 'Middle name(s)'
+        family: Family
+        generational: Generational
+        credentials: Credentials
+      size:
+        title: 6
+        given: 20
+        middle: 20
+        family: 20
+        generational: 5
+        credentials: 35
+      title_display:
+        title: description
+        given: description
+        middle: description
+        family: description
+        generational: description
+        credentials: description
+      widget_layout: stacked
+      show_component_required_marker: false
+      credentials_inline: false
+      override_field_settings: false
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_fac_spotlight_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_fac_spotlight_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  private:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  publish_on: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

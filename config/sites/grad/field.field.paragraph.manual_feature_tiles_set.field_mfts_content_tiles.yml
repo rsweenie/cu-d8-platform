@@ -1,0 +1,115 @@
+uuid: 1218a5d5-c1c9-441c-9610-ab39485a8edb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mfts_content_tiles
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
+    - paragraphs.paragraphs_type.manual_feature_tiles_set
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.statistic_highlite
+  module:
+    - entity_reference_revisions
+id: paragraph.manual_feature_tiles_set.field_mfts_content_tiles
+field_name: field_mfts_content_tiles
+entity_type: paragraph
+bundle: manual_feature_tiles_set
+label: 'Content Tiles'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image: image
+      manual_faculty_alumni_highlight: manual_faculty_alumni_highlight
+      quote: quote
+      statistic_highlite: statistic_highlite
+    target_bundles_drag_drop:
+      accordion:
+        weight: 28
+        enabled: false
+      collapsible_text:
+        weight: 29
+        enabled: false
+      copy:
+        weight: 30
+        enabled: false
+      course_date:
+        weight: 31
+        enabled: false
+      faculty_alumni_spotlight:
+        weight: 32
+        enabled: false
+      featured_content_item:
+        weight: 33
+        enabled: false
+      featured_element:
+        weight: 34
+        enabled: false
+      formatted_text:
+        weight: 35
+        enabled: false
+      full_width_banner:
+        weight: 36
+        enabled: false
+      full_width_photo:
+        weight: 37
+        enabled: false
+      hp_hero:
+        weight: 38
+        enabled: false
+      hp_hero_bg:
+        weight: 39
+        enabled: false
+      ief_link:
+        weight: 40
+        enabled: false
+      image:
+        enabled: true
+        weight: 41
+      image_video:
+        weight: 42
+        enabled: false
+      manual_faculty_alumni_highlight:
+        enabled: true
+        weight: 43
+      manual_featured_event:
+        weight: 44
+        enabled: false
+      manual_featured_set:
+        weight: 45
+        enabled: false
+      manual_featured_set_item:
+        weight: 46
+        enabled: false
+      manual_feature_tiles_set:
+        weight: 47
+        enabled: false
+      next_step:
+        weight: 48
+        enabled: false
+      next_steps_collection:
+        weight: 49
+        enabled: false
+      quote:
+        enabled: true
+        weight: 50
+      slate_form:
+        weight: 51
+        enabled: false
+      statistic_highlight:
+        weight: 52
+        enabled: false
+      statistic_highlite:
+        enabled: true
+        weight: 53
+      video:
+        weight: 54
+        enabled: false
+field_type: entity_reference_revisions

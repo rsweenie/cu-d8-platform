@@ -1,0 +1,56 @@
+uuid: f10239e7-aa22-4fd3-ae99-6df78d6d09cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.event
+    - field.field.hub_reference.event.field_event_date
+    - field.field.hub_reference.event.field_event_location
+    - field.field.hub_reference.event.field_event_type
+    - field.field.hub_reference.event.field_featured
+  module:
+    - datetime_range
+    - path
+id: hub_reference.event.default
+targetEntityType: hub_reference
+bundle: event
+mode: default
+content:
+  field_event_date:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_event_location:
+    weight: 34
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_event_type:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_featured:
+    weight: 31
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
