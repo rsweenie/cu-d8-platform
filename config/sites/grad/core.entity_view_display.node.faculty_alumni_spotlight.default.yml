@@ -1,0 +1,91 @@
+uuid: 132149a7-3af4-44fd-9dd3-bf1f753dbcae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_cta
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_desc
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_image
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_name
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_title
+    - field.field.node.faculty_alumni_spotlight.field_fac_spotlight_type
+    - node.type.faculty_alumni_spotlight
+  module:
+    - link
+    - name
+    - options
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.faculty_alumni_spotlight.default
+targetEntityType: node
+bundle: faculty_alumni_spotlight
+mode: default
+content:
+  field_fac_spotlight_cta:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_fac_spotlight_desc:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_fac_spotlight_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_fac_spotlight_name:
+    weight: 0
+    label: hidden
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_fac_spotlight_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_fac_spotlight_type:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  links: true
+  private: true
+  search_api_excerpt: true

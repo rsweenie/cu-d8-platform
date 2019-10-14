@@ -5,6 +5,7 @@ dependencies:
   config:
     - cu_hub_consumer.hub_reference_type.event
     - field.field.hub_reference.event.field_event_date
+    - field.field.hub_reference.event.field_event_location
     - field.field.hub_reference.event.field_event_type
     - field.field.hub_reference.event.field_featured
   module:
@@ -20,6 +21,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: daterange_default
+    region: content
+  field_event_location:
+    weight: 34
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_event_type:
     weight: 33

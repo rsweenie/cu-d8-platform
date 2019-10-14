@@ -1,0 +1,95 @@
+uuid: fd9fe5df-a245-4bf0-9706-ddee39bcb158
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.grad_quote.field_grad_quote_background_area
+    - field.field.node.grad_quote.field_grad_quote_faculty_profile
+    - field.field.node.grad_quote.field_grad_quote_honorific_title
+    - field.field.node.grad_quote.field_grad_quote_image
+    - field.field.node.grad_quote.field_grad_quote_source_name
+    - field.field.node.grad_quote.field_grad_quote_style
+    - field.field.node.grad_quote.field_grad_quote_text
+    - node.type.grad_quote
+  module:
+    - name
+    - options
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.grad_quote.default
+targetEntityType: node
+bundle: grad_quote
+mode: default
+content:
+  field_grad_quote_background_area:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_grad_quote_faculty_profile:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_grad_quote_honorific_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_grad_quote_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_grad_quote_source_name:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_grad_quote_style:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_grad_quote_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  links: true
+  private: true
+  search_api_excerpt: true
