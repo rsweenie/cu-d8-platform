@@ -64,16 +64,30 @@
     </div>
   {% endif %}
   {% if exposed %}
-    <section class="view-filters section">
-      <div>
-        {{ exposed }}
+    <div class="section listing-filters">
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="listing-filters-toggle">
+            <span class="icon icon-filter"></span>
+            <span>See Search and Filters</span>
+          </button>
+          <div class="view-filters">
+            {{ exposed }}
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   {% endif %}
   {% if header %}
-    <div class="view-header">
-      {{ header }}
+  <div class="section listing-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="view-header">
+          {{ header }}
+        </div>
+      </div>
     </div>
+  </div>
   {% endif %}
 
   {% if rows %}
