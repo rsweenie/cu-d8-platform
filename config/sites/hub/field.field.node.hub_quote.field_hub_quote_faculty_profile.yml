@@ -1,0 +1,28 @@
+uuid: 479e540d-adf6-4e6b-88d1-b18df1d46299
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_quote_faculty_profile
+    - node.type.hub_faculty
+    - node.type.hub_quote
+id: node.hub_quote.field_hub_quote_faculty_profile
+field_name: field_hub_quote_faculty_profile
+entity_type: node
+bundle: hub_quote
+label: 'Faculty Profile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_faculty: hub_faculty
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

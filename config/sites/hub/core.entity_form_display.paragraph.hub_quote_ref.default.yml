@@ -1,19 +1,19 @@
-uuid: e5a70c59-377d-47ef-a146-35c6407af00c
+uuid: a7b00d36-ac58-4f19-b8f2-4e35c91ef218
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.faculty_alumni_spotlight.field_hub_spotlight_ref
-    - paragraphs.paragraphs_type.faculty_alumni_spotlight
+    - field.field.paragraph.hub_quote_ref.field_hub_quote_ref_item
+    - paragraphs.paragraphs_type.hub_quote_ref
   module:
     - entity_browser_entity_form
     - inline_entity_form
-id: paragraph.faculty_alumni_spotlight.default
+id: paragraph.hub_quote_ref.default
 targetEntityType: paragraph
-bundle: faculty_alumni_spotlight
+bundle: hub_quote_ref
 mode: default
 content:
-  field_hub_spotlight_ref:
+  field_hub_quote_ref_item:
     weight: 0
     settings:
       form_mode: default

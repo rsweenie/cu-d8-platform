@@ -1,17 +1,16 @@
-uuid: 7fab4a5d-ba73-4586-aecf-5900ef9473f8
+uuid: 52969a4c-3f37-44ed-8e39-903889d177f4
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
     - node
-    - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_quote_ref
-field_name: field_quote_ref
-entity_type: paragraph
+id: node.field_hub_quote_faculty_profile
+field_name: field_hub_quote_faculty_profile
+entity_type: node
 type: entity_reference
 settings:
   target_type: node
