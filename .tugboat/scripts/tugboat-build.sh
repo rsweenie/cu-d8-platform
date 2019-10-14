@@ -37,7 +37,6 @@ case $CU_SITE_ALIAS in
   none)
     echo "Nothing to do for generic install"
   ;;
-  
   *)
     echo "Could not determine site alias. Please check Tugboat scripts!"
     exit 1

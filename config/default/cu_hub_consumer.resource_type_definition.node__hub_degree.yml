@@ -86,9 +86,9 @@ fields:
     hub_bundles:
       - paragraph--featured_content_item
       - paragraph--faculty_alumni_spotlight
-      - paragraph--quote_ref
       - paragraph--image
       - paragraph--statistic_highlight
+      - paragraph--hub_quote_ref
     multiple: true
   field_hub_degree_hero_image:
     type: hub_resource

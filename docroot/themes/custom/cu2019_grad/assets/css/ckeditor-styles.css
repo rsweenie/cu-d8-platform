@@ -5060,26 +5060,33 @@ blockquote .tooltip-trigger {
 /* line 33, src/sass/components/basic/_mfs.scss */
 
 .mfsi a,
-.mfse a {
+.mfsi h1,
+.mfse a,
+.mfse h1 {
   display: block;
   font-size: 1.8rem;
   line-height: 1.2em;
   font-weight: 600;
   color: #555555;
   text-decoration: none;
+  text-transform: none;
 }
 
-/* line 45, src/sass/components/basic/_mfs.scss */
+/* line 47, src/sass/components/basic/_mfs.scss */
 
 .mfsi a > div,
-.mfse a > div {
+.mfsi h1 > div,
+.mfse a > div,
+.mfse h1 > div {
   display: inline;
 }
 
-/* line 49, src/sass/components/basic/_mfs.scss */
+/* line 51, src/sass/components/basic/_mfs.scss */
 
 .mfsi a .icon,
-.mfse a .icon {
+.mfsi h1 .icon,
+.mfse a .icon,
+.mfse h1 .icon {
   display: inline-block;
   color: #C5C7CA;
   font-size: 1.3em;
@@ -5100,7 +5107,7 @@ blockquote .tooltip-trigger {
   text-decoration: underline;
 }
 
-/* line 62, src/sass/components/basic/_mfs.scss */
+/* line 66, src/sass/components/basic/_mfs.scss */
 
 .mfsi a:hover .icon,
 .mfsi a:focus .icon,
@@ -5110,7 +5117,7 @@ blockquote .tooltip-trigger {
           transform: translate(5px, 0.25em);
 }
 
-/* line 68, src/sass/components/basic/_mfs.scss */
+/* line 72, src/sass/components/basic/_mfs.scss */
 
 .mfsi time,
 .mfse time {
@@ -5129,7 +5136,7 @@ blockquote .tooltip-trigger {
   text-transform: uppercase;
 }
 
-/* line 83, src/sass/components/basic/_mfs.scss */
+/* line 87, src/sass/components/basic/_mfs.scss */
 
 .mfsi time > div,
 .mfse time > div {
@@ -5137,14 +5144,14 @@ blockquote .tooltip-trigger {
   padding: 2rem 1.6rem 1.2rem 1.6rem;
 }
 
-/* line 88, src/sass/components/basic/_mfs.scss */
+/* line 92, src/sass/components/basic/_mfs.scss */
 
 .mfsi time span,
 .mfse time span {
   display: block;
 }
 
-/* line 91, src/sass/components/basic/_mfs.scss */
+/* line 95, src/sass/components/basic/_mfs.scss */
 
 .mfsi time span:first-child,
 .mfse time span:first-child {
@@ -5152,7 +5159,7 @@ blockquote .tooltip-trigger {
   letter-spacing: 0.05em;
 }
 
-/* line 100, src/sass/components/basic/_mfs.scss */
+/* line 104, src/sass/components/basic/_mfs.scss */
 
 .mfsi time span:last-child,
 .mfse time span:last-child {
@@ -5160,7 +5167,7 @@ blockquote .tooltip-trigger {
   margin-top: -0.29167em;
 }
 
-/* line 108, src/sass/components/basic/_mfs.scss */
+/* line 112, src/sass/components/basic/_mfs.scss */
 
 .mfsi time span:last-child > span,
 .mfse time span:last-child > span {
@@ -5170,7 +5177,13 @@ blockquote .tooltip-trigger {
           transform: translateY(-0.16667em);
 }
 
-/* line 123, src/sass/components/basic/_mfs.scss */
+/* line 127, src/sass/components/basic/_mfs.scss */
+
+.mfs.section {
+  background: #F5F8FC;
+}
+
+/* line 130, src/sass/components/basic/_mfs.scss */
 
 .mfs h3 {
   text-align: center;
@@ -5194,135 +5207,37 @@ blockquote .tooltip-trigger {
   /*  img { width: 100%; height: auto; display: block; }*/
 }
 
-/* line 14, src/sass/components/basic/_feat-tiles.scss */
+/* line 8, src/sass/components/basic/_feat-tiles.scss */
+
+.feat-tiles img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 19, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles > div {
-  max-width: 300px;
-  margin: 1.6rem auto;
-}
-
-/* line 30, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div > .field__item {
-  background-color: #0054A6;
-  padding: 100% 0 0;
-  width: 100%;
-  height: 0;
-  position: relative;
-}
-
-/* line 38, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-featured-content-item {
-  position: absolute;
-  border: solid 0.2rem rgba(225, 225, 225, 0.3);
-  padding: 1.6rem;
-  width: calc(100% - 2.8rem);
-  height: calc(100% - 2.8rem);
-  top: 1.4rem;
-  left: 1.4rem;
-}
-
-/* line 47, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-featured-content-item:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1.3rem;
-  height: 1.3rem;
-  background-color: rgba(225, 225, 225, 0.3);
-  content: '';
-}
-
-/* line 58, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div > .field__item h2 {
-  font-size: 4.8rem;
-  color: #6CACE4;
-  line-height: 1.02;
-  margin-bottom: 0;
-}
-
-/* line 68, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div > .field__item h2 sup {
-  font-size: 2.7rem;
-}
-
-/* line 77, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div > .field__item h3 {
-  color: white;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  line-height: 1.06;
+  margin: 1.6rem 0;
 }
 
 /* line 88, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div > .field__item p {
-  font-size: 1.1rem;
-  margin-bottom: 0;
-}
-
-/* line 115, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div .hub-resource-field {
-  height: 100%;
-}
-
-/* line 119, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div .hub-resource-field__item {
-  height: 100%;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-/* line 126, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div .hub-resource-field__item article.embedded-entity {
-  text-align: center;
-}
-
-/* line 129, src/sass/components/basic/_feat-tiles.scss */
-
-.feat-tiles > div .hub-resource-field__item article.embedded-entity img {
-  width: auto;
-  height: 100%;
-  max-height: 90px;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-/* line 152, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles .hub-resource-field--name-field-fc-p-link {
   display: none;
 }
 
-/* line 157, src/sass/components/basic/_feat-tiles.scss */
+/* line 93, src/sass/components/basic/_feat-tiles.scss */
 
-.stat_hl_io {
+.stat_hl_io,
+.hub_img {
   position: relative;
 }
 
 /* line 463, src/sass/base/_mixins.scss */
 
-.stat_hl_io:after {
+.stat_hl_io:after,
+.hub_img:after {
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
   position: absolute;
@@ -5333,7 +5248,7 @@ blockquote .tooltip-trigger {
   pointer-events: none;
 }
 
-/* line 161, src/sass/components/basic/_feat-tiles.scss */
+/* line 101, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io:before {
   width: 1.1rem;
@@ -5346,7 +5261,7 @@ blockquote .tooltip-trigger {
   z-index: 10;
 }
 
-/* line 172, src/sass/components/basic/_feat-tiles.scss */
+/* line 112, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -11451,54 +11366,10 @@ nav.jn li + li {
   width: 100%;
 }
 
-/* CSS Document */
+/* line 1, src/sass/components/feeds-detail/featured/_featured.scss */
 
-/*  --------------------------------------------------------------------------  *\
-
-    FEED - FEATURED - RELATED
-
-\*  --------------------------------------------------------------------------  */
-
-/* line 25, src/sass/components/feeds-detail/featured/_related.scss */
-
-.f-feat-related > article {
-  -webkit-box-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
-  margin: 0 0 2.5rem;
-  font-size: 1.4rem;
-}
-
-/* line 48, src/sass/components/feeds-detail/featured/_related.scss */
-
-.f-feat-related > article > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  padding: 0;
-  height: 100%;
-}
-
-/* line 53, src/sass/components/feeds-detail/featured/_related.scss */
-
-.f-feat-related > article > div .type {
-  font-size: 1.5em;
-  margin: 0.25em 2rem 0 0;
+.attachment {
+  background: #F5F8FC;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -11610,6 +11481,13 @@ nav.jn li + li {
 
 /* line 6, src/sass/components/feeds-detail/programs/_programs.scss */
 
+.layout__region--right .hub-resource-field--type-hub-text-long a[class*="btn-"],
+.program_rail .hub-resource-field--type-hub-text-long a[class*="btn-"] {
+  margin-bottom: 2em;
+}
+
+/* line 12, src/sass/components/feeds-detail/programs/_programs.scss */
+
 .field--name-hub-field-hub-degree-intro {
   font-size: 1.6rem;
   font-family: "Conduit";
@@ -11619,7 +11497,7 @@ nav.jn li + li {
   margin-bottom: 1em;
 }
 
-/* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 16, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail {
   position: relative;
@@ -11627,39 +11505,39 @@ nav.jn li + li {
   background: rgba(165, 210, 249, 0.2);
 }
 
-/* line 20, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 26, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block {
   margin: 1em 0;
 }
 
-/* line 23, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 29, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block:first-child {
   margin-top: 0;
 }
 
-/* line 29, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 35, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block p:last-child,
 .program_rail > .block ul:last-child {
   margin-bottom: 0;
 }
 
-/* line 34, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 40, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block.block-field-blockhub-referencedegreehub-field-hub-degree-adm-rep {
   margin-top: 2em;
 }
 
-/* line 39, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 45, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h3 {
   position: relative;
   padding-bottom: 0.43636em;
 }
 
-/* line 44, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h3:after {
   width: 5.5rem;
@@ -11671,13 +11549,13 @@ nav.jn li + li {
   background: #6CACE4;
 }
 
-/* line 59, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 65, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h4 {
   margin-bottom: 0.08333em;
 }
 
-/* line 63, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h5 {
   font-size: 1.2rem;
@@ -11686,20 +11564,20 @@ nav.jn li + li {
   letter-spacing: 0.05em;
 }
 
-/* line 103, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 109, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > div {
   position: relative;
   z-index: 10;
 }
 
-/* line 108, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 114, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail ul {
   margin-left: 0;
 }
 
-/* line 112, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 118, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail .field--name-hub-field-hub-degree-title {
   font-size: 1.2rem;
@@ -11708,26 +11586,26 @@ nav.jn li + li {
   letter-spacing: 0.05em;
 }
 
-/* line 117, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .prog_left {
   padding-bottom: 2.5rem;
 }
 
-/* line 132, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 138, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep {
   padding: 6rem 0 0;
   border-top: 1px solid rgba(33, 35, 34, 0.2);
 }
 
-/* line 136, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 142, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep h4 {
   margin-bottom: 0.125em;
 }
 
-/* line 145, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 151, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info {
   display: -webkit-box;
@@ -11740,14 +11618,14 @@ nav.jn li + li {
   margin-top: 2.5rem;
 }
 
-/* line 150, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 156, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:first-child {
   width: 10.2rem;
   margin-right: 1.6rem;
 }
 
-/* line 160, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 166, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child {
   -webkit-box-flex: 1;
@@ -11755,13 +11633,13 @@ nav.jn li + li {
           flex-grow: 1;
 }
 
-/* line 163, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 169, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child .hub-resource-field {
   margin-bottom: 0.31579em;
 }
 
-/* line 169, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 175, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info img {
   width: 100%;
@@ -11769,14 +11647,14 @@ nav.jn li + li {
   display: block;
 }
 
-/* line 176, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 182, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .hub-resource-field--name-field-hub-adm-rep-name {
   text-transform: uppercase;
   font-weight: 600;
 }
 
-/* line 182, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 188, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date {
   display: -webkit-box;
@@ -11789,13 +11667,13 @@ nav.jn li + li {
   padding: 1.2rem 0;
 }
 
-/* line 190, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 196, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .field + .field .course-date {
   border-top: 1px solid #d4d4d4;
 }
 
-/* line 196, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 202, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child {
   width: 4.8rem;
@@ -11808,7 +11686,7 @@ nav.jn li + li {
   font-weight: bold;
 }
 
-/* line 213, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 219, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child time > div {
   width: 100%;
@@ -11826,20 +11704,20 @@ nav.jn li + li {
           flex-flow: column nowrap;
 }
 
-/* line 223, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 229, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child time span {
   line-height: 1em;
 }
 
-/* line 225, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 231, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child time span:first-child {
   font-size: 2.2rem;
   margin-bottom: -0.13636em;
 }
 
-/* line 234, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 240, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child time span:last-child {
   font-size: 1.2rem;
@@ -11847,7 +11725,7 @@ nav.jn li + li {
   text-transform: uppercase;
 }
 
-/* line 247, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 253, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:last-child {
   -webkit-box-flex: 1;
@@ -11859,7 +11737,7 @@ nav.jn li + li {
   color: #555555;
 }
 
-/* line 254, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 260, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:last-child a {
   color: #555555;
@@ -11869,7 +11747,7 @@ nav.jn li + li {
   display: inline-block;
 }
 
-/* line 261, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 267, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:last-child a:after {
   font-family: "cu_icons";
@@ -11897,7 +11775,7 @@ nav.jn li + li {
   color: #0054A6;
 }
 
-/* line 275, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 281, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:last-child a:hover:after,
 .course-date > div:last-child a:focus:after {
@@ -14373,11 +14251,13 @@ form.search .search button {
   /* line 33, src/sass/components/basic/_mfs.scss */
 
   .mfsi a,
-  .mfse a {
+  .mfsi h1,
+  .mfse a,
+  .mfse h1 {
     font-size: 2.4rem;
   }
 
-  /* line 130, src/sass/components/basic/_mfs.scss */
+  /* line 137, src/sass/components/basic/_mfs.scss */
 
   .mfs .field--name-field-mfs-featured-items .field__item + .field__item {
     border-left: 1px solid #ECF0F3;
@@ -14394,16 +14274,12 @@ form.search .search button {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     margin: -0.5rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 
-  /* line 14, src/sass/components/basic/_feat-tiles.scss */
+  /* line 19, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
     width: 50%;
-    max-width: 360px;
     padding: 0.5rem;
     margin: 0;
   }
@@ -14578,44 +14454,47 @@ form.search .search button {
     font-size: 1.5rem;
   }
 
-  /* line 3, src/sass/components/feeds-detail/featured/_carousel.scss */
+  /* line 4, src/sass/components/feeds-detail/featured/_featured.scss */
 
-  .f-feat-carosuel .owl-stage-outer {
-    overflow: visible;
-  }
-
-  /* line 6, src/sass/components/feeds-detail/featured/_related.scss */
-
-  .f-feat-related {
+  .attachment .view-cu-news-references .view-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -ms-flex-line-pack: stretch;
-        align-content: stretch;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    margin: 0 -2.5rem 2.5rem;
+    margin: 0 -2.5rem;
   }
 
-  /* line 25, src/sass/components/feeds-detail/featured/_related.scss */
+  /* line 6, src/sass/components/feeds-detail/featured/_featured.scss */
 
-  .f-feat-related > article {
-    -webkit-box-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-    width: calc(33.333% - 5rem);
-    margin: 0 2.5rem;
+  .attachment .view-cu-news-references .view-content > .views-row > .views-field,
+  .attachment .view-cu-news-references .view-content > .views-row > .views-field > .field-content,
+  .attachment .view-cu-news-references .view-content > .views-row > .views-field > .field-content > .hub-reference {
+    height: 100%;
+  }
+
+  /* line 10, src/sass/components/feeds-detail/featured/_featured.scss */
+
+  .attachment .view-cu-news-references .view-content > .views-row {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.3%;
+            flex: 0 0 33.3%;
+    width: 33.3%;
+    padding: 0 2.5rem;
+  }
+
+  /* line 15, src/sass/components/feeds-detail/featured/_featured.scss */
+
+  .attachment .view-cu-news-references .view-content > .views-row + .views-row {
+    border-left: 1px solid #ECF0F3;
+  }
+
+  /* line 21, src/sass/components/feeds-detail/featured/_featured.scss */
+
+  .attachment .view-cu-news-references .view-content > .views-row > .views-field > .field-content {
+    display: block;
   }
 
   /* line 15, src/sass/components/feeds-detail/featured/_faculty.scss */
@@ -14624,31 +14503,31 @@ form.search .search button {
     width: calc(50% - 2.5rem);
   }
 
-  /* line 6, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 12, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .field--name-hub-field-hub-degree-intro {
     font-size: 3rem;
   }
 
-  /* line 44, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail h3:after {
     height: 0.8rem;
   }
 
-  /* line 63, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail h5 {
     font-size: 1.5rem;
   }
 
-  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 16, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail {
     background-color: transparent;
   }
 
-  /* line 78, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 84, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail:after {
     width: 100vw;
@@ -14661,26 +14540,26 @@ form.search .search button {
     background: rgba(165, 210, 249, 0.2);
   }
 
-  /* line 112, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 118, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail .field--name-hub-field-hub-degree-title {
     font-size: 1.5rem;
   }
 
-  /* line 117, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .prog_left {
     margin-right: 5rem;
     padding-bottom: 10rem;
   }
 
-  /* line 132, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 138, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep {
     padding: 7rem 0 4.5rem;
   }
 
-  /* line 150, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 156, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep-info > div:first-child {
     width: 17rem;
@@ -15152,56 +15031,25 @@ form.search .search button {
     font-size: 4.2rem;
   }
 
-  /* line 91, src/sass/components/basic/_mfs.scss */
+  /* line 95, src/sass/components/basic/_mfs.scss */
 
   .mfsi time span:first-child,
   .mfse time span:first-child {
     font-size: 1.8rem;
   }
 
-  /* line 100, src/sass/components/basic/_mfs.scss */
+  /* line 104, src/sass/components/basic/_mfs.scss */
 
   .mfsi time span:last-child,
   .mfse time span:last-child {
     font-size: 3.2rem;
   }
 
-  /* line 108, src/sass/components/basic/_mfs.scss */
+  /* line 112, src/sass/components/basic/_mfs.scss */
 
   .mfsi time span:last-child > span,
   .mfse time span:last-child > span {
     font-size: 2.4rem;
-  }
-
-  /* line 58, src/sass/components/basic/_feat-tiles.scss */
-
-  .feat-tiles > div > .field__item h2 {
-    font-size: 7.2rem;
-  }
-
-  /* line 68, src/sass/components/basic/_feat-tiles.scss */
-
-  .feat-tiles > div > .field__item h2 sup {
-    font-size: 4rem;
-  }
-
-  /* line 77, src/sass/components/basic/_feat-tiles.scss */
-
-  .feat-tiles > div > .field__item h3 {
-    font-size: 2.4rem;
-  }
-
-  /* line 88, src/sass/components/basic/_feat-tiles.scss */
-
-  .feat-tiles > div > .field__item p {
-    font-size: 1.6rem;
-  }
-
-  /* line 129, src/sass/components/basic/_feat-tiles.scss */
-
-  .feat-tiles > div .hub-resource-field__item article.embedded-entity img {
-    max-height: 135px;
-    margin-bottom: 2rem;
   }
 
   /* line 6, src/sass/components/navigation/_landing.scss */
@@ -15240,13 +15088,13 @@ form.search .search button {
     width: calc(33.333% - 2.5rem);
   }
 
-  /* line 182, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 188, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date {
     padding: 2rem 0;
   }
 
-  /* line 196, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 202, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:first-child {
     width: 7rem;
@@ -15255,25 +15103,25 @@ form.search .search button {
             flex: 0 0 70px;
   }
 
-  /* line 213, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 219, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:first-child time > div {
     height: 8.2rem;
   }
 
-  /* line 225, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 231, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:first-child time span:first-child {
     font-size: 3.2rem;
   }
 
-  /* line 234, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 240, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:first-child time span:last-child {
     font-size: 1.8rem;
   }
 
-  /* line 247, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 253, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:last-child {
     font-size: 2rem;
@@ -16587,7 +16435,7 @@ form.search .search button {
     padding: 0;
   }
 
-  /* line 125, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 131, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail,
   .prog_left {
@@ -17003,10 +16851,9 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 14, src/sass/components/basic/_feat-tiles.scss */
+  /* line 19, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
-    max-width: 430px;
     width: 33.3%;
   }
 
@@ -17816,13 +17663,13 @@ form.search .search button {
     margin-bottom: 6.2rem;
   }
 
-  /* line 136, src/sass/components/basic/_mfs.scss */
+  /* line 143, src/sass/components/basic/_mfs.scss */
 
   .mfs .field--name-field-mfs-featured-items .field__item:last-child .mfsi {
     margin-bottom: 0;
   }
 
-  /* line 10, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 16, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail {
     margin: 0 -2.5rem;

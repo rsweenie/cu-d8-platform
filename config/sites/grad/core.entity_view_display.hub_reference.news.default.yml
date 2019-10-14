@@ -103,7 +103,7 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: hub_resource_link
+                type: hub_resource_label
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:
@@ -139,7 +139,7 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: hub_resource_link
+                type: hub_resource_label
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:

@@ -10,7 +10,7 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Datetime\DateFormatterInterface;
 
 /**
- * Generic string resource field.
+ * Generic datetime resource field.
  * 
  * @HubResourceFieldType(
  *   id = "datetime",
@@ -74,6 +74,11 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
     );
   }
 
+  /**
+   * Get the date as a datetime object.
+   *
+   * @return \Drupal\Core\Datetime\DrupalDateTime
+   */
   public function getDateTime() {
     if ($this->date !== NULL) {
       return $this->date;
@@ -85,8 +90,7 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
     try {
       // Assumes ISO 8601 date/time format.
       $date = DrupalDateTime::createFromFormat('Y-m-d\TH:i:sP', $this->value, 'UTC');
-      if ($date instanceof DrupalDateTime && !$date
-        ->hasErrors()) {
+      if ($date instanceof DrupalDateTime && !$date->hasErrors()) {
         $this->date = $date;
       }
     }
@@ -97,10 +101,13 @@ class DateTimeFieldItem extends ScalarFieldItemBase {
   }
 
   /**
-   * {@inheritdoc}
+   * Formats a datetime object.
+   *
+   * @param \Drupal\Core\Datetime\DrupalDateTime $date
+   * @param string $format_type
+   * @return string
    */
-  protected function formatDate($date) {
-    $format_type = 'medium';
+  protected function formatDate($date, $format_type = 'medium') {
     return $this->dateFormatter
       ->format($date->getTimestamp(), $format_type);
   }

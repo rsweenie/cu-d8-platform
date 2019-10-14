@@ -52,11 +52,6 @@
     } %}
   {% endif %}
   {{ title_suffix }}
-  {% if header %}
-    <div class="view-header">
-      {{ header }}
-    </div>
-  {% endif %}
   {% if attachment_before %}
     <div class="attachment attachment-before">
       {{ attachment_before }}
@@ -76,6 +71,11 @@
       </div>
     </div>
   </div>
+  {% endif %}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
   {% endif %}
 
   {% if rows %}

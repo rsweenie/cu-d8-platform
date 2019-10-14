@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+
+{{ form.search }}
+
+{{ form|without('search', 'type', 'location', 'date') }}
+
+<div>
+  <div class="toggle">
+    <p class="h5">Toggles</p>
+    <button data-filterset="filter-type">Type</button>
+    <button data-filterset="filter-location">Location</button>
+    <button data-filterset="filter-date">Date</button>
+  </div>
+  <div class="filters">
+    <div id="filter-type">
+      {{ form.type }}
+    </div>
+    <div id="filter-location">
+      {{ form.location }}
+    </div>
+    <div id="filter-date">
+      {{ form.date }}
+    </div>
+  </div>
+</div>
