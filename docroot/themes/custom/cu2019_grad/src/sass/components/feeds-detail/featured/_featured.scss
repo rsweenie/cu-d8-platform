@@ -1,0 +1,36 @@
+.attachment {
+  background: $gray9;
+  .view-cu-news-references {
+    .view-content {
+      @media #{$mediaMd} {
+        %h { height: 100%; }
+        @include flex();
+        margin: 0 -#{$gutter}rem;
+
+        > .views-row {
+          flex: 0 0 33.3%;
+          width: 33.3%;
+          padding: 0 #{$gutter}rem;
+
+          + .views-row {
+            border-left: 1px solid #ECF0F3;
+          }
+
+          > .views-field {
+            @extend %h;
+            > .field-content {
+              display: block;
+              @extend %h;
+
+              > .hub-reference {
+                @extend %h;
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+}

@@ -3,31 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.statistic_highlite.field_stat_highlight_image
-    - field.field.paragraph.statistic_highlite.field_stat_highlite_bottom_text
-    - field.field.paragraph.statistic_highlite.field_stat_highlite_icon
-    - field.field.paragraph.statistic_highlite.field_stat_highlite_statistic
-    - field.field.paragraph.statistic_highlite.field_stat_highlite_style
-    - field.field.paragraph.statistic_highlite.field_stat_highlite_top_text
+    - field.field.paragraph.statistic_highlite.field_statistic_highlite_ref
     - paragraphs.paragraphs_type.statistic_highlite
 id: paragraph.statistic_highlite.default
 targetEntityType: paragraph
 bundle: statistic_highlite
 mode: default
 content:
-  field_stat_highlight_image:
-    type: entity_reference_entity_view
-    weight: 0
+  field_statistic_highlite_ref:
+    weight: 1
     label: hidden
     settings:
+      link: true
       view_mode: default
-      link: false
     third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
 hidden:
-  field_stat_highlite_bottom_text: true
-  field_stat_highlite_icon: true
-  field_stat_highlite_statistic: true
-  field_stat_highlite_style: true
-  field_stat_highlite_top_text: true
   search_api_excerpt: true

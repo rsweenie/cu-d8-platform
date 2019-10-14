@@ -32,11 +32,4 @@ class TaxonomyTerm extends ResourceTypeBase {
     return $element;
   }
 
-    /**
-   * {@inheritdoc}
-   */
-  public function getFieldFriendlyValue(ResourceInterface $resource) {
-    return ['value' => $resource->getString()];
-  }
-
 }

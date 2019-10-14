@@ -243,7 +243,7 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
     //$resource_type_id = $resource_type_manager->findPluginByHubTypeId($this->resourceType);
     $resource_type_plugin_id = $resource_type_manager->findPluginByHubTypeId($data['type']);
 
-    if ($resource_type = $resource_type_manager->createInstance($resource_type_plugin_id, [])) {
+    if ($resource_type = $resource_type_manager->getResourceType($resource_type_plugin_id)) {
       $resource = Resource::createFromData($resource_type, $data, $included);
       $this->list[$offset] = $resource;
       return $resource;
@@ -445,31 +445,6 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
     // If there are actual renderable children, use #theme => hub_resource_field, otherwise,
     // let access cacheability metadata pass through for correct bubbling.
     if (Element::children($elements)) {
-      /*
-      $info = array(
-        '#theme' => 'hub_resource_field',
-        '#title' => '',
-        '#label_display' => 'hidden',
-        '#field_name' => $this->getFieldName(),
-        '#field_type' => $this->getFieldType(),
-        '#resource_type' => $this->getParentResource()->getResourceTypeId(),
-        '#resource' => $this->getParentResource(),
-        '#items' => $this->list,
-        '#is_multiple' => $this->isMultiple(),
-      );
-      */
-      /*
-      $info = [
-        '#theme' => 'hub_resource_field',
-        '#title' => '',
-        '#label_display' => 'hidden',
-        '#field_list' => $this,
-        '#items' => $this->list,
-        '#is_multiple' => $this->isMultiple(),
-      ];
-      
-      $elements = array_merge($info, $elements);
-      */
       $elements = [
         '#theme' => 'hub_resource_field__hub_resource',
         '#title' => '',

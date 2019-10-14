@@ -1,6 +1,12 @@
 .layout__region--right,
 .program_rail {
   height: 100%;
+
+  .hub-resource-field--type-hub-text-long {
+    a[class*="btn-"] {
+      margin-bottom: 2em;
+    }
+  }
 }
 
 .field--name-hub-field-hub-degree-intro {

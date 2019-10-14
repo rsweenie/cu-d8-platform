@@ -54,21 +54,9 @@
         <div class="col-xs-12 col-md-12 col-lg-7">
   {% endif %}
           <div{{ attributes.addClass(classes) }}>
-            {% block content %}
-            {% include '@cu2019_grad/components/card.html.twig' with {
-              'image': content.field_mfsfa_image,
-              'title': content.field_mfsfa_name,
-              'subtitle': content.field_mfsfa_title,
-              'body': content.field_mfsfa_description,
-              'tag': highlite_tag,
-              'class': 'mfsfa',
-              'button': {
-                'url': content.field_mfsfa_cta[0]['#url'],
-                'title': content.field_mfsfa_cta[0]['#title'],
-                'class': 'mfsfa-btn'
-              }
-            } %}
-            {% endblock %}
+            {% if content.field_fac_spotlight_ref %}
+              {{ content.field_fac_spotlight_ref }}
+            {% endif %}
           </div>
   {% if parent == 'field_landing_page_content' %}
         </div>

@@ -52,15 +52,16 @@
     } %}
   {% endif %}
   {{ title_suffix }}
-  {% if header %}
-    <div class="view-header">
-      {{ header }}
-    </div>
-  {% endif %}
   {% if attachment_before %}
-    <section class="featured-news section">
-      {{ attachment_before }}
-    </section>
+    <div class="attachment attachment-before">
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            {{ attachment_before }}
+          </div>
+        </div>
+      </div>
+    </div>
   {% endif %}
   {% if exposed %}
     <section class="view-filters section">
@@ -68,6 +69,11 @@
         {{ exposed }}
       </div>
     </section>
+  {% endif %}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
   {% endif %}
 
   {% if rows %}

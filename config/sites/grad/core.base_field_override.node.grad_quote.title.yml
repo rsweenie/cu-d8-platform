@@ -1,0 +1,18 @@
+uuid: fb3be497-07b5-4567-92bb-4bf478ab9a06
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.grad_quote
+id: node.grad_quote.title
+field_name: title
+entity_type: node
+bundle: grad_quote
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -13,11 +13,12 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\pathauto\PathautoState;
 use Drupal\cu_hub_consumer\Hub\Resource;
 use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
 use Drupal\cu_hub_consumer\Hub\ResourceRelationshipListInterface;
-use Drupal\pathauto\PathautoState;
 use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
+use Drupal\cu_hub_consumer\Hub\ResourceInterface;
 
 /**
  * The hub reference entity class.
@@ -414,23 +415,29 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
       if (is_array($values)) {
         $field_values = [];
         foreach ($values as $value) {
-          if (isset($value['value'])) {
-            $term_name = trim($value['value']);
+          if (isset($value['resource'])) {
+            if ($value['resource'] instanceof ResourceInterface) {
+              $term_name = trim($value['resource']->label());
 
-            $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $term_name]);
-            $term = reset($terms);
+              if (!$term_name) {
+                continue;
+              }
 
-            // If term doesn't exist yet, try to create it.
-            if (!$term) {
-              $term = Term::create([
-                'name' => $term_name, 
-                'vid' => $target_bundle,
-              ]);
-              $term->save();
-            }
+              $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $term_name]);
+              $term = reset($terms);
 
-            if ($tid = $term->id()) {
-              $field_values[] = ['target_id' => $tid];
+              // If term doesn't exist yet, try to create it.
+              if (!$term) {
+                $term = Term::create([
+                  'name' => $term_name, 
+                  'vid' => $target_bundle,
+                ]);
+                $term->save();
+              }
+
+              if ($tid = $term->id()) {
+                $field_values[] = ['target_id' => $tid];
+              }
             }
           }
         }

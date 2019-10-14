@@ -80,7 +80,10 @@ display:
               content_page: default
               copy_box: default
               documentation: default
+              faculty_alumni_spotlight: default
               featured_links: default
+              grad_quote: default
+              grad_statistic_highlite: default
               header_alert: default
               interior_page: default
               landing_page: default
