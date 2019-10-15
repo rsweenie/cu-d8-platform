@@ -190,12 +190,6 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  body:
-    fieldName: body
-    publicName: body
-    enhancer:
-      id: ''
-    disabled: false
   field_hub_path_alias:
     fieldName: field_hub_path_alias
     publicName: field_hub_path_alias
@@ -205,6 +199,12 @@ resourceFields:
   field_hub_pd_course_dates:
     fieldName: field_hub_pd_course_dates
     publicName: field_hub_pd_course_dates
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_details:
+    fieldName: field_hub_pd_course_details
+    publicName: field_hub_pd_course_details
     enhancer:
       id: ''
     disabled: false
@@ -226,6 +226,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_hub_pd_course_title:
+    fieldName: field_hub_pd_course_title
+    publicName: field_hub_pd_course_title
+    enhancer:
+      id: ''
+    disabled: false
   field_hub_pd_related_degrees:
     fieldName: field_hub_pd_related_degrees
     publicName: field_hub_pd_related_degrees
@@ -244,3 +250,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_meta_tags:
+    disabled: true
+    fieldName: field_meta_tags
+    publicName: field_meta_tags
+    enhancer:
+      id: ''
