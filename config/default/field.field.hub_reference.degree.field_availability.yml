@@ -1,0 +1,29 @@
+uuid: c8fd8004-5da3-4646-8068-fb80bfdecde3
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.degree
+    - field.storage.hub_reference.field_availability
+    - taxonomy.vocabulary.program_availability
+id: hub_reference.degree.field_availability
+field_name: field_availability
+entity_type: hub_reference
+bundle: degree
+label: Availability
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      program_availability: program_availability
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

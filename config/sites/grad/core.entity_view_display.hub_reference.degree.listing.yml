@@ -1,0 +1,110 @@
+uuid: f3b010fb-2c1b-4a99-be70-2918d4d6a2d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.hub_reference.listing
+    - cu_hub_consumer.hub_reference_type.degree
+    - field.field.hub_reference.degree.field_availability
+    - field.field.hub_reference.degree.field_degree_type
+    - field.field.hub_reference.degree.field_program_interests
+  module:
+    - cu_hub_consumer
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks:
+        Accessibility: {  }
+        Devel: {  }
+        Embed: {  }
+        Help: {  }
+        'Lists (Views)': {  }
+        User: {  }
+        'User fields': {  }
+        Webform: {  }
+      allowed_layouts:
+        - generic_hero
+        - generic_content
+        - generic_content_full
+        - program_detail_feat_tiles
+        - program_detail_2col
+  layout_library:
+    enable: false
+id: hub_reference.degree.listing
+targetEntityType: hub_reference
+bundle: degree
+mode: listing
+content:
+  hub_field_hub_degree_availability:
+    type: hub_resource_label
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_degree_list_image:
+    type: hub_resource_media_image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      style_name: srcset_500px_wide
+      link_type: content
+    third_party_settings: {  }
+  hub_field_hub_degree_title:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+  hub_field_hub_degree_type:
+    type: hub_resource_label
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_program:
+    type: hub_resource_label
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_availability: true
+  field_degree_type: true
+  field_program_interests: true
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_degree_adm_rep: true
+  hub_field_hub_degree_app_deadlines: true
+  hub_field_hub_degree_app_link: true
+  hub_field_hub_degree_description: true
+  hub_field_hub_degree_details: true
+  hub_field_hub_degree_featured_info: true
+  hub_field_hub_degree_hero_image: true
+  hub_field_hub_degree_interests: true
+  hub_field_hub_degree_intro: true
+  hub_field_hub_degree_next_steps: true
+  hub_field_hub_degree_other_programs: true
+  hub_field_hub_degree_related_degrees: true
+  hub_field_hub_degree_requirements: true
+  hub_field_hub_degree_title_short: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_node_type: true
+  hub_revision_timestamp: true
+  hub_title: true
+  search_api_excerpt: true

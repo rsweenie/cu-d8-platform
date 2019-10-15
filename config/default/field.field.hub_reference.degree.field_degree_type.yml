@@ -1,0 +1,29 @@
+uuid: bb450940-984b-42d1-9de0-a4651eac1006
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.degree
+    - field.storage.hub_reference.field_degree_type
+    - taxonomy.vocabulary.degree_type
+id: hub_reference.degree.field_degree_type
+field_name: field_degree_type
+entity_type: hub_reference
+bundle: degree
+label: 'Degree Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      degree_type: degree_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

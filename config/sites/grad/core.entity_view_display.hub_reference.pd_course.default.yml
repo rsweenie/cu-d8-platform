@@ -169,6 +169,7 @@ hidden:
   hub_field_hub_pd_course_dates: true
   hub_field_hub_pd_course_details: true
   hub_field_hub_pd_course_hero_image: true
+  hub_field_hub_pd_course_list_image: true
   hub_field_hub_pd_course_next_steps: true
   hub_field_hub_pd_course_program: true
   hub_field_hub_pd_course_title: true
