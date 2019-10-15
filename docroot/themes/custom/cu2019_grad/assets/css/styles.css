@@ -11989,21 +11989,35 @@ aside .news-listing-row h2 ~ .h4 {
 
 /* line 41, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
-.fac-listing h1,
+.fac-listing h2,
 .fac-listing a {
   color: #0054A6;
 }
 
 /* line 46, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
-.fac-listing h1 {
+.fac-listing h2 {
   font-size: 1.6rem;
   line-height: 1.2em;
   font-family: "Conduit";
   margin: 1em 0 0 0;
+  text-transform: uppercase;
 }
 
-/* line 58, src/sass/components/feeds-detail/faculty/_faculty.scss */
+/* line 59, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing a {
+  text-decoration: none;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.fac-listing a:hover,
+.fac-listing a:focus {
+  text-decoration: underline;
+}
+
+/* line 66, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
 .fac-listing h3 {
   font-size: 1.3rem;
@@ -12013,7 +12027,7 @@ aside .news-listing-row h2 ~ .h4 {
   color: #555555;
 }
 
-/* line 77, src/sass/components/feeds-detail/faculty/_faculty.scss */
+/* line 85, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
 .field--name-hub-field-hub-faculty-email a,
 .field--name-hub-field-hub-faculty-phone a {
@@ -14646,12 +14660,12 @@ form.search .search button {
 
   /* line 46, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
-  .fac-listing h1 {
+  .fac-listing h2 {
     font-size: 1.9rem;
     line-height: 1em;
   }
 
-  /* line 58, src/sass/components/feeds-detail/faculty/_faculty.scss */
+  /* line 66, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
   .fac-listing h3 {
     font-size: 1.6rem;
