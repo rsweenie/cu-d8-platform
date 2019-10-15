@@ -93,12 +93,14 @@
 }
 
 .stat_hl_io,
-.hub_img {
+.hub_img,
+.fci {
   position: relative;
   @include innerBorder;
 }
 
-.stat_hl_io {
+.stat_hl_io,
+.fci {
 
   &:before {
     width: 11px;
@@ -110,7 +112,9 @@
     background: rgba($white,.3);
     z-index: 10;
   }
+}
 
+.stat_hl_io {
   img {
     width: 100%;
     height: auto;
