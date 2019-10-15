@@ -24,6 +24,7 @@ blacklist:
   - paragraphs.paragraphs_type.formatted_text
   - paragraphs.paragraphs_type.full_width_banner
   - paragraphs.paragraphs_type.full_width_photo
+  - paragraphs.paragraphs_type.grad_feature_tile_item
   - paragraphs.paragraphs_type.hp_hero
   - paragraphs.paragraphs_type.hp_hero_bg
   - paragraphs.paragraphs_type.image_video
@@ -113,6 +114,7 @@ blacklist:
   - 'field.storage.node.field_stat_highlite_*'
   - 'field.storage.node.field_fac_spotlight_*'
   - 'field.storage.paragraph.field_fac_spotlight_*'
+  - 'field.storage.paragraph.field_tile_item_*'
 graylist:
   - core.entity_form_display.menu_link_content.main.default
   - core.entity_view_display.menu_link_content.main.default
