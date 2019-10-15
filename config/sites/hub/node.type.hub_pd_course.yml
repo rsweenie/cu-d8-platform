@@ -8,9 +8,8 @@ dependencies:
     - scheduler
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
+    available_menus: {  }
+    parent: ''
   private_content:
     private: 0
   scheduler:
@@ -29,5 +28,5 @@ type: hub_pd_course
 description: 'Course detail page that can be linked to from a program or degree page.'
 help: ''
 new_revision: true
-preview_mode: 1
+preview_mode: 0
 display_submitted: false
