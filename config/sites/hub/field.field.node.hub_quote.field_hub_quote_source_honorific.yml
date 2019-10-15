@@ -1,0 +1,19 @@
+uuid: 6831d300-089e-4f5f-85d5-3f840fc144b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_quote_source_honorific
+    - node.type.hub_quote
+id: node.hub_quote.field_hub_quote_source_honorific
+field_name: field_hub_quote_source_honorific
+entity_type: node
+bundle: hub_quote
+label: 'Honorific / Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

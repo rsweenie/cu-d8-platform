@@ -1,19 +1,19 @@
-uuid: 2e5d3d35-de4d-4e54-b2f2-99c6a1caadee
+uuid: 833cd684-5824-4a61-b490-8e50c551e920
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.quote_ref
+    - paragraphs.paragraphs_type.hub_quote_ref
   module:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
     default_include:
-      - field_quote_ref_item
-id: paragraph--quote_ref
+      - field_hub_quote_ref_item
+id: paragraph--hub_quote_ref
 disabled: false
-path: paragraph/quote_ref
-resourceType: paragraph--quote_ref
+path: paragraph/hub_quote_ref
+resourceType: paragraph--hub_quote_ref
 resourceFields:
   id:
     fieldName: id
@@ -105,9 +105,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_quote_ref_item:
-    fieldName: field_quote_ref_item
-    publicName: field_quote_ref_item
+  field_hub_quote_ref_item:
+    fieldName: field_hub_quote_ref_item
+    publicName: field_hub_quote_ref_item
     enhancer:
       id: ''
     disabled: false
