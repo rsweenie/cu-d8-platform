@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.paragraph.faculty_alumni_spotlight.field_hub_spotlight_ref
     - paragraphs.paragraphs_type.faculty_alumni_spotlight
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
 id: paragraph.faculty_alumni_spotlight.default
 targetEntityType: paragraph
 bundle: faculty_alumni_spotlight
@@ -13,11 +16,20 @@ content:
   field_hub_spotlight_ref:
     weight: 0
     settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
     region: content
 hidden:
   created: true

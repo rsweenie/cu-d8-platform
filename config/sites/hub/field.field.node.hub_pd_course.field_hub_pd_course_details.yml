@@ -1,0 +1,29 @@
+uuid: a7a1fd32-c829-4035-b471-e9533623d511
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_pd_course_details
+    - node.type.hub_pd_course
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    basic_text: '0'
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: node.hub_pd_course.field_hub_pd_course_details
+field_name: field_hub_pd_course_details
+entity_type: node
+bundle: hub_pd_course
+label: Details
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

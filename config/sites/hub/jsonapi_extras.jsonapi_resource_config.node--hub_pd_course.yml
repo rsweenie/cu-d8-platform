@@ -1,0 +1,258 @@
+uuid: 9b06bff8-ad71-4e79-b217-7de25d5da955
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_pd_course
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - field_hub_pd_course_program
+      - field_hub_pd_course_dates
+      - field_hub_pd_course_hero_image.image
+      - field_hub_pd_course_next_steps
+      - field_hub_pd_course_next_steps.field_hub_next_steps_items
+      - field_hub_pd_related_degrees
+      - field_hub_site
+      - field_hub_pd_right_side_copy
+id: node--hub_pd_course
+disabled: false
+path: node/hub_pd_course
+resourceType: node--hub_pd_course
+resourceFields:
+  nid:
+    fieldName: nid
+    publicName: nid
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  vid:
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  revision_timestamp:
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+    disabled: false
+  revision_uid:
+    disabled: true
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: true
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    disabled: true
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  uid:
+    disabled: true
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  title:
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  changed:
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+    disabled: false
+  promote:
+    disabled: true
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+  sticky:
+    disabled: true
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  field_metadata:
+    fieldName: field_metadata
+    publicName: field_metadata
+    enhancer:
+      id: ''
+    disabled: false
+  scheduled_transition_date:
+    disabled: true
+    fieldName: scheduled_transition_date
+    publicName: scheduled_transition_date
+    enhancer:
+      id: ''
+  scheduled_transition_state:
+    disabled: true
+    fieldName: scheduled_transition_state
+    publicName: scheduled_transition_state
+    enhancer:
+      id: ''
+  metatag:
+    disabled: true
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  metatag_normalized:
+    fieldName: metatag_normalized
+    publicName: metatag_normalized
+    enhancer:
+      id: ''
+    disabled: false
+  path:
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+    disabled: false
+  private:
+    disabled: true
+    fieldName: private
+    publicName: private
+    enhancer:
+      id: ''
+  publish_on:
+    disabled: true
+    fieldName: publish_on
+    publicName: publish_on
+    enhancer:
+      id: ''
+  unpublish_on:
+    disabled: true
+    fieldName: unpublish_on
+    publicName: unpublish_on
+    enhancer:
+      id: ''
+  menu_link:
+    disabled: true
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+  field_hub_path_alias:
+    fieldName: field_hub_path_alias
+    publicName: field_hub_path_alias
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_dates:
+    fieldName: field_hub_pd_course_dates
+    publicName: field_hub_pd_course_dates
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_details:
+    fieldName: field_hub_pd_course_details
+    publicName: field_hub_pd_course_details
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_hero_image:
+    fieldName: field_hub_pd_course_hero_image
+    publicName: field_hub_pd_course_hero_image
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_next_steps:
+    fieldName: field_hub_pd_course_next_steps
+    publicName: field_hub_pd_course_next_steps
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_program:
+    fieldName: field_hub_pd_course_program
+    publicName: field_hub_pd_course_program
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_title:
+    fieldName: field_hub_pd_course_title
+    publicName: field_hub_pd_course_title
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_related_degrees:
+    fieldName: field_hub_pd_related_degrees
+    publicName: field_hub_pd_related_degrees
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_right_side_copy:
+    fieldName: field_hub_pd_right_side_copy
+    publicName: field_hub_pd_right_side_copy
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_site:
+    fieldName: field_hub_site
+    publicName: field_hub_site
+    enhancer:
+      id: ''
+    disabled: false
+  field_meta_tags:
+    disabled: true
+    fieldName: field_meta_tags
+    publicName: field_meta_tags
+    enhancer:
+      id: ''

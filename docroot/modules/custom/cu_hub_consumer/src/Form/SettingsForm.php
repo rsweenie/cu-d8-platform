@@ -38,6 +38,7 @@ class SettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config(static::SETTINGS);
+    $state = \Drupal::state();
 
     $time_options = [
       '0'    => 'Disabled',
@@ -107,6 +108,11 @@ class SettingsForm extends ConfigFormBase {
       '#options' => $time_options,
     ];
 
+    $last_run = $state->get('cu_hub_consumer.cron.last_refresh', 0);
+    $form['cron']['last_run_info'] = [
+      '#markup' => '<b>Last Run:</b> ' . ($last_run ? \Drupal::service('date.formatter')->format($last_run) : '-'),
+    ];
+
     $form['queue'] = array(
       '#type' => 'fieldset',
       '#title' => $this->t('Queue workers'),
@@ -138,6 +144,10 @@ class SettingsForm extends ConfigFormBase {
       ->set('cron.delete_age', $form_state->getValue(['cron', 'delete_age']))
       ->set('queue.enabled', $form_state->getValue(['queue', 'enabled']))
       ->save();
+
+    // We want to reset the last_refresh time on settings changes.
+    $state = \Drupal::state();
+    $state->set('cu_hub_consumer.cron.last_refresh', 0);
 
     parent::submitForm($form, $form_state);
   }

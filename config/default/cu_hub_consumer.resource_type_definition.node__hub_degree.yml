@@ -12,7 +12,7 @@ fields:
     type: integer
     multiple: false
   langcode:
-    type: string_long
+    type: language
     multiple: false
   revision_timestamp:
     type: datetime
@@ -24,8 +24,8 @@ fields:
     type: datetime
     multiple: false
   metatag_normalized:
-    type: metatags
-    multiple: false
+    type: hub_metatags
+    multiple: true
   field_hub_degree_app_deadlines:
     type: hub_text_long
     multiple: false
@@ -42,63 +42,93 @@ fields:
     type: hub_text_long
     multiple: false
   field_hub_degree_title:
-    type: string_long
+    type: string
     multiple: false
   field_hub_degree_title_short:
-    type: string_long
+    type: string
     multiple: false
   field_hub_path_alias:
-    type: string_long
+    type: string
     multiple: false
   node_type:
     type: hub_resource
     hub_type: node_type
     multiple: false
-  field_hub_degree_availability:
-    type: hub_resource
-    hub_type: taxonomy_term
-    multiple: true
-  field_hub_degree_interests:
-    type: hub_resource
-    hub_type: taxonomy_term
-    multiple: false
-  field_hub_degree_type:
-    type: hub_resource
-    hub_type: taxonomy_term
-    multiple: false
-  field_hub_program:
-    type: hub_resource
-    hub_type: node
-    multiple: false
-  field_hub_site:
-    type: hub_resource
-    hub_type: node
-    multiple: false
-  field_hub_degree_hero_image:
-    type: hub_resource
-    hub_type: media
-    multiple: false
-  field_hub_degree_related_degrees:
-    type: hub_resource
-    hub_type: node
-    multiple: true
   field_hub_degree_adm_rep:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_admissions_rep
     multiple: false
+  field_hub_degree_availability:
+    type: hub_resource
+    hub_type: taxonomy_term
+    hub_bundles:
+      - taxonomy_term--program_availability
+    multiple: true
   field_hub_degree_description:
     type: hub_resource
     hub_type: paragraph
+    hub_bundles:
+      - paragraph--copy
+      - paragraph--video
     multiple: true
   field_hub_degree_details:
     type: hub_resource
     hub_type: paragraph
+    hub_bundles:
+      - paragraph--copy
+      - paragraph--video
     multiple: true
   field_hub_degree_featured_info:
     type: hub_resource
     hub_type: paragraph
+    hub_bundles:
+      - paragraph--featured_content_item
+      - paragraph--faculty_alumni_spotlight
+      - paragraph--image
+      - paragraph--statistic_highlight
+      - paragraph--hub_quote_ref
     multiple: true
+  field_hub_degree_hero_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
+    multiple: false
+  field_hub_degree_interests:
+    type: hub_resource
+    hub_type: taxonomy_term
+    hub_bundles:
+      - taxonomy_term--program_interests
+    multiple: false
   field_hub_degree_next_steps:
     type: hub_resource
     hub_type: node
+    hub_bundles:
+      - node--hub_next_steps
+    multiple: false
+  field_hub_degree_related_degrees:
+    type: hub_resource
+    hub_type: node
+    hub_bundles:
+      - node--hub_degree
+    multiple: true
+  field_hub_degree_type:
+    type: hub_resource
+    hub_type: taxonomy_term
+    hub_bundles:
+      - taxonomy_term--degree_type
+    multiple: false
+  field_hub_program:
+    type: hub_resource
+    hub_type: node
+    hub_bundles:
+      - node--hub_program
+    multiple: false
+  field_hub_site:
+    type: hub_resource
+    hub_type: node
+    hub_bundles:
+      - node--hub_site
     multiple: false

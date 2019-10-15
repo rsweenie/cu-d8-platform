@@ -1,0 +1,35 @@
+uuid: 662e292a-71fe-456f-9e0e-7b15642be341
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.faculty_alumni_spotlight
+  module:
+    - private_content
+    - user
+id: node.faculty_alumni_spotlight.teaser
+targetEntityType: node
+bundle: faculty_alumni_spotlight
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  field_fac_spotlight_cta: true
+  field_fac_spotlight_desc: true
+  field_fac_spotlight_image: true
+  field_fac_spotlight_name: true
+  field_fac_spotlight_title: true
+  field_fac_spotlight_type: true
+  search_api_excerpt: true

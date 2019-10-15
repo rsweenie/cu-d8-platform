@@ -59,25 +59,6 @@
       "requireSameDimensions": true
     },
     {
-      "label": "test hrnew index menu",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://local.creighton.com",
-      "referenceUrl": "http://hrnew.creighton.acsitefactory.com/",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": ".header_top_section_menu",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.04,
-      "requireSameDimensions": true
-    },
-    {
       "label": "test hrnew about",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "http://local.creighton.com/about",

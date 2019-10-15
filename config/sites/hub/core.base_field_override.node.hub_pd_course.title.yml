@@ -8,7 +8,7 @@ id: node.hub_pd_course.title
 field_name: title
 entity_type: node
 bundle: hub_pd_course
-label: 'Course Title'
+label: 'Administrative Title'
 description: ''
 required: true
 translatable: true
