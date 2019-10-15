@@ -1,0 +1,28 @@
+uuid: 81df90ea-549f-4970-904a-f89421a57771
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_quote_image
+    - media.type.image
+    - node.type.hub_quote
+id: node.hub_quote.field_hub_quote_image
+field_name: field_hub_quote_image
+entity_type: node
+bundle: hub_quote
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: 30cc0488-7920-4fd1-9f54-75189577209d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hub_quote_ref.field_hub_quote_ref_item
+    - paragraphs.paragraphs_type.hub_quote_ref
+id: paragraph.hub_quote_ref.default
+targetEntityType: paragraph
+bundle: hub_quote_ref
+mode: default
+content:
+  field_hub_quote_ref_item:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true

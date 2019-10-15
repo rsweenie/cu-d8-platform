@@ -105,14 +105,17 @@ class HubResourceTypeDefinition extends ConfigEntityBase implements HubResourceT
       return $changes;
     }
 
+    if ($added = array_diff_key($this->fields, $this->orig_fields)) {
+      $changes['added'] = $added;
+    }
+    if ($removed = array_diff_key($this->orig_fields, $this->fields)) {
+      $changes['removed'] = $removed;
+    }
+
     // If we find differences in the arrays, we've changed.
-    if ($diffs = DiffArray::diffAssocRecursive($this->fields, $this->orig_fields)) {
-      $changes = array_merge($changes, array_keys($diffs));
+    if ($changed = DiffArray::diffAssocRecursive($this->fields, $this->orig_fields)) {
+      $changes['modified'] = !empty($changes['added']) ? array_diff_key($changed, $changes['added']) : $changed;
     }
-    if ($diffs = DiffArray::diffAssocRecursive($this->orig_fields, $this->fields)) {
-      $changes = array_merge($changes, array_keys($diffs));
-    }
-    $changes = array_unique($changes);
 
     return $changes;
   }
@@ -135,6 +138,13 @@ class HubResourceTypeDefinition extends ConfigEntityBase implements HubResourceT
       $this->orig_fields = $this->fields;
     }
     $this->fields[$field_name] = $info;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function hasFieldInfo($field_name) {
+    return isset($this->fields[$field_name]);
   }
 
   /**

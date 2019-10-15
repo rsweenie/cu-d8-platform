@@ -1,0 +1,18 @@
+uuid: 86cb6f13-47a1-4025-8a2c-fababfcdaee5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.faculty_alumni_spotlight
+id: node.faculty_alumni_spotlight.title
+field_name: title
+entity_type: node
+bundle: faculty_alumni_spotlight
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

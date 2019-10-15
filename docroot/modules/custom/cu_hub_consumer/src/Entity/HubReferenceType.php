@@ -195,7 +195,7 @@ class HubReferenceType extends ConfigEntityBundleBase implements HubReferenceTyp
 
     // Clear the router cache to prevent RouteNotFoundException errors caused
     // by the Field UI module.
-    \Drupal::service('router.builder')->rebuild();
+    \Drupal::service('router.builder')->setRebuildNeeded();
 
     // Rebuild local actions so that the 'Add field' action on the 'Manage
     // fields' tab appears.

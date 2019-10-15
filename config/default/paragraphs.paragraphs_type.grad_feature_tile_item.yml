@@ -1,0 +1,9 @@
+uuid: 1cc73dfc-411a-41fe-8f91-cb9e5a92e2c0
+langcode: en
+status: true
+dependencies: {  }
+id: grad_feature_tile_item
+label: 'Grad: Feature Tile Item'
+icon_uuid: null
+description: 'Includes fields for RTE, Image, and link to be used with feature tile sets.'
+behavior_plugins: {  }

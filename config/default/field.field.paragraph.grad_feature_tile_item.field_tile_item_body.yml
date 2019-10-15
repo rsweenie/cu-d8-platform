@@ -1,0 +1,29 @@
+uuid: 20d86119-ea16-4dd8-9c76-75f7d0a9476e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tile_item_body
+    - paragraphs.paragraphs_type.grad_feature_tile_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    basic_text: '0'
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: paragraph.grad_feature_tile_item.field_tile_item_body
+field_name: field_tile_item_body
+entity_type: paragraph
+bundle: grad_feature_tile_item
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
