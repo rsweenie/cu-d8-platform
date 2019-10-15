@@ -416,10 +416,10 @@ textarea {
 
 /*---=== BASE STUFF ===---*/
 
-/* line 13, src/sass/structure/_grid.scss */
+/* line 14, src/sass/structure/_grid.scss */
 
 [class*="col-"] {
-  padding: 0 2.5rem;
+  padding: 0 1.6rem;
   margin: 0;
   -webkit-box-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -429,7 +429,7 @@ textarea {
           order: 0;
 }
 
-/* line 23, src/sass/structure/_grid.scss */
+/* line 24, src/sass/structure/_grid.scss */
 
 .row + * {
   margin-top: 5rem;
@@ -457,7 +457,7 @@ textarea {
   width: calc(100% + (-2.5rem * -2));
 }
 
-/* line 45, src/sass/structure/_grid.scss */
+/* line 46, src/sass/structure/_grid.scss */
 
 .row.align-center {
   -webkit-box-pack: center;
@@ -468,7 +468,7 @@ textarea {
           align-items: center;
 }
 
-/* line 49, src/sass/structure/_grid.scss */
+/* line 50, src/sass/structure/_grid.scss */
 
 .row.align-left {
   -webkit-box-pack: start;
@@ -476,7 +476,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 52, src/sass/structure/_grid.scss */
+/* line 53, src/sass/structure/_grid.scss */
 
 .row.align-right {
   -webkit-box-pack: end;
@@ -484,7 +484,7 @@ textarea {
           justify-content: flex-end;
 }
 
-/* line 55, src/sass/structure/_grid.scss */
+/* line 56, src/sass/structure/_grid.scss */
 
 .row.va-center {
   -webkit-box-align: center;
@@ -492,7 +492,7 @@ textarea {
           align-items: center;
 }
 
-/* line 58, src/sass/structure/_grid.scss */
+/* line 59, src/sass/structure/_grid.scss */
 
 .row.va-top {
   -webkit-box-align: start;
@@ -500,7 +500,7 @@ textarea {
           align-items: flex-start;
 }
 
-/* line 61, src/sass/structure/_grid.scss */
+/* line 62, src/sass/structure/_grid.scss */
 
 .row.va-bottom {
   -webkit-box-align: end;
@@ -508,7 +508,7 @@ textarea {
           align-items: flex-end;
 }
 
-/* line 64, src/sass/structure/_grid.scss */
+/* line 65, src/sass/structure/_grid.scss */
 
 .row.ha-center {
   -webkit-box-pack: center;
@@ -516,7 +516,7 @@ textarea {
           justify-content: center;
 }
 
-/* line 67, src/sass/structure/_grid.scss */
+/* line 68, src/sass/structure/_grid.scss */
 
 .row.ha-top {
   -webkit-box-pack: start;
@@ -524,7 +524,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 70, src/sass/structure/_grid.scss */
+/* line 71, src/sass/structure/_grid.scss */
 
 .row.ha-right {
   -webkit-box-pack: end;
@@ -3896,6 +3896,118 @@ a.card.mfsfa .hub-resource-field--type-link a:after {
   display: inline-block;
 }
 
+/* line 2, src/sass/components/basic/cards/_fci.scss */
+
+.paragraph--type--grad-feature-tile-item {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+/* line 8, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci,
+a.card.fci {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+/* line 16, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci,
+.card.fci a,
+.card.fci h2,
+.card.fci h3,
+a.card.fci,
+a.card.fci a,
+a.card.fci h2,
+a.card.fci h3 {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 24, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci img,
+a.card.fci img {
+  max-height: 90px;
+  width: auto;
+  margin: auto auto 1.2rem;
+  display: block;
+}
+
+/* line 35, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci > a,
+.card.fci > span,
+a.card.fci > a,
+a.card.fci > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 1.25rem;
+  height: 100%;
+  background: #0054A6;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.card.fci a:hover,
+.card.fci a:focus,
+a.card.fci a:hover,
+a.card.fci a:focus {
+  background: #002E6D;
+}
+
+/* line 54, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci h3,
+a.card.fci h3 {
+  font-size: 2rem;
+  line-height: 1.06em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* line 72, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci h2,
+a.card.fci h2 {
+  font-size: 4.8rem;
+  font-family: proxima-nova, sans-serif;
+  color: #6CACE4;
+  margin: 0;
+  line-height: 1.06em;
+}
+
+/* line 90, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci sup,
+a.card.fci sup {
+  font-size: 0.55556em;
+}
+
+/* line 94, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci p,
+a.card.fci p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
 /* line 25, src/sass/components/basic/cards/_copy.scss */
 
 .card h2,
@@ -3974,7 +4086,7 @@ a.card .tags {
   font-size: .8em;
 }
 
-/* line 71, src/sass/components/basic/_cards.scss */
+/* line 72, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .element .img_vid .img img,
 a.card.img-side:focus .element .img_vid .img img {
@@ -3986,7 +4098,7 @@ a.card.img-side:focus .element .img_vid .img img {
           transform: scale(1.1);
 }
 
-/* line 76, src/sass/components/basic/_cards.scss */
+/* line 77, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary,
 a.card.img-side:focus .btn-primary {
@@ -3995,14 +4107,14 @@ a.card.img-side:focus .btn-primary {
   color: #002E6D;
 }
 
-/* line 83, src/sass/components/basic/_cards.scss */
+/* line 84, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary:before,
 a.card.img-side:focus .btn-primary:before {
   background: linear-gradient(-45deg, #ffd072 50%, rgba(255, 208, 114, 0) 50%);
 }
 
-/* line 87, src/sass/components/basic/_cards.scss */
+/* line 88, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary .arrow:last-child,
 a.card.img-side:focus .btn-primary .arrow:last-child {
@@ -4010,7 +4122,7 @@ a.card.img-side:focus .btn-primary .arrow:last-child {
           transform: translate(3px, -46%);
 }
 
-/* line 93, src/sass/components/basic/_cards.scss */
+/* line 94, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .info h2,
 a.card.img-side:focus .info h2 {
@@ -4576,11 +4688,11 @@ blockquote.quote-box {
 .copy-block .embedded-entity blockquote:after,
 .cke_editable .embedded-entity blockquote:after,
 blockquote.quote-box:after {
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
+  width: calc(100% - 1.6rem);
+  height: calc(100% - 1.6rem);
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 0.8rem;
+  left: 0.8rem;
   content: "";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   pointer-events: none;
@@ -5209,11 +5321,10 @@ blockquote .tooltip-trigger {
 /* line 5, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles {
-  margin: 0 2.5rem;
   /*  img { width: 100%; height: auto; display: block; }*/
 }
 
-/* line 8, src/sass/components/basic/_feat-tiles.scss */
+/* line 10, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles img {
   display: block;
@@ -5221,53 +5332,56 @@ blockquote .tooltip-trigger {
   height: auto;
 }
 
-/* line 21, src/sass/components/basic/_feat-tiles.scss */
+/* line 23, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles > div > div {
   margin: 1.6rem 0;
 }
 
-/* line 90, src/sass/components/basic/_feat-tiles.scss */
+/* line 92, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles .hub-resource-field--name-field-fc-p-link {
   display: none;
 }
 
-/* line 95, src/sass/components/basic/_feat-tiles.scss */
+/* line 97, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io,
-.hub_img {
+.hub_img,
+.fci {
   position: relative;
 }
 
 /* line 463, src/sass/base/_mixins.scss */
 
 .stat_hl_io:after,
-.hub_img:after {
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
+.hub_img:after,
+.fci:after {
+  width: calc(100% - 1.6rem);
+  height: calc(100% - 1.6rem);
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 0.8rem;
+  left: 0.8rem;
   content: "";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   pointer-events: none;
 }
 
-/* line 103, src/sass/components/basic/_feat-tiles.scss */
+/* line 107, src/sass/components/basic/_feat-tiles.scss */
 
-.stat_hl_io:before {
-  width: 1.1rem;
-  height: 1.1rem;
+.stat_hl_io:before,
+.fci:before {
+  width: 0.8rem;
+  height: 0.8rem;
   position: absolute;
-  top: 1.7rem;
-  left: 1.7rem;
+  top: 1rem;
+  left: 1rem;
   content: "";
   background: rgba(255, 255, 255, 0.3);
   z-index: 10;
 }
 
-/* line 114, src/sass/components/basic/_feat-tiles.scss */
+/* line 127, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -12962,6 +13076,15 @@ form.search .search button {
     height: 32rem;
   }
 
+  /* line 35, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci > a,
+  .card.fci > span,
+  a.card.fci > a,
+  a.card.fci > span {
+    padding: 2.5rem;
+  }
+
   /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   blockquote.q-left .quote {
@@ -13045,21 +13168,22 @@ form.search .search button {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 13, src/sass/structure/_grid.scss */
+  /* line 14, src/sass/structure/_grid.scss */
 
   [class*="col-"] {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    padding: 0 2.5rem;
   }
 
-  /* line 17, src/sass/structure/_grid.scss */
+  /* line 18, src/sass/structure/_grid.scss */
 
   .no-gutter {
     padding: 0;
   }
 
-  /* line 28, src/sass/structure/_grid.scss */
+  /* line 29, src/sass/structure/_grid.scss */
 
   .pull-left {
     -webkit-box-ordinal-group: 1;
@@ -13067,7 +13191,7 @@ form.search .search button {
             order: 0;
   }
 
-  /* line 31, src/sass/structure/_grid.scss */
+  /* line 32, src/sass/structure/_grid.scss */
 
   .push-right {
     -webkit-box-ordinal-group: 3;
@@ -13075,14 +13199,14 @@ form.search .search button {
             order: 2;
   }
 
-  /* line 34, src/sass/structure/_grid.scss */
+  /* line 35, src/sass/structure/_grid.scss */
 
   .float-left {
     margin: 0 2.5rem 2.5rem 0;
     float: left;
   }
 
-  /* line 38, src/sass/structure/_grid.scss */
+  /* line 39, src/sass/structure/_grid.scss */
 
   .float-right {
     margin: 0 0 2.5rem 2.5rem;
@@ -13953,11 +14077,11 @@ form.search .search button {
   /* line 463, src/sass/base/_mixins.scss */
 
   .fact.stat_hl:after {
-    width: calc(100% - 3rem);
-    height: calc(100% - 3rem);
+    width: calc(100% - 1.6rem);
+    height: calc(100% - 1.6rem);
     position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
+    top: 0.8rem;
+    left: 0.8rem;
     content: "";
     border: 0.2rem solid rgba(255, 255, 255, 0.3);
     pointer-events: none;
@@ -14143,6 +14267,17 @@ form.search .search button {
     display: block;
   }
 
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .copy-block .embedded-entity blockquote:after,
+  .cke_editable .embedded-entity blockquote:after,
+  blockquote.quote-box:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
   /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
   .copy-block .embedded-entity blockquote .quote-inner,
@@ -14190,11 +14325,11 @@ form.search .search button {
   /* line 463, src/sass/base/_mixins.scss */
 
   blockquote.q-left:after {
-    width: calc(100% - 3rem);
-    height: calc(100% - 3rem);
+    width: calc(100% - 1.6rem);
+    height: calc(100% - 1.6rem);
     position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
+    top: 0.8rem;
+    left: 0.8rem;
     content: "";
     border: 0.2rem solid rgba(255, 255, 255, 0.3);
     pointer-events: none;
@@ -14332,7 +14467,13 @@ form.search .search button {
     border-left: 1px solid #ECF0F3;
   }
 
-  /* line 15, src/sass/components/basic/_feat-tiles.scss */
+  /* line 5, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles {
+    margin: 0 2.5rem;
+  }
+
+  /* line 17, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div {
     display: -webkit-box;
@@ -14345,12 +14486,33 @@ form.search .search button {
     margin: -0.5rem;
   }
 
-  /* line 21, src/sass/components/basic/_feat-tiles.scss */
+  /* line 23, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div > div {
     width: 50%;
     padding: 0.5rem;
     margin: 0;
+  }
+
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .stat_hl_io:after,
+  .hub_img:after,
+  .fci:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  /* line 107, src/sass/components/basic/_feat-tiles.scss */
+
+  .stat_hl_io:before,
+  .fci:before {
+    width: 1.1rem;
+    height: 1.1rem;
+    top: 1.7rem;
+    left: 1.7rem;
   }
 
   /* line 7, src/sass/components/interactive/tabs/_minimal.scss */
@@ -14673,6 +14835,26 @@ form.search .search button {
 
   .fac-listing h3 {
     font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .fact.stat_hl:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  /* line 463, src/sass/base/_mixins.scss */
+
+  blockquote.q-left:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
   }
 }
 
@@ -15049,6 +15231,27 @@ form.search .search button {
   .card.mfsfa .body,
   a.card.mfsfa .body {
     display: none;
+  }
+
+  /* line 54, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h3,
+  a.card.fci h3 {
+    font-size: 3rem;
+  }
+
+  /* line 72, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h2,
+  a.card.fci h2 {
+    font-size: 7.2rem;
+  }
+
+  /* line 94, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci p,
+  a.card.fci p {
+    font-size: 1.6rem;
   }
 
   /* line 25, src/sass/components/basic/cards/_copy.scss */
@@ -16933,7 +17136,7 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 21, src/sass/components/basic/_feat-tiles.scss */
+  /* line 23, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles > div > div {
     width: 33.3%;
@@ -17001,6 +17204,13 @@ form.search .search button {
   .card.fw_photo .content,
   a.card.fw_photo .content {
     width: 85%;
+  }
+
+  /* line 24, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci img,
+  a.card.fci img {
+    max-height: 132px;
   }
 }
 
@@ -17865,6 +18075,22 @@ form.search .search button {
 
   blockquote.q-left {
     margin: 0 -2.5rem 1.5rem;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767.9px) {
+  /* line 54, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h3,
+  a.card.fci h3 {
+    font-size: 3rem;
+  }
+
+  /* line 72, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h2,
+  a.card.fci h2 {
+    font-size: 7.2rem;
   }
 }
 

@@ -1,12 +1,13 @@
 /*---===<<< GRID >>>===---*/
 /*---=== BASE STUFF ===---*/
 @mixin col {
-  padding: 0 #{$gutter}rem;
+  padding: 0 16px;
   margin: 0;
   @include flexItem(0, 0, auto, 0);
 
   @media #{$mediaMd} {
       order: 1;
+      padding: 0 #{$gutter}rem;
   }
 }
 
