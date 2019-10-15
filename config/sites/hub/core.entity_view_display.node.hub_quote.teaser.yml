@@ -1,16 +1,16 @@
-uuid: 9ab3e890-58a5-4a8e-a5d8-297846650c84
+uuid: 9a75ec17-82d4-4b73-8bfe-732d88035b7d
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.grad_statistic_highlite
+    - node.type.hub_quote
   module:
     - private_content
     - user
-id: node.grad_statistic_highlite.teaser
+id: node.hub_quote.teaser
 targetEntityType: node
-bundle: grad_statistic_highlite
+bundle: hub_quote
 mode: teaser
 content:
   links:
@@ -26,10 +26,4 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
-  field_stat_highlite_bottom_text: true
-  field_stat_highlite_icon: true
-  field_stat_highlite_image: true
-  field_stat_highlite_statistic: true
-  field_stat_highlite_style: true
-  field_stat_highlite_top_text: true
   search_api_excerpt: true
