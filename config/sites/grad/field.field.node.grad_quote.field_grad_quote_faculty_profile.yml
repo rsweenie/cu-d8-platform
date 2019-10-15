@@ -1,0 +1,28 @@
+uuid: 5d9ad002-a589-45dd-a1f7-0e7e778085e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.faculty_detail
+    - field.storage.node.field_grad_quote_faculty_profile
+    - node.type.grad_quote
+id: node.grad_quote.field_grad_quote_faculty_profile
+field_name: field_grad_quote_faculty_profile
+entity_type: node
+bundle: grad_quote
+label: 'Faculty Profile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:hub_reference'
+  handler_settings:
+    target_bundles:
+      faculty_detail: faculty_detail
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

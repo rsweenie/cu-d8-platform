@@ -1,0 +1,23 @@
+uuid: 4b6dce33-1d0f-46bc-bb5e-54fd27d3e6ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_blog_featured
+    - node.type.hub_blog
+id: node.hub_blog.field_hub_blog_featured
+field_name: field_hub_blog_featured
+entity_type: node
+bundle: hub_blog
+label: Featured
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

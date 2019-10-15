@@ -1,0 +1,29 @@
+uuid: cd4c009f-a7ec-4e13-b935-0b075f18c28c
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.event
+    - field.storage.hub_reference.field_event_location
+    - taxonomy.vocabulary.location
+id: hub_reference.event.field_event_location
+field_name: field_event_location
+entity_type: hub_reference
+bundle: event
+label: Location
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

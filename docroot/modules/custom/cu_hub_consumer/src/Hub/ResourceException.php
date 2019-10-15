@@ -2,6 +2,8 @@
 
 namespace Drupal\cu_hub_consumer\Hub;
 
+use Drupal\cu_hub_consumer\Hub\ClientException;
+
 /**
  * Exception thrown if a hub resource cannot be fetched or parsed.
  *
@@ -62,6 +64,34 @@ class ResourceException extends \Exception {
    */
   public function getData() {
     return $this->data;
+  }
+
+  /**
+   * Returns a previous hub client exception, if it exists.
+   *
+   * @return \Throwable | NULL
+   */
+  public function getHubClientException() {
+    $e = $this;
+
+    // Go up the prev chain till we find a client exception.
+    while ($e = $e->getPrevious()) {
+      if ($e instanceof ClientException) {
+        return $e;
+      }
+    }
+  }
+
+  /**
+   * Returns the response code from the server, if it exists.
+   *
+   * @return int
+   */
+  public function getHubResponseCode() {
+    if ($client_exception = $this->getHubClientException()) {
+      return $client_exception->getResponseCode();
+    }
+    return 0;
   }
 
 }

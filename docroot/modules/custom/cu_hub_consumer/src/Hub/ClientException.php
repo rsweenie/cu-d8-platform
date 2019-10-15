@@ -2,6 +2,8 @@
 
 namespace Drupal\cu_hub_consumer\Hub;
 
+use GuzzleHttp\Exception\ClientException as GuzzleClientException;
+
 /**
  * Exception thrown if hub data cannot be fetched.
  *
@@ -44,6 +46,33 @@ class ClientException extends \Exception {
    */
   public function getUrl() {
     return $this->url;
+  }
+
+  /**
+   * Returns a previous guzzle client exception, if it exists.
+   *
+   * @return \Throwable | NULL
+   */
+  public function getGuzzleClientException() {
+    $e = $this;
+
+    // Go up the prev chain till we find a client exception.
+    while ($e = $e->getPrevious()) {
+      if ($e instanceof GuzzleClientException) {
+        return $e;
+      }
+    }
+  }
+
+  /**
+   * Returns the response code from the server, if it exists.
+   *
+   * @return mixed
+   */
+  public function getResponseCode() {
+    if ($client_exception = $this->getGuzzleClientException()) {
+      return $client_exception->getCode();
+    }
   }
 
 }

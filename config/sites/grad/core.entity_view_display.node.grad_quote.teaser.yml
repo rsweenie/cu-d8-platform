@@ -1,0 +1,36 @@
+uuid: 51fed722-1dba-484c-bcd2-56b88a8693e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.grad_quote
+  module:
+    - private_content
+    - user
+id: node.grad_quote.teaser
+targetEntityType: node
+bundle: grad_quote
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  field_grad_quote_background_area: true
+  field_grad_quote_faculty_profile: true
+  field_grad_quote_honorific_title: true
+  field_grad_quote_image: true
+  field_grad_quote_source_name: true
+  field_grad_quote_style: true
+  field_grad_quote_text: true
+  search_api_excerpt: true
