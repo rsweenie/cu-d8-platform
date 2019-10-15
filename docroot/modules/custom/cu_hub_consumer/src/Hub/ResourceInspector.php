@@ -66,6 +66,13 @@ class ResourceInspector {
   protected $inspectionInfo;
 
   /**
+   * Cached field metadata.
+   *
+   * @var array
+   */
+  protected $fieldMetadata;
+
+  /**
    * Constructs a new class instance.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
@@ -128,6 +135,10 @@ class ResourceInspector {
       $this->inspectionInfo = [];
     }
 
+    if (!isset($this->fieldMetadata)) {
+      $this->fieldMetadata = [];
+    }
+
     // We use a static cache to avoid recursion.
     if (!isset($this->inspectionInfo[$resource_type_id])) {
       if (!$skip_cache && $cache = $this->cacheBackend->get($this->buildCacheId($resource_type_id))) {
@@ -135,17 +146,44 @@ class ResourceInspector {
       }
       else {
         $this->inspectionInfo[$resource_type_id] = [];
+        $this->fieldMetadata[$resource_type_id] = [];
 
         if ($endpoint = $this->hubClient->getEndpoint($resource_type_id, FALSE, $skip_cache)) {
-          $response = $this->hubClient->get($endpoint);
-          if ($json = Json::decode($response->getBody())) {
+          $json = NULL;
+
+          // First we try to fetch a single resource and check for field_metadata.
+          try {
+            $response = $this->hubClient->get($endpoint, ['page[limit]' => 1]);
+            if ($json = Json::decode($response->getBody())) {
+              if (!empty($json['data']) && is_array($json['data'])) {
+                foreach ($json['data'] as $resource) {
+                  if (!empty($resource['attributes']['field_metadata']) && is_array($resource['attributes']['field_metadata'])) {
+                    foreach ($resource['attributes']['field_metadata'] as $field_meta_info) {
+                      $this->fieldMetadata[$resource_type_id][$field_meta_info['field']] = $field_meta_info['attributes'];
+                    }
+                  }
+                }
+              }
+            }
+          }
+          catch (\Exception $e) {
+            // DO nothing.
+          }
+
+          // If we didn't find field_metadata, then we need to request a number of resources and inspect their contents.
+          if (empty($this->fieldMetadata[$resource_type_id])) {
+            $response = $this->hubClient->get($endpoint, ['page[limit]' => 10]);
+            $json = Json::decode($response->getBody());
+          }
+
+          if ($json) {
             if (!empty($json['data']) && is_array($json['data'])) {
               foreach ($json['data'] as $resource) {
                 if (!empty($resource['attributes']) && is_array($resource['attributes'])) {
-                  $this->inspectAttributes($resource['attributes'], $this->inspectionInfo[$resource_type_id]);
+                  $this->inspectAttributes($resource['attributes'], $this->inspectionInfo[$resource_type_id], $this->fieldMetadata[$resource_type_id]);
                 }
                 if (!empty($resource['relationships']) && is_array($resource['relationships'])) {
-                  $this->inspectRelationships($resource['relationships'], $this->inspectionInfo[$resource_type_id], $skip_cache);
+                  $this->inspectRelationships($resource['relationships'], $this->inspectionInfo[$resource_type_id], $this->fieldMetadata[$resource_type_id], $skip_cache);
                 }
               }
             }
@@ -180,26 +218,46 @@ class ResourceInspector {
    * @param array $inspection_info
    * @return void
    */
-  protected function inspectAttributes($attributes, &$inspection_info) {
+  protected function inspectAttributes($attributes, &$inspection_info, $field_metadata) {
     foreach ($attributes as $attribute_name => $attribute_value) {
+      // We don't need to have field_metadata in the inspection info as it's mean to help build the inspection info.
+      if (in_array($attribute_name, ['field_metadata'])) {
+        continue;
+      }
+
       if (!isset($inspection_info[$attribute_name]['type'])) {
         $inspection_info[$attribute_name] = [
           'type' => 'hub_unknown',
           'multiple' => FALSE,
         ];
       }
-      switch ($attribute_name) {
-        case 'metatag_normalized':
-          // Metatags are a special case.
-          $inspection_info['metatag_normalized']['type'] = 'metatags';
-          break;
 
-        default:
-          $inspection_info[$attribute_name] = [
-            'type' => $this->getBetterType($inspection_info[$attribute_name]['type'], $this->detectAttributeType($attribute_value)),
-            'multiple' => $this->isMultiple($attribute_value),
-          ];
-          break;
+      if (!empty($field_metadata[$attribute_name]['type'])) {
+        $inspection_info[$attribute_name] = [
+          'type' => $this->rewriteFieldType($field_metadata[$attribute_name]['type']),
+          'multiple' => isset($field_metadata[$attribute_name]['multiple']) ? $field_metadata[$attribute_name]['multiple'] : FALSE,
+        ];
+      }
+      elseif (!empty($field_metadata['drupal_internal__' . $attribute_name]['type'])) {
+        $inspection_info[$attribute_name] = [
+          'type' => $this->rewriteFieldType($field_metadata['drupal_internal__' . $attribute_name]['type']),
+          'multiple' => isset($field_metadata['drupal_internal__' . $attribute_name]['multiple']) ? $field_metadata['drupal_internal__' . $attribute_name]['multiple'] : FALSE,
+        ];
+      }
+      else {
+        switch ($attribute_name) {
+          case 'metatag_normalized':
+            // Metatags are a special case.
+            $inspection_info['metatag_normalized']['type'] = 'hub_metatags';
+            break;
+
+          default:
+            $inspection_info[$attribute_name] = [
+              'type' => $this->getBetterType($inspection_info[$attribute_name]['type'], $this->rewriteFieldType($this->detectAttributeType($attribute_value))),
+              'multiple' => $this->isMultiple($attribute_value),
+            ];
+            break;
+        }
       }
     }
   }
@@ -212,26 +270,53 @@ class ResourceInspector {
    * @param boolean $skip_cache
    * @return void
    */
-  protected function inspectRelationships($relationships, &$inspection_info, $skip_cache=FALSE) {
+  protected function inspectRelationships($relationships, &$inspection_info, $field_metadata, $skip_cache=FALSE) {
     foreach ($relationships as $relationship_name => $relationship_info) {
-      if (!empty($relationship_info['data']) && is_array($relationship_info['data'])) {
-        if ($this->isMultiple($relationship_info['data'])) {
-          $resource_data = $relationship_info['data'][0];
-          $multiple = TRUE;
-        }
-        else {
-          $resource_data = $relationship_info['data'];
-          $multiple = FALSE;
-        }
+      $resource_type = NULL;
 
-        $resource_type = $resource_data['type'];
-        list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
-        $inspection_info[$relationship_name] = [
-          'type' => 'hub_resource',
-          'hub_type' => $resource_main_type,
-          'multiple' => $multiple,
-        ];
+      // First we try to use field metadata.
+      if (!empty($field_metadata[$relationship_name]['type'])) {
+        $field_type = $field_metadata[$relationship_name]['type'];
+        if (in_array($field_type, ['entity_reference', 'entity_reference_revisions'])) {
+          $target_types = $field_metadata[$relationship_name]['target_types'];
+          if (is_array($target_types)) {
+            $resource_type = reset($target_types);
+            list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
 
+            $inspection_info[$relationship_name] = [
+              'type' => 'hub_resource',
+              'hub_type' => $resource_main_type,
+              'hub_bundles' => $target_types,
+              'multiple' => isset($field_metadata[$relationship_name]['multiple']) ? $field_metadata[$relationship_name]['multiple'] : FALSE,
+            ];
+          }
+        }
+      }
+
+      // If that didn't work we fall back on inspecting the data.
+      if (empty($inspection_info[$relationship_name])) {
+        if (!empty($relationship_info['data']) && is_array($relationship_info['data'])) {
+          if ($this->isMultiple($relationship_info['data'])) {
+            $resource_data = $relationship_info['data'][0];
+            $multiple = TRUE;
+          }
+          else {
+            $resource_data = $relationship_info['data'];
+            $multiple = FALSE;
+          }
+
+          $resource_type = $resource_data['type'];
+          list($resource_main_type, $resource_sub_type) = explode('--', $resource_type, 2);
+          $inspection_info[$relationship_name] = [
+            'type' => 'hub_resource',
+            'hub_type' => $resource_main_type,
+            'multiple' => $multiple,
+          ];
+        }
+      }
+
+      if ($resource_type) {
+        // Make sure the related type is inspected as well.
         $this->inspect($resource_type, $skip_cache);
       }
     }
@@ -375,6 +460,45 @@ class ResourceInspector {
       return TRUE;
     }
     return FALSE;
+  }
+
+  /**
+   * Rewrite the field/attribute type.
+   *
+   * @param string $type
+   * @return string
+   */
+  protected function rewriteFieldType($type) {
+    switch ($type) {
+      case 'text':
+      case 'text_long':
+      case 'text_with_summary':
+        return 'hub_text_long';
+
+      //case 'language':
+      //  return 'string';
+
+      case 'file_uri':
+        return 'uri';
+
+      case 'created':
+      case 'changed':
+        return 'datetime';
+
+      case 'metatag_normalized':
+        return 'hub_metatags';
+
+      //case 'video_embed_field':
+      //  return 'string';
+
+      case 'entity_reference_revisions':
+        return 'entity_reference';
+
+      case 'list_string':
+        return 'string';
+    }
+
+    return $type;
   }
 
 }

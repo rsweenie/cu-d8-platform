@@ -1,0 +1,200 @@
+uuid: 7126c8ab-3c88-44bf-8f09-4f3a0728869b
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.blog
+    - field.field.hub_reference.blog.field_blog_date
+    - field.field.hub_reference.blog.field_blog_type
+    - field.field.hub_reference.blog.field_featured
+  module:
+    - datetime
+    - layout_builder
+    - layout_library
+    - system
+  theme:
+    - cu2019_grad
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: generic_hero
+        layout_settings: {  }
+        components:
+          e8a5971a-4687-4ecf-bf2c-b85865900275:
+            uuid: e8a5971a-4687-4ecf-bf2c-b85865900275
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:blog:hub_field_hub_blog_hero_image'
+              label: 'Hub: field_hub_blog_hero_image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource_media_image
+                settings:
+                  style_name: srcset_1200px_wide
+                  link_type: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          8b86c278-1409-4c50-9715-9ff093321cdf:
+            uuid: 8b86c278-1409-4c50-9715-9ff093321cdf
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:blog:hub_field_hub_blog_title'
+              label: 'Hub: field_hub_blog_title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          8414bf97-b78d-4fa2-b523-a54a9b8a522f:
+            uuid: 8414bf97-b78d-4fa2-b523-a54a9b8a522f
+            region: main
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: generic_content
+        layout_settings: {  }
+        components:
+          a011731a-63df-4c96-af6c-5bb9f70506bd:
+            uuid: a011731a-63df-4c96-af6c-5bb9f70506bd
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:blog:hub_field_hub_blog_date'
+              label: 'Hub: field_hub_blog_date'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: datetime_default
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          cff6c687-7ab9-4501-907f-d038d8e3fdf1:
+            uuid: cff6c687-7ab9-4501-907f-d038d8e3fdf1
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:blog:hub_field_hub_blog_type'
+              label: 'Hub: field_hub_blog_type'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_resource_link
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          6714b515-bc42-4ce6-a4f1-ccc09638dd8c:
+            uuid: 6714b515-bc42-4ce6-a4f1-ccc09638dd8c
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:blog:hub_field_hub_blog_body'
+              label: 'Hub: field_hub_blog_body'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_text_processed
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: hub_reference.blog.default
+targetEntityType: hub_reference
+bundle: blog
+mode: default
+content:
+  field_blog_date:
+    weight: 0
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_blog_type:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_featured:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  hub_changed: true
+  hub_created: true
+  hub_default_langcode: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_blog_body: true
+  hub_field_hub_blog_date: true
+  hub_field_hub_blog_description: true
+  hub_field_hub_blog_featured: true
+  hub_field_hub_blog_hero_image: true
+  hub_field_hub_blog_listing_image: true
+  hub_field_hub_blog_title: true
+  hub_field_hub_blog_type: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_menu_link: true
+  hub_node_type: true
+  hub_private: true
+  hub_promote: true
+  hub_publish_on: true
+  hub_revision_log: true
+  hub_revision_timestamp: true
+  hub_revision_translation_affected: true
+  hub_revision_uid: true
+  hub_scheduled_transition_date: true
+  hub_scheduled_transition_state: true
+  hub_status: true
+  hub_sticky: true
+  hub_title: true
+  hub_uid: true
+  hub_unpublish_on: true
+  search_api_excerpt: true

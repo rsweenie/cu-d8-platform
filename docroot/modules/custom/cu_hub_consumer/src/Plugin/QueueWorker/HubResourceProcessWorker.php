@@ -4,6 +4,7 @@ namespace Drupal\cu_hub_consumer\Plugin\QueueWorker;
  
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\cu_hub_consumer\Entity\HubReference;
+use Drupal\Core\Queue\SuspendQueueException;
 use Drupal\cu_hub_consumer\Hub\ResourceException;
  
 /**
@@ -31,16 +32,27 @@ class HubResourceProcessWorker extends QueueWorkerBase {
 
     $hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($data->bundle);
     $resource_type = $hub_ref_type->getResourceType();
+    $resource = NULL;
 
     try {
       $resource = $resource_type->fetchResource($data->hub_uuid);
     }
     catch (ResourceException $e) {
       watchdog_exception('cu_hub_consumer', $e);
-      throw new SuspendQueueException('Could not properly fetch the hub resource data.');
+
+      $level = (int) floor($e->getHubResponseCode() / 100);
+
+      // If we get something in the 4xx range, we can rethrow the error.
+      if ($level === 4) {
+        throw $e;
+      }
+      // Else, we should suspend the queue as it may be a bigger issue.
+      else {
+        throw new SuspendQueueException('Could not properly fetch the hub resource data for ' . $resource_type->getPluginId() . ':' . $data->hub_uuid . '.');
+      }
     }
 
-    if ($raw_json_data = $resource->getRawJsonData()) {
+    if ($resource && ($raw_json_data = $resource->getRawJsonData())) {
       $query = \Drupal::entityQuery('hub_reference')
         ->condition('type', $data->bundle)
         ->condition('hub_uuid', $data->hub_uuid);

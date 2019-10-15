@@ -3,82 +3,85 @@
     Button - Secondary
 
 \*  --------------------------------------------------------------------------  */
-.btn-secondary {
-    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    position: relative;
-    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    min-width: 320px;
-    max-width: 100%;
-    padding: 10px 54px 10px 22px;
-    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    background: $accent-2XLt;
-    border: 0;
-    border-radius: 3px;
-    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    color: $primary;
-    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-    font-weight: 600;
-    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+@mixin btn-secondary {
+  // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+  position: relative;
+  // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+  min-width: 320px;
+  max-width: 100%;
+  padding: 10px 54px 10px 22px;
+  // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+  background: $accent-2XLt;
+  border: 0;
+  border-radius: 3px;
+  // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+  color: $primary;
+  // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+  font-weight: 600;
+  // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 
-    /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
-    &:not([class*="btn-ani-fill-"]) {
-        @include hover {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            background: $white;
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            color: $secondary;
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
-    }
-    
-    @include hover {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        color: $secondary;
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    }
-    \*-------------------------------------------------------------------------------*/
-
-    /*------  USE THIS IF YOU DO NOT HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------*\
-    \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
-    
-    @media #{$mediaLg} {
-      font-size: 19px;
-    }
-
-    span {
-      position: relative;
-      z-index: 10;
-
-      &:first-of-type {
-        max-width: 320px;
-        display: block;
+  /*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*\
+  &:not([class*="btn-ani-fill-"]) {
+      @include hover {
+          // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+          // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+          // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+          background: $white;
+          // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+          color: $secondary;
+          // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+          // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
       }
-    }
+  }
 
-    &:before {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: "";
-      background: linear-gradient(0deg, rgba($white, .2) 0%, rgba($white, 0) 0%);
+  @include hover {
+      // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+      // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+      // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+      // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+      color: $secondary;
+      // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+      // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+  }
+  \*-------------------------------------------------------------------------------*/
+
+  /*------  USE THIS IF YOU DO NOT HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------*\
+  \*-------  USE THIS IF YOU HAVE ANIMATIONS INCLUDED IN YOUR DESIGN   ------------*/
+
+  @media #{$mediaLg} {
+    font-size: 19px;
+  }
+
+  span {
+    position: relative;
+    z-index: 10;
+
+    &:first-of-type {
+      max-width: 320px;
+      display: block;
     }
-    @include hover {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        background: $secondary;
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        color: $white;
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    }
+  }
+
+  &:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(0deg, rgba($white, .2) 0%, rgba($white, 0) 0%);
+  }
+  @include hover {
+      // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+      // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+      // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+      background: $secondary;
+      // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+      color: $white;
+      // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+      // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+  }
+}
+.btn-secondary {
+  @include btn-secondary;
 }

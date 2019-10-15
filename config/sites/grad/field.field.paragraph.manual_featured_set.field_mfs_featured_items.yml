@@ -68,16 +68,46 @@ settings:
       next_step:
         weight: 27
         enabled: false
+      collapsible_text:
+        weight: 28
+        enabled: false
       manual_featured_event:
         enabled: true
         weight: 28
       next_steps_collection:
         weight: 28
         enabled: false
+      copy:
+        weight: 29
+        enabled: false
       quote:
         weight: 29
         enabled: false
+      faculty_alumni_spotlight:
+        weight: 30
+        enabled: false
       statistic_highlite:
         weight: 30
+        enabled: false
+      course_date:
+        weight: 31
+        enabled: false
+      featured_element:
+        weight: 32
+        enabled: false
+      image:
+        weight: 39
+        enabled: false
+      manual_feature_tiles_set:
+        weight: 47
+        enabled: false
+      slate_form:
+        weight: 49
+        enabled: false
+      statistic_highlight:
+        weight: 50
+        enabled: false
+      video:
+        weight: 52
         enabled: false
 field_type: entity_reference_revisions

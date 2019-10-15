@@ -1,0 +1,21 @@
+uuid: 21daed85-eb80-4649-8558-7f52a72707f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.event
+    - field.storage.hub_reference.field_event_date
+  module:
+    - datetime_range
+id: hub_reference.event.field_event_date
+field_name: field_event_date
+entity_type: hub_reference
+bundle: event
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

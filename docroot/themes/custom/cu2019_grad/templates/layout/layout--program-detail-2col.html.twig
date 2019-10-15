@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-7 col-lg-8">
         {% if content.main %}
-          <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
+          <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main', 'prog_left') }}>
             {{ content.main }}
           </div>
         {% endif %}
@@ -23,12 +23,11 @@
 
       <div class="col-xs-12 col-md-5 col-lg-4">
         {% if content.right %}
-          <div {{ region_attributes.right.addClass('layout__region', 'layout__region--right') }}>
-            <div class="program_rail">
-              <div>
-                {{ content.right }}
-              </div>
-            </div>
+          <div {{ region_attributes.right.addClass('layout__region', 'layout__region--right', settings.sidebar_classes) }}>
+            {% if settings.sidebar_title %}
+              <h3>{{ settings.sidebar_title }}</h3>
+            {% endif %}
+            {{ content.right }}
           </div>
         {% endif %}
       </div>

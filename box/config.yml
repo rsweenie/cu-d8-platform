@@ -9,6 +9,10 @@ vagrant_ip: 192.168.5.233
 vagrant_box: geerlingguy/ubuntu1604
 workspace: /root
 
+# Memory and CPU to use for this VM.
+vagrant_memory: 3072
+vagrant_cpus: 2
+
 # Set drupal_site_name to the project's human-readable name.
 drupal_site_name: "Creighton University"
 

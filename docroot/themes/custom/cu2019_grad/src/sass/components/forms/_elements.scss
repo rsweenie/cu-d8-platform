@@ -25,3 +25,9 @@
     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
 }
+
+.form_question[data-required="1"] > label {
+    &:after {
+        content: "*"
+    }
+}

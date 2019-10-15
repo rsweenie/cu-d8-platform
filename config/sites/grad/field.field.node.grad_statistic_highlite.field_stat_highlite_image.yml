@@ -1,0 +1,28 @@
+uuid: 53b59b4c-161f-414f-bdf9-b0276e6f37e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_highlite_image
+    - media.type.image
+    - node.type.grad_statistic_highlite
+id: node.grad_statistic_highlite.field_stat_highlite_image
+field_name: field_stat_highlite_image
+entity_type: node
+bundle: grad_statistic_highlite
+label: Image
+description: 'This field will override all others for this Statistic Highlite.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
