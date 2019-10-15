@@ -143,6 +143,13 @@ class HubResourceTypeDefinition extends ConfigEntityBase implements HubResourceT
   /**
    * {@inheritdoc}
    */
+  public function hasFieldInfo($field_name) {
+    return isset($this->fields[$field_name]);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function postSave(EntityStorageInterface $storage, $update = TRUE) {
     parent::postSave($storage, $update);
 

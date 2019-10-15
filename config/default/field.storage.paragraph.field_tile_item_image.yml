@@ -1,20 +1,20 @@
-uuid: 7fab4a5d-ba73-4586-aecf-5900ef9473f8
+uuid: 6214a6a9-aa27-497d-9610-6e3fdd0e15d7
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
-    - node
+    - media
     - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_quote_ref
-field_name: field_quote_ref
+id: paragraph.field_tile_item_image
+field_name: field_tile_item_image
 entity_type: paragraph
 type: entity_reference
 settings:
-  target_type: node
+  target_type: media
 module: core
 locked: false
 cardinality: 1

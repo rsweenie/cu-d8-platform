@@ -1,0 +1,18 @@
+uuid: ec4a5bb7-6d87-4642-8b8f-a361406fc0de
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_quote
+id: node.hub_quote.title
+field_name: title
+entity_type: node
+bundle: hub_quote
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

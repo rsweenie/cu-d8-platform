@@ -1,0 +1,84 @@
+uuid: a2f1b82b-5f35-4fa4-aeda-417ecff2dda4
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_browser
+    - field.field.paragraph.grad_feature_tile_item.field_tile_item_body
+    - field.field.paragraph.grad_feature_tile_item.field_tile_item_file_link
+    - field.field.paragraph.grad_feature_tile_item.field_tile_item_image
+    - field.field.paragraph.grad_feature_tile_item.field_tile_item_link
+    - paragraphs.paragraphs_type.grad_feature_tile_item
+  module:
+    - entity_browser
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_link:
+      children:
+        - field_tile_item_file_link
+        - field_tile_item_link
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'Featured Tile Item Link Options'
+        required_fields: true
+      label: Link
+      region: content
+id: paragraph.grad_feature_tile_item.default
+targetEntityType: paragraph
+bundle: grad_feature_tile_item
+mode: default
+content:
+  field_tile_item_body:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_tile_item_file_link:
+    type: entity_browser_entity_reference
+    weight: 3
+    settings:
+      entity_browser: media_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_tile_item_image:
+    type: entity_browser_entity_reference
+    weight: 1
+    settings:
+      entity_browser: media_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_tile_item_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

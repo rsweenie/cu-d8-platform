@@ -1,18 +1,18 @@
-uuid: f0ca8cb4-e03a-48f2-a5e7-cb0a1d18954a
+uuid: c2672cda-2037-46af-bb72-39d9895b99e3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_quote_ref
-    - node.type.grad_quote
-    - paragraphs.paragraphs_type.quote
-id: paragraph.quote.field_quote_ref
-field_name: field_quote_ref
+    - field.storage.paragraph.field_hub_quote_ref_item
+    - node.type.hub_quote
+    - paragraphs.paragraphs_type.hub_quote_ref
+id: paragraph.hub_quote_ref.field_hub_quote_ref_item
+field_name: field_hub_quote_ref_item
 entity_type: paragraph
-bundle: quote
+bundle: hub_quote_ref
 label: Quote
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -20,7 +20,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      grad_quote: grad_quote
+      hub_quote: hub_quote
     sort:
       field: _none
     auto_create: false
