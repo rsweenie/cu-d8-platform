@@ -43,13 +43,16 @@
     a {
       font-size: 16px;
       line-height: 1.6em;
-      padding: 0 15px;
+      padding: 0 15px 0 0;
       color: $cardLink;
       text-decoration: none;
       font-weight: 600;
 
       @media #{$mediaMd} {
         padding: 0;
+      }
+
+      @media #{$mediaLg} {
         display: none;
       }
 
@@ -156,11 +159,34 @@
     @media #{$mediaMd} {
       color: $white;
       padding: 0;
+    }
+
+    @media #{$mediaLg} {
       display: none;
     }
 
     @media #{$mediaXl} {
       font-size: 19px;
+    }
+  }
+
+  @media #{$mediaMd} {
+    @media #{$mediaLgMax} {
+      > a,
+      > span {
+        &:after {
+          background: linear-gradient(0deg, rgba($black, .9) 0%, rgba($black,.5) 50%);
+        }
+      }
+
+      .body,
+      .content a {
+        display: block;
+      }
+
+      .content {
+        justify-content: center;
+      }
     }
   }
 
