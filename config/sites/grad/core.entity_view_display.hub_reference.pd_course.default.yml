@@ -7,6 +7,7 @@ dependencies:
   module:
     - cu_layout_tweaks
     - layout_builder
+    - layout_builder_restrictions
     - layout_library
     - system
   theme:
@@ -73,23 +74,6 @@ third_party_settings:
           sidebar_classes: program_rail
           sidebar_title: ''
         components:
-          47329885-0667-4d8b-b29d-90bb18e669bc:
-            uuid: 47329885-0667-4d8b-b29d-90bb18e669bc
-            region: main
-            configuration:
-              id: 'field_block:hub_reference:pd_course:hub_body'
-              label: 'Course Details'
-              provider: layout_builder
-              label_display: visible
-              formatter:
-                label: hidden
-                type: hub_text_processed
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 0
           13d250f5-3c63-490d-9ef1-b4891fb3567b:
             uuid: 13d250f5-3c63-490d-9ef1-b4891fb3567b
             region: right
@@ -124,6 +108,24 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
+          67aaa55d-b534-49ae-a05b-7c56e29cfe69:
+            uuid: 67aaa55d-b534-49ae-a05b-7c56e29cfe69
+            region: main
+            configuration:
+              id: 'field_block:hub_reference:pd_course:hub_field_hub_pd_course_details'
+              label: 'Hub: field_hub_pd_course_details'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: hub_text_processed
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: generic_content_full
@@ -149,22 +151,27 @@ third_party_settings:
         third_party_settings: {  }
   layout_library:
     enable: false
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks: {  }
+      allowed_layouts: {  }
 id: hub_reference.pd_course.default
 targetEntityType: hub_reference
 bundle: pd_course
 mode: default
 content: {  }
 hidden:
-  hub_body: true
   hub_changed: true
   hub_created: true
   hub_drupal_internal__nid: true
   hub_drupal_internal__vid: true
   hub_field_hub_path_alias: true
   hub_field_hub_pd_course_dates: true
+  hub_field_hub_pd_course_details: true
   hub_field_hub_pd_course_hero_image: true
   hub_field_hub_pd_course_next_steps: true
   hub_field_hub_pd_course_program: true
+  hub_field_hub_pd_course_title: true
   hub_field_hub_pd_related_degrees: true
   hub_field_hub_pd_right_side_copy: true
   hub_field_hub_site: true
