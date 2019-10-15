@@ -35,10 +35,14 @@
   > a,
   > span {
     @include flex($jc: center, $ff: column nowrap);
-    padding: #{$gutter}rem;
+    padding: #{$gutter / 2}rem;
     height: 100%;
     background: $secondary;
     transition: all .25s;
+
+    @media #{$mediaSm} {
+      padding: #{$gutter}rem;
+    }
   }
 
   a {
@@ -48,11 +52,21 @@
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1.06em;
     font-weight: 400;
     @include letterSpacing(50);
     margin: 0;
+
+    @media #{$mediaXxsMin} {
+      @media #{$mediaMdMax} {
+        font-size: 30px;
+      }
+    }
+
+    @media #{$mediaLg} {
+      font-size: 30px;
+    }
   }
 
   h2 {
@@ -61,6 +75,12 @@
     color: $tertiary;
     margin: 0;
     line-height: 1.06em;
+
+    @media #{$mediaXxsMin} {
+      @media #{$mediaMdMax} {
+        font-size: 72px;
+      }
+    }
 
     @media #{$mediaLg} {
       font-size: 72px;

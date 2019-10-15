@@ -3,7 +3,9 @@
 }
 
 .feat-tiles {
-  margin: 0 #{$gutter}rem;
+  @media #{$mediaMd} {
+    margin: 0 #{$gutter}rem;
+  }
 
   img {
     display: block;
@@ -103,14 +105,21 @@
 .fci {
 
   &:before {
-    width: 11px;
-    height: 11px;
+    width: 8px;
+    height: 8px;
     position: absolute;
-    top: 17px;
-    left: 17px;
+    top: 10px;
+    left: 10px;
     content: "";
     background: rgba($white,.3);
     z-index: 10;
+
+    @media #{$mediaMd} {
+      width: 11px;
+      height: 11px;
+      top: 17px;
+      left: 17px;
+    }
   }
 }
 
