@@ -12,11 +12,13 @@
   }
 
   @media #{$mediaMd} {
-    @include flex();
-    margin: -5px;
+    > div {
+      @include flex();
+      margin: -5px;
+    }
   }
 
-  > div {
+  > div > div {
     margin: 16px 0;
 
     @media #{$mediaMd} {

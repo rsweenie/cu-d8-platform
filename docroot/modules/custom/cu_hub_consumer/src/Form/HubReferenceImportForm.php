@@ -6,6 +6,7 @@ namespace Drupal\cu_hub_consumer\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Queue\SuspendQueueException;
+use Drupal\cu_hub_consumer\Hub\ResourceException;
  
 /**
  * Defines a form that triggers batch operations to download and process
@@ -195,6 +196,14 @@ class HubReferenceImportForm extends FormBase {
           $context['results']['lists']++;
           $sandbox['progress']++;
         }
+        catch (ResourceException $e) {
+          $context['results']['warnings'][] = $e->getMessage();
+
+          // If there was an Exception thrown because of an error
+          // release the item that the worker could not process.
+          // Another worker can come and process it
+          $list_fetch_queue->releaseItem($item);
+        }
         catch (SuspendQueueException $e) {
           $context['results']['warnings'][] = $e->getMessage();
 
@@ -261,6 +270,14 @@ class HubReferenceImportForm extends FormBase {
 
           $context['results']['resources']++;
           $sandbox['progress']++;
+        }
+        catch (ResourceException $e) {
+          $context['results']['warnings'][] = $e->getMessage();
+
+          // If there was an Exception thrown because of an error
+          // release the item that the worker could not process.
+          // Another worker can come and process it
+          $resource_process_queue->releaseItem($item);
         }
         catch (SuspendQueueException $e) {
           $context['results']['warnings'][] = $e->getMessage();

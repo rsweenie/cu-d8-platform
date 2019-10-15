@@ -3,6 +3,7 @@
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\TypedData\Plugin\DataType\DateTimeIso8601;
+use Drupal\Core\Url;
 use Drupal\datetime\DateTimeComputed;
 use Drupal\datetime_range\Plugin\Field\FieldType\DateRangeFieldItemList;
 use Drupal\taxonomy\Entity\Term;
@@ -185,7 +186,7 @@ function cu2019_grad_preprocess_field(&$variables) {
 
 /**
  * Get the root entity.
- * 
+ *
  * Will recurse through things like paragraphs till we hit a regular entity.
  *
  * @param mixed $entity
@@ -212,17 +213,16 @@ function cu2019_grad_preprocess_views_view(&$variables) {
  */
 function cu2019_grad_preprocess_hub_resource_field__field_hub_fac_spotlight_type(&$variables) {
   $value = &$variables['items'][0]['content']['#context']['value'];
-  switch ($value) {
-    case 'fac':
-      $value = 'Faculty spotlight';
-      break;
-    case 'alum':
-      $value = 'Alumni spotlight';
-      break;
-    default:
-      $value = '';
-      break;
-  }
+  $value = _cu2019_grad_faculty_spotlight_type($value);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_node__faculty_alumni_spotlight(&$variables) {
+  $type = $variables['node']->get('field_fac_spotlight_type')->first()->getValue()['value'];
+  $variables['highlite_tag'] = _cu2019_grad_faculty_spotlight_type($type);
+  return;
 }
 
 /**
@@ -239,11 +239,26 @@ function cu2019_grad_preprocess_hub_resource_field__paragraph_course_date__field
 /**
  * Implements hook_preprocess_HOOK().
  */
-function cu2019_grad_preprocess_hub_resource__taxonomy_term__program_availability(&$variables){
+function cu2019_grad_preprocess_hub_resource__taxonomy_term__program_availability(&$variables) {
   $name = $variables['resource_obj']->getProcessedData()['name']->get(0)->getValue();
 
   if ($name == 'Hybrid') {
     $variables['content']['#markup'] = 'On-Campus and Online';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_paragraph__grad_feature_tile_item(&$variables) {
+  if (isset($variables['content']['field_tile_item_file_link']['#items'])) {
+    $file_id = $variables['content']['field_tile_item_file_link'][0]['#media']->get('field_document')->first()->getValue()['target_id'];
+    $file = Drupal::service('entity_type.manager')->getStorage('file')->load($file_id);
+
+    $variables['tile_link'] = $file->createFileUrl();
+  }
+  else {
+    $variables['tile_link'] = $variables['content']['field_tile_item_link'][0]['#url']->toString();
   }
 }
 
@@ -312,4 +327,27 @@ function _cu2019_grad_get_menu_sibling_tree($menu_name = 'main') {
 
     return $build;
   }
+}
+
+/**
+ * Determines the correct wording for faculty spotlight type fields.
+ *
+ * @param string $type
+ *  Acceptable values are fac or alum
+ * @return string
+ */
+function _cu2019_grad_faculty_spotlight_type($type = NULL) {
+  switch ($type) {
+    case 'fac':
+      $value = 'Faculty spotlight';
+      break;
+    case 'alum':
+      $value = 'Alumni spotlight';
+      break;
+    default:
+      $value = '';
+      break;
+  }
+
+  return $value;
 }

@@ -83,6 +83,8 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    */
   protected $hubResourceTypeDefinition;
 
+  protected $resourceCache = [];
+
   /**
    * Constructs a new hub resource type instance.
    *
@@ -218,7 +220,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
   /**
    * {@inheritdoc}
    */
-  public function fetchResourceList($path = NULL, $limit=0) {
+  public function fetchResourceList($path = NULL, $limit = 0, $fields = NULL) {
     $orig_path = $path;
 
     // If we aren't passed a path for the next page in the list, generate the path.
@@ -227,9 +229,34 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
     }
 
     if ($path) {
-      $query = [
-        'fields[' . $this->pluginDefinition['hub_type_id'] . ']' => 'type,id',
+      $default_fields = [
+        'type',
+        'id',
       ];
+  
+      if (!is_array($fields)) {
+        $fields = $default_fields;
+      }
+      else {
+        $fields = array_unique($fields + $default_fields);
+      }
+
+      $query = [
+        'fields[' . $this->pluginDefinition['hub_type_id'] . ']' => implode(',', $fields),
+      ];
+
+      // If this type has field_hub_site then we need to add the filtering.
+      if ($type_def = $this->getResourceTypeDefinition()) {
+        if ($type_def->hasFieldInfo('field_hub_site')) {
+          $hub_site_uuid = $this->configFactory
+            ->get('cu_hub_consumer.settings')
+            ->get('hub_site_uuid');
+
+          if ($hub_site_uuid) {
+            $query['filter[field_hub_site.id]'] = $hub_site_uuid;
+          }
+        }
+      }
 
       // If we didn't get passed in a URL, then we can set a limit.
       if (!$orig_path && $limit) {
@@ -457,14 +484,7 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * {@inheritdoc}
    */
   public function view(ResourceInterface $resource) {
-    //return ['#markup' => print_r($resource->getJsonData(), TRUE)];
     $elements = [];
-
-    //if ($label = $resource->label()) {
-    //  $elements = [
-    //    '#markup' => $label,
-    //  ];
-    //}
 
     $values = $resource->getProcessedData();
     if (is_array($values)) {
@@ -502,6 +522,27 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
         'resource' => $resource,
       ];
     }
+  }
+
+  /**
+   * Returns a resource if in the static cache for this type.
+   *
+   * @param string $uuid
+   * @return mixed
+   */
+  public function getFromStaticCache($uuid) {
+    return isset($this->resourceCache[$uuid]) ? $this->resourceCache[$uuid] : NULL;
+  }
+
+  /**
+   * Sets the resource in the static cache for this type.
+   *
+   * @param string $uuid
+   * @param object $resource
+   * @return void
+   */
+  public function setStaticCache($uuid, $resource) {
+    $this->resourceCache[$uuid] = $resource;
   }
   
 }

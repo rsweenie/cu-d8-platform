@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_mfts_content_tiles
+    - paragraphs.paragraphs_type.grad_feature_tile_item
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
     - paragraphs.paragraphs_type.manual_feature_tiles_set
     - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.statistic_highlite
   module:
     - entity_reference_revisions
 id: paragraph.manual_feature_tiles_set.field_mfts_content_tiles
@@ -23,7 +27,11 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      grad_feature_tile_item: grad_feature_tile_item
+      image: image
+      manual_faculty_alumni_highlight: manual_faculty_alumni_highlight
       quote: quote
+      statistic_highlite: statistic_highlite
     target_bundles_drag_drop:
       accordion:
         weight: 28
@@ -58,6 +66,9 @@ settings:
       hp_hero:
         weight: 38
         enabled: false
+      grad_feature_tile_item:
+        enabled: true
+        weight: 39
       hp_hero_bg:
         weight: 39
         enabled: false
@@ -65,14 +76,14 @@ settings:
         weight: 40
         enabled: false
       image:
+        enabled: true
         weight: 41
-        enabled: false
       image_video:
         weight: 42
         enabled: false
       manual_faculty_alumni_highlight:
+        enabled: true
         weight: 43
-        enabled: false
       manual_featured_event:
         weight: 44
         enabled: false
@@ -101,8 +112,8 @@ settings:
         weight: 52
         enabled: false
       statistic_highlite:
+        enabled: true
         weight: 53
-        enabled: false
       video:
         weight: 54
         enabled: false

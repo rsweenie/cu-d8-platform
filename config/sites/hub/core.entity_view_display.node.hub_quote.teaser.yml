@@ -1,0 +1,29 @@
+uuid: 9a75ec17-82d4-4b73-8bfe-732d88035b7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.hub_quote
+  module:
+    - private_content
+    - user
+id: node.hub_quote.teaser
+targetEntityType: node
+bundle: hub_quote
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  private:
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: private
+hidden:
+  search_api_excerpt: true
