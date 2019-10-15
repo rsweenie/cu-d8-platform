@@ -1,0 +1,9 @@
+uuid: f725e6a2-96c7-4be2-8428-f4e49c427aaf
+langcode: en
+status: true
+dependencies: {  }
+id: hub_feature_tile_item
+label: 'Feature Tile Item'
+icon_uuid: null
+description: 'Includes fields for RTE, Image, and link to be used with feature tile sets.'
+behavior_plugins: {  }
