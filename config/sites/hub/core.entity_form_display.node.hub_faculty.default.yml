@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.hub_faculty.field_meta_tags
     - node.type.hub_faculty
   module:
+    - cu_hub_api
     - entity_browser
     - link
     - metatag
@@ -32,7 +33,7 @@ mode: default
 content:
   field_hub_faculty_components:
     type: paragraphs
-    weight: 15
+    weight: 11
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -50,7 +51,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_faculty_department:
-    weight: 5
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -58,7 +59,7 @@ content:
     type: string_textfield
     region: content
   field_hub_faculty_email:
-    weight: 6
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -67,7 +68,7 @@ content:
     region: content
   field_hub_faculty_image:
     type: entity_browser_entity_reference
-    weight: 8
+    weight: 7
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -112,14 +113,14 @@ content:
     type: name_default
     region: content
   field_hub_faculty_phone:
-    weight: 7
+    weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
     region: content
   field_hub_faculty_provost_id:
-    weight: 10
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -127,7 +128,7 @@ content:
     type: string_textfield
     region: content
   field_hub_faculty_provost_url:
-    weight: 11
+    weight: 9
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -135,7 +136,7 @@ content:
     type: link_default
     region: content
   field_hub_faculty_rel_degrees:
-    weight: 12
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -152,24 +153,19 @@ content:
     type: string_textfield
     region: content
   field_hub_path_alias:
-    weight: 26
-    settings:
-      size: 60
-      placeholder: ''
+    weight: 12
+    settings: {  }
     third_party_settings: {  }
-    type: string_textfield
+    type: hub_path_alias
     region: content
   field_hub_site:
-    weight: 0
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 1
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_meta_tags:
-    weight: 14
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -178,12 +174,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 14
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60

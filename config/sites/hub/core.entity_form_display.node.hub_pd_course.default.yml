@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.hub_pd_course.field_hub_pd_course_dates
     - field.field.node.hub_pd_course.field_hub_pd_course_details
     - field.field.node.hub_pd_course.field_hub_pd_course_hero_image
+    - field.field.node.hub_pd_course.field_hub_pd_course_list_image
     - field.field.node.hub_pd_course.field_hub_pd_course_next_steps
     - field.field.node.hub_pd_course.field_hub_pd_course_program
     - field.field.node.hub_pd_course.field_hub_pd_course_title
@@ -83,6 +84,21 @@ content:
       selection_mode: selection_append
       open: false
       field_widget_display_settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hub_pd_course_list_image:
+    type: entity_browser_entity_reference
+    weight: 5
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
+      open: false
     third_party_settings: {  }
     region: content
   field_hub_pd_course_next_steps:
