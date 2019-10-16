@@ -77,3 +77,24 @@
     min-width: 0;
   }
 }
+
+@at-root {
+  .view-cu-faculty-references {
+    @media #{$mediaToggleHeader} {
+      @include flex($ff: column nowrap);
+
+      > header,
+      > div {
+        order: 1;
+      }
+
+      .section {
+        padding: 0;
+      }
+
+      .listing-filters {
+        order: 2;
+      }
+    }
+  }
+}

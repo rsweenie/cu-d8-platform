@@ -3,30 +3,106 @@
     FILTERS ARCHIVES
 
 \*  --------------------------------------------------------------------------  */
-.archive {
-    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    margin: 0 0 #{$gutter * .6}rem;
-    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    border: .2rem solid $accent-3;
-    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
-    h2 {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        margin: 0;
-        padding: #{$gutter * .4}rem;
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        background: $accent-1;
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        @include fontSize(1.8, 1);
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        text-transform: uppercase;
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+.listing-filters {
+  &.section {
+    padding: 0;
+  }
+
+  .listing-filters-toggle {
+    width: 100%;
+    background: $primary;
+    color: $white;
+    font-size: 18px;
+    font-family: $headingFF;
+    padding: 8px;
+    @include flex($jc: center, $ai:center);
+
+    span {
+      display: inline-block;
     }
-    
-    @import 'archives/_checkboxes';
-    @import 'archives/_selects';
+
+    .icon {
+      height: 38px;
+      width: 38px;
+      font-size: 20px;
+      border: 1px solid rgba($white,.4);
+      border-radius: 4px;
+      line-height: 1em;
+      margin-right: 11px;
+      @include flex($jc: center, $ai:center);
+    }
+  }
+
+  .form-item {
+    margin: 0;
+  }
+
+  @media #{$mediaToggleHeader} {
+    .view-filters {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: $white;
+      z-index: 99999;
+      transform: translateY(100%);
+      transition: all .25s;
+    }
+
+    .row,
+    [class*="col-"] {
+      padding: 0;
+    }
+  }
+
+  @media #{$mediaFullHeader} {
+    .listing-filters-toggle {
+      @include srOnly;
+    }
+
+    .view-filters {
+      background: $off-white2;
+      border-bottom: 1px solid $gray75;
+      padding: #{$gutter / 2}rem;
+      margin-top: #{$gutter / 2}rem;
+
+      .form--inline {
+        display: flex;
+        justify-content: space-between;
+
+        &:after {
+          display: none;
+        }
+
+        .form-actions {
+          @include srOnly;
+        }
+      }
+
+      .form-item-search {
+        input {
+          height: 42px;
+          width: 182px;
+          border-radius: 4px;
+          font-size: 16px;
+          font-weight: bold;
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+.listing-header {
+  &.section {
+    padding: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: (24 / 16) * 1em;
+
+    @media #{$mediaXs} {
+      display: none;
+    }
+  }
 }

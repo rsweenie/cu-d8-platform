@@ -18,15 +18,22 @@
     'hub-reference--type-' ~ hub_reference.bundle()|clean_class,
     not hub_reference.isPublished() ? 'hub-reference--unpublished',
     view_mode ? 'hub-reference--view-mode-' ~ view_mode|clean_class,
+    'news-listing-row'
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
   {% if content %}
-    {{ content|without('hub_field_hub_faculty_email','hub_field_hub_faculty_phone') }}
-    <div class="email-phone">
-      {{ content.hub_field_hub_faculty_email }}
-      {{ content.hub_field_hub_faculty_phone }}
+    <div class="news-listing-img">
+      {{ content.hub_field_hub_news_listing_image }}
+    </div>
+    <div class="news-listing-tags">
+      {{ content.hub_field_hub_news_date }}
+      {{ content.hub_field_hub_news_location }}
+      {{ content.hub_field_hub_news_type }}
+    </div>
+    <div class="news-listing-prv">
+      {{ content|without('hub_field_hub_news_listing_image','hub_field_hub_news_date','hub_field_hub_news_location','hub_field_hub_news_type') }}
     </div>
   {% endif %}
 </article>

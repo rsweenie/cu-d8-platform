@@ -1,0 +1,94 @@
+.fac-listing {
+  text-align: center;
+  @include flex();
+  margin: 0 -#{$gutter / 2}rem;
+  font-size: 16px;
+  line-height: 1.125em;
+  color: $gray3;
+
+  @media #{$mediaSm} {
+  }
+
+  @media #{$mediaMd} {
+    margin: 0 -#{$gutter}rem;
+  }
+
+  .views-row {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    width: 50%;
+    padding: #{$gutter / 2}rem;
+
+    @media #{$mediaMd} {
+      flex-basis: 25%;
+      width: 25%;
+      padding: #{$gutter}rem;
+    }
+
+    @media #{$mediaLg} {
+      flex-basis: 20%;
+      width: 20%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  h2,
+  a {
+    color: $secondary;
+  }
+
+  h2 {
+    font-size: 16px;
+    line-height: 1.2em;
+    font-family: $headingFF;
+    margin: 1em 0 0 0;
+    text-transform: uppercase;
+
+    @media #{$mediaMd} {
+      font-size: 19px;
+      line-height: 1em;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    font-size: 13px;
+    line-height: 1.2em;
+    font-family: $copyFF;
+    text-transform: none;
+    color: $gray2;
+
+    @media #{$mediaMd} {
+      font-size: 16px;
+    }
+  }
+
+  .email-phone {
+
+  }
+}
+
+.field--name-hub-field-hub-faculty-email,
+.field--name-hub-field-hub-faculty-phone {
+  a {
+    color: $gray2;
+    text-decoration: none;
+
+    @include hover {
+      color: $secondary;
+      text-decoration: underline;
+    }
+  }
+}
