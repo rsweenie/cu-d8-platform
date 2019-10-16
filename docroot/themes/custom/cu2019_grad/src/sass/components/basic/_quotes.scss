@@ -35,11 +35,23 @@ blockquote {
 
     .copy-block .embedded-entity &,
     .cke_editable .embedded-entity &,
-    &.quote-box {
-      color: $primary;
+    .quote-box & {
+      //color: $primary;
       position: relative;
       background: $gray1;
       @import 'quotes/direction/_quote-copy';
+
+      &.medium-blue-background {
+        background: $secondary;
+      }
+
+      &.dark-blue-background {
+        background: $primary;
+      }
+
+      .field--name-field-grad-quote-image {
+        display: none;
+      }
 
       .quote {
           font-size: 22px;
@@ -81,7 +93,7 @@ blockquote {
       max-width: 425px;
     }
 
-    &.quote-box {
+    .quote-box & {
       margin-bottom: 0;
       width: 100%;
       height: 100%;
@@ -104,46 +116,9 @@ blockquote {
       }
     }
 
-    // &.sm {
-    //     width: calc(90vw - #{$gutter * 2}rem);
-    //     max-width: 50rem;
-    //     margin: 0 auto;
-    //
-    //     @media #{$mediaMd} {
-    //         width: 33.333%;
-    //         margin: 0;
-    //     }
-    // }
-    //
-    // &.float-left, &.float-right {
-    //     padding: #{$gutter}rem;
-    //     margin-bottom: #{$gutter}rem;
-    // }
-    //
-    // .grid & {
-    //     margin-bottom: 0;
-    // }
-    //
-    // &.bg-none {
-    //     background: none;
-    //     color: $primary;
-    // }
-    //
-    // &.bg-accent-1 {
-    //     background: $accent-1;
-    //     color: $tertiary;
-    // }
-    //
-    // &.bg-accent-2 {
-    //     background: $accent-2;
-    //     color: $tertiary;
-    // }
-    //
-    // &.bg-accent-3 {
-    //     background: $accent-3;
-    //     color: $tertiary;
-    // }
+    .feat-tiles .quote-box & {
 
+    }
 
     .quote {
         color: white;
@@ -221,4 +196,9 @@ blockquote {
     // \*---------------------*/
     // @import 'quotes/_small';
     // @import 'quotes/bubbles/_bubbles-small';
+
+    .field--name-field-grad-quote-source-name,
+    .field--name-field-grad-quote-honorific-title {
+      display: inline;
+    }
 }
