@@ -58,13 +58,14 @@
     </div>
   {% endif %}
   {% if exposed %}
+
+  <button class="listing-filters-toggle">
+    <span class="icon icon-filter"></span>
+    <span>See Search and Filters</span>
+  </button>
   <div class="section listing-filters">
     <div class="row">
       <div class="col-xs-12">
-        <button class="listing-filters-toggle">
-          <span class="icon icon-filter"></span>
-          <span>See Search and Filters</span>
-        </button>
         <div class="view-filters">
           {{ exposed }}
         </div>

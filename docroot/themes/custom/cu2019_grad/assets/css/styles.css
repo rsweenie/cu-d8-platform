@@ -12056,7 +12056,13 @@ aside .news-listing-row h2 ~ .h4 {
 
 /* line 11, src/sass/components/feeds-detail/_filters-archive.scss */
 
-.listing-filters .listing-filters-toggle {
+.listing-filters .form-item {
+  margin: 0;
+}
+
+/* line 67, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters-toggle {
   width: 100%;
   background: #002E6D;
   color: #fff;
@@ -12076,17 +12082,20 @@ aside .news-listing-row h2 ~ .h4 {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -webkit-box-ordinal-group: 11;
+      -ms-flex-order: 10;
+          order: 10;
 }
 
-/* line 20, src/sass/components/feeds-detail/_filters-archive.scss */
+/* line 77, src/sass/components/feeds-detail/_filters-archive.scss */
 
-.listing-filters .listing-filters-toggle span {
+.listing-filters-toggle span {
   display: inline-block;
 }
 
-/* line 24, src/sass/components/feeds-detail/_filters-archive.scss */
+/* line 81, src/sass/components/feeds-detail/_filters-archive.scss */
 
-.listing-filters .listing-filters-toggle .icon {
+.listing-filters-toggle .icon {
   height: 3.8rem;
   width: 3.8rem;
   font-size: 2rem;
@@ -12107,12 +12116,6 @@ aside .news-listing-row h2 ~ .h4 {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-}
-
-/* line 36, src/sass/components/feeds-detail/_filters-archive.scss */
-
-.listing-filters .form-item {
-  margin: 0;
 }
 
 /* line 98, src/sass/components/feeds-detail/_filters-archive.scss */
@@ -16831,20 +16834,7 @@ form.search .search button {
     padding-top: 3.8rem;
   }
 
-  /* line 60, src/sass/components/feeds-detail/_filters-archive.scss */
-
-  .listing-filters .listing-filters-toggle {
-    position: absolute;
-    width: 0.1rem;
-    height: 0.1rem;
-    padding: 0;
-    margin: -0.1rem;
-    border: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-  }
-
-  /* line 64, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 34, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters {
     background: #f5f8fc;
@@ -16853,7 +16843,7 @@ form.search .search button {
     margin-top: 1.25rem;
   }
 
-  /* line 70, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 40, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters .form--inline {
     display: -webkit-box;
@@ -16864,13 +16854,13 @@ form.search .search button {
             justify-content: space-between;
   }
 
-  /* line 74, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 44, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters .form--inline:after {
     display: none;
   }
 
-  /* line 78, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 48, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters .form--inline .form-actions {
     position: absolute;
@@ -16883,7 +16873,7 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
-  /* line 84, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 54, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters .form-item-search input {
     height: 4.2rem;
@@ -16892,6 +16882,19 @@ form.search .search button {
     font-size: 1.6rem;
     font-weight: bold;
     padding: 0 1rem;
+  }
+
+  /* line 67, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters-toggle {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
   }
 
   /* line 154, src/sass/components/feeds-detail/faculty/_faculty.scss */
@@ -17743,9 +17746,9 @@ form.search .search button {
     padding: 0.7rem 0;
   }
 
-  /* line 41, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 6, src/sass/components/feeds-detail/_filters-archive.scss */
 
-  .listing-filters .view-filters {
+  .listing-filters {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -17753,13 +17756,13 @@ form.search .search button {
     left: 0;
     background: #fff;
     z-index: 99999;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     -webkit-transition: all .25s;
     transition: all .25s;
   }
 
-  /* line 53, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 26, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .row,
   .listing-filters [class*="col-"] {
