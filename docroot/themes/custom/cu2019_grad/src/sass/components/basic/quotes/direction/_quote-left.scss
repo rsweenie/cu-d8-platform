@@ -85,7 +85,6 @@
 
         @media #{$mediaMd} {
           width: 84px;
-          height: 84px;
           left: calc(50% - 42px);
           top: 56px;
           font-size: 162px;
@@ -100,6 +99,20 @@
           max-width: 160px;
           max-height: 160px;
         }
+      }
+    }
+
+    &.grey-background {
+      &,
+      .quote-inner:after {
+        background: $gray1;
+      }
+    }
+
+    &.dark-blue-background {
+      &,
+      .quote-inner:after {
+        background: $primary;
       }
     }
 

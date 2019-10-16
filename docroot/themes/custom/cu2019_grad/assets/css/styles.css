@@ -4677,7 +4677,6 @@ blockquote {
 .copy-block .embedded-entity blockquote,
 .cke_editable .embedded-entity blockquote,
 .quote-box blockquote {
-  color: #002E6D;
   position: relative;
   background: #5D6468;
   /*&:before { height: 100%; width: 12px; position: absolute; left: -26px; top: 0; content: ""; background: $primaryXLt; @media  screen and (min-width: 1090px) { width: 19px; left: -54px; transition: all 10s; } }*/
@@ -4784,13 +4783,29 @@ blockquote {
 
 /* line 44, src/sass/components/basic/_quotes.scss */
 
+.copy-block .embedded-entity blockquote.medium-blue-background,
+.cke_editable .embedded-entity blockquote.medium-blue-background,
+.quote-box blockquote.medium-blue-background {
+  background: #0054A6;
+}
+
+/* line 48, src/sass/components/basic/_quotes.scss */
+
+.copy-block .embedded-entity blockquote.dark-blue-background,
+.cke_editable .embedded-entity blockquote.dark-blue-background,
+.quote-box blockquote.dark-blue-background {
+  background: #002E6D;
+}
+
+/* line 52, src/sass/components/basic/_quotes.scss */
+
 .copy-block .embedded-entity blockquote .field--name-field-grad-quote-image,
 .cke_editable .embedded-entity blockquote .field--name-field-grad-quote-image,
 .quote-box blockquote .field--name-field-grad-quote-image {
   display: none;
 }
 
-/* line 48, src/sass/components/basic/_quotes.scss */
+/* line 56, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .quote,
 .cke_editable .embedded-entity blockquote .quote,
@@ -4798,7 +4813,7 @@ blockquote {
   font-size: 2.2rem;
 }
 
-/* line 52, src/sass/components/basic/_quotes.scss */
+/* line 60, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr,
 .cke_editable .embedded-entity blockquote .attr,
@@ -4808,7 +4823,7 @@ blockquote {
   margin-top: 2rem;
 }
 
-/* line 57, src/sass/components/basic/_quotes.scss */
+/* line 65, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
 .cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
@@ -4816,14 +4831,14 @@ blockquote {
   font-weight: 400;
 }
 
-/* line 83, src/sass/components/basic/_quotes.scss */
+/* line 91, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote,
 .cke_editable .embedded-entity blockquote {
   max-width: 425px;
 }
 
-/* line 88, src/sass/components/basic/_quotes.scss */
+/* line 96, src/sass/components/basic/_quotes.scss */
 
 .quote-box blockquote {
   margin-bottom: 0;
@@ -4831,7 +4846,7 @@ blockquote {
   height: 100%;
 }
 
-/* line 93, src/sass/components/basic/_quotes.scss */
+/* line 101, src/sass/components/basic/_quotes.scss */
 
 .quote-box blockquote .quote-inner {
   height: 100%;
@@ -4847,13 +4862,7 @@ blockquote {
           justify-content: center;
 }
 
-/* line 110, src/sass/components/basic/_quotes.scss */
-
-.quote-box blockquote .field--name-field-grad-quote-source-name {
-  display: inline;
-}
-
-/* line 119, src/sass/components/basic/_quotes.scss */
+/* line 123, src/sass/components/basic/_quotes.scss */
 
 blockquote .quote {
   color: white;
@@ -4931,7 +4940,7 @@ blockquote .quote {
   text-align: center;
 }
 
-/* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 96, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 .card .q-left blockquote .quote-inner img {
   width: auto;
@@ -4940,7 +4949,21 @@ blockquote .quote {
   max-height: 160px;
 }
 
-/* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 106, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+.q-left blockquote.grey-background,
+.q-left blockquote.grey-background .quote-inner:after {
+  background: #5D6468;
+}
+
+/* line 113, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+.q-left blockquote.dark-blue-background,
+.q-left blockquote.dark-blue-background .quote-inner:after {
+  background: #002E6D;
+}
+
+/* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 .q-left blockquote .quote {
   -webkit-box-flex: 1;
@@ -4949,13 +4972,13 @@ blockquote .quote {
   padding-left: 2rem;
 }
 
-/* line 118, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 131, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 .q-left blockquote .quote:only-child {
   padding: 0;
 }
 
-/* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 136, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 .q-left blockquote .field--name-field-quote-quote {
   font-size: 1.8rem;
@@ -4963,7 +4986,7 @@ blockquote .quote {
   font-weight: 600;
 }
 
-/* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 .q-left blockquote .attr {
   font-size: 1.4rem;
@@ -4971,16 +4994,23 @@ blockquote .quote {
   line-height: 1.2em;
 }
 
-/* line 153, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 166, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 .q-left blockquote .attr small {
   font-size: 1em;
   font-weight: 500;
 }
 
-/* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 170, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
 .q-left blockquote .attr div {
+  display: inline;
+}
+
+/* line 200, src/sass/components/basic/_quotes.scss */
+
+blockquote .field--name-field-grad-quote-source-name,
+blockquote .field--name-field-grad-quote-honorific-title {
   display: inline;
 }
 
@@ -13106,7 +13136,7 @@ form.search .search button {
     padding: 2.5rem;
   }
 
-  /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   .q-left blockquote .quote {
     padding-left: 4.6rem;
@@ -14338,7 +14368,6 @@ form.search .search button {
 
   .q-left blockquote .quote-inner:after {
     width: 8.4rem;
-    height: 8.4rem;
     left: calc(50% - 4.2rem);
     top: 5.6rem;
     font-size: 16.2rem;
@@ -14358,7 +14387,7 @@ form.search .search button {
     pointer-events: none;
   }
 
-  /* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   .q-left blockquote .attr {
     font-size: 1.6rem;
@@ -15320,7 +15349,7 @@ form.search .search button {
     margin-top: -1.3125em;
   }
 
-  /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 136, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   .q-left blockquote .field--name-field-quote-quote {
     font-size: 3rem;
@@ -17958,7 +17987,7 @@ form.search .search button {
     margin-right: -2.5rem;
   }
 
-  /* line 100, src/sass/components/basic/_quotes.scss */
+  /* line 108, src/sass/components/basic/_quotes.scss */
 
   .feat-tiles .quote-box blockquote {
     margin: 0;
@@ -17999,7 +18028,7 @@ form.search .search button {
 }
 
 @media screen and (max-width: 575.9px) {
-  /* line 133, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 146, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   .q-left blockquote .field--name-field-quote-image {
     -webkit-box-flex: 0;
@@ -18007,7 +18036,7 @@ form.search .search button {
             flex: 0 0 20%;
   }
 
-  /* line 137, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 150, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
   .q-left blockquote .field--name-field-quote-image img {
     width: 100%;
@@ -18088,7 +18117,7 @@ form.search .search button {
     margin: 0 -2.5rem 1.5rem;
   }
 
-  /* line 100, src/sass/components/basic/_quotes.scss */
+  /* line 108, src/sass/components/basic/_quotes.scss */
 
   .feat-tiles .quote-box blockquote {
     margin: 0;
