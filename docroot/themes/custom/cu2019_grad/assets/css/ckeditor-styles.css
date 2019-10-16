@@ -416,10 +416,10 @@ textarea {
 
 /*---=== BASE STUFF ===---*/
 
-/* line 13, src/sass/structure/_grid.scss */
+/* line 14, src/sass/structure/_grid.scss */
 
 [class*="col-"] {
-  padding: 0 2.5rem;
+  padding: 0 1.6rem;
   margin: 0;
   -webkit-box-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -429,7 +429,7 @@ textarea {
           order: 0;
 }
 
-/* line 23, src/sass/structure/_grid.scss */
+/* line 24, src/sass/structure/_grid.scss */
 
 .row + * {
   margin-top: 5rem;
@@ -457,7 +457,7 @@ textarea {
   width: calc(100% + (-2.5rem * -2));
 }
 
-/* line 45, src/sass/structure/_grid.scss */
+/* line 46, src/sass/structure/_grid.scss */
 
 .row.align-center {
   -webkit-box-pack: center;
@@ -468,7 +468,7 @@ textarea {
           align-items: center;
 }
 
-/* line 49, src/sass/structure/_grid.scss */
+/* line 50, src/sass/structure/_grid.scss */
 
 .row.align-left {
   -webkit-box-pack: start;
@@ -476,7 +476,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 52, src/sass/structure/_grid.scss */
+/* line 53, src/sass/structure/_grid.scss */
 
 .row.align-right {
   -webkit-box-pack: end;
@@ -484,7 +484,7 @@ textarea {
           justify-content: flex-end;
 }
 
-/* line 55, src/sass/structure/_grid.scss */
+/* line 56, src/sass/structure/_grid.scss */
 
 .row.va-center {
   -webkit-box-align: center;
@@ -492,7 +492,7 @@ textarea {
           align-items: center;
 }
 
-/* line 58, src/sass/structure/_grid.scss */
+/* line 59, src/sass/structure/_grid.scss */
 
 .row.va-top {
   -webkit-box-align: start;
@@ -500,7 +500,7 @@ textarea {
           align-items: flex-start;
 }
 
-/* line 61, src/sass/structure/_grid.scss */
+/* line 62, src/sass/structure/_grid.scss */
 
 .row.va-bottom {
   -webkit-box-align: end;
@@ -508,7 +508,7 @@ textarea {
           align-items: flex-end;
 }
 
-/* line 64, src/sass/structure/_grid.scss */
+/* line 65, src/sass/structure/_grid.scss */
 
 .row.ha-center {
   -webkit-box-pack: center;
@@ -516,7 +516,7 @@ textarea {
           justify-content: center;
 }
 
-/* line 67, src/sass/structure/_grid.scss */
+/* line 68, src/sass/structure/_grid.scss */
 
 .row.ha-top {
   -webkit-box-pack: start;
@@ -524,7 +524,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 70, src/sass/structure/_grid.scss */
+/* line 71, src/sass/structure/_grid.scss */
 
 .row.ha-right {
   -webkit-box-pack: end;
@@ -2131,11 +2131,17 @@ form .form_action .section .layout__region--facmiddle button {
 /* line 1, src/sass/structure/section-backgrounds/_feat-tiles.scss */
 
 .section.feat-tiles-section {
-  background: -webkit-gradient(linear, left bottom, left top, from(#d6d8da), color-stop(17%, #EEEFF0), color-stop(83%, #EEEFF0), to(#d6d8da));
-  background: linear-gradient(0deg, #d6d8da 0%, #EEEFF0 17%, #EEEFF0 83%, #d6d8da 100%);
   padding: 5rem 0;
   border-top: 8px solid #6CACE4;
   border-bottom: 8px solid #6CACE4;
+}
+
+/* line 6, src/sass/structure/section-backgrounds/_feat-tiles.scss */
+
+.section.feat-tiles-section,
+.field--name-field-landing-page-content .section.feat-tiles-section {
+  background: -webkit-gradient(linear, left bottom, left top, from(#d6d8da), color-stop(17%, #EEEFF0), color-stop(83%, #EEEFF0), to(#d6d8da));
+  background: linear-gradient(0deg, #d6d8da 0%, #EEEFF0 17%, #EEEFF0 83%, #d6d8da 100%);
 }
 
 /* CSS Document */
@@ -3773,20 +3779,20 @@ a.card.mfsfa .content {
 a.card.mfsfa .content a {
   font-size: 1.6rem;
   line-height: 1.6em;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 0 0;
   color: #79b4e6;
   text-decoration: none;
   font-weight: 600;
 }
 
-/* line 60, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 63, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .content a span:first-child,
 a.card.mfsfa .content a span:first-child {
   text-decoration: underline;
 }
 
-/* line 64, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 67, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .content a span:last-child,
 a.card.mfsfa .content a span:last-child {
@@ -3796,14 +3802,14 @@ a.card.mfsfa .content a span:last-child {
   font-size: 1.3em;
 }
 
-/* line 77, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 80, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .title,
 a.card.mfsfa .title {
   text-align: center;
 }
 
-/* line 89, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 92, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .type,
 a.card.mfsfa .type {
@@ -3819,7 +3825,7 @@ a.card.mfsfa .type {
   z-index: 20;
 }
 
-/* line 107, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 110, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa h3,
 a.card.mfsfa h3 {
@@ -3831,7 +3837,7 @@ a.card.mfsfa h3 {
   margin-bottom: 0.63636em;
 }
 
-/* line 115, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 118, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa h3:after,
 a.card.mfsfa h3:after {
@@ -3846,7 +3852,7 @@ a.card.mfsfa h3:after {
           transform: translateX(-50%);
 }
 
-/* line 137, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 140, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .subtitle,
 a.card.mfsfa .subtitle {
@@ -3855,7 +3861,7 @@ a.card.mfsfa .subtitle {
   text-transform: none;
 }
 
-/* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 150, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .body,
 a.card.mfsfa .body {
@@ -3864,14 +3870,14 @@ a.card.mfsfa .body {
   padding: 3rem 1.5rem;
 }
 
-/* line 152, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 155, src/sass/components/basic/cards/_mfsfa.scss */
 
 .feat-tiles .card.mfsfa .body,
 .feat-tiles a.card.mfsfa .body {
-  padding: 2.5rem 0;
+  padding: 0.8rem 0;
 }
 
-/* line 191, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 217, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .hub-resource-field--type-link a:after,
 a.card.mfsfa .hub-resource-field--type-link a:after {
@@ -3888,6 +3894,118 @@ a.card.mfsfa .hub-resource-field--type-link a:after {
   -webkit-transform: translate(0.2em, 0.2em);
           transform: translate(0.2em, 0.2em);
   display: inline-block;
+}
+
+/* line 2, src/sass/components/basic/cards/_fci.scss */
+
+.paragraph--type--grad-feature-tile-item {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+/* line 8, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci,
+a.card.fci {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+/* line 16, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci,
+.card.fci a,
+.card.fci h2,
+.card.fci h3,
+a.card.fci,
+a.card.fci a,
+a.card.fci h2,
+a.card.fci h3 {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 24, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci img,
+a.card.fci img {
+  max-height: 90px;
+  width: auto;
+  margin: auto auto 1.2rem;
+  display: block;
+}
+
+/* line 35, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci > a,
+.card.fci > span,
+a.card.fci > a,
+a.card.fci > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 1.25rem;
+  height: 100%;
+  background: #0054A6;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.card.fci a:hover,
+.card.fci a:focus,
+a.card.fci a:hover,
+a.card.fci a:focus {
+  background: #002E6D;
+}
+
+/* line 54, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci h3,
+a.card.fci h3 {
+  font-size: 2rem;
+  line-height: 1.06em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* line 72, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci h2,
+a.card.fci h2 {
+  font-size: 4.8rem;
+  font-family: proxima-nova, sans-serif;
+  color: #6CACE4;
+  margin: 0;
+  line-height: 1.06em;
+}
+
+/* line 90, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci sup,
+a.card.fci sup {
+  font-size: 0.55556em;
+}
+
+/* line 94, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci p,
+a.card.fci p {
+  font-size: 1.1rem;
+  margin: 0;
 }
 
 /* line 25, src/sass/components/basic/cards/_copy.scss */
@@ -3968,7 +4086,7 @@ a.card .tags {
   font-size: .8em;
 }
 
-/* line 71, src/sass/components/basic/_cards.scss */
+/* line 72, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .element .img_vid .img img,
 a.card.img-side:focus .element .img_vid .img img {
@@ -3980,7 +4098,7 @@ a.card.img-side:focus .element .img_vid .img img {
           transform: scale(1.1);
 }
 
-/* line 76, src/sass/components/basic/_cards.scss */
+/* line 77, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary,
 a.card.img-side:focus .btn-primary {
@@ -3989,14 +4107,14 @@ a.card.img-side:focus .btn-primary {
   color: #002E6D;
 }
 
-/* line 83, src/sass/components/basic/_cards.scss */
+/* line 84, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary:before,
 a.card.img-side:focus .btn-primary:before {
   background: linear-gradient(-45deg, #ffd072 50%, rgba(255, 208, 114, 0) 50%);
 }
 
-/* line 87, src/sass/components/basic/_cards.scss */
+/* line 88, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary .arrow:last-child,
 a.card.img-side:focus .btn-primary .arrow:last-child {
@@ -4004,7 +4122,7 @@ a.card.img-side:focus .btn-primary .arrow:last-child {
           transform: translate(3px, -46%);
 }
 
-/* line 93, src/sass/components/basic/_cards.scss */
+/* line 94, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .info h2,
 a.card.img-side:focus .info h2 {
@@ -4558,8 +4676,7 @@ blockquote {
 
 .copy-block .embedded-entity blockquote,
 .cke_editable .embedded-entity blockquote,
-blockquote.quote-box {
-  color: #002E6D;
+.quote-box blockquote {
   position: relative;
   background: #5D6468;
   /*&:before { height: 100%; width: 12px; position: absolute; left: -26px; top: 0; content: ""; background: $primaryXLt; @media  screen and (min-width: 1090px) { width: 19px; left: -54px; transition: all 10s; } }*/
@@ -4569,12 +4686,12 @@ blockquote.quote-box {
 
 .copy-block .embedded-entity blockquote:after,
 .cke_editable .embedded-entity blockquote:after,
-blockquote.quote-box:after {
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
+.quote-box blockquote:after {
+  width: calc(100% - 1.6rem);
+  height: calc(100% - 1.6rem);
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 0.8rem;
+  left: 0.8rem;
   content: "";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   pointer-events: none;
@@ -4584,7 +4701,7 @@ blockquote.quote-box:after {
 
 .copy-block .embedded-entity blockquote a,
 .cke_editable .embedded-entity blockquote a,
-blockquote.quote-box a {
+.quote-box blockquote a {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -4594,7 +4711,7 @@ blockquote.quote-box a {
 
 .copy-block .embedded-entity blockquote a:hover,
 .cke_editable .embedded-entity blockquote a:hover,
-blockquote.quote-box a:hover {
+.quote-box blockquote a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -4602,7 +4719,7 @@ blockquote.quote-box a:hover {
 
 .copy-block .embedded-entity blockquote p,
 .cke_editable .embedded-entity blockquote p,
-blockquote.quote-box p {
+.quote-box blockquote p {
   margin-bottom: 1em;
 }
 
@@ -4610,7 +4727,7 @@ blockquote.quote-box p {
 
 .copy-block .embedded-entity blockquote .quote-inner,
 .cke_editable .embedded-entity blockquote .quote-inner,
-blockquote.quote-box .quote-inner {
+.quote-box blockquote .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4627,13 +4744,13 @@ blockquote.quote-box .quote-inner {
 
 .copy-block .embedded-entity blockquote .quote-inner:before,
 .cke_editable .embedded-entity blockquote .quote-inner:before,
-blockquote.quote-box .quote-inner:before {
+.quote-box blockquote .quote-inner:before {
   width: 3.9rem;
   height: 3.9rem;
   font-size: 7rem;
   position: absolute;
-  top: 1.6rem;
-  left: 1.6rem;
+  top: 1rem;
+  left: 1rem;
   content: "“";
   color: white;
   background: transparent;
@@ -4641,22 +4758,23 @@ blockquote.quote-box .quote-inner:before {
   font-family: "Conduit";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   border-width: 0 2px 2px 0;
+  padding-top: 0.5rem;
   text-align: center;
 }
 
-/* line 80, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+/* line 83, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
 .cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
-blockquote.quote-box .quote-inner .field--name-field-quote-box-photo {
+.quote-box blockquote .quote-inner .field--name-field-quote-box-photo {
   display: none;
 }
 
-/* line 85, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+/* line 88, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .card .copy-block .embedded-entity blockquote .quote-inner img,
 .card .cke_editable .embedded-entity blockquote .quote-inner img,
-.card blockquote.quote-box .quote-inner img {
+.card .quote-box blockquote .quote-inner img {
   width: auto;
   height: auto;
   max-width: 160px;
@@ -4665,48 +4783,56 @@ blockquote.quote-box .quote-inner .field--name-field-quote-box-photo {
 
 /* line 44, src/sass/components/basic/_quotes.scss */
 
-.copy-block .embedded-entity blockquote .quote,
-.cke_editable .embedded-entity blockquote .quote,
-blockquote.quote-box .quote {
-  font-size: 2.2rem;
+.copy-block .embedded-entity blockquote .field--name-field-grad-quote-image,
+.cke_editable .embedded-entity blockquote .field--name-field-grad-quote-image,
+.quote-box blockquote .field--name-field-grad-quote-image {
+  display: none;
 }
 
 /* line 48, src/sass/components/basic/_quotes.scss */
 
+.copy-block .embedded-entity blockquote .quote,
+.cke_editable .embedded-entity blockquote .quote,
+.quote-box blockquote .quote {
+  font-size: 2.2rem;
+}
+
+/* line 52, src/sass/components/basic/_quotes.scss */
+
 .copy-block .embedded-entity blockquote .attr,
 .cke_editable .embedded-entity blockquote .attr,
-blockquote.quote-box .attr {
+.quote-box blockquote .attr {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
 }
 
-/* line 53, src/sass/components/basic/_quotes.scss */
+/* line 57, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
 .cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
-blockquote.quote-box .attr .field--name-field-quote-box-affiliation {
+.quote-box blockquote .attr .field--name-field-quote-box-affiliation {
   font-weight: 400;
 }
 
-/* line 79, src/sass/components/basic/_quotes.scss */
+/* line 83, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote,
 .cke_editable .embedded-entity blockquote {
   max-width: 425px;
 }
 
-/* line 84, src/sass/components/basic/_quotes.scss */
+/* line 88, src/sass/components/basic/_quotes.scss */
 
-blockquote.quote-box {
+.quote-box blockquote {
   margin-bottom: 0;
   width: 100%;
   height: 100%;
 }
 
-/* line 89, src/sass/components/basic/_quotes.scss */
+/* line 93, src/sass/components/basic/_quotes.scss */
 
-blockquote.quote-box .quote-inner {
+.quote-box blockquote .quote-inner {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4720,7 +4846,21 @@ blockquote.quote-box .quote-inner {
           justify-content: center;
 }
 
-/* line 148, src/sass/components/basic/_quotes.scss */
+/* line 111, src/sass/components/basic/_quotes.scss */
+
+.quote-box blockquote.medium-blue-background,
+.quote-box blockquote.color1 {
+  background: #0054A6;
+}
+
+/* line 116, src/sass/components/basic/_quotes.scss */
+
+.quote-box blockquote.dark-blue-background,
+.quote-box blockquote.color2 {
+  background: #002E6D;
+}
+
+/* line 126, src/sass/components/basic/_quotes.scss */
 
 blockquote .quote {
   color: white;
@@ -4729,7 +4869,7 @@ blockquote .quote {
 
 /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left {
+.q-left blockquote {
   position: relative;
   background: #0054A6;
   color: #fff;
@@ -4737,7 +4877,7 @@ blockquote.q-left {
 
 /* line 20, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left a {
+.q-left blockquote a {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -4745,19 +4885,19 @@ blockquote.q-left a {
 
 /* line 25, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left a:hover {
+.q-left blockquote a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
 /* line 30, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left p {
+.q-left blockquote p {
   margin-bottom: 1em;
 }
 
 /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote-inner {
+.q-left blockquote .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4771,7 +4911,7 @@ blockquote.q-left .quote-inner {
 
 /* line 54, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote-inner:before {
+.q-left blockquote .quote-inner:before {
   width: calc(100% - 5rem);
   height: 0.1rem;
   position: absolute;
@@ -4784,11 +4924,11 @@ blockquote.q-left .quote-inner:before {
 
 /* line 71, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote-inner:after {
+.q-left blockquote .quote-inner:after {
   width: 6.4rem;
   height: 4rem;
   position: absolute;
-  top: 1rem;
+  top: 2.1rem;
   left: calc(50% - 3.2rem);
   content: "“";
   background: #0054A6;
@@ -4798,56 +4938,77 @@ blockquote.q-left .quote-inner:after {
   text-align: center;
 }
 
-/* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 96, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-.card blockquote.q-left .quote-inner img {
+.card .q-left blockquote .quote-inner img {
   width: auto;
   height: auto;
   max-width: 160px;
   max-height: 160px;
 }
 
-/* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 106, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote {
+.q-left blockquote.grey-background,
+.q-left blockquote.grey-background .quote-inner:after {
+  background: #5D6468;
+}
+
+/* line 113, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+.q-left blockquote.dark-blue-background,
+.q-left blockquote.dark-blue-background .quote-inner:after {
+  background: #002E6D;
+}
+
+/* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+.q-left blockquote .quote {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   padding-left: 2rem;
 }
 
-/* line 118, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 131, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote:only-child {
+.q-left blockquote .quote:only-child {
   padding: 0;
 }
 
-/* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 136, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .field--name-field-quote-quote {
+.q-left blockquote .field--name-field-quote-quote {
   font-size: 1.8rem;
   line-height: 1.2em;
   font-weight: 600;
 }
 
-/* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .attr {
+.q-left blockquote .attr {
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.2em;
 }
 
-/* line 153, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 166, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .attr small {
+.q-left blockquote .attr small {
   font-size: 1em;
   font-weight: 500;
 }
 
-/* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
+/* line 170, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .attr div {
+.q-left blockquote .attr div {
+  display: inline;
+}
+
+/* line 203, src/sass/components/basic/_quotes.scss */
+
+blockquote .field--name-field-grad-quote-source-name,
+blockquote .field--name-field-grad-quote-honorific-title {
   display: inline;
 }
 
@@ -5191,23 +5352,28 @@ blockquote .tooltip-trigger {
 
 /* line 1, src/sass/components/basic/_feat-tiles.scss */
 
-.feat-tiles > div > .field__item,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource {
+.feat-tiles > div > div > .field__item,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource,
+.feat-tiles .hub-resource--type-paragraph-hub-quote-ref,
+.feat-tiles .hub-resource-field--name-field-hub-quote-ref-item,
+.feat-tiles .hub-resource-field--name-field-hub-quote-ref-item > .hub-resource-field__item,
+.feat-tiles .quote-box,
+.feat-tiles .field--name-field-quote-ref,
+.feat-tiles .node--type-grad-quote {
   height: 100%;
 }
 
 /* line 5, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles {
-  margin: 0 2.5rem;
   /*  img { width: 100%; height: auto; display: block; }*/
 }
 
-/* line 8, src/sass/components/basic/_feat-tiles.scss */
+/* line 10, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles img {
   display: block;
@@ -5215,53 +5381,56 @@ blockquote .tooltip-trigger {
   height: auto;
 }
 
-/* line 19, src/sass/components/basic/_feat-tiles.scss */
+/* line 23, src/sass/components/basic/_feat-tiles.scss */
 
-.feat-tiles > div {
+.feat-tiles > div > div {
   margin: 1.6rem 0;
 }
 
-/* line 88, src/sass/components/basic/_feat-tiles.scss */
+/* line 92, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles .hub-resource-field--name-field-fc-p-link {
   display: none;
 }
 
-/* line 93, src/sass/components/basic/_feat-tiles.scss */
+/* line 106, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io,
-.hub_img {
+.hub_img,
+.fci {
   position: relative;
 }
 
 /* line 463, src/sass/base/_mixins.scss */
 
 .stat_hl_io:after,
-.hub_img:after {
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
+.hub_img:after,
+.fci:after {
+  width: calc(100% - 1.6rem);
+  height: calc(100% - 1.6rem);
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 0.8rem;
+  left: 0.8rem;
   content: "";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   pointer-events: none;
 }
 
-/* line 101, src/sass/components/basic/_feat-tiles.scss */
+/* line 116, src/sass/components/basic/_feat-tiles.scss */
 
-.stat_hl_io:before {
-  width: 1.1rem;
-  height: 1.1rem;
+.stat_hl_io:before,
+.fci:before {
+  width: 0.8rem;
+  height: 0.8rem;
   position: absolute;
-  top: 1.7rem;
-  left: 1.7rem;
+  top: 1rem;
+  left: 1rem;
   content: "";
   background: rgba(255, 255, 255, 0.3);
   z-index: 10;
 }
 
-/* line 112, src/sass/components/basic/_feat-tiles.scss */
+/* line 136, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -11600,27 +11769,34 @@ aside .news-listing-row h2 ~ .h4 {
   margin-top: 0;
 }
 
-/* line 35, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 33, src/sass/components/feeds-detail/programs/_programs.scss */
+
+.program_rail > .block.block-field-blockhub-referencedegreehub-field-hub-degree-title + .block.block-field-blockhub-referencedegreehub-field-hub-degree-availability {
+  margin-top: -1em;
+  margin-bottom: 2em;
+}
+
+/* line 40, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block p:last-child,
 .program_rail > .block ul:last-child {
   margin-bottom: 0;
 }
 
-/* line 40, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 45, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > .block.block-field-blockhub-referencedegreehub-field-hub-degree-adm-rep {
   margin-top: 2em;
 }
 
-/* line 45, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h3 {
   position: relative;
   padding-bottom: 0.43636em;
 }
 
-/* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 55, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h3:after {
   width: 5.5rem;
@@ -11632,13 +11808,13 @@ aside .news-listing-row h2 ~ .h4 {
   background: #6CACE4;
 }
 
-/* line 65, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 70, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h4 {
   margin-bottom: 0.08333em;
 }
 
-/* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 74, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail h5 {
   font-size: 1.2rem;
@@ -11647,20 +11823,20 @@ aside .news-listing-row h2 ~ .h4 {
   letter-spacing: 0.05em;
 }
 
-/* line 109, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 114, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail > div {
   position: relative;
   z-index: 10;
 }
 
-/* line 114, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 119, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail ul {
   margin-left: 0;
 }
 
-/* line 118, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .program_rail .field--name-hub-field-hub-degree-title {
   font-size: 1.2rem;
@@ -11669,26 +11845,26 @@ aside .news-listing-row h2 ~ .h4 {
   letter-spacing: 0.05em;
 }
 
-/* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 128, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .prog_left {
   padding-bottom: 2.5rem;
 }
 
-/* line 138, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 143, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep {
   padding: 6rem 0 0;
   border-top: 1px solid rgba(33, 35, 34, 0.2);
 }
 
-/* line 142, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 147, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep h4 {
   margin-bottom: 0.125em;
 }
 
-/* line 151, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 156, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info {
   display: -webkit-box;
@@ -11701,14 +11877,14 @@ aside .news-listing-row h2 ~ .h4 {
   margin-top: 2.5rem;
 }
 
-/* line 156, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 161, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:first-child {
   width: 10.2rem;
   margin-right: 1.6rem;
 }
 
-/* line 166, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 171, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child {
   -webkit-box-flex: 1;
@@ -11716,13 +11892,13 @@ aside .news-listing-row h2 ~ .h4 {
           flex-grow: 1;
 }
 
-/* line 169, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 174, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info > div:last-child .hub-resource-field {
   margin-bottom: 0.31579em;
 }
 
-/* line 175, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 180, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .admissions-rep-info img {
   width: 100%;
@@ -11730,14 +11906,14 @@ aside .news-listing-row h2 ~ .h4 {
   display: block;
 }
 
-/* line 182, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 187, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .hub-resource-field--name-field-hub-adm-rep-name {
   text-transform: uppercase;
   font-weight: 600;
 }
 
-/* line 188, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 193, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date {
   display: -webkit-box;
@@ -11750,13 +11926,13 @@ aside .news-listing-row h2 ~ .h4 {
   padding: 1.2rem 0;
 }
 
-/* line 196, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 201, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .field + .field .course-date {
   border-top: 1px solid #d4d4d4;
 }
 
-/* line 202, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 207, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child {
   width: 4.8rem;
@@ -11769,7 +11945,7 @@ aside .news-listing-row h2 ~ .h4 {
   font-weight: bold;
 }
 
-/* line 219, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 224, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child time > div {
   width: 100%;
@@ -11787,20 +11963,20 @@ aside .news-listing-row h2 ~ .h4 {
           flex-flow: column nowrap;
 }
 
-/* line 229, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 234, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child time span {
   line-height: 1em;
 }
 
-/* line 231, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 236, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child time span:first-child {
   font-size: 2.2rem;
   margin-bottom: -0.13636em;
 }
 
-/* line 240, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 245, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:first-child time span:last-child {
   font-size: 1.2rem;
@@ -11808,7 +11984,7 @@ aside .news-listing-row h2 ~ .h4 {
   text-transform: uppercase;
 }
 
-/* line 253, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 258, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:last-child {
   -webkit-box-flex: 1;
@@ -11820,7 +11996,7 @@ aside .news-listing-row h2 ~ .h4 {
   color: #555555;
 }
 
-/* line 260, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 265, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:last-child a {
   color: #555555;
@@ -11830,7 +12006,7 @@ aside .news-listing-row h2 ~ .h4 {
   display: inline-block;
 }
 
-/* line 267, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 272, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:last-child a:after {
   font-family: "cu_icons";
@@ -11858,7 +12034,7 @@ aside .news-listing-row h2 ~ .h4 {
   color: #0054A6;
 }
 
-/* line 281, src/sass/components/feeds-detail/programs/_programs.scss */
+/* line 286, src/sass/components/feeds-detail/programs/_programs.scss */
 
 .course-date > div:last-child a:hover:after,
 .course-date > div:last-child a:focus:after {
@@ -12964,9 +13140,18 @@ form.search .search button {
     height: 32rem;
   }
 
-  /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 35, src/sass/components/basic/cards/_fci.scss */
 
-  blockquote.q-left .quote {
+  .card.fci > a,
+  .card.fci > span,
+  a.card.fci > a,
+  a.card.fci > span {
+    padding: 2.5rem;
+  }
+
+  /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+
+  .q-left blockquote .quote {
     padding-left: 4.6rem;
   }
 
@@ -13047,21 +13232,22 @@ form.search .search button {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 13, src/sass/structure/_grid.scss */
+  /* line 14, src/sass/structure/_grid.scss */
 
   [class*="col-"] {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    padding: 0 2.5rem;
   }
 
-  /* line 17, src/sass/structure/_grid.scss */
+  /* line 18, src/sass/structure/_grid.scss */
 
   .no-gutter {
     padding: 0;
   }
 
-  /* line 28, src/sass/structure/_grid.scss */
+  /* line 29, src/sass/structure/_grid.scss */
 
   .pull-left {
     -webkit-box-ordinal-group: 1;
@@ -13069,7 +13255,7 @@ form.search .search button {
             order: 0;
   }
 
-  /* line 31, src/sass/structure/_grid.scss */
+  /* line 32, src/sass/structure/_grid.scss */
 
   .push-right {
     -webkit-box-ordinal-group: 3;
@@ -13077,14 +13263,14 @@ form.search .search button {
             order: 2;
   }
 
-  /* line 34, src/sass/structure/_grid.scss */
+  /* line 35, src/sass/structure/_grid.scss */
 
   .float-left {
     margin: 0 2.5rem 2.5rem 0;
     float: left;
   }
 
-  /* line 38, src/sass/structure/_grid.scss */
+  /* line 39, src/sass/structure/_grid.scss */
 
   .float-right {
     margin: 0 0 2.5rem 2.5rem;
@@ -13854,10 +14040,9 @@ form.search .search button {
   .card.mfsfa .content a,
   a.card.mfsfa .content a {
     padding: 0;
-    display: none;
   }
 
-  /* line 89, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 92, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .type,
   a.card.mfsfa .type {
@@ -13865,7 +14050,7 @@ form.search .search button {
     padding: 1.2rem;
   }
 
-  /* line 115, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 118, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3:after,
   a.card.mfsfa h3:after {
@@ -13874,30 +14059,29 @@ form.search .search button {
     bottom: -1rem;
   }
 
-  /* line 107, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 110, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3,
   a.card.mfsfa h3 {
     font-size: 3rem;
   }
 
-  /* line 137, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 140, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .subtitle,
   a.card.mfsfa .subtitle {
     font-size: 2rem;
   }
 
-  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 150, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .body,
   a.card.mfsfa .body {
     color: #fff;
     padding: 0;
-    display: none;
   }
 
-  /* line 171, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 197, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover > a:after,
   .card.mfsfa:hover > span:after,
@@ -13907,7 +14091,7 @@ form.search .search button {
     background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
   }
 
-  /* line 176, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 202, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover .body,
   .card.mfsfa:hover .content a,
@@ -13916,7 +14100,7 @@ form.search .search button {
     display: block;
   }
 
-  /* line 181, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 207, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover .content,
   a.card.mfsfa:hover .content {
@@ -13957,11 +14141,11 @@ form.search .search button {
   /* line 463, src/sass/base/_mixins.scss */
 
   .fact.stat_hl:after {
-    width: calc(100% - 3rem);
-    height: calc(100% - 3rem);
+    width: calc(100% - 1.6rem);
+    height: calc(100% - 1.6rem);
     position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
+    top: 0.8rem;
+    left: 0.8rem;
     content: "";
     border: 0.2rem solid rgba(255, 255, 255, 0.3);
     pointer-events: none;
@@ -14147,11 +14331,22 @@ form.search .search button {
     display: block;
   }
 
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .copy-block .embedded-entity blockquote:after,
+  .cke_editable .embedded-entity blockquote:after,
+  .quote-box blockquote:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
   /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
   .copy-block .embedded-entity blockquote .quote-inner,
   .cke_editable .embedded-entity blockquote .quote-inner,
-  blockquote.quote-box .quote-inner {
+  .quote-box blockquote .quote-inner {
     padding: 10rem 4.2rem 4.6rem;
   }
 
@@ -14159,22 +14354,24 @@ form.search .search button {
 
   .copy-block .embedded-entity blockquote .quote-inner:before,
   .cke_editable .embedded-entity blockquote .quote-inner:before,
-  blockquote.quote-box .quote-inner:before {
+  .quote-box blockquote .quote-inner:before {
     width: 5.9rem;
     height: 5.9rem;
+    top: 1.6rem;
+    left: 1.6rem;
     font-size: 10.5rem;
-    line-height: 1;
+    padding-top: 1rem;
   }
 
   /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .quote-inner {
+  .q-left blockquote .quote-inner {
     padding: 13.1rem 8.1rem 7.2rem 8.1rem;
   }
 
   /* line 54, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .quote-inner:before {
+  .q-left blockquote .quote-inner:before {
     width: calc(100% - 16.2rem);
     top: 7.9rem;
     left: 8.1rem;
@@ -14182,31 +14379,30 @@ form.search .search button {
 
   /* line 71, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .quote-inner:after {
+  .q-left blockquote .quote-inner:after {
     width: 8.4rem;
-    height: 8.4rem;
     left: calc(50% - 4.2rem);
-    top: 3.7rem;
+    top: 5.6rem;
     font-size: 16.2rem;
     line-height: 15.3rem;
   }
 
   /* line 463, src/sass/base/_mixins.scss */
 
-  blockquote.q-left:after {
-    width: calc(100% - 3rem);
-    height: calc(100% - 3rem);
+  .q-left blockquote:after {
+    width: calc(100% - 1.6rem);
+    height: calc(100% - 1.6rem);
     position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
+    top: 0.8rem;
+    left: 0.8rem;
     content: "";
     border: 0.2rem solid rgba(255, 255, 255, 0.3);
     pointer-events: none;
   }
 
-  /* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .attr {
+  .q-left blockquote .attr {
     font-size: 1.6rem;
   }
 
@@ -14339,6 +14535,12 @@ form.search .search button {
   /* line 5, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles {
+    margin: 0 2.5rem;
+  }
+
+  /* line 17, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -14349,12 +14551,33 @@ form.search .search button {
     margin: -0.5rem;
   }
 
-  /* line 19, src/sass/components/basic/_feat-tiles.scss */
+  /* line 23, src/sass/components/basic/_feat-tiles.scss */
 
-  .feat-tiles > div {
+  .feat-tiles > div > div {
     width: 50%;
     padding: 0.5rem;
     margin: 0;
+  }
+
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .stat_hl_io:after,
+  .hub_img:after,
+  .fci:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  /* line 116, src/sass/components/basic/_feat-tiles.scss */
+
+  .stat_hl_io:before,
+  .fci:before {
+    width: 1.1rem;
+    height: 1.1rem;
+    top: 1.7rem;
+    left: 1.7rem;
   }
 
   /* line 7, src/sass/components/interactive/tabs/_minimal.scss */
@@ -14594,13 +14817,13 @@ form.search .search button {
     font-size: 3rem;
   }
 
-  /* line 50, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 55, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail h3:after {
     height: 0.8rem;
   }
 
-  /* line 69, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 74, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail h5 {
     font-size: 1.5rem;
@@ -14612,7 +14835,7 @@ form.search .search button {
     background-color: transparent;
   }
 
-  /* line 84, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 89, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail:after {
     width: 100vw;
@@ -14625,26 +14848,26 @@ form.search .search button {
     background: rgba(165, 210, 249, 0.2);
   }
 
-  /* line 118, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail .field--name-hub-field-hub-degree-title {
     font-size: 1.5rem;
   }
 
-  /* line 123, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 128, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .prog_left {
     margin-right: 5rem;
     padding-bottom: 10rem;
   }
 
-  /* line 138, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 143, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep {
     padding: 7rem 0 4.5rem;
   }
 
-  /* line 156, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 161, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .admissions-rep-info > div:first-child {
     width: 17rem;
@@ -14677,6 +14900,26 @@ form.search .search button {
 
   .fac-listing h3 {
     font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .fact.stat_hl:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .q-left blockquote:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
   }
 }
 
@@ -15041,6 +15284,41 @@ form.search .search button {
     width: 83.33333%;
   }
 
+  /* line 43, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a,
+  a.card.mfsfa .content a {
+    display: none;
+  }
+
+  /* line 150, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .body,
+  a.card.mfsfa .body {
+    display: none;
+  }
+
+  /* line 54, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h3,
+  a.card.fci h3 {
+    font-size: 3rem;
+  }
+
+  /* line 72, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h2,
+  a.card.fci h2 {
+    font-size: 7.2rem;
+  }
+
+  /* line 94, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci p,
+  a.card.fci p {
+    font-size: 1.6rem;
+  }
+
   /* line 25, src/sass/components/basic/cards/_copy.scss */
 
   .card h2,
@@ -15084,9 +15362,9 @@ form.search .search button {
     margin-top: -1.3125em;
   }
 
-  /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 136, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .field--name-field-quote-quote {
+  .q-left blockquote .field--name-field-quote-quote {
     font-size: 3rem;
   }
 
@@ -15160,13 +15438,13 @@ form.search .search button {
     width: calc(33.333% - 2.5rem);
   }
 
-  /* line 188, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 193, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date {
     padding: 2rem 0;
   }
 
-  /* line 202, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 207, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:first-child {
     width: 7rem;
@@ -15175,25 +15453,25 @@ form.search .search button {
             flex: 0 0 70px;
   }
 
-  /* line 219, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 224, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:first-child time > div {
     height: 8.2rem;
   }
 
-  /* line 231, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 236, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:first-child time span:first-child {
     font-size: 3.2rem;
   }
 
-  /* line 240, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 245, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:first-child time span:last-child {
     font-size: 1.8rem;
   }
 
-  /* line 253, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 258, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .course-date > div:last-child {
     font-size: 2rem;
@@ -16507,7 +16785,7 @@ form.search .search button {
     padding: 0;
   }
 
-  /* line 131, src/sass/components/feeds-detail/programs/_programs.scss */
+  /* line 136, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail,
   .prog_left {
@@ -16900,7 +17178,7 @@ form.search .search button {
     font-size: 1.9rem;
   }
 
-  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 150, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .body,
   a.card.mfsfa .body {
@@ -16923,9 +17201,9 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 19, src/sass/components/basic/_feat-tiles.scss */
+  /* line 23, src/sass/components/basic/_feat-tiles.scss */
 
-  .feat-tiles > div {
+  .feat-tiles > div > div {
     width: 33.3%;
   }
 
@@ -16991,6 +17269,13 @@ form.search .search button {
   .card.fw_photo .content,
   a.card.fw_photo .content {
     width: 85%;
+  }
+
+  /* line 24, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci img,
+  a.card.fci img {
+    max-height: 132px;
   }
 }
 
@@ -17662,7 +17947,7 @@ form.search .search button {
     margin: 0 -2.5rem 2.5rem;
   }
 
-  /* line 64, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 67, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .content a span:last-child,
   a.card.mfsfa .content a span:last-child {
@@ -17670,7 +17955,7 @@ form.search .search button {
     opacity: .3;
   }
 
-  /* line 77, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 80, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .title,
   a.card.mfsfa .title {
@@ -17710,20 +17995,20 @@ form.search .search button {
 
   .copy-block .embedded-entity blockquote,
   .cke_editable .embedded-entity blockquote,
-  blockquote.quote-box {
+  .quote-box blockquote {
     margin-left: -2.5rem;
     margin-right: -2.5rem;
   }
 
-  /* line 96, src/sass/components/basic/_quotes.scss */
+  /* line 100, src/sass/components/basic/_quotes.scss */
 
-  .feat-tiles blockquote.quote-box {
+  .feat-tiles .quote-box blockquote {
     margin: 0;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left {
+  .q-left blockquote {
     margin-left: -2.5rem;
     margin-right: -2.5rem;
   }
@@ -17756,17 +18041,17 @@ form.search .search button {
 }
 
 @media screen and (max-width: 575.9px) {
-  /* line 133, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 146, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .field--name-field-quote-image {
+  .q-left blockquote .field--name-field-quote-image {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 20%;
             flex: 0 0 20%;
   }
 
-  /* line 137, src/sass/components/basic/quotes/direction/_quote-left.scss */
+  /* line 150, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .field--name-field-quote-image img {
+  .q-left blockquote .field--name-field-quote-image img {
     width: 100%;
     height: auto;
   }
@@ -17809,24 +18094,68 @@ form.search .search button {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991.9px) {
+  /* line 177, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa > a:after,
+  .card.mfsfa > span:after,
+  a.card.mfsfa > a:after,
+  a.card.mfsfa > span:after {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
+    background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
+  }
+
+  /* line 182, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .body,
+  .card.mfsfa .content a,
+  a.card.mfsfa .body,
+  a.card.mfsfa .content a {
+    display: block;
+  }
+
+  /* line 187, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content,
+  a.card.mfsfa .content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
   /* line 36, src/sass/components/basic/_quotes.scss */
 
   .copy-block .embedded-entity blockquote,
   .cke_editable .embedded-entity blockquote,
-  blockquote.quote-box {
+  .quote-box blockquote {
     margin: 0 -2.5rem 1.5rem;
   }
 
-  /* line 96, src/sass/components/basic/_quotes.scss */
+  /* line 100, src/sass/components/basic/_quotes.scss */
 
-  .feat-tiles blockquote.quote-box {
+  .feat-tiles .quote-box blockquote {
     margin: 0;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left {
+  .q-left blockquote {
     margin: 0 -2.5rem 1.5rem;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767.9px) {
+  /* line 54, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h3,
+  a.card.fci h3 {
+    font-size: 3rem;
+  }
+
+  /* line 72, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h2,
+  a.card.fci h2 {
+    font-size: 7.2rem;
   }
 }
 

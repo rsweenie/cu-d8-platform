@@ -26,4 +26,11 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
+  field_grad_quote_background_area: true
+  field_grad_quote_faculty_profile: true
+  field_grad_quote_honorific_title: true
+  field_grad_quote_image: true
+  field_grad_quote_source_name: true
+  field_grad_quote_style: true
+  field_grad_quote_text: true
   search_api_excerpt: true
