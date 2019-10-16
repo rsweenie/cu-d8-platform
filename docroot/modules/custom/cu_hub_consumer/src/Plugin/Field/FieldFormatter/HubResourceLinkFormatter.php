@@ -39,8 +39,7 @@ class HubResourceLinkFormatter extends FormatterBase {
             $link_title = $resource_obj->label();
           }
 
-          // We output just the preprocessed version fo the text.
-          $elements = [
+          $elements[$delta] = [
             '#type' => 'link',
             '#title' => $link_title,
             '#url' => $url,

@@ -4,6 +4,7 @@ namespace Drupal\cu_hub_consumer\Plugin\QueueWorker;
  
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\Core\Queue\SuspendQueueException;
+use Drupal\cu_hub_consumer\hub\ResourceException;
  
 /**
  * Fetches resource list data from hub.
@@ -48,18 +49,19 @@ class HubResourceListFetchWorker extends QueueWorkerBase {
     }
     catch (ResourceException $e) {
       watchdog_exception('cu_hub_consumer', $e);
-      throw new SuspendQueueException('Could not properly fetch the hub resource list.');
+      throw new SuspendQueueException('Could not properly fetch the hub resource list for ' . $resource_type->getPluginId() . '.');
     }
 
     if ($resource_list) {
       $resource_list_data = $resource_list->getProcessedData();
 
-      foreach ($resource_list_data as $resource_uuid => $resource_url) {
+      foreach ($resource_list_data as $resource_uuid => $resource_info) {
+
         // Queue up each resource for individual processing.
         $resource_item = new \stdClass();
         $resource_item->bundle = $data->bundle;
         $resource_item->hub_uuid = $resource_uuid;
-        $resource_item->hub_url = $resource_url;
+        $resource_item->hub_url = $resource_info['url'];
         $resource_process_queue->createItem($resource_item);
       }
 

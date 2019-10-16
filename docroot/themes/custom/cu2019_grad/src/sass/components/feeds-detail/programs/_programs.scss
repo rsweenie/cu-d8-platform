@@ -1,6 +1,12 @@
 .layout__region--right,
 .program_rail {
   height: 100%;
+
+  .hub-resource-field--type-hub-text-long {
+    a[class*="btn-"] {
+      margin-bottom: 2em;
+    }
+  }
 }
 
 .field--name-hub-field-hub-degree-intro {
@@ -19,6 +25,10 @@
 
   > .block {
     margin: 1em 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     p,
     ul {
@@ -111,8 +121,17 @@
 }
 
 .prog_left {
+  padding-bottom: #{$gutter}rem;
   @media #{$mediaMd} {
     margin-right: #{$gutter * 2}rem;
+    padding-bottom: #{$gutter * 4}rem;
+  }
+}
+
+.program_rail,
+.prog_left {
+  @media #{$mediaFullHeader} {
+    padding-top: 38px;
   }
 }
 
@@ -163,4 +182,111 @@
 .hub-resource-field--name-field-hub-adm-rep-name {
   text-transform: uppercase;
   font-weight: 600;
+}
+
+
+.course-date {
+  @include flex($ff: row nowrap);
+  padding: 12px 0;
+
+  @media #{$mediaLg} {
+    padding: 20px 0;
+  }
+
+  .field + .field & {
+    border-top: 1px solid $gray5;
+  }
+
+  > div {
+    //transition: all 5s;
+    &:first-child {
+      width: 48px;
+      flex: 0 0 48px;
+      color: $white;
+      text-align: center;
+      font-family: $headingFF;
+      font-weight: bold;
+
+      @media #{$mediaLg} {
+        width: 70px;
+        flex: 0 0 70px;
+      }
+
+      > div {
+      }
+
+      time {
+        > div {
+          width: 100%;
+          height: 56px;
+          background: $secondary;
+          @include flex($jc: center, $ff: column nowrap);
+
+          @media #{$mediaLg} {
+            height: 82px;
+          }
+        }
+        span {
+          line-height: 1em;
+          &:first-child {
+            font-size: 22px;
+            margin-bottom: (3 / 22) * -1em;
+
+            @media #{$mediaLg} {
+              font-size: 32px;
+            }
+          }
+
+          &:last-child {
+            font-size: 12px;
+            @include letterSpacing(50);
+            text-transform: uppercase;
+
+            @media #{$mediaLg} {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      flex-grow: 1;
+      font-size: 16px;
+      line-height: 1.3em;
+      padding-left: 14px;
+      color: $gray2;
+
+      a {
+        color: $gray2;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: .1em;
+        display: inline-block;
+
+        &:after {
+          @include iconfont;
+          content: "\E01C";
+          display: inline-block;
+          margin-left: (15 / 20) * 1em;
+          transform: translate(0, (4 / 20) * 1em);
+          transition: all .25s;
+        }
+
+
+
+        @include hover {
+          color: $secondary;
+
+          &:after {
+            transform: translate(.25em, (4 / 20) * 1em);
+          }
+        }
+      }
+
+      @media #{$mediaLg} {
+        font-size: 20px;
+      }
+    }
+  }
 }

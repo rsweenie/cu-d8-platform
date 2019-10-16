@@ -10,12 +10,14 @@
 @import 'feeds/_basic';
 @import 'feeds/_profile';
 @import 'feeds/_tile';
+@import 'feeds/_news-featured';
 @import 'detail';
 // LATEST FEED
 @import '_latest';
 // FEATURED FEED
-@import 'featured/_carousel';
-@import 'featured/_related';
+// @import 'featured/_carousel';
+// @import 'featured/_related';
+@import 'featured/_featured';
 @import 'featured/_faculty';
 @import 'programs/_programs';
 //@import 'featured/_flex';
@@ -23,8 +25,8 @@
 //@import 'featured/_grid-offset';
 //@import 'featured/_item';
 // FEED FACETS AND ARCHIVES
-//@import '_filters-archive';
-@import 'archives/_dropdown-bar';
+@import '_filters-archive';
+//@import 'archives/_dropdown-bar';
 // FEATURED ITEM
 // DETAIL
 //@import '_detail';

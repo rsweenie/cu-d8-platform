@@ -1,9 +1,0 @@
-uuid: 46926396-9183-4790-99a9-59206d765803
-langcode: en
-status: true
-dependencies: {  }
-id: quote_ref
-label: Quote
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

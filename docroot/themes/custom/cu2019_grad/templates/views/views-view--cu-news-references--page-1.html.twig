@@ -52,24 +52,46 @@
     } %}
   {% endif %}
   {{ title_suffix }}
-  {% if header %}
-    <div class="view-header">
-      {{ header }}
-    </div>
-  {% endif %}
   {% if attachment_before %}
     <div class="attachment attachment-before">
-      {{ attachment_before }}
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            {{ attachment_before }}
+          </div>
+        </div>
+      </div>
     </div>
   {% endif %}
   {% if exposed %}
-    <div class="view-filters">
-      {{ exposed }}
+    <div class="section listing-filters">
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="listing-filters-toggle">
+            <span class="icon icon-filter"></span>
+            <span>See Search and Filters</span>
+          </button>
+          <div class="view-filters">
+            {{ exposed }}
+          </div>
+        </div>
+      </div>
     </div>
+  {% endif %}
+  {% if header %}
+  <div class="section listing-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="view-header">
+          {{ header }}
+        </div>
+      </div>
+    </div>
+  </div>
   {% endif %}
 
   {% if rows %}
-    <div class="view-content">
+    <div class="news-listing section">
       {{ rows }}
     </div>
   {% elseif empty %}
@@ -79,7 +101,13 @@
   {% endif %}
 
   {% if pager %}
-    {{ pager }}
+    <div class="section">
+      <div class="row">
+        <div class="col-xs-12">
+          {{ pager }}
+        </div>
+      </div>
+    </div>
   {% endif %}
   {% if attachment_after %}
     <div class="attachment attachment-after">

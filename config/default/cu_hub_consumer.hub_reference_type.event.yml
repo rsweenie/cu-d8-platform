@@ -1,0 +1,15 @@
+uuid: 0c815566-8724-4e8c-925b-12d7ef52b556
+langcode: en
+status: true
+dependencies: {  }
+id: event
+label: Event
+description: ''
+source: 'node:hub_event'
+source_configuration:
+  source_field: hub_uuid
+field_map:
+  field_hub_event_date: field_event_date
+  field_hub_event_featured: field_featured
+  field_hub_event_location: field_event_location
+  field_hub_event_type: field_event_type

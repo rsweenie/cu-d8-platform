@@ -1,0 +1,22 @@
+uuid: 80dc29d1-ad14-4d5a-8d15-08e98d27f79d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.grad_quote
+id: node.grad_quote.promote
+field_name: promote
+entity_type: node
+bundle: grad_quote
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

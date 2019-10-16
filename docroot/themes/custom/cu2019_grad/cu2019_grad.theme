@@ -3,6 +3,7 @@
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\TypedData\Plugin\DataType\DateTimeIso8601;
+use Drupal\Core\Url;
 use Drupal\datetime\DateTimeComputed;
 use Drupal\datetime_range\Plugin\Field\FieldType\DateRangeFieldItemList;
 use Drupal\taxonomy\Entity\Term;
@@ -144,6 +145,65 @@ function cu2019_grad_preprocess_paragraph(&$variables) {
 
 }
 
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cu2019_grad_theme_suggestions_field_alter(&$suggestions, $variables) {
+  $element = $variables['element'];
+
+  $field_name = $element['#field_name'];
+  $view_mode = $element['#view_mode'];
+  $entity_type = $element['#entity_type'];
+  $bundle = $element['#bundle'];
+
+  // Add view mode based suggestions if this view mode doesn't use layout builder.
+  if (strpos($view_mode, 'layout_builder-') !== 0) {
+    $suggestions[] = 'field__' . $field_name . '__' . $view_mode;
+    $suggestions[] = 'field__' . $entity_type . '__' . $field_name . '__' . $view_mode;
+    $suggestions[] = 'field__' . $entity_type . '__' . $field_name . '__' . $bundle . '__' . $view_mode;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_field(&$variables) {
+  // Get the URL of the parent entity.
+  if (!empty($variables['element']['#object'])) {
+    $entity = $variables['element']['#object'];
+
+    // In the case of a paragraph we actually want the parent entity.
+    $entity = _cu2019_grad_find_root_entity($entity);
+
+    try {
+      $variables['entity_url'] = $entity->toUrl('canonical')->toString();
+    }
+    catch (\Exception $e) {
+      // We don't need to do anything if a canonical isn't available.
+    }
+  }
+}
+
+/**
+ * Get the root entity.
+ *
+ * Will recurse through things like paragraphs till we hit a regular entity.
+ *
+ * @param mixed $entity
+ * @return mixed
+ */
+function _cu2019_grad_find_root_entity($entity) {
+  // There might be paragraphs within paragraphs, so let's follow it back to a node.
+  if ($entity && ($entity->getEntityTypeId() == 'paragraph')) {
+    $entity = _cu2019_grad_find_root_entity($entity->getParentEntity());
+  }
+
+  return $entity;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function cu2019_grad_preprocess_views_view(&$variables) {
   $variables['breadcrumb_links'] = \Drupal::service('breadcrumb')->build(\Drupal::routeMatch())->getLinks();
 }
@@ -153,17 +213,16 @@ function cu2019_grad_preprocess_views_view(&$variables) {
  */
 function cu2019_grad_preprocess_hub_resource_field__field_hub_fac_spotlight_type(&$variables) {
   $value = &$variables['items'][0]['content']['#context']['value'];
-  switch ($value) {
-    case 'fac':
-      $value = 'Faculty spotlight';
-      break;
-    case 'alum':
-      $value = 'Alumni spotlight';
-      break;
-    default:
-      $value = '';
-      break;
-  }
+  $value = _cu2019_grad_faculty_spotlight_type($value);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_node__faculty_alumni_spotlight(&$variables) {
+  $type = $variables['node']->get('field_fac_spotlight_type')->first()->getValue()['value'];
+  $variables['highlite_tag'] = _cu2019_grad_faculty_spotlight_type($type);
+  return;
 }
 
 /**
@@ -174,6 +233,32 @@ function cu2019_grad_preprocess_hub_resource_field__paragraph_course_date__field
     $date =  new Datetime($item['content']['#attributes']['datetime']);
     $variables['items'][$key]['content']['month'] = $date->format('M');
     $variables['items'][$key]['content']['day'] = $date->format('j');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_hub_resource__taxonomy_term__program_availability(&$variables) {
+  $name = $variables['resource_obj']->getProcessedData()['name']->get(0)->getValue();
+
+  if ($name == 'Hybrid') {
+    $variables['content']['#markup'] = 'On-Campus and Online';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_paragraph__grad_feature_tile_item(&$variables) {
+  if (isset($variables['content']['field_tile_item_file_link']['#items'])) {
+    $file_id = $variables['content']['field_tile_item_file_link'][0]['#media']->get('field_document')->first()->getValue()['target_id'];
+    $file = Drupal::service('entity_type.manager')->getStorage('file')->load($file_id);
+
+    $variables['tile_link'] = $file->createFileUrl();
+  }
+  else {
+    $variables['tile_link'] = $variables['content']['field_tile_item_link'][0]['#url']->toString();
   }
 }
 
@@ -242,4 +327,27 @@ function _cu2019_grad_get_menu_sibling_tree($menu_name = 'main') {
 
     return $build;
   }
+}
+
+/**
+ * Determines the correct wording for faculty spotlight type fields.
+ *
+ * @param string $type
+ *  Acceptable values are fac or alum
+ * @return string
+ */
+function _cu2019_grad_faculty_spotlight_type($type = NULL) {
+  switch ($type) {
+    case 'fac':
+      $value = 'Faculty spotlight';
+      break;
+    case 'alum':
+      $value = 'Alumni spotlight';
+      break;
+    default:
+      $value = '';
+      break;
+  }
+
+  return $value;
 }

@@ -8,6 +8,9 @@ cu_hub_consumer.settings:
     hub_base_url:
       type: uri
       label: 'Hub base URI'
+    hub_site_uuid:
+      type: string
+      label: 'UUID of the site entity on hub'
     cron:
       type: mapping
       label: 'Cron settings'
@@ -118,5 +121,9 @@ cu_hub_consumer.resource_type_definition.*:
             type: string
           hub_type: 
             type: string
+          hub_bundles: 
+            type: sequence
+            sequence:
+              type: string
           multiple: 
             type: boolean

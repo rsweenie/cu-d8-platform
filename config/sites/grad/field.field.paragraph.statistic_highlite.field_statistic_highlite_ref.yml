@@ -1,0 +1,28 @@
+uuid: 5a74f919-3959-4783-be65-5d255132aa0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_statistic_highlite_ref
+    - node.type.grad_statistic_highlite
+    - paragraphs.paragraphs_type.statistic_highlite
+id: paragraph.statistic_highlite.field_statistic_highlite_ref
+field_name: field_statistic_highlite_ref
+entity_type: paragraph
+bundle: statistic_highlite
+label: 'Statistic Highlite'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      grad_statistic_highlite: grad_statistic_highlite
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

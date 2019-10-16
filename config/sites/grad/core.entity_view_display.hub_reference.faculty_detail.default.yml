@@ -101,7 +101,7 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: basic_string
+                type: email_mailto
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:
@@ -152,13 +152,37 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: basic_string
-                settings: {  }
+                type: telephone_link
+                settings:
+                  title: ''
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
             weight: 4
+          4f92d981-aced-4931-8f7a-73ce2d7bda76:
+            uuid: 4f92d981-aced-4931-8f7a-73ce2d7bda76
+            region: middle
+            configuration:
+              id: 'field_block:hub_reference:faculty_detail:hub_field_hub_faculty_provost_url'
+              label: 'Hub: field_hub_faculty_provost_url'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: link
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: nofollow
+                  target: _blank
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 5
         third_party_settings: {  }
       -
         layout_id: layout_onecol

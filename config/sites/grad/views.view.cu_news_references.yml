@@ -71,8 +71,9 @@ display:
                 bef_select_all_none: false
                 bef_collapsible: false
                 is_secondary: false
+                placeholder_text: ''
                 rewrite:
-                  filter_rewrite_values: '- Any -|Type'
+                  filter_rewrite_values: ''
           text_input_required_format: rich_text
       pager:
         type: full
@@ -276,11 +277,19 @@ display:
         - 'languages:language_interface'
         - url.query_args
       tags:
+        - 'config:core.entity_view_display.hub_reference.blog.default'
+        - 'config:core.entity_view_display.hub_reference.blog.featured'
+        - 'config:core.entity_view_display.hub_reference.blog.listing'
+        - 'config:core.entity_view_display.hub_reference.degree.default'
+        - 'config:core.entity_view_display.hub_reference.event.default'
+        - 'config:core.entity_view_display.hub_reference.event.featured'
+        - 'config:core.entity_view_display.hub_reference.event.listing'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
-        - 'config:core.entity_view_display.hub_reference.degree.default'
-        - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.pd_course.default'
         - 'config:core.entity_view_display.hub_reference.program.default'
   attachment_1:
     display_plugin: attachment
@@ -485,11 +494,19 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
       tags:
+        - 'config:core.entity_view_display.hub_reference.blog.default'
+        - 'config:core.entity_view_display.hub_reference.blog.featured'
+        - 'config:core.entity_view_display.hub_reference.blog.listing'
         - 'config:core.entity_view_display.hub_reference.degree.default'
+        - 'config:core.entity_view_display.hub_reference.event.default'
+        - 'config:core.entity_view_display.hub_reference.event.featured'
+        - 'config:core.entity_view_display.hub_reference.event.listing'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
+        - 'config:core.entity_view_display.hub_reference.pd_course.default'
         - 'config:core.entity_view_display.hub_reference.program.default'
   block_1:
     display_plugin: block
@@ -695,11 +712,19 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
       tags:
+        - 'config:core.entity_view_display.hub_reference.blog.default'
+        - 'config:core.entity_view_display.hub_reference.blog.featured'
+        - 'config:core.entity_view_display.hub_reference.blog.listing'
         - 'config:core.entity_view_display.hub_reference.degree.default'
+        - 'config:core.entity_view_display.hub_reference.event.default'
+        - 'config:core.entity_view_display.hub_reference.event.featured'
+        - 'config:core.entity_view_display.hub_reference.event.listing'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
+        - 'config:core.entity_view_display.hub_reference.pd_course.default'
         - 'config:core.entity_view_display.hub_reference.program.default'
   page_1:
     display_plugin: page
@@ -709,7 +734,17 @@ display:
     display_options:
       display_extenders: {  }
       path: hub-news
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          content: 'Showing @start-@end of @total'
+          plugin_id: result
       defaults:
         header: false
         empty: false
@@ -835,12 +870,24 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
+          handler: 'default:taxonomy_term'
+          handler_settings:
+            target_bundles:
+              news_type: news_type
+            sort:
+              field: name
+              direction: asc
+            auto_create: false
+            auto_create_bundle: ''
+          widget: select
+          list_max: 30
+          hierarchy: false
+          error_message: true
           type: select
           limit: true
           vid: news_type
-          hierarchy: false
-          error_message: true
           plugin_id: taxonomy_index_tid
+          handler_submit: 'Change handler'
       filter_groups:
         operator: AND
         groups:
@@ -854,9 +901,17 @@ display:
         - url.query_args
         - user
       tags:
+        - 'config:core.entity_view_display.hub_reference.blog.default'
+        - 'config:core.entity_view_display.hub_reference.blog.featured'
+        - 'config:core.entity_view_display.hub_reference.blog.listing'
         - 'config:core.entity_view_display.hub_reference.degree.default'
+        - 'config:core.entity_view_display.hub_reference.event.default'
+        - 'config:core.entity_view_display.hub_reference.event.featured'
+        - 'config:core.entity_view_display.hub_reference.event.listing'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
+        - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
+        - 'config:core.entity_view_display.hub_reference.pd_course.default'
         - 'config:core.entity_view_display.hub_reference.program.default'

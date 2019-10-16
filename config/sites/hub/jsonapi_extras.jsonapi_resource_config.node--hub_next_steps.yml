@@ -123,6 +123,12 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  field_metadata:
+    fieldName: field_metadata
+    publicName: field_metadata
+    enhancer:
+      id: ''
+    disabled: false
   scheduled_transition_date:
     disabled: true
     fieldName: scheduled_transition_date
@@ -136,11 +142,11 @@ resourceFields:
     enhancer:
       id: ''
   metatag:
+    disabled: true
     fieldName: metatag
     publicName: metatag
     enhancer:
       id: ''
-    disabled: false
   metatag_normalized:
     fieldName: metatag_normalized
     publicName: metatag_normalized
