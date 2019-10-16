@@ -3,7 +3,7 @@
     TESTIMONIALS/QUOTES - QUOTE LEFT
 
 \*  --------------------------------------------------------------------------  */
-&.q-left {
+.q-left & {
     // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
     position: relative;
     // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
@@ -73,7 +73,7 @@
         height: 40px;
 
         position: absolute;
-        top: 10px;
+        top: 21px;
         left: calc(50% - 32px);
 
         content: "“";
@@ -87,7 +87,7 @@
           width: 84px;
           height: 84px;
           left: calc(50% - 42px);
-          top: 37px;
+          top: 56px;
           font-size: 162px;
           line-height: 153px;
         }

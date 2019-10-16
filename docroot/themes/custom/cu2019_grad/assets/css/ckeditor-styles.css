@@ -4676,7 +4676,7 @@ blockquote {
 
 .copy-block .embedded-entity blockquote,
 .cke_editable .embedded-entity blockquote,
-blockquote.quote-box {
+.quote-box blockquote {
   color: #002E6D;
   position: relative;
   background: #5D6468;
@@ -4687,7 +4687,7 @@ blockquote.quote-box {
 
 .copy-block .embedded-entity blockquote:after,
 .cke_editable .embedded-entity blockquote:after,
-blockquote.quote-box:after {
+.quote-box blockquote:after {
   width: calc(100% - 1.6rem);
   height: calc(100% - 1.6rem);
   position: absolute;
@@ -4702,7 +4702,7 @@ blockquote.quote-box:after {
 
 .copy-block .embedded-entity blockquote a,
 .cke_editable .embedded-entity blockquote a,
-blockquote.quote-box a {
+.quote-box blockquote a {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -4712,7 +4712,7 @@ blockquote.quote-box a {
 
 .copy-block .embedded-entity blockquote a:hover,
 .cke_editable .embedded-entity blockquote a:hover,
-blockquote.quote-box a:hover {
+.quote-box blockquote a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -4720,7 +4720,7 @@ blockquote.quote-box a:hover {
 
 .copy-block .embedded-entity blockquote p,
 .cke_editable .embedded-entity blockquote p,
-blockquote.quote-box p {
+.quote-box blockquote p {
   margin-bottom: 1em;
 }
 
@@ -4728,7 +4728,7 @@ blockquote.quote-box p {
 
 .copy-block .embedded-entity blockquote .quote-inner,
 .cke_editable .embedded-entity blockquote .quote-inner,
-blockquote.quote-box .quote-inner {
+.quote-box blockquote .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4745,13 +4745,13 @@ blockquote.quote-box .quote-inner {
 
 .copy-block .embedded-entity blockquote .quote-inner:before,
 .cke_editable .embedded-entity blockquote .quote-inner:before,
-blockquote.quote-box .quote-inner:before {
+.quote-box blockquote .quote-inner:before {
   width: 3.9rem;
   height: 3.9rem;
   font-size: 7rem;
   position: absolute;
-  top: 1.6rem;
-  left: 1.6rem;
+  top: 1rem;
+  left: 1rem;
   content: "“";
   color: white;
   background: transparent;
@@ -4759,22 +4759,23 @@ blockquote.quote-box .quote-inner:before {
   font-family: "Conduit";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   border-width: 0 2px 2px 0;
+  padding-top: 0.5rem;
   text-align: center;
 }
 
-/* line 80, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+/* line 83, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
 .cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
-blockquote.quote-box .quote-inner .field--name-field-quote-box-photo {
+.quote-box blockquote .quote-inner .field--name-field-quote-box-photo {
   display: none;
 }
 
-/* line 85, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+/* line 88, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .card .copy-block .embedded-entity blockquote .quote-inner img,
 .card .cke_editable .embedded-entity blockquote .quote-inner img,
-.card blockquote.quote-box .quote-inner img {
+.card .quote-box blockquote .quote-inner img {
   width: auto;
   height: auto;
   max-width: 160px;
@@ -4783,48 +4784,56 @@ blockquote.quote-box .quote-inner .field--name-field-quote-box-photo {
 
 /* line 44, src/sass/components/basic/_quotes.scss */
 
-.copy-block .embedded-entity blockquote .quote,
-.cke_editable .embedded-entity blockquote .quote,
-blockquote.quote-box .quote {
-  font-size: 2.2rem;
+.copy-block .embedded-entity blockquote .field--name-field-grad-quote-image,
+.cke_editable .embedded-entity blockquote .field--name-field-grad-quote-image,
+.quote-box blockquote .field--name-field-grad-quote-image {
+  display: none;
 }
 
 /* line 48, src/sass/components/basic/_quotes.scss */
 
+.copy-block .embedded-entity blockquote .quote,
+.cke_editable .embedded-entity blockquote .quote,
+.quote-box blockquote .quote {
+  font-size: 2.2rem;
+}
+
+/* line 52, src/sass/components/basic/_quotes.scss */
+
 .copy-block .embedded-entity blockquote .attr,
 .cke_editable .embedded-entity blockquote .attr,
-blockquote.quote-box .attr {
+.quote-box blockquote .attr {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
 }
 
-/* line 53, src/sass/components/basic/_quotes.scss */
+/* line 57, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
 .cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
-blockquote.quote-box .attr .field--name-field-quote-box-affiliation {
+.quote-box blockquote .attr .field--name-field-quote-box-affiliation {
   font-weight: 400;
 }
 
-/* line 79, src/sass/components/basic/_quotes.scss */
+/* line 83, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote,
 .cke_editable .embedded-entity blockquote {
   max-width: 425px;
 }
 
-/* line 84, src/sass/components/basic/_quotes.scss */
+/* line 88, src/sass/components/basic/_quotes.scss */
 
-blockquote.quote-box {
+.quote-box blockquote {
   margin-bottom: 0;
   width: 100%;
   height: 100%;
 }
 
-/* line 89, src/sass/components/basic/_quotes.scss */
+/* line 93, src/sass/components/basic/_quotes.scss */
 
-blockquote.quote-box .quote-inner {
+.quote-box blockquote .quote-inner {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4838,7 +4847,13 @@ blockquote.quote-box .quote-inner {
           justify-content: center;
 }
 
-/* line 148, src/sass/components/basic/_quotes.scss */
+/* line 110, src/sass/components/basic/_quotes.scss */
+
+.quote-box blockquote .field--name-field-grad-quote-source-name {
+  display: inline;
+}
+
+/* line 119, src/sass/components/basic/_quotes.scss */
 
 blockquote .quote {
   color: white;
@@ -4847,7 +4862,7 @@ blockquote .quote {
 
 /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left {
+.q-left blockquote {
   position: relative;
   background: #0054A6;
   color: #fff;
@@ -4855,7 +4870,7 @@ blockquote.q-left {
 
 /* line 20, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left a {
+.q-left blockquote a {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -4863,19 +4878,19 @@ blockquote.q-left a {
 
 /* line 25, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left a:hover {
+.q-left blockquote a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
 /* line 30, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left p {
+.q-left blockquote p {
   margin-bottom: 1em;
 }
 
 /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote-inner {
+.q-left blockquote .quote-inner {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4889,7 +4904,7 @@ blockquote.q-left .quote-inner {
 
 /* line 54, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote-inner:before {
+.q-left blockquote .quote-inner:before {
   width: calc(100% - 5rem);
   height: 0.1rem;
   position: absolute;
@@ -4902,11 +4917,11 @@ blockquote.q-left .quote-inner:before {
 
 /* line 71, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote-inner:after {
+.q-left blockquote .quote-inner:after {
   width: 6.4rem;
   height: 4rem;
   position: absolute;
-  top: 1rem;
+  top: 2.1rem;
   left: calc(50% - 3.2rem);
   content: "“";
   background: #0054A6;
@@ -4918,7 +4933,7 @@ blockquote.q-left .quote-inner:after {
 
 /* line 97, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-.card blockquote.q-left .quote-inner img {
+.card .q-left blockquote .quote-inner img {
   width: auto;
   height: auto;
   max-width: 160px;
@@ -4927,7 +4942,7 @@ blockquote.q-left .quote-inner:after {
 
 /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote {
+.q-left blockquote .quote {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -4936,13 +4951,13 @@ blockquote.q-left .quote {
 
 /* line 118, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .quote:only-child {
+.q-left blockquote .quote:only-child {
   padding: 0;
 }
 
 /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .field--name-field-quote-quote {
+.q-left blockquote .field--name-field-quote-quote {
   font-size: 1.8rem;
   line-height: 1.2em;
   font-weight: 600;
@@ -4950,7 +4965,7 @@ blockquote.q-left .field--name-field-quote-quote {
 
 /* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .attr {
+.q-left blockquote .attr {
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.2em;
@@ -4958,14 +4973,14 @@ blockquote.q-left .attr {
 
 /* line 153, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .attr small {
+.q-left blockquote .attr small {
   font-size: 1em;
   font-weight: 500;
 }
 
 /* line 157, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-blockquote.q-left .attr div {
+.q-left blockquote .attr div {
   display: inline;
 }
 
@@ -5314,7 +5329,13 @@ blockquote .tooltip-trigger {
 .feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items,
 .feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item,
 .feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div,
-.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource {
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource,
+.feat-tiles .hub-resource--type-paragraph-hub-quote-ref,
+.feat-tiles .hub-resource-field--name-field-hub-quote-ref-item,
+.feat-tiles .hub-resource-field--name-field-hub-quote-ref-item > .hub-resource-field__item,
+.feat-tiles .quote-box,
+.feat-tiles .field--name-field-quote-ref,
+.feat-tiles .node--type-grad-quote {
   height: 100%;
 }
 
@@ -5344,7 +5365,7 @@ blockquote .tooltip-trigger {
   display: none;
 }
 
-/* line 97, src/sass/components/basic/_feat-tiles.scss */
+/* line 106, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io,
 .hub_img,
@@ -5367,7 +5388,7 @@ blockquote .tooltip-trigger {
   pointer-events: none;
 }
 
-/* line 107, src/sass/components/basic/_feat-tiles.scss */
+/* line 116, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io:before,
 .fci:before {
@@ -5381,7 +5402,7 @@ blockquote .tooltip-trigger {
   z-index: 10;
 }
 
-/* line 127, src/sass/components/basic/_feat-tiles.scss */
+/* line 136, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -13095,7 +13116,7 @@ form.search .search button {
 
   /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .quote {
+  .q-left blockquote .quote {
     padding-left: 4.6rem;
   }
 
@@ -14279,7 +14300,7 @@ form.search .search button {
 
   .copy-block .embedded-entity blockquote:after,
   .cke_editable .embedded-entity blockquote:after,
-  blockquote.quote-box:after {
+  .quote-box blockquote:after {
     width: calc(100% - 3rem);
     height: calc(100% - 3rem);
     top: 1.5rem;
@@ -14290,7 +14311,7 @@ form.search .search button {
 
   .copy-block .embedded-entity blockquote .quote-inner,
   .cke_editable .embedded-entity blockquote .quote-inner,
-  blockquote.quote-box .quote-inner {
+  .quote-box blockquote .quote-inner {
     padding: 10rem 4.2rem 4.6rem;
   }
 
@@ -14298,22 +14319,24 @@ form.search .search button {
 
   .copy-block .embedded-entity blockquote .quote-inner:before,
   .cke_editable .embedded-entity blockquote .quote-inner:before,
-  blockquote.quote-box .quote-inner:before {
+  .quote-box blockquote .quote-inner:before {
     width: 5.9rem;
     height: 5.9rem;
+    top: 1.6rem;
+    left: 1.6rem;
     font-size: 10.5rem;
-    line-height: 1;
+    padding-top: 1rem;
   }
 
   /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .quote-inner {
+  .q-left blockquote .quote-inner {
     padding: 13.1rem 8.1rem 7.2rem 8.1rem;
   }
 
   /* line 54, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .quote-inner:before {
+  .q-left blockquote .quote-inner:before {
     width: calc(100% - 16.2rem);
     top: 7.9rem;
     left: 8.1rem;
@@ -14321,18 +14344,18 @@ form.search .search button {
 
   /* line 71, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .quote-inner:after {
+  .q-left blockquote .quote-inner:after {
     width: 8.4rem;
     height: 8.4rem;
     left: calc(50% - 4.2rem);
-    top: 3.7rem;
+    top: 5.6rem;
     font-size: 16.2rem;
     line-height: 15.3rem;
   }
 
   /* line 463, src/sass/base/_mixins.scss */
 
-  blockquote.q-left:after {
+  .q-left blockquote:after {
     width: calc(100% - 1.6rem);
     height: calc(100% - 1.6rem);
     position: absolute;
@@ -14345,7 +14368,7 @@ form.search .search button {
 
   /* line 144, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .attr {
+  .q-left blockquote .attr {
     font-size: 1.6rem;
   }
 
@@ -14513,7 +14536,7 @@ form.search .search button {
     left: 1.5rem;
   }
 
-  /* line 107, src/sass/components/basic/_feat-tiles.scss */
+  /* line 116, src/sass/components/basic/_feat-tiles.scss */
 
   .stat_hl_io:before,
   .fci:before {
@@ -14858,7 +14881,7 @@ form.search .search button {
 
   /* line 463, src/sass/base/_mixins.scss */
 
-  blockquote.q-left:after {
+  .q-left blockquote:after {
     width: calc(100% - 3rem);
     height: calc(100% - 3rem);
     top: 1.5rem;
@@ -15307,7 +15330,7 @@ form.search .search button {
 
   /* line 123, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .field--name-field-quote-quote {
+  .q-left blockquote .field--name-field-quote-quote {
     font-size: 3rem;
   }
 
@@ -17938,20 +17961,20 @@ form.search .search button {
 
   .copy-block .embedded-entity blockquote,
   .cke_editable .embedded-entity blockquote,
-  blockquote.quote-box {
+  .quote-box blockquote {
     margin-left: -2.5rem;
     margin-right: -2.5rem;
   }
 
-  /* line 96, src/sass/components/basic/_quotes.scss */
+  /* line 100, src/sass/components/basic/_quotes.scss */
 
-  .feat-tiles blockquote.quote-box {
+  .feat-tiles .quote-box blockquote {
     margin: 0;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left {
+  .q-left blockquote {
     margin-left: -2.5rem;
     margin-right: -2.5rem;
   }
@@ -17986,7 +18009,7 @@ form.search .search button {
 @media screen and (max-width: 575.9px) {
   /* line 133, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .field--name-field-quote-image {
+  .q-left blockquote .field--name-field-quote-image {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 20%;
             flex: 0 0 20%;
@@ -17994,7 +18017,7 @@ form.search .search button {
 
   /* line 137, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left .field--name-field-quote-image img {
+  .q-left blockquote .field--name-field-quote-image img {
     width: 100%;
     height: auto;
   }
@@ -18069,19 +18092,19 @@ form.search .search button {
 
   .copy-block .embedded-entity blockquote,
   .cke_editable .embedded-entity blockquote,
-  blockquote.quote-box {
+  .quote-box blockquote {
     margin: 0 -2.5rem 1.5rem;
   }
 
-  /* line 96, src/sass/components/basic/_quotes.scss */
+  /* line 100, src/sass/components/basic/_quotes.scss */
 
-  .feat-tiles blockquote.quote-box {
+  .feat-tiles .quote-box blockquote {
     margin: 0;
   }
 
   /* line 6, src/sass/components/basic/quotes/direction/_quote-left.scss */
 
-  blockquote.q-left {
+  .q-left blockquote {
     margin: 0 -2.5rem 1.5rem;
   }
 }
