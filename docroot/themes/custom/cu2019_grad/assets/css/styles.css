@@ -12163,14 +12163,42 @@ aside .news-listing-row h2 ~ .h4 {
   display: block;
 }
 
-/* line 41, src/sass/components/feeds-detail/faculty/_faculty.scss */
+/* line 40, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .views-row .field--name-hub-field-hub-faculty-image {
+  position: relative;
+}
+
+/* line 44, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .views-row .field--name-hub-field-hub-faculty-image a:after {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background: rgba(1, 156, 219, 0);
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 56, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .views-row .field--name-hub-field-hub-faculty-image a:hover:after,
+.fac-listing .views-row .field--name-hub-field-hub-faculty-image a:focus:after {
+  height: 0.8rem;
+  background: #019cdb;
+}
+
+/* line 75, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
 .fac-listing h2,
 .fac-listing a {
   color: #0054A6;
 }
 
-/* line 46, src/sass/components/feeds-detail/faculty/_faculty.scss */
+/* line 80, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
 .fac-listing h2 {
   font-size: 1.6rem;
@@ -12180,7 +12208,7 @@ aside .news-listing-row h2 ~ .h4 {
   text-transform: uppercase;
 }
 
-/* line 59, src/sass/components/feeds-detail/faculty/_faculty.scss */
+/* line 93, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
 .fac-listing a {
   text-decoration: none;
@@ -12190,10 +12218,10 @@ aside .news-listing-row h2 ~ .h4 {
 
 .fac-listing a:hover,
 .fac-listing a:focus {
-  text-decoration: underline;
+  color: #019cdb;
 }
 
-/* line 66, src/sass/components/feeds-detail/faculty/_faculty.scss */
+/* line 100, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
 .fac-listing h3 {
   font-size: 1.3rem;
@@ -12201,9 +12229,28 @@ aside .news-listing-row h2 ~ .h4 {
   font-family: proxima-nova, sans-serif;
   text-transform: none;
   color: #555555;
+  margin-bottom: 0.7rem;
 }
 
-/* line 85, src/sass/components/feeds-detail/faculty/_faculty.scss */
+/* line 113, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .email-phone {
+  line-height: 1.25em;
+}
+
+/* line 154, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .email-phone .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 0;
+  font-size: 1.8rem;
+}
+
+/* line 171, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
 .field--name-hub-field-hub-faculty-email a,
 .field--name-hub-field-hub-faculty-phone a {
@@ -14881,14 +14928,14 @@ form.search .search button {
     padding: 2.5rem;
   }
 
-  /* line 46, src/sass/components/feeds-detail/faculty/_faculty.scss */
+  /* line 80, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
   .fac-listing h2 {
     font-size: 1.9rem;
     line-height: 1em;
   }
 
-  /* line 66, src/sass/components/feeds-detail/faculty/_faculty.scss */
+  /* line 100, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
   .fac-listing h3 {
     font-size: 1.6rem;
@@ -16847,6 +16894,12 @@ form.search .search button {
     padding: 0 1rem;
   }
 
+  /* line 154, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .email-phone .icon {
+    display: none;
+  }
+
   /* line 6, src/sass/components/forms/search/_form.scss */
 
   form.search {
@@ -17711,6 +17764,60 @@ form.search .search button {
   .listing-filters .row,
   .listing-filters [class*="col-"] {
     padding: 0;
+  }
+
+  /* line 113, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .email-phone {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+
+  /* line 119, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .email-phone a {
+    width: 5rem;
+    height: 3.5rem;
+    border: 0.1rem solid #DADADA;
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* line 130, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .email-phone > div {
+    position: relative;
+  }
+
+  /* line 134, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .email-phone > div:first-child a {
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+  }
+
+  /* line 140, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .email-phone > div:last-child a {
+    border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+  }
+
+  /* line 147, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .email-phone > div + div a {
+    border-left: 0;
   }
 
   /* line 32, src/sass/components/forms/search/_form.scss */
