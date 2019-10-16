@@ -1,0 +1,9 @@
+uuid: 7295e7b8-890c-4a43-9647-d7bac820578c
+langcode: en
+status: true
+dependencies: {  }
+id: statistic_highlight
+label: 'Statistic Highlight'
+icon_uuid: null
+description: 'Component bridge for Statistic Highlight nodes.'
+behavior_plugins: {  }

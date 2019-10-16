@@ -1,0 +1,91 @@
+uuid: 3dfb7bbb-787f-4e41-a491-cc4f9c9c583e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.hub_reference.listing
+    - cu_hub_consumer.hub_reference_type.faculty_detail
+    - field.field.hub_reference.faculty_detail.field_faculty_detail_namestring
+  module:
+    - cu_hub_consumer
+    - layout_builder
+    - layout_builder_restrictions
+    - name
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks: {  }
+      allowed_layouts: {  }
+id: hub_reference.faculty_detail.listing
+targetEntityType: hub_reference
+bundle: faculty_detail
+mode: listing
+content:
+  hub_field_hub_faculty_email:
+    type: basic_string
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_faculty_image:
+    type: hub_resource_media_image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      style_name: srcset_500px_wide
+      link_type: ''
+    third_party_settings: {  }
+  hub_field_hub_faculty_name:
+    type: name_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      format: short_full
+      list_format: ''
+      markup: none
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+  hub_field_hub_faculty_phone:
+    type: basic_string
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_field_hub_faculty_title:
+    type: basic_string
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_faculty_detail_namestring: true
+  field_faculty_detail_rel_degrees: true
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_faculty_components: true
+  hub_field_hub_faculty_degree: true
+  hub_field_hub_faculty_department: true
+  hub_field_hub_faculty_description: true
+  hub_field_hub_faculty_provost_id: true
+  hub_field_hub_faculty_provost_url: true
+  hub_field_hub_faculty_rel_degrees: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_node_type: true
+  hub_revision_timestamp: true
+  search_api_excerpt: true

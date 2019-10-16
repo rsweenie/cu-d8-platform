@@ -1,0 +1,18 @@
+uuid: f7921c6e-693f-41f4-b0b2-a1980e3d5bb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_news
+id: node.hub_news.title
+field_name: title
+entity_type: node
+bundle: hub_news
+label: 'Administrative Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

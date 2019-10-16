@@ -1,0 +1,46 @@
+uuid: e8ed8d89-f88f-4415-89d4-6f142d0de168
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_statistic_highlight.field_hub_stat_highlight_image
+    - node.type.hub_statistic_highlight
+  module:
+    - media_library
+id: node.hub_statistic_highlight.default
+targetEntityType: node
+bundle: hub_statistic_highlight
+mode: default
+content:
+  field_hub_stat_highlight_image:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  private: true
+  promote: true
+  publish_on: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

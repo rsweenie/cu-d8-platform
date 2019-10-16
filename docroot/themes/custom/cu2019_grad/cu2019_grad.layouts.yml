@@ -19,17 +19,15 @@ generic_content:
   icon_map:
     - [main]
 
-program_detail_2col:
-  label: 'Program Detail - 2 Column'
+generic_content_full:
+  label: 'Generic Content Full-Width'
   category: 'CU 2019'
-  template: templates/layout/layout--program-detail-2col
+  template: templates/layout/layout--generic-content-full
   regions:
     main:
       label: 'Main content'
-    right:
-      label: 'Right sidebar'
   icon_map:
-    - [main, main, right]
+    - [main]
 
 program_detail_feat_tiles:
   label: 'Program Detail - Featured Tiles'
@@ -54,3 +52,13 @@ faculty_detail_3col:
       label: 'Right'
   icon_map:
     - [main, main, right]
+
+onecol_centered:
+  label: 'One Column - Centered'
+  category: 'CU 2019'
+  template: templates/layout/layout--onecol-centered
+  regions:
+    main:
+      label: 'main'
+  icon_map:
+    - [main]

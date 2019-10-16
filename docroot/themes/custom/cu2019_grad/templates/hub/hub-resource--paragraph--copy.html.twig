@@ -14,11 +14,12 @@
 {%
   set classes = [
     'hub-resource',
-    'hub-resource--type-' ~ resource_type|clean_class,
+    'hub-resource--type-' ~ resource_type|clean_class
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
+
+<section{{ attributes.addClass(classes) }}>
   {% if content.field_copy_body %}
     {{ content.field_copy_body }}
   {% endif %}
-</article>
+</section>

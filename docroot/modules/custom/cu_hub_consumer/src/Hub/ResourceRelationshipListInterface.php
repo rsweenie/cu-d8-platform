@@ -49,6 +49,13 @@ interface ResourceRelationshipListInterface extends \ArrayAccess, \IteratorAggre
   public function isMultiple();
 
   /**
+   * Returns a string representation of list values.
+   *
+   * @return string
+   */
+  public function getString();
+
+  /**
    * Filters out empty field items and re-numbers the item deltas.
    *
    * @return $this

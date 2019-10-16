@@ -1,5 +1,6 @@
 &.fac-3col {
   background: $facDetailBg;
+  border-bottom: 8px solid $tertiary;
 
   .layout__region {
     height: 100%;
@@ -15,17 +16,20 @@
     }
 
     &:before {
-      width: 100vw;
+      width: 200vw;
       height: calc(100% + #{$gutter * 2}rem);
       position: absolute;
-      left: -#{$gutter * 2}rem;
+      left: 0;
       top: -#{$gutter}rem;
       content: "";
       background: $facDetailBgRt;
+      transform: translateX(-50%);
 
       @media #{$mediaMd} {
         height: calc(100% + #{$gutter * 3}rem);
+        left: -#{$gutter * 2}rem;
         top: -#{$gutter * 1.5}rem;
+        transform: translateX(0);
       }
 
       @media #{$mediaLg} {
@@ -38,5 +42,38 @@
         top: -#{$gutter * 2.5}rem;
       }
     }
+  }
+
+  .faculty-image {
+    padding-bottom: #{$gutter}rem;
+  }
+}
+
+.layout__region--facmiddle {
+  padding-bottom: #{$gutter * 2}rem;
+  @media #{$mediaMd} {
+    padding-right: #{$gutter * 2}rem;
+  }
+
+  .field__item {
+    margin-bottom: (6 / 19) * 1em;
+
+    &.field--name-hub-field-hub-faculty-department {
+      @include h4;
+      margin-bottom: (10 / 24) * 1em;
+    }
+  }
+
+  h3.field__item {
+    line-height: .825em;
+    margin-bottom: (33 / 40) * 1em;
+    &:after {
+      bottom: (10 / 40) * -1em;
+    }
+  }
+
+  .btn-secondary {
+    margin-top: 20px;
+    min-width: 0;
   }
 }

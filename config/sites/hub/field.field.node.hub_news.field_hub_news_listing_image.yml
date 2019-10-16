@@ -1,0 +1,28 @@
+uuid: f059f04f-33b5-4d20-ab8f-128afaf533cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_news_listing_image
+    - media.type.image
+    - node.type.hub_news
+id: node.hub_news.field_hub_news_listing_image
+field_name: field_hub_news_listing_image
+entity_type: node
+bundle: hub_news
+label: 'Listing Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

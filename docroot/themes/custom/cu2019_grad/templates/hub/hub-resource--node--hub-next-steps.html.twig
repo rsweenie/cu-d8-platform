@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+<article {{ attributes.addClass(classes) }}>
+  {% if content %}
+    {% include '@cu2019_grad/components/next-steps.html.twig' with {
+      'wrapper': 'section',
+      'wrapper_class': 'ns',
+      'title': content.field_hub_next_steps_heading,
+      'items': content.field_hub_next_steps_items
+    } %}
+    {# { content.field_hub_next_steps_heading }}
+    {{ content.field_hub_next_steps_items } #}
+  {% endif %}
+</article>

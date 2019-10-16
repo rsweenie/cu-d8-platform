@@ -167,7 +167,7 @@ class HubResourceMediaImageFormatter extends FormatterBase implements ContainerF
     }
 
     foreach ($items as $delta => $item) {
-      $resource_obj = $item->value;
+      $resource_obj = $item->resource;
       if ($resource_obj instanceof ResourceInterface) {
         $resource_type = $resource_obj->getResourceTypeId();
 
