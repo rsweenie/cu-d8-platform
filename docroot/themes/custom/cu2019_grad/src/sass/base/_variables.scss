@@ -79,6 +79,7 @@ $mediaFullHeader: " screen and (min-width: #{$headerBp})"; // ALL PHONES DEVICES
 
 $darkMode: " screen and (prefers-color-scheme: dark)"; // LARGER MONITORS
 
+$mediaXxsMin: " screen and (min-width: 321px)";
 $mediaMdMax: " screen and (max-width: 767.9px)";
 $mediaLgMax: " screen and (max-width: 991.9px)";
 $mediaXlMax: " screen and (max-width: 1209.9px)";

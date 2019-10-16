@@ -43,28 +43,25 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished',
-  'section',
+  not paragraph.isPublished() ? 'paragraph--unpublished'
 ]
 %}
 {% block paragraph %}
-  <section{{ attributes.addClass(classes) }}>
-    <div>
+  <article{{ attributes.addClass(classes) }}>
+    <div class="card fci">
       {% block content %}
       {% if tile_link %}
-        <a href="{{ tile_link }}" class="card img-side">
+        <a href="{{ tile_link }}">
       {% else %}
-        <div class="card img-side">
+        <span>
       {% endif %}
-          <div class="info">
-            {{ content|without('field_tile_item_file_link', 'field_tile_item_link') }}
-          </div>
+          {{ content|without('field_tile_item_link','field_tile_item_file_link') }}
       {% if tile_link %}
         </a>
       {% else %}
-        </div>
+        </span>
       {% endif %}
       {% endblock %}
     </div>
-  </section>
+  </article>
 {% endblock paragraph %}
