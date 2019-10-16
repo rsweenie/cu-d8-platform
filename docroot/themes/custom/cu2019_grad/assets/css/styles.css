@@ -4750,8 +4750,8 @@ blockquote {
   height: 3.9rem;
   font-size: 7rem;
   position: absolute;
-  top: 1.6rem;
-  left: 1.6rem;
+  top: 1rem;
+  left: 1rem;
   content: "“";
   color: white;
   background: transparent;
@@ -4759,10 +4759,11 @@ blockquote {
   font-family: "Conduit";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   border-width: 0 2px 2px 0;
+  padding-top: 0.5rem;
   text-align: center;
 }
 
-/* line 80, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+/* line 83, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .copy-block .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
 .cke_editable .embedded-entity blockquote .quote-inner .field--name-field-quote-box-photo,
@@ -4770,7 +4771,7 @@ blockquote {
   display: none;
 }
 
-/* line 85, src/sass/components/basic/quotes/direction/_quote-copy.scss */
+/* line 88, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
 .card .copy-block .embedded-entity blockquote .quote-inner img,
 .card .cke_editable .embedded-entity blockquote .quote-inner img,
@@ -4846,7 +4847,13 @@ blockquote {
           justify-content: center;
 }
 
-/* line 115, src/sass/components/basic/_quotes.scss */
+/* line 110, src/sass/components/basic/_quotes.scss */
+
+.quote-box blockquote .field--name-field-grad-quote-source-name {
+  display: inline;
+}
+
+/* line 119, src/sass/components/basic/_quotes.scss */
 
 blockquote .quote {
   color: white;
@@ -4914,7 +4921,7 @@ blockquote .quote {
   width: 6.4rem;
   height: 4rem;
   position: absolute;
-  top: 1rem;
+  top: 2.1rem;
   left: calc(50% - 3.2rem);
   content: "“";
   background: #0054A6;
@@ -5322,7 +5329,13 @@ blockquote .tooltip-trigger {
 .feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items,
 .feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item,
 .feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div,
-.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource {
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource,
+.feat-tiles .hub-resource--type-paragraph-hub-quote-ref,
+.feat-tiles .hub-resource-field--name-field-hub-quote-ref-item,
+.feat-tiles .hub-resource-field--name-field-hub-quote-ref-item > .hub-resource-field__item,
+.feat-tiles .quote-box,
+.feat-tiles .field--name-field-quote-ref,
+.feat-tiles .node--type-grad-quote {
   height: 100%;
 }
 
@@ -5352,7 +5365,7 @@ blockquote .tooltip-trigger {
   display: none;
 }
 
-/* line 97, src/sass/components/basic/_feat-tiles.scss */
+/* line 106, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io,
 .hub_img,
@@ -5375,7 +5388,7 @@ blockquote .tooltip-trigger {
   pointer-events: none;
 }
 
-/* line 107, src/sass/components/basic/_feat-tiles.scss */
+/* line 116, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io:before,
 .fci:before {
@@ -5389,7 +5402,7 @@ blockquote .tooltip-trigger {
   z-index: 10;
 }
 
-/* line 127, src/sass/components/basic/_feat-tiles.scss */
+/* line 136, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -14301,8 +14314,10 @@ form.search .search button {
   .quote-box blockquote .quote-inner:before {
     width: 5.9rem;
     height: 5.9rem;
+    top: 1.6rem;
+    left: 1.6rem;
     font-size: 10.5rem;
-    line-height: 1;
+    padding-top: 1rem;
   }
 
   /* line 45, src/sass/components/basic/quotes/direction/_quote-left.scss */
@@ -14325,7 +14340,7 @@ form.search .search button {
     width: 8.4rem;
     height: 8.4rem;
     left: calc(50% - 4.2rem);
-    top: 3.7rem;
+    top: 5.6rem;
     font-size: 16.2rem;
     line-height: 15.3rem;
   }
@@ -14513,7 +14528,7 @@ form.search .search button {
     left: 1.5rem;
   }
 
-  /* line 107, src/sass/components/basic/_feat-tiles.scss */
+  /* line 116, src/sass/components/basic/_feat-tiles.scss */
 
   .stat_hl_io:before,
   .fci:before {
