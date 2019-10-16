@@ -84,7 +84,7 @@
 <article{{ attributes.addClass(classes) }}>
   {% if content %}
     {% include '@cu2019_grad/components/quote.html.twig' with {
-      'class': 'quote-box ' ~ content.field_grad_quote_style[0]['#markup']|clean_class,
+      'class': content.field_grad_quote_style[0]['#markup']|clean_class,
       'quote': content.field_grad_quote_text,
       'img': content.field_grad_quote_image,
       'name': content.field_grad_quote_source_name,
