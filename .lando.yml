@@ -32,6 +32,10 @@ services:
     globals:
       gulp-cli: "latest"
 tooling:
+  behat:
+    service: appserver
+    description: Run Behat commands in the lando environment
+    cmd: /app/vendor/behat/behat/bin/behat
   blt:
     service: appserver
     description: Run Acquia blt commands in the lando environment
