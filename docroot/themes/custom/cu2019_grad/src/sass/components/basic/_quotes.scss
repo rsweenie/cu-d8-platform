@@ -36,10 +36,18 @@ blockquote {
     .copy-block .embedded-entity &,
     .cke_editable .embedded-entity &,
     .quote-box & {
-      color: $primary;
+      //color: $primary;
       position: relative;
       background: $gray1;
       @import 'quotes/direction/_quote-copy';
+
+      &.medium-blue-background {
+        background: $secondary;
+      }
+
+      &.dark-blue-background {
+        background: $primary;
+      }
 
       .field--name-field-grad-quote-image {
         display: none;
@@ -105,10 +113,6 @@ blockquote {
         @media #{$mediaMdMax} {
           margin: 0;
         }
-      }
-
-      .field--name-field-grad-quote-source-name {
-        display: inline;
       }
     }
 
@@ -192,4 +196,9 @@ blockquote {
     // \*---------------------*/
     // @import 'quotes/_small';
     // @import 'quotes/bubbles/_bubbles-small';
+
+    .field--name-field-grad-quote-source-name,
+    .field--name-field-grad-quote-honorific-title {
+      display: inline;
+    }
 }
