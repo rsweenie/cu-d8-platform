@@ -4783,29 +4783,13 @@ blockquote {
 
 /* line 44, src/sass/components/basic/_quotes.scss */
 
-.copy-block .embedded-entity blockquote.medium-blue-background,
-.cke_editable .embedded-entity blockquote.medium-blue-background,
-.quote-box blockquote.medium-blue-background {
-  background: #0054A6;
-}
-
-/* line 48, src/sass/components/basic/_quotes.scss */
-
-.copy-block .embedded-entity blockquote.dark-blue-background,
-.cke_editable .embedded-entity blockquote.dark-blue-background,
-.quote-box blockquote.dark-blue-background {
-  background: #002E6D;
-}
-
-/* line 52, src/sass/components/basic/_quotes.scss */
-
 .copy-block .embedded-entity blockquote .field--name-field-grad-quote-image,
 .cke_editable .embedded-entity blockquote .field--name-field-grad-quote-image,
 .quote-box blockquote .field--name-field-grad-quote-image {
   display: none;
 }
 
-/* line 56, src/sass/components/basic/_quotes.scss */
+/* line 48, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .quote,
 .cke_editable .embedded-entity blockquote .quote,
@@ -4813,7 +4797,7 @@ blockquote {
   font-size: 2.2rem;
 }
 
-/* line 60, src/sass/components/basic/_quotes.scss */
+/* line 52, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr,
 .cke_editable .embedded-entity blockquote .attr,
@@ -4823,7 +4807,7 @@ blockquote {
   margin-top: 2rem;
 }
 
-/* line 65, src/sass/components/basic/_quotes.scss */
+/* line 57, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
 .cke_editable .embedded-entity blockquote .attr .field--name-field-quote-box-affiliation,
@@ -4831,14 +4815,14 @@ blockquote {
   font-weight: 400;
 }
 
-/* line 91, src/sass/components/basic/_quotes.scss */
+/* line 83, src/sass/components/basic/_quotes.scss */
 
 .copy-block .embedded-entity blockquote,
 .cke_editable .embedded-entity blockquote {
   max-width: 425px;
 }
 
-/* line 96, src/sass/components/basic/_quotes.scss */
+/* line 88, src/sass/components/basic/_quotes.scss */
 
 .quote-box blockquote {
   margin-bottom: 0;
@@ -4846,7 +4830,7 @@ blockquote {
   height: 100%;
 }
 
-/* line 101, src/sass/components/basic/_quotes.scss */
+/* line 93, src/sass/components/basic/_quotes.scss */
 
 .quote-box blockquote .quote-inner {
   height: 100%;
@@ -4862,7 +4846,21 @@ blockquote {
           justify-content: center;
 }
 
-/* line 123, src/sass/components/basic/_quotes.scss */
+/* line 111, src/sass/components/basic/_quotes.scss */
+
+.quote-box blockquote.medium-blue-background,
+.quote-box blockquote.color1 {
+  background: #0054A6;
+}
+
+/* line 116, src/sass/components/basic/_quotes.scss */
+
+.quote-box blockquote.dark-blue-background,
+.quote-box blockquote.color2 {
+  background: #002E6D;
+}
+
+/* line 126, src/sass/components/basic/_quotes.scss */
 
 blockquote .quote {
   color: white;
@@ -5007,7 +5005,7 @@ blockquote .quote {
   display: inline;
 }
 
-/* line 200, src/sass/components/basic/_quotes.scss */
+/* line 203, src/sass/components/basic/_quotes.scss */
 
 blockquote .field--name-field-grad-quote-source-name,
 blockquote .field--name-field-grad-quote-honorific-title {
@@ -17994,7 +17992,7 @@ form.search .search button {
     margin-right: -2.5rem;
   }
 
-  /* line 108, src/sass/components/basic/_quotes.scss */
+  /* line 100, src/sass/components/basic/_quotes.scss */
 
   .feat-tiles .quote-box blockquote {
     margin: 0;
@@ -18124,7 +18122,7 @@ form.search .search button {
     margin: 0 -2.5rem 1.5rem;
   }
 
-  /* line 108, src/sass/components/basic/_quotes.scss */
+  /* line 100, src/sass/components/basic/_quotes.scss */
 
   .feat-tiles .quote-box blockquote {
     margin: 0;
