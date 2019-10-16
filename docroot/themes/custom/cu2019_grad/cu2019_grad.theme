@@ -3,6 +3,7 @@
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\TypedData\Plugin\DataType\DateTimeIso8601;
+use Drupal\Core\Url;
 use Drupal\datetime\DateTimeComputed;
 use Drupal\datetime_range\Plugin\Field\FieldType\DateRangeFieldItemList;
 use Drupal\taxonomy\Entity\Term;
@@ -238,11 +239,26 @@ function cu2019_grad_preprocess_hub_resource_field__paragraph_course_date__field
 /**
  * Implements hook_preprocess_HOOK().
  */
-function cu2019_grad_preprocess_hub_resource__taxonomy_term__program_availability(&$variables){
+function cu2019_grad_preprocess_hub_resource__taxonomy_term__program_availability(&$variables) {
   $name = $variables['resource_obj']->getProcessedData()['name']->get(0)->getValue();
 
   if ($name == 'Hybrid') {
     $variables['content']['#markup'] = 'On-Campus and Online';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cu2019_grad_preprocess_paragraph__grad_feature_tile_item(&$variables) {
+  if (isset($variables['content']['field_tile_item_file_link']['#items'])) {
+    $file_id = $variables['content']['field_tile_item_file_link'][0]['#media']->get('field_document')->first()->getValue()['target_id'];
+    $file = Drupal::service('entity_type.manager')->getStorage('file')->load($file_id);
+
+    $variables['tile_link'] = $file->createFileUrl();
+  }
+  else {
+    $variables['tile_link'] = $variables['content']['field_tile_item_link'][0]['#url']->toString();
   }
 }
 

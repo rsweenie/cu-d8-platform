@@ -28,6 +28,7 @@ third_party_settings:
         classes: ''
         description: 'Featured Tile Item Link Options'
         required_fields: true
+        effect: none
       label: Link
       region: content
 id: paragraph.grad_feature_tile_item.default

@@ -5,5 +5,5 @@ dependencies: {  }
 id: quote
 label: Quote
 icon_uuid: null
-description: ''
+description: 'Paragraph reference to quote nodes.'
 behavior_plugins: {  }

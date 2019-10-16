@@ -416,10 +416,10 @@ textarea {
 
 /*---=== BASE STUFF ===---*/
 
-/* line 13, src/sass/structure/_grid.scss */
+/* line 14, src/sass/structure/_grid.scss */
 
 [class*="col-"] {
-  padding: 0 2.5rem;
+  padding: 0 1.6rem;
   margin: 0;
   -webkit-box-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -429,7 +429,7 @@ textarea {
           order: 0;
 }
 
-/* line 23, src/sass/structure/_grid.scss */
+/* line 24, src/sass/structure/_grid.scss */
 
 .row + * {
   margin-top: 5rem;
@@ -457,7 +457,7 @@ textarea {
   width: calc(100% + (-2.5rem * -2));
 }
 
-/* line 45, src/sass/structure/_grid.scss */
+/* line 46, src/sass/structure/_grid.scss */
 
 .row.align-center {
   -webkit-box-pack: center;
@@ -468,7 +468,7 @@ textarea {
           align-items: center;
 }
 
-/* line 49, src/sass/structure/_grid.scss */
+/* line 50, src/sass/structure/_grid.scss */
 
 .row.align-left {
   -webkit-box-pack: start;
@@ -476,7 +476,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 52, src/sass/structure/_grid.scss */
+/* line 53, src/sass/structure/_grid.scss */
 
 .row.align-right {
   -webkit-box-pack: end;
@@ -484,7 +484,7 @@ textarea {
           justify-content: flex-end;
 }
 
-/* line 55, src/sass/structure/_grid.scss */
+/* line 56, src/sass/structure/_grid.scss */
 
 .row.va-center {
   -webkit-box-align: center;
@@ -492,7 +492,7 @@ textarea {
           align-items: center;
 }
 
-/* line 58, src/sass/structure/_grid.scss */
+/* line 59, src/sass/structure/_grid.scss */
 
 .row.va-top {
   -webkit-box-align: start;
@@ -500,7 +500,7 @@ textarea {
           align-items: flex-start;
 }
 
-/* line 61, src/sass/structure/_grid.scss */
+/* line 62, src/sass/structure/_grid.scss */
 
 .row.va-bottom {
   -webkit-box-align: end;
@@ -508,7 +508,7 @@ textarea {
           align-items: flex-end;
 }
 
-/* line 64, src/sass/structure/_grid.scss */
+/* line 65, src/sass/structure/_grid.scss */
 
 .row.ha-center {
   -webkit-box-pack: center;
@@ -516,7 +516,7 @@ textarea {
           justify-content: center;
 }
 
-/* line 67, src/sass/structure/_grid.scss */
+/* line 68, src/sass/structure/_grid.scss */
 
 .row.ha-top {
   -webkit-box-pack: start;
@@ -524,7 +524,7 @@ textarea {
           justify-content: flex-start;
 }
 
-/* line 70, src/sass/structure/_grid.scss */
+/* line 71, src/sass/structure/_grid.scss */
 
 .row.ha-right {
   -webkit-box-pack: end;
@@ -2131,11 +2131,17 @@ form .form_action .section .layout__region--facmiddle button {
 /* line 1, src/sass/structure/section-backgrounds/_feat-tiles.scss */
 
 .section.feat-tiles-section {
-  background: -webkit-gradient(linear, left bottom, left top, from(#d6d8da), color-stop(17%, #EEEFF0), color-stop(83%, #EEEFF0), to(#d6d8da));
-  background: linear-gradient(0deg, #d6d8da 0%, #EEEFF0 17%, #EEEFF0 83%, #d6d8da 100%);
   padding: 5rem 0;
   border-top: 8px solid #6CACE4;
   border-bottom: 8px solid #6CACE4;
+}
+
+/* line 6, src/sass/structure/section-backgrounds/_feat-tiles.scss */
+
+.section.feat-tiles-section,
+.field--name-field-landing-page-content .section.feat-tiles-section {
+  background: -webkit-gradient(linear, left bottom, left top, from(#d6d8da), color-stop(17%, #EEEFF0), color-stop(83%, #EEEFF0), to(#d6d8da));
+  background: linear-gradient(0deg, #d6d8da 0%, #EEEFF0 17%, #EEEFF0 83%, #d6d8da 100%);
 }
 
 /* CSS Document */
@@ -2719,16 +2725,18 @@ aside .btn-text:hover {
 
 .node__content > header,
 .hub-reference > header,
+.view-cu-faculty-references > header,
 header.hp_hero {
   position: relative;
   overflow: hidden;
   z-index: 120;
 }
 
-/* line 28, src/sass/components/basic/_hero.scss */
+/* line 29, src/sass/components/basic/_hero.scss */
 
 .node__content > header:after,
 .hub-reference > header:after,
+.view-cu-faculty-references > header:after,
 header.hp_hero:after {
   width: 150%;
   height: 100%;
@@ -2744,29 +2752,32 @@ header.hp_hero:after {
   z-index: 90;
 }
 
-/* line 45, src/sass/components/basic/_hero.scss */
+/* line 46, src/sass/components/basic/_hero.scss */
 
 .node__content > header .field--name-field-interior-page-hero-img,
 .hub-reference > header .field--name-field-interior-page-hero-img,
+.view-cu-faculty-references > header .field--name-field-interior-page-hero-img,
 header.hp_hero .field--name-field-interior-page-hero-img {
   position: relative;
   z-index: 0;
 }
 
-/* line 50, src/sass/components/basic/_hero.scss */
+/* line 51, src/sass/components/basic/_hero.scss */
 
 .node__content > header img,
 .hub-reference > header img,
+.view-cu-faculty-references > header img,
 header.hp_hero img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* line 56, src/sass/components/basic/_hero.scss */
+/* line 57, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title,
 .hub-reference > header .hero_title,
+.view-cu-faculty-references > header .hero_title,
 header.hp_hero .hero_title {
   width: 100%;
   left: 0;
@@ -2776,19 +2787,21 @@ header.hp_hero .hero_title {
   z-index: 200;
 }
 
-/* line 69, src/sass/components/basic/_hero.scss */
+/* line 70, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title h1,
 .hub-reference > header .hero_title h1,
+.view-cu-faculty-references > header .hero_title h1,
 header.hp_hero .hero_title h1 {
   margin: 0;
   color: #fff;
 }
 
-/* line 79, src/sass/components/basic/_hero.scss */
+/* line 80, src/sass/components/basic/_hero.scss */
 
 .node__content > header .breadcrumb,
 .hub-reference > header .breadcrumb,
+.view-cu-faculty-references > header .breadcrumb,
 header.hp_hero .breadcrumb {
   height: 4.2rem;
   position: relative;
@@ -2804,22 +2817,25 @@ header.hp_hero .breadcrumb {
 }
 
 @supports (mix-blend-mode: lighten) {
-  /* line 79, src/sass/components/basic/_hero.scss */
+  /* line 80, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
   .hub-reference > header .breadcrumb,
+  .view-cu-faculty-references > header .breadcrumb,
   header.hp_hero .breadcrumb {
     z-index: 200;
     mix-blend-mode: lighten;
   }
 }
 
-/* line 100, src/sass/components/basic/_hero.scss */
+/* line 101, src/sass/components/basic/_hero.scss */
 
 .node__content > header .hero_title > div,
 .node__content > header .breadcrumb > div,
 .hub-reference > header .hero_title > div,
 .hub-reference > header .breadcrumb > div,
+.view-cu-faculty-references > header .hero_title > div,
+.view-cu-faculty-references > header .breadcrumb > div,
 header.hp_hero .hero_title > div,
 header.hp_hero .breadcrumb > div {
   max-width: 1350px;
@@ -2828,28 +2844,31 @@ header.hp_hero .breadcrumb > div {
   width: 100%;
 }
 
-/* line 120, src/sass/components/basic/_hero.scss */
+/* line 121, src/sass/components/basic/_hero.scss */
 
 .node__content > header.interior_page > .field,
 .hub-reference > header.interior_page > .field,
+.view-cu-faculty-references > header.interior_page > .field,
 header.hp_hero.interior_page > .field {
   height: 16.4rem;
   overflow: hidden;
 }
 
-/* line 134, src/sass/components/basic/_hero.scss */
+/* line 135, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background,
 .hub-reference > header .js-background,
+.view-cu-faculty-references > header .js-background,
 header.hp_hero .js-background {
   background-size: cover;
   background-position: top center;
 }
 
-/* line 138, src/sass/components/basic/_hero.scss */
+/* line 139, src/sass/components/basic/_hero.scss */
 
 .node__content > header .js-background img,
 .hub-reference > header .js-background img,
+.view-cu-faculty-references > header .js-background img,
 header.hp_hero .js-background img {
   position: absolute;
   width: 0.1rem;
@@ -2861,10 +2880,11 @@ header.hp_hero .js-background img {
   clip: rect(0, 0, 0, 0);
 }
 
-/* line 143, src/sass/components/basic/_hero.scss */
+/* line 144, src/sass/components/basic/_hero.scss */
 
 .node__content > header:before,
 .hub-reference > header:before,
+.view-cu-faculty-references > header:before,
 header.hp_hero:before {
   width: 100%;
   height: 100%;
@@ -2881,15 +2901,16 @@ header.hp_hero:before {
   pointer-events: none;
 }
 
-/* line 158, src/sass/components/basic/_hero.scss */
+/* line 159, src/sass/components/basic/_hero.scss */
 
 .menuhover .node__content > header:before,
 .menuhover .hub-reference > header:before,
+.menuhover .view-cu-faculty-references > header:before,
 .menuhover header.hp_hero:before {
   opacity: 1;
 }
 
-/* line 167, src/sass/components/basic/_hero.scss */
+/* line 168, src/sass/components/basic/_hero.scss */
 
 header > .field + .hero_title,
 header > .block + .hero_title {
@@ -2900,20 +2921,20 @@ header > .block + .hero_title {
   padding: 2.5rem 0;
 }
 
-/* line 182, src/sass/components/basic/_hero.scss */
+/* line 183, src/sass/components/basic/_hero.scss */
 
 header.hp_hero {
   position: relative;
   margin-bottom: 9.8rem;
 }
 
-/* line 192, src/sass/components/basic/_hero.scss */
+/* line 193, src/sass/components/basic/_hero.scss */
 
 header.hp_hero:after {
   height: calc(100% - 3rem);
 }
 
-/* line 202, src/sass/components/basic/_hero.scss */
+/* line 203, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag {
   position: relative;
@@ -2924,14 +2945,14 @@ header.hp_hero:after {
           order: 2;
 }
 
-/* line 216, src/sass/components/basic/_hero.scss */
+/* line 217, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div {
   max-width: 1350px;
   margin: 0 auto;
 }
 
-/* line 220, src/sass/components/basic/_hero.scss */
+/* line 221, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div > div {
   padding: 2.5rem 1.6rem 1.6rem 1.6rem;
@@ -2939,7 +2960,7 @@ header.hp_hero:after {
   color: #fff;
 }
 
-/* line 232, src/sass/components/basic/_hero.scss */
+/* line 233, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div h1 {
   margin: 0 0 0.18em 0;
@@ -2947,7 +2968,7 @@ header.hp_hero:after {
   line-height: 0.94em;
 }
 
-/* line 242, src/sass/components/basic/_hero.scss */
+/* line 243, src/sass/components/basic/_hero.scss */
 
 .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
   font-family: "Conduit";
@@ -2959,7 +2980,7 @@ header.hp_hero:after {
   letter-spacing: 0.05em;
 }
 
-/* line 258, src/sass/components/basic/_hero.scss */
+/* line 259, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg {
   position: relative;
@@ -2970,7 +2991,7 @@ header.hp_hero:after {
   max-height: 680px;
 }
 
-/* line 266, src/sass/components/basic/_hero.scss */
+/* line 267, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image {
   position: relative;
@@ -2978,7 +2999,7 @@ header.hp_hero:after {
   padding-bottom: 50%;
 }
 
-/* line 275, src/sass/components/basic/_hero.scss */
+/* line 276, src/sass/components/basic/_hero.scss */
 
 .hp_hero_bg .field--name-image img {
   width: auto;
@@ -2992,7 +3013,7 @@ header.hp_hero:after {
           transform: translate(-50%, -50%);
 }
 
-/* line 296, src/sass/components/basic/_hero.scss */
+/* line 297, src/sass/components/basic/_hero.scss */
 
 .bg_caption {
   position: absolute;
@@ -3006,7 +3027,7 @@ header.hp_hero:after {
   text-align: right;
 }
 
-/* line 311, src/sass/components/basic/_hero.scss */
+/* line 312, src/sass/components/basic/_hero.scss */
 
 .bg_caption a {
   color: #fff;
@@ -3019,7 +3040,7 @@ header.hp_hero:after {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* line 321, src/sass/components/basic/_hero.scss */
+/* line 322, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header {
   position: relative;
@@ -3029,7 +3050,7 @@ header.hp_hero:after {
           order: 3;
 }
 
-/* line 368, src/sass/components/basic/_hero.scss */
+/* line 369, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header > div {
   max-width: 1350px;
@@ -3037,7 +3058,7 @@ header.hp_hero:after {
   width: 100%;
 }
 
-/* line 373, src/sass/components/basic/_hero.scss */
+/* line 374, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner {
   position: relative;
@@ -3048,7 +3069,7 @@ header.hp_hero:after {
   z-index: 200;
 }
 
-/* line 381, src/sass/components/basic/_hero.scss */
+/* line 382, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner:after {
   width: 0;
@@ -3064,7 +3085,7 @@ header.hp_hero:after {
   border-color: #002E6D transparent transparent transparent;
 }
 
-/* line 401, src/sass/components/basic/_hero.scss */
+/* line 402, src/sass/components/basic/_hero.scss */
 
 .hp_hero_header_inner div:last-child {
   font-family: "Conduit";
@@ -3758,20 +3779,20 @@ a.card.mfsfa .content {
 a.card.mfsfa .content a {
   font-size: 1.6rem;
   line-height: 1.6em;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 0 0;
   color: #79b4e6;
   text-decoration: none;
   font-weight: 600;
 }
 
-/* line 60, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 63, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .content a span:first-child,
 a.card.mfsfa .content a span:first-child {
   text-decoration: underline;
 }
 
-/* line 64, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 67, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .content a span:last-child,
 a.card.mfsfa .content a span:last-child {
@@ -3781,14 +3802,14 @@ a.card.mfsfa .content a span:last-child {
   font-size: 1.3em;
 }
 
-/* line 77, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 80, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .title,
 a.card.mfsfa .title {
   text-align: center;
 }
 
-/* line 89, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 92, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .type,
 a.card.mfsfa .type {
@@ -3804,7 +3825,7 @@ a.card.mfsfa .type {
   z-index: 20;
 }
 
-/* line 107, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 110, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa h3,
 a.card.mfsfa h3 {
@@ -3816,7 +3837,7 @@ a.card.mfsfa h3 {
   margin-bottom: 0.63636em;
 }
 
-/* line 115, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 118, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa h3:after,
 a.card.mfsfa h3:after {
@@ -3831,7 +3852,7 @@ a.card.mfsfa h3:after {
           transform: translateX(-50%);
 }
 
-/* line 137, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 140, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .subtitle,
 a.card.mfsfa .subtitle {
@@ -3840,7 +3861,7 @@ a.card.mfsfa .subtitle {
   text-transform: none;
 }
 
-/* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 150, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .body,
 a.card.mfsfa .body {
@@ -3849,14 +3870,14 @@ a.card.mfsfa .body {
   padding: 3rem 1.5rem;
 }
 
-/* line 152, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 155, src/sass/components/basic/cards/_mfsfa.scss */
 
 .feat-tiles .card.mfsfa .body,
 .feat-tiles a.card.mfsfa .body {
-  padding: 2.5rem 0;
+  padding: 0.8rem 0;
 }
 
-/* line 191, src/sass/components/basic/cards/_mfsfa.scss */
+/* line 217, src/sass/components/basic/cards/_mfsfa.scss */
 
 .card.mfsfa .hub-resource-field--type-link a:after,
 a.card.mfsfa .hub-resource-field--type-link a:after {
@@ -3873,6 +3894,118 @@ a.card.mfsfa .hub-resource-field--type-link a:after {
   -webkit-transform: translate(0.2em, 0.2em);
           transform: translate(0.2em, 0.2em);
   display: inline-block;
+}
+
+/* line 2, src/sass/components/basic/cards/_fci.scss */
+
+.paragraph--type--grad-feature-tile-item {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+/* line 8, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci,
+a.card.fci {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+/* line 16, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci,
+.card.fci a,
+.card.fci h2,
+.card.fci h3,
+a.card.fci,
+a.card.fci a,
+a.card.fci h2,
+a.card.fci h3 {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 24, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci img,
+a.card.fci img {
+  max-height: 90px;
+  width: auto;
+  margin: auto auto 1.2rem;
+  display: block;
+}
+
+/* line 35, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci > a,
+.card.fci > span,
+a.card.fci > a,
+a.card.fci > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 1.25rem;
+  height: 100%;
+  background: #0054A6;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.card.fci a:hover,
+.card.fci a:focus,
+a.card.fci a:hover,
+a.card.fci a:focus {
+  background: #002E6D;
+}
+
+/* line 54, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci h3,
+a.card.fci h3 {
+  font-size: 2rem;
+  line-height: 1.06em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* line 72, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci h2,
+a.card.fci h2 {
+  font-size: 4.8rem;
+  font-family: proxima-nova, sans-serif;
+  color: #6CACE4;
+  margin: 0;
+  line-height: 1.06em;
+}
+
+/* line 90, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci sup,
+a.card.fci sup {
+  font-size: 0.55556em;
+}
+
+/* line 94, src/sass/components/basic/cards/_fci.scss */
+
+.card.fci p,
+a.card.fci p {
+  font-size: 1.1rem;
+  margin: 0;
 }
 
 /* line 25, src/sass/components/basic/cards/_copy.scss */
@@ -3953,7 +4086,7 @@ a.card .tags {
   font-size: .8em;
 }
 
-/* line 71, src/sass/components/basic/_cards.scss */
+/* line 72, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .element .img_vid .img img,
 a.card.img-side:focus .element .img_vid .img img {
@@ -3965,7 +4098,7 @@ a.card.img-side:focus .element .img_vid .img img {
           transform: scale(1.1);
 }
 
-/* line 76, src/sass/components/basic/_cards.scss */
+/* line 77, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary,
 a.card.img-side:focus .btn-primary {
@@ -3974,14 +4107,14 @@ a.card.img-side:focus .btn-primary {
   color: #002E6D;
 }
 
-/* line 83, src/sass/components/basic/_cards.scss */
+/* line 84, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary:before,
 a.card.img-side:focus .btn-primary:before {
   background: linear-gradient(-45deg, #ffd072 50%, rgba(255, 208, 114, 0) 50%);
 }
 
-/* line 87, src/sass/components/basic/_cards.scss */
+/* line 88, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .btn-primary .arrow:last-child,
 a.card.img-side:focus .btn-primary .arrow:last-child {
@@ -3989,7 +4122,7 @@ a.card.img-side:focus .btn-primary .arrow:last-child {
           transform: translate(3px, -46%);
 }
 
-/* line 93, src/sass/components/basic/_cards.scss */
+/* line 94, src/sass/components/basic/_cards.scss */
 
 a.card.img-side:hover .info h2,
 a.card.img-side:focus .info h2 {
@@ -4555,11 +4688,11 @@ blockquote.quote-box {
 .copy-block .embedded-entity blockquote:after,
 .cke_editable .embedded-entity blockquote:after,
 blockquote.quote-box:after {
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
+  width: calc(100% - 1.6rem);
+  height: calc(100% - 1.6rem);
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 0.8rem;
+  left: 0.8rem;
   content: "";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   pointer-events: none;
@@ -5176,23 +5309,22 @@ blockquote .tooltip-trigger {
 
 /* line 1, src/sass/components/basic/_feat-tiles.scss */
 
-.feat-tiles > div > .field__item,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div,
-.feat-tiles > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource {
+.feat-tiles > div > div > .field__item,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div,
+.feat-tiles > div > div > .field__item > .hub-resource--type-paragraph-quote-ref > .field__items > .field__item > div > .hub-resource {
   height: 100%;
 }
 
 /* line 5, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles {
-  margin: 0 2.5rem;
   /*  img { width: 100%; height: auto; display: block; }*/
 }
 
-/* line 8, src/sass/components/basic/_feat-tiles.scss */
+/* line 10, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles img {
   display: block;
@@ -5200,53 +5332,56 @@ blockquote .tooltip-trigger {
   height: auto;
 }
 
-/* line 19, src/sass/components/basic/_feat-tiles.scss */
+/* line 23, src/sass/components/basic/_feat-tiles.scss */
 
-.feat-tiles > div {
+.feat-tiles > div > div {
   margin: 1.6rem 0;
 }
 
-/* line 88, src/sass/components/basic/_feat-tiles.scss */
+/* line 92, src/sass/components/basic/_feat-tiles.scss */
 
 .feat-tiles .hub-resource-field--name-field-fc-p-link {
   display: none;
 }
 
-/* line 93, src/sass/components/basic/_feat-tiles.scss */
+/* line 97, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io,
-.hub_img {
+.hub_img,
+.fci {
   position: relative;
 }
 
 /* line 463, src/sass/base/_mixins.scss */
 
 .stat_hl_io:after,
-.hub_img:after {
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
+.hub_img:after,
+.fci:after {
+  width: calc(100% - 1.6rem);
+  height: calc(100% - 1.6rem);
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 0.8rem;
+  left: 0.8rem;
   content: "";
   border: 0.2rem solid rgba(255, 255, 255, 0.3);
   pointer-events: none;
 }
 
-/* line 101, src/sass/components/basic/_feat-tiles.scss */
+/* line 107, src/sass/components/basic/_feat-tiles.scss */
 
-.stat_hl_io:before {
-  width: 1.1rem;
-  height: 1.1rem;
+.stat_hl_io:before,
+.fci:before {
+  width: 0.8rem;
+  height: 0.8rem;
   position: absolute;
-  top: 1.7rem;
-  left: 1.7rem;
+  top: 1rem;
+  left: 1rem;
   content: "";
   background: rgba(255, 255, 255, 0.3);
   z-index: 10;
 }
 
-/* line 112, src/sass/components/basic/_feat-tiles.scss */
+/* line 127, src/sass/components/basic/_feat-tiles.scss */
 
 .stat_hl_io img {
   width: 100%;
@@ -10686,54 +10821,191 @@ nav.side-nav input[type='checkbox']:checked ~ label span:after {
   opacity: 0;
 }
 
-/* line 14, src/sass/components/navigation/_pagination.scss */
+/* line 6, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination ul,
-nav.pagination ol {
+nav.pager {
+  background: #f5f8fc;
+  border-top: 1px solid #DADADA;
+  padding: 1.4rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
 }
 
-/* line 48, src/sass/components/navigation/_pagination.scss */
+/* line 14, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination ul > li:first-child a {
-  border-left: 0.2rem solid #F0F5FA;
+nav.pager ul,
+nav.pager ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 19, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li {
+  font-size: 1.6rem;
+  text-align: center;
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
+  background: #fff;
+  padding: 0;
+}
+
+/* line 27, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li a {
+  color: #555555;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.8rem;
+  height: 4.3rem;
+}
+
+/* line 36, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li:first-child {
+  border-left: 1px solid #DADADA;
+}
+
+/* line 40, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li:last-child {
+  border-right: 1px solid #DADADA;
+}
+
+/* line 44, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first {
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+
+/* line 49, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a:after {
+  content: "\E007";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* line 56, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--last {
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 }
 
 /* line 61, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a {
-  display: block;
-  padding: 1rem;
-  border: 0.2rem solid #F0F5FA;
-  border-left: none;
+nav.pager li.pager__item--last a:after {
+  content: "\E007";
 }
 
-/* line 73, src/sass/components/navigation/_pagination.scss */
+/* line 67, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a[disabled] {
-  color: #F0F5FA;
-  pointer-events: none;
+nav.pager li.pager__item--previous {
+  border-right: 1px solid #DADADA;
 }
 
-/* line 84, src/sass/components/navigation/_pagination.scss */
+/* line 71, src/sass/components/navigation/_pagination.scss */
 
-nav.pagination a.active {
-  background: #F0F5FA;
-  color: #002E6D;
+nav.pager li.pager__item--previous a:after {
+  content: "\E008";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* line 78, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--next {
+  border-left: 1px solid #DADADA;
+}
+
+/* line 82, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--next a:after {
+  content: "\E008";
+}
+
+/* line 92, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a,
+nav.pager li.pager__item--previous a,
+nav.pager li.pager__item--last a,
+nav.pager li.pager__item--next a {
+  color: #BABABA;
+  position: relative;
+}
+
+/* line 95, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a span,
+nav.pager li.pager__item--previous a span,
+nav.pager li.pager__item--last a span,
+nav.pager li.pager__item--next a span {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* line 100, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.pager__item--first a:after,
+nav.pager li.pager__item--previous a:after,
+nav.pager li.pager__item--last a:after,
+nav.pager li.pager__item--next a:after {
+  font-family: "cu_icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 115, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.is-active {
+  font-weight: normal;
+  background: #0054A6;
+}
+
+/* line 119, src/sass/components/navigation/_pagination.scss */
+
+nav.pager li.is-active a {
+  color: #fff;
 }
 
 /* line 6, src/sass/components/navigation/_jump.scss */
@@ -11083,6 +11355,89 @@ nav.jn li + li {
 .f-tiles h3 {
   margin: 0 0 1.5rem;
   font-size: 1.6rem;
+}
+
+/* line 1, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-row {
+  display: -ms-grid;
+  -ms-grid-columns: 34% 1fr;
+  -ms-grid-rows: auto auto;
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  grid-template-rows: auto auto;
+  padding: 2.5rem 0;
+  border-bottom: 2px solid #EEEFF0;
+}
+
+/* line 13, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.views-row:last-child .news-listing-row {
+  border-bottom: 0;
+}
+
+/* line 17, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-row h2 {
+  color: #266db3;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-transform: none;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+}
+
+/* line 156, src/sass/components/copy/_headings.scss */
+
+aside .news-listing-row h2 {
+  font-size: 1em;
+}
+
+/* line 159, src/sass/components/copy/_headings.scss */
+
+aside .news-listing-row h2 ~ h4,
+aside .news-listing-row h2 ~ .h4 {
+  margin-top: 0.5rem;
+}
+
+/* line 35, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-img {
+  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* line 42, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 49, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-tags {
+  -ms-grid-column: 1;
+  -ms-grid-row: 2;
+  -ms-grid-column-span: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 2;
+}
+
+/* line 60, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+.news-listing-prv {
+  -ms-grid-column: 2;
+  -ms-grid-row: 1;
+  grid-column: 2;
+  grid-row: 1;
+  padding-left: 2.5rem;
 }
 
 /* line 1, src/sass/components/feeds-detail/_detail.scss */
@@ -11631,80 +11986,183 @@ nav.jn li + li {
           transform: translate(0.25em, 0.2em);
 }
 
-/* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
+/*  --------------------------------------------------------------------------  *\
 
-.dropdown-bar {
-  margin: 0 0 5rem;
+    FILTERS ARCHIVES
+
+\*  --------------------------------------------------------------------------  */
+
+/* line 7, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters.section {
+  padding: 0;
 }
 
-/* line 8, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
+/* line 11, src/sass/components/feeds-detail/_filters-archive.scss */
 
-.dropdown-bar select {
-  padding: 1rem;
-  margin: 0 0 0 1rem;
-  background: #fff;
-  border-bottom: 0.2rem solid #FFCC4F;
-  min-width: 10rem;
-  width: auto;
-}
-
-/* line 17, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
-
-.dropdown-bar input:not([type="checkbox"]):not([type="radio"]) {
-  -webkit-box-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
+.listing-filters .listing-filters-toggle {
   width: 100%;
-  padding: 1.1rem;
-  border: none;
-}
-
-/* line 24, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
-
-.dropdown-bar button {
-  padding: 1.1rem;
-  color: #FFCC4F;
-}
-
-/* line 28, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
-
-.dropdown-bar button:hover {
-  color: #002E6D;
-}
-
-/* line 33, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
-
-.dropdown-bar > div {
+  background: #002E6D;
+  color: #fff;
+  font-size: 1.8rem;
+  font-family: "Conduit";
+  padding: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
-/* line 36, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
+/* line 20, src/sass/components/feeds-detail/_filters-archive.scss */
 
-.dropdown-bar > div:last-of-type {
-  border-bottom: 0.2rem solid #FFCC4F;
+.listing-filters .listing-filters-toggle span {
+  display: inline-block;
 }
 
-/* line 40, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
+/* line 24, src/sass/components/feeds-detail/_filters-archive.scss */
 
-.dropdown-bar > div:only-child {
-  border-bottom: none;
+.listing-filters .listing-filters-toggle .icon {
+  height: 3.8rem;
+  width: 3.8rem;
+  font-size: 2rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.4rem;
+  line-height: 1em;
+  margin-right: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 36, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters .form-item {
+  margin: 0;
+}
+
+/* line 98, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-header.section {
+  padding: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 1.5em;
+}
+
+/* line 1, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 0 -1.25rem;
+  font-size: 1.6rem;
+  line-height: 1.125em;
+  color: #707070;
+}
+
+/* line 16, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .views-row {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  width: 50%;
+  padding: 1.25rem;
+}
+
+/* line 34, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing .views-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 41, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing h2,
+.fac-listing a {
+  color: #0054A6;
+}
+
+/* line 46, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing h2 {
+  font-size: 1.6rem;
+  line-height: 1.2em;
+  font-family: "Conduit";
+  margin: 1em 0 0 0;
+  text-transform: uppercase;
+}
+
+/* line 59, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing a {
+  text-decoration: none;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.fac-listing a:hover,
+.fac-listing a:focus {
+  text-decoration: underline;
+}
+
+/* line 66, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.fac-listing h3 {
+  font-size: 1.3rem;
+  line-height: 1.2em;
+  font-family: proxima-nova, sans-serif;
+  text-transform: none;
+  color: #555555;
+}
+
+/* line 85, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+.field--name-hub-field-hub-faculty-email a,
+.field--name-hub-field-hub-faculty-phone a {
+  color: #555555;
+  text-decoration: none;
+}
+
+/* line 59, src/sass/base/_mixins.scss */
+
+.field--name-hub-field-hub-faculty-email a:hover,
+.field--name-hub-field-hub-faculty-email a:focus,
+.field--name-hub-field-hub-faculty-phone a:hover,
+.field--name-hub-field-hub-faculty-phone a:focus {
+  color: #0054A6;
+  text-decoration: underline;
 }
 
 /*  --------------------------------------------------------------------------  *\
@@ -12617,12 +13075,22 @@ form.search .search button {
     text-align: center;
   }
 
-  /* line 120, src/sass/components/basic/_hero.scss */
+  /* line 121, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
   .hub-reference > header.interior_page > .field,
+  .view-cu-faculty-references > header.interior_page > .field,
   header.hp_hero.interior_page > .field {
     height: 32rem;
+  }
+
+  /* line 35, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci > a,
+  .card.fci > span,
+  a.card.fci > a,
+  a.card.fci > span {
+    padding: 2.5rem;
   }
 
   /* line 110, src/sass/components/basic/quotes/direction/_quote-left.scss */
@@ -12668,24 +13136,62 @@ form.search .search button {
     width: calc(33.333% - 5rem);
     margin: 0 2.5rem;
   }
+
+  /* line 71, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row {
+    -ms-grid-rows: auto 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  /* line 76, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-img {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  /* line 86, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-tags {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    grid-column: 2;
+    grid-row: 1;
+    padding-left: 2.5rem;
+  }
+
+  /* line 96, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-prv {
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+    grid-column: 2;
+    grid-row: 2;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  /* line 13, src/sass/structure/_grid.scss */
+  /* line 14, src/sass/structure/_grid.scss */
 
   [class*="col-"] {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    padding: 0 2.5rem;
   }
 
-  /* line 17, src/sass/structure/_grid.scss */
+  /* line 18, src/sass/structure/_grid.scss */
 
   .no-gutter {
     padding: 0;
   }
 
-  /* line 28, src/sass/structure/_grid.scss */
+  /* line 29, src/sass/structure/_grid.scss */
 
   .pull-left {
     -webkit-box-ordinal-group: 1;
@@ -12693,7 +13199,7 @@ form.search .search button {
             order: 0;
   }
 
-  /* line 31, src/sass/structure/_grid.scss */
+  /* line 32, src/sass/structure/_grid.scss */
 
   .push-right {
     -webkit-box-ordinal-group: 3;
@@ -12701,14 +13207,14 @@ form.search .search button {
             order: 2;
   }
 
-  /* line 34, src/sass/structure/_grid.scss */
+  /* line 35, src/sass/structure/_grid.scss */
 
   .float-left {
     margin: 0 2.5rem 2.5rem 0;
     float: left;
   }
 
-  /* line 38, src/sass/structure/_grid.scss */
+  /* line 39, src/sass/structure/_grid.scss */
 
   .float-right {
     margin: 0 0 2.5rem 2.5rem;
@@ -13478,10 +13984,9 @@ form.search .search button {
   .card.mfsfa .content a,
   a.card.mfsfa .content a {
     padding: 0;
-    display: none;
   }
 
-  /* line 89, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 92, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .type,
   a.card.mfsfa .type {
@@ -13489,7 +13994,7 @@ form.search .search button {
     padding: 1.2rem;
   }
 
-  /* line 115, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 118, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3:after,
   a.card.mfsfa h3:after {
@@ -13498,30 +14003,29 @@ form.search .search button {
     bottom: -1rem;
   }
 
-  /* line 107, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 110, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa h3,
   a.card.mfsfa h3 {
     font-size: 3rem;
   }
 
-  /* line 137, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 140, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .subtitle,
   a.card.mfsfa .subtitle {
     font-size: 2rem;
   }
 
-  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 150, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .body,
   a.card.mfsfa .body {
     color: #fff;
     padding: 0;
-    display: none;
   }
 
-  /* line 171, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 197, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover > a:after,
   .card.mfsfa:hover > span:after,
@@ -13531,7 +14035,7 @@ form.search .search button {
     background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
   }
 
-  /* line 176, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 202, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover .body,
   .card.mfsfa:hover .content a,
@@ -13540,7 +14044,7 @@ form.search .search button {
     display: block;
   }
 
-  /* line 181, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 207, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa:hover .content,
   a.card.mfsfa:hover .content {
@@ -13581,11 +14085,11 @@ form.search .search button {
   /* line 463, src/sass/base/_mixins.scss */
 
   .fact.stat_hl:after {
-    width: calc(100% - 3rem);
-    height: calc(100% - 3rem);
+    width: calc(100% - 1.6rem);
+    height: calc(100% - 1.6rem);
     position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
+    top: 0.8rem;
+    left: 0.8rem;
     content: "";
     border: 0.2rem solid rgba(255, 255, 255, 0.3);
     pointer-events: none;
@@ -13771,6 +14275,17 @@ form.search .search button {
     display: block;
   }
 
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .copy-block .embedded-entity blockquote:after,
+  .cke_editable .embedded-entity blockquote:after,
+  blockquote.quote-box:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
   /* line 28, src/sass/components/basic/quotes/direction/_quote-copy.scss */
 
   .copy-block .embedded-entity blockquote .quote-inner,
@@ -13818,11 +14333,11 @@ form.search .search button {
   /* line 463, src/sass/base/_mixins.scss */
 
   blockquote.q-left:after {
-    width: calc(100% - 3rem);
-    height: calc(100% - 3rem);
+    width: calc(100% - 1.6rem);
+    height: calc(100% - 1.6rem);
     position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
+    top: 0.8rem;
+    left: 0.8rem;
     content: "";
     border: 0.2rem solid rgba(255, 255, 255, 0.3);
     pointer-events: none;
@@ -13963,6 +14478,12 @@ form.search .search button {
   /* line 5, src/sass/components/basic/_feat-tiles.scss */
 
   .feat-tiles {
+    margin: 0 2.5rem;
+  }
+
+  /* line 17, src/sass/components/basic/_feat-tiles.scss */
+
+  .feat-tiles > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -13973,12 +14494,33 @@ form.search .search button {
     margin: -0.5rem;
   }
 
-  /* line 19, src/sass/components/basic/_feat-tiles.scss */
+  /* line 23, src/sass/components/basic/_feat-tiles.scss */
 
-  .feat-tiles > div {
+  .feat-tiles > div > div {
     width: 50%;
     padding: 0.5rem;
     margin: 0;
+  }
+
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .stat_hl_io:after,
+  .hub_img:after,
+  .fci:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  /* line 107, src/sass/components/basic/_feat-tiles.scss */
+
+  .stat_hl_io:before,
+  .fci:before {
+    width: 1.1rem;
+    height: 1.1rem;
+    top: 1.7rem;
+    left: 1.7rem;
   }
 
   /* line 7, src/sass/components/interactive/tabs/_minimal.scss */
@@ -14145,6 +14687,18 @@ form.search .search button {
     font-size: 2rem;
   }
 
+  /* line 17, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row h2 {
+    font-size: 2.4rem;
+  }
+
+  /* line 1, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row {
+    padding: 5rem 0;
+  }
+
   /* line 1, src/sass/components/feeds-detail/_detail.scss */
 
   .field--name-hub-field-hub-news-date {
@@ -14263,24 +14817,52 @@ form.search .search button {
     margin-right: 1.8rem;
   }
 
-  /* line 1, src/sass/components/feeds-detail/archives/_dropdown-bar.scss */
+  /* line 1, src/sass/components/feeds-detail/faculty/_faculty.scss */
 
-  .dropdown-bar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+  .fac-listing {
+    margin: 0 -2.5rem;
+  }
+
+  /* line 16, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .views-row {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    width: 25%;
+    padding: 2.5rem;
+  }
+
+  /* line 46, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing h2 {
+    font-size: 1.9rem;
+    line-height: 1em;
+  }
+
+  /* line 66, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  /* line 463, src/sass/base/_mixins.scss */
+
+  .fact.stat_hl:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  /* line 463, src/sass/base/_mixins.scss */
+
+  blockquote.q-left:after {
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    top: 1.5rem;
+    left: 1.5rem;
   }
 }
 
@@ -14545,26 +15127,29 @@ form.search .search button {
     font-size: 1.3rem;
   }
 
-  /* line 69, src/sass/components/basic/_hero.scss */
+  /* line 70, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title h1,
   .hub-reference > header .hero_title h1,
+  .view-cu-faculty-references > header .hero_title h1,
   header.hp_hero .hero_title h1 {
     width: 67%;
   }
 
-  /* line 100, src/sass/components/basic/_hero.scss */
+  /* line 101, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
+  .view-cu-faculty-references > header .hero_title > div,
+  .view-cu-faculty-references > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
   header.hp_hero .breadcrumb > div {
     width: 95%;
   }
 
-  /* line 368, src/sass/components/basic/_hero.scss */
+  /* line 369, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 95%;
@@ -14640,6 +15225,41 @@ form.search .search button {
   .card.fw_photo .content > div,
   a.card.fw_photo .content > div {
     width: 83.33333%;
+  }
+
+  /* line 43, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content a,
+  a.card.mfsfa .content a {
+    display: none;
+  }
+
+  /* line 150, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .body,
+  a.card.mfsfa .body {
+    display: none;
+  }
+
+  /* line 54, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h3,
+  a.card.fci h3 {
+    font-size: 3rem;
+  }
+
+  /* line 72, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h2,
+  a.card.fci h2 {
+    font-size: 7.2rem;
+  }
+
+  /* line 94, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci p,
+  a.card.fci p {
+    font-size: 1.6rem;
   }
 
   /* line 25, src/sass/components/basic/cards/_copy.scss */
@@ -14748,6 +15368,13 @@ form.search .search button {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  /* line 106, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row {
+    -ms-grid-columns: 28% 1fr;
+    grid-template-columns: 28% 1fr;
+  }
+
   /* line 15, src/sass/components/feeds-detail/featured/_faculty.scss */
 
   .f-feat-faculty > article {
@@ -14791,6 +15418,14 @@ form.search .search button {
 
   .course-date > div:last-child {
     font-size: 2rem;
+  }
+
+  /* line 16, src/sass/components/feeds-detail/faculty/_faculty.scss */
+
+  .fac-listing .views-row {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    width: 20%;
   }
 }
 
@@ -15818,42 +16453,47 @@ form.search .search button {
     border: 0.1rem solid #5D6468;
   }
 
-  /* line 56, src/sass/components/basic/_hero.scss */
+  /* line 57, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title,
   .hub-reference > header .hero_title,
+  .view-cu-faculty-references > header .hero_title,
   header.hp_hero .hero_title {
     padding: 14.7rem 0 2.5rem 0;
   }
 
-  /* line 79, src/sass/components/basic/_hero.scss */
+  /* line 80, src/sass/components/basic/_hero.scss */
 
   .node__content > header .breadcrumb,
   .hub-reference > header .breadcrumb,
+  .view-cu-faculty-references > header .breadcrumb,
   header.hp_hero .breadcrumb {
     height: 7.2rem;
   }
 
-  /* line 100, src/sass/components/basic/_hero.scss */
+  /* line 101, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
+  .view-cu-faculty-references > header .hero_title > div,
+  .view-cu-faculty-references > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
   header.hp_hero .breadcrumb > div {
     width: 90%;
   }
 
-  /* line 120, src/sass/components/basic/_hero.scss */
+  /* line 121, src/sass/components/basic/_hero.scss */
 
   .node__content > header.interior_page > .field,
   .hub-reference > header.interior_page > .field,
+  .view-cu-faculty-references > header.interior_page > .field,
   header.hp_hero.interior_page > .field {
     height: 51.5rem;
   }
 
-  /* line 167, src/sass/components/basic/_hero.scss */
+  /* line 168, src/sass/components/basic/_hero.scss */
 
   header > .field + .hero_title,
   header > .block + .hero_title {
@@ -15861,7 +16501,7 @@ form.search .search button {
     padding: 2.5rem 0;
   }
 
-  /* line 202, src/sass/components/basic/_hero.scss */
+  /* line 203, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag {
     position: absolute;
@@ -15870,7 +16510,7 @@ form.search .search button {
     z-index: 10;
   }
 
-  /* line 220, src/sass/components/basic/_hero.scss */
+  /* line 221, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div > div {
     max-width: 545px;
@@ -15878,31 +16518,31 @@ form.search .search button {
     padding: 5rem 4rem 5rem 5rem;
   }
 
-  /* line 232, src/sass/components/basic/_hero.scss */
+  /* line 233, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div h1 {
     font-size: 5rem;
   }
 
-  /* line 242, src/sass/components/basic/_hero.scss */
+  /* line 243, src/sass/components/basic/_hero.scss */
 
   .hp_hero_tag > div .field--name-field-hp-hero-sub-heading {
     font-size: 3.6rem;
   }
 
-  /* line 266, src/sass/components/basic/_hero.scss */
+  /* line 267, src/sass/components/basic/_hero.scss */
 
   .hp_hero_bg .field--name-image {
     padding-bottom: 42%;
   }
 
-  /* line 321, src/sass/components/basic/_hero.scss */
+  /* line 322, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header {
     margin-bottom: 3rem;
   }
 
-  /* line 335, src/sass/components/basic/_hero.scss */
+  /* line 336, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:before {
     width: 100vw;
@@ -15914,7 +16554,7 @@ form.search .search button {
     background: rgba(0, 46, 109, 0.85);
   }
 
-  /* line 345, src/sass/components/basic/_hero.scss */
+  /* line 346, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header:after {
     width: 100vw;
@@ -15927,7 +16567,7 @@ form.search .search button {
   }
 
 @supports (mix-blend-mode: screen) {
-    /* line 345, src/sass/components/basic/_hero.scss */
+    /* line 346, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header:after {
       mix-blend-mode: screen;
@@ -15935,20 +16575,20 @@ form.search .search button {
 }
 
 @supports (mix-blend-mode: screen) {
-    /* line 321, src/sass/components/basic/_hero.scss */
+    /* line 322, src/sass/components/basic/_hero.scss */
 
     .hp_hero_header {
       z-index: 300;
     }
 }
 
-  /* line 368, src/sass/components/basic/_hero.scss */
+  /* line 369, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 90%;
   }
 
-  /* line 381, src/sass/components/basic/_hero.scss */
+  /* line 382, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner:after {
     border-width: 30px 30px 0 30px;
@@ -15958,14 +16598,14 @@ form.search .search button {
             transform: translateX(0);
   }
 
-  /* line 373, src/sass/components/basic/_hero.scss */
+  /* line 374, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner {
     font-size: 4.5rem;
     padding: 5rem 2.5rem 5rem 7.5rem;
   }
 
-  /* line 412, src/sass/components/basic/_hero.scss */
+  /* line 413, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header_inner div:last-child {
     font-size: 3.6rem;
@@ -16093,6 +16733,69 @@ form.search .search button {
   .program_rail,
   .prog_left {
     padding-top: 3.8rem;
+  }
+
+  /* line 60, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .listing-filters-toggle {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* line 64, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .view-filters {
+    background: #f5f8fc;
+    border-bottom: 1px solid #DADADA;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  /* line 70, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .view-filters .form--inline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  /* line 74, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .view-filters .form--inline:after {
+    display: none;
+  }
+
+  /* line 78, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .view-filters .form--inline .form-actions {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* line 84, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .view-filters .form-item-search input {
+    height: 4.2rem;
+    width: 18.2rem;
+    border-radius: 0.4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 0 1rem;
   }
 
   /* line 6, src/sass/components/forms/search/_form.scss */
@@ -16418,7 +17121,7 @@ form.search .search button {
     font-size: 1.9rem;
   }
 
-  /* line 147, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 150, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .body,
   a.card.mfsfa .body {
@@ -16441,9 +17144,9 @@ form.search .search button {
     font-size: 1.75em;
   }
 
-  /* line 19, src/sass/components/basic/_feat-tiles.scss */
+  /* line 23, src/sass/components/basic/_feat-tiles.scss */
 
-  .feat-tiles > div {
+  .feat-tiles > div > div {
     width: 33.3%;
   }
 
@@ -16485,18 +17188,20 @@ form.search .search button {
     width: 85%;
   }
 
-  /* line 100, src/sass/components/basic/_hero.scss */
+  /* line 101, src/sass/components/basic/_hero.scss */
 
   .node__content > header .hero_title > div,
   .node__content > header .breadcrumb > div,
   .hub-reference > header .hero_title > div,
   .hub-reference > header .breadcrumb > div,
+  .view-cu-faculty-references > header .hero_title > div,
+  .view-cu-faculty-references > header .breadcrumb > div,
   header.hp_hero .hero_title > div,
   header.hp_hero .breadcrumb > div {
     width: 85%;
   }
 
-  /* line 368, src/sass/components/basic/_hero.scss */
+  /* line 369, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header > div {
     width: 85%;
@@ -16507,6 +17212,13 @@ form.search .search button {
   .card.fw_photo .content,
   a.card.fw_photo .content {
     width: 85%;
+  }
+
+  /* line 24, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci img,
+  a.card.fci img {
+    max-height: 132px;
   }
 }
 
@@ -16801,7 +17513,42 @@ form.search .search button {
     margin-top: -7.5rem;
   }
 
-  /* line 182, src/sass/components/basic/_hero.scss */
+  /* line 82, src/sass/structure/section-layouts/_faculty.scss */
+
+  .view-cu-faculty-references {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+
+  /* line 86, src/sass/structure/section-layouts/_faculty.scss */
+
+  .view-cu-faculty-references > header,
+  .view-cu-faculty-references > div {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  /* line 91, src/sass/structure/section-layouts/_faculty.scss */
+
+  .view-cu-faculty-references .section {
+    padding: 0;
+  }
+
+  /* line 95, src/sass/structure/section-layouts/_faculty.scss */
+
+  .view-cu-faculty-references .listing-filters {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  /* line 183, src/sass/components/basic/_hero.scss */
 
   header.hp_hero {
     width: 100%;
@@ -16814,20 +17561,20 @@ form.search .search button {
             flex-direction: column;
   }
 
-  /* line 192, src/sass/components/basic/_hero.scss */
+  /* line 193, src/sass/components/basic/_hero.scss */
 
   header.hp_hero:after {
     top: 3.3rem;
     height: calc(100% - 4.9rem);
   }
 
-  /* line 296, src/sass/components/basic/_hero.scss */
+  /* line 297, src/sass/components/basic/_hero.scss */
 
   .bg_caption {
     display: none;
   }
 
-  /* line 321, src/sass/components/basic/_hero.scss */
+  /* line 322, src/sass/components/basic/_hero.scss */
 
   .hp_hero_header {
     background: #002E6D;
@@ -16892,6 +17639,29 @@ form.search .search button {
   nav.side-nav a {
     display: block;
     padding: 0.7rem 0;
+  }
+
+  /* line 41, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .view-filters {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 99999;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: all .25s;
+    transition: all .25s;
+  }
+
+  /* line 53, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .row,
+  .listing-filters [class*="col-"] {
+    padding: 0;
   }
 
   /* line 32, src/sass/components/forms/search/_form.scss */
@@ -17120,7 +17890,7 @@ form.search .search button {
     margin: 0 -2.5rem 2.5rem;
   }
 
-  /* line 64, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 67, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .content a span:last-child,
   a.card.mfsfa .content a span:last-child {
@@ -17128,7 +17898,7 @@ form.search .search button {
     opacity: .3;
   }
 
-  /* line 77, src/sass/components/basic/cards/_mfsfa.scss */
+  /* line 80, src/sass/components/basic/cards/_mfsfa.scss */
 
   .card.mfsfa .title,
   a.card.mfsfa .title {
@@ -17199,6 +17969,12 @@ form.search .search button {
     margin-bottom: 0;
   }
 
+  /* line 25, src/sass/components/feeds-detail/feeds/_news-featured.scss */
+
+  .news-listing-row .field--name-hub-field-hub-news-description {
+    display: none;
+  }
+
   /* line 16, src/sass/components/feeds-detail/programs/_programs.scss */
 
   .program_rail {
@@ -17252,9 +18028,43 @@ form.search .search button {
     margin: 0 2.5rem 0 0;
     width: 7.5rem;
   }
+
+  /* line 98, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-header.section {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991.9px) {
+  /* line 177, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa > a:after,
+  .card.mfsfa > span:after,
+  a.card.mfsfa > a:after,
+  a.card.mfsfa > span:after {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(33, 35, 34, 0.9)), color-stop(50%, rgba(33, 35, 34, 0.5)));
+    background: linear-gradient(0deg, rgba(33, 35, 34, 0.9) 0%, rgba(33, 35, 34, 0.5) 50%);
+  }
+
+  /* line 182, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .body,
+  .card.mfsfa .content a,
+  a.card.mfsfa .body,
+  a.card.mfsfa .content a {
+    display: block;
+  }
+
+  /* line 187, src/sass/components/basic/cards/_mfsfa.scss */
+
+  .card.mfsfa .content,
+  a.card.mfsfa .content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
   /* line 36, src/sass/components/basic/_quotes.scss */
 
   .copy-block .embedded-entity blockquote,
@@ -17273,6 +18083,22 @@ form.search .search button {
 
   blockquote.q-left {
     margin: 0 -2.5rem 1.5rem;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767.9px) {
+  /* line 54, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h3,
+  a.card.fci h3 {
+    font-size: 3rem;
+  }
+
+  /* line 72, src/sass/components/basic/cards/_fci.scss */
+
+  .card.fci h2,
+  a.card.fci h2 {
+    font-size: 7.2rem;
   }
 }
 
