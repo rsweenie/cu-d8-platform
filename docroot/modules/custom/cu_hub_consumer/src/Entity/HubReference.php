@@ -453,6 +453,11 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
                 continue;
               }
 
+              $term_tooltip = NULL;
+              if (isset($value['resource']->field_term_tooltip)) {
+                $term_tooltip = $value['resource']->field_term_tooltip->getString();
+              }
+
               $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $term_name]);
               $term = reset($terms);
 
@@ -462,7 +467,18 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
                   'name' => $term_name, 
                   'vid' => $target_bundle,
                 ]);
+
+                if ($term_tooltip) {
+                  $term->set('field_term_tooltip', $term_tooltip);
+                }
+
                 $term->save();
+              }
+              else {
+                if ($term_tooltip) {
+                  $term->set('field_term_tooltip', $term_tooltip);
+                  $term->save();
+                }
               }
 
               if ($tid = $term->id()) {
