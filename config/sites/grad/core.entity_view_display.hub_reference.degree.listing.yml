@@ -43,7 +43,7 @@ mode: listing
 content:
   hub_field_hub_degree_availability:
     type: hub_resource_label
-    weight: 4
+    weight: 2
     region: content
     label: hidden
     settings: {  }
@@ -57,27 +57,13 @@ content:
       style_name: srcset_500px_wide
       link_type: content
     third_party_settings: {  }
-  hub_field_hub_degree_title:
+  hub_title:
     type: string
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings:
       link_to_entity: true
-    third_party_settings: {  }
-  hub_field_hub_degree_type:
-    type: hub_resource_label
-    weight: 3
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  hub_field_hub_program:
-    type: hub_resource_label
-    weight: 1
-    region: content
-    label: hidden
-    settings: {  }
     third_party_settings: {  }
 hidden:
   field_availability: true
@@ -100,11 +86,13 @@ hidden:
   hub_field_hub_degree_other_programs: true
   hub_field_hub_degree_related_degrees: true
   hub_field_hub_degree_requirements: true
+  hub_field_hub_degree_title: true
   hub_field_hub_degree_title_short: true
+  hub_field_hub_degree_type: true
   hub_field_hub_path_alias: true
+  hub_field_hub_program: true
   hub_field_hub_site: true
   hub_langcode: true
   hub_node_type: true
   hub_revision_timestamp: true
-  hub_title: true
   search_api_excerpt: true

@@ -501,7 +501,9 @@ hidden:
   hub_field_hub_degree_app_deadlines: true
   hub_field_hub_degree_app_link: true
   hub_field_hub_degree_featured_info: true
+  hub_field_hub_degree_list_image: true
   hub_field_hub_degree_next_steps: true
   hub_langcode: true
   hub_revision_timestamp: true
+  hub_title: true
   search_api_excerpt: true
