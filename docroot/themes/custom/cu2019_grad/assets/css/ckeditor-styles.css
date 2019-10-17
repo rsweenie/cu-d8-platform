@@ -160,152 +160,158 @@
 
 /* line 60, src/sass/base/fonts/_icons.scss */
 
-.icon-contact:before {
+.icon-close:before {
   content: "\E00A";
 }
 
 /* line 64, src/sass/base/fonts/_icons.scss */
 
-.icon-envelope:before {
+.icon-contact:before {
   content: "\E00B";
 }
 
 /* line 68, src/sass/base/fonts/_icons.scss */
 
-.icon-event-calendar:before {
+.icon-envelope:before {
   content: "\E00C";
 }
 
 /* line 72, src/sass/base/fonts/_icons.scss */
 
-.icon-expand-arrow:before {
+.icon-event-calendar:before {
   content: "\E00D";
 }
 
 /* line 76, src/sass/base/fonts/_icons.scss */
 
-.icon-filter:before {
+.icon-expand-arrow:before {
   content: "\E00E";
 }
 
 /* line 80, src/sass/base/fonts/_icons.scss */
 
-.icon-forward:before {
+.icon-filter:before {
   content: "\E00F";
 }
 
 /* line 84, src/sass/base/fonts/_icons.scss */
 
-.icon-google-translate:before {
+.icon-forward:before {
   content: "\E010";
 }
 
 /* line 88, src/sass/base/fonts/_icons.scss */
 
-.icon-help:before {
+.icon-google-translate:before {
   content: "\E011";
 }
 
 /* line 92, src/sass/base/fonts/_icons.scss */
 
-.icon-hybrid:before {
+.icon-help:before {
   content: "\E012";
 }
 
 /* line 96, src/sass/base/fonts/_icons.scss */
 
-.icon-location-thin:before {
+.icon-hybrid:before {
   content: "\E013";
 }
 
 /* line 100, src/sass/base/fonts/_icons.scss */
 
-.icon-location:before {
+.icon-location-thin:before {
   content: "\E014";
 }
 
 /* line 104, src/sass/base/fonts/_icons.scss */
 
-.icon-news:before {
+.icon-location:before {
   content: "\E015";
 }
 
 /* line 108, src/sass/base/fonts/_icons.scss */
 
-.icon-off-campus:before {
+.icon-news:before {
   content: "\E016";
 }
 
 /* line 112, src/sass/base/fonts/_icons.scss */
 
-.icon-on-campus:before {
+.icon-off-campus:before {
   content: "\E017";
 }
 
 /* line 116, src/sass/base/fonts/_icons.scss */
 
-.icon-online:before {
+.icon-on-campus:before {
   content: "\E018";
 }
 
 /* line 120, src/sass/base/fonts/_icons.scss */
 
-.icon-phone:before {
+.icon-online:before {
   content: "\E019";
 }
 
 /* line 124, src/sass/base/fonts/_icons.scss */
 
-.icon-right:before {
+.icon-phone:before {
   content: "\E01A";
 }
 
 /* line 128, src/sass/base/fonts/_icons.scss */
 
-.icon-search-more:before {
+.icon-right:before {
   content: "\E01B";
 }
 
 /* line 132, src/sass/base/fonts/_icons.scss */
 
-.icon-search:before {
+.icon-search-more:before {
   content: "\E01C";
 }
 
 /* line 136, src/sass/base/fonts/_icons.scss */
 
-.icon-social-facebook:before {
+.icon-search:before {
   content: "\E01D";
 }
 
 /* line 140, src/sass/base/fonts/_icons.scss */
 
-.icon-social-instagram:before {
+.icon-social-facebook:before {
   content: "\E01E";
 }
 
 /* line 144, src/sass/base/fonts/_icons.scss */
 
-.icon-social-linkedin:before {
+.icon-social-instagram:before {
   content: "\E01F";
 }
 
 /* line 148, src/sass/base/fonts/_icons.scss */
 
-.icon-social-twitter:before {
+.icon-social-linkedin:before {
   content: "\E020";
 }
 
 /* line 152, src/sass/base/fonts/_icons.scss */
 
-.icon-social-youtube:before {
+.icon-social-twitter:before {
   content: "\E021";
 }
 
 /* line 156, src/sass/base/fonts/_icons.scss */
 
-.icon-tag:before {
+.icon-social-youtube:before {
   content: "\E022";
+}
+
+/* line 160, src/sass/base/fonts/_icons.scss */
+
+.icon-tag:before {
+  content: "\E023";
 }
 
 /*---===<<< UNIVERSAL RESETS >>>===---*/
@@ -3886,7 +3892,8 @@ a.card.mfsfa .hub-resource-field--type-link a:after {
 
 /* line 2, src/sass/components/basic/cards/_fci.scss */
 
-.paragraph--type--grad-feature-tile-item {
+.paragraph--type--grad-feature-tile-item,
+.hub-resource--type-paragraph-hub-feature-tile-item {
   position: relative;
   padding-bottom: 100%;
 }

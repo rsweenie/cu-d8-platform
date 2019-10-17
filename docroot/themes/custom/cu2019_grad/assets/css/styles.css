@@ -3892,7 +3892,8 @@ a.card.mfsfa .hub-resource-field--type-link a:after {
 
 /* line 2, src/sass/components/basic/cards/_fci.scss */
 
-.paragraph--type--grad-feature-tile-item {
+.paragraph--type--grad-feature-tile-item,
+.hub-resource--type-paragraph-hub-feature-tile-item {
   position: relative;
   padding-bottom: 100%;
 }
