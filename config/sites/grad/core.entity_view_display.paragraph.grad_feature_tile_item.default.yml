@@ -17,7 +17,7 @@ bundle: grad_feature_tile_item
 mode: default
 content:
   field_tile_item_body:
-    weight: 0
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -34,7 +34,7 @@ content:
     region: content
   field_tile_item_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: default

@@ -6,12 +6,7 @@
         {{ quote }}
       {% endif %}
       <div class="attr">
-        {% if name %}
-          {{ name }}
-        {% endif %}
-        {% if title %}
-            <span>, </span><br>{{ title }}
-        {% endif %}
+        {% if name %}{{ name }}{% endif %}{% if title %}<span>, </span>{{ title }}{% endif %}
         {% if area %}
             <small>{{ area }}</small>
         {% endif %}
