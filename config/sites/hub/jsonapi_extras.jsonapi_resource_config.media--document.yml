@@ -77,11 +77,11 @@ resourceFields:
     enhancer:
       id: ''
   name:
-    disabled: true
     fieldName: name
     publicName: name
     enhancer:
       id: ''
+    disabled: false
   thumbnail:
     fieldName: thumbnail
     publicName: thumbnail
