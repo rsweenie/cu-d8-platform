@@ -1,0 +1,50 @@
+uuid: dc88ca0d-840d-481b-9c24-426a6fa2df49
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.degree
+    - field.field.hub_reference.degree.field_availability
+    - field.field.hub_reference.degree.field_degree_type
+    - field.field.hub_reference.degree.field_program_interests
+  module:
+    - path
+id: hub_reference.degree.default
+targetEntityType: hub_reference
+bundle: degree
+mode: default
+content:
+  field_availability:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_degree_type:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_program_interests:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

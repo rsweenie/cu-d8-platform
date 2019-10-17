@@ -47,6 +47,27 @@ interface HubReferenceInterface extends ContentEntityInterface, EntityChangedInt
   public function getSource();
 
   /**
+   * Returns the id of the resource type that generated this object.
+   *
+   * @return string
+   */
+  public function getResourceTypeId();
+
+  /**
+   * Returns the resource type that generated this object.
+   *
+   * @return \Drupal\cu_hub_consumer\Hub\ResourceTypeInterface
+   */
+  public function getResourceType();
+
+  /**
+   * Returns the UUID as stored on hub.
+   *
+   * @return string
+   */
+  public function getHubUUID();
+
+  /**
    * Returns the raw JSON data from the hub API.
    *
    * @return mixed

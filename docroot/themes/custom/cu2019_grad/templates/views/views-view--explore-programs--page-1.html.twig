@@ -52,54 +52,39 @@
     } %}
   {% endif %}
   {{ title_suffix }}
+  {% if explore_programs_links %}
+    <div>
+      <span>Choose program type:</span>
+      {% for explore_programs_link in explore_programs_links %}
+        {{ explore_programs_link }}
+      {% endfor %}
+    </div>
+  {% endif %}
   {% if attachment_before %}
     <div class="attachment attachment-before">
-      {{ attachment_before }}
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            {{ attachment_before }}
+          </div>
+        </div>
+      </div>
     </div>
   {% endif %}
   {% if exposed %}
-
-  <button id="filterOpen" class="listing-filters-toggle">
-    <span class="icon icon-filter"></span>
-    <span>See Search and Filters</span>
-  </button>
-  <div id="filters" class="section listing-filters" aria-labelledby="filterToggle">
-    <button id="filterClose" class="listing-filters-toggle">
-      <span class="icon icon-close"></span>
-      <span>Close Search and Filters</span>
-    </button>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="view-filters">
-          {{ exposed }}
-        </div>
-      </div>
+    <div class="view-filters">
+      {{ exposed }}
     </div>
-  </div>
   {% endif %}
   {% if header %}
-  <div class="section listing-header">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="view-header">
-          {{ header }}
-        </div>
-      </div>
+    <div class="view-header">
+      {{ header }}
     </div>
-  </div>
   {% endif %}
 
   {% if rows %}
     <div class="view-content">
-      <div class="section">
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="fac-listing">
-              {{ rows }}
-            </div>
-          </div>
-        </div>
-      </div>
+      {{ rows }}
     </div>
   {% elseif empty %}
     <div class="view-empty">
@@ -108,13 +93,7 @@
   {% endif %}
 
   {% if pager %}
-    <div class="section">
-      <div class="row">
-        <div class="col-xs-12">
-          {{ pager }}
-        </div>
-      </div>
-    </div>
+    {{ pager }}
   {% endif %}
   {% if attachment_after %}
     <div class="attachment attachment-after">

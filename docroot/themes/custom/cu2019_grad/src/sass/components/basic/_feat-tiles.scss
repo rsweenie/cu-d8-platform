@@ -92,6 +92,15 @@
   .hub-resource-field--name-field-fc-p-link {
     display: none;
   }
+
+  .hub-resource--type-paragraph-hub-quote-ref,
+  .hub-resource-field--name-field-hub-quote-ref-item,
+  .hub-resource-field--name-field-hub-quote-ref-item > .hub-resource-field__item,
+  .quote-box,
+  .field--name-field-quote-ref,
+  .node--type-grad-quote {
+    @extend %h100;
+  }
 }
 
 .stat_hl_io,
