@@ -1,0 +1,28 @@
+uuid: 1e13d541-cc64-4f13-af92-3b8f22764c60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_list_image
+    - media.type.image
+    - node.type.hub_degree
+id: node.hub_degree.field_hub_degree_list_image
+field_name: field_hub_degree_list_image
+entity_type: node
+bundle: hub_degree
+label: 'Listing Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

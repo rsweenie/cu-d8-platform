@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.hub_degree.field_hub_degree_hero_image
     - field.field.node.hub_degree.field_hub_degree_interests
     - field.field.node.hub_degree.field_hub_degree_intro
+    - field.field.node.hub_degree.field_hub_degree_list_image
     - field.field.node.hub_degree.field_hub_degree_next_steps
     - field.field.node.hub_degree.field_hub_degree_other_programs
     - field.field.node.hub_degree.field_hub_degree_related_degrees
@@ -44,7 +45,7 @@ bundle: hub_degree
 mode: default
 content:
   field_hub_degree_adm_rep:
-    weight: 13
+    weight: 14
     label: above
     settings:
       link: true
@@ -52,14 +53,14 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_app_deadlines:
-    weight: 11
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_hub_degree_app_link:
-    weight: 12
+    weight: 13
     label: above
     settings:
       trim_length: 80
@@ -80,7 +81,7 @@ content:
     region: content
   field_hub_degree_description:
     type: entity_reference_revisions_entity_view
-    weight: 9
+    weight: 10
     label: above
     settings:
       view_mode: default
@@ -89,7 +90,7 @@ content:
     region: content
   field_hub_degree_details:
     type: entity_reference_revisions_entity_view
-    weight: 15
+    weight: 16
     label: above
     settings:
       view_mode: default
@@ -98,7 +99,7 @@ content:
     region: content
   field_hub_degree_featured_info:
     type: entity_reference_revisions_entity_view
-    weight: 14
+    weight: 15
     label: above
     settings:
       view_mode: default
@@ -115,7 +116,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_degree_interests:
-    weight: 7
+    weight: 8
     label: above
     settings:
       link: true
@@ -123,14 +124,23 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_intro:
-    weight: 8
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
+  field_hub_degree_list_image:
+    type: entity_reference_entity_view
+    weight: 7
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
   field_hub_degree_next_steps:
-    weight: 18
+    weight: 19
     label: above
     settings:
       link: true
@@ -138,7 +148,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_other_programs:
-    weight: 16
+    weight: 17
     label: above
     settings:
       trim_length: 80
@@ -150,7 +160,7 @@ content:
     type: link
     region: content
   field_hub_degree_related_degrees:
-    weight: 17
+    weight: 18
     label: above
     settings:
       link: true
@@ -158,7 +168,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_requirements:
-    weight: 10
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -189,7 +199,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_path_alias:
-    weight: 19
+    weight: 20
     label: above
     settings:
       link_to_entity: false
@@ -213,14 +223,14 @@ content:
     type: entity_reference_label
     region: content
   field_meta_tags:
-    weight: 21
+    weight: 22
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   links:
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }

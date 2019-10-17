@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.hub_degree.field_hub_degree_hero_image
     - field.field.node.hub_degree.field_hub_degree_interests
     - field.field.node.hub_degree.field_hub_degree_intro
+    - field.field.node.hub_degree.field_hub_degree_list_image
     - field.field.node.hub_degree.field_hub_degree_next_steps
     - field.field.node.hub_degree.field_hub_degree_other_programs
     - field.field.node.hub_degree.field_hub_degree_related_degrees
@@ -39,7 +40,7 @@ bundle: hub_degree
 mode: default
 content:
   field_hub_degree_adm_rep:
-    weight: 13
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: 60
@@ -48,7 +49,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_degree_app_deadlines:
-    weight: 11
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -56,7 +57,7 @@ content:
     type: text_textarea
     region: content
   field_hub_degree_app_link:
-    weight: 12
+    weight: 13
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -64,14 +65,14 @@ content:
     type: link_default
     region: content
   field_hub_degree_availability:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_hub_degree_description:
     type: paragraphs
-    weight: 10
+    weight: 11
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -90,7 +91,7 @@ content:
     region: content
   field_hub_degree_details:
     type: paragraphs
-    weight: 15
+    weight: 16
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -109,7 +110,7 @@ content:
     region: content
   field_hub_degree_featured_info:
     type: paragraphs
-    weight: 19
+    weight: 20
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -142,7 +143,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_degree_interests:
-    weight: 8
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -151,15 +152,30 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_degree_intro:
-    weight: 9
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_hub_degree_list_image:
+    type: entity_browser_entity_reference
+    weight: 7
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
+      open: false
+    third_party_settings: {  }
+    region: content
   field_hub_degree_next_steps:
-    weight: 18
+    weight: 19
     settings:
       match_operator: CONTAINS
       size: 60
@@ -168,7 +184,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_degree_other_programs:
-    weight: 17
+    weight: 18
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -176,7 +192,7 @@ content:
     type: link_default
     region: content
   field_hub_degree_related_degrees:
-    weight: 16
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
@@ -185,7 +201,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_degree_requirements:
-    weight: 14
+    weight: 15
     settings:
       rows: 5
       placeholder: ''
@@ -215,7 +231,7 @@ content:
     type: options_select
     region: content
   field_hub_path_alias:
-    weight: 20
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: hub_path_alias
@@ -236,7 +252,7 @@ content:
     type: options_select
     region: content
   field_meta_tags:
-    weight: 22
+    weight: 23
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -245,7 +261,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 21
+    weight: 22
     region: content
     third_party_settings: {  }
   title:

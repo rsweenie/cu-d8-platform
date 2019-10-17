@@ -12,6 +12,7 @@ third_party_settings:
       - field_hub_site
       - field_hub_program
       - field_hub_degree_hero_image.image
+      - field_hub_degree_list_image.image
       - field_hub_degree_availability
       - field_hub_degree_interests
       - field_hub_degree_adm_rep
@@ -103,11 +104,11 @@ resourceFields:
     enhancer:
       id: ''
   title:
-    disabled: true
     fieldName: title
     publicName: title
     enhancer:
       id: ''
+    disabled: false
   created:
     fieldName: created
     publicName: created
@@ -267,6 +268,12 @@ resourceFields:
   field_hub_degree_intro:
     fieldName: field_hub_degree_intro
     publicName: field_hub_degree_intro
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_list_image:
+    fieldName: field_hub_degree_list_image
+    publicName: field_hub_degree_list_image
     enhancer:
       id: ''
     disabled: false
