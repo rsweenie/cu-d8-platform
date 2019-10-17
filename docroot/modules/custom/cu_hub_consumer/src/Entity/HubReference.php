@@ -19,6 +19,7 @@ use Drupal\cu_hub_consumer\Hub\ResourceFieldItemListInterface;
 use Drupal\cu_hub_consumer\Hub\ResourceRelationshipListInterface;
 use Drupal\cu_hub_consumer\HubFieldStorageDefinition;
 use Drupal\cu_hub_consumer\Hub\ResourceInterface;
+use Drupal\cu_hub_consumer\Hub\ResourceTypeInterface;
 
 /**
  * The hub reference entity class.
@@ -223,6 +224,28 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function getResourceTypeId() {
+    if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($this->bundle())) {
+      if ($reference_source = $hub_ref_type->getSource()) {
+        return $reference_source->getResourceTypeId();
+      }
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getResourceType() {
+    if ($hub_ref_type = \Drupal::entityTypeManager()->getStorage('hub_reference_type')->load($this->bundle())) {
+      if ($reference_source = $hub_ref_type->getSource()) {
+        return $reference_source->getResourceType();
+      }
+    }
+  }
+
+  /**
    * Determines if the source field value has changed.
    *
    * @return bool
@@ -269,6 +292,13 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
    */
   public function getChangedTime() {
     return $this->get('changed')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getHubUUID() {
+    return $this->get('hub_uuid')->first()->getString();
   }
 
   /**
@@ -508,6 +538,8 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
         $resource_type = $reference_source->getResourceType();
 
         if ($hub_fields = $resource_type->getHubFields()) {
+          $this->tryFetchLiveData();
+
           $field_prefix = HubReferenceInterface::HUB_FIELD_PREFIX;
           $resource_object = $this->getResourceObj();
 
@@ -531,6 +563,34 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
     }
 
     return $this;
+  }
+
+  /**
+   * Attempts to fetch live data from hub for preview purposes.
+   *
+   * @return void
+   */
+  protected function tryFetchLiveData() {
+    $curr_user = \Drupal::currentUser();
+
+    // Make sure we have permission to do this.
+    if (!$curr_user || !$curr_user->hasPermission('refresh cu hub reference')) {
+      return;
+    }
+
+    $hub_uuid = $this->getHubUUID();
+    $resource_type = $this->getResourceType();
+    $is_live = \Drupal::request()->query->get('live');
+
+    // Make sure we have the params we need.
+    if (!$hub_uuid || !$resource_type || !$is_live) {
+      return;
+    }
+
+    if ($resource = $resource_type->fetchResource($hub_uuid)) {
+      $this->unserializedHubJson = $resource->getJsonData();
+      $this->resourceObject = $resource;
+    }
   }
 
 }

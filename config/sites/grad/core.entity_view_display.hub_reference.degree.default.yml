@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - cu_hub_consumer.hub_reference_type.degree
+    - field.field.hub_reference.degree.field_availability
+    - field.field.hub_reference.degree.field_degree_type
+    - field.field.hub_reference.degree.field_program_interests
   module:
     - ctools_block
     - cu_hub_consumer
@@ -330,6 +333,30 @@ targetEntityType: hub_reference
 bundle: degree
 mode: default
 content:
+  field_availability:
+    weight: 18
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: main
+  field_degree_type:
+    weight: 19
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: main
+  field_program_interests:
+    weight: 20
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: main
   hub_changed:
     type: datetime_default
     weight: 17
@@ -474,7 +501,9 @@ hidden:
   hub_field_hub_degree_app_deadlines: true
   hub_field_hub_degree_app_link: true
   hub_field_hub_degree_featured_info: true
+  hub_field_hub_degree_list_image: true
   hub_field_hub_degree_next_steps: true
   hub_langcode: true
   hub_revision_timestamp: true
+  hub_title: true
   search_api_excerpt: true
