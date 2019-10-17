@@ -59,11 +59,15 @@
   {% endif %}
   {% if exposed %}
 
-  <button class="listing-filters-toggle">
+  <button id="filterOpen" class="listing-filters-toggle">
     <span class="icon icon-filter"></span>
     <span>See Search and Filters</span>
   </button>
-  <div class="section listing-filters">
+  <div id="filters" class="section listing-filters" aria-labelledby="filterToggle">
+    <button id="filterClose" class="listing-filters-toggle">
+      <span class="icon icon-close"></span>
+      <span>Close Search and Filters</span>
+    </button>
     <div class="row">
       <div class="col-xs-12">
         <div class="view-filters">

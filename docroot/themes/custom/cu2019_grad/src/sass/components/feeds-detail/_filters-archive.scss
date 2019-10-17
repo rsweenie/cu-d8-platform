@@ -20,8 +20,12 @@
     left: 0;
     background: $white;
     z-index: 99999;
-    transform: translateX(100%);
+    transform: translateY(100%);
     transition: all .25s;
+
+    &.open {
+      transform: translateY(0);
+    }
 
     .row,
     [class*="col-"] {
@@ -90,7 +94,7 @@
   }
 
   @media #{$mediaFullHeader} {
-    @include srOnly;
+    display: none;
   }
 }
 
