@@ -3175,6 +3175,7 @@ a.card.img-behind {
 
 .grid .card.img-behind.wide,
 .grid a.card.img-behind.wide {
+  -ms-grid-column-span: 2;
   grid-column-end: span 2;
   text-align: left;
 }
@@ -11287,9 +11288,12 @@ nav.jn li + li {
 /* line 6, src/sass/components/feeds-detail/feeds/_tile.scss */
 
 .f-tiles {
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   grid-auto-flow: row;
   grid-column-gap: 2.5rem;
   grid-row-gap: 2.5rem;
@@ -12043,19 +12047,94 @@ aside .news-listing-row h2 ~ .h4 {
 
 \*  --------------------------------------------------------------------------  */
 
-/* line 7, src/sass/components/feeds-detail/_filters-archive.scss */
+/* line 9, src/sass/components/feeds-detail/_filters-archive.scss */
 
 .listing-filters.section {
   padding: 0;
 }
 
-/* line 11, src/sass/components/feeds-detail/_filters-archive.scss */
+/* line 13, src/sass/components/feeds-detail/_filters-archive.scss */
 
 .listing-filters .form-item {
   margin: 0;
 }
 
-/* line 71, src/sass/components/feeds-detail/_filters-archive.scss */
+/* line 18, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters .view-filters .filter-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+}
+
+/* line 28, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters .view-filters .filter-search .form-actions {
+  margin: 0;
+}
+
+/* line 32, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters .view-filters .filter-search input {
+  height: 4.2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+/* line 38, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters .view-filters .filter-search input[type="text"] {
+  width: 18.2rem;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  border-right: 0;
+}
+
+/* line 45, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters .view-filters .filter-search input[type="submit"] {
+  width: 4rem;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  background-color: #5D6468;
+  border-color: #5D6468;
+  text-indent: -9999px;
+}
+
+/* line 55, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters .view-filters .filter-search .icon {
+  font-size: 2rem;
+  color: #fff;
+  line-height: 1;
+  position: absolute;
+  top: calc(50% - 1rem);
+  right: 1rem;
+  pointer-events: none;
+}
+
+/* line 66, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.listing-filters .view-filters form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+/* line 171, src/sass/components/feeds-detail/_filters-archive.scss */
 
 .listing-filters-toggle {
   width: 100%;
@@ -12082,13 +12161,13 @@ aside .news-listing-row h2 ~ .h4 {
           order: 10;
 }
 
-/* line 81, src/sass/components/feeds-detail/_filters-archive.scss */
+/* line 181, src/sass/components/feeds-detail/_filters-archive.scss */
 
 .listing-filters-toggle span {
   display: inline-block;
 }
 
-/* line 85, src/sass/components/feeds-detail/_filters-archive.scss */
+/* line 185, src/sass/components/feeds-detail/_filters-archive.scss */
 
 .listing-filters-toggle .icon {
   height: 3.8rem;
@@ -12113,13 +12192,59 @@ aside .news-listing-row h2 ~ .h4 {
           flex-flow: row wrap;
 }
 
-/* line 102, src/sass/components/feeds-detail/_filters-archive.scss */
+/* line 202, src/sass/components/feeds-detail/_filters-archive.scss */
 
 .listing-header.section {
   padding: 0;
   font-size: 1.6rem;
   font-weight: 700;
   margin-top: 1.5em;
+}
+
+/* line 214, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.accordion.filters {
+  margin: 0;
+}
+
+/* line 217, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.accordion.filters dt ~ dt {
+  margin: 0;
+}
+
+/* line 221, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.accordion.filters div[role="button"] {
+  font-size: 1.5rem;
+  color: #5D6468;
+  cursor: pointer;
+  padding: 0.8rem;
+  border: 0.2rem solid #ECF0F3;
+  border-left: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+/* line 230, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.accordion.filters div[role="button"][aria-expanded="true"] {
+  background: #266db3;
+  border-color: #266db3;
+  color: #fff;
+}
+
+/* line 237, src/sass/components/feeds-detail/_filters-archive.scss */
+
+.accordion.filters legend {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* line 1, src/sass/components/feeds-detail/faculty/_faculty.scss */
@@ -13702,9 +13827,12 @@ form.search .search button {
   /* line 5, src/sass/structure/section-layouts/_grid.scss */
 
   .grid {
+    display: -ms-grid;
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     grid-auto-flow: row;
     grid-column-gap: 0;
     grid-row-gap: 0;
@@ -13732,7 +13860,8 @@ form.search .search button {
   /* line 26, src/sass/structure/section-layouts/_grid.scss */
 
   .grid.wide {
-    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
 
   /* line 1, src/sass/structure/section-backgrounds/_slash.scss */
@@ -14278,9 +14407,12 @@ form.search .search button {
   /* line 1, src/sass/components/basic/media/_gallery.scss */
 
   .gallery {
+    display: -ms-grid;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
     grid-auto-flow: row;
     grid-column-gap: 2.5rem;
     grid-row-gap: 1.5rem;
@@ -15467,7 +15599,8 @@ form.search .search button {
   /* line 6, src/sass/components/feeds-detail/feeds/_tile.scss */
 
   .f-tiles {
-    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
 
   /* line 106, src/sass/components/feeds-detail/feeds/_news-featured.scss */
@@ -16837,7 +16970,20 @@ form.search .search button {
     padding-top: 3.8rem;
   }
 
-  /* line 38, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 22, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .view-filters .filter-search label {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* line 141, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters {
     background: #f5f8fc;
@@ -16846,7 +16992,7 @@ form.search .search button {
     margin-top: 1.25rem;
   }
 
-  /* line 44, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 147, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters .form--inline {
     display: -webkit-box;
@@ -16857,13 +17003,13 @@ form.search .search button {
             justify-content: space-between;
   }
 
-  /* line 48, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 151, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters .form--inline:after {
     display: none;
   }
 
-  /* line 52, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 155, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .view-filters .form--inline .form-actions {
     position: absolute;
@@ -16876,18 +17022,19 @@ form.search .search button {
     clip: rect(0, 0, 0, 0);
   }
 
-  /* line 58, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 162, src/sass/components/feeds-detail/_filters-archive.scss */
 
-  .listing-filters .view-filters .form-item-search input {
-    height: 4.2rem;
-    width: 18.2rem;
-    border-radius: 0.4rem;
-    font-size: 1.6rem;
-    font-weight: bold;
-    padding: 0 1rem;
+  .listing-filters .view-filters form {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 
-  /* line 71, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 171, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters-toggle {
     display: none;
@@ -17266,7 +17413,8 @@ form.search .search button {
   /* line 6, src/sass/components/feeds-detail/feeds/_tile.scss */
 
   .f-tiles {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   /* line 2, src/sass/base/_admin.scss */
@@ -17742,7 +17890,7 @@ form.search .search button {
     padding: 0.7rem 0;
   }
 
-  /* line 6, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 8, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters {
     width: 100vw;
@@ -17758,18 +17906,102 @@ form.search .search button {
     transition: all .25s;
   }
 
-  /* line 26, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 82, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters.open {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
 
-  /* line 30, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 86, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-filters .row,
-  .listing-filters [class*="col-"] {
+  .listing-filters [class*="col-"],
+  .listing-filters .view-filters {
     padding: 0;
+    height: 100%;
+  }
+
+  /* line 94, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .view-filters form {
+    height: 100%;
+  }
+
+  /* line 99, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+    -ms-grid-rows: (auto)[5] 1fr;
+        grid-template-rows: repeat(5, auto) 1fr;
+    background: #F5F8FC;
+  }
+
+  /* line 106, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters dd {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    -ms-grid-row-span: 6;
+    grid-row-end: 7;
+    background: #fff;
+    padding: 1.5rem;
+  }
+
+  /* line 115, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters dd label {
+    display: block;
+  }
+
+  /* line 122, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters dd input[type="radio"]:checked + label,
+  .listing-filters .accordion.filters dd input[type="checkbox"]:checked + label {
+    background: red;
+  }
+
+  /* line 128, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters dt {
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+
+  /* line 131, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters dt:nth-child(1) {
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+
+  /* line 131, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters dt:nth-child(3) {
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+
+  /* line 131, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters dt:nth-child(5) {
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+
+  /* line 131, src/sass/components/feeds-detail/_filters-archive.scss */
+
+  .listing-filters .accordion.filters dt:nth-child(7) {
+    -ms-grid-row: 4;
+    grid-row: 4;
   }
 
   /* line 113, src/sass/components/feeds-detail/faculty/_faculty.scss */
@@ -18191,7 +18423,7 @@ form.search .search button {
     width: 7.5rem;
   }
 
-  /* line 102, src/sass/components/feeds-detail/_filters-archive.scss */
+  /* line 202, src/sass/components/feeds-detail/_filters-archive.scss */
 
   .listing-header.section {
     display: none;

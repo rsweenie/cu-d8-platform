@@ -19,9 +19,11 @@
 {{ q }}
 {% endif %}
 
-{{ form.search }}
-
-{{ form|without('search', 'program') }}
+<div class="filter-search">
+  {{ form.search }}
+  {{ form|without('search', 'program') }}
+  <span class="icon icon-search"></span>
+</div>
 
 {{ attach_library('cu2019_grad/accordions') }}
 <dl class="accordion filters" role="presentation" data-allow-multiple="true">
