@@ -71,21 +71,6 @@ jQuery(document).ready(function() {
       }
     });
   }
-  // updates font size if the width of the email address in the contact box
-  // exceeds contact box width
-  // TODO: modify to loop through multiple email addresses
-  // and also to handle multiple contact boxes?
-  if (jQuery('.contact_us')[0]) {
-    var contact = jQuery('.contact_us');
-    var email = jQuery('.contact_us p a');
-    var font_size;
-    email[0].style.fontSize == '' ? font_size = 16 : font_size = parseInt(email[0].style.fontSize.slice(0, -2));
-
-    while (contact.width() <= (email.width() + 5)) {
-      font_size--;
-      email[0].style.fontSize = font_size.toString() + 'px';
-    }
-  }
   // making menu links open in new window if the links leave the current site
   function newWindow($menuSelector) {
     var currentDomain = document.domain;
@@ -108,7 +93,7 @@ jQuery(document).ready(function() {
   menuLoader();
 
   // for long emails
-  jQuery(".right_sidebar .field--name-body p a").wrap("<div class='fitty'></div>");
+  jQuery(".right_sidebar .field--name-body p a").addClass('fitty');
 
   // Let people use fitty without updating this file
   fitty(".fitty", {

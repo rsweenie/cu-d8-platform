@@ -1,0 +1,18 @@
+{# Max McCoy and Abe Coleman#}
+{# Apply Fitty javascript to email address in content box #}
+{% for field in fields %}
+    {{ attributes.removeClass(classes) }}
+    {%
+        set classes = [
+            field.class | trim ('field-','left')
+        ]
+    %}
+    {% if field.class == 'field-profile-email' %}
+        {%
+           set classes = classes | merge ( [
+                'fitty' 
+            ])
+        %}
+    {% endif %}
+    <p{{ attributes.addClass(classes) }}>{{ field.content }}</p>
+{% endfor %}

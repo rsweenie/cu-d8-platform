@@ -7,5 +7,6 @@ pathConfig.array = [
     '/myhr',
     '/myhr/performance-management',
     '/new-hire-information',
+    '/profile/pr-miss-profile-example'
 ]
 module.exports = pathConfig;

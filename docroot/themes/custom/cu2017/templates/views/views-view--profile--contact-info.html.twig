@@ -50,15 +50,6 @@
         <h3><strong>{{ header }}</strong></h3>
       </div>
     {% endif %}
-
-    {% if rows %}
-      <div class="view-content">
-        {{ rows }}
-      </div>
-    {% elseif empty %}
-      <div class="view-empty">
-        {{ empty }}
-      </div>
-    {% endif %}
+      {{ rows }}
   </div>
 </div>
