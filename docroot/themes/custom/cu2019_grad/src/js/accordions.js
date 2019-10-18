@@ -24,7 +24,7 @@
         accordion.addEventListener('click', function (event) {
           var target = event.target;
 
-          if (target.tagName === "BUTTON") {
+          if (target.tagName === "BUTTON" || target.getAttribute('role') == 'button') {
             // Check if the current toggle is expanded.
             var isExpanded = target.getAttribute('aria-expanded') == 'true';
 
