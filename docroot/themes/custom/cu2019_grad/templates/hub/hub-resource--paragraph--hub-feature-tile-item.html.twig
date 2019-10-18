@@ -25,11 +25,11 @@
       {% else %}
         <span>
       {% endif %}
-        {% if content.field_hub_tile_item_body %}
-          {{ content.field_hub_tile_item_body }}
-        {% endif %}
         {% if content.field_hub_tile_item_image %}
           {{ content.field_hub_tile_item_image }}
+        {% endif %}
+        {% if content.field_hub_tile_item_body %}
+          {{ content.field_hub_tile_item_body }}
         {% endif %}
       {% if tile_link %}
         </a>
