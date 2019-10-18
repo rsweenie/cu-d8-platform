@@ -17,6 +17,9 @@ fields:
   revision_timestamp:
     type: datetime
     multiple: false
+  title:
+    type: string
+    multiple: false
   created:
     type: datetime
     multiple: false
@@ -84,10 +87,10 @@ fields:
     type: hub_resource
     hub_type: paragraph
     hub_bundles:
-      - paragraph--featured_content_item
       - paragraph--faculty_alumni_spotlight
       - paragraph--image
       - paragraph--statistic_highlight
+      - paragraph--hub_feature_tile_item
       - paragraph--hub_quote_ref
     multiple: true
   field_hub_degree_hero_image:
@@ -101,6 +104,12 @@ fields:
     hub_type: taxonomy_term
     hub_bundles:
       - taxonomy_term--program_interests
+    multiple: false
+  field_hub_degree_list_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false
   field_hub_degree_next_steps:
     type: hub_resource

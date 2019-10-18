@@ -1,9 +1,9 @@
-uuid: 9bd16a56-ab88-4f6d-a895-305cdc8c3cd3
+uuid: bb0c4b21-09eb-4634-882c-bc0731344826
 langcode: en
 status: true
 dependencies: {  }
-id: paragraph__ief_link
-type_id: paragraph--ief_link
+id: paragraph__hub_feature_tile_item
+type_id: paragraph--hub_feature_tile_item
 fields:
   drupal_internal__id:
     type: integer
@@ -29,22 +29,34 @@ fields:
   parent_field_name:
     type: string
     multiple: false
-  field_internal_or_external_link:
-    type: link
+  behavior_settings:
+    type: string_long
     multiple: false
-  field_link_text:
-    type: string
-    multiple: false
-  field_open_in_new_window:
+  default_langcode:
     type: boolean
+    multiple: false
+  revision_translation_affected:
+    type: boolean
+    multiple: false
+  field_hub_tile_item_body:
+    type: hub_text_long
+    multiple: false
+  field_hub_tile_item_link:
+    type: link
     multiple: false
   paragraph_type:
     type: hub_resource
     hub_type: paragraphs_type
     multiple: false
-  field_file_link:
+  field_hub_tile_item_file_link:
     type: hub_resource
     hub_type: media
     hub_bundles:
       - media--document
+    multiple: false
+  field_hub_tile_item_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
     multiple: false

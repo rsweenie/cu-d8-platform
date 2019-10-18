@@ -1,0 +1,67 @@
+uuid: 815597bd-ccc8-4244-8c41-3f13b8bdff47
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.hub_reference.listing
+    - cu_hub_consumer.hub_reference_type.pd_course
+  module:
+    - cu_hub_consumer
+    - layout_builder
+    - layout_library
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_library:
+    enable: false
+id: hub_reference.pd_course.listing
+targetEntityType: hub_reference
+bundle: pd_course
+mode: listing
+content:
+  hub_field_hub_pd_course_list_image:
+    type: hub_resource_media_image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      style_name: srcset_500px_wide
+      link_type: content
+    third_party_settings: {  }
+  hub_field_hub_pd_course_program:
+    type: hub_resource_label
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  hub_title:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+hidden:
+  hub_body: true
+  hub_changed: true
+  hub_created: true
+  hub_drupal_internal__nid: true
+  hub_drupal_internal__vid: true
+  hub_field_hub_path_alias: true
+  hub_field_hub_pd_course_dates: true
+  hub_field_hub_pd_course_details: true
+  hub_field_hub_pd_course_hero_image: true
+  hub_field_hub_pd_course_next_steps: true
+  hub_field_hub_pd_course_title: true
+  hub_field_hub_pd_related_degrees: true
+  hub_field_hub_pd_right_side_copy: true
+  hub_field_hub_site: true
+  hub_langcode: true
+  hub_metatag: true
+  hub_node_type: true
+  hub_path: true
+  hub_revision_timestamp: true
+  search_api_excerpt: true

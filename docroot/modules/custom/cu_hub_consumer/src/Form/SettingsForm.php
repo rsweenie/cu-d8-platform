@@ -4,6 +4,7 @@ namespace Drupal\cu_hub_consumer\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\cu_hub_consumer\hub\ResourceException;
 
 /**
  * Configure example settings for this site.
@@ -65,6 +66,14 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Base URL'),
       '#description' => $this->t('Example: %hub_base_url. Do not include /jsonapi in the URL.', ['%hub_base_url' => 'https://hub.creighton.com']),
       '#default_value' => $this->getSetting('hub_base_url'),
+    ];
+
+    $form['hub_site_uuid'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Hub Site'),
+      '#description' => $this->t('This is the site on hub that will be used to filter what is imported.'),
+      '#options' => $this->getSiteOptions(),
+      '#default_value' => $this->getSetting('hub_site_uuid', ''),
     ];
 
     $form['cron'] = array(
@@ -137,6 +146,7 @@ class SettingsForm extends ConfigFormBase {
       // Set the submitted configuration setting.
       ->set('enabled', $form_state->getValue('enabled'))
       ->set('hub_base_url', $form_state->getValue('hub_base_url'))
+      ->set('hub_site_uuid', $form_state->getValue('hub_site_uuid'))
       ->set('cron.enabled', $form_state->getValue(['cron', 'enabled']))
       ->set('cron.refresh_freq', $form_state->getValue(['cron', 'refresh_freq']))
       ->set('cron.refresh_fetch_limit', $form_state->getValue(['cron', 'refresh_fetch_limit']))
@@ -148,6 +158,9 @@ class SettingsForm extends ConfigFormBase {
     // We want to reset the last_refresh time on settings changes.
     $state = \Drupal::state();
     $state->set('cu_hub_consumer.cron.last_refresh', 0);
+
+    // We also need to make sure to invalidate the endpoint cache.
+    \Drupal::cache()->invalidate('cu_hub_consumer:hub_endpoints');
 
     parent::submitForm($form, $form_state);
   }
@@ -167,6 +180,32 @@ class SettingsForm extends ConfigFormBase {
       return $default_value;
     }
     return $setting;
+  }
+
+  protected function getSiteOptions() {
+    $options = [
+      '' => ' - ',
+    ];
+
+    if ($resource_type_manager = \Drupal::service('plugin.manager.cu_hub_consumer.hub_resource_type')) {
+      if ($resource_type_plugin_id = $resource_type_manager->findPluginByHubTypeId('node--hub_site')) {
+        if ($resource_type = $resource_type_manager->getResourceType($resource_type_plugin_id)) {
+          try {
+            if ($list = $resource_type->fetchResourceList(NULL, $limit=0, ['field_hub_site_title'])) {
+              foreach ($list as $site_uuid => $site_info) {
+                $options[$site_uuid] = $site_info['field_hub_site_title'] . ' [' . $site_uuid . ']';
+              }
+            }
+          }
+          catch (ResourceException $e) {
+            watchdog_exception('cu_hub_consumer', $e);
+            drupal_set_message('Error: ' . $e->getMessage(), 'error');
+          }
+        }
+      }
+    }
+
+    return $options;
   }
 
 }

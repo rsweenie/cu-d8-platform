@@ -20,11 +20,14 @@ interface ResourceTypeInterface extends PluginInspectionInterface, DependentPlug
   public function fetchResource($hub_uuid);
 
   /**
-   * Fetches a list of all resources of this type.
+   * Fetches a list of resources of this type
    *
-   * @return []
+   * @param string $url
+   * @param integer $limit
+   * @param array $fields
+   * @return \Drupal\cu_hub_consumer\Hub\ResourceListInterface
    */
-  public function fetchResourceList($url = NULL, $limit=0);
+  public function fetchResourceList($url = NULL, $limit = 0, $fields = NULL);
 
   /**
    * Gets an array of entity keys.

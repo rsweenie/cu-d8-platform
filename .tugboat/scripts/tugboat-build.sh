@@ -17,7 +17,13 @@ case $CU_SITE_ALIAS in
     drush -r "${DOCROOT}" sql:sync "@${CU_SITE_ALIAS}.01live" @self -y
     drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y
   ;;
-  
+  grad-site)
+    echo "Syncing DB and assets for $CU_SITE_ALIAS"
+    # DB sync MUST come before filesync always
+    drush -r "${DOCROOT}" sql:drop -y
+    drush -r "${DOCROOT}" sql:sync "@grad.01live" @self -y
+    drush -r "${DOCROOT}" rsync "@grad.01live":%files @self:%files -y  -- --exclude '/styles/'
+  ;;
   none)
     echo "Nothing to do for generic install"
   ;;

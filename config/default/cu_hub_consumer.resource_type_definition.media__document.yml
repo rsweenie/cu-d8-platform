@@ -14,6 +14,9 @@ fields:
   langcode:
     type: language
     multiple: false
+  name:
+    type: string
+    multiple: false
   created:
     type: datetime
     multiple: false

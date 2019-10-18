@@ -53,7 +53,7 @@
 %}
 
 {% for item in items %}
-  <div{{ attributes.addClass(classes, 'field__item') }}>
+  <h2{{ attributes.addClass(classes, 'field__item') }}>
     {% if entity_url %}
       <a href="{{ entity_url }}">
     {% endif %}
@@ -61,5 +61,5 @@
     {% if entity_url %}
       </a>
     {% endif %}
-  </div>
+  </h2>
 {% endfor %}
