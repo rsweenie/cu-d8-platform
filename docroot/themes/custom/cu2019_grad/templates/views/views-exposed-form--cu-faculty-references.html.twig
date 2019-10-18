@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+
+{{ form.search }}
+
+{{ form|without('search', 'program') }}
+
+{{ attach_library('cu2019_grad/accordions') }}
+<dl class="accordion filters" role="presentation" data-allow-multiple="true">
+  <dt role="heading" aria-level="3"><div id="acc1Sect0Toggle" aria-expanded="false" aria-controls="acc1Sect0" type="button" role="button" aria-pressed="false" tabindex="0">{{ form.program['#title'] }}</div></dt>
+  <dd id="acc1Sect0" aria-labelledby="acc1Sect0Toggle" hidden="">
+    {{ form.program }}
+  </dd>
+</dl>

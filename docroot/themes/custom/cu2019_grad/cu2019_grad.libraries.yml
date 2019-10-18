@@ -18,6 +18,13 @@ homepage:
     - core/jquery
     - core/jquery.once
 
+accordions:
+  js:
+    assets/js/accordions.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
 ct:
   js:
     assets/js/ct.js: {}

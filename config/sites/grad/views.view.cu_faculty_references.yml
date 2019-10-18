@@ -56,20 +56,20 @@ display:
               secondary_label: 'Advanced options'
               autosubmit: true
               autosubmit_exclude_textfield: true
-              autosubmit_hide: true
+              autosubmit_hide: false
             combine:
               bef_format: default
               more_options:
                 is_secondary: false
                 placeholder_text: 'Search Terms'
             field_faculty_detail_rel_degrees_target_id:
-              bef_format: default
+              bef_format: bef
               more_options:
                 bef_select_all_none: false
                 bef_collapsible: false
                 is_secondary: false
                 rewrite:
-                  filter_rewrite_values: '- Any -|Program'
+                  filter_rewrite_values: ''
           text_input_required_format: rich_text
       pager:
         type: full
@@ -319,7 +319,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: ''
+            label: Search
             description: ''
             use_operator: false
             operator: combine_op
@@ -438,12 +438,21 @@ display:
         - url
         - url.query_args
       tags:
+        - 'config:core.entity_view_display.hub_reference.blog.default'
+        - 'config:core.entity_view_display.hub_reference.blog.featured'
+        - 'config:core.entity_view_display.hub_reference.blog.listing'
         - 'config:core.entity_view_display.hub_reference.degree.default'
+        - 'config:core.entity_view_display.hub_reference.degree.listing'
+        - 'config:core.entity_view_display.hub_reference.event.default'
+        - 'config:core.entity_view_display.hub_reference.event.featured'
+        - 'config:core.entity_view_display.hub_reference.event.listing'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
+        - 'config:core.entity_view_display.hub_reference.pd_course.default'
+        - 'config:core.entity_view_display.hub_reference.pd_course.listing'
         - 'config:core.entity_view_display.hub_reference.program.default'
         - 'config:field.storage.hub_reference.field_faculty_detail_namestring'
   page_1:
@@ -462,11 +471,20 @@ display:
         - url
         - url.query_args
       tags:
+        - 'config:core.entity_view_display.hub_reference.blog.default'
+        - 'config:core.entity_view_display.hub_reference.blog.featured'
+        - 'config:core.entity_view_display.hub_reference.blog.listing'
         - 'config:core.entity_view_display.hub_reference.degree.default'
+        - 'config:core.entity_view_display.hub_reference.degree.listing'
+        - 'config:core.entity_view_display.hub_reference.event.default'
+        - 'config:core.entity_view_display.hub_reference.event.featured'
+        - 'config:core.entity_view_display.hub_reference.event.listing'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.default'
         - 'config:core.entity_view_display.hub_reference.faculty_detail.listing'
         - 'config:core.entity_view_display.hub_reference.news.default'
         - 'config:core.entity_view_display.hub_reference.news.featured'
         - 'config:core.entity_view_display.hub_reference.news.listing'
+        - 'config:core.entity_view_display.hub_reference.pd_course.default'
+        - 'config:core.entity_view_display.hub_reference.pd_course.listing'
         - 'config:core.entity_view_display.hub_reference.program.default'
         - 'config:field.storage.hub_reference.field_faculty_detail_namestring'
