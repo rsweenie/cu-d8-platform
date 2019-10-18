@@ -362,7 +362,7 @@ display:
           exposed: true
           expose:
             operator_id: field_faculty_detail_rel_degrees_target_id_op
-            label: ''
+            label: Program
             description: ''
             use_operator: false
             operator: field_faculty_detail_rel_degrees_target_id_op
