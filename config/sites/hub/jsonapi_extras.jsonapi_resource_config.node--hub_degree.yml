@@ -234,6 +234,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_hub_degree_college_link:
+    fieldName: field_hub_degree_college_link
+    publicName: field_hub_degree_college_link
+    enhancer:
+      id: ''
+    disabled: false
   field_hub_degree_description:
     fieldName: field_hub_degree_description
     publicName: field_hub_degree_description
@@ -249,6 +255,12 @@ resourceFields:
   field_hub_degree_featured_info:
     fieldName: field_hub_degree_featured_info
     publicName: field_hub_degree_featured_info
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_general_cta:
+    fieldName: field_hub_degree_general_cta
+    publicName: field_hub_degree_general_cta
     enhancer:
       id: ''
     disabled: false
@@ -309,6 +321,12 @@ resourceFields:
   field_hub_degree_title_short:
     fieldName: field_hub_degree_title_short
     publicName: field_hub_degree_title_short
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_tuition_and_aid:
+    fieldName: field_hub_degree_tuition_and_aid
+    publicName: field_hub_degree_tuition_and_aid
     enhancer:
       id: ''
     disabled: false
