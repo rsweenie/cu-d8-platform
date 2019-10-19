@@ -1,0 +1,23 @@
+uuid: e6389f86-f27c-4e1a-b203-40e74ff6c9df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_college_link
+    - node.type.hub_degree
+  module:
+    - link
+id: node.hub_degree.field_hub_degree_college_link
+field_name: field_hub_degree_college_link
+entity_type: node
+bundle: hub_degree
+label: 'Department/School/College Link'
+description: 'CTA used to link to a department, college, or school that shares this program. An example is, the MBA page on grad site would link to the business school.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link
