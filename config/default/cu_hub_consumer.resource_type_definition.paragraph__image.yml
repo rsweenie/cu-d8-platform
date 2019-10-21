@@ -39,3 +39,9 @@ fields:
     hub_bundles:
       - media--image
     multiple: false
+  field_image_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
+    multiple: false

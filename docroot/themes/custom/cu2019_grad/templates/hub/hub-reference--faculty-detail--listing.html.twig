@@ -23,6 +23,10 @@
 <article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
   {% if content %}
-    {{ content }}
+    {{ content|without('hub_field_hub_faculty_email','hub_field_hub_faculty_phone') }}
+    <div class="email-phone">
+      {{ content.hub_field_hub_faculty_email }}
+      {{ content.hub_field_hub_faculty_phone }}
+    </div>
   {% endif %}
 </article>

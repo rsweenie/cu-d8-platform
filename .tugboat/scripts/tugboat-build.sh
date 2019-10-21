@@ -18,20 +18,10 @@ case $CU_SITE_ALIAS in
     drush -r "${DOCROOT}" rsync "@${CU_SITE_ALIAS}.01live":%files @self:%files -y -- --exclude '/styles/'
   ;;
   grad-site)
-    echo "Importing local DB file for Grad Site"
-    DB_FILE="${TUGBOAT_ROOT}/.tugboat/db/${TUGBOAT_GITHUB_HEAD}.sql.gz"
-
-    #
-    # Tries to import a branch specific DB first, else falls back on a base copy.
-    #
-    if [[ -f "${DB_FILE}" ]]; then
-      zcat "${DB_FILE}" | drush -r ${DOCROOT} sql:cli
-    elif [[ -f "${TUGBOAT_ROOT}/.tugboat/db/r2i/grad-site.sql.gz" ]]; then
-      zcat "${TUGBOAT_ROOT}/.tugboat/db/r2i/grad-site.sql.gz" | drush -r ${DOCROOT} sql:cli
-    else
-      echo "Could not find appropriate database to import"
-      exit 1
-    fi
+    echo "Syncing DB and assets for $CU_SITE_ALIAS"
+    # DB sync MUST come before filesync always
+    drush -r "${DOCROOT}" sql:drop -y
+    drush -r "${DOCROOT}" sql:sync "@grad.01live" @self -y
     drush -r "${DOCROOT}" rsync "@grad.01live":%files @self:%files -y  -- --exclude '/styles/'
   ;;
   none)

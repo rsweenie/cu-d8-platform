@@ -1,0 +1,23 @@
+uuid: e2156876-9ce1-459a-82d8-f6d04fed5038
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tile_item_link
+    - paragraphs.paragraphs_type.grad_feature_tile_item
+  module:
+    - link
+id: paragraph.grad_feature_tile_item.field_tile_item_link
+field_name: field_tile_item_link
+entity_type: paragraph
+bundle: grad_feature_tile_item
+label: Link
+description: 'This field is overridden by the file link field.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link
