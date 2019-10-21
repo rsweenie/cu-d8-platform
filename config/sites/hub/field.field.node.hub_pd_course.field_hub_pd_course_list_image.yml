@@ -1,0 +1,28 @@
+uuid: aa863ba0-05a2-47bc-a005-c8e4d92ab05f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_pd_course_list_image
+    - media.type.image
+    - node.type.hub_pd_course
+id: node.hub_pd_course.field_hub_pd_course_list_image
+field_name: field_hub_pd_course_list_image
+entity_type: node
+bundle: hub_pd_course
+label: 'Listing Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

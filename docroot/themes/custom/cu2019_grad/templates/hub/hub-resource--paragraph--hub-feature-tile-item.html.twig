@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div class="card fci">
+    {% block content %}
+      {% if tile_link %}
+        <a href="{{ tile_link }}">
+      {% else %}
+        <span>
+      {% endif %}
+        {% if content.field_hub_tile_item_image %}
+          {{ content.field_hub_tile_item_image }}
+        {% endif %}
+        {% if content.field_hub_tile_item_body %}
+          {{ content.field_hub_tile_item_body }}
+        {% endif %}
+      {% if tile_link %}
+        </a>
+      {% else %}
+        </span>
+      {% endif %}
+    {% endblock %}
+  </div>
+</article>

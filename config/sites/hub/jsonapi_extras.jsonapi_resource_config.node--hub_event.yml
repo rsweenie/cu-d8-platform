@@ -79,11 +79,11 @@ resourceFields:
     enhancer:
       id: ''
   title:
-    disabled: true
     fieldName: title
     publicName: title
     enhancer:
       id: ''
+    disabled: false
   created:
     fieldName: created
     publicName: created

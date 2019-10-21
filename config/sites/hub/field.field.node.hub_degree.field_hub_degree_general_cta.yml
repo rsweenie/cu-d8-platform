@@ -1,0 +1,23 @@
+uuid: e49620de-53b1-4442-a270-a368c21203d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_general_cta
+    - node.type.hub_degree
+  module:
+    - link
+id: node.hub_degree.field_hub_degree_general_cta
+field_name: field_hub_degree_general_cta
+entity_type: node
+bundle: hub_degree
+label: 'General CTA'
+description: 'A general-purpose CTA that can be used to link newsletters, registration forms, etc....'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -1,0 +1,24 @@
+uuid: 100847cb-a2e7-4095-a622-6e05803c733a
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+    - field_permissions
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: hub_reference.field_availability
+field_name: field_availability
+entity_type: hub_reference
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

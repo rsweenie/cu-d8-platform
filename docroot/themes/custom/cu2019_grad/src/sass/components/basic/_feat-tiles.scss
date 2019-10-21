@@ -3,7 +3,9 @@
 }
 
 .feat-tiles {
-  margin: 0 #{$gutter}rem;
+  @media #{$mediaMd} {
+    margin: 0 #{$gutter}rem;
+  }
 
   img {
     display: block;
@@ -12,11 +14,13 @@
   }
 
   @media #{$mediaMd} {
-    @include flex();
-    margin: -5px;
+    > div {
+      @include flex();
+      margin: -5px;
+    }
   }
 
-  > div {
+  > div > div {
     margin: 16px 0;
 
     @media #{$mediaMd} {
@@ -88,27 +92,47 @@
   .hub-resource-field--name-field-fc-p-link {
     display: none;
   }
+
+  .hub-resource--type-paragraph-hub-quote-ref,
+  .hub-resource-field--name-field-hub-quote-ref-item,
+  .hub-resource-field--name-field-hub-quote-ref-item > .hub-resource-field__item,
+  .quote-box,
+  .field--name-field-quote-ref,
+  .node--type-grad-quote {
+    @extend %h100;
+  }
 }
 
 .stat_hl_io,
-.hub_img {
+.hub_img,
+.fci {
   position: relative;
   @include innerBorder;
 }
 
-.stat_hl_io {
+.stat_hl_io,
+.fci {
 
   &:before {
-    width: 11px;
-    height: 11px;
+    width: 8px;
+    height: 8px;
     position: absolute;
-    top: 17px;
-    left: 17px;
+    top: 10px;
+    left: 10px;
     content: "";
     background: rgba($white,.3);
     z-index: 10;
-  }
 
+    @media #{$mediaMd} {
+      width: 11px;
+      height: 11px;
+      top: 17px;
+      left: 17px;
+    }
+  }
+}
+
+.stat_hl_io {
   img {
     width: 100%;
     height: auto;

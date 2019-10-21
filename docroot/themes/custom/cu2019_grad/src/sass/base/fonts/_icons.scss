@@ -9,7 +9,15 @@
 }
 
 .icon:before {
-	@include iconfont;
+	font-family: "cu_icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
 }
 
 
@@ -49,110 +57,106 @@
 	content: "\E009";
 }
 
-.icon-close-window-filled:before {
+.icon-close:before {
 	content: "\E00A";
 }
 
-.icon-close-window:before {
+.icon-contact:before {
 	content: "\E00B";
 }
 
-.icon-contact:before {
+.icon-envelope:before {
 	content: "\E00C";
 }
 
-.icon-envelope:before {
+.icon-event-calendar:before {
 	content: "\E00D";
 }
 
-.icon-event-calendar:before {
+.icon-expand-arrow:before {
 	content: "\E00E";
 }
 
-.icon-expand-arrow:before {
+.icon-filter:before {
 	content: "\E00F";
 }
 
-.icon-filter:before {
+.icon-forward:before {
 	content: "\E010";
 }
 
-.icon-forward:before {
+.icon-google-translate:before {
 	content: "\E011";
 }
 
-.icon-google-translate:before {
+.icon-help:before {
 	content: "\E012";
 }
 
-.icon-help:before {
+.icon-hybrid:before {
 	content: "\E013";
 }
 
-.icon-hybrid:before {
+.icon-location-thin:before {
 	content: "\E014";
 }
 
-.icon-location-thin:before {
+.icon-location:before {
 	content: "\E015";
 }
 
-.icon-location:before {
+.icon-news:before {
 	content: "\E016";
 }
 
-.icon-news:before {
+.icon-off-campus:before {
 	content: "\E017";
 }
 
-.icon-off-campus:before {
+.icon-on-campus:before {
 	content: "\E018";
 }
 
-.icon-on-campus:before {
+.icon-online:before {
 	content: "\E019";
 }
 
-.icon-online:before {
+.icon-phone:before {
 	content: "\E01A";
 }
 
-.icon-phone:before {
+.icon-right:before {
 	content: "\E01B";
 }
 
-.icon-right:before {
+.icon-search-more:before {
 	content: "\E01C";
 }
 
-.icon-search-more:before {
+.icon-search:before {
 	content: "\E01D";
 }
 
-.icon-search:before {
+.icon-social-facebook:before {
 	content: "\E01E";
 }
 
-.icon-social-facebook:before {
+.icon-social-instagram:before {
 	content: "\E01F";
 }
 
-.icon-social-instagram:before {
+.icon-social-linkedin:before {
 	content: "\E020";
 }
 
-.icon-social-linkedin:before {
+.icon-social-twitter:before {
 	content: "\E021";
 }
 
-.icon-social-twitter:before {
+.icon-social-youtube:before {
 	content: "\E022";
 }
 
-.icon-social-youtube:before {
-	content: "\E023";
-}
-
 .icon-tag:before {
-	content: "\E024";
+	content: "\E023";
 }

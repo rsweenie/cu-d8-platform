@@ -55,12 +55,13 @@ class HubResourceListFetchWorker extends QueueWorkerBase {
     if ($resource_list) {
       $resource_list_data = $resource_list->getProcessedData();
 
-      foreach ($resource_list_data as $resource_uuid => $resource_url) {
+      foreach ($resource_list_data as $resource_uuid => $resource_info) {
+
         // Queue up each resource for individual processing.
         $resource_item = new \stdClass();
         $resource_item->bundle = $data->bundle;
         $resource_item->hub_uuid = $resource_uuid;
-        $resource_item->hub_url = $resource_url;
+        $resource_item->hub_url = $resource_info['url'];
         $resource_process_queue->createItem($resource_item);
       }
 

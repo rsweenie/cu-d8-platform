@@ -1,0 +1,29 @@
+uuid: 4e53a0cf-abc2-406b-a07c-82992d712593
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_degree_tuition_and_aid
+    - node.type.hub_degree
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    basic_text: '0'
+    full_html: '0'
+    raw_html: '0'
+    plain_text: '0'
+id: node.hub_degree.field_hub_degree_tuition_and_aid
+field_name: field_hub_degree_tuition_and_aid
+entity_type: node
+bundle: hub_degree
+label: 'Tuition and Financial Aid'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -5,7 +5,7 @@ namespace Drupal\cu_hub_consumer\Hub;
 /**
  * Defines an interface for a hub resource object.
  */
-interface ResourceListInterface {
+interface ResourceListInterface extends \ArrayAccess, \IteratorAggregate {
 
   /**
    * Create an instance from an HTTP response object.
