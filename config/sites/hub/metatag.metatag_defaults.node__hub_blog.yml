@@ -1,8 +1,0 @@
-uuid: 3930d69a-6628-461e-80d9-3158a3cf410d
-langcode: en
-status: true
-dependencies: {  }
-id: node__hub_blog
-label: 'Content: Hub: Blog'
-tags:
-  canonical_url: '[node:field_hub_site:entity:field_hub_site_base_uri][node:field_hub_path_alias]'

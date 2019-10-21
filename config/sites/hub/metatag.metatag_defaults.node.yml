@@ -1,0 +1,11 @@
+uuid: e699909a-9d20-4bc7-8edc-f974e59d8c37
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Content
+tags:
+  title: '[node:title]'
+  canonical_url: '[cu-hub-api:external-canonical]'

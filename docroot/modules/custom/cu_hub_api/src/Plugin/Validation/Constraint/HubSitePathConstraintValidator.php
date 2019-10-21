@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
-class UniqueHubPathConstraintValidator extends ConstraintValidator implements ContainerInjectionInterface {
+class HubSitePathConstraintValidator extends ConstraintValidator implements ContainerInjectionInterface {
 
   /**
    * The entity type manager.
@@ -40,47 +40,46 @@ class UniqueHubPathConstraintValidator extends ConstraintValidator implements Co
   /**
    * {@inheritdoc}
    */
-  public function validate($items, Constraint $constraint) {
-    if (!($item = $items->first())) {
+  public function validate($item, Constraint $constraint) {
+    if ($item->isEmpty()) {
       return;
     }
 
-    $field_name = $items
-      ->getFieldDefinition()
-      ->getName();
+    $field_name = $item->getFieldDefinition()->getName();
+    $target_type_id = $item->getFieldDefinition()->getSetting('target_type');
 
     /** @var \Drupal\Core\Entity\EntityInterface $entity */
-    $entity = $items
+    $entity = $item
       ->getEntity();
     $entity_type_id = $entity
       ->getEntityTypeId();
     $id_key = $entity
       ->getEntityType()
       ->getKey('id');
+    $entity_id = $entity->isNew() ? '0' : $entity->id();
 
-    if ($entity->hasField('field_hub_site') && !$entity->field_hub_site->isEmpty()) {
-      $hub_sites = $entity->field_hub_site->referencedEntities();
-      $hub_site = reset($hub_sites);
-
+    if ($item->target_id !== NULL) {
       $value_taken = (bool) \Drupal::entityQuery($entity_type_id)
-        ->condition($id_key, (int) $entity->id(), '<>')
-        ->condition('field_hub_site.target_id', $hub_site->id())
-        ->condition($field_name, $item->value)
+        ->condition($id_key, $entity_id, '<>')
+        ->condition($field_name . '.target_id', $item->target_id)
+        ->condition($field_name . '.alias', $item->alias)
         ->range(0, 1)
         ->count()
         ->execute();
 
       if ($value_taken) {
+        $target_entity = \Drupal::entityManager()->getStorage($target_type_id)->load($item->target_id);
+
         $this->context
           ->addViolation($constraint->notUnique, [
-          '%value' => $item->value,
+          '%alias' => $item->alias,
           '@entity_type' => $entity
             ->getEntityType()
             ->getLowercaseLabel(),
-          '@field_name' => Unicode::strtolower($items
+          '@field_name' => Unicode::strtolower($item
             ->getFieldDefinition()
             ->getLabel()),
-          '%site' => $hub_site->label(),
+          '%site' => $target_entity->label(),
         ]);
       }
     }

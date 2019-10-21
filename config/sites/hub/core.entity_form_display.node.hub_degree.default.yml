@@ -25,9 +25,8 @@ dependencies:
     - field.field.node.hub_degree.field_hub_degree_title_short
     - field.field.node.hub_degree.field_hub_degree_tuition_and_aid
     - field.field.node.hub_degree.field_hub_degree_type
-    - field.field.node.hub_degree.field_hub_path_alias
     - field.field.node.hub_degree.field_hub_program
-    - field.field.node.hub_degree.field_hub_site
+    - field.field.node.hub_degree.field_hub_sites
     - field.field.node.hub_degree.field_meta_tags
     - node.type.hub_degree
   module:
@@ -139,7 +138,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_degree_general_cta:
-    weight: 22
+    weight: 24
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -148,7 +147,7 @@ content:
     region: content
   field_hub_degree_hero_image:
     type: entity_browser_entity_reference
-    weight: 6
+    weight: 5
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -177,6 +176,21 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_hub_degree_list_image:
+    type: entity_browser_entity_reference
+    weight: 6
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
+      open: false
+    third_party_settings: {  }
     region: content
   field_hub_degree_next_steps:
     weight: 18
@@ -213,7 +227,7 @@ content:
     type: text_textarea
     region: content
   field_hub_degree_title:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -221,7 +235,7 @@ content:
     type: string_textfield
     region: content
   field_hub_degree_title_short:
-    weight: 4
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -237,19 +251,13 @@ content:
     type: text_textarea
     region: content
   field_hub_degree_type:
-    weight: 5
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  field_hub_path_alias:
-    weight: 23
-    settings: {  }
-    third_party_settings: {  }
-    type: hub_path_alias
-    region: content
   field_hub_program:
-    weight: 2
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -257,14 +265,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_hub_site:
-    weight: 1
+  field_hub_sites:
+    weight: 22
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: cu_hub_api_site_path
     region: content
   field_meta_tags:
-    weight: 25
+    weight: 23
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -273,7 +281,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 24
+    weight: 25
     region: content
     third_party_settings: {  }
   title:
@@ -286,7 +294,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_hub_degree_list_image: true
   path: true
   private: true
   promote: true

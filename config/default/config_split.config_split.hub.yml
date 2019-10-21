@@ -28,7 +28,7 @@ blacklist:
   - 'paragraphs.parapraphs_type.statistic_*'
   - 'cu_hub_api.*'
   - 'auto_entitylabel.settings.node.hub_*'
-  - 'metatag.metatag_defaults.node__hub_*'
+  - 'metatag.metatag_defaults.*'
 graylist:
   - 'block.block.*'
   - 'jsonapi.*'

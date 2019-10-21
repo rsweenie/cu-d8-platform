@@ -12,10 +12,10 @@ dependencies:
     - field.field.node.hub_news.field_hub_news_location
     - field.field.node.hub_news.field_hub_news_title
     - field.field.node.hub_news.field_hub_news_type
-    - field.field.node.hub_news.field_hub_path_alias
-    - field.field.node.hub_news.field_hub_site
+    - field.field.node.hub_news.field_hub_sites
     - node.type.hub_news
   module:
+    - cu_hub_api
     - datetime
     - panelizer
     - private_content
@@ -107,29 +107,21 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_hub_path_alias:
-    weight: 12
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_hub_site:
-    weight: 11
+  field_hub_sites:
+    weight: 9
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: cu_hub_api_site_path_label
     region: content
   links:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   private:
-    weight: 9
+    weight: 10
     region: content
     label: above
     settings: {  }

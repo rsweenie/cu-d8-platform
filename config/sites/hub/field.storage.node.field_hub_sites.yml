@@ -1,22 +1,23 @@
-uuid: 90fd2981-0a37-416c-98fa-066994f79110
+uuid: 6073a170-f2ec-4b19-bd60-cc35b4b41cfb
 langcode: en
 status: true
 dependencies:
   module:
+    - cu_hub_api
     - field_permissions
     - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_hub_site
-field_name: field_hub_site
+id: node.field_hub_sites
+field_name: field_hub_sites
 entity_type: node
-type: entity_reference
+type: cu_hub_api_site_path
 settings:
   target_type: node
-module: core
+module: cu_hub_api
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

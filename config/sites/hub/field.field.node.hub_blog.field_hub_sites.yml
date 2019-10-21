@@ -1,18 +1,20 @@
-uuid: 30fe0a15-4617-49d1-9abc-7ce478765fb6
+uuid: 3a3e4454-1b8b-422b-b589-a918b032cd03
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hub_site
+    - field.storage.node.field_hub_sites
     - node.type.hub_blog
     - node.type.hub_site
-id: node.hub_blog.field_hub_site
-field_name: field_hub_site
+  module:
+    - cu_hub_api
+id: node.hub_blog.field_hub_sites
+field_name: field_hub_sites
 entity_type: node
 bundle: hub_blog
-label: Website
+label: Websites
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -23,6 +25,6 @@ settings:
       hub_site: hub_site
     sort:
       field: _none
-    auto_create: false
+    auto_create: 0
     auto_create_bundle: ''
-field_type: entity_reference
+field_type: cu_hub_api_site_path

@@ -14,7 +14,7 @@ dependencies:
     - field.field.node.hub_faculty.field_hub_faculty_provost_url
     - field.field.node.hub_faculty.field_hub_faculty_rel_degrees
     - field.field.node.hub_faculty.field_hub_faculty_title
-    - field.field.node.hub_faculty.field_hub_site
+    - field.field.node.hub_faculty.field_hub_sites
     - field.field.node.hub_faculty.field_meta_tags
     - node.type.hub_faculty
   module:
@@ -48,6 +48,6 @@ hidden:
   field_hub_faculty_provost_url: true
   field_hub_faculty_rel_degrees: true
   field_hub_faculty_title: true
-  field_hub_site: true
+  field_hub_sites: true
   field_meta_tags: true
   search_api_excerpt: true

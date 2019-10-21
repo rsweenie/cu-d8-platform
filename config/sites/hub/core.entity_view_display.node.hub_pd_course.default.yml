@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.hub_pd_course.field_hub_path_alias
     - field.field.node.hub_pd_course.field_hub_pd_course_dates
     - field.field.node.hub_pd_course.field_hub_pd_course_details
     - field.field.node.hub_pd_course.field_hub_pd_course_hero_image
@@ -13,10 +12,11 @@ dependencies:
     - field.field.node.hub_pd_course.field_hub_pd_course_title
     - field.field.node.hub_pd_course.field_hub_pd_related_degrees
     - field.field.node.hub_pd_course.field_hub_pd_right_side_copy
-    - field.field.node.hub_pd_course.field_hub_site
+    - field.field.node.hub_pd_course.field_hub_sites
     - field.field.node.hub_pd_course.field_meta_tags
     - node.type.hub_pd_course
   module:
+    - cu_hub_api
     - entity_reference_revisions
     - metatag
     - panelizer
@@ -34,17 +34,9 @@ targetEntityType: node
 bundle: hub_pd_course
 mode: default
 content:
-  field_hub_path_alias:
-    weight: 10
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_hub_pd_course_dates:
     type: entity_reference_revisions_entity_view
-    weight: 7
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -52,7 +44,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_pd_course_details:
-    weight: 5
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -60,7 +52,7 @@ content:
     region: content
   field_hub_pd_course_hero_image:
     type: entity_reference_entity_view
-    weight: 2
+    weight: 1
     label: above
     settings:
       view_mode: default
@@ -69,7 +61,7 @@ content:
     region: content
   field_hub_pd_course_list_image:
     type: entity_reference_entity_view
-    weight: 3
+    weight: 2
     label: above
     settings:
       view_mode: default
@@ -77,7 +69,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_pd_course_next_steps:
-    weight: 9
+    weight: 7
     label: above
     settings:
       link: true
@@ -85,7 +77,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_pd_course_program:
-    weight: 1
+    weight: 0
     label: above
     settings:
       link: true
@@ -93,7 +85,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_pd_course_title:
-    weight: 13
+    weight: 11
     label: above
     settings:
       link_to_entity: false
@@ -101,7 +93,7 @@ content:
     type: string
     region: content
   field_hub_pd_related_degrees:
-    weight: 8
+    weight: 6
     label: above
     settings:
       link: true
@@ -110,35 +102,35 @@ content:
     region: content
   field_hub_pd_right_side_copy:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 4
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
-  field_hub_site:
-    weight: 0
+  field_hub_sites:
+    weight: 8
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: cu_hub_api_site_path_label
     region: content
   field_meta_tags:
-    weight: 14
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   links:
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   private:
-    weight: 12
+    weight: 10
     region: content
     label: above
     settings: {  }

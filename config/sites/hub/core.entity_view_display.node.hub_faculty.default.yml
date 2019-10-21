@@ -13,11 +13,11 @@ dependencies:
     - field.field.node.hub_faculty.field_hub_faculty_provost_url
     - field.field.node.hub_faculty.field_hub_faculty_rel_degrees
     - field.field.node.hub_faculty.field_hub_faculty_title
-    - field.field.node.hub_faculty.field_hub_path_alias
-    - field.field.node.hub_faculty.field_hub_site
+    - field.field.node.hub_faculty.field_hub_sites
     - field.field.node.hub_faculty.field_meta_tags
     - node.type.hub_faculty
   module:
+    - cu_hub_api
     - entity_reference_revisions
     - link
     - metatag
@@ -38,7 +38,7 @@ mode: default
 content:
   field_hub_faculty_components:
     type: entity_reference_revisions_entity_view
-    weight: 14
+    weight: 9
     label: above
     settings:
       view_mode: default
@@ -46,7 +46,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_faculty_department:
-    weight: 3
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -54,7 +54,7 @@ content:
     type: string
     region: content
   field_hub_faculty_email:
-    weight: 5
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -62,7 +62,7 @@ content:
     region: content
   field_hub_faculty_image:
     type: entity_reference_entity_view
-    weight: 7
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -70,7 +70,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_faculty_name:
-    weight: 1
+    weight: 0
     label: above
     settings:
       format: default
@@ -85,7 +85,7 @@ content:
     type: name_default
     region: content
   field_hub_faculty_phone:
-    weight: 6
+    weight: 4
     label: above
     settings:
       title: ''
@@ -93,7 +93,7 @@ content:
     type: telephone_link
     region: content
   field_hub_faculty_provost_id:
-    weight: 9
+    weight: 6
     label: above
     settings:
       link_to_entity: false
@@ -101,7 +101,7 @@ content:
     type: string
     region: content
   field_hub_faculty_provost_url:
-    weight: 10
+    weight: 7
     label: above
     settings:
       trim_length: 80
@@ -113,7 +113,7 @@ content:
     type: link
     region: content
   field_hub_faculty_rel_degrees:
-    weight: 11
+    weight: 8
     label: above
     settings:
       link: true
@@ -121,38 +121,30 @@ content:
     type: entity_reference_label
     region: content
   field_hub_faculty_title:
-    weight: 2
+    weight: 1
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_hub_path_alias:
-    weight: 15
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_hub_site:
-    weight: 13
+  field_hub_sites:
+    weight: 11
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: cu_hub_api_site_path_label
     region: content
   field_meta_tags:
-    weight: 12
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   links:
-    weight: 0
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

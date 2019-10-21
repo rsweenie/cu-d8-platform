@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.hub_program.field_hub_site
+    - field.field.node.hub_program.field_hub_program_description
+    - field.field.node.hub_program.field_hub_program_title
+    - field.field.node.hub_program.field_hub_sites
+    - field.field.node.hub_program.field_meta_tags
     - node.type.hub_program
   module:
     - private_content
@@ -30,6 +33,6 @@ hidden:
   field_hub_path_alias: true
   field_hub_program_description: true
   field_hub_program_title: true
-  field_hub_site: true
+  field_hub_sites: true
   field_meta_tags: true
   search_api_excerpt: true

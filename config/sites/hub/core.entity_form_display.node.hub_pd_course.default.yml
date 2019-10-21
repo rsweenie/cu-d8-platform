@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_browser
-    - field.field.node.hub_pd_course.field_hub_path_alias
     - field.field.node.hub_pd_course.field_hub_pd_course_dates
     - field.field.node.hub_pd_course.field_hub_pd_course_details
     - field.field.node.hub_pd_course.field_hub_pd_course_hero_image
@@ -14,11 +13,12 @@ dependencies:
     - field.field.node.hub_pd_course.field_hub_pd_course_title
     - field.field.node.hub_pd_course.field_hub_pd_related_degrees
     - field.field.node.hub_pd_course.field_hub_pd_right_side_copy
-    - field.field.node.hub_pd_course.field_hub_site
+    - field.field.node.hub_pd_course.field_hub_sites
     - field.field.node.hub_pd_course.field_meta_tags
     - node.type.hub_pd_course
   module:
     - allowed_formats
+    - cu_hub_api
     - entity_browser
     - metatag
     - paragraphs
@@ -31,21 +31,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hub_path_alias:
-    weight: 12
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_hub_pd_course_dates:
     type: paragraphs
-    weight: 9
+    weight: 7
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -62,7 +54,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_pd_course_details:
-    weight: 7
+    weight: 5
     settings:
       rows: 9
       placeholder: ''
@@ -74,7 +66,7 @@ content:
     region: content
   field_hub_pd_course_hero_image:
     type: entity_browser_entity_reference
-    weight: 4
+    weight: 3
     settings:
       entity_browser: media_browser
       field_widget_display: label
@@ -88,7 +80,7 @@ content:
     region: content
   field_hub_pd_course_list_image:
     type: entity_browser_entity_reference
-    weight: 5
+    weight: 4
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -102,7 +94,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_pd_course_next_steps:
-    weight: 11
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -111,7 +103,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_pd_course_program:
-    weight: 2
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -120,7 +112,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_pd_course_title:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -128,7 +120,7 @@ content:
     type: string_textfield
     region: content
   field_hub_pd_related_degrees:
-    weight: 10
+    weight: 8
     settings:
       match_operator: CONTAINS
       size: 60
@@ -138,7 +130,7 @@ content:
     region: content
   field_hub_pd_right_side_copy:
     type: paragraphs
-    weight: 8
+    weight: 6
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -154,20 +146,20 @@ content:
         collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
     region: content
-  field_hub_site:
-    weight: 1
+  field_hub_sites:
+    weight: 10
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: cu_hub_api_site_path
     region: content
   field_meta_tags:
-    weight: 26
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   private:
-    weight: 15
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -176,7 +168,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 11
     region: content
     third_party_settings: {  }
   title:

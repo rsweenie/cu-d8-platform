@@ -16,8 +16,8 @@ third_party_settings:
       - field_hub_pd_course_next_steps
       - field_hub_pd_course_next_steps.field_hub_next_steps_items
       - field_hub_pd_related_degrees
-      - field_hub_site
       - field_hub_pd_right_side_copy
+      - field_hub_sites
 id: node--hub_pd_course
 disabled: false
 path: node/hub_pd_course
@@ -191,12 +191,6 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  field_hub_path_alias:
-    fieldName: field_hub_path_alias
-    publicName: field_hub_path_alias
-    enhancer:
-      id: ''
-    disabled: false
   field_hub_pd_course_dates:
     fieldName: field_hub_pd_course_dates
     publicName: field_hub_pd_course_dates
@@ -251,9 +245,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_hub_site:
-    fieldName: field_hub_site
-    publicName: field_hub_site
+  field_hub_sites:
+    fieldName: field_hub_sites
+    publicName: field_hub_sites
     enhancer:
       id: ''
     disabled: false

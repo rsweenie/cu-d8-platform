@@ -13,8 +13,7 @@ dependencies:
     - field.field.node.hub_event.field_hub_event_location
     - field.field.node.hub_event.field_hub_event_title
     - field.field.node.hub_event.field_hub_event_type
-    - field.field.node.hub_event.field_hub_path_alias
-    - field.field.node.hub_event.field_hub_site
+    - field.field.node.hub_event.field_hub_sites
     - node.type.hub_event
   module:
     - cu_hub_api
@@ -34,7 +33,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_hub_event_body:
-    weight: 9
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
@@ -42,13 +41,13 @@ content:
     type: text_textarea
     region: content
   field_hub_event_date:
-    weight: 5
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: daterange_default
     region: content
   field_hub_event_description:
-    weight: 8
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -56,7 +55,7 @@ content:
     type: string_textarea
     region: content
   field_hub_event_featured:
-    weight: 10
+    weight: 9
     settings:
       display_label: true
     third_party_settings: {  }
@@ -64,7 +63,7 @@ content:
     region: content
   field_hub_event_hero_image:
     type: entity_browser_entity_reference
-    weight: 6
+    weight: 5
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -79,7 +78,7 @@ content:
     region: content
   field_hub_event_listing_image:
     type: entity_browser_entity_reference
-    weight: 7
+    weight: 6
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -93,7 +92,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_event_location:
-    weight: 4
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
@@ -102,7 +101,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hub_event_title:
-    weight: 2
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -110,23 +109,17 @@ content:
     type: string_textfield
     region: content
   field_hub_event_type:
-    weight: 3
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  field_hub_path_alias:
-    weight: 11
+  field_hub_sites:
+    type: cu_hub_api_site_path
+    weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: hub_path_alias
-    region: content
-  field_hub_site:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   private:
     weight: 13
     region: content

@@ -1,8 +1,0 @@
-uuid: ef792d7a-7700-4726-9741-512cbbf3dcdb
-langcode: en
-status: true
-dependencies: {  }
-id: node__hub_news
-label: 'Content: Hub: News'
-tags:
-  canonical_url: '[node:field_hub_site:entity:field_hub_site_base_uri][node:field_hub_path_alias]'

@@ -24,12 +24,12 @@ dependencies:
     - field.field.node.hub_degree.field_hub_degree_title_short
     - field.field.node.hub_degree.field_hub_degree_tuition_and_aid
     - field.field.node.hub_degree.field_hub_degree_type
-    - field.field.node.hub_degree.field_hub_path_alias
     - field.field.node.hub_degree.field_hub_program
-    - field.field.node.hub_degree.field_hub_site
+    - field.field.node.hub_degree.field_hub_sites
     - field.field.node.hub_degree.field_meta_tags
     - node.type.hub_degree
   module:
+    - cu_hub_api
     - entity_reference_revisions
     - link
     - metatag
@@ -48,7 +48,7 @@ bundle: hub_degree
 mode: default
 content:
   field_hub_degree_adm_rep:
-    weight: 14
+    weight: 13
     label: above
     settings:
       link: true
@@ -56,14 +56,14 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_app_deadlines:
-    weight: 12
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_hub_degree_app_link:
-    weight: 13
+    weight: 12
     label: above
     settings:
       trim_length: 80
@@ -75,7 +75,7 @@ content:
     type: link
     region: content
   field_hub_degree_availability:
-    weight: 5
+    weight: 4
     label: above
     settings:
       link: true
@@ -83,7 +83,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_college_link:
-    weight: 23
+    weight: 20
     label: above
     settings:
       trim_length: 80
@@ -96,7 +96,7 @@ content:
     region: content
   field_hub_degree_description:
     type: entity_reference_revisions_entity_view
-    weight: 10
+    weight: 9
     label: above
     settings:
       view_mode: default
@@ -105,7 +105,7 @@ content:
     region: content
   field_hub_degree_details:
     type: entity_reference_revisions_entity_view
-    weight: 16
+    weight: 15
     label: above
     settings:
       view_mode: default
@@ -114,7 +114,7 @@ content:
     region: content
   field_hub_degree_featured_info:
     type: entity_reference_revisions_entity_view
-    weight: 15
+    weight: 14
     label: above
     settings:
       view_mode: default
@@ -122,7 +122,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_degree_general_cta:
-    weight: 24
+    weight: 21
     label: above
     settings:
       trim_length: 80
@@ -135,7 +135,7 @@ content:
     region: content
   field_hub_degree_hero_image:
     type: entity_reference_entity_view
-    weight: 6
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -143,7 +143,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_degree_interests:
-    weight: 8
+    weight: 7
     label: above
     settings:
       link: true
@@ -151,7 +151,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_intro:
-    weight: 9
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -159,7 +159,7 @@ content:
     region: content
   field_hub_degree_list_image:
     type: entity_reference_entity_view
-    weight: 7
+    weight: 6
     label: above
     settings:
       view_mode: default
@@ -167,7 +167,7 @@ content:
     third_party_settings: {  }
     region: content
   field_hub_degree_next_steps:
-    weight: 19
+    weight: 18
     label: above
     settings:
       link: true
@@ -175,7 +175,7 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_other_programs:
-    weight: 17
+    weight: 16
     label: above
     settings:
       trim_length: 80
@@ -187,7 +187,7 @@ content:
     type: link
     region: content
   field_hub_degree_related_degrees:
-    weight: 18
+    weight: 17
     label: above
     settings:
       link: true
@@ -195,14 +195,14 @@ content:
     type: entity_reference_label
     region: content
   field_hub_degree_requirements:
-    weight: 11
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_hub_degree_title:
-    weight: 2
+    weight: 1
     label: above
     settings:
       link_to_entity: false
@@ -210,7 +210,7 @@ content:
     type: string
     region: content
   field_hub_degree_title_short:
-    weight: 3
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -218,37 +218,21 @@ content:
     type: string
     region: content
   field_hub_degree_tuition_and_aid:
-    weight: 22
+    weight: 19
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_hub_degree_type:
-    weight: 4
+    weight: 3
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_hub_path_alias:
-    weight: 20
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_hub_program:
-    weight: 1
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_hub_site:
     weight: 0
     label: above
     settings:
@@ -256,15 +240,23 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_hub_sites:
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: cu_hub_api_site_path_label
+    region: content
   field_meta_tags:
-    weight: 25
+    weight: 24
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   links:
-    weight: 21
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }

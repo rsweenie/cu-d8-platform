@@ -24,15 +24,3 @@ function cu_hub_api_entity_base_field_info(EntityTypeInterface $entity_type) {
 
   return $fields;
 }
-
-
-/**
- * Implements hook_entity_bundle_field_info_alter().
- */
-function cu_hub_api_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
-  // If this entity bundle has both field_hub_site and field_hub_path_alias then we need to make sure the path
-  // is unqiue for that combination.
-  if (isset($fields['field_hub_site']) && isset($fields['field_hub_path_alias'])) {
-    $fields['field_hub_path_alias']->addConstraint('UniqueHubPath', []);
-  }
-}

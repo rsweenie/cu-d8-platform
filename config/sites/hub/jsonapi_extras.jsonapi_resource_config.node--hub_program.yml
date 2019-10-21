@@ -9,7 +9,7 @@ dependencies:
 third_party_settings:
   jsonapi_defaults:
     default_include:
-      - field_hub_site
+      - field_hub_sites
 id: node--hub_program
 disabled: false
 path: node/hub_program
@@ -123,6 +123,12 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  field_metadata:
+    fieldName: field_metadata
+    publicName: field_metadata
+    enhancer:
+      id: ''
+    disabled: false
   scheduled_transition_date:
     disabled: true
     fieldName: scheduled_transition_date
@@ -177,12 +183,6 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  field_hub_path_alias:
-    fieldName: field_hub_path_alias
-    publicName: field_hub_path_alias
-    enhancer:
-      id: ''
-    disabled: false
   field_hub_program_description:
     fieldName: field_hub_program_description
     publicName: field_hub_program_description
@@ -195,9 +195,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_hub_site:
-    fieldName: field_hub_site
-    publicName: field_hub_site
+  field_hub_sites:
+    fieldName: field_hub_sites
+    publicName: field_hub_sites
     enhancer:
       id: ''
     disabled: false

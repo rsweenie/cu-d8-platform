@@ -1,18 +1,20 @@
-uuid: 35f7acd9-eb77-4836-8749-2dd3bfbee083
+uuid: 1def8df2-3609-4902-8175-5e40de3db1dd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hub_site
-    - node.type.hub_pd_course
+    - field.storage.node.field_hub_sites
+    - node.type.hub_program
     - node.type.hub_site
-id: node.hub_pd_course.field_hub_site
-field_name: field_hub_site
+  module:
+    - cu_hub_api
+id: node.hub_program.field_hub_sites
+field_name: field_hub_sites
 entity_type: node
-bundle: hub_pd_course
-label: Website
+bundle: hub_program
+label: Websites
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -23,6 +25,6 @@ settings:
       hub_site: hub_site
     sort:
       field: _none
-    auto_create: false
+    auto_create: 0
     auto_create_bundle: ''
-field_type: entity_reference
+field_type: cu_hub_api_site_path

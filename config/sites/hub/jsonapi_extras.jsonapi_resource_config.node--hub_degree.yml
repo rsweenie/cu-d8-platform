@@ -9,7 +9,7 @@ dependencies:
 third_party_settings:
   jsonapi_defaults:
     default_include:
-      - field_hub_site
+      - field_hub_sites
       - field_hub_program
       - field_hub_degree_hero_image.image
       - field_hub_degree_list_image.image
@@ -336,21 +336,15 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_hub_path_alias:
-    fieldName: field_hub_path_alias
-    publicName: field_hub_path_alias
-    enhancer:
-      id: ''
-    disabled: false
   field_hub_program:
     fieldName: field_hub_program
     publicName: field_hub_program
     enhancer:
       id: ''
     disabled: false
-  field_hub_site:
-    fieldName: field_hub_site
-    publicName: field_hub_site
+  field_hub_sites:
+    fieldName: field_hub_sites
+    publicName: field_hub_sites
     enhancer:
       id: ''
     disabled: false

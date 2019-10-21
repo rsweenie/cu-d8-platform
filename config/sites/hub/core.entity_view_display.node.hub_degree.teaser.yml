@@ -4,7 +4,27 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.hub_degree.field_hub_site
+    - field.field.node.hub_degree.field_hub_degree_adm_rep
+    - field.field.node.hub_degree.field_hub_degree_app_deadlines
+    - field.field.node.hub_degree.field_hub_degree_app_link
+    - field.field.node.hub_degree.field_hub_degree_availability
+    - field.field.node.hub_degree.field_hub_degree_description
+    - field.field.node.hub_degree.field_hub_degree_details
+    - field.field.node.hub_degree.field_hub_degree_featured_info
+    - field.field.node.hub_degree.field_hub_degree_hero_image
+    - field.field.node.hub_degree.field_hub_degree_interests
+    - field.field.node.hub_degree.field_hub_degree_intro
+    - field.field.node.hub_degree.field_hub_degree_list_image
+    - field.field.node.hub_degree.field_hub_degree_next_steps
+    - field.field.node.hub_degree.field_hub_degree_other_programs
+    - field.field.node.hub_degree.field_hub_degree_related_degrees
+    - field.field.node.hub_degree.field_hub_degree_requirements
+    - field.field.node.hub_degree.field_hub_degree_title
+    - field.field.node.hub_degree.field_hub_degree_title_short
+    - field.field.node.hub_degree.field_hub_degree_type
+    - field.field.node.hub_degree.field_hub_program
+    - field.field.node.hub_degree.field_hub_sites
+    - field.field.node.hub_degree.field_meta_tags
     - node.type.hub_degree
   module:
     - private_content
@@ -37,6 +57,7 @@ hidden:
   field_hub_degree_hero_image: true
   field_hub_degree_interests: true
   field_hub_degree_intro: true
+  field_hub_degree_list_image: true
   field_hub_degree_next_steps: true
   field_hub_degree_other_programs: true
   field_hub_degree_related_degrees: true
@@ -46,6 +67,6 @@ hidden:
   field_hub_degree_type: true
   field_hub_path_alias: true
   field_hub_program: true
-  field_hub_site: true
+  field_hub_sites: true
   field_meta_tags: true
   search_api_excerpt: true
