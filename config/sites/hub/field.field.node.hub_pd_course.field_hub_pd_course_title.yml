@@ -1,17 +1,18 @@
-uuid: 4cc999c0-ff2b-472d-86ae-6535fab50c4e
+uuid: e5f67133-4655-4ebd-b391-1d58d506212f
 langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_hub_pd_course_title
     - node.type.hub_pd_course
-id: node.hub_pd_course.title
-field_name: title
+id: node.hub_pd_course.field_hub_pd_course_title
+field_name: field_hub_pd_course_title
 entity_type: node
 bundle: hub_pd_course
-label: 'Administrative Title'
+label: Title
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

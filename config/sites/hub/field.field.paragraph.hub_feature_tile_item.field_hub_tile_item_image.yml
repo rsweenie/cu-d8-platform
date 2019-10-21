@@ -1,0 +1,28 @@
+uuid: a58cd9dd-7742-43f0-b930-429c3a5b3787
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hub_tile_item_image
+    - media.type.image
+    - paragraphs.paragraphs_type.hub_feature_tile_item
+id: paragraph.hub_feature_tile_item.field_hub_tile_item_image
+field_name: field_hub_tile_item_image
+entity_type: paragraph
+bundle: hub_feature_tile_item
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
