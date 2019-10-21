@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_mfts_content_tiles
+    - paragraphs.paragraphs_type.grad_feature_tile_item
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.manual_faculty_alumni_highlight
     - paragraphs.paragraphs_type.manual_feature_tiles_set
@@ -26,6 +27,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      grad_feature_tile_item: grad_feature_tile_item
       image: image
       manual_faculty_alumni_highlight: manual_faculty_alumni_highlight
       quote: quote
@@ -64,6 +66,9 @@ settings:
       hp_hero:
         weight: 38
         enabled: false
+      grad_feature_tile_item:
+        enabled: true
+        weight: 39
       hp_hero_bg:
         weight: 39
         enabled: false

@@ -1,4 +1,4 @@
-uuid: ee5578c8-eaa8-42f2-a004-1a18804f0d12
+uuid: f7c286a4-e6ad-4def-94c1-eb7bca3451de
 langcode: en
 status: true
 dependencies:
@@ -14,7 +14,7 @@ bundle: quote
 mode: default
 content:
   field_quote_ref:
-    weight: 7
+    weight: 0
     settings:
       form_mode: default
       label_singular: ''

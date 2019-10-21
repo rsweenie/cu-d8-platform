@@ -10,4 +10,7 @@ description: ''
 source: 'node:hub_degree'
 source_configuration:
   source_field: hub_uuid
-field_map: {  }
+field_map:
+  field_hub_degree_availability: field_availability
+  field_hub_degree_interests: field_program_interests
+  field_hub_degree_type: field_degree_type

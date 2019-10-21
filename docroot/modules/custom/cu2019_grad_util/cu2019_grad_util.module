@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_entity_view_mode_alter().
  */
@@ -12,6 +14,33 @@ function cu2019_grad_util_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity
       // If no parent ID it's a tier 1 link.
       if (!$entity->getParentId()) {
         $view_mode = 'tier1';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function cu2019_grad_util_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $view = $form_state->getStorage('view');
+  if (in_array($view['view']->id(), ['explore_programs', 'explore_programs_pd']) && ($view['view']->current_display == 'page_1')) {
+    // For method we need to add the tooltip.
+    if (isset($form['method'])) {
+      // If a numeric key it's a TID.
+      $term_options = array_filter($form['method']['#options'], function($key) {
+        return is_numeric($key);
+      }, ARRAY_FILTER_USE_KEY);
+      $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadMultiple(array_keys($term_options));
+
+      foreach ($form['method']['#options'] as $key => $option) {
+        if (isset($terms[$key])) {
+          if (is_string($form['method']['#options'][$key])) {
+            if ($tooltip = $terms[$key]->field_term_tooltip->getString()) {
+              $form['method']['#options'][$key] = $form['method']['#options'][$key] . ' <span class="tooltip">' . $tooltip . '</span>';
+            }
+          }
+        }
       }
     }
   }

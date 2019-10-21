@@ -221,7 +221,7 @@ class HubResourceMediaImageFormatter extends FormatterBase implements ContainerF
     
           if ($link_url) {
             $rendered_image = render($image_build);
-            $elements[$delta] = Link::fromTextAndUrl($rendered_image, $url)->toRenderable();
+            $elements[$delta] = Link::fromTextAndUrl($rendered_image, $link_url)->toRenderable();
           }
           else {
             $elements[$delta] = $image_build;

@@ -1,4 +1,4 @@
-uuid: ebdd45a8-120f-4d3b-a994-df29eb3a62df
+uuid: 688bc30e-09cb-4363-a274-1eff85829698
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ bundle: quote
 mode: default
 content:
   field_quote_ref:
-    weight: 6
+    weight: 0
     label: hidden
     settings:
       link: true
