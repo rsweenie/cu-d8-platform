@@ -3,93 +3,122 @@
     PAGINATION
 
 \*  --------------------------------------------------------------------------  */
-&.pagination {
-    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
-    ul, ol {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        @include flex(center, stretch, stretch, row nowrap);
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    }
-    
-    ul {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-    
-        > li {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+&.pager {
+  background: $off-white2;
+  border-top: 1px solid $gray75;
+  padding: 14px 0;
 
-            &:first-child {
-                // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+  display: flex;
+  justify-content: center;
 
-                a {
-                    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-                    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-                    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-                    border-left: .2rem solid $accent-1;
-                    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-                    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-                    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-                }
-            }
-        }
-    }
-    
+  ul,
+  ol {
+    display: flex;
+  }
+
+  li {
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid $gray75;
+    border-bottom: 1px solid $gray75;
+    background: $white;
+    padding: 0;
+
     a {
-        // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-        display: block;
-        // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-        padding: #{$gutter * .4}rem;
-        // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-        border: .2rem solid $accent-1;
-        border-left: none;
-        // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-        // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-        // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        
-        &[disabled] {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            color: $accent-1;
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-            pointer-events: none;            
-        }
-        
-        &.active {
-            // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
-            // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
-            // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
-            background: $accent-1;
-            // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
-            color: $primary;
-            // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
-            // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
-        }
+      color: $gray2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 38px;
+      height: 43px;
     }
+
+    &:first-child {
+      border-left: 1px solid $gray75;
+    }
+
+    &:last-child {
+      border-right: 1px solid $gray75;
+    }
+
+    &.pager__item--first {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+
+      a {
+        &:after {
+          content: "\E007";
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &.pager__item--last {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+
+      a {
+        &:after {
+          content: "\E007";
+        }
+      }
+    }
+
+    &.pager__item--previous {
+      border-right: 1px solid $gray75;
+
+      a {
+        &:after {
+          content: "\E008";
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &.pager__item--next {
+      border-left: 1px solid $gray75;
+
+      a {
+        &:after {
+          content: "\E008";
+        }
+      }
+    }
+
+    &.pager__item--first,
+    &.pager__item--previous,
+    &.pager__item--last,
+    &.pager__item--next {
+      a {
+        color: $gray65;
+        position: relative;
+        span {
+          @include srOnly;
+        }
+        //text-indent: -999999px;
+
+        &:after {
+          @include iconfont;
+          //content: "\E007";
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+
+    &.is-active {
+      font-weight: normal;
+      background: $secondary;
+
+      a {
+        color: $white;
+      }
+    }
+  }
 }

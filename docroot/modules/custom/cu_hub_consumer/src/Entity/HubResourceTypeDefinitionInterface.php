@@ -45,4 +45,12 @@ interface HubResourceTypeDefinitionInterface extends ConfigEntityInterface {
    */
   public function setFieldInfo($field_name, $info);
 
+  /**
+   * Returns if field info exists.
+   *
+   * @param string $field_name
+   * @return boolean
+   */
+  public function hasFieldInfo($field_name);
+
 }

@@ -17,6 +17,9 @@ fields:
   revision_timestamp:
     type: datetime
     multiple: false
+  title:
+    type: string
+    multiple: false
   created:
     type: datetime
     multiple: false
