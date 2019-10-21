@@ -116,6 +116,25 @@
       "requireSameDimensions": true
     },
     {
+      "label": "test hrnew profile example",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://local.creighton.com/profile/pr-miss-profile-example",
+      "referenceUrl": "http://hrnew.creighton.acsitefactory.com/profile/pr-miss-profile-example",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.04,
+      "requireSameDimensions": true
+    },
+    {
       "label": "test hrnew myhr",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "http://local.creighton.com/myhr",
