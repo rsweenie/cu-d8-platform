@@ -26,4 +26,15 @@ content:
     third_party_settings: {  }
     type: private
 hidden:
+  field_hub_event_body: true
+  field_hub_event_date: true
+  field_hub_event_description: true
+  field_hub_event_featured: true
+  field_hub_event_hero_image: true
+  field_hub_event_listing_image: true
+  field_hub_event_location: true
+  field_hub_event_title: true
+  field_hub_event_type: true
+  field_hub_path_alias: true
+  field_hub_site: true
   search_api_excerpt: true

@@ -1,0 +1,28 @@
+uuid: de2aeefb-4716-4f4d-b5d4-92fbff452a7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_event_related_degrees
+    - node.type.hub_degree
+    - node.type.hub_event
+id: node.hub_event.field_hub_event_related_degrees
+field_name: field_hub_event_related_degrees
+entity_type: node
+bundle: hub_event
+label: 'Related Degrees'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_degree: hub_degree
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
