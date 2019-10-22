@@ -12,6 +12,7 @@ third_party_settings:
       - field_hub_site
       - field_hub_program
       - field_hub_degree_hero_image.image
+      - field_hub_degree_list_image.image
       - field_hub_degree_availability
       - field_hub_degree_interests
       - field_hub_degree_adm_rep
@@ -24,17 +25,16 @@ third_party_settings:
       - field_hub_degree_details.field_video_media
       - field_hub_degree_featured_info
       - field_hub_degree_featured_info.field_hub_quote_ref_item
-      - field_hub_degree_featured_info.field_featured_content_image
-      - field_hub_degree_featured_info.field_fc_p_link
-      - field_hub_degree_featured_info.field_fc_p_link.field_file_link.field_document
-      - field_hub_degree_featured_info.field_fc_supporting_p_links
-      - field_hub_degree_featured_info.field_fc_supporting_p_links.field_file_link.field_document
       - field_hub_degree_featured_info.field_hub_spotlight_ref
       - field_hub_degree_featured_info.field_hub_spotlight_ref.field_hub_fac_spotlight_image.image
       - field_hub_degree_featured_info.field_hub_stat_highlight_ref
       - field_hub_degree_featured_info.field_hub_stat_highlight_ref.field_hub_stat_highlight_image.image
       - field_hub_degree_featured_info.field_hub_image_image
       - field_hub_degree_featured_info.field_hub_image_image.image
+      - field_hub_degree_featured_info.field_hub_tile_item_file_link
+      - field_hub_degree_featured_info.field_hub_tile_item_file_link.field_document
+      - field_hub_degree_featured_info.field_hub_tile_item_image
+      - field_hub_degree_featured_info.field_hub_tile_item_image.image
       - field_hub_degree_next_steps
       - field_hub_degree_next_steps.field_hub_next_steps_items
 id: node--hub_degree
@@ -103,11 +103,11 @@ resourceFields:
     enhancer:
       id: ''
   title:
-    disabled: true
     fieldName: title
     publicName: title
     enhancer:
       id: ''
+    disabled: false
   created:
     fieldName: created
     publicName: created
@@ -234,6 +234,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_hub_degree_college_link:
+    fieldName: field_hub_degree_college_link
+    publicName: field_hub_degree_college_link
+    enhancer:
+      id: ''
+    disabled: false
   field_hub_degree_description:
     fieldName: field_hub_degree_description
     publicName: field_hub_degree_description
@@ -252,6 +258,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_hub_degree_general_cta:
+    fieldName: field_hub_degree_general_cta
+    publicName: field_hub_degree_general_cta
+    enhancer:
+      id: ''
+    disabled: false
   field_hub_degree_hero_image:
     fieldName: field_hub_degree_hero_image
     publicName: field_hub_degree_hero_image
@@ -267,6 +279,12 @@ resourceFields:
   field_hub_degree_intro:
     fieldName: field_hub_degree_intro
     publicName: field_hub_degree_intro
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_list_image:
+    fieldName: field_hub_degree_list_image
+    publicName: field_hub_degree_list_image
     enhancer:
       id: ''
     disabled: false
@@ -303,6 +321,12 @@ resourceFields:
   field_hub_degree_title_short:
     fieldName: field_hub_degree_title_short
     publicName: field_hub_degree_title_short
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_degree_tuition_and_aid:
+    fieldName: field_hub_degree_tuition_and_aid
+    publicName: field_hub_degree_tuition_and_aid
     enhancer:
       id: ''
     disabled: false

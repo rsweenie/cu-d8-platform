@@ -291,7 +291,9 @@ function cu2019_grad_preprocess_paragraph__grad_feature_tile_item(&$variables) {
     $variables['tile_link'] = $file->createFileUrl();
   }
   else {
-    $variables['tile_link'] = $variables['content']['field_tile_item_link'][0]['#url']->toString();
+    if (!empty($variables['content']['field_tile_item_link']['#elements'][0])) {
+      $variables['tile_link'] = $variables['content']['field_tile_item_link'][0]['#url']->toString();
+    }
   }
 }
 
@@ -306,7 +308,9 @@ function cu2019_grad_preprocess_hub_resource__paragraph__hub_feature_tile_item(&
     $variables['tile_link'] = $file->createFileUrl();
   }
   else {
-    $variables['tile_link'] = $variables['content']['field_hub_tile_item_link']['#elements'][0]['#url']->toString();
+    if (!empty($variables['content']['field_hub_tile_item_link']['#elements'][0])) {
+      $variables['tile_link'] = $variables['content']['field_hub_tile_item_link']['#elements'][0]['#url']->toString();
+    }
   }
 }
 

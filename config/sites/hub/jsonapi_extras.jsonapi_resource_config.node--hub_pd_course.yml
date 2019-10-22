@@ -12,6 +12,7 @@ third_party_settings:
       - field_hub_pd_course_program
       - field_hub_pd_course_dates
       - field_hub_pd_course_hero_image.image
+      - field_hub_pd_course_list_image.image
       - field_hub_pd_course_next_steps
       - field_hub_pd_course_next_steps.field_hub_next_steps_items
       - field_hub_pd_related_degrees
@@ -190,12 +191,6 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  body:
-    fieldName: body
-    publicName: body
-    enhancer:
-      id: ''
-    disabled: false
   field_hub_path_alias:
     fieldName: field_hub_path_alias
     publicName: field_hub_path_alias
@@ -208,9 +203,21 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_hub_pd_course_details:
+    fieldName: field_hub_pd_course_details
+    publicName: field_hub_pd_course_details
+    enhancer:
+      id: ''
+    disabled: false
   field_hub_pd_course_hero_image:
     fieldName: field_hub_pd_course_hero_image
     publicName: field_hub_pd_course_hero_image
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_list_image:
+    fieldName: field_hub_pd_course_list_image
+    publicName: field_hub_pd_course_list_image
     enhancer:
       id: ''
     disabled: false
@@ -223,6 +230,12 @@ resourceFields:
   field_hub_pd_course_program:
     fieldName: field_hub_pd_course_program
     publicName: field_hub_pd_course_program
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_pd_course_title:
+    fieldName: field_hub_pd_course_title
+    publicName: field_hub_pd_course_title
     enhancer:
       id: ''
     disabled: false
@@ -244,3 +257,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_meta_tags:
+    disabled: true
+    fieldName: field_meta_tags
+    publicName: field_meta_tags
+    enhancer:
+      id: ''
