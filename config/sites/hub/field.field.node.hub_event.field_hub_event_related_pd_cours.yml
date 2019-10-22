@@ -1,0 +1,28 @@
+uuid: 7f573589-b2cd-466b-a889-c22a2974fcce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_event_related_pd_cours
+    - node.type.hub_event
+    - node.type.hub_pd_course
+id: node.hub_event.field_hub_event_related_pd_cours
+field_name: field_hub_event_related_pd_cours
+entity_type: node
+bundle: hub_event
+label: 'Related Professional Development Courses'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_pd_course: hub_pd_course
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

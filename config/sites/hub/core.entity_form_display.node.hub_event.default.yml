@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.hub_event.field_hub_event_hero_image
     - field.field.node.hub_event.field_hub_event_listing_image
     - field.field.node.hub_event.field_hub_event_location
+    - field.field.node.hub_event.field_hub_event_related_degrees
+    - field.field.node.hub_event.field_hub_event_related_pd_cours
     - field.field.node.hub_event.field_hub_event_title
     - field.field.node.hub_event.field_hub_event_type
     - field.field.node.hub_event.field_hub_path_alias
@@ -29,7 +31,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -101,6 +103,24 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_hub_event_related_degrees:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_hub_event_related_pd_cours:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_hub_event_title:
     weight: 2
     settings:
@@ -116,7 +136,7 @@ content:
     type: options_select
     region: content
   field_hub_path_alias:
-    weight: 11
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: hub_path_alias
@@ -128,7 +148,7 @@ content:
     type: options_select
     region: content
   private:
-    weight: 13
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -137,7 +157,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 16
     region: content
     third_party_settings: {  }
   title:

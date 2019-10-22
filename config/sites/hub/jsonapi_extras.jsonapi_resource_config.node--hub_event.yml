@@ -13,6 +13,8 @@ third_party_settings:
       - field_hub_event_listing_image.image
       - field_hub_event_location
       - field_hub_event_type
+      - field_hub_event_related_degrees
+      - field_hub_event_related_pd_cours
 id: node--hub_event
 disabled: false
 path: node/hub_event
@@ -225,6 +227,18 @@ resourceFields:
   field_hub_event_location:
     fieldName: field_hub_event_location
     publicName: field_hub_event_location
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_event_related_degrees:
+    fieldName: field_hub_event_related_degrees
+    publicName: field_hub_event_related_degrees
+    enhancer:
+      id: ''
+    disabled: false
+  field_hub_event_related_pd_cours:
+    fieldName: field_hub_event_related_pd_cours
+    publicName: field_hub_event_related_pd_cours
     enhancer:
       id: ''
     disabled: false
