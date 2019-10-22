@@ -461,13 +461,20 @@
 
 @mixin innerBorder {
   &:after {
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 8px;
+    left: 8px;
     content: "";
     border: 2px solid rgba($white,.3);
     pointer-events: none;
+
+    @media #{$mediaMd} {
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      top: 15px;
+      left: 15px;
+    }
   }
 }

@@ -40,6 +40,14 @@
         });
       });
 
+      $('#filterOpen',context).on('click',function(e) {
+        $("#filters").addClass('open');
+      });
+
+      $('#filterClose',context).on('click',function(e) {
+        $("#filters").removeClass('open');
+      });
+
       // $('figure.img_vid.video', context).each(function() {
       //   $(this).on('click', function() {
       //     var src = $('iframe', this).attr('src') + '&autoplay=1';

@@ -58,19 +58,48 @@
     </div>
   {% endif %}
   {% if exposed %}
-    <div class="view-filters">
-      {{ exposed }}
+
+  <button id="filterOpen" class="listing-filters-toggle">
+    <span class="icon icon-filter"></span>
+    <span>See Search and Filters</span>
+  </button>
+  <div id="filters" class="section listing-filters" aria-labelledby="filterToggle">
+    <button id="filterClose" class="listing-filters-toggle">
+      <span class="icon icon-close"></span>
+      <span>Close Search and Filters</span>
+    </button>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="view-filters">
+          {{ exposed }}
+        </div>
+      </div>
     </div>
+  </div>
   {% endif %}
   {% if header %}
-    <div class="view-header">
-      {{ header }}
+  <div class="section listing-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="view-header">
+          {{ header }}
+        </div>
+      </div>
     </div>
+  </div>
   {% endif %}
 
   {% if rows %}
     <div class="view-content">
-      {{ rows }}
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="fac-listing">
+              {{ rows }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   {% elseif empty %}
     <div class="view-empty">
@@ -79,7 +108,13 @@
   {% endif %}
 
   {% if pager %}
-    {{ pager }}
+    <div class="section">
+      <div class="row">
+        <div class="col-xs-12">
+          {{ pager }}
+        </div>
+      </div>
+    </div>
   {% endif %}
   {% if attachment_after %}
     <div class="attachment attachment-after">

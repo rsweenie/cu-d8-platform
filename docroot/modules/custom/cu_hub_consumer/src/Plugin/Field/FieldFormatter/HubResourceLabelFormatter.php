@@ -31,7 +31,7 @@ class HubResourceLabelFormatter extends FormatterBase {
       $resource_obj = $item->resource;
       if ($resource_obj instanceof ResourceInterface) {
         if ($resource_label = $resource_obj->label()) {
-          $elements = [
+          $elements[$delta] = [
             '#markup' => $resource_label,
           ];
         }

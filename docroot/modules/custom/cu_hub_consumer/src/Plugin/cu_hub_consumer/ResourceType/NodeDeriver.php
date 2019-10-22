@@ -33,9 +33,9 @@ class NodeDeriver extends DeriverBase {
 
         // Try to automatically set the title field mapping.
         $title_fields = [
+          'title',
           'field_' . $resource_sub_type . '_title',
           'field_' . $resource_sub_type . '_name',
-          'title',
         ];
         foreach ($title_fields as $title_field) {
           if ($resource_type_def->getFieldInfo($title_field)) {
