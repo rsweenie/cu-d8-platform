@@ -82,7 +82,7 @@ class FieldMetadataFieldItemList extends FieldItemList {
           }
         }
 
-        if (in_array($field_type, ['entity_reference', 'entity_reference_revisions'])) {
+        if (in_array($field_type, ['entity_reference', 'entity_reference_revisions', 'cu_hub_api_site_path'])) {
           $target_type = $definition->getSetting('target_type');
 
           $handler_settings = $definition->getSetting('handler_settings');
