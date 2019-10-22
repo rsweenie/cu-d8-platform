@@ -1,0 +1,24 @@
+uuid: dc0cbc4e-5b06-48a1-9af6-00d38f6114d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+    - field_permissions
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: hub_reference.field_program_interests
+field_name: field_program_interests
+entity_type: hub_reference
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,62 @@
+uuid: bb0c4b21-09eb-4634-882c-bc0731344826
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph__hub_feature_tile_item
+type_id: paragraph--hub_feature_tile_item
+fields:
+  drupal_internal__id:
+    type: integer
+    multiple: false
+  drupal_internal__revision_id:
+    type: integer
+    multiple: false
+  langcode:
+    type: language
+    multiple: false
+  status:
+    type: boolean
+    multiple: false
+  created:
+    type: datetime
+    multiple: false
+  parent_id:
+    type: string
+    multiple: false
+  parent_type:
+    type: string
+    multiple: false
+  parent_field_name:
+    type: string
+    multiple: false
+  behavior_settings:
+    type: string_long
+    multiple: false
+  default_langcode:
+    type: boolean
+    multiple: false
+  revision_translation_affected:
+    type: boolean
+    multiple: false
+  field_hub_tile_item_body:
+    type: hub_text_long
+    multiple: false
+  field_hub_tile_item_link:
+    type: link
+    multiple: false
+  paragraph_type:
+    type: hub_resource
+    hub_type: paragraphs_type
+    multiple: false
+  field_hub_tile_item_file_link:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--document
+    multiple: false
+  field_hub_tile_item_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
+    multiple: false

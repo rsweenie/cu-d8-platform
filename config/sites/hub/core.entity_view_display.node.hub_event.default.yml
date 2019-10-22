@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.hub_event.field_hub_event_hero_image
     - field.field.node.hub_event.field_hub_event_listing_image
     - field.field.node.hub_event.field_hub_event_location
+    - field.field.node.hub_event.field_hub_event_related_degrees
+    - field.field.node.hub_event.field_hub_event_related_pd_cours
     - field.field.node.hub_event.field_hub_event_title
     - field.field.node.hub_event.field_hub_event_type
     - field.field.node.hub_event.field_hub_sites
@@ -91,6 +93,24 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_hub_event_related_degrees:
+    weight: 13
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_hub_event_related_pd_cours:
+    weight: 14
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_hub_event_title:
     weight: 0

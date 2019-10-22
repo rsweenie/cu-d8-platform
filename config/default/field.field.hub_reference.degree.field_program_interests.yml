@@ -1,0 +1,29 @@
+uuid: 44db59ef-0a53-4ad0-b834-96a2edbb1d3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - cu_hub_consumer.hub_reference_type.degree
+    - field.storage.hub_reference.field_program_interests
+    - taxonomy.vocabulary.program_interests
+id: hub_reference.degree.field_program_interests
+field_name: field_program_interests
+entity_type: hub_reference
+bundle: degree
+label: 'Program Interests'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      program_interests: program_interests
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

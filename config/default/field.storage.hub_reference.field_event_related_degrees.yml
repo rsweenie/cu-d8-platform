@@ -1,0 +1,23 @@
+uuid: 6a1253f2-c7e1-4226-bd11-9902652350cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - cu_hub_consumer
+    - field_permissions
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: hub_reference.field_event_related_degrees
+field_name: field_event_related_degrees
+entity_type: hub_reference
+type: entity_reference
+settings:
+  target_type: hub_reference
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,57 @@
+uuid: 1c063b31-0cfb-4689-b1d5-632dae8f68e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.grad_feature_tile_item.field_tile_item_body
+    - field.field.paragraph.grad_feature_tile_item.field_tile_item_file_link
+    - field.field.paragraph.grad_feature_tile_item.field_tile_item_image
+    - field.field.paragraph.grad_feature_tile_item.field_tile_item_link
+    - paragraphs.paragraphs_type.grad_feature_tile_item
+  module:
+    - link
+    - text
+id: paragraph.grad_feature_tile_item.default
+targetEntityType: paragraph
+bundle: grad_feature_tile_item
+mode: default
+content:
+  field_tile_item_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_tile_item_file_link:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: file_as_url
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_tile_item_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_tile_item_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  search_api_excerpt: true
