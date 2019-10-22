@@ -1,0 +1,23 @@
+uuid: ad0a2e9a-8506-4a32-bbc5-aca3b3081918
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hub_tile_item_link
+    - paragraphs.paragraphs_type.hub_feature_tile_item
+  module:
+    - link
+id: paragraph.hub_feature_tile_item.field_hub_tile_item_link
+field_name: field_hub_tile_item_link
+entity_type: paragraph
+bundle: hub_feature_tile_item
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

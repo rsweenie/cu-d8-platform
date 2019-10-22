@@ -4,25 +4,26 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.hub_pd_course.body
+    - field.field.node.hub_pd_course.field_hub_path_alias
+    - field.field.node.hub_pd_course.field_hub_pd_course_dates
+    - field.field.node.hub_pd_course.field_hub_pd_course_details
+    - field.field.node.hub_pd_course.field_hub_pd_course_hero_image
+    - field.field.node.hub_pd_course.field_hub_pd_course_list_image
+    - field.field.node.hub_pd_course.field_hub_pd_course_next_steps
+    - field.field.node.hub_pd_course.field_hub_pd_course_program
+    - field.field.node.hub_pd_course.field_hub_pd_course_title
+    - field.field.node.hub_pd_course.field_hub_pd_related_degrees
+    - field.field.node.hub_pd_course.field_hub_pd_right_side_copy
+    - field.field.node.hub_pd_course.field_hub_site
     - node.type.hub_pd_course
   module:
     - private_content
-    - text
     - user
 id: node.hub_pd_course.teaser
 targetEntityType: node
 bundle: hub_pd_course
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     settings: {  }
@@ -38,9 +39,15 @@ content:
 hidden:
   field_hub_path_alias: true
   field_hub_pd_course_dates: true
+  field_hub_pd_course_details: true
   field_hub_pd_course_hero_image: true
+  field_hub_pd_course_list_image: true
   field_hub_pd_course_next_steps: true
   field_hub_pd_course_program: true
   field_hub_pd_course_site: true
+  field_hub_pd_course_title: true
+  field_hub_pd_related_degrees: true
+  field_hub_pd_right_side_copy: true
   field_hub_site: true
+  field_meta_tags: true
   search_api_excerpt: true

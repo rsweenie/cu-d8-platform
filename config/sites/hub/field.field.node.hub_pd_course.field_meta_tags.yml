@@ -1,0 +1,21 @@
+uuid: ed373fe4-53d2-41e7-939c-d67880578d5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.hub_pd_course
+  module:
+    - metatag
+id: node.hub_pd_course.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: hub_pd_course
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag
