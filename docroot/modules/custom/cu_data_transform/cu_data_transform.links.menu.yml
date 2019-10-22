@@ -1,6 +1,0 @@
-cu_data_transform.settings: 
-  title: 'CU Data Transform'  
-  route_name: 'cu_data_transform.settings'
-  description: 'Run Data Transformations'  
-  parent: system.admin_config_system
-  weight: 99

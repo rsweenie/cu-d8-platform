@@ -1,9 +1,0 @@
-cu_data_transform.settings:
-  path: '/admin/config/cu_data_transform/settings'
-  defaults:
-    _form: '\Drupal\cu_data_transform\Form\CUDataTransformForm'
-    _title: 'CU Data Transform'
-  requirements:
-    _permission: 'administer site configuration'
-  options:  
-    _admin_route: TRUE  
