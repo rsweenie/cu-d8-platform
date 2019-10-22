@@ -277,7 +277,7 @@ class ResourceInspector {
       // First we try to use field metadata.
       if (!empty($field_metadata[$relationship_name]['type'])) {
         $field_type = $field_metadata[$relationship_name]['type'];
-        if (in_array($field_type, ['entity_reference', 'entity_reference_revisions'])) {
+        if (in_array($field_type, ['entity_reference', 'entity_reference_revisions', 'cu_hub_api_site_path'])) {
           $target_types = $field_metadata[$relationship_name]['target_types'];
           if (is_array($target_types)) {
             $resource_type = reset($target_types);
@@ -492,6 +492,7 @@ class ResourceInspector {
       //  return 'string';
 
       case 'entity_reference_revisions':
+      case 'cu_hub_api_site_path':
         return 'entity_reference';
 
       case 'list_string':

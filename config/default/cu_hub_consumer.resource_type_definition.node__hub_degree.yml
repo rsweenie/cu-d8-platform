@@ -59,9 +59,6 @@ fields:
   field_hub_degree_tuition_and_aid:
     type: hub_text_long
     multiple: false
-  field_hub_path_alias:
-    type: string
-    multiple: false
   node_type:
     type: hub_resource
     hub_type: node_type
@@ -114,6 +111,12 @@ fields:
     hub_bundles:
       - taxonomy_term--program_interests
     multiple: false
+  field_hub_degree_list_image:
+    type: hub_resource
+    hub_type: media
+    hub_bundles:
+      - media--image
+    multiple: false
   field_hub_degree_next_steps:
     type: hub_resource
     hub_type: node
@@ -138,15 +141,9 @@ fields:
     hub_bundles:
       - node--hub_program
     multiple: false
-  field_hub_site:
+  field_hub_sites:
     type: hub_resource
     hub_type: node
     hub_bundles:
       - node--hub_site
-    multiple: false
-  field_hub_degree_list_image:
-    type: hub_resource
-    hub_type: media
-    hub_bundles:
-      - media--image
-    multiple: false
+    multiple: true

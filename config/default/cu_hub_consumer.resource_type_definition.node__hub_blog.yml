@@ -44,9 +44,6 @@ fields:
   field_hub_blog_title:
     type: string
     multiple: false
-  field_hub_path_alias:
-    type: string
-    multiple: false
   node_type:
     type: hub_resource
     hub_type: node_type
@@ -69,9 +66,9 @@ fields:
     hub_bundles:
       - taxonomy_term--blog_type
     multiple: false
-  field_hub_site:
+  field_hub_sites:
     type: hub_resource
     hub_type: node
     hub_bundles:
       - node--hub_site
-    multiple: false
+    multiple: true

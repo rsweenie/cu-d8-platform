@@ -19,19 +19,21 @@ class Resource implements ResourceInterface {
   /**
    * Raw JSON data.
    *
-   * @var [type]
+   * @var string
    */
   protected $jsonDataRaw;
 
   /**
    * Unserialized JSON data.
    *
-   * @var [type]
+   * @var array
    */
   protected $jsonData;
 
   /**
    * Processed JSON data.
+   *
+   * @var array
    */
   protected $processedData;
 
@@ -97,9 +99,11 @@ class Resource implements ResourceInterface {
       return NULL;
     }
 
+    $meta = isset($data['meta']) ? $data['meta'] : [];
+
     // Try to pull from the static cache if possible.
     if (!empty($data['id'])) {
-      if ($resource = $resource_type->getFromStaticCache($data['id'])) {
+      if ($resource = $resource_type->getFromStaticCache($data['id'], $meta)) {
         return $resource;
       }
     }
@@ -114,7 +118,7 @@ class Resource implements ResourceInterface {
 
     // Try to set from the static cache if possible.
     if (!empty($data['id'])) {
-      $resource_type->setStaticCache($data['id'], $resource);
+      $resource_type->setStaticCache($data['id'], $resource, $meta);
     }
 
     // This must come after setting the static cache to avoid recursion.

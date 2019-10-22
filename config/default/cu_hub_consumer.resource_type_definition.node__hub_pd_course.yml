@@ -32,9 +32,6 @@ fields:
   path:
     type: path
     multiple: false
-  field_hub_path_alias:
-    type: string
-    multiple: false
   field_hub_pd_course_details:
     type: hub_text_long
     multiple: false
@@ -87,9 +84,9 @@ fields:
     hub_bundles:
       - paragraph--copy
     multiple: false
-  field_hub_site:
+  field_hub_sites:
     type: hub_resource
     hub_type: node
     hub_bundles:
       - node--hub_site
-    multiple: false
+    multiple: true

@@ -20,7 +20,7 @@ class ResourceRelationshipList implements ResourceRelationshipListInterface {
    *
    * @var \Drupal\cu_hub_consumer\Hub\ResourceInterface[]
    */
-  protected $list = array();
+  protected $list = [];
 
   /**
    * The resource object that contains this list.

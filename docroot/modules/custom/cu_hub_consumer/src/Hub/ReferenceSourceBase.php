@@ -321,8 +321,22 @@ abstract class ReferenceSourceBase extends PluginBase implements ReferenceSource
         break;
 
       case 'path':
-        if ($resource && !empty($resource->field_hub_path_alias)) {
-          return $resource->field_hub_path_alias->getString();
+        if ($resource && !empty($resource->field_hub_sites)) {
+          $hub_site_uuid = $this->configFactory
+            ->get('cu_hub_consumer.settings')
+            ->get('hub_site_uuid');
+
+          // If we have a configured site UUID, let's try to find a match.
+          if ($hub_site_uuid) {
+            foreach ($resource->field_hub_sites as $hub_site) {
+              if ($hub_site_uuid == $hub_site->id) {
+                // Now we just need to look for the alias in the meta information.
+                if (isset($hub_site->meta['alias'])) {
+                  return $hub_site->meta['alias'];
+                }
+              }
+            }
+          }
         }
         break;
 

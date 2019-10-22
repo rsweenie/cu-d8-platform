@@ -387,6 +387,7 @@ class HubReference extends ContentEntityBase implements HubReferenceInterface {
             
             switch ($field_type) {
               case 'entity_reference':
+              case 'cu_hub_api_site_path':
                 $this->handleEntityReferencePrepareSave($translation, $entity_field_name, $metadata_values);
                 break;
 

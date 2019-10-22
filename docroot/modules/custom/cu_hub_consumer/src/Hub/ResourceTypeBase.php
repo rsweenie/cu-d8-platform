@@ -247,13 +247,13 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
 
       // If this type has field_hub_site then we need to add the filtering.
       if ($type_def = $this->getResourceTypeDefinition()) {
-        if ($type_def->hasFieldInfo('field_hub_site')) {
+        if ($type_def->hasFieldInfo('field_hub_sites')) {
           $hub_site_uuid = $this->configFactory
             ->get('cu_hub_consumer.settings')
             ->get('hub_site_uuid');
 
           if ($hub_site_uuid) {
-            $query['filter[field_hub_site.id]'] = $hub_site_uuid;
+            $query['filter[field_hub_sites.id]'] = $hub_site_uuid;
           }
         }
       }
@@ -528,10 +528,12 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    * Returns a resource if in the static cache for this type.
    *
    * @param string $uuid
+   * @param array $meta
    * @return mixed
    */
-  public function getFromStaticCache($uuid) {
-    return isset($this->resourceCache[$uuid]) ? $this->resourceCache[$uuid] : NULL;
+  public function getFromStaticCache($uuid, $meta = []) {
+    $key = $this->staticCacheKey($uuid, $meta);
+    return isset($this->resourceCache[$key]) ? $this->resourceCache[$key] : NULL;
   }
 
   /**
@@ -539,10 +541,25 @@ abstract class ResourceTypeBase extends PluginBase implements ResourceTypeInterf
    *
    * @param string $uuid
    * @param object $resource
+   * @param array $meta
    * @return void
    */
-  public function setStaticCache($uuid, $resource) {
-    $this->resourceCache[$uuid] = $resource;
+  public function setStaticCache($uuid, $resource, $meta = []) {
+    $key = $this->staticCacheKey($uuid, $meta);
+    $this->resourceCache[$key] = $resource;
+  }
+
+  protected function staticCacheKey($uuid, $meta) {
+    $parts = ['uuid:' . (string) $uuid];
+    if (is_array($meta)) {
+      foreach ($meta as $key => $value) {
+        if (is_scalar($value)) {
+          $parts[] = ((string) $key) . ':' . ((string) $value);
+        }
+      }
+    }
+    sort($parts);
+    return implode(':', $parts);
   }
   
 }
