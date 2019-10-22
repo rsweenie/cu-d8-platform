@@ -12,4 +12,5 @@ field_map:
   field_hub_event_date: field_event_date
   field_hub_event_featured: field_featured
   field_hub_event_location: field_event_location
+  field_hub_event_related_degrees: field_event_related_degrees
   field_hub_event_type: field_event_type

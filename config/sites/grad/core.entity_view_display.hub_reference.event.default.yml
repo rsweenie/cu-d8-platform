@@ -6,6 +6,7 @@ dependencies:
     - cu_hub_consumer.hub_reference_type.event
     - field.field.hub_reference.event.field_event_date
     - field.field.hub_reference.event.field_event_location
+    - field.field.hub_reference.event.field_event_related_degrees
     - field.field.hub_reference.event.field_event_type
     - field.field.hub_reference.event.field_featured
   module:
@@ -72,6 +73,22 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 2
+          eaf33f85-0853-4621-ab14-bfd1f7cf820b:
+            uuid: eaf33f85-0853-4621-ab14-bfd1f7cf820b
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:hub_reference:event:field_event_related_degrees'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 3
         third_party_settings: {  }
       -
         layout_id: generic_content
@@ -174,6 +191,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: main
+  field_event_related_degrees:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: main
   field_event_type:
     weight: 2
     label: above
@@ -204,6 +229,8 @@ hidden:
   hub_field_hub_event_hero_image: true
   hub_field_hub_event_listing_image: true
   hub_field_hub_event_location: true
+  hub_field_hub_event_related_degrees: true
+  hub_field_hub_event_related_pd_cours: true
   hub_field_hub_event_title: true
   hub_field_hub_event_type: true
   hub_field_hub_path_alias: true
@@ -211,4 +238,5 @@ hidden:
   hub_langcode: true
   hub_node_type: true
   hub_revision_timestamp: true
+  hub_title: true
   search_api_excerpt: true
